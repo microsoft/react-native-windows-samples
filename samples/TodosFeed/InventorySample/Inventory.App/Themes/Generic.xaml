@@ -1,0 +1,14 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:///Themes/Controls/Buttons.xaml" />
+        <ResourceDictionary Source="ms-appx:///Themes/Controls/FormAutoSuggestBox.xaml" />
+        <ResourceDictionary Source="ms-appx:///Themes/Controls/FormCalendarDatePicker.xaml" />
+        <ResourceDictionary Source="ms-appx:///Themes/Controls/FormComboBox.xaml" />
+        <ResourceDictionary Source="ms-appx:///Themes/Controls/FormTextBox.xaml" />
+        <ResourceDictionary Source="ms-appx:///Themes/Controls/Section.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

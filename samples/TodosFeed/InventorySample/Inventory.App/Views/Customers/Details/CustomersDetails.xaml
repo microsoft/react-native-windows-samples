@@ -1,0 +1,60 @@
+﻿<UserControl
+    x:Class="Inventory.Views.CustomersDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Inventory.Controls"
+    xmlns:views="using:Inventory.Views"
+    xmlns:viewmodels="using:Inventory.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="DetailsTemplate" x:DataType="viewmodels:CustomerDetailsViewModel">
+            <controls:FluidGrid Margin="0,12,0,0" Columns="2" ColumnSpacing="12" RowSpacing="12">
+                <controls:FormTextBox Header="First Name" Text="{x:Bind EditableItem.FirstName, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Last Name" Text="{x:Bind EditableItem.LastName, Mode=TwoWay}" />
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="60">
+                    <controls:FormTextBox Header="Middle Name" Text="{x:Bind EditableItem.MiddleName, Mode=TwoWay}" />
+                    <controls:FormTextBox Header="Sufix" Text="{x:Bind EditableItem.Suffix, Mode=TwoWay}" />
+                </controls:FluidGrid>
+                <controls:FormTextBox Header="EMail Address" Text="{x:Bind EditableItem.EmailAddress, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Phone" Text="{x:Bind EditableItem.Phone, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Address" Text="{x:Bind EditableItem.AddressLine1, Mode=TwoWay}" />
+
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="60">
+                    <controls:FormTextBox Header="Postal Code" Text="{x:Bind EditableItem.PostalCode, Mode=TwoWay}" />
+                    <controls:FormTextBox Header="City" Text="{x:Bind EditableItem.City, Mode=TwoWay}" />
+                </controls:FluidGrid>
+
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="60">
+                    <controls:FormTextBox Header="Region" Text="{x:Bind EditableItem.Region, Mode=TwoWay}" />
+                    <controls:FormComboBox Header="Country" ItemsSource="{x:Bind LookupTables.CountryCodes}"
+                                           SelectedValue="{x:Bind EditableItem.CountryCode, Mode=TwoWay}"
+                                           SelectedValuePath="CountryCodeID" DisplayMemberPath="Name" />
+                </controls:FluidGrid>
+            </controls:FluidGrid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid ColumnSpacing="6" 
+          Visibility="{x:Bind ViewModel.Item.IsEmpty, Mode=OneWay, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderThickness="0,0,1,0" BorderBrush="LightGray">
+            <views:CustomersCard Margin="6" ViewModel="{x:Bind ViewModel}" Item="{x:Bind ViewModel.Item, Mode=OneWay}" />
+        </Border>
+
+        <controls:Details x:Name="details" Grid.Column="1" Margin="6,0,0,0"
+                          DetailsContent="{x:Bind ViewModel}"
+                          DetailsTemplate="{StaticResource DetailsTemplate}"
+                          IsEditMode="{x:Bind ViewModel.IsEditMode, Mode=OneWay}"
+                          EditCommand="{x:Bind ViewModel.EditCommand}"
+                          DeleteCommand="{x:Bind ViewModel.DeleteCommand}"
+                          SaveCommand="{x:Bind ViewModel.SaveCommand}"
+                          CancelCommand="{x:Bind ViewModel.CancelCommand}" />
+    </Grid>
+</UserControl>

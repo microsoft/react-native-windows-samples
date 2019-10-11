@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="Inventory.Views.CustomerDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Inventory.Controls"
+    xmlns:views="using:Inventory.Views"
+    xmlns:viewmodels="using:Inventory.ViewModels"
+    xmlns:converters="using:Inventory.Converters"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600">
+
+    <UserControl.Resources>
+        <converters:BindingTypeConverter x:Key="BindingTypeConverter"/>
+        <DataTemplate x:Key="DetailsTemplate" x:DataType="viewmodels:CustomerDetailsViewModel">
+            <controls:FluidGrid Columns="2" ColumnSpacing="12" Margin="12,18,6,6" RowSpacing="12">
+                <TextBlock Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="Personal Information"/>
+                <controls:FormTextBox Header="First Name" Text="{x:Bind EditableItem.FirstName, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Last Name" Text="{x:Bind EditableItem.LastName, Mode=TwoWay}" />
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="60">
+                    <controls:FormTextBox Header="Middle Name" Text="{x:Bind EditableItem.MiddleName, Mode=TwoWay}" />
+                    <controls:FormTextBox Header="Sufix" Text="{x:Bind EditableItem.Suffix, Mode=TwoWay}" />
+                </controls:FluidGrid>
+                <controls:FormTextBox Header="Title" Text="{x:Bind EditableItem.Title, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Email Address" Text="{x:Bind EditableItem.EmailAddress, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Phone" Text="{x:Bind EditableItem.Phone, Mode=TwoWay}" />
+
+                <TextBlock  Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="Customer Address" />
+                <controls:FormTextBox Header="Address Line 1" Text="{x:Bind EditableItem.AddressLine1, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Address Line 2" Text="{x:Bind EditableItem.AddressLine2, Mode=TwoWay}" />
+                <controls:FormTextBox Header="City" Text="{x:Bind EditableItem.City, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Region" Text="{x:Bind EditableItem.Region, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Postal Code" Text="{x:Bind EditableItem.PostalCode, Mode=TwoWay}" />
+                <controls:FormComboBox Header="Country" ItemsSource="{x:Bind LookupTables.CountryCodes}" SelectedValue="{x:Bind EditableItem.CountryCode, Mode=TwoWay}" SelectedValuePath="CountryCodeID" DisplayMemberPath="Name" />
+
+                <TextBlock  Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="Customer Demographic"/>
+                <controls:FormCalendarDatePicker Header="Birth Date" Date="{x:Bind EditableItem.BirthDate, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Education" Text="{x:Bind EditableItem.Education, Mode=TwoWay}" />
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="80">
+                    <controls:FormTextBox Header="Occupation" Text="{x:Bind EditableItem.Occupation, Mode=TwoWay}" />
+                    <controls:FormTextBox Header="Yearly Income" Text="{x:Bind EditableItem.YearlyIncome, Mode=TwoWay, Converter={StaticResource BindingTypeConverter}}" DataType="Decimal" />
+                </controls:FluidGrid>
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="80">
+                    <controls:FormTextBox Header="Marital Status" Text="{x:Bind EditableItem.MaritalStatus, Mode=TwoWay}" />
+                    <controls:FormTextBox Header="Total Children" Text="{x:Bind EditableItem.TotalChildren, Mode=TwoWay, Converter={StaticResource BindingTypeConverter}}" DataType="Integer" />
+                </controls:FluidGrid>
+            </controls:FluidGrid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="LightGray" BorderThickness="0,1,1,0" Background="{StaticResource DetailsViewBackgroundColor}">
+            <views:CustomerCard Margin="6" ViewModel="{x:Bind ViewModel}" Item="{x:Bind ViewModel.Item, Mode=OneWay}" />
+        </Border>
+
+        <controls:Details x:Name="details" Grid.Column="1" Margin="6"
+                          DetailsContent="{x:Bind ViewModel}"
+                          DetailsTemplate="{StaticResource DetailsTemplate}"
+                          CanGoBack="{x:Bind ViewModel.CanGoBack}"
+                          IsEditMode="{x:Bind ViewModel.IsEditMode, Mode=OneWay}"
+                          BackCommand="{x:Bind ViewModel.BackCommand}"
+                          EditCommand="{x:Bind ViewModel.EditCommand}"
+                          DeleteCommand="{x:Bind ViewModel.DeleteCommand}"
+                          SaveCommand="{x:Bind ViewModel.SaveCommand}"
+                          CancelCommand="{x:Bind ViewModel.CancelCommand}" />
+    </Grid>
+</UserControl>

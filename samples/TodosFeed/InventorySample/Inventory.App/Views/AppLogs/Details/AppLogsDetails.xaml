@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="Inventory.Views.AppLogsDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Inventory.Controls"
+    xmlns:viewmodels="using:Inventory.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="DetailsTemplate" x:DataType="viewmodels:AppLogDetailsViewModel">
+            <StackPanel Margin="0,12" Spacing="6">
+                <controls:FormTextBox Header="Message" Text="{x:Bind Item.Message, Mode=TwoWay}" TextWrapping="Wrap" Mode="ReadOnly" />
+                <controls:FormTextBox Header="Description" Text="{x:Bind Item.Description, Mode=TwoWay}" TextWrapping="Wrap" Mode="ReadOnly" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid ColumnSpacing="6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="12,12,0,12"
+                    BorderThickness="0,0,1,0"
+                    BorderBrush="LightGray">
+
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12">
+                <FontIcon Margin="0,0,12,6"
+                              FontSize="42"
+                              Glyph="{x:Bind ViewModel.Item.Type, Mode=OneWay, Converter={StaticResource LogTypeConverter}}"
+                              Foreground="{x:Bind ViewModel.Item.Type, Mode=OneWay, Converter={StaticResource LogTypeConverter}}" />
+
+                <TextBlock Style="{StaticResource CardSuperHeader}" 
+                               Text="{x:Bind ViewModel.Item.Type, Mode=OneWay}" 
+                               VerticalAlignment="Center" />
+            </StackPanel>
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Log ID" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind ViewModel.Item.Id, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Date" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind ViewModel.Item.DateTime, Mode=OneWay, Converter={StaticResource DateTimeFormatConverter}}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Time" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind ViewModel.Item.DateTime, Mode=OneWay, ConverterParameter=longtime, Converter={StaticResource DateTimeFormatConverter}}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="User" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind ViewModel.Item.User, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Source" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind ViewModel.Item.Source, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Action" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind ViewModel.Item.Action, Mode=OneWay}" />
+        </StackPanel>
+
+        <controls:Details x:Name="details" Grid.Column="1" Margin="6"
+                          DefaultCommands="delete"
+                          DetailsContent="{x:Bind ViewModel}"
+                          DetailsTemplate="{StaticResource DetailsTemplate}"
+                          CanGoBack="{x:Bind ViewModel.CanGoBack}"
+                          IsEditMode="{x:Bind ViewModel.IsEditMode, Mode=OneWay}"
+                          BackCommand="{x:Bind ViewModel.BackCommand}"
+                          EditCommand="{x:Bind ViewModel.EditCommand}"
+                          DeleteCommand="{x:Bind ViewModel.DeleteCommand}"
+                          SaveCommand="{x:Bind ViewModel.SaveCommand}"
+                          CancelCommand="{x:Bind ViewModel.CancelCommand}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="Inventory.Views.OrdersCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="260" d:DesignHeight="400">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Style="{StaticResource CardHeader}" Text="Order ID" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind Item.OrderID, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Status" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind Item.StatusDesc, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Order Date" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind Item.OrderDate, Mode=OneWay, Converter={StaticResource DateTimeFormatConverter}}" />
+
+            <Rectangle Style="{StaticResource CardSeparator}"/>
+            <TextBlock Style="{StaticResource CardSection}" Text="Customer"  />
+
+            <StackPanel Orientation="Horizontal" Margin="0,3,0,9">
+                <PersonPicture ProfilePicture="{x:Bind Item.Customer.PictureSource, Mode=OneWay, Converter={StaticResource ObjectToImageConverter}}" 
+                           Initials="{x:Bind Item.Customer.Initials, Mode=OneWay}" 
+                           Width="{StaticResource CardPictureRadius}"
+                           Height="{StaticResource CardPictureRadius}" />
+                <TextBlock Style="{StaticResource CardText}" VerticalAlignment="Center" Margin="9,0" Text="{x:Bind Item.Customer.FullName, Mode=OneWay}" />
+            </StackPanel>
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Customer ID" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind Item.CustomerID, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Email" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind Item.Customer.EmailAddress, Mode=OneWay}" />
+
+            <TextBlock Style="{StaticResource CardHeader}" Text="Phone" />
+            <TextBlock Style="{StaticResource CardText}" Text="{x:Bind Item.Customer.Phone, Mode=OneWay}" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

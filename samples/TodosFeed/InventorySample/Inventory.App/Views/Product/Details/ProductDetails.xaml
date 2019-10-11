@@ -1,0 +1,57 @@
+﻿<UserControl
+    x:Class="Inventory.Views.ProductDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Inventory.Controls"
+    xmlns:views="using:Inventory.Views"
+    xmlns:viewmodels="using:Inventory.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="DetailsTemplate" x:DataType="viewmodels:ProductDetailsViewModel">
+            <controls:FluidGrid Margin="12,18,6,6" Columns="2" ColumnSpacing="12" RowSpacing="12">
+                <TextBlock Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="General" />
+                <controls:FormTextBox Header="Name" Text="{x:Bind EditableItem.Name, Mode=TwoWay}" />
+                <controls:FormComboBox Header="Category" ItemsSource="{x:Bind LookupTables.Categories}" SelectedValue="{x:Bind EditableItem.CategoryID, Mode=TwoWay}" SelectedValuePath="CategoryID" DisplayMemberPath="Name" />
+
+                <TextBlock Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="Price" />
+                <controls:FormTextBox Header="List Price" Text="{x:Bind EditableItem.ListPrice, Mode=TwoWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" />
+                <controls:FormTextBox Header="Dealer Price" Text="{x:Bind EditableItem.DealerPrice, Mode=TwoWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" />
+                <controls:FormTextBox Header="Discount" Text="{x:Bind EditableItem.Discount, Mode=TwoWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" />
+
+                <TextBlock Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="Stock" />
+                <controls:FormTextBox Header="Stock Units" Text="{x:Bind EditableItem.StockUnits, Mode=TwoWay}" DataType="Integer" />
+                <controls:FormTextBox Header="Safety Stock" Text="{x:Bind EditableItem.SafetyStockLevel, Mode=TwoWay}" DataType="Integer" />
+
+                <TextBlock Style="{StaticResource FormsSection}" controls:FluidGrid.ColumnSpan="2" Text="Details" />
+                <controls:FormTextBox controls:FluidGrid.ColumnSpan="2" Header="Description" Text="{x:Bind EditableItem.Description, Mode=TwoWay}" TextWrapping="Wrap" AcceptsReturn="True" />
+            </controls:FluidGrid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid BorderBrush="LightGray" 
+              BorderThickness="0,1,1,0"                                   
+              Background="{StaticResource DetailsViewBackgroundColor}">
+            <views:ProductCard Margin="6" ViewModel="{x:Bind ViewModel}" Item="{x:Bind ViewModel.Item, Mode=OneWay}" />
+        </Grid>
+
+        <controls:Details x:Name="details" Grid.Column="1" Margin="6"
+                          DetailsContent="{x:Bind ViewModel}"
+                          DetailsTemplate="{StaticResource DetailsTemplate}"
+                          CanGoBack="{x:Bind ViewModel.CanGoBack}"
+                          IsEditMode="{x:Bind ViewModel.IsEditMode, Mode=OneWay}"
+                          BackCommand="{x:Bind ViewModel.BackCommand}"
+                          EditCommand="{x:Bind ViewModel.EditCommand}"
+                          DeleteCommand="{x:Bind ViewModel.DeleteCommand}"
+                          SaveCommand="{x:Bind ViewModel.SaveCommand}"
+                          CancelCommand="{x:Bind ViewModel.CancelCommand}" />
+    </Grid>
+</UserControl>
