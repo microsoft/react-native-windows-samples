@@ -1,0 +1,146 @@
+﻿<!--
+// ******************************************************************
+
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+
+// ******************************************************************
+-->
+<Window x:Class="ContosoExpenses.Views.ExpenseDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:ContosoExpenses.Converters"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ExpensesDetailViewModel}"
+        xmlns:toolkit="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls"
+        xmlns:local="clr-namespace:ContosoExpenses"
+        mc:Ignorable="d"
+        Title="Expense Detail" Height="500" Width="800"
+        Background="{StaticResource HorizontalBackground}">
+
+    <Window.Resources>
+        <converters:CostToHeightConverter x:Key="CostToHeightConverter" />
+    </Window.Resources>
+
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--  Expense detail -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock FontSize="24" Text="Expense" Grid.Row="0" />
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <TextBlock Text="Type:" FontSize="16" FontWeight="Bold" />
+                <TextBlock Text="{Binding Path=ExpenseType}" FontSize="16" Margin="5, 0, 0, 0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"  Grid.Row="2">
+                <TextBlock Text="Description:" FontSize="16" FontWeight="Bold" />
+                <TextBlock Text="{Binding Path=Description}" FontSize="16" Margin="5, 0, 0, 0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"  Grid.Row="3">
+                <TextBlock Text="Amount:" FontSize="16" FontWeight="Bold" />
+                <TextBlock Text="{Binding Path=Amount}" FontSize="16" Margin="5, 0, 0, 0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"  Grid.Row="4">
+                <TextBlock Text="Location:" FontSize="16" FontWeight="Bold" />
+                <TextBlock Text="{Binding Path=Location}" FontSize="16" Margin="5, 0, 0, 0" />
+            </StackPanel>
+
+            <TextBlock Text="Signature:" FontSize="16" FontWeight="Bold" Grid.Row="5" />
+
+            <toolkit:InkCanvas x:Name="Signature" Grid.Row="6" />
+            
+        </Grid>
+
+        <!-- Chart -->
+        <DockPanel Grid.Column="1" VerticalAlignment="Bottom" Margin="20,0,0,0" MinHeight="420">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0" x:Name="Chart" Width="50" Height="{Binding Path=Amount, Converter={StaticResource CostToHeightConverter}}" VerticalAlignment="Bottom">
+                    <Rectangle StrokeThickness="1" RadiusX="2" RadiusY="2">
+                        <Rectangle.Stroke>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="#4E87D4" Offset="0" />
+                                        <GradientStop Color="#73B2F5" Offset="1" />
+                                    </GradientStopCollection>
+                                </GradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Rectangle.Stroke>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="#FFFFFF" Offset="0" />
+                                        <GradientStop Color="#4E87D4" Offset="1" />
+                                    </GradientStopCollection>
+                                </GradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+
+                <Grid Grid.Column="1" Width="20" Height="400" VerticalAlignment="Bottom">
+                    <Rectangle StrokeThickness="1" RadiusX="2" RadiusY="2">
+                        <Rectangle.Stroke>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="#FF0000" Offset="0" />
+                                        <GradientStop Color="#4CFF00" Offset="1" />
+                                    </GradientStopCollection>
+                                </GradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Rectangle.Stroke>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="#FF0000" Offset="0" />
+                                        <GradientStop Color="#4CFF00" Offset="1" />
+                                    </GradientStopCollection>
+                                </GradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+
+            </Grid>
+
+            <TextBlock Grid.Column="2" Text="1000$ limit" Margin="0,20,0,0"></TextBlock>
+        </DockPanel>
+
+
+    </Grid>
+</Window>

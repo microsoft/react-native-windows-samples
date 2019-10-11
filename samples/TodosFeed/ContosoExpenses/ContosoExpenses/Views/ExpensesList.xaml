@@ -1,0 +1,83 @@
+﻿<!--
+// ******************************************************************
+
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+
+// ******************************************************************
+-->
+<Window x:Class="ContosoExpenses.Views.ExpensesList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContosoExpenses"
+        mc:Ignorable="d"
+        Title="Expenses List" Height="450" Width="800"
+        Closed="Window_Closed"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ExpensesListViewModel}"
+        Background="{StaticResource ExpensesListBackground}">
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="24" Text="Expenses List" Grid.Row="0" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="Employee Id:" FontSize="16" FontWeight="Bold" />
+            <TextBlock Text="{Binding Path=SelectedEmployee.EmployeeId}" FontSize="16" Margin="5, 0, 0, 0" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="2">
+            <TextBlock Text="Full name:" FontSize="16" FontWeight="Bold" />
+            <TextBlock Text="{Binding Path=FullName}" FontSize="16" Margin="5, 0, 0, 0" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="3">
+            <TextBlock Text="E-mail:" FontSize="16" FontWeight="Bold" />
+            <TextBlock Text="{Binding Path=SelectedEmployee.Email}" FontSize="16" Margin="5, 0, 0, 0" />
+        </StackPanel>
+
+        <DataGrid x:Name="ExpensesGrid" 
+                  Grid.Row="4"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="0, 12, 0, 0" 
+                  SelectionMode="Single"
+                  ItemsSource="{Binding Path=Expenses}"
+                  SelectedItem="{Binding Path=SelectedExpense, Mode=TwoWay}"
+                  Background="{StaticResource SemiTransparentBackground}" 
+                  RowBackground="{StaticResource SemiTransparentBackground}"
+                  ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
+                  RowStyle="{StaticResource DataGridRowStyle}"
+                  Foreground="White"
+                  FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date"           Binding="{Binding Path=Date}" />
+                <DataGridTextColumn Header="Type"           Binding="{Binding Path=Type}" />
+                <DataGridTextColumn Header="Description"    Binding="{Binding Path=Description}" />
+                <DataGridTextColumn Header="Cost"           Binding="{Binding Path=Cost}" />
+                <DataGridTextColumn Header="City"           Binding="{Binding Path=City}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button Content="Add new expense"
+                Command="{Binding Path=AddNewExpenseCommand}"
+                Grid.Row="5" HorizontalAlignment="Left" Margin="0, 12, 0, 0" Width="180" />
+    </Grid>
+</Window>

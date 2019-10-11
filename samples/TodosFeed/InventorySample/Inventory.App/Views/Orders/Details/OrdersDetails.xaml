@@ -1,0 +1,69 @@
+﻿<UserControl
+    x:Class="Inventory.Views.OrdersDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Inventory.Controls"
+    xmlns:views="using:Inventory.Views"
+    xmlns:viewmodels="using:Inventory.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="DetailsTemplate" x:DataType="viewmodels:OrderDetailsViewModel">
+            <controls:FluidGrid Margin="0,12,0,0" Columns="2" ColumnSpacing="12" RowSpacing="12">
+                <controls:FormTextBox Header="Ship Address" Text="{x:Bind EditableItem.ShipAddress, Mode=TwoWay}" />
+                <controls:FormTextBox Header="Ship City" Text="{x:Bind EditableItem.ShipCity, Mode=TwoWay}" />
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="120">
+                    <controls:FormTextBox Header="Ship Postal Code" Text="{x:Bind EditableItem.ShipPostalCode, Mode=TwoWay}" />
+                    <controls:FormTextBox Header="Ship Region" Text="{x:Bind EditableItem.ShipRegion, Mode=TwoWay}" />
+                </controls:FluidGrid>
+                <controls:FormComboBox Header="Ship Country" ItemsSource="{x:Bind LookupTables.CountryCodes}" VerticalAlignment="Top"
+                                        SelectedValue="{x:Bind EditableItem.ShipCountryCode, Mode=TwoWay}" SelectedValuePath="CountryCodeID" DisplayMemberPath="Name" />
+
+                <controls:FormComboBox Header="Status" ItemsSource="{x:Bind LookupTables.OrderStatus}"
+                                        SelectedValue="{x:Bind EditableItem.Status, Mode=TwoWay, Converter={StaticResource Int32Converter}}"
+                                        SelectedValuePath="Status" DisplayMemberPath="Name" />
+                <controls:FormComboBox Header="Payment Type" ItemsSource="{x:Bind LookupTables.PaymentTypes}"
+                                        SelectedValue="{x:Bind EditableItem.PaymentType, Mode=TwoWay, Converter={StaticResource Int32Converter}}"
+                                        SelectedValuePath="PaymentTypeID" DisplayMemberPath="Name"
+                                        Visibility="{x:Bind EditableItem.CanEditPayment, Mode=OneWay}" />
+
+                <controls:FluidGrid Columns="2" ColumnSpacing="6" RowSpacing="12" MinColumnWidth="120">
+                    <controls:FormCalendarDatePicker Header="Shipped Date" Date="{x:Bind EditableItem.ShippedDate, Mode=TwoWay}"
+                                        MinDate="{x:Bind EditableItem.OrderDate, Mode=OneWay, Converter={StaticResource DateTimeOffsetConverter}}"
+                                        Visibility="{x:Bind EditableItem.CanEditShipping, Mode=OneWay}" />
+                    <controls:FormComboBox Header="Ship Via" ItemsSource="{x:Bind LookupTables.Shippers}"
+                                        SelectedValue="{x:Bind EditableItem.ShipVia, Mode=TwoWay, Converter={StaticResource Int32Converter}}" SelectedValuePath="ShipperID" DisplayMemberPath="Name"
+                                        Visibility="{x:Bind EditableItem.CanEditShipping, Mode=OneWay}" />
+                </controls:FluidGrid>
+
+                <controls:FormCalendarDatePicker Header="Delivered Date" Date="{x:Bind EditableItem.DeliveredDate, Mode=TwoWay}"
+                                        MinDate="{x:Bind EditableItem.ShippedDate, Mode=OneWay, Converter={StaticResource DateTimeOffsetConverter}}"
+                                        Visibility="{x:Bind EditableItem.CanEditDelivery, Mode=OneWay}" />
+            </controls:FluidGrid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Visibility="{x:Bind ViewModel.Item.IsEmpty, Mode=OneWay, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid BorderBrush="LightGray" 
+              BorderThickness="0,0,1,0"                                   
+              Background="{StaticResource DetailsViewBackgroundColor}">
+            <views:OrdersCard Margin="6,12" Item="{x:Bind ViewModel.Item, Mode=OneWay}" />
+        </Grid>
+
+        <controls:Details x:Name="details" Grid.Column="1" Margin="12,6,6,6"
+                          DetailsContent="{x:Bind ViewModel}"
+                          DetailsTemplate="{StaticResource DetailsTemplate}"
+                          IsEditMode="{x:Bind ViewModel.IsEditMode, Mode=OneWay}"
+                          EditCommand="{x:Bind ViewModel.EditCommand}"
+                          DeleteCommand="{x:Bind ViewModel.DeleteCommand}"
+                          SaveCommand="{x:Bind ViewModel.SaveCommand}"
+                          CancelCommand="{x:Bind ViewModel.CancelCommand}" />
+    </Grid>
+</UserControl>

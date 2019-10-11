@@ -1,0 +1,64 @@
+﻿<!--
+// ******************************************************************
+
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THE CODE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+// THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+
+// ******************************************************************
+-->
+<Window x:Class="ContosoExpenses.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContosoExpenses"
+        xmlns:xamlhost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost"
+        mc:Ignorable="d"
+        Title="Contoso Expenses" Height="600" Width="800"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainWindowViewModel}"
+        Background="{StaticResource MainBackground}">
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="250" />
+        </Grid.RowDefinitions>
+
+        <Menu IsMainMenu="True" Grid.Row="0">
+            <MenuItem Header="_About" FontSize="12" Click="OnOpenAbout" />
+        </Menu>
+
+        <DataGrid x:Name="CustomersGrid" 
+                  ItemsSource="{Binding Path=Employees}"
+                  Grid.Row="1" 
+                  SelectedItem="{Binding Path=SelectedEmployee, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Single"
+                  IsReadOnly="True"
+                  Background="{StaticResource SemiTransparentBackground}" 
+                  RowBackground="{StaticResource SemiTransparentBackground}"
+                  ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
+                  RowStyle="{StaticResource DataGridRowStyle}"
+                  Foreground="White"
+                  FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Employee Id"    Binding="{Binding Path=EmployeeId}" />
+                <DataGridTextColumn Header="Name"           Binding="{Binding Path=FirstName}" />
+                <DataGridTextColumn Header="Surname"        Binding="{Binding Path=LastName}" />
+                <DataGridTextColumn Header="E-mail"         Binding="{Binding Path=Email}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <xamlhost:WindowsXamlHost 
+            Margin="0, 20, 0, 0"
+            Grid.Row="2" InitialTypeName="TodosFeed.Component.TodosFeedControl" />
+    </Grid>
+</Window>

@@ -1,0 +1,46 @@
+﻿<Application
+    x:Class="Inventory.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Inventory.Converters"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/Styles/CalendarPicker.xaml" />
+                <ResourceDictionary Source="/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="/Styles/PivotHeaderItem.xaml" />
+                <ResourceDictionary Source="/Styles/NavigationView.xaml" />
+                <ResourceDictionary Source="/Styles/Sections.xaml" />
+                <ResourceDictionary Source="/Styles/ToolBar.xaml" />
+                <ResourceDictionary Source="/Styles/Cards.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <SolidColorBrush x:Key="DetailsViewBackgroundColor" Color="#F5F5F5" />
+
+            <!--  Colors  -->
+            <SolidColorBrush x:Key="Information" Color="RoyalBlue" />
+            <SolidColorBrush x:Key="Warning" Color="#ffff00" />
+            <SolidColorBrush x:Key="Error" Color="#ce0e0e" />
+
+            <!--  Converters  -->
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" FalseValue="Collapsed" TrueValue="Visible" />
+            <converters:BoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" FalseValue="Visible" TrueValue="Collapsed" />
+            <converters:BoolNegationConverter x:Key="BoolNegationConverter" />
+            <converters:DateTimeFormatConverter x:Key="DateTimeFormatConverter" />
+            <converters:DateTimeOffsetConverter x:Key="DateTimeOffsetConverter" />
+            <converters:DecimalConverter x:Key="DecimalConverter" />
+            <converters:DoubleConverter x:Key="DoubleConverter" />
+            <converters:Int16Converter x:Key="Int16Converter" />
+            <converters:Int32Converter x:Key="Int32Converter" />
+            <converters:Int64Converter x:Key="Int64Converter" />
+            <converters:LogTypeConverter x:Key="LogTypeConverter" />
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <converters:ObjectToImageConverter x:Key="ObjectToImageConverter" />
+            
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

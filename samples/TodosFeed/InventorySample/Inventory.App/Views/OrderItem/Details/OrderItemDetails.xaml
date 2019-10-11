@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="Inventory.Views.OrderItemDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Inventory.Controls"
+    xmlns:views="using:Inventory.Views"
+    xmlns:viewmodels="using:Inventory.ViewModels"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="DetailsTemplate" x:DataType="viewmodels:OrderItemDetailsViewModel">
+            <controls:FluidGrid  Margin="12,18,6,6" Columns="2" ColumnSpacing="12" RowSpacing="12">
+                <controls:ProductSuggestBox DisplayText="{x:Bind EditableItem.Product.Name, Mode=OneWay}" ProductSelectedCommand="{x:Bind ProductSelectedCommand}" />
+                <Rectangle />
+                <controls:FormTextBox Header="Quantity" Text="{x:Bind EditableItem.Quantity, Mode=TwoWay, Converter={StaticResource Int32Converter}}" DataType="Integer" />
+                <controls:FormTextBox Header="Unit Price" Text="{x:Bind EditableItem.UnitPrice, Mode=OneWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" Mode="ReadOnly" />
+
+                <controls:FormTextBox Header="Discount" Text="{x:Bind EditableItem.Discount, Mode=TwoWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" />
+                <controls:FormTextBox Header="Subtotal" Text="{x:Bind EditableItem.Subtotal, Mode=OneWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" Mode="ReadOnly" />
+
+                <controls:FormComboBox Header="Tax Type" ItemsSource="{x:Bind LookupTables.TaxTypes}"
+                                                SelectedValue="{x:Bind EditableItem.TaxType, Mode=TwoWay, Converter={StaticResource Int32Converter}}"
+                                                SelectedValuePath="TaxTypeID" DisplayMemberPath="Name" />
+                <controls:FormTextBox Header="Total" Text="{x:Bind EditableItem.Total, Mode=OneWay, Converter={StaticResource DecimalConverter}}" DataType="Decimal" Format="0.00" Mode="ReadOnly" />
+            </controls:FluidGrid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid BorderBrush="LightGray" 
+              BorderThickness="0,1,1,0"                                   
+              Background="{StaticResource DetailsViewBackgroundColor}">
+            <views:OrderItemCard Margin="6" Item="{x:Bind ViewModel.Item, Mode=OneWay}" />
+        </Grid>
+
+        <controls:Details x:Name="details" Grid.Column="1" Margin="6"
+                          DetailsContent="{x:Bind ViewModel}"
+                          DetailsTemplate="{StaticResource DetailsTemplate}"
+                          CanGoBack="{x:Bind ViewModel.CanGoBack}"
+                          IsEditMode="{x:Bind ViewModel.IsEditMode, Mode=OneWay}"
+                          BackCommand="{x:Bind ViewModel.BackCommand}"
+                          EditCommand="{x:Bind ViewModel.EditCommand}"
+                          DeleteCommand="{x:Bind ViewModel.DeleteCommand}"
+                          SaveCommand="{x:Bind ViewModel.SaveCommand}"
+                          CancelCommand="{x:Bind ViewModel.CancelCommand}" />
+    </Grid>
+</UserControl>
