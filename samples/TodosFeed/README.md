@@ -40,7 +40,7 @@ Once the packager is up & running, open your browser (Chrome or [the new Microso
 Then open the **ContosoExpenses.sln** file inside the **ContosoExpenses** folder with Visual Studio 2019. Make sure to choose x86 or x64 as CPU architecture, build the **ContosoExpenses.Package** project, then launch it by pressing CTRL-F5.
 
 ### Learn more
-This sample is a companion for a blog post about React Native for Windows, which is available at **TODO**.
+This sample is a companion for a blog post about React Native for Windows, which is available on the [Windows AppConsult blog](https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Getting-started-with-React-Native-for-Windows/ba-p/912093).
 
  
  
