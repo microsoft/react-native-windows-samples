@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.6"
+    "react-native": "^0.60.0",
+    "react-native-windows": "0.60.0-vnext.32",
+    "rnpm-plugin-windows": "^0.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
