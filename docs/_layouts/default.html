@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+<head>
+
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+    <meta charset="UTF-8">
+
+    {% seo %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="twocolumn">
+            <a href="{{ site.main_url }}">React Native for Windows</a>
+            <a href="{{ site.npmpackage_url }}">v0.60</a>
+        </div>
+        <div class="twocolumn" align="right">
+            <a href="{{ site.github_url }}">Github</a>
+            <a href="{{ site.docs_url }}">Docs</a>
+            <a href="{{ site.blog_url}}">Blog</a>
+            <a href="{{ site.samples_url}}">Samples</a>
+        </div>
+    </div>
+    {% if page.is_blog %}
+    {% else %}
+    <header class="page-header">
+        <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <h2 class="project-tagline">
+            {{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    </header>
+    {% endif %}
+
+    <main id="content" class="main-content" role="main">
+        {% if page.is_blog %}
+        <!-- Side navigation -->
+        <div class="row">
+            <div class="sidenav">
+                <!-- Add a line item for new blogs -->
+                <a href="July2019Updates">July 2019 updates</a>
+                <a href="Roadmap2019">Roadmap for vnext</a>
+            </div>
+            <!-- Page content -->
+            <div class="blog-container">
+                <h1 class="project-name">{{ page.title }}</h1>
+                <h4>{{ page.description }}</h4>
+                <h4>{{ page.published_date }}</h4>
+                {{ content }}
+            </div>
+        </div>
+
+        {% else %}
+        <!-- Non blog content -->
+        {{ content }}
+        {% endif %}
+
+
+    </main>
+    <footer class="site-footer">
+        <div class="row" align="center">
+            <div class="threecolumn" align="left">
+                <h4>React Native Docs</h4>
+                <ul style="list-style-type:none;">
+                    <li><a href="https://facebook.github.io/react-native/docs/getting-started.html">Getting Started</a>
+                    </li>
+                    <li><a href="https://facebook.github.io/react-native/docs/tutorial.html">Tutorial</a></li>
+                    <li><a href="https://facebook.github.io/react-native/docs/components-and-apis.html">Components and
+                            APIs</a></li>
+                    <li><a href="https://facebook.github.io/react-native/docs/more-resources.html">More resources</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="threecolumn" align="left">
+                <h4>React Native for Windows Docs</h4>
+                <ul style="list-style-type:none;">
+                    <li><a
+                            href="https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/GettingStarted.md">Getting
+                            Started</a></li>
+                    <li><a
+                            href="https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/ParityStatus.md">API
+                            parity with React Native</a></li>
+                    <li><a
+                            href="https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/NativeModules.md">Native
+                            Modules</a></li>
+                    <li><a
+                            href="https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/ViewManagers.md">Native
+                            UI Components</a></li>
+                    <li><a
+                            href="https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/windowsbrushandtheme.md">Using
+                            Windows Brushes and Themes</a></li>
+                    <li><a href="https://github.com/microsoft/react-native-windows/tree/master/vnext/docs">More
+                            resources</a></li>
+                </ul>
+            </div>
+            <div class="threecolumn" align="left">
+                <h4>More resources</h4>
+                <ul style="list-style-type:none;">
+                    <li><a href="https://twitter.com/ReactWindows">@ReactWindows Twitter</a></li>
+                    <li><a href="https://github.com/microsoft/react-native-windows">Github</a></li>
+                    <li><a href="{{ site.blog_url}}">Blog</a></li>
+                    <li><a href="{{ site.samples_url}}">Samples</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub
+                Pages</a>.</span>
+
+    </footer>
+</body>
+
+</html>
