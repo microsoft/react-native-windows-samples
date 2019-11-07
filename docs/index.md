@@ -34,21 +34,21 @@ We are in the process of re-implementing React Native for Windows in C++, for be
 
 ## Resources
 
-Develop a React Native for Windows app - [Getting Started](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/GettingStarted.md). Learn the **basics of React Native** using the [React Native Tutorial](https://facebook.github.io/react-native/docs/tutorial.html)
+Develop a React Native for Windows app - [Getting Started](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/GettingStarted.md). Learn the **basics of React Native** using the [React Native Tutorial](https://facebook.github.io/react-native/docs/tutorial.html).
 
 Learn about the core [React Native Components and APIs](https://facebook.github.io/react-native/docs/activityindicator). Almost all of these are supported by React Native for Windows and we continue to add more support. Take a look at the [API Parity status](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/ParityStatus.md) for a live glimpse of any missing or partially implemented React Native APIs on Windows. 
 
 In addition to the core, we have added a few **extra APIs and features on Windows**. 
-   - Learn how to access signature Windows themes and Fluent Design visuals like Acrylic and Reveal from React Native for Windows - [Windows Brushes and Themes](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/windowsbrushandtheme.md)
+   - Learn how to access signature Windows themes and Fluent Design visuals like Acrylic and Reveal from React Native for Windows - [Windows Brushes and Themes](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/windowsbrushandtheme.md).
    - You can begin taking a look [here](https://github.com/microsoft/react-native-windows/tree/master/vnext/docs/api) for new Windows specific APIs.  
 
-Learn how to **extend React Native for Windows** through [Native modules](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/NativeModules.md) and [Native UI components](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/ViewManagers.md)
+Learn how to **extend React Native for Windows** through [Native modules](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/NativeModules.md) and [Native UI components](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/ViewManagers.md).
 
 Take a look at some of the **sample apps** we have published for inspiration:
    - [Calculator app](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/Calculator) shows an example of a full cross-platform React Native app for iOS, Android and Windows. 
    - [ToDos Feed app](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/TodosFeed) illustrates the usage of React Native for Windows in 3 different contexts: as a full Windows 10 app, as a component in a native Windows 10 app and as a component in a Win32 app. This sample is a companion for a blog post about React Native for Windows, which is available on the [Windows AppConsult blog](https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Getting-started-with-React-Native-for-Windows/ba-p/912093).
 
-Lastly, we are fully **open source**. Head over to React Native for Windows [Github](https://github.com/microsoft/react-native-windows) to learn more, file issues and begin contributing. 
+Lastly, we are fully **open source**. Head over to React Native for Windows [GitHub](https://github.com/microsoft/react-native-windows) to learn more, file issues and begin contributing. 
 
 You can follow us on Twitter [@ReactWindows](https://twitter.com/ReactWindows) for latest news and updates. 
 
