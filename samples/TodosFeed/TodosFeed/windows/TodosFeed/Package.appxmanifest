@@ -1,31 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity
-    Name="1653213b-848b-4310-9be0-1b40fd72f73d"
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+ <Identity
+    Name="419cf427-c114-45fe-80f3-57e861758fbc"
     Publisher="CN=mpagani"
     Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="1653213b-848b-4310-9be0-1b40fd72f73d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <mp:PhoneIdentity PhoneProductId="419cf427-c114-45fe-80f3-57e861758fbc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
   <Properties>
     <DisplayName>TodosFeed</DisplayName>
-    <PublisherDisplayName>React Native for UWP</PublisherDisplayName>
+    <PublisherDisplayName>mpagani</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
+
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
   </Dependencies>
+
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="x-generate"/>
   </Resources>
+
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TodosFeed.App">
-      <uap:VisualElements DisplayName="TodosFeed" Description="TodosFeed"
-        Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
-        </uap:DefaultTile>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="TodosFeed.App">
+      <uap:VisualElements
+        DisplayName="TodosFeed"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="TodosFeed"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
   </Applications>
+
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>

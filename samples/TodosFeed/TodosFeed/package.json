@@ -10,17 +10,17 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "^0.60.0",
-    "react-native-windows": "0.60.0-vnext.23",
-    "rnpm-plugin-windows": "^0.3.5"
+    "react-native-windows": "0.60.0-vnext.71",
+    "rnpm-plugin-windows": "^0.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.3",
-    "@babel/runtime": "^7.6.3",
+    "@babel/core": "^7.7.2",
+    "@babel/runtime": "^7.7.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
-    "eslint": "^6.5.1",
+    "eslint": "^6.6.0",
     "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.56.0",
+    "metro-react-native-babel-preset": "^0.57.0",
     "react-test-renderer": "16.8.6"
   },
   "jest": {
