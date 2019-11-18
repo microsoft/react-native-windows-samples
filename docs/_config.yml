@@ -1,0 +1,9 @@
+theme: jekyll-theme-cayman
+title: React Native for Windows
+description: Build native Windows apps with Javascript and React.
+main_url: https://microsoft.github.io/react-native-windows-samples/
+blog_url: https://microsoft.github.io/react-native-windows-samples/blog/Roadmap2019
+samples_url: https://github.com/microsoft/react-native-windows-samples/tree/master/samples
+npmpackage_url: https://www.npmjs.com/package/react-native-windows
+github_url: https://github.com/microsoft/react-native-windows
+docs_url: https://github.com/microsoft/react-native-windows/tree/master/vnext/docs
