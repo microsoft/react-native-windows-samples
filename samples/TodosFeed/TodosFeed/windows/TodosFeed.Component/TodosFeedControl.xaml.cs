@@ -15,7 +15,7 @@ namespace TodosFeed.Component
 
         public void LoadReact()
         {
-            InstanceSettings settings;
+            InstanceSettings settings = new IntanceSettings();
 
             settings.UseLiveReload = true;
             settings.UseWebDebugger = true;
