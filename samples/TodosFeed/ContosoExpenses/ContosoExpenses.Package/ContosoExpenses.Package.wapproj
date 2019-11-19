@@ -55,16 +55,17 @@
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>ContosoExpenses.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>1BB2AD8D5EE4854195062A98E3D3BA9BDEEE6267</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>E0F2B930C81BFCDF03E2ECF63AE35A0AECECD8C5</PackageCertificateThumbprint>
     <EntryPointProjectUniqueName>..\ContosoExpenses\ContosoExpenses.csproj</EntryPointProjectUniqueName>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="ContosoExpenses.Package_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ContosoExpenses.Package_TemporaryKey.pfx" />
     <Content Include="Images\SplashScreen.scale-200.png" />
     <Content Include="Images\LockScreenLogo.scale-200.png" />
     <Content Include="Images\Square150x150Logo.scale-200.png" />
