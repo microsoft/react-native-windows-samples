@@ -19,13 +19,13 @@ In this example, we'll look at three things:
 
 First import the Platform API into your React Native app.
 
-```JavaScript
+```JSX
 import { AppTheme } from 'react-native-windows'
 ```
 
 Create a local variable to use in a style conditional or to reference elsewhere, and then supply mounting functions to ensure that you are listening to the theme change events correctly.
 
-```JavaScript
+```JSX
 class MyAppClass extends Component {
   state = {
     currentTheme: AppTheme.currentTheme
@@ -50,7 +50,7 @@ class MyAppClass extends Component {
 
 If the app author wants to switch the style of their component manually based on the system's theme (Dark or Light), they can do so with CSS-like style conditionals.
 
-```JavaScript
+```JSX
  <Button title='click me' color={this.state.currentTheme === 'dark' ? 'grey' : 'orange'}/>
 ```
 
@@ -60,7 +60,7 @@ These examples cover how to access and use the Windows system theme brushes and 
 
 #### Using theme brushes in a style
 
-```css
+```JSX
 const styles = StyleSheet.create({
   title: {
     fontSize: 19,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 
 In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the windowsbrush object.
 
-```css
+```JSX
 const styles = StyleSheet.create({
   title: {
     fontSize: 19,
@@ -96,7 +96,7 @@ The `windowsbrush` api gives you access to all of the system acrylic brushes whi
 
 <img src="assets/rnw-acrylic-surface.png" width="277" height="227"/>
 
-```css
+```JSX
 const styles = StyleSheet.create({
   viewcomponent: {
     backgroundColor: {windowsbrush: 'SystemControlAcrylicWindowBrush'}
@@ -110,7 +110,7 @@ Reveal can be applied to surfaces exactly the same way that Acrylic and other sy
 
 <img src="assets/reveal-surface-animation.gif" width="200" height="180"/>
 
-```css
+```JSX
 const styles = StyleSheet.create({
   viewcomponent: {
     backgroundColor: {windowsbrush: 'SystemControlBackgroundAccentRevealBorderBrush'}
