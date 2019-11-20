@@ -1,0 +1,7 @@
+{
+  "docs": {
+    "The Basics": ["getting-started", "contributing", "parity-status"],
+    "Testing": ["e2e-test", "e2e-test-more-about"],
+    "Native Modules": ["native-modules", "native-modules-advanced"]
+  }
+}

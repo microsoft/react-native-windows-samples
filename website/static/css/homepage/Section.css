@@ -1,0 +1,34 @@
+.Section {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.Section + .Section {
+  border-top: 1px solid $divider;
+}
+
+.Section.light {
+  background-color: $backgroundColor;
+}
+
+.Section.tint {
+  background-color: $tintColor;
+}
+
+.Section.dark {
+  background-color: $dark;
+}
+
+.Section .content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 960px) {
+  .Section .content {
+    width: 80%;
+  }
+}
