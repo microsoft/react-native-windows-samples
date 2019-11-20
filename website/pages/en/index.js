@@ -208,7 +208,7 @@ class Index extends React.Component {
     );
 
     return (
-      <div className="mainContainer">
+      <div className="homepage">
         <HeaderHero />
         <Intro />
         <Roadmap />
