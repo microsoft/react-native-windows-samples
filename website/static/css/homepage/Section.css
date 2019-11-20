@@ -19,3 +19,16 @@
 .Section.dark {
   background-color: $dark;
 }
+
+.Section .content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 960px) {
+  .Section .content {
+    width: 80%;
+  }
+}

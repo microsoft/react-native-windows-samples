@@ -9,8 +9,6 @@
 .HeaderHero .socialLinks {
   display: flex;
   justify-content: flex-end;
-  /* margin-right: 60px;
-  margin-top: -10px; make this tighter */
   max-width: 1200px;
   margin: -10px auto 0px;
 }
