@@ -11,6 +11,26 @@
   transition: none;
 }
 
+.blog .button {
+  color: $subtle;
+  border: 1px solid $subtle;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em;
+  padding: 10px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+
+.blog .button:hover {
+  color: white;
+  border: 1px solid $subtle;
+  background-color: $subtle;
+}
+
 /* Put the image on the left of the block */
 .blogContainer .postHeader .authorBlock {
   flex-direction: row-reverse;
