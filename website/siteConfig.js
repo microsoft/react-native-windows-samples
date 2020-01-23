@@ -14,10 +14,10 @@ const siteConfig = {
   title: "React Native for Windows",
   tagline: "Build native Windows apps with Javascript and React",
   url: "https://microsoft.github.io",
-  baseUrl: "/react-native-windows/",
+  baseUrl: "/react-native-desktop/",
   repoUrl,
   // Used for publishing and more
-  projectName: "react-native-windows",
+  projectName: "react-native-desktop",
   organizationName: "microsoft",
 
   editUrl:
@@ -25,6 +25,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    { page: "versions", label: "v0.61" },
     { doc: "getting-started", label: "Docs" },
     { blog: true, label: "Blog" },
     { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },

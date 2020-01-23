@@ -1,12 +1,12 @@
 ---
 id: native-modules
-title: Native Modules and React-Native-Windows
+title: Native Modules
 ---
 
 > **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](../../packages/microsoft-reactnative-sampleapps)
+> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
 
 Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to reimplement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 
@@ -163,25 +163,30 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
 
-_NativeModuleSample.js_
-
+*NativeModuleSample.js*
 ```js
-import React, { Component } from "react";
-import { AppRegistry, Alert, Text, View } from "react-native";
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  Alert,
+  Text,
+  View,
+} from 'react-native';
 
-import { NativeModules, NativeEventEmitter } from "react-native";
+import { NativeModules, NativeEventEmitter } from 'react-native';
 
 const FancyMathEventEmitter = new NativeEventEmitter(NativeModules.FancyMath);
 
 class NativeModuleSample extends Component {
+
   componentDidMount() {
     // Subscribing to FancyMath.AddEvent
-    FancyMathEventEmitter.addListener("AddEvent", eventHandler, this);
+    FancyMathEventEmitter.addListener('AddEvent', eventHandler, this);
   }
 
   componentWillUnmount() {
     // Unsubscribing from FancyMath.AddEvent
-    FancyMathEventEmitter.removeListener("AddEvent", eventHandler, this);
+    FancyMathEventEmitter.removeListener('AddEvent', eventHandler, this);
   }
 
   eventHandler(result) {
@@ -193,29 +198,26 @@ class NativeModuleSample extends Component {
     NativeModules.FancyMath.add(
       /* arg a */ NativeModules.FancyMath.Pi,
       /* arg b */ NativeModules.FancyMath.E,
-      /* callback */ function(result) {
+      /* callback */ function (result) {
         Alert.alert(
-          "FancyMath",
+          'FancyMath',
           `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
-          [{ text: "OK" }],
-          { cancelable: false }
-        );
-      }
-    );
+          [{ text: 'OK' }],
+          {cancelable: false});
+      });
   }
 
   render() {
     return (
       <View>
-        <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
-        <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
-        <Button onPress={this._onPressHandler} title="Click me!" />
-      </View>
-    );
+         <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
+         <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
+         <Button onPress={this._onPressHandler} title="Click me!"/>
+      </View>);
   }
 }
 
-AppRegistry.registerComponent("NativeModuleSample", () => NativeModuleSample);
+AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 ```
 
 To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows vNext in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
@@ -404,25 +406,30 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
 
-_NativeModuleSample.js_
-
+*NativeModuleSample.js*
 ```js
-import React, { Component } from "react";
-import { AppRegistry, Alert, Text, View } from "react-native";
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  Alert,
+  Text,
+  View,
+} from 'react-native';
 
-import { NativeModules, NativeEventEmitter } from "react-native";
+import { NativeModules, NativeEventEmitter } from 'react-native';
 
 const FancyMathEventEmitter = new NativeEventEmitter(NativeModules.FancyMath);
 
 class NativeModuleSample extends Component {
+
   componentDidMount() {
     // Subscribing to FancyMath.AddEvent
-    FancyMathEventEmitter.addListener("AddEvent", eventHandler, this);
+    FancyMathEventEmitter.addListener('AddEvent', eventHandler, this);
   }
 
   componentWillUnmount() {
     // Unsubscribing from FancyMath.AddEvent
-    FancyMathEventEmitter.removeListener("AddEvent", eventHandler, this);
+    FancyMathEventEmitter.removeListener('AddEvent', eventHandler, this);
   }
 
   eventHandler(result) {
@@ -434,29 +441,26 @@ class NativeModuleSample extends Component {
     NativeModules.FancyMath.add(
       /* arg a */ NativeModules.FancyMath.Pi,
       /* arg b */ NativeModules.FancyMath.E,
-      /* callback */ function(result) {
+      /* callback */ function (result) {
         Alert.alert(
-          "FancyMath",
+          'FancyMath',
           `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
-          [{ text: "OK" }],
-          { cancelable: false }
-        );
-      }
-    );
+          [{ text: 'OK' }],
+          {cancelable: false});
+      });
   }
 
   render() {
     return (
       <View>
-        <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
-        <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
-        <Button onPress={this._onPressHandler} title="Click me!" />
-      </View>
-    );
+         <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
+         <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
+         <Button onPress={this._onPressHandler} title="Click me!"/>
+      </View>);
   }
 }
 
-AppRegistry.registerComponent("NativeModuleSample", () => NativeModuleSample);
+AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 ```
 
 To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows vNext in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
