@@ -14,10 +14,10 @@ const siteConfig = {
   title: "React Native for Windows & Mac",
   tagline: "Build native Windows apps with Javascript and React",
   url: "https://microsoft.github.io",
-  baseUrl: "/react-native-windows-mac/",
+  baseUrl: "/react-native-windows/",
   repoUrl,
   // Used for publishing and more
-  projectName: "react-native-windows-mac",
+  projectName: "react-native-windows",
   organizationName: "microsoft",
 
   editUrl:
