@@ -77,7 +77,7 @@ If you're curious about the **sample apps** we have published for inspiration:
 
 [Get started]: docs/getting-started
 [React Native for Windows]: https://github.com/microsoft/react-native-windows
-[React Native for Mac]: https://github.com/microsoft/react-native
+[React Native for Mac]: https://aka.ms/react-native-mac
 [React Native Tutorial]: https://facebook.github.io/react-native/docs/tutorial.html
 [React Native Components and APIs]: https://facebook.github.io/react-native/docs/activityindicator
 [API Parity status]: docs/parity-status
