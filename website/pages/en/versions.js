@@ -58,6 +58,7 @@ class Versions extends React.Component {
           <h1 style={{fontWeight: 'bold'}}>Latest version</h1>
           <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
           <TableRow versionNumber="MASTER"
+          docLink="https://www.aka.ms/react-native-windows-mac"
           changeLogLink="https://github.com/microsoft/react-native-windows/compare/react-native-windows_v0.60.0-vnext.118...master"
           changeLogText="Commits since 0.60"/>
           <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>

@@ -1,48 +1,55 @@
 ---
 id: consuming-rnw
-title: Consuming React-Native-Windows
+title: Creating a React Native for Windows App
 ---
 
-## Installing React Native
+## Installing React Native Windows
 
-- Install React Native command line interface using NPM:
-  ```
-  npm install -g react-native-cli
-  ```
-- Initialize your React Native project
+There are two different options available when installing a React Native project with the intention of building for Windows: you can either choose the latest **Stable** release or the latest **Beta** release - instructions will call out which steps need to change for either.
 
-  Next, [generate a React Native project](http://facebook.github.io/react-native/docs/getting-started.html#creating-a-new-application). In the directory you would like your React Native Windows project directory, run:
+### Initialize your React Native project
+Make sure you do this in the directory you would like your React Native Windows project to live.
 
-  ```
-  react-native init <project name> --version 0.60.6
-  ```
+**Stable**
+```
+react-native init <project name> --version ^0.60
+```
 
-  Navigate into this newly created directory:
+**Beta**
+```
+react-native init <project name> --version ^0.61
+```
 
-  ```
-  cd <project name>
-  ```
+### Navigate into this newly created directory
 
-## Installing React Native Windows (vnext)
+```
+cd <project name>
+```
 
-- Install the React Native Windows command line interface ([rnpm-plugin-windows](https://www.npmjs.com/package/rnpm-plugin-windows)).
+### Install the React Native Windows [command line interface](https://www.npmjs.com/package/rnpm-plugin-windows)
 
-  If you are using Yarn, run
+If using yarn:
 
-  ```
-  yarn add rnpm-plugin-windows
-  ```
+```
+yarn add rnpm-plugin-windows
+```
 
-  Alternatively, if you are using NPM, run
+> Alternatively, if you're using NPM:
+>
+>```npm install --save rnpm-plugin-windows```
 
-  ```
-  npm install --save rnpm-plugin-windows
-  ```
+### Install the Windows extension
 
-- Next, initialize your React Native Windows `vnext` in the project directory. This step may take a while during first run due to dependency download.
-  ```
-  react-native windows --template vnext
-  ```
+**Stable**
+```
+react-native windows
+```
+
+**Beta**
+```
+react-native windows --template beta
+```
+
 
 ## Running a React Native Windows App
 
@@ -87,7 +94,7 @@ A new Command Prompt window will open with the React packager as well as a `reac
   ```
   - Press `F5` or navigate to the debug menu (alternatively press `Ctrl+Shift+D`) and in the Debug dropdown select "Debug Windows" and press the green arrow to run the application.
 
-## Authoring Native Modules (vnext)
+## Authoring Native Modules
 
 See [Native Modules and React Native Windows](native-modules.md).
 

@@ -1,9 +1,21 @@
 ---
 id: getting-started
-title: Getting Started (vnext)
+title: Getting Started
 ---
 
-This is a summary of setup steps needed to install and work with React Native for Windows (vnext). See the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html) for React Native details and see [Getting Started Guide - current](https://github.com/microsoft/react-native-windows/blob/master/current/docs/GettingStarted.md) for working with the `current` React Native for Windows implementation.
+This is a summary of all the steps needed to get setup to install a React Native for Windows app.
+
+- Install React Native
+  ```
+  npm install -g react-native-cli
+  ```
+- [Create a React Native for Windows app](consuming-rnw.md)
+
+## References
+
+For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
+
+Alternately, if you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building react-native-windows repo](building-rnw.md).
 
 ## System Requirements
 
@@ -29,13 +41,6 @@ This is a summary of setup steps needed to install and work with React Native fo
   ```
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if consuming react-native-windows, but required to work in the react-native-windows repo)
-
-## Installing React Native for Windows (vnext)
-
-There are two ways to install and work with React Native for Windows (vnext):
-
-1. [Consuming react-native-windows](consuming-rnw.md) : Using react-native-windows in your package
-1. [Building react-native-windows repo](building-rnw.md) : Manually by cloning the repo and get things running.
 
 ## E2E Test
 
