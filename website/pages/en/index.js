@@ -46,7 +46,7 @@ Download the latest [npm package] to get the updates.
 [npm package]: https://www.npmjs.com/package/react-native-windows
   `,
   roadmapmac: `
-This is where the MacOS roadmap information will go
+Coming soon!
 
 [Roadmap 2019]: blog/2019/07/22/roadmap
 [npm package]: https://www.npmjs.com/package/react-native-windows
@@ -100,13 +100,15 @@ class Index extends React.Component {
 
     const GetStartedButton = () => (
       <div>
+      <div style={{marginBottom: 35}}>
         <a
           className="ActionButton primary"
           href={baseUrl + "docs/getting-started"}
           target="_self"
         >
-          Get started
+          Get started with Windows
         </a>
+        </div>
       </div>
     );
 
