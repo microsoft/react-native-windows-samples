@@ -3,8 +3,6 @@ id: e2e-test-more-about
 title: More about E2E test
 ---
 
-# Overview
-
 ## Technical Decisions
 
 ### MSTest vs node test runner

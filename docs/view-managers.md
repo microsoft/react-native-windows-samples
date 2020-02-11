@@ -3,10 +3,10 @@ id: view-managers
 title: Native UI Components
 ---
 
-> **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
->
+>**This documentation and the underlying platform code is a work in progress.**
+>**Examples (C# and C++/WinRT):**
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](../../packages/microsoft-reactnative-sampleapps)
+> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
 
 There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like ScrollView and TextInput, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, we can wrap up these existing components for seamless integration with your React Native application.
 
@@ -232,69 +232,52 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 _ViewManagerSample.js_
 
 ```js
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   AppRegistry,
   Button,
   requireNativeComponent,
   StyleSheet,
   UIManager,
-  View
-} from "react-native";
+  View,
+} from 'react-native';
 
-let CustomUserControl = requireNativeComponent("CustomUserControl");
+let CustomUserControl = requireNativeComponent('CustomUserControl');
 
 class ViewManagerSample extends Component {
   onPress() {
     if (_customControlRef) {
       const tag = findNodeHandle(this._customControlRef);
-      UIManager.dispatchViewManagerCommand(
-        tag,
-        UIManager.getViewManagerConfig("CustomUserControl").Commands
-          .CustomCommand,
-        ["arg1", "arg2"]
-      );
+      UIManager.dispatchViewManagerCommand(tag, UIManager.getViewManagerConfig('CustomUserControl').Commands.CustomCommand, ['arg1', 'arg2']);
     }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <CustomUserControl
-          style={styles.customcontrol}
-          label="CustomUserControl!"
-          ref={ref => {
-            this._customControlRef = ref;
-          }}
-        />
-        <Button
-          onPress={() => {
-            this.onPress();
-          }}
-          title="Call CustomUserControl Commands!"
-        />
-      </View>
-    );
+         <CustomUserControl style={styles.customcontrol} label="CustomUserControl!" ref={(ref) => { this._customControlRef = ref; }} />
+         <Button onPress={() => { this.onPress(); }} title="Call CustomUserControl Commands!" />
+      </View>);
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
   customcontrol: {
-    color: "#333333",
-    backgroundColor: "#006666",
+    color: '#333333',
+    backgroundColor: '#006666',
     width: 200,
     height: 20,
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
-AppRegistry.registerComponent("ViewManagerSample", () => ViewManagerSample);
+AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
 ```
 
 ## Sample ViewManager (C++)
@@ -310,15 +293,15 @@ _CustomUserControlViewManager.h_
 ```c++
 #pragma once
 
-#include "winrt/Microsoft.ReactNative.Bridge.h"
+#include "winrt/Microsoft.ReactNative.h"
 
 namespace winrt::ViewManagerSample::implementation {
 
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
-                                             winrt::Microsoft::ReactNative::Bridge::IViewManager,
-                                             winrt::Microsoft::ReactNative::Bridge::IViewManagerWithNativeProperties,
-                                             winrt::Microsoft::ReactNative::Bridge::IViewManagerWithCommands> {
+                                             winrt::Microsoft::ReactNative::IViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands> {
  public:
   CustomUserControlViewManager() = default;
 
@@ -329,34 +312,35 @@ struct CustomUserControlViewManager : winrt::implements<
 
   // IViewManagerWithNativeProperties
   winrt::Windows::Foundation::Collections::
-      IMapView<winrt::hstring, winrt::Microsoft::ReactNative::Bridge::ViewManagerPropertyType>
+      IMapView<winrt::hstring, winrt::Microsoft::ReactNative::ViewManagerPropertyType>
       NativeProps() noexcept;
 
   void UpdateProperties(
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
-      winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, winrt::Windows::Foundation::IInspectable> const
-          &propertyMap);
+      winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader) noexcept;
 
    // IViewManagerWithCommands
   winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, int64_t> Commands() noexcept;
 
   void DispatchCommand(
-          winrt::Windows::UI::Xaml::FrameworkElement const &view,
-          int64_t commandId,
-          winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Foundation::IInspectable> commandArgs) noexcept;
+      winrt::Windows::UI::Xaml::FrameworkElement const &view,
+      int64_t commandId,
+      winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
 };
 
 }
 ```
 
-_CustomUserControlViewManager.cpp_
-
+*CustomUserControlViewManager.cpp*
 ```c++
 #include "pch.h"
 #include "CustomUserControlViewManager.h"
 
+#include "JSValueReader.h"
+#include "NativeModules.h"
+
 using namespace winrt;
-using namespace Microsoft::ReactNative::Bridge;
+using namespace Microsoft::ReactNative;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 
@@ -388,28 +372,31 @@ IMapView<hstring, ViewManagerPropertyType> CustomUserControlViewManager::NativeP
 
 void CustomUserControlViewManager::UpdateProperties(
     FrameworkElement const &view,
-    IMapView<hstring, IInspectable> const &propertyMap) {
+    IJSValueReader const &propertyMapReader) noexcept {
   if (auto control = view.try_as<winrt::ViewManagerSample::CustomUserControl>()) {
-    for (auto const &pair : propertyMap) {
-      auto const &propertyName = pair.Key();
-      auto const &propertyValue = pair.Value();
 
-      if (propertyName == L"label") {
+    const JSValueObject &propertyMap = JSValue::ReadObjectFrom(propertyMapReader);
+
+    for (auto const &pair : propertyMap) {
+      auto const &propertyName = pair.first;
+      auto const &propertyValue = pair.second;
+
+      if (propertyName == "label") {
         if (propertyValue != nullptr) {
-          auto value = winrt::unbox_value<hstring>(propertyValue);
+          auto const &value = winrt::box_value(winrt::to_hstring(propertyValue.String()));
           control.SetValue(winrt::ViewManagerSample::CustomUserControl::LabelProperty(), propertyValue);
         } else {
           control.ClearValue(winrt::ViewManagerSample::CustomUserControl::LabelProperty());
         }
-      } else if (propertyName == L"color") {
-        if (auto value = propertyValue.try_as<Brush>()) {
-          control.SetValue(Control::ForegroundProperty(), propertyValue);
+      } else if (propertyName == "color") {
+        if (auto value = propertyValue.To<Brush>()) {
+          control.SetValue(Control::ForegroundProperty(), value);
         } else {
           control.ClearValue(Control::ForegroundProperty());
         }
-      } else if (propertyName == L"backgroundColor") {
-        if (auto value = propertyValue.try_as<Brush>()) {
-          control.SetValue(Control::BackgroundProperty(), propertyValue);
+      } else if (propertyName == "backgroundColor") {
+        if (auto value = propertyValue.To<Brush>()) {
+          control.SetValue(Control::BackgroundProperty(), value);
         } else {
           control.ClearValue(Control::BackgroundProperty());
         }
@@ -428,9 +415,10 @@ IMapView<hstring, int64_t> CustomUserControlViewManager::Commands() noexcept {
 void CustomUserControlViewManager::DispatchCommand(
     FrameworkElement const &view,
     int64_t commandId,
-    IVectorView<IInspectable> commandArgs) noexcept {
+    winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept {
   if (auto control = view.try_as<winrt::SampleLibraryCPP::CustomUserControlCPP>()) {
     if (commandId == 0) {
+      const JSValueArray &commandArgs = JSValue::ReadArrayFrom(commandArgsReader);
       // Execute command
     }
   }
@@ -459,8 +447,7 @@ runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
 
 After that we add the .h and.cpp files:
 
-_ReactPackageProvider.h_
-
+*ReactPackageProvider.h*
 ```cpp
 #pragma once
 #include "ReactPackageProvider.g.h"
@@ -486,8 +473,7 @@ struct ReactPackageProvider : ReactPackageProviderT<
 } // namespace winrt::ViewManagerSample::factory_implementation
 ```
 
-_ReactPackageProvider.cpp_
-
+*ReactPackageProvider.cpp*
 ```cpp
 #include "pch.h"
 #include "ReactPackageProvider.h"
@@ -514,8 +500,7 @@ Here we've implemented the `CreatePackage` method, which receives `packageBuilde
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
 
-_App.cpp_
-
+*App.cpp*
 ```c++
 #include "pch.h"
 
@@ -543,70 +528,52 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 #### 3. Using your View Manager in JSX
 
-_ViewManagerSample.js_
-
+*ViewManagerSample.js*
 ```js
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   AppRegistry,
   Button,
   requireNativeComponent,
   StyleSheet,
   UIManager,
-  View
-} from "react-native";
+  View,
+} from 'react-native';
 
-let CustomUserControl = requireNativeComponent("CustomUserControl");
+let CustomUserControl = requireNativeComponent('CustomUserControl');
 
 class ViewManagerSample extends Component {
   onPress() {
     if (_customControlRef) {
       const tag = findNodeHandle(this._customControlRef);
-      UIManager.dispatchViewManagerCommand(
-        tag,
-        UIManager.getViewManagerConfig("CustomUserControl").Commands
-          .CustomCommand,
-        ["arg1", "arg2"]
-      );
+      UIManager.dispatchViewManagerCommand(tag, UIManager.getViewManagerConfig('CustomUserControl').Commands.CustomCommand, ['arg1', 'arg2']);
     }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <CustomUserControl
-          style={styles.customcontrol}
-          label="CustomUserControl!"
-          ref={ref => {
-            this._customControlRef = ref;
-          }}
-        />
-        <Button
-          onPress={() => {
-            this.onPress();
-          }}
-          title="Call CustomUserControl Commands!"
-        />
-      </View>
-    );
+         <CustomUserControl style={styles.customcontrol} label="CustomUserControl!" ref={(ref) => { this._customControlRef = ref; }} />
+         <Button onPress={() => { this.onPress(); }} title="Call CustomUserControl Commands!" />
+      </View>);
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
   customcontrol: {
-    color: "#333333",
-    backgroundColor: "#006666",
+    color: '#333333',
+    backgroundColor: '#006666',
     width: 200,
     height: 20,
-    margin: 10
-  }
+    margin: 10,
+  },
 });
 
-AppRegistry.registerComponent("ViewManagerSample", () => ViewManagerSample);
+AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
 ```

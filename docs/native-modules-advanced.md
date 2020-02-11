@@ -1,12 +1,12 @@
 ---
 id: native-modules-advanced
-title: Native Modules and React Native Windows (Advanced Topics)
+title: Native Modules (Advanced)
 ---
 
-> **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
->
+>**This documentation and the underlying platform code is a work in progress.**
+>**Examples (C# and C++/WinRT):**
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](../../packages/microsoft-reactnative-sampleapps)
+> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
 
 ## Writing Native Modules without using Attributes (C#)
 
@@ -114,10 +114,11 @@ namespace NativeModuleSample
           IJSValueWriter outputWriter,
           MethodResultCallback resolve,
           MethodResultCallback reject) => {
-           object[] args = inputReader.ReadArgs();
-           double result = module.Add((double)args[0], (double)args[1]);
-           writer.WriteArgs(result);
-           resolve(writer);
+           double[] args;
+           inputReader.ReadArgs(out args[0], out args[1]);
+           double result = module.Add(args[0], args[1]);
+           outputWriter.WriteArgs(result);
+           resolve(outputWriter);
           });
         return module;
       });
@@ -167,37 +168,40 @@ Using your native module in JS is the exact same as if the native module was def
 _NativeModuleSample.js_
 
 ```js
-import React, { Component } from "react";
-import { AppRegistry, Alert, NativeModules, Text, View } from "react-native";
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  Alert,
+  NativeModules,
+  Text,
+  View,
+} from 'react-native';
 
 class NativeModuleSample extends Component {
   _onPressHandler() {
     NativeModules.FancyMath.add(
       /* arg a */ NativeModules.FancyMath.Pi,
       /* arg b */ NativeModules.FancyMath.E,
-      /* callback */ function(result) {
+      /* callback */ function (result) {
         Alert.alert(
-          "FancyMath",
+          'FancyMath',
           `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
-          [{ text: "OK" }],
-          { cancelable: false }
-        );
-      }
-    );
+          [{ text: 'OK' }],
+          {cancelable: false});
+      });
   }
 
   render() {
     return (
       <View>
-        <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
-        <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
-        <Button onPress={this._onPressHandler} title="Click me!" />
-      </View>
-    );
+         <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
+         <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
+         <Button onPress={this._onPressHandler} title="Click me!"/>
+      </View>);
   }
 }
 
-AppRegistry.registerComponent("NativeModuleSample", () => NativeModuleSample);
+AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 ```
 
 ## Native Modules with Custom Event Emitters

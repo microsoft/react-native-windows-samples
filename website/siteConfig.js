@@ -11,7 +11,7 @@
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
-  title: "React Native for Windows",
+  title: "React Native for Windows & Mac",
   tagline: "Build native Windows apps with Javascript and React",
   url: "https://microsoft.github.io",
   baseUrl: "/react-native-windows/",
@@ -25,7 +25,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    { page: "versions", label: "v0.61" },
     { doc: "getting-started", label: "Docs" },
+    { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },
     { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
