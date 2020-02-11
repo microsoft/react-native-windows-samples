@@ -34,7 +34,7 @@ This guide assumes you already have the development environment and project stru
 
 If you are only planning on adding a native module to your existing React Native Windows app, ie:
 
-1. You followed [Consuming react native windows](consuming-rnw.md), where
+1. You followed [Consuming react native windows](getting-started.md), where
 1. You ran `react-native windows --template vnext` to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
