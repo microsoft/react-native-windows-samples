@@ -36,7 +36,7 @@ react-native init <project name> --version ^0.60
 
 **Beta**
 ```
-react-native init <project name> --version ^0.61
+react-native init <project name> --version ^0.61.5
 ```
 
 ### Navigate into this newly created directory
