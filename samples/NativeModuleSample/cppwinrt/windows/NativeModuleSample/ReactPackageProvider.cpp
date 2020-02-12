@@ -7,8 +7,7 @@
 
 #include "FancyMath.h"
 
-using namespace winrt::Microsoft::ReactNative::Bridge;
-using namespace Microsoft::ReactNative;
+using namespace winrt::Microsoft::ReactNative;
 
 namespace winrt::NativeModuleSample::implementation
 {
