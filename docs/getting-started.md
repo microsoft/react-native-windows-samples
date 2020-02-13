@@ -31,7 +31,7 @@ Alternately, if you're looking to build directly from the repo or you want to ma
 
 **Stable**
 ```
-react-native init <project name> --version ^0.60
+react-native init <project name> --version ^0.60.0
 ```
 
 **Beta**
