@@ -129,7 +129,7 @@ After you've added the reference, you need to make sure it doesn't copy itself i
 1. Select `Properties`.
 1. Under `Build`, Change `Copy Local` to `False`.
 
-Now, you're technically ready to go, but in order to improve the developer experience, it's also **highly recommended** to also add a reference to the appropriate helper shared project. These projects contain the attributes (C#) and macros (C++) as described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md).
+Now, you're technically ready to go, but in order to improve the developer experience, it's also **highly recommended** to also add a reference to the appropriate helper shared project. These projects contain the attributes (C#) and macros (C++) as described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
 
 If you're writing in C#, you'll want to add `Microsoft.ReactNative.SharedManaged`:
 
@@ -155,3 +155,7 @@ To make sure that everything is working, you'll want to try building `MyLibrary`
 
 1. At the top, change the `Solution Platform` to `x86`, `x64` or `ARM`.
 1. In the `Build` menu, select `Build Solution`.
+
+### Next Steps
+
+You have now created the scaffolding to build a native module or view manager. Now it's time to add the business logic to the module - follow the steps described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
