@@ -2,7 +2,7 @@
   "docs": {
     "The Basics (Windows)": ["getting-started", "rnw-dependencies", "contributing", "parity-status"],
     "Testing": ["e2e-test", "e2e-test-more-about"],
-    "Native Modules (Windows)": ["native-modules", "native-modules-advanced"],
+    "Native Modules (Windows)": ["native-modules", "native-modules-advanced", "native-modules-setup", "view-managers"],
     "Components (Windows)": ["button-component"]
   },
   "apis": {
