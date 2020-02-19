@@ -22,7 +22,9 @@ Similarly to authoring native modules, at a high level you must:
 
 ## Initial Setup
 
-This guide assumes you already have the development environment and project structure set up for authoring native modules and are ready to write code.
+Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows
+
+Once you have set up your development environment and project structure, you are ready to write code. 
 
 If you are only planning on adding a native module to your existing React Native Windows app, ie:
 

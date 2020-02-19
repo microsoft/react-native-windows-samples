@@ -26,11 +26,13 @@ Native modules contain (or wrap) native code which can then be exposed to JS. To
 
 React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below.
 
-> NOTE: If you are unable to use the reflection-based annotation approach, you can define native modules directly using the ABI. This is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
+> NOTE: If you are unable to use the reflection-based annotation approach, you can define native modules directly using the ABI. This is outlined in the [Writing Native Modules without using Attributes](native-modules-advanced.md) document.
 
 ## Initial Setup
 
-This guide assumes you already have the development environment and project structure set up for authoring native modules and are ready to write code.
+Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows
+
+Once you have set up your development environment and project structure, you are ready to write code. 
 
 If you are only planning on adding a native module to your existing React Native Windows app, ie:
 
