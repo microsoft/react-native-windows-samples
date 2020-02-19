@@ -13,7 +13,7 @@ experience based on Javascript and [React].
 **React Native for Windows & Mac brings React Native support for the
 [Windows 10 SDK] as well as the [MacOS 10.12 SDK]**. With this, you can use Javascript to build native
 Windows apps for [all devices supported by Windows 10] including PCs,
-tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the MacOS dekstop and laptop ecosystems.
+tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the MacOS desktop and laptop ecosystems.
 
 ![Written in Javascript, Running Native](img/homepage/native-and-js.png)
 
