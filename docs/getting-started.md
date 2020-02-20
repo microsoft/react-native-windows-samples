@@ -58,12 +58,6 @@ This guide will help you get started on setting up your very first React Native 
 
 If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](building-rnw.md).
 
-## Install React native
-
-```
-npm install -g react-native-cli
-```
-
 For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
 
 <div>
@@ -74,7 +68,13 @@ For information around how to set up React Native, see the [React Native Getting
     </ul>    
   </div>
   <div id="stable">
-The latest stable and recommended release to use.
+The latest and recommended release to use.
+
+## Install React native
+
+```
+npm install -g react-native-cli
+```
 
 ## Install React Native for Windows
 
@@ -118,6 +118,12 @@ react-native windows
 >The newest release guaranteed to get the features and content first; however, not all bugs or framework quirks have been fixed.
 >
 >Once Beta has been completely vetted for bugs and has been out long enough to be considered fit for mass consumption, it will become the new Stable.
+
+## Install React native
+
+```
+npm install -g react-native-cli
+```
 
 ## Install React Native for Windows (beta)
 
