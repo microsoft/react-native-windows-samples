@@ -1,10 +1,10 @@
 #pragma once
 
-#include "winrt/Microsoft.ReactNative.Bridge.h"
+#include "winrt/Microsoft.ReactNative.h"
 
 
 
-using namespace winrt::Microsoft::ReactNative::Bridge;
+using namespace winrt::Microsoft::ReactNative;
 
 namespace winrt::TodosFeed::implementation
 {
