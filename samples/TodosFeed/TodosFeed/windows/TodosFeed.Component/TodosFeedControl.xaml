@@ -11,6 +11,6 @@
     d:DesignWidth="400">
 
     <Grid>
-        <react:ReactControl x:Name="RootElement" />
+        <react:ReactRootView x:Name="RootElement" />
     </Grid>
 </UserControl>

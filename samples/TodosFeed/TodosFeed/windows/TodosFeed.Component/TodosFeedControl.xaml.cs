@@ -1,6 +1,6 @@
 ﻿
 using Microsoft.ReactNative;
-using Windows.Services.Maps;
+using Microsoft.ReactNative.Managed;
 using Windows.UI.Xaml.Controls;
 
 
@@ -8,8 +8,8 @@ namespace TodosFeed.Component
 {
     public sealed partial class TodosFeedControl : UserControl
     {
-        const string JSFILENAME = "index";
-        const string JSCOMPONENTNAME = "TodosFeed";
+        const string JSFileName = "index";
+        const string JSComponentName = "TodosFeed";
 
         public TodosFeedControl()
         {
@@ -19,26 +19,17 @@ namespace TodosFeed.Component
 
         public void LoadReact()
         {
-            ReactInstanceSettings settings = new ReactInstanceSettings();
+            ReactNativeHost host = new ReactNativeHost();
 
-            settings.UseLiveReload = true;
-            settings.UseWebDebugger = true;
+            host.InstanceSettings.UseLiveReload = true;
+            host.InstanceSettings.UseWebDebugger = true;
+            host.InstanceSettings.EnableDeveloperMenu = true;
+            host.InstanceSettings.JavaScriptMainModuleName = JSFileName;
 
-            ReactInstance instance = new ReactInstance();
-            ReactApplication app = new ReactApplication();
-            app.JavaScriptMainModuleName = JSFILENAME;
-            
-            RootElement.Instance = instance;
-
-            string initialProps = "{ "
-                          + "\"one\":\"1\""
-                          + ", \"two\":\"2\""
-                          + "}";
-
-            RootElement.InitialProps = initialProps;
-
-            RootElement.JsComponentName = JSCOMPONENTNAME;
-            RootElement.StartRender();
+            RootElement.ComponentName = JSComponentName;
+            JSValue initialProps = new JSValueObject { ["one"] = "1", ["two"] = "2" };
+            RootElement.InitialProps = (IJSValueWriter writer) => writer.WriteValue(initialProps);
+            RootElement.ReactNativeHost = host;
         }
     }
 }
