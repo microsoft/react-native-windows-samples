@@ -2,7 +2,7 @@
 This sample showcases the usage of React Native for Windows vNext to build a simple calculator.
 
 ### Requirements
-Make sure to have, on your machine, the correct configuration to build and run React Native for Windows projects, as highlighted [here](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/GettingStarted.md).
+Make sure to have, on your machine, the correct configuration to build and run React Native for Windows projects, as highlighted [here](https://microsoft.github.io/react-native-windows/docs/getting-started).
 
 ### Launch Calculator
 To run the Calculator project as a standalone Windows application, open the **Calculator** folder and run the following command:

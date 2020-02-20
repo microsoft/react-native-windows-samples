@@ -5,7 +5,7 @@ namespace NativeModuleSample
 {
     [webhosthidden]
     [default_interface]
-    runtimeclass ReactPackageProvider : Microsoft.ReactNative.Bridge.IReactPackageProvider
+    runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
     {
         ReactPackageProvider();
     };
