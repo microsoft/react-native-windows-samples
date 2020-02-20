@@ -73,16 +73,12 @@ namespace NativeModuleSample
           IJSValueWriter outputWriter,
           MethodResultCallback resolve,
           MethodResultCallback reject) => {
-           inputReader.ReadNext();
-           inputReader.ReadNext();
-           inputReader.TryGetDouble(out double a);
-           inputReader.ReadNext();
-           inputReader.TryGetDouble(out double b);
-           double result = module.Add(a, b);
-           writer.WriteArrayBegin();
-           writer.WriteDouble(result);
-           writer.WriteArrayEnd();
-           resolve(writer);
+            inputReader.GetNextArrayItem();
+            double a = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
+            double b = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
+            double result = module.Add(a, b);
+            outputWriter.WriteDouble(result);
+          resolve(outputWriter);
           });
         return module;
       });
@@ -117,7 +113,7 @@ namespace NativeModuleSample
            double[] args;
            inputReader.ReadArgs(out args[0], out args[1]);
            double result = module.Add(args[0], args[1]);
-           outputWriter.WriteArgs(result);
+           outputWriter.WriteDouble(result);
            resolve(outputWriter);
           });
         return module;
