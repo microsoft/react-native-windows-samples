@@ -73,7 +73,6 @@ namespace NativeModuleSample
           IJSValueWriter outputWriter,
           MethodResultCallback resolve,
           MethodResultCallback reject) => {
-            inputReader.GetNextArrayItem();
             double a = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
             double b = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
             double result = module.Add(a, b);
