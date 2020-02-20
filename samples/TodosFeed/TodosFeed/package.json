@@ -8,19 +8,19 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-native": "^0.60.0",
-    "react-native-windows": "0.60.0-vnext",
-    "rnpm-plugin-windows": "^0.3.8"
+    "react": "16.8.6",
+    "react-native": "^0.60.0-0",
+    "react-native-windows": "0.60.0-vnext.136",
+    "rnpm-plugin-windows": "^0.5.1-0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/runtime": "^7.7.2",
-    "@react-native-community/eslint-config": "^0.0.5",
-    "babel-jest": "^24.9.0",
-    "eslint": "^6.6.0",
-    "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.57.0",
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^0.0.7",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.58.0",
     "react-test-renderer": "16.8.6"
   },
   "jest": {

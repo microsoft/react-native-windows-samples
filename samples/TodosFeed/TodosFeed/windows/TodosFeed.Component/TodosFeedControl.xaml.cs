@@ -1,5 +1,9 @@
-﻿using react.uwp;
+﻿
+using Microsoft.ReactNative;
+using Windows.Services.Maps;
 using Windows.UI.Xaml.Controls;
+
+
 namespace TodosFeed.Component
 {
     public sealed partial class TodosFeedControl : UserControl
@@ -15,13 +19,15 @@ namespace TodosFeed.Component
 
         public void LoadReact()
         {
-            InstanceSettings settings = new InstanceSettings();
+            ReactInstanceSettings settings = new ReactInstanceSettings();
 
             settings.UseLiveReload = true;
             settings.UseWebDebugger = true;
 
-            var instance = Instance.Create(JSFILENAME);
-            instance.Start(settings);
+            ReactInstance instance = new ReactInstance();
+            ReactApplication app = new ReactApplication();
+            app.JavaScriptMainModuleName = JSFILENAME;
+            
             RootElement.Instance = instance;
 
             string initialProps = "{ "
