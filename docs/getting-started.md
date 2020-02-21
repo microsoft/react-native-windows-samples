@@ -3,17 +3,72 @@ id: getting-started
 title: Getting Started
 ---
 
-There are two different options available when installing a React Native project with the intention of building for Windows: you can choose between our **Beta** or **Stable** releases,  the instructions will call out which steps need to change for either.
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.invisible {
+  visibility: hidden;
+  display: none;
+}
+.visible {
+  visibility: visible;
+}
+.toggler {
+    margin-bottom: 1em;
+}
+.toggler ul {
+    width: 100%;
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #6d6d6d;
+    cursor: default;
+}
+.toggleActive{
+  font-weight: 700;
+}
+.toggleInactive{
+  font-weight: 400;
+}
+</style>
+</head>
+<body>
 
-| BETA | STABLE |
-|:--|:--|
-| The newest release guaranteed to get the features and content first; however, not all bugs or framework quirks have been fixed. | The latest stable and recommended release to use. |
+<script>
+function displayTab(tabType) {
+  if (tabType === 'stable') {
+    document.getElementById("stableTab").className = "toggleActive";
+    document.getElementById("betaTab").className = "toggleInactive";
+    document.getElementById("beta").className = "invisible";
+    document.getElementById("stable").className = "visible";
+  }
+  else {
+    document.getElementById("stableTab").className = "toggleInactive";
+    document.getElementById("betaTab").className = "toggleActive";
+    document.getElementById("beta").className = "visible";
+    document.getElementById("stable").className = "invisible";
+  }
+}
+</script>
 
+This guide will help you get started on setting up your very first React Native for Windows app.
 
-Once Beta has been completely vetted for bugs and has been out long enough to be considered fit for mass consumption, it will become the new Stable.
+If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](building-rnw.md).
 
-### Initialize your React Native project
-Make sure you do this in the directory you would like your React Native Windows project to live.
+For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
+
+<div>
+  <div class="toggler">
+    <ul role="tablist">
+      <li aria-selected="true" role="tab" tabindex="0" id="stableTab" class="toggleActive" onclick="displayTab('stable')"> Stable </li>
+      <li aria-selected="false" role="tab" tabindex="0" id="betaTab" onclick="displayTab('beta')"> Beta </li>
+    </ul>    
+  </div>
+  <div id="stable">
+The latest and recommended release to use.
 
 ## Install React native
 
@@ -21,54 +76,93 @@ Make sure you do this in the directory you would like your React Native Windows 
 npm install -g react-native-cli
 ```
 
-For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
-
-Alternately, if you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building react-native-windows repo](building-rnw.md).
-
 ## Install React Native for Windows
 
+Remember to call this ``react-native init`` in the directory you want your project to live.
 
-
-**Stable**
 ```
 react-native init <project name> --version ^0.60.0
 ```
 
-**Beta**
+### Navigate into this newly created directory
+
+Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
+
+```
+cd <project name>
+```
+
+### Install the React Native Windows CLI
+
+Now you'll want to install all the Windows React Native [command line instructions](https://www.npmjs.com/package/rnpm-plugin-windows).
+
+```
+yarn add rnpm-plugin-windows
+```
+
+>**If using NPM**
+>
+>```npm install --save rnpm-plugin-windows```
+
+### Install the Windows extension
+
+Lastly, install the React Native for Windows packages.
+
+```
+react-native windows
+```
+
+  </div>
+  <div id="beta" class="invisible">
+
+>The newest release guaranteed to get the features and content first; however, not all bugs or framework quirks have been fixed.
+>
+>Once Beta has been completely vetted for bugs and has been out long enough to be considered fit for mass consumption, it will become the new Stable.
+
+## Install React native
+
+```
+npm install -g react-native-cli
+```
+
+## Install React Native for Windows (beta)
+
+Remember to call this ``react-native init`` in the directory you want your project to live.
+
 ```
 react-native init <project name> --version ^0.61.5
 ```
 
 ### Navigate into this newly created directory
 
+Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
+
 ```
 cd <project name>
 ```
 
-### Install the React Native Windows [command line interface](https://www.npmjs.com/package/rnpm-plugin-windows)
+### Install the React Native Windows CLI
 
-If using yarn:
+Now you'll want to install all the Windows React Native [command line instructions](https://www.npmjs.com/package/rnpm-plugin-windows).
 
 ```
 yarn add rnpm-plugin-windows
 ```
 
-> Alternatively, if you're using NPM:
+>**If using NPM**
 >
 >```npm install --save rnpm-plugin-windows```
 
 ### Install the Windows extension
 
-**Stable**
-```
-react-native windows
-```
+Lastly, install the React Native for Windows packages.
 
-**Beta**
 ```
 react-native windows --template beta
 ```
 
+  </div>  
+</div>
 
 ## Running a React Native Windows App
 
@@ -125,3 +219,6 @@ Follow these steps to build a version of your app that you can install or publis
 - Select the DebugBundle or ReleaseBundle configuration from the Configuration Manager dropdown. DebugBundle is similar to Debug in that it adds more debugging info to the native code. Use this if you want to debug the native code. ReleaseBundle is similar to Release, you'll typically use this when producing a final package to publish to the store.
 - Build the solution. You can now launch without first launching Metro.
 - If you want to build an appx package to share or publish, use the Project => Publish => Create App Packages... option.
+
+</body>
+</html>
