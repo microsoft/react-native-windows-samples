@@ -8,12 +8,12 @@ namespace TodosFeed.Component
 {
     public sealed partial class TodosFeedControl : UserControl
     {
-        const string JSFileName = "index";
-        const string JSComponentName = "TodosFeed";
+        static readonly string JSFileName = "index";
+        static readonly string JSComponentName = "TodosFeed";
 
         public TodosFeedControl()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             LoadReact();
         }
 
@@ -21,10 +21,14 @@ namespace TodosFeed.Component
         {
             ReactNativeHost host = new ReactNativeHost();
 
+            host.InstanceSettings.MainComponentName = JSFileName;
+            host.InstanceSettings.JavaScriptMainModuleName = JSFileName;
             host.InstanceSettings.UseLiveReload = true;
             host.InstanceSettings.UseWebDebugger = true;
             host.InstanceSettings.EnableDeveloperMenu = true;
-            host.InstanceSettings.JavaScriptMainModuleName = JSFileName;
+            // We have a bug that code fails if there are no package providers
+            host.PackageProviders.Add(new ReactPackageProvider());
+            host.ReloadInstance();
 
             RootElement.ComponentName = JSComponentName;
             JSValue initialProps = new JSValueObject { ["one"] = "1", ["two"] = "2" };
