@@ -170,15 +170,15 @@ _Note: Make sure a browser is launched and running before running a React Native
 
 - Without Visual Studio
 
-:exclamation: **We are seeing issues with msbuild with the below command. This is being investigated in [Issue 3263](https://github.com/microsoft/react-native-windows/issues/3263). Until this is fixed, please use the With Visual Studio option below.**
+  :exclamation: **We are seeing issues with msbuild with the below command. This is being investigated in [Issue 3263](https://github.com/microsoft/react-native-windows/issues/3263). Until this is fixed, please use the With Visual Studio option below.**
 
-In your React Native Windows project directory, run:
+  In your React Native Windows project directory, run:
 
-```
-react-native run-windows
-```
+  ```
+  react-native run-windows
+  ```
 
-A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
+  A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
 - With Visual Studio
 
