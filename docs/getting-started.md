@@ -81,7 +81,7 @@ npm install -g react-native-cli
 Remember to call this ``react-native init`` in the directory you want your project to live.
 
 ```
-react-native init <project name> --version ^0.60.0
+react-native init <project name> --version ^react-native@0.60.0
 ```
 
 ### Navigate into this newly created directory
