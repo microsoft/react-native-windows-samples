@@ -70,18 +70,12 @@ For information around how to set up React Native, see the [React Native Getting
   <div id="stable">
 The latest and recommended release to use.
 
-## Install React native
-
-```
-npm install -g react-native-cli
-```
-
 ## Install React Native for Windows
 
 Remember to call this ``react-native init`` in the directory you want your project to live.
 
 ```
-react-native init <project name> --version ^0.60.0
+npx react-native init <project name> --version ^0.60.0
 ```
 
 ### Navigate into this newly created directory
