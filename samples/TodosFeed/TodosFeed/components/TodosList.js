@@ -13,12 +13,13 @@ class TodosList extends Component {
     this.state = { todos: [], loading: false};
   }
 
-  async componentDidMount() {
-    this.setState( { loading: true});
-    var result = await fetch("https://jsonplaceholder.typicode.com/todos");
+  componentDidMount = async () => {
+    this.setState( { loading: true });
+    var result = await fetch("https://jsonplaceholder.typicode.com/todos/");
     var json = await result.json();
+    console.log(json);
     
-    this.setState( { todos: json.slice(1,20), loading: false});
+    this.setState( { todos: json.slice(1, 20), loading: false});
   }
 
   render() {

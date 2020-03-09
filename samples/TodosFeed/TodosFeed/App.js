@@ -13,17 +13,16 @@ import {
   Text,
   View,
 } from 'react-native';
+
 import TodosList from './components/TodosList'
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
       <View style={styles.container}>
         <Text style={styles.welcome}>To-dos</Text>
         <TodosList /> 
       </View>
-    );
-  }
+  );
 }
 
 const styles = StyleSheet.create({

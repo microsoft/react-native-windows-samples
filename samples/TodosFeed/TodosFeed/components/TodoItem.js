@@ -4,22 +4,16 @@ import {
   View,
 } from 'react-native';
 
-class FeedItem extends Component {
-    constructor(props) {
-        super(props);
-    }
+const FeedItem = (props) => {
+    return (
+        <View style={{ paddingBottom: 12}}>
+            <Text style={{ fontSize: 18}}>{props.title}</Text>
+        </View>
+    );
+}
 
-    static defaultProps = {
-        title: "This is a to-do"
-    };
-
-    render() {
-        return (
-            <View style={{ paddingBottom: 12}}>
-                <Text style={{ fontSize: 18}}>{this.props.title}</Text>
-            </View>
-        );
-    }
+FeedItem.defaultProps = {
+    title: "This is a to-do"
 }
 
 export default FeedItem

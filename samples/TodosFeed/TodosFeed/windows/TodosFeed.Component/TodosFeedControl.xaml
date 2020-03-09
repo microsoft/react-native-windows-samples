@@ -5,12 +5,12 @@
     xmlns:local="using:TodosFeed.Component"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:react="using:react.uwp"
+    xmlns:react="using:Microsoft.ReactNative"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
 
     <Grid>
-        <react:ReactControl x:Name="RootElement" />
+        <react:ReactRootView x:Name="RootElement" />
     </Grid>
 </UserControl>

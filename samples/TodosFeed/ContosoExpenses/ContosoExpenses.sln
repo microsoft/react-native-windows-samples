@@ -9,15 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoExpenses.Data", "Con
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ContosoExpenses.Package", "ContosoExpenses.Package\ContosoExpenses.Package.wapproj", "{B49C1E9A-C799-4336-9076-F02A1E9E36DB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "React Native", "React Native", "{EB1E6423-0875-4B44-A113-E0FA545E799D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReactNative", "ReactNative", "{EB1E6423-0875-4B44-A113-E0FA545E799D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodosFeed.Component", "..\TodosFeed\windows\TodosFeed.Component\TodosFeed.Component.csproj", "{6BE33799-9542-44D3-A034-F023F5B2CAD4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Folly", "..\TodosFeed\node_modules\react-native-windows\Folly\Folly.vcxproj", "{A990658C-CE31-4BCC-976F-0FC6B1AF693D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReactCommon", "..\TodosFeed\node_modules\react-native-windows\ReactCommon\ReactCommon.vcxproj", "{A9D95A91-4DB7-4F72-BEB6-FE8A5C89BFBD}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReactUWP", "..\TodosFeed\node_modules\react-native-windows\ReactUWP\ReactUWP.vcxproj", "{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReactWindowsCore", "..\TodosFeed\node_modules\react-native-windows\ReactWindowsCore\ReactWindowsCore.vcxproj", "{11C084A3-A57C-4296-A679-CAC17B603144}"
 EndProject
@@ -37,14 +35,24 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Microsoft.ReactNative.Cxx",
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.ReactNative.SharedManaged", "..\TodosFeed\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.shproj", "{67A1076F-7790-4203-86EA-4402CCB5E782}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mso", "..\TodosFeed\node_modules\react-native-windows\Mso\Mso.vcxitems", "{84E05BFA-CBAF-4F0D-BFB6-4CE85742A57E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shared", "..\TodosFeed\node_modules\react-native-windows\Shared\Shared.vcxitems", "{2049DBE9-8D13-42C9-AE4B-413AE38FFFD0}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\TodosFeed\node_modules\react-native-windows\JSI\Shared\JSI.Shared.vcxitems*{0cc28589-39e4-4288-b162-97b959f8b843}*SharedItemsImports = 9
-		..\TodosFeed\node_modules\react-native-windows\Chakra\Chakra.vcxitems*{2d5d43d9-cffc-4c40-b4cd-02efb4e2742b}*SharedItemsImports = 4
-		..\TodosFeed\node_modules\react-native-windows\Shared\Shared.vcxitems*{2d5d43d9-cffc-4c40-b4cd-02efb4e2742b}*SharedItemsImports = 4
+		..\TodosFeed\node_modules\react-native-windows\Shared\Shared.vcxitems*{2049dbe9-8d13-42c9-ae4b-413ae38fffd0}*SharedItemsImports = 9
 		..\TodosFeed\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems*{67a1076f-7790-4203-86ea-4402ccb5e782}*SharedItemsImports = 13
+		..\TodosFeed\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems*{6be33799-9542-44d3-a034-f023f5b2cad4}*SharedItemsImports = 4
+		..\TodosFeed\node_modules\react-native-windows\Mso\Mso.vcxitems*{84e05bfa-cbaf-4f0d-bfb6-4ce85742a57e}*SharedItemsImports = 9
 		..\TodosFeed\node_modules\react-native-windows\JSI\Shared\JSI.Shared.vcxitems*{a62d504a-16b8-41d2-9f19-e2e86019e5e4}*SharedItemsImports = 4
+		..\TodosFeed\node_modules\react-native-windows\Chakra\Chakra.vcxitems*{c38970c0-5fbf-4d69-90d8-cbac225ae895}*SharedItemsImports = 9
 		..\TodosFeed\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems*{da8b35b3-da00-4b02-bde6-6a397b3fd46b}*SharedItemsImports = 9
+		..\TodosFeed\node_modules\react-native-windows\Chakra\Chakra.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
+		..\TodosFeed\node_modules\react-native-windows\JSI\Shared\JSI.Shared.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
+		..\TodosFeed\node_modules\react-native-windows\Mso\Mso.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
+		..\TodosFeed\node_modules\react-native-windows\Shared\Shared.vcxitems*{f7d32bd0-2749-483e-9a0d-1635ef7e3136}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,22 +183,6 @@ Global
 		{A9D95A91-4DB7-4F72-BEB6-FE8A5C89BFBD}.Release|x64.Build.0 = Release|x64
 		{A9D95A91-4DB7-4F72-BEB6-FE8A5C89BFBD}.Release|x86.ActiveCfg = Release|Win32
 		{A9D95A91-4DB7-4F72-BEB6-FE8A5C89BFBD}.Release|x86.Build.0 = Release|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|ARM.ActiveCfg = Debug|ARM
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|ARM.Build.0 = Debug|ARM
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|ARM64.ActiveCfg = Debug|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|x64.ActiveCfg = Debug|x64
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|x64.Build.0 = Debug|x64
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|x86.ActiveCfg = Debug|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Debug|x86.Build.0 = Debug|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|Any CPU.ActiveCfg = Release|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|ARM.ActiveCfg = Release|ARM
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|ARM.Build.0 = Release|ARM
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|ARM64.ActiveCfg = Release|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|x64.ActiveCfg = Release|x64
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|x64.Build.0 = Release|x64
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|x86.ActiveCfg = Release|Win32
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B}.Release|x86.Build.0 = Release|Win32
 		{11C084A3-A57C-4296-A679-CAC17B603144}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{11C084A3-A57C-4296-A679-CAC17B603144}.Debug|ARM.ActiveCfg = Debug|ARM
 		{11C084A3-A57C-4296-A679-CAC17B603144}.Debug|ARM.Build.0 = Debug|ARM
@@ -287,7 +279,6 @@ Global
 		{6BE33799-9542-44D3-A034-F023F5B2CAD4} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{A990658C-CE31-4BCC-976F-0FC6B1AF693D} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{A9D95A91-4DB7-4F72-BEB6-FE8A5C89BFBD} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
-		{2D5D43D9-CFFC-4C40-B4CD-02EFB4E2742B} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{11C084A3-A57C-4296-A679-CAC17B603144} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{C38970C0-5FBF-4D69-90D8-CBAC225AE895} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{FCA38F3C-7C73-4C47-BE4E-32F77FA8538D} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
@@ -296,6 +287,8 @@ Global
 		{F7D32BD0-2749-483E-9A0D-1635EF7E3136} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{DA8B35B3-DA00-4B02-BDE6-6A397B3FD46B} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 		{67A1076F-7790-4203-86EA-4402CCB5E782} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
+		{84E05BFA-CBAF-4F0D-BFB6-4CE85742A57E} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
+		{2049DBE9-8D13-42C9-AE4B-413AE38FFFD0} = {EB1E6423-0875-4B44-A113-E0FA545E799D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BADFBD9-C57F-40A7-B058-D6B067196030}

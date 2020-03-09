@@ -2,10 +2,14 @@
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <EnableTypeInfoReflection>false</EnableTypeInfoReflection>
+    <EnableXBindDiagnostics>false</EnableXBindDiagnostics>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6BE33799-9542-44D3-A034-F023F5B2CAD4}</ProjectGuid>
-    <OutputType>winmdobj</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TodosFeed.Component</RootNamespace>
     <AssemblyName>TodosFeed.Component</AssemblyName>
@@ -138,13 +142,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\node_modules\react-native-windows\ReactUWP\ReactUWP.vcxproj">
-      <Project>{2d5d43d9-cffc-4c40-b4cd-02efb4e2742b}</Project>
-      <Name>ReactUWP</Name>
+    <ProjectReference Include="..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj">
+      <Project>{f7d32bd0-2749-483e-9a0d-1635ef7e3136}</Project>
+      <Name>Microsoft.ReactNative</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
