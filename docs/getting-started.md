@@ -113,18 +113,12 @@ react-native windows
 >
 >Once Beta has been completely vetted for bugs and has been out long enough to be considered fit for mass consumption, it will become the new Stable.
 
-## Install React native
-
-```
-npm install -g react-native-cli
-```
-
 ## Install React Native for Windows (beta)
 
 Remember to call this ``react-native init`` in the directory you want your project to live.
 
 ```
-react-native init <project name> --version ^0.61.5
+npx react-native init <project name> --version ^0.61.5
 ```
 
 ### Navigate into this newly created directory
