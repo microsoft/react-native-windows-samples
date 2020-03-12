@@ -103,7 +103,7 @@ yarn add rnpm-plugin-windows
 Lastly, install the React Native for Windows packages.
 
 ```
-react-native windows
+npx react-native windows
 ```
 
   </div>
@@ -146,7 +146,7 @@ yarn add rnpm-plugin-windows
 Lastly, install the React Native for Windows packages.
 
 ```
-react-native windows --template beta
+npx react-native windows --template beta
 ```
 
   </div>  
@@ -163,7 +163,7 @@ _Note: Make sure a browser is launched and running before running a React Native
   In your React Native Windows project directory, run:
 
   ```
-  react-native run-windows
+  npx react-native run-windows
   ```
 
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
