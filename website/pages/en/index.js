@@ -169,11 +169,9 @@ class Index extends React.Component {
           }
           columnTwo={
             <React.Fragment>
-              <h1 className="title">React Native</h1>
-              <p className="tagline">For Windows & Mac</p>
-              <div className="buttons">
-                <GetStartedButton />
-              </div>
+              <h1 className="title">React Native for</h1>
+              <p className="tagline">Windows + Mac</p>
+              
             </React.Fragment>
           }
         />
