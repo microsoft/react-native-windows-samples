@@ -10,6 +10,10 @@ jobs:
     name: Publish RNW Docs Website
     runs-on: windows-latest
     steps:
+    - name: git config
+      run: |
+        git config --global user.email "rnbot@microsoft.com"
+        git config --global user.name "React Native Bot"
     - name: git checkout
       uses: actions/checkout@v2
     - name: yarn install
@@ -19,9 +23,6 @@ jobs:
       env:
         GIT_USER: rnbot
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git config --global user.email "rnbot@microsoft.com"
-        git config --global user.name "React Native Bot"
-        yarn run publish-gh-pages
+      run: yarn run publish-gh-pages
       working-directory: ./website
       
