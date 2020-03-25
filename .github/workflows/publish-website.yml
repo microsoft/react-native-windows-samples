@@ -14,7 +14,7 @@ jobs:
     name: Publish Website
     runs-on: ubuntu-latest
     steps:
-    - name: git config
+    - name: git setup
       run: |
         git config --global user.email "53619745+rnbot@users.noreply.github.com"
         git config --global user.name "React-Native-Windows Bot"
@@ -29,4 +29,6 @@ jobs:
         GIT_USER: 53619745+rnbot
       run: yarn run publish-gh-pages
       working-directory: ./website
+    - name: git cleanup
+      run: rm ~/.netrc
       
