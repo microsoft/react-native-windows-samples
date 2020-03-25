@@ -12,8 +12,8 @@ jobs:
     steps:
     - name: git config
       run: |
-        git config --global user.email "rnbot@microsoft.com"
-        git config --global user.name "React Native Bot"
+        git config --global user.email "53619745+rnbot@users.noreply.github.com"
+        git config --global user.name "React-Native-Windows Bot"
     - name: git checkout
       uses: actions/checkout@v2
     - name: yarn install
@@ -21,7 +21,7 @@ jobs:
       working-directory: ./website
     - name: yarn run publish-gh-pages
       env:
-        GIT_USER: rnbot
+        GIT_USER: 53619745+rnbot
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: yarn run publish-gh-pages
       working-directory: ./website
