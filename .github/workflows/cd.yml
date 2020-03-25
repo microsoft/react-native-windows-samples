@@ -14,7 +14,7 @@ jobs:
       run: |
         git config --global user.email "53619745+rnbot@users.noreply.github.com"
         git config --global user.name "React-Native-Windows Bot"
-        echo "machine github.com login 53619745+rnbot password ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
+        echo "machine github.com login 53619745+rnbot password ${{ secrets.RNBOT_GH_TOKEN }}" > ~/.netrc
     - name: git checkout
       uses: actions/checkout@v2
     - name: yarn install
@@ -23,7 +23,6 @@ jobs:
     - name: yarn run publish-gh-pages
       env:
         GIT_USER: 53619745+rnbot
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: yarn run publish-gh-pages
       working-directory: ./website
       
