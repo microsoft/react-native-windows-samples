@@ -1,17 +1,17 @@
-name: Publish RNW Website
+name: RNW Website Publish
 
 on:
   push:
     branches:
       - master
     paths:
-      - '.github/workflows/publish-website.yml'
+      - '.github/workflows/website-publish.yml'
       - 'docs/**'
       - 'website/**'
 
 jobs:
   publish_website:
-    name: Publish Website
+    name: Website Publish
     runs-on: ubuntu-latest
     steps:
     - name: git setup
@@ -31,4 +31,3 @@ jobs:
       working-directory: ./website
     - name: git cleanup
       run: rm ~/.netrc
-      

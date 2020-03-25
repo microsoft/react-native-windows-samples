@@ -1,0 +1,20 @@
+name: RNW Website CI
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/website-ci.yml'
+      - 'docs/**'
+      - 'website/**'
+
+jobs:
+  website_ci:
+    name: Website CI
+    runs-on: ubuntu-latest
+    steps:
+    - name: git checkout
+      uses: actions/checkout@v2
+    - name: run unbroken
+      run: npx unbroken -q -l
