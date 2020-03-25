@@ -8,12 +8,13 @@ on:
 jobs:
   publish_website:
     name: Publish RNW Docs Website
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: git config
       run: |
         git config --global user.email "53619745+rnbot@users.noreply.github.com"
         git config --global user.name "React-Native-Windows Bot"
+        echo "machine github.com login 53619745+rnbot password ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
     - name: git checkout
       uses: actions/checkout@v2
     - name: yarn install
