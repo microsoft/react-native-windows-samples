@@ -17,8 +17,11 @@ jobs:
       working-directory: ./website
     - name: yarn run publish-gh-pages
       env:
-        GIT_USER: jonthysell
+        GIT_USER: rnbot
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: yarn run publish-gh-pages
+      run: |
+        git config --global user.email "rnbot@microsoft.com"
+        git config --global user.name "React Native Bot"
+        yarn run publish-gh-pages
       working-directory: ./website
       
