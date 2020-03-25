@@ -1,13 +1,16 @@
-name: RNW Samples Continuous Deployment
+name: Publish RNW Website
 
 on:
   push:
     branches:
       - master
+    paths:
+      - 'docs/**'
+      - 'website/**'
 
 jobs:
   publish_website:
-    name: Publish RNW Docs Website
+    name: Publish Website
     runs-on: ubuntu-latest
     steps:
     - name: git config
