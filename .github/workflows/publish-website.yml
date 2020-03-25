@@ -5,6 +5,7 @@ on:
     branches:
       - master
     paths:
+      - '.github/workflows/publish-website.yml'
       - 'docs/**'
       - 'website/**'
 
