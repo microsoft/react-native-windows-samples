@@ -17,7 +17,7 @@ jobs:
       working-directory: ./website
     - name: yarn run publish-gh-pages
       env:
-        GIT_USER: rnbot@microsoft.com
+        GIT_USER: rnbot
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: yarn run publish-gh-pages
       working-directory: ./website
