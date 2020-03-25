@@ -16,6 +16,8 @@ jobs:
       run: yarn install --frozen-lockfile
       working-directory: ./website
     - name: yarn run publish-gh-pages
+      env:
+        GIT_USER: rnbot
       run: yarn run publish-gh-pages
       working-directory: ./website
       
