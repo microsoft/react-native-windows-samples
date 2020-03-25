@@ -1,0 +1,21 @@
+name: RNW Samples Continuous Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish_website:
+    name: Publish RNW Docs Website
+    runs-on: windows-latest
+    steps:
+    - name: git checkout
+      uses: actions/checkout@v2
+    - name: yarn install
+        run: yarn install --frozen-lockfile
+        working-directory: ./website
+    - name: yarn run publish-gh-pages
+        run: yarn run publish-gh-pages
+        working-directory: ./website
+        
