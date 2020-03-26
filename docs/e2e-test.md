@@ -19,7 +19,7 @@ E2E test app, test library and test cases are in packages/E2ETest/, and they are
 
 # Run E2E test
 
-- Make sure you have installed [dependencies](getting-started.md#dependencies)
+Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
 ## Procedures to setup and run E2E test
 

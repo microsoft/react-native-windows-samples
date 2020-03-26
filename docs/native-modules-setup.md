@@ -12,7 +12,7 @@ This guide will help set you up with the Visual Studio infrastructure to author 
 
 ## Development Environment
 
-Install the tools specified in the _System Requirements_ and _Dependencies_ sections of [Getting Started Guide for React Native Windows (vnext)](getting-started.md).
+Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
 If you're planning on writing in C++, you'll need to download and install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
 

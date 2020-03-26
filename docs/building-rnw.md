@@ -3,7 +3,7 @@ id: building-rnw
 title: Building React-Native-Windows
 ---
 
-- Make sure you have installed [dependencies](getting-started.md#dependencies)
+- Make sure you have installed all of the [development dependencies](rnw-dependencies.md)
 - Install [Git](https://git-scm.com/download/win) if you don't have it installed in your development machine
 
 ## Build Steps
