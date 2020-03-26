@@ -72,7 +72,7 @@ The latest and recommended release to use.
 
 ## Install React Native for Windows
 
-Remember to call this ``react-native init`` in the directory you want your project to live.
+Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
 npx react-native init <project name> --version ^0.60.0
@@ -91,7 +91,7 @@ cd <project name>
 Now you'll want to install all the Windows React Native [command line instructions](https://www.npmjs.com/package/rnpm-plugin-windows).
 
 ```
-yarn add rnpm-plugin-windows
+yarn add rnpm-plugin-windows --dev
 ```
 
 >**If using NPM**
@@ -115,7 +115,7 @@ npx react-native windows
 
 ## Install React Native for Windows (beta)
 
-Remember to call this ``react-native init`` in the directory you want your project to live.
+Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
 npx react-native init <project name> --version ^0.61.5
@@ -134,7 +134,7 @@ cd <project name>
 Now you'll want to install all the Windows React Native [command line instructions](https://www.npmjs.com/package/rnpm-plugin-windows).
 
 ```
-yarn add rnpm-plugin-windows
+yarn add rnpm-plugin-windows --dev
 ```
 
 >**If using NPM**
