@@ -314,7 +314,7 @@ namespace NativeModuleSample
 {
     [webhosthidden]
     [default_interface]
-    runtimeclass ReactPackageProvider : Microsoft.ReactNative.Bridge.IReactPackageProvider
+    runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
     {
         ReactPackageProvider();
     };
@@ -330,7 +330,7 @@ _ReactPackageProvider.h_
 
 #include "ReactPackageProvider.g.h"
 
-using namespace winrt::Microsoft::ReactNative::Bridge;
+using namespace winrt::Microsoft::ReactNative;
 
 namespace winrt::NativeModuleSample::implementation
 {
@@ -360,7 +360,6 @@ _ReactPackageProvider.cpp_
 // order for the AddAttributedModules call below to find them.
 #include "FancyMath.h"
 
-using namespace winrt::Microsoft::ReactNative::Bridge;
 using namespace Microsoft::ReactNative;
 
 namespace winrt::NativeModuleSample::implementation
