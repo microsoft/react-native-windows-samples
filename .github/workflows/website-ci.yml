@@ -16,5 +16,7 @@ jobs:
     steps:
     - name: git checkout
       uses: actions/checkout@v2
-    - name: run unbroken
-      run: npx unbroken -q -l
+    - name: run unbroken on docs
+      run: npx unbroken -d docs
+      - name: run unbroken on website
+      run: npx unbroken -d website
