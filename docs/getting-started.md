@@ -56,6 +56,8 @@ function displayTab(tabType) {
 
 This guide will help you get started on setting up your very first React Native for Windows app.
 
+Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
+
 If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](building-rnw.md).
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
@@ -157,7 +159,7 @@ npx react-native windows --template beta
 > Make sure a browser is launched and running before running a React Native Windows app.
 > Also ensure your system meets all the [requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) to build a Windows app as well.
 
-- Without Visual Studio
+- Without Using Visual Studio
 
   In your React Native Windows project directory, run:
 
@@ -167,7 +169,7 @@ npx react-native windows --template beta
 
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
-- With Visual Studio
+- Using Visual Studio
 
   - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln`)
   - Select the `Debug` configuration and the `x64` platform from the combo box controls to the left of the `Run` button and underneath the `Team` and `Tools` menu item.

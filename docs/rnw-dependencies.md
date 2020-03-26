@@ -3,9 +3,14 @@ id: rnw-dependencies
 title: System Requirements
 ---
 
-- You can run React-Native for Windows10 apps only on Windows 10 devices and Windows version: 10.0.15063.0 or higher. See [Windows 10 Compatability](win10-compat.md) for version support details.
-  - Ensure Developer Mode is turned ON in Windows Settings App.
-- [Visual Studio 2019](https://www.visualstudio.com/downloads) with the following options:
+You can run React-Native for Windows apps only on Windows 10 devices with Windows version: 10.0.15063.0 or higher. See [Windows 10 Compatability](win10-compat.md) for version support details.
+
+To develop React-Native for Windows apps, you will need the following:
+
+## Windows Development Dependencies
+
+- Ensure Developer Mode is turned ON in Windows Settings App.
+- Install [Visual Studio 2019](https://www.visualstudio.com/downloads) with the following options:
   - Workloads
     - Universal Windows Platform development
       - Enable the optional `C++ (v141) Universal Windows Platform tools`
@@ -17,14 +22,18 @@ title: System Requirements
     - Development activities
       - Node.js development support (optional)
 
-## Dependencies
+## React Native Development Dependencies
 
-- Install the dependencies [specified by React Native](http://facebook.github.io/react-native/docs/getting-started.html#node-python2-jdk). Specifically, make sure a recent version of [Node.js](https://nodejs.org) is installed. [Chocolatey](https://chocolatey.org/) is the React Native recommended installation method. But you can also install Node directly from [NodeJs](https://nodejs.org/en/download/). To use chocolately, from an elevated Command Prompt, run:
+- Install the [standard React Native dependencies](http://facebook.github.io/react-native/docs/getting-started.html#node-python2-jdk)
+- Install [Node.js](https://nodejs.org) via one of the following methods:
+  - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolately, from an elevated Command Prompt, run:
   ```
   choco install nodejs.install --version=12.9.1
   ```
+  - Directly from [NodeJs](https://nodejs.org/en/download/)
+  - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
-- Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if consuming react-native-windows, but required to work in the react-native-windows repo)
+- Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
 
 ## E2E Test
 

@@ -55,7 +55,7 @@ A boolean that returns true when the flyout is active/open, and false when it's 
 
 An event that fires when the flyout is dismissed.
 
-This must update the [`isOpen`](flyout-component#isopen) property.
+This must update the [`isOpen`](#isopen) property.
 
 | type | required |
 |:--|:--|
@@ -63,7 +63,7 @@ This must update the [`isOpen`](flyout-component#isopen) property.
 
 ### target
 
-A component that the flyout is attached to and will show from when [`isOpen`](flyout-component#isopen) is true.
+A component that the flyout is attached to and will show from when [`isOpen`](#isopen) is true.
 
 | type | required |
 |:--|:--|
@@ -71,7 +71,7 @@ A component that the flyout is attached to and will show from when [`isOpen`](fl
 
 ### placement
 
-The relative placement of the flyout in relation to the [`target`](flyout-component#target) set.
+The relative placement of the flyout in relation to the [`target`](#target) set.
 
 Accepted placements value types are:
 
