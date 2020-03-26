@@ -16,7 +16,9 @@ jobs:
     steps:
     - name: git checkout
       uses: actions/checkout@v2
+    - name: install unbroken
+      run: npm install unbroken
     - name: run unbroken on docs
-      run: npx unbroken -d docs
-    - name: run unbroken on website
-      run: npx unbroken -d website
+      run: node node_modules\unbroken -d docs
+    - name: run unbroken on website/blog
+      run: node node_modules\unbroken -d website/blog
