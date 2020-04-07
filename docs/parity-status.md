@@ -10,6 +10,8 @@ For a more closely monitored look at our work in progress, check out the:
 - [GitHub project board - Core Features](https://github.com/microsoft/react-native-windows/projects/7)
 - [GitHub project board - Community Module Support](https://github.com/microsoft/react-native-windows/projects/23)
 
+> Please feel free to leave comments on give us a 👍 on issues to help us prioritize better!
+
 A few methods or props may be missing on some types and we are actively working to add support for those in our [upcoming milestones](https://github.com/microsoft/react-native-windows/milestones).
 
 If you encounter a supported API that is not being tracked, or an unsupported API that should be added, please [submit an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) to let us know.
