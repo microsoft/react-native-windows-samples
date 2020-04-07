@@ -8,7 +8,6 @@ All [React Native Components and APIs](https://reactnative.dev/docs/components-a
 For a more closely monitored look at our work in progress, check out the:
 - [API Completion](https://github.com/microsoft/react-native-windows/labels/API%20Completion) label on issues
 - [GitHub project board - Core Features](https://github.com/microsoft/react-native-windows/projects/7)
-- [GitHub project board - Community Module Support](https://github.com/microsoft/react-native-windows/projects/23)
 
 > Please feel free to leave comments on give us a 👍 on issues to help us prioritize better!
 
@@ -29,3 +28,7 @@ The following were completed recently:
 | <ins>[react-native-device-info](https://www.github.com/react-native-community/react-native-device-info)</ins> | **Completed** |Nov 1, 2019 |
 | <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | **Completed** |Feb 25, 2020 |
 | <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | **Completed** |Sep 18, 2019 |
+
+In addition, we are working on adding Windows support to popular and highly requested community modules. You can keep track on the progress of both these efforts through the [Community Modules support project board](https://github.com/microsoft/react-native-windows/projects/23).
+
+If there is an unsupported community module that you don’t see in our roadmap, please [submit a support request](https://github.com/microsoft/react-native-windows/issues/new/choose) and let us know.
