@@ -11,7 +11,7 @@ For a more closely monitored look at our work in progress, check out the [API Co
 
 A few methods or props may be missing on some types and we are actively working to add support for those in our [upcoming milestones](https://github.com/microsoft/react-native-windows/milestones).
 
-If you an unsupported API that should be tracked, please [submit an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) to let us know.
+If you encounter an unsupported API that should be tracked, please [submit an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) to let us know.
 
 ## Supported Community Modules
 We are in the process of ejecting the components and modules that are not part of React Native Lean Core into their respective [community repos](https://github.com/react-native-community).
