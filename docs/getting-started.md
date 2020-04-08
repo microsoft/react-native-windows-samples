@@ -3,57 +3,6 @@ id: getting-started
 title: Getting Started
 ---
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.invisible {
-  visibility: hidden;
-  display: none;
-}
-.visible {
-  visibility: visible;
-}
-.toggler {
-    margin-bottom: 1em;
-}
-.toggler ul {
-    width: 100%;
-    display: inline-block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    border-bottom: 1px solid #6d6d6d;
-    cursor: default;
-}
-.toggleActive{
-  font-weight: 700;
-}
-.toggleInactive{
-  font-weight: 400;
-}
-</style>
-</head>
-<body>
-
-<script>
-function displayTab(tabType) {
-  if (tabType === 'stable') {
-    document.getElementById("stableTab").className = "toggleActive";
-    document.getElementById("betaTab").className = "toggleInactive";
-    document.getElementById("beta").className = "invisible";
-    document.getElementById("stable").className = "visible";
-  }
-  else {
-    document.getElementById("stableTab").className = "toggleInactive";
-    document.getElementById("betaTab").className = "toggleActive";
-    document.getElementById("beta").className = "visible";
-    document.getElementById("stable").className = "invisible";
-  }
-}
-</script>
-
 This guide will help you get started on setting up your very first React Native for Windows app.
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
@@ -62,60 +11,7 @@ If you're looking to build directly from the repo or you want to make contributi
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
 
-<div>
-  <div class="toggler">
-    <ul role="tablist">
-      <li aria-selected="true" role="tab" tabindex="0" id="stableTab" class="toggleActive" onclick="displayTab('stable')"> Stable </li>
-      <li aria-selected="false" role="tab" tabindex="0" id="betaTab" onclick="displayTab('beta')"> Beta </li>
-    </ul>    
-  </div>
-  <div id="stable">
-The latest and recommended release to use.
-
 ## Install React Native for Windows
-
-Remember to call `react-native init` from the place you want your project directory to live.
-
-```
-npx react-native init <project name> --version ^0.60.0
-```
-
-### Navigate into this newly created directory
-
-Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
-
-```
-cd <project name>
-```
-
-### Install the React Native Windows CLI
-
-Now you'll want to install all the Windows React Native [command line instructions](https://www.npmjs.com/package/rnpm-plugin-windows).
-
-```
-yarn add rnpm-plugin-windows --dev
-```
-
->**If using NPM**
->
->```npm install --save rnpm-plugin-windows```
-
-### Install the Windows extension
-
-Lastly, install the React Native for Windows packages.
-
-```
-npx react-native windows
-```
-
-  </div>
-  <div id="beta" class="invisible">
-
->The newest release guaranteed to get the features and content first; however, not all bugs or framework quirks have been fixed.
->
->Once Beta has been completely vetted for bugs and has been out long enough to be considered fit for mass consumption, it will become the new Stable.
-
-## Install React Native for Windows (beta)
 
 Remember to call `react-native init` from the place you want your project directory to live.
 
@@ -123,6 +19,9 @@ Remember to call `react-native init` from the place you want your project direct
 npx react-native init <project name> --version ^0.61.5
 ```
 
+> If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
+> `npx --ignore-existing react-native init <myproject> --template react-native@^0.61.5` instead.
+
 ### Navigate into this newly created directory
 
 Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
@@ -131,28 +30,13 @@ Once your project has been initialized, React Native will have created a new sub
 cd <project name>
 ```
 
-### Install the React Native Windows CLI
-
-Now you'll want to install all the Windows React Native [command line instructions](https://www.npmjs.com/package/rnpm-plugin-windows).
-
-```
-yarn add rnpm-plugin-windows --dev
-```
-
->**If using NPM**
->
->```npm install --save rnpm-plugin-windows```
-
 ### Install the Windows extension
 
 Lastly, install the React Native for Windows packages.
 
 ```
-npx react-native windows --template beta
+npx react-native-windows-init
 ```
-
-  </div>  
-</div>
 
 ## Running a React Native Windows App
 

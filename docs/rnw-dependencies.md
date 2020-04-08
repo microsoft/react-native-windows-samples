@@ -39,7 +39,7 @@ To develop React-Native for Windows apps, you will need the following:
 
 Please refer to [Author and Run E2E Test for React Native Windows](e2e-test.md)
 
-# Troubleshooting
+## Troubleshooting
 
 - If after running the app, the packager does not update (or) app does not show React Native content - close the packager command prompt window and the app, make sure browser is open, run `yarn start` and run the app from Visual Studio again.
 - If you get a red error box in your UWP app window with the error message : `ERROR: Instance failed to start. A connection with the server cannot be established`, make sure you have the packager running using `yarn start` and run the app again.
