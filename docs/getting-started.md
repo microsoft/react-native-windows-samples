@@ -19,7 +19,7 @@ Remember to call `react-native init` from the place you want your project direct
 npx react-native init <project name> --version ^0.61.5
 ```
 
-> If you've install react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
+> If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
 > `npx --ignore-existing react-native init <myproject> --template react-native@^0.61.5` instead.
 
 ### Navigate into this newly created directory
