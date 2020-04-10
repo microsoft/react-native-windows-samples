@@ -14,7 +14,7 @@ This guide will help set you up with the Visual Studio infrastructure to author 
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
-If you're planning on writing in C++, you'll need to download and install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
+If you're planning on writing in C++, you *must* install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
 
 ## New Project (optional)
 
@@ -46,11 +46,21 @@ Now it's time to switch into Visual Studio and create a new project.
 
 ### Creating the Visual Studio Project / Solution
 
-Open Visual Studio and select `Create a new project`. You're going to create a new `Windows Runtime Component` project, which produce a library that is compatible with Windows UWP apps.
+Open Visual Studio and select `Create a new project`. You're going to create a new `Windows Runtime Component` project, which produces a library that is compatible with Windows UWP apps.
 
-If you're planning on writing your native module in C#, you'll want to choose `Windows Runtime Component (Universal Windows)`.
+If you're planning on writing your native module in C#, you'll want to choose the C# `Windows Runtime Component (Universal Windows)`:
 
-If you're planning on writing your native module in C++, you'll want to choose `Windows Runtime Component (C++/WinRT)`. **Important:** You want **C++/WinRT**, not **C++/CX**. Do not choose `Windows Runtime Component (C++/CX)`. If you don't see the **C++/WinRT** project type, make sure you installed the _C++/WinRT Visual Studio Extension_ linked to above under [Development Environment](#development-environment).
+![C# Windows Runtime Component (Universal Windows)](assets/native-modules-setup-new-cs-project.png)
+
+If you're planning on writing your native module in C++, you'll want to choose `Windows Runtime Component (C++/WinRT)`:
+
+![Windows Runtime Component (C++/WinRT)](assets/native-modules-setup-new-cpp-project.png)
+
+> **Important:** You want *C++/WinRT*, not *C++/CX*. Do **not** choose the C++/CX `Windows Runtime Component (Universal)` project-type:
+> 
+> ![Wrong Windows Runtime Component (Universal)](assets/native-modules-setup-wrong-cpp-project.png)
+
+> If you don't see the `Windows Runtime Component (C++/WinRT)` project type, go back and install the _C++/WinRT Visual Studio Extension_ under [Development Environment](#development-environment).
 
 1. Set the `Project Name` to `MyLibrary`.
 1. Set the `Location` to the native module directory you created earlier.
