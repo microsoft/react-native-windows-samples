@@ -59,7 +59,7 @@ If you're planning on writing your native module in C++, you'll want to choose `
 > **Important:** You want *C++/WinRT*, not *C++/CX*. Do **not** choose the C++/CX `Windows Runtime Component (Universal)` project-type:
 > 
 > ![Wrong Windows Runtime Component (Universal)](assets/native-modules-setup-wrong-cpp-project.png)
-
+> 
 > If you don't see the `Windows Runtime Component (C++/WinRT)` project type, go back and install the _C++/WinRT Visual Studio Extension_ under [Development Environment](#development-environment).
 
 1. Set the `Project Name` to `MyLibrary`.
