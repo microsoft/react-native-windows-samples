@@ -1,5 +1,5 @@
 # Native Module Sample - React Native for Windows
-These samples showcases building Native Modules for React Native for Windows. It includes implementations in C# and C++/WinRT.
+These samples showcase building Native Modules for React Native for Windows. It includes implementations in C# and C++/WinRT.
 
 It currently targets React Native Windows 0.61.
 
