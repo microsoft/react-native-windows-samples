@@ -27,19 +27,11 @@ There are two ways to run the app. In a fully managed easy way, or by manually r
 
 ## Automatic
 
-The playground app can be run in a completely automatic way by using `react-native run-windows`.
-
-If you haven't already, install the react-native-cli (One time only!)
-
-```cmd
-npm install -g react-native-cli
-```
-
-Then
+The playground app can be run in a completely automatic way by using `npx react-native run-windows`.
 
 ```cmd
 cd packages\playground
-react-native run-windows
+npx react-native run-windows
 ```
 
 ## Manual
