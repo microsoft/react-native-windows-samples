@@ -70,7 +70,7 @@ If you're planning on writing your native module in C++, you'll want to choose `
 Next you'll be prompted to select the versions of Windows you'll support. This should match the values for React Native Windows, which as of version 0.61, are:
 
 1. Set the `Target version` to `Windows 10, version 1903 (10.0; Build 18362)`.
-1. Set the `Minimum version` to `Windows 10 Creators Update (10.0; Build 16299)`.
+1. Set the `Minimum version` to `Windows 10 Creators Update (10.0; Build 15063)`.
 
 You should now have a new `MyLibrary` solution file at `.\MyLibrary\MyLibrary.sln` and a `MyLibrary` project at `.\MyLibrary\MyLibrary\MyLibrary.csproj` for C# or `.\MyLibrary\MyLibrary\MyLibrary.vcxproj` for C++.
 
