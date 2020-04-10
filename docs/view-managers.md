@@ -295,6 +295,8 @@ _CustomUserControlViewManager.h_
 ```c++
 #pragma once
 
+#include "pch.h"
+
 #include "winrt/Microsoft.ReactNative.h"
 
 namespace winrt::ViewManagerSample::implementation {
@@ -333,7 +335,8 @@ struct CustomUserControlViewManager : winrt::implements<
 }
 ```
 
-*CustomUserControlViewManager.cpp*
+_CustomUserControlViewManager.cpp_
+
 ```c++
 #include "pch.h"
 #include "CustomUserControlViewManager.h"
@@ -427,7 +430,6 @@ void CustomUserControlViewManager::DispatchCommand(
 }
 
 }
-
 ```
 
 #### 2. Registering your View Manager
@@ -437,77 +439,82 @@ As with native modules, we want to register our new `CustomUserControlViewManage
 _ReactPackageProvider.idl_
 
 ```c++
-namespace ViewManagerSample {
-
-runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
+namespace NativeModuleSample
 {
-  ReactPackageProvider();
-};
-
+    [webhosthidden]
+    [default_interface]
+    runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
+    {
+        ReactPackageProvider();
+    };
 }
 ```
 
 After that we add the .h and.cpp files:
 
-*ReactPackageProvider.h*
+_ReactPackageProvider.h_
+
 ```cpp
 #pragma once
+
 #include "ReactPackageProvider.g.h"
 
-namespace winrt::ViewManagerSample::implementation {
+using namespace winrt::Microsoft::ReactNative;
 
-struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider>
+namespace winrt::NativeModuleSample::implementation
 {
-  ReactPackageProvider() = default;
-  void CreatePackage(Microsoft::ReactNative::IReactPackageBuilder const& packageBuilder);
-};
+    struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider>
+    {
+        ReactPackageProvider() = default;
 
-} // namespace winrt::ViewManagerSample::implementation
+        void CreatePackage(IReactPackageBuilder const& packageBuilder) noexcept;
+    };
+}
 
-namespace winrt::ViewManagerSample::factory_implementation {
-
-struct ReactPackageProvider : ReactPackageProviderT<
-                                     ReactPackageProvider,
-                                     implementation::ReactPackageProvider>
+namespace winrt::NativeModuleSample::factory_implementation
 {
-};
-
-} // namespace winrt::ViewManagerSample::factory_implementation
+    struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
+}
 ```
 
-*ReactPackageProvider.cpp*
+_ReactPackageProvider.cpp_
+
 ```cpp
 #include "pch.h"
 #include "ReactPackageProvider.h"
 #include "ReactPackageProvider.g.cpp"
 
+#include <ModuleRegistration.h>
+
+// NOTE: You must include the headers of your native modules here in
+// order for the AddAttributedModules call below to find them.
 #include "CustomUserControlViewManager.h"
 
 using namespace winrt::Microsoft::ReactNative;
-using namespace Microsoft::ReactNative;
 
 namespace winrt::ViewManagerSample::implementation {
 
 void ReactPackageProvider::CreatePackage(IReactPackageBuilder const& packageBuilder)
-{
+noexcept {
   packageBuilder.AddViewManager(
       L"CustomUserControlViewManager", []() { return winrt::make<CustomUserControlViewManager>(); });
 }
 
 } // namespace winrt::ViewManagerSample::implementation
-
 ```
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. And then we call `AddViewManager` with the name of our view manager and a lambda which returns an instance of the view manager.
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
 
-*App.cpp*
+_App.cpp_
+
 ```c++
 #include "pch.h"
 
 #include "App.h"
 #include "ReactPackageProvider.h"
+
 #include "winrt/ViewManagerSample.h"
 
 namespace winrt::SampleApp::implementation {
@@ -530,7 +537,8 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 #### 3. Using your View Manager in JSX
 
-*ViewManagerSample.js*
+_ViewManagerSample.js_
+
 ```js
 import React, { Component } from 'react';
 import {

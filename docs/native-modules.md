@@ -165,7 +165,8 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
 
-*NativeModuleSample.js*
+_NativeModuleSample.js_
+
 ```js
 import React, { Component } from 'react';
 import {
@@ -346,7 +347,6 @@ namespace winrt::NativeModuleSample::factory_implementation
 {
     struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
 }
-
 ```
 
 _ReactPackageProvider.cpp_
@@ -356,11 +356,11 @@ _ReactPackageProvider.cpp_
 #include "ReactPackageProvider.h"
 #include "ReactPackageProvider.g.cpp"
 
+#include <ModuleRegistration.h>
+
 // NOTE: You must include the headers of your native modules here in
 // order for the AddAttributedModules call below to find them.
 #include "FancyMath.h"
-
-using namespace Microsoft::ReactNative;
 
 namespace winrt::NativeModuleSample::implementation
 {
@@ -407,7 +407,8 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
 
-*NativeModuleSample.js*
+_NativeModuleSample.js_
+
 ```js
 import React, { Component } from 'react';
 import {
