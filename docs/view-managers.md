@@ -439,7 +439,7 @@ As with native modules, we want to register our new `CustomUserControlViewManage
 _ReactPackageProvider.idl_
 
 ```c++
-namespace NativeModuleSample
+namespace ViewManagerSample
 {
     [webhosthidden]
     [default_interface]
@@ -461,7 +461,7 @@ _ReactPackageProvider.h_
 
 using namespace winrt::Microsoft::ReactNative;
 
-namespace winrt::NativeModuleSample::implementation
+namespace winrt::ViewManagerSample::implementation
 {
     struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider>
     {
@@ -471,7 +471,7 @@ namespace winrt::NativeModuleSample::implementation
     };
 }
 
-namespace winrt::NativeModuleSample::factory_implementation
+namespace winrt::ViewManagerSample::factory_implementation
 {
     struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
 }
