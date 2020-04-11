@@ -38,8 +38,8 @@ Now you'll have a new native module project under `react-native-my-library`. Be 
 In the directory for your native module project, you first need to update to `react-native` 0.60 and get the latest `react-native-windows`:
 
 ```cmd
-yarn add react-native@0.60 --dev
-yarn add react-native-windows@vnext --peer
+yarn add react-native@0.61 --dev
+yarn add react-native-windows@0.61 --peer
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
