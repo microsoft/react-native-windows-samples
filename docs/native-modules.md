@@ -30,19 +30,11 @@ React Native for Windows supports authoring native modules in both C# and C++. E
 
 ## Initial Setup
 
-Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows
+Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows.
 
 Once you have set up your development environment and project structure, you are ready to write code. 
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
-
-1. You followed [Consuming react native windows](getting-started.md), where
-1. You ran `react-native windows --template vnext` to add Windows to your project, and
-1. You are just adding your native code to the app project under the `windows` folder.
-
-Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
-
-If you are instead creating a standalone native module, or adding Windows support to an existing native module, check out the [Native Modules Setup](native-modules-setup.md) guide first.
+Open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
 
 ## Sample Native Module (C#)
 
