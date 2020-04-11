@@ -14,7 +14,7 @@ This guide will help set you up with the Visual Studio infrastructure to author 
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
-If you're planning on writing in C++, you'll need to download and install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
+If you're planning on writing in C++, you *must* install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
 
 ## Choose your own adventure
 
@@ -60,7 +60,7 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ### Updating your package.json
 
-In the directory for your native module project, you first need to update to `react-native` 0.60 and get the latest `react-native-windows`:
+You'll need to ensure you have version 0.61 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
 ```cmd
 yarn add react-native@0.61 --dev
@@ -71,36 +71,49 @@ Now it's time to switch into Visual Studio and create a new project.
 
 ### Creating the Visual Studio Project / Solution
 
-Open Visual Studio and select `Create a new project`. You're going to create a new `Windows Runtime Component` project, which produce a library that is compatible with Windows UWP apps.
+Open Visual Studio and select `Create a new project`. You're going to create a new `Windows Runtime Component` project, which produces a library that is compatible with Windows UWP apps.
 
-If you're planning on writing your native module in C#, you'll want to choose `Windows Runtime Component (Universal Windows)`.
+If you're planning on writing your native module in C#, you'll want to choose the C# `Windows Runtime Component (Universal Windows)`:
 
-If you're planning on writing your native module in C++, you'll want to choose `Windows Runtime Component (C++/WinRT)`. **Important:** You want **C++/WinRT**, not **C++/CX**. Do not choose `Windows Runtime Component (C++/CX)`. If you don't see the **C++/WinRT** project type, make sure you installed the _C++/WinRT Visual Studio Extension_ linked to above under [Development Environment](#development-environment).
+![C# Windows Runtime Component (Universal Windows)](assets/native-modules-setup-new-cs-project.png)
+
+If you're planning on writing your native module in C++, you'll want to choose `Windows Runtime Component (C++/WinRT)`:
+
+![Windows Runtime Component (C++/WinRT)](assets/native-modules-setup-new-cpp-project.png)
+
+> **Important:** You want *C++/WinRT*, not *C++/CX*. Do **not** choose the C++/CX `Windows Runtime Component (Universal)` project-type:
+> 
+> ![Wrong Windows Runtime Component (Universal)](assets/native-modules-setup-wrong-cpp-project.png)
+> 
+> If you don't see the `Windows Runtime Component (C++/WinRT)` project type, go back and install the _C++/WinRT Visual Studio Extension_ under [Development Environment](#development-environment).
 
 1. Set the `Project Name` to `MyLibrary`.
-1. Set the `Location` to the native module directory you created earlier.
+1. Set the `Location` to the native module directory (typically the same directory with the `ios` and `android` sub-directories).
 1. Set the `Solution Name` to `MyLibrary`.
 1. Click `Create`.
 
-Next you'll be prompted to select the versions of Windows you'll support. This should match the values for React Native Windows:
+Next you'll be prompted to select the versions of Windows you'll support. This should match the values for React Native Windows, which as of version 0.61, are:
 
 1. Set the `Target version` to `Windows 10, version 1903 (10.0; Build 18362)`.
 1. Set the `Minimum version` to `Windows 10 Creators Update (10.0; Build 15063)`.
 
 You should now have a new `MyLibrary` solution file at `.\MyLibrary\MyLibrary.sln` and a `MyLibrary` project at `.\MyLibrary\MyLibrary\MyLibrary.csproj` for C# or `.\MyLibrary\MyLibrary\MyLibrary.vcxproj` for C++.
 
-For C++/WinRT project:
+Additionally, for C++/WinRT projects, you'll need to change the following:
 
 1. Right click on the project and choose `Manage Nuget Packages...`
     1. Select version 2.0.190730.2 for Microsoft.Windows.CppWinRT package.
 1. Right-click on the project and choose `Properties`
     1. Under `Linker > Windows Metadata` set `Generate Windows Metadata` to `Yes`.
 
-Now, we want to rename the root directory of the Windows native code to `windows` to match the peer `android` and `ios` directories:
+Now, before we go any further we'll want to rename the root directory of the Windows native code to `windows` to match the peer `android` and `ios` directories:
 
 1. Close the solution with `File` > `Close Solution`.
 1. Rename that top `MyLibrary` directory `windows`.
 1. Re-open the solution file at `windows\MyLibrary.sln`.
+
+> *Optional*: Whether you're creating a new native module from scratch, or adding windows support to an existing ios/android module, if you're using git, you'll want to add Visual Studio-specific entries in your project's `.gitignore`.
+> The simplest way to do this is to get [VisualStudio.gitignore](https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore) and save it as `windows\.gitignore`.
 
 Now it's time to add React Native Windows into the solution.
 
@@ -187,7 +200,7 @@ If you're writing in C++, you'll want to add `Microsoft.ReactNative.Cxx`:
 
 To make sure that everything is working, you'll want to try building `MyLibrary`. First you'll want to make sure you've chosen a supported platform:
 
-1. At the top, change the `Solution Platform` to `x86`, `x64` or `ARM`.
+1. At the top, change the `Solution Platform` to `x86` or `x64`.
 1. In the `Build` menu, select `Build Solution`.
 
 ### Next Steps
