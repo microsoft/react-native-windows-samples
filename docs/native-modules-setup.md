@@ -186,11 +186,14 @@ You have now created the scaffolding to build a native module or view manager. N
 2. Run `npm i <module-local-path> --save` to install the local module.
 3. [Link the native module](native-modules-using.md).
 
-#### Option2: Adding Windows support to existing sample app.
-If you are working on an existing module that already has iOS and Android samples, and want to add window part in the existing test app, follow these steps.
+#### Option 2: Adding Windows support to existing sample app
+
+If you are working on an existing module that already has iOS and Android samples, and want to add Windows support to the existing test app, follow these steps.
+
 1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app. Copy `windows` folder into the existing sample app folder.
 2. Open `sln` and `vxcproj` files and check `node_module` reference paths. Fix the paths if necessary based on how the folders are structured in native module repo ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows.sln#L11-L42)).
-3. Open the solution with VisualStudio and [link native module](native-modules-using.md).
+3. Open the solution with Visual Studio and [link native module](native-modules-using.md).
+
     
     >The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
 
