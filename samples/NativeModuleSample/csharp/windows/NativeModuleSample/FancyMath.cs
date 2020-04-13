@@ -26,7 +26,7 @@ namespace NativeModuleSample
             }
 
             [ReactEvent]
-            public ReactEvent<double> AddEvent { get; set; }
+            public Action<double> AddEvent { get; set; }
         }
     }
 }

@@ -23,13 +23,13 @@
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-native": "^0.60.0-0",
-    "react-native-windows": "^0.60.0-vnext"
+    "react": "16.9.0",
+    "react-native": "^0.61",
+    "react-native-windows": "^0.61"
   },
   "devDependencies": {
-    "react": "^16.8.6",
-    "react-native": "^0.60.0-0",
-    "react-native-windows": "^0.60.0-vnext"
+    "react": "16.9.0",
+    "react-native": "^0.61",
+    "react-native-windows": "^0.61"
   }
 }
