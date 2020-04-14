@@ -190,7 +190,9 @@ You have now created the scaffolding to build a native module or view manager. N
 
 If you are working on an existing module that already has iOS and Android samples, and want to add Windows support to the existing test app, follow these steps (example of WebView module test app can be found [here](https://github.com/react-native-community/react-native-webview/tree/master/example)).
 
-1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app. Copy `windows` folder into the existing sample app folder.
+1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app. 
+
+1. Copy the `Windows` folder from the blank RNW app into the existing sample app's sample app's folder. (The RNW CLI helps create the correct project setup that you can then copy directly into the sample app.)
 2. Open `sln` and `vxcproj` files and check `node_module` reference paths. Fix the paths if necessary based on how the folders are structured in native module repo ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows.sln#L11-L42)).
 3. Open the solution with Visual Studio and [link native module](native-modules-using.md).
 
