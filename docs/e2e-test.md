@@ -20,6 +20,7 @@ E2E test app, test library and test cases are in packages/E2ETest/, and they are
 # Run E2E test
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
+Also - make sure your accent color is the default blue. The test masters depend on this. System scale factor can also play a role in tests passing (e.g. in the RenderSize property). 
 
 ## Procedures to setup and run E2E test
 
