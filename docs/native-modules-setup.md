@@ -16,20 +16,44 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 If you're planning on writing in C++, you *must* install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
 
-## New Project (optional)
+## Choose your own adventure
 
-If you already have an existing native module project for iOS/Android, you can skip straight to [Manually Adding Windows Support](#manually-adding-windows-support).
+Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
-Otherwise, if you're creating a new project from scratch, the quickest way is to follow the official React Native instructions at https://facebook.github.io/react-native/docs/native-modules-setup.
+- [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-project)
+- [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
+- [Add Windows support to an existing community library](#Adding-Windows-support-to-an-existing-library 
+) 
+
+## Referencing Windows APIs within a React Native for Windows project
+
+If you are only planning on adding a native module to your existing React Native Windows app, ie:
+
+1. You followed the [Getting Started](.\getting-started.md) guide, where
+1. You ran `npx react-native-windows-init` to add Windows to your project, and
+1. You are just adding your native code to the app project under the `windows` folder.
+
+Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
+
+## Creating a new native module library project
+
+The steps to create a new native module library project are:
+1. Follow the official React Native instructions to create a blank native module project
+1. Add Windows support to the newly created library
+
+### Creating a blank native module project
+
+Follow the official React Native instructions at https://facebook.github.io/react-native/docs/native-modules-setup.
 
 ```cmd
-yarn global add create-react-native-module
-create-react-native-module MyLibrary
+npx create-react-native-module MyLibrary
 ```
 
 Now you'll have a new native module project under `react-native-my-library`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
 
-## Manually Adding Windows Support
+At this point, follow the steps below to add Windows support to the newly created library.
+
+## Adding Windows support to an existing library 
 
 > **The plan is to automate this process as part of a CLI new library project template, see issues [3201](https://github.com/microsoft/react-native-windows/issues/3201) and [3203](https://github.com/microsoft/react-native-windows/issues/3203). However we are also documenting the manual process here for developers who are unable to use the CLI.**
 
@@ -126,6 +150,9 @@ For each project, you'll do the following:
 1. Right-click on the `ReactNative` folder.
 1. Select `Add` > `Existing Project...`.
 1. Select the project file and click `Open`.
+
+When you are done, your solution should look like this:
+![native module dependencies](./assets/native-module-dependencies.png)
 
 You now have all of the React Native Windows projects to your solution. Next we're going to reference them in our `MyLibrary` project.
 
