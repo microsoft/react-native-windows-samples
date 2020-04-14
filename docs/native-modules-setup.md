@@ -30,7 +30,7 @@ Once your development environment has been correctly configured, you have severa
 If you are only planning on adding a native module to your existing React Native Windows app, ie:
 
 1. You followed the [Getting Started](.\getting-started.md) guide, where
-1. You ran `react-native windows --template vnext` to add Windows to your project, and
+1. You ran `npx react-native-windows-init` to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
 Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
@@ -46,8 +46,7 @@ The steps to create a new native module library project are:
 Follow the official React Native instructions at https://facebook.github.io/react-native/docs/native-modules-setup.
 
 ```cmd
-yarn global add create-react-native-module
-create-react-native-module MyLibrary
+npx create-react-native-module MyLibrary
 ```
 
 Now you'll have a new native module project under `react-native-my-library`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
@@ -153,7 +152,7 @@ For each project, you'll do the following:
 1. Select the project file and click `Open`.
 
 When you are done, your solution should look like this:
-![native module dependencies](./assets/native-module-dependencies.jpg)
+![native module dependencies](./assets/native-module-dependencies.png)
 
 You now have all of the React Native Windows projects to your solution. Next we're going to reference them in our `MyLibrary` project.
 
