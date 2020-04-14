@@ -7,7 +7,7 @@ title: Popup
 
 ## Props
 
-Inherits [View Props](https://facebook.github.io/react-native/docs/view#props).
+Inherits [View Props](https://reactnative.dev/docs/view#props).
 
 ### isOpen
 

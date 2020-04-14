@@ -26,7 +26,7 @@ You can use React Native for Windows & Mac in any way you need, including things
   - Add React Native for Windows components to your existing Win32
   projects using XamlIslands
 
-[React Native]: http://facebook.github.io/react-native
+[React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows 10 SDK]: https://developer.microsoft.com/en-us/windows/downloads
 [MacOS 10.12 SDK]: https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_release_notes

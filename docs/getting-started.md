@@ -9,7 +9,7 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](building-rnw.md).
 
-For information around how to set up React Native, see the [React Native Getting Started Guide](http://facebook.github.io/react-native/docs/getting-started.html).
+For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
 ## Install React Native for Windows
 
