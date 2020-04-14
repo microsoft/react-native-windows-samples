@@ -39,7 +39,7 @@ react-native core as it evolves as part of the \`vnext\` effort. Please
 see the [Roadmap 2019] blog for details on this effort and investment
 roadmap for the upcoming months.
 
-**React Native for Windows vnext now supports React Native version 0.60.**
+**React Native for Windows vnext now supports React Native version 0.61.**
 Download the latest [npm package] to get the updates.
 
 [Roadmap 2019]: blog/2019/07/22/roadmap
@@ -78,11 +78,11 @@ If you're curious about the **sample apps** we have published for inspiration:
 [Get started]: docs/getting-started
 [React Native for Windows]: https://github.com/microsoft/react-native-windows
 [React Native for Mac]: https://aka.ms/react-native-mac
-[React Native Tutorial]: https://facebook.github.io/react-native/docs/tutorial.html
-[React Native Components and APIs]: https://facebook.github.io/react-native/docs/activityindicator
+[React Native Tutorial]: https://reactnative.dev/docs/tutorial
+[React Native Components and APIs]: https://reactnative.dev/docs/components-and-apis
 [API Parity status]: docs/parity-status
 [Windows Brushes and Themes]: docs/windowsbrush-and-theme
-[check out our list here]: https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/api/react-native-windows.md
+[check out our list here]: docs/flyout-component
 [Native modules]: docs/native-modules
 [Native UI components]: docs/view-managers
 [Calculator app]: https://github.com/microsoft/react-native-windows-samples/tree/master/samples/Calculator
@@ -170,7 +170,7 @@ class Index extends React.Component {
           columnTwo={
             <React.Fragment>
               <h1 className="title">React Native</h1>
-              <p className="tagline">For Windows & Mac</p>
+              <p className="tagline">For Windows &amp; Mac</p>
               <div className="buttons">
                 <GetStartedButton />
               </div>
@@ -183,7 +183,7 @@ class Index extends React.Component {
     const Intro = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="Bringing React Native to Windows & Mac devices" />
+          <Heading text="Bringing React Native to Windows &amp; Mac devices" />
           <MarkdownBlock>{textContent.intro}</MarkdownBlock>
         </div>
       </Section>
