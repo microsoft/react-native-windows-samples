@@ -24,7 +24,7 @@ To develop React-Native for Windows apps, you will need the following:
 
 ## React Native Development Dependencies
 
-- Install the [standard React Native dependencies](http://facebook.github.io/react-native/docs/getting-started.html#node-python2-jdk)
+- Install the [standard React Native dependencies](https://reactnative.dev/docs/getting-started#node-python2-jdk)
 - Install [Node.js](https://nodejs.org) via one of the following methods:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolately, from an elevated Command Prompt, run:
   ```

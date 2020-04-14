@@ -43,7 +43,7 @@ The steps to create a new native module library project are:
 
 ### Creating a blank native module project
 
-Follow the official React Native instructions at https://facebook.github.io/react-native/docs/native-modules-setup.
+Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup.
 
 ```cmd
 npx create-react-native-module MyLibrary

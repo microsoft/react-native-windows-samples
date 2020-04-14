@@ -3,7 +3,7 @@ id: iviewwindowsprops-api
 title: IViewWindowsProps
 ---
 
-This extends the [View Props](https://facebook.github.io/react-native/docs/view#props) and [IKeyboardProps](ikeyboardprops-api-windows.md) APIs.
+This extends the [View Props](https://reactnative.dev/docs/view#props) and [IKeyboardProps](ikeyboardprops-api-windows.md) APIs.
 
 # Reference
 

@@ -15,16 +15,16 @@ class Footer extends React.Component {
         <section className="sitemap">
           <div>
             <h5>React Native Docs</h5>
-            <a href="http://facebook.github.io/react-native/docs/getting-started.html">
+            <a href="https://reactnative.dev/docs/getting-started">
               Getting Started
             </a>
-            <a href="http://facebook.github.io/react-native/docs/tutorial.html">
+            <a href="https://reactnative.dev/docs/tutorial">
               Tutorial
             </a>
-            <a href="http://facebook.github.io/react-native/docs/components-and-apis.html">
+            <a href="https://reactnative.dev/docs/components-and-apis">
               Components and APIs
             </a>
-            <a href="http://facebook.github.io/react-native/docs/more-resources.html">
+            <a href="https://reactnative.dev/docs/more-resources">
               More Resources
             </a>
           </div>
