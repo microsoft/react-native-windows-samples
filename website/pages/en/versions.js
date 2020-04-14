@@ -4,7 +4,7 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 const textContent = {
   introtext: `
-  React Native for Windows has a release train that is tracked on GitHub through the [react-native-windows-releases](https://github.com/microsoft/react-native-windows/releases/) archive.
+  React Native for Windows has a release train that is tracked on GitHub through the [react-native-windows releases](https://github.com/microsoft/react-native-windows/releases/) archive.
   When a major release is made available, it will be present here under the **Latest version** section.
 
   Once the release has had significant time to be tested and contributers have addressed as many issues as possible, the release will be upgraded to a **Stable version** and become present in the corosponding section below.
@@ -14,11 +14,11 @@ const textContent = {
   `,
   stablelegacyversions: `
   The most recent and stable version will be used automatically when the
-  *yarn add rnpm-plugin-windows*
+  *npx react-native-windows-init*
   command is run on a newly initialized React Native project.
 
   See the
-  [Consuming React Native for Windows](docs/consuming-rnw)
+  [Getting Started](docs/getting-started)
   guide for more information.
   `
 };
@@ -59,14 +59,21 @@ class Versions extends React.Component {
           <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
           <TableRow versionNumber="MASTER"
           docLink="https://www.aka.ms/react-native-windows-mac"
-          changeLogLink="https://github.com/microsoft/react-native-windows/compare/react-native-windows_v0.60.0-vnext.118...master"
-          changeLogText="Commits since 0.60"/>
+          changeLogLink="https://github.com/microsoft/react-native-windows/compare/0.61-stable...master"
+          changeLogText="Commits since 0.61"/>
           <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>
           <MarkdownBlock>{textContent.stablelegacyversions}</MarkdownBlock>
-          <TableRow versionNumber="0.60" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.60.0-vnext.118"/>
-          <TableRow background="dark" versionNumber="0.59" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.59.0-vnext.205"/>
-          <TableRow versionNumber="0.58" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/vnext-0.58.0-vnext.176"/>
-          <TableRow background="dark" versionNumber="0.57" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/vnext-0.57.0-vnext.31"/>
+          {/*
+            Facebook docs point to GitHub releases (usually patch 0, ie. 0.XX.0) which have an human-written changelog. They don't update the links with new patch versions.
+            Prior to vnext (<= 0.59), we had no changelogs at all, so we still link to the GitHub releases, even though they're empty.
+            Starting with vnext (>= 0.59) we generate changelogs in-repo, so link to that instead.
+          */}
+          <TableRow versionNumber="0.61" changeLogLink="https://github.com/microsoft/react-native-windows/blob/0.61-stable/vnext/CHANGELOG.md"/>
+          <TableRow versionNumber="0.60" changeLogLink="https://github.com/microsoft/react-native-windows/blob/0.60-stable/vnext/CHANGELOG.md" background="dark"/>
+          <TableRow versionNumber="0.59" changeLogLink="https://github.com/microsoft/react-native-windows/blob/0.59-vnext-stable/vnext/CHANGELOG.md"/>
+          <TableRow versionNumber="0.59 (Legacy)" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/v0.59.0-legacy.2" background="dark"/>
+          <TableRow versionNumber="0.58 (Legacy)" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/vnext-0.58.0-vnext.176"/>
+          <TableRow versionNumber="0.57 (Legacy)" changeLogLink="https://github.com/microsoft/react-native-windows/releases/tag/v0.57.2" background="dark"/>
         </div>
       </Section>
     );
