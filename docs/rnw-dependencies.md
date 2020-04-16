@@ -32,6 +32,8 @@ To develop React-Native for Windows apps, you will need the following:
   ```
   - Directly from [NodeJs](https://nodejs.org/en/download/)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
+  > For both of the non-choco installations, ensure that you are installing version 12.9.1 as that is the recommended version when building React Native Windows apps.
+  
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
 
