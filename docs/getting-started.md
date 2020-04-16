@@ -35,8 +35,11 @@ cd <project name>
 Lastly, install the React Native for Windows packages.
 
 ```
-npx react-native-windows-init
+npx react-native-windows-init --overwrite
 ```
+
+#### Confirming Metro JS reinstallation
+
 
 ## Running a React Native Windows App
 
