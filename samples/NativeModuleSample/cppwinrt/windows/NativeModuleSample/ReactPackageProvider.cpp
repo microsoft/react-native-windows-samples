@@ -6,6 +6,7 @@
 #include "ReactPackageProvider.g.cpp"
 
 #include "FancyMath.h"
+#include "DataMarshallingExamples.h"
 
 using namespace winrt::Microsoft::ReactNative;
 
