@@ -17,7 +17,7 @@
       "native-modules-setup",
       "native-modules-using",
       "native-modules-marshalling-data",
-      "native-modules-marshalling-data-jsvalue",
+      "native-modules-jsvalue",
       "native-modules-advanced"
     ]
   },

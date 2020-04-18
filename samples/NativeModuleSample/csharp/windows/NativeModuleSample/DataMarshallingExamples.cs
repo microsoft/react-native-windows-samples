@@ -349,10 +349,11 @@ namespace NativeModuleSample
             double midX = 0.5 * (p1["x"].AsDouble() + p2["x"].AsDouble());
             double midY = 0.5 * (p1["y"].AsDouble() + p2["y"].AsDouble());
 
-            JSValue midpoint = new JSValue(new Dictionary<string, JSValue>() {
-                { "x", new JSValue(midX) },
-                { "y", new JSValue(midY) },
-            });
+            JSValue midpoint = new JSValueObject()
+            {
+                { "x", midX },
+                { "y", midY },
+            };
 
             return midpoint;
         }

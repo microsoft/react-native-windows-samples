@@ -11,7 +11,6 @@
 
 #include "NativeModules.h"
 
-
 namespace NativeModuleSample
 {
     void DebugWriteLine(const std::string& message) noexcept
