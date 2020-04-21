@@ -260,11 +260,11 @@ auto pos = obj.find("no_such_key");
 // pos == obj.end()
 ```
 
-### Use for JSON
+## Use for JSON
 
 Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creating JSON strings directy from JValues.
 
-### Performance
+## Performance
 
 JSValues can be useful for manipulating large and complex JS objects in your native code, giving you random access to just the values you need. However, note that there is a performance penalty to doing this, as the entirety of the JS object will be parsed into the JSValue before it is passed to your code.
 
