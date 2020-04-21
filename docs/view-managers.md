@@ -28,8 +28,8 @@ Once you have set up your development environment and project structure, you are
 
 If you are only planning on adding a native module to your existing React Native Windows app, ie:
 
-1. You followed [Consuming react native windows](getting-started.md), where
-1. You ran `react-native windows --template vnext` to add Windows to your project, and
+1. You followed [Getting Started](getting-started.md), where
+1. You ran `npx react-native-windows-init --overwrite` to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
 Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.

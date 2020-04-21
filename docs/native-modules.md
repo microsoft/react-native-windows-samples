@@ -16,7 +16,7 @@ React Native was designed such that it is possible for you to write real native 
 
 ## Overview
 
-Native modules contain (or wrap) native code which can then be exposed to JS. To accomplish this in React Native for Windows vNext, at a high level you must:
+Native modules contain (or wrap) native code which can then be exposed to JS. To accomplish this in React Native for Windows, at a high level you must:
 
 1. Author your native module, which is the class that calls your native code.
    1. Add custom attributes to the class. These attributes allow you to define methods, properties, constants, and events that can be referenced from JavaScript.
@@ -215,7 +215,7 @@ class NativeModuleSample extends Component {
 AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 ```
 
-To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows vNext in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
+To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
 
 To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath.E` and `NativeModules.FancyMath.Pi`.
 
@@ -457,7 +457,7 @@ class NativeModuleSample extends Component {
 AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 ```
 
-To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows vNext in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
+To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
 
 To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath.E` and `NativeModules.FancyMath.Pi`.
 
