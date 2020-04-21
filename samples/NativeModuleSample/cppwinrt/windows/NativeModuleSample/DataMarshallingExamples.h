@@ -340,11 +340,14 @@ namespace NativeModuleSample
         // and then use a variety of APIs to convert the JSValue into
         // other native types.
         //
-        // JSValues can be useful for marshalling large and complex JS objects
-        // into your native code, giving you random access to just the values
+        // JSValues can be useful for manipulating large and complex JS objects
+        // in your native code, giving you random access to just the values
         // you need. However, note that there is a performance penalty to doing
         // this, as the entirety of the JS object will be parsed into the
         // JSValue before it is passed to your code.
+
+        // For more information on using JSValue, see:
+        // https://microsoft.github.io/react-native-windows/docs/native-modules-jsvalue
 
         // Example JS:
         //

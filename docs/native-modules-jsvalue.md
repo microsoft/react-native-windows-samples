@@ -110,3 +110,166 @@ assert(map3.AsObject().size() == 2);
 JSValue map4 = std::move(map2);
 assert(map4.AsObject().size() == 2);
 ```
+
+## Runtime Type Checking and Conversions
+
+While most unsupported operations will cause compilation errors, some operations on JSValues require checking at runtime that the stored type is compatible with the operation. Some operations may throw runtime exceptions, or produce unexpected behavior as type conversions fail and default values are returned.
+
+More examples should hopefully clarify this:
+
+### C#
+
+```csharp
+JSValue dint = 42;
+
+JSValue str = "foo";
+JSValue anotherStr = str + "something"; // fine
+JSValue thisDoesntCompile = str + dint; // compilation error
+```
+
+Explicit type conversions can be requested for some of the basic types:
+
+```csharp
+JSValue dint = 12345678;
+JSValue doub = dint.AsDouble(); // doub will hold 12345678.0
+JSValue str = dint.AsString(); // str == "12345678"
+
+JSValue hugeInt = long.MaxValue; // hugeInt = 9223372036854775807
+JSValue hugeDoub = hugeInt.AsDouble(); // hugeDoub = 9.2233720368547758E+18
+```
+
+### C++/WinRT
+
+```c++
+JSValue dint = 42;
+
+JSValue str = "foo";
+JSValue thisDoesntCompile = str + "something"; // compilation error
+JSValue thisDoesntCompile2 = str + dint; // compilation error
+```
+
+Explicit type conversions can be requested for some of the basic types:
+
+```c++
+#ifdef max
+#undef max
+#endif
+
+JSValue dint = 12345678;
+JSValue doub = dint.AsDouble(); // doub will hold 12345678.0
+JSValue str = dint.AsString(); // str == "12345678"
+JSValue hugeInt = std::numeric_limits<int64_t>::max();
+JSValue hugeDoub = hugeInt.AsDouble();
+```
+
+## Iteration and Lookup
+
+### C#
+
+You can iterate over JSValueArrays as you would over any C# enumerable.
+
+```csharp
+JSValueArray array = new JSValueArray() { 2, 3, "foo" };
+
+foreach (var val in array)
+{
+    doSomethingWith(val);
+}
+```
+
+You can iterate over JSValueObjects just like any other `IDictionary<string, JSValue>`.
+
+```csharp
+JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
+
+foreach (var kvp in obj)
+{
+    // Key is kvp.Key, value is kvp.Value
+    processKey(kvp.Key);
+    processValue(kvp.Value);
+}
+
+foreach (var key in obj.Keys)
+{
+    processKey(key);
+}
+
+foreach (var value in obj.Values)
+{
+    processValue(value);
+}
+```
+
+You can find an element by key in a JSValueObject using the `TryGetValue()` method,
+which takes the key and returns `true` if a key is present and provides the value as an out variable. If the key is not preset, it returns `false` and the out variable will be null.
+
+```csharp
+JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
+
+if (obj.TryGetValue("hello", out JSValue value))
+{
+    // value is "world"
+}
+
+if (obj.TryGetValue("no_such_key", out JSValue value2))
+{
+    // this block will not be executed
+}
+// value2 is null
+```
+
+### C++/WinRT
+
+You can iterate over JSValueArrays as you would over any C++ sequence container.
+
+```c++
+JSValueArray array = JSValueArray{ 2, 3, "foo" };
+
+for (auto& val : array)
+{
+    doSomethingWith(val);
+}
+```
+
+You can iterate over JSValueObjects just like any other C++ `std::map`.
+
+```c++
+JSValueObject obj = JSValueObject{ { "2", 3}, { "hello", "world" }, { "x", 4 } };
+
+for (auto& pair : obj)
+{
+    // Key is pair.first, value is pair.second
+    processKey(pair.first);
+    processValue(pair.second);
+}
+```
+
+You can find an element by key in a dynamic map using the `find()` method,
+which returns an iterator:
+
+```c++
+JSValueObject obj = JSValueObject{ { "2", 3}, { "hello", "world" }, { "x", 4 } };
+
+auto pos = obj.find("hello");
+// pos->first is "hello"
+// pos->second is "world"
+
+auto pos = obj.find("no_such_key");
+// pos == obj.end()
+```
+
+### Use for JSON
+
+Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creating JSON strings directy from JValues.
+
+### Performance
+
+JSValues can be useful for manipulating large and complex JS objects in your native code, giving you random access to just the values you need. However, note that there is a performance penalty to doing this, as the entirety of the JS object will be parsed into the JSValue before it is passed to your code.
+
+The performance hit of using JSValue in your native code, external to Microsoft.ReactNative, is currently on top of the performance hit of Microsoft.ReactNative's internal use of `folly::dynamic`.
+
+Within Microsoft.ReactNative, JS objects are currently marshalled from the JS VM into the native code as `folly::dynamic` objects, and vise-versa. When those objects need to be further marshalled outside of Microsoft.ReactNative (across the WinRT ABI boundary) they are done serially via the high-performance `IJSValueReader` and `IJSValueWriter` interfaces, which completely avoid further heap allocations.
+
+However, using reading that data into a JSValue means taking the performance hit to completely re-construct the objects in their entirety.
+
+For more information, see [Marshalling Data](native-modules-marshalling-data.md).
