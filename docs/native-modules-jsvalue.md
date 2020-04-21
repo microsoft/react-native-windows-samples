@@ -3,6 +3,8 @@ id: native-modules-jsvalue
 title: Using JSValue
 ---
 
+>**This documentation and the underlying platform code is a work in progress.**
+
 JSValue is a native, immutable invariant value type, and is meant to hold any of the commonly used JS types: bools, ints, doubles, strings, arrays, and objects. It is provided for native developers (writing native modules or view managers) who want an equivalent to the `folly::dynamic` type that is compatible with the WinRT ABI surface provided by `Microsoft.ReactNative`.
 
 Two JSValue implementations are provided: one for C++ developers in the `Microsoft.ReactNative.Cxx` shared project, and one for C# developers in the `Microsoft.ReactNative.SharedManaged` project.
