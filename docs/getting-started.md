@@ -40,7 +40,6 @@ npx react-native-windows-init --overwrite
 
 #### Confirming Metro JS reinstallation
 
-
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
