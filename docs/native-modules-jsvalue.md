@@ -115,7 +115,7 @@ assert(map4.AsObject().size() == 2);
 
 ## Runtime Type Checking and Conversions
 
-While most unsupported operations will cause compilation errors, some operations on JSValues require checking at runtime that the stored type is compatible with the operation. Some operations may throw runtime exceptions, or produce unexpected behavior as type conversions fail and default values are returned.
+While most unsupported operations will cause compilation errors, some operations on JSValues require checking at runtime that the stored type is compatible with the operation. Some operations may throw runtime exceptions or produce unexpected behavior as type conversions fail and default values are returned.
 
 More examples should hopefully clarify this:
 
@@ -268,10 +268,6 @@ Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creatin
 
 JSValues can be useful for manipulating large and complex JS objects in your native code, giving you random access to just the values you need. However, note that there is a performance penalty to doing this, as the entirety of the JS object will be parsed into the JSValue before it is passed to your code.
 
-The performance hit of using JSValue in your native code, external to Microsoft.ReactNative, is currently on top of the performance hit of Microsoft.ReactNative's internal use of `folly::dynamic`.
-
-Within Microsoft.ReactNative, JS objects are currently marshalled from the JS VM into the native code as `folly::dynamic` objects, and vise-versa. When those objects need to be further marshalled outside of Microsoft.ReactNative (across the WinRT ABI boundary) they are done serially via the high-performance `IJSValueReader` and `IJSValueWriter` interfaces, which completely avoid further heap allocations.
-
-However, using reading that data into a JSValue means taking the performance hit to completely re-construct the objects in their entirety.
+The performance hit of using JSValue in your external native code is in addition to the performance hit of Microsoft.ReactNative's own internal use of `folly::dynamic`. Data is marshalled out of Microsoft.ReactNative through a high-performance serialization interface, however reading that data back into a JSValue means taking the time and memory to completely re-construct the original object structure.
 
 For more information, see [Marshalling Data](native-modules-marshalling-data.md).
