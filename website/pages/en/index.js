@@ -5,26 +5,17 @@ const CompLibrary = require("../../core/CompLibrary.js");
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 const textContent = {
+  windowsintro: `
+  test
+  `,
+  macintro: `
+  test
+  `,
   intro: `
-[React Native] enables you to build world-class native application
-experiences on multiple platforms using a consistent developer
-experience based on Javascript and [React].
-
 **React Native for Windows & Mac brings React Native support for the
 [Windows 10 SDK] as well as the [MacOS 10.12 SDK]**. With this, you can use Javascript to build native
 Windows apps for [all devices supported by Windows 10] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the MacOS desktop and laptop ecosystems.
-
-![Written in Javascript, Running Native](img/homepage/native-and-js.png)
-
-You can use React Native for Windows & Mac in any way you need, including things like:
-  - Add Windows & Mac support to your existing React Native projects for iOS
-  and/or Android
-  - Create full Windows 10 & MacOS 10.12 apps using React Native for Windows & Mac from scratch
-  - Add React Native for Windows & Mac components to your existing native
-  Windows 10 or MacOS 10.12 projects
-  - Add React Native for Windows components to your existing Win32
-  projects using XamlIslands
 
 [React Native]: http://facebook.github.io/react-native
 [React]: https://reactjs.org/
@@ -100,15 +91,13 @@ class Index extends React.Component {
 
     const GetStartedButton = () => (
       <div>
-      <div style={{marginBottom: 35}}>
-        <a
-          className="ActionButton primary"
-          href={baseUrl + "docs/getting-started"}
-          target="_self"
-        >
-          Get started with Windows
-        </a>
-        </div>
+          <a
+            className="ActionButton primary"
+            href={baseUrl + "docs/getting-started"}
+            target="_self"
+          >
+            <b style={{fontSize: 24}}>Windows</b>
+          </a>
       </div>
     );
 
@@ -153,7 +142,7 @@ class Index extends React.Component {
     );
 
     const HeaderHero = () => (
-      <Section background="dark" className="HeaderHero">
+      <Section background="light" className="HeaderHero">
         <div className="socialLinks">
           <TwitterButton />
           <GitHubButton />
@@ -171,24 +160,77 @@ class Index extends React.Component {
             <React.Fragment>
               <h1 className="title">React Native for</h1>
               <p className="tagline">Windows + Mac</p>
-              
             </React.Fragment>
           }
         />
       </Section>
     );
 
+    const GettingStartedActions = () => (
+      <Section background="light">
+        <div className="GettingStartedButtons">
+          <GetStartedButton/>
+        </div>
+      </Section>
+    );
+
     const Intro = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="Bringing React Native to Windows & Mac devices" />
+          <Heading text="React Native on Windows + Mac" />
           <MarkdownBlock>{textContent.intro}</MarkdownBlock>
         </div>
       </Section>
     );
 
-    const Roadmap = () => (
+    const WindowsIntro = () => (
       <Section background="tint">
+        <div className="content">
+          <div className="row">
+            <div className="column">
+              <img style={{maxWidth: '200%', marginLeft: -300, marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_windows_cropped.png" alt="rnw_cropped"/>
+            </div>
+            <div className="column">
+              <Heading text="Build Windows apps using React Native" />
+              <MarkdownBlock>{textContent.windowsintro}</MarkdownBlock>
+              <a
+                className="ActionButton primary"
+                href={baseUrl + "docs/getting-started"}
+                target="_self"
+              >
+                <b style={{fontSize: 24}}>Get started with Windows</b>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
+    );
+
+    const MacIntro = () => (
+      <Section background="light">
+        <div className="content">
+          <div className="row">
+            <div className="column">
+            <Heading text="Build MacOS apps using React Native" />
+            <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
+            <a
+              className="ActionButton primary"
+              href={baseUrl + "docs/getting-started"}
+              target="_self"
+            >
+              <b style={{fontSize: 24}}>Get started with Mac</b>
+            </a>
+            </div>
+            <div className="column">
+              <img style={{maxWidth: '200%', marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_mac_cropped.png" alt="rnw_cropped"/>
+            </div>
+          </div>
+        </div>
+      </Section>
+    );
+
+    const Roadmap = () => (
+      <Section background="light">
         <div className="content">
           <Heading text="Status and Roadmap" />
           <h2>Windows</h2>
@@ -200,7 +242,7 @@ class Index extends React.Component {
     );
 
     const Resources = () => (
-      <Section background="light">
+      <Section background="tint">
         <div className="content">
           <Heading text="Resources" />
           <MarkdownBlock>{textContent.resources}</MarkdownBlock>
@@ -212,8 +254,8 @@ class Index extends React.Component {
       <div className="homepage">
         <HeaderHero />
         <Intro />
-        <Roadmap />
-        <Resources />
+        <WindowsIntro/>
+        <MacIntro/>
       </div>
     );
   }

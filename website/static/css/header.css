@@ -65,7 +65,7 @@ li.navSearchWrapper {
   }
 
   .navigationSlider .slidingNav ul {
-    background-color: $light;
+    background-color: $dark;
     color: black;
   }
 

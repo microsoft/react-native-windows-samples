@@ -21,8 +21,9 @@
 }
 
 .Section .content {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1100px;
+  padding: 10px;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }

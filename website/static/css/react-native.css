@@ -58,7 +58,7 @@ body,
 }
 
 .mainContainer h1 {
-  color: $dark;
+  color: $light;
   font-weight: 700;
   font-size: 60px;
   line-height: 65px;
