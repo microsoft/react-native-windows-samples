@@ -3,7 +3,7 @@ id: win10-compat
 title: Backward compatibility with Windows versions
 ---
 
-React Native for Windows supports Windows 10 devices and OS versions 10.0.15063 and higher. React Native for Windows layers cleanly on top of the [native Windows UI platform](https://github.com/microsoft/microsoft-ui-xaml) which means there are some APIs that may not be supported in all versions of Windows since the corresponding native capabilities were not backward compatible with older OS versions. The following table captures these deltas. If you are using any of the APIs below, they will gracefully fail (no-op) when the app is running on Windows 10 devices of corresponding OS versions.
+React Native for Windows supports Windows 10 devices and OS versions 10.0.16299 and higher. React Native for Windows layers cleanly on top of the [native Windows UI platform](https://github.com/microsoft/microsoft-ui-xaml) which means there are some APIs that may not be supported in all versions of Windows since the corresponding native capabilities were not backward compatible with older OS versions. The following table captures these deltas. If you are using any of the APIs below, they will gracefully fail (no-op) when the app is running on Windows 10 devices of corresponding OS versions.
 
 _Note : There is an ongoing effort to decouple the Windows UI platform from the UWP SDK and ship out of band – [WinUI 3.0](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md#winui-3-q4-2019---2020). React Native for Windows will layer on top of this lifted WinUI platform once it is available at which time several of the below unsupported APIs may start lighting up._
 
