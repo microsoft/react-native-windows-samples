@@ -1,10 +1,15 @@
+/**
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License.
+ */
+
 const React = require("react");
 const CompLibrary = require("../../core/CompLibrary.js");
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 const CWD = process.cwd();
 const siteConfig = require(CWD + '/siteConfig.js');
-const versions = [ '0.61', '0.60' ]; // require(CWD + '/versions.json');
+const versions = require(CWD + '/versions.json');
 
 const docsUrl = siteConfig.url + siteConfig.baseUrl;
 const repoUrl = siteConfig.repoUrl;
@@ -84,7 +89,7 @@ class Versions extends React.Component {
                   <TableRow
                     key={version}
                     versionNumber={version}
-                    docLink={docsUrl + version + '/getting-started'}
+                    docLink={docsUrl + (version == currentVersion ? 'getting-started' : version + '/getting-started')}
                     changeLogLink={repoUrl + '/blob/' + version + '-stable/vnext/CHANGELOG.md'}
                     background={ (parseInt(version.substr(2)) % 2 == 0) ? 'dark' : 'light' }
                   />

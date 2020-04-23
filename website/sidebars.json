@@ -30,9 +30,6 @@
     "API (Windows)": [
       "apptheme-api",
       "ikeyboardprops-api",
-      "iviewwindowsprops-api"],
-    "Components (Mac)": [
-      ""
-    ]
+      "iviewwindowsprops-api"]
   }
 }
