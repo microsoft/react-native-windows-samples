@@ -1,0 +1,34 @@
+{
+  "version-0.60-docs": {
+    "The Basics (Windows)": [
+      "version-0.60-getting-started",
+      "version-0.60-rnw-dependencies",
+      "version-0.60-contributing",
+      "version-0.60-parity-status"
+    ],
+    "Testing": [
+      "version-0.60-e2e-test",
+      "version-0.60-e2e-test-more-about"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.60-native-modules",
+      "version-0.60-view-managers",
+      "version-0.60-native-modules-using"
+    ],
+    "Components (Windows)": [
+      "version-0.60-button-component"
+    ]
+  },
+  "version-0.60-apis": {
+    "Components (Windows)": [
+      "version-0.60-flyout-component",
+      "version-0.60-glyph-component",
+      "version-0.60-popup-component"
+    ],
+    "API (Windows)": [
+      "version-0.60-apptheme-api",
+      "version-0.60-ikeyboardprops-api",
+      "version-0.60-iviewwindowsprops-api"
+    ]
+  }
+}

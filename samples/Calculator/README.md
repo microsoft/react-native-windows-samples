@@ -1,14 +1,33 @@
 # Calculator - React Native for Windows
-This sample showcases the usage of React Native for Windows vNext to build a simple calculator.
 
-### Requirements
-Make sure to have, on your machine, the correct configuration to build and run React Native for Windows projects, as highlighted [here](https://microsoft.github.io/react-native-windows/docs/getting-started).
+This sample showcases the usage of React Native for Windows to build a simple calculator.
 
-### Launch Calculator
-To run the Calculator project as a standalone Windows application, open the **Calculator** folder and run the following command:
+It currently targets React Native Windows 0.61.
 
-```powershell
-react-native run-windows
+### Setup
+First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
+
+Then, within this folder, install the applications's dependencies. If you have `yarn` installed:
+
+```cmd
+yarn install
 ```
 
-The command will take care of building React Native for Windows, deploy the application and then launch Metro bundler and the dev tools.
+Otherwise, you can just use npm:
+
+```cmd
+npm install
+```
+
+### Run
+Once you have all of the dependencies installed, you can run the application with the following command:
+
+```cmd
+npx react-native run-windows
+```
+
+The command will:
+* Build the application and all dependencies
+* Deploy the application
+* Launch the React Native Server and Debugger
+* Launch the application

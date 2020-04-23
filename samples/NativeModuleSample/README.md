@@ -1,11 +1,13 @@
 # Native Module Sample - React Native for Windows
-These samples showcases building Native Modules for React Native for Windows vNext. It includes implementations in C# and C++/WinRT.
+These samples showcase building Native Modules for React Native for Windows. It includes implementations in C# and C++/WinRT.
+
+It currently targets React Native Windows 0.61.
 
 The official documentation can be found here:
 
-* [Native Modules Setup](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/NativeModulesSetup.md)
-* [Native Modules and React Native Windows](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/NativeModules.md)
-* [Native Modules and React Native Windows (Advanced Topics)](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/NativeModulesAdvanced.md)
-* [Native UI Components](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/ViewManagers.md)
+* [Native Modules Setup](https://microsoft.github.io/react-native-windows/docs/native-modules-setup)
+* [Native Modules and React Native Windows](https://microsoft.github.io/react-native-windows/docs/native-modules)
+* [Native Modules and React Native Windows (Advanced Topics)](https://microsoft.github.io/react-native-windows/docs/native-modules-advanced)
+* [Native UI Components](https://microsoft.github.io/react-native-windows/docs/view-managers)
 
 >**Note: Don't build your own projects directly out of these samples. When you publish a native module (as source), you'll want to create a new project with the correct metadata. This will also make sure that you're using unique identifiers in your project files to avoid conflicts with other native modules.**

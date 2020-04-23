@@ -28,8 +28,8 @@ Once you have set up your development environment and project structure, you are
 
 If you are only planning on adding a native module to your existing React Native Windows app, ie:
 
-1. You followed [Consuming react native windows](getting-started.md), where
-1. You ran `react-native windows --template vnext` to add Windows to your project, and
+1. You followed [Getting Started](getting-started.md), where
+1. You ran `npx react-native-windows-init --overwrite` to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
 Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
@@ -180,7 +180,7 @@ namespace ViewManagerSample
 
 #### 2. Registering your View Manager
 
-As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](../Microsoft.ReactNative/IReactPackageProvider.idl).
+As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 _ReactPackageProvider.cs_
 
@@ -295,6 +295,8 @@ _CustomUserControlViewManager.h_
 ```c++
 #pragma once
 
+#include "pch.h"
+
 #include "winrt/Microsoft.ReactNative.h"
 
 namespace winrt::ViewManagerSample::implementation {
@@ -333,7 +335,8 @@ struct CustomUserControlViewManager : winrt::implements<
 }
 ```
 
-*CustomUserControlViewManager.cpp*
+_CustomUserControlViewManager.cpp_
+
 ```c++
 #include "pch.h"
 #include "CustomUserControlViewManager.h"
@@ -427,87 +430,91 @@ void CustomUserControlViewManager::DispatchCommand(
 }
 
 }
-
 ```
 
 #### 2. Registering your View Manager
 
-As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](../Microsoft.ReactNative/IReactPackageProvider.idl).
+As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 _ReactPackageProvider.idl_
 
 ```c++
-namespace ViewManagerSample {
-
-runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
+namespace ViewManagerSample
 {
-  ReactPackageProvider();
-};
-
+    [webhosthidden]
+    [default_interface]
+    runtimeclass ReactPackageProvider : Microsoft.ReactNative.IReactPackageProvider
+    {
+        ReactPackageProvider();
+    };
 }
 ```
 
 After that we add the .h and.cpp files:
 
-*ReactPackageProvider.h*
+_ReactPackageProvider.h_
+
 ```cpp
 #pragma once
+
 #include "ReactPackageProvider.g.h"
 
-namespace winrt::ViewManagerSample::implementation {
+using namespace winrt::Microsoft::ReactNative;
 
-struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider>
+namespace winrt::ViewManagerSample::implementation
 {
-  ReactPackageProvider() = default;
-  void CreatePackage(Microsoft::ReactNative::IReactPackageBuilder const& packageBuilder);
-};
+    struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider>
+    {
+        ReactPackageProvider() = default;
 
-} // namespace winrt::ViewManagerSample::implementation
+        void CreatePackage(IReactPackageBuilder const& packageBuilder) noexcept;
+    };
+}
 
-namespace winrt::ViewManagerSample::factory_implementation {
-
-struct ReactPackageProvider : ReactPackageProviderT<
-                                     ReactPackageProvider,
-                                     implementation::ReactPackageProvider>
+namespace winrt::ViewManagerSample::factory_implementation
 {
-};
-
-} // namespace winrt::ViewManagerSample::factory_implementation
+    struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
+}
 ```
 
-*ReactPackageProvider.cpp*
+_ReactPackageProvider.cpp_
+
 ```cpp
 #include "pch.h"
 #include "ReactPackageProvider.h"
 #include "ReactPackageProvider.g.cpp"
 
+#include <ModuleRegistration.h>
+
+// NOTE: You must include the headers of your native modules here in
+// order for the AddAttributedModules call below to find them.
 #include "CustomUserControlViewManager.h"
 
 using namespace winrt::Microsoft::ReactNative;
-using namespace Microsoft::ReactNative;
 
 namespace winrt::ViewManagerSample::implementation {
 
 void ReactPackageProvider::CreatePackage(IReactPackageBuilder const& packageBuilder)
-{
+noexcept {
   packageBuilder.AddViewManager(
       L"CustomUserControlViewManager", []() { return winrt::make<CustomUserControlViewManager>(); });
 }
 
 } // namespace winrt::ViewManagerSample::implementation
-
 ```
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. And then we call `AddViewManager` with the name of our view manager and a lambda which returns an instance of the view manager.
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
 
-*App.cpp*
+_App.cpp_
+
 ```c++
 #include "pch.h"
 
 #include "App.h"
 #include "ReactPackageProvider.h"
+
 #include "winrt/ViewManagerSample.h"
 
 namespace winrt::SampleApp::implementation {
@@ -530,7 +537,8 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 #### 3. Using your View Manager in JSX
 
-*ViewManagerSample.js*
+_ViewManagerSample.js_
+
 ```js
 import React, { Component } from 'react';
 import {

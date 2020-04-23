@@ -7,7 +7,7 @@ title: Popup
 
 ## Props
 
-Inherits [View Props](https://facebook.github.io/react-native/docs/view#props).
+Inherits [View Props](https://reactnative.dev/docs/view#props).
 
 ### isOpen
 
@@ -47,7 +47,7 @@ Specifies vertical offset from spawn point.
 
 An event that fires when the flyout is dismissed.
 
-This must update the [`isOpen`](popup-component#isopen) property.
+This must update the [`isOpen`](#isopen) property.
 
 | type | required |
 |:--|:--|
@@ -55,7 +55,7 @@ This must update the [`isOpen`](popup-component#isopen) property.
 
 ### target
 
-A component that the flyout is attached to and will show from when [`isOpen`](flyout-component#isopen) is true.
+A component that the flyout is attached to and will show from when [`isOpen`](flyout-component-windows.md#isopen) is true.
 
 | type | required |
 |:--|:--|

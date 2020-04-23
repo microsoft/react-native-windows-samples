@@ -8,6 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
+const defaultVersionShown = '0.61';
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
@@ -16,6 +17,7 @@ const siteConfig = {
   url: "https://microsoft.github.io",
   baseUrl: "/react-native-windows/",
   repoUrl,
+  defaultVersionShown,
   // Used for publishing and more
   projectName: "react-native-windows",
   organizationName: "microsoft",
@@ -25,7 +27,6 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { page: "versions", label: "v0.61" },
     { doc: "getting-started", label: "Docs" },
     { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },

@@ -1,5 +1,5 @@
 ﻿# TodosFeed - React Native for Windows
-This sample showcases the usage of React Native for Windows vNext in three different scenarios:
+This sample showcases the usage of React Native for Windows in three different scenarios:
 
 - As a standalone Windows application, built on top of the Universal Windows Platform
 - As a component, that can be used in a traditional Universal Windows Platform application built with XAML and C#

@@ -63,7 +63,7 @@ Option 2 is for advance user only. Each time we release a new WinAppDriver, we a
 
 If `yarn install` is run as admin privilege, WinAppDriver would be installed automatically, otherwise you need to install WinAppDriver manually.
 
-For the Azure pipeline, WinAppDriver is already installed on [HostedVS2019](https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2019-Server2019-Readme.md) and [HostedVS2017](https://github.com/Microsoft/azure-pipelines-image-generation/blob/master/images/win/Vs2017-Server2016-Readme.md)
+For the Azure pipeline, WinAppDriver is already installed on [Windows Server 2019](https://github.com/actions/virtual-environments/blob/master/images/win/Windows2019-Readme.md).
 
 ## Bundle
 
@@ -90,7 +90,7 @@ No matter what JavaScript framework you choose for native app testing, you have 
 
 ### [Locators WinAppDriver supports](https://github.com/microsoft/WinAppDriver/blob/master/Docs/AuthoringTestScripts.md#supported-locators-to-find-ui-elements)
 
-WinAppDriver provides rich API to help locate the UI element. If [testID](https://facebook.github.io/react-native/docs/picker-item#testid) is specified in React Native app for Windows, the locator strategy should choose `accessibility id`.
+WinAppDriver provides rich API to help locate the UI element. If [testID](https://reactnative.dev/docs/picker-item#testid) is specified in React Native app for Windows, the locator strategy should choose `accessibility id`.
 
 A unique `accessiblity id`/`testID` per Window is recommended for React Native Windows E2E testing when authoring the test app and test cases. To ease the maintain effort, all testIDs are defined in [Consts.ts](https://github.com/microsoft/react-native-windows/blob/master/packages/E2ETest/app/Consts.ts), then be imported by test app and test page objects or test cases.
 
