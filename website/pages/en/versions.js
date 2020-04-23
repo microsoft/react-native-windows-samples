@@ -79,7 +79,7 @@ class Versions extends React.Component {
           <h1 style={{fontWeight: 'bold'}}>Latest version</h1>
           <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
           <TableRow versionNumber="MASTER"
-          docLink={docsUrl + 'next/getting-started'}
+          docLink={docsUrl + 'docs/next/getting-started'}
           changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...master'}
           changeLogText={'Commits since ' + currentVersion}/>
           <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>
@@ -89,7 +89,7 @@ class Versions extends React.Component {
                   <TableRow
                     key={version}
                     versionNumber={version}
-                    docLink={docsUrl + (version == currentVersion ? 'getting-started' : version + '/getting-started')}
+                    docLink={docsUrl + 'docs/' + (version == currentVersion ? 'getting-started' : version + '/getting-started')}
                     changeLogLink={repoUrl + '/blob/' + version + '-stable/vnext/CHANGELOG.md'}
                     background={ (parseInt(version.substr(2)) % 2 == 0) ? 'dark' : 'light' }
                   />
