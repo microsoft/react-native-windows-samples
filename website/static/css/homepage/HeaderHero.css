@@ -28,6 +28,76 @@
   justify-content: center;
 }
 
+.videocard {
+  border-radius: 6px;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+  background-color: #fff;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 390px;
+}
+
+.videocardcontent {
+  flex: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 20px 30px 32px;
+  height: 140px;
+}
+
+.videocardlengthtip {
+  position: absolute;
+  top: 14px;
+  left: 22px;
+}
+
+.videocardheader {
+  flex-direction: column;
+  flex: 0 0 auto;
+  display: flex;
+}
+
+.videocarddriverinfo {
+  margin: auto 0 0;
+}
+
+.videocardinfo {
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #333;
+  align-items: center;
+  display: flex;
+  margin-top: -15px;
+}
+
+.subtitledot {
+  width: 4px;
+  height: 4px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.videocardtipbackground {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.75);
+  border-radius: 4px;
+  padding: 15px 7px 5px 10px;
+  color: #fff;
+  border: none;
+  outline: none;
+  height: 30px;
+}
+
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;

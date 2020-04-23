@@ -29,7 +29,8 @@ const siteConfig = {
     { doc: "getting-started", label: "Docs" },
     { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },
-    { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
+    { href: "https://microsoft.github.io/react-native-windows/", label: "Videos" },
+    { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },    
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
     { href: repoUrl, label: "GitHub" }
   ],

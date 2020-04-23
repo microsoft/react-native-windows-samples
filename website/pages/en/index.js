@@ -6,7 +6,9 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 const textContent = {
   windowsintro: `
-  test
+  Building for Windows doesn't stop with just desktop experiences!
+
+  Take your apps across Xbox, Surface Tablets, dual-screens, and web with our robust Windows extension to React Native.
   `,
   macintro: `
   test
@@ -98,6 +100,48 @@ class Index extends React.Component {
           >
             <b style={{fontSize: 24}}>Windows</b>
           </a>
+      </div>
+    );
+
+    const VideoCardItem = ({ videolength, videotitle, videotype, videodifficulty, speakername, imgurl}) => (
+      <div className="CenterContent">
+        <div className="videocard">
+            <div style={{position: 'relative'}}>
+              <div style={{maxWidth: '100%', maxHeight: '100%'}}>
+                <img src={imgurl} alt="videoimg"/>
+              </div>
+              <div className="videocardlengthtip">
+                <div>
+                  <div className="videocardtipbackground">
+                    <div>
+                        <img src="./img/homepage/timeicon.png" alt="timeicon"/>
+                    </div>
+                    <div>
+                      <p style={{color: '#fff', marginLeft: 8, marginTop: 4, fontSize: 14}}>{videolength}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="videocardcontent">
+              <div className="videocardheader">
+                <p style={{fontsize: 46, fontWeight: 700}}>{videotitle}</p>
+                <div className="videocardinfo">
+                  <p style={{fontSize: 14}}>{videotype}</p>
+                  <div className="subtitledot"/>
+                  <p style={{fontSize: 14}}>{videodifficulty}</p>
+                </div>
+              </div>
+              <div className="videocarddriverinfo" style={{color: '#0e53bd'}}>
+                <a href={"https://twitter.com/" + speakername}>
+                  <div className="column" style={{marginRight: -130, marginLeft: -15}}>
+                    <img style={{borderRadius: '50%', width: '32px', height: '32px'}} src={"https://avatars.io/twitter/" + speakername} alt="speakericon"/>
+                  </div>
+                  <div className="column" style={{marginTop: 5}}>@{speakername}</div>
+                </a>
+              </div>
+            </div>
+        </div>
       </div>
     );
 
@@ -194,12 +238,11 @@ class Index extends React.Component {
 
             <div className="column">
               <Heading text="Build Windows apps using React Native" />
-              <MarkdownBlock>{textContent.windowsintro}</MarkdownBlock>
+              <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.windowsintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
                 href={baseUrl + "docs/getting-started"}
-                target="_self"
-              >
+                target="_self">
                 <b style={{fontSize: 24}}>Get started with Windows</b>
               </a>
             </div>
@@ -215,7 +258,7 @@ class Index extends React.Component {
           <div className="row">
             <div className="column">
               <Heading text="Build MacOS apps using React Native" />
-              <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
+              <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.macintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
                 href={baseUrl + "docs/getting-started"}
@@ -257,18 +300,29 @@ class Index extends React.Component {
       <Section background="tint">
         <div className="CenterContent" style={{marginTop: -50}}>
           <div>
-            <h1 style={{textAlign: 'center'}}>Take Your App Further</h1>
-            <p style={{textAlign: 'center', marginTop: -10}}>Build on the basics to contruct your first React Native app</p>
+            <h1 style={{textAlign: 'center', color: '#0e53bd'}}>Take Your App Further</h1>
+            <p style={{textAlign: 'center', marginTop: -10}}>Build on the basics to construct your first React Native app</p>
 
-            <p style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexWrap: 'wrap'}}>image here</p>
-
-            <a
-              className="ActionButton primary"
-              href={baseUrl + "docs/getting-started"}
-              target="_self"
-              style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexWrap: 'wrap'}}>
-              <b style={{fontSize: 24}}>Check Out the Tutorials</b>
-            </a>
+            <div className="row">
+              <div className="column">
+                <VideoCardItem
+                  videolength="10 mins"
+                  videotitle="Community Modules for Mac"
+                  videotype="Walkthrough"
+                  videodifficulty="Beginner"
+                  speakername="alloy"
+                  imgurl="./img/homepage/eloy_rn4m_preview.png"/>
+              </div>
+              <div className="column">
+                <VideoCardItem
+                  videolength="0 mins"
+                  videotitle="Example Card"
+                  videotype="Type of Video"
+                  videodifficulty="Difficulty"
+                  speakername="reactwindows"
+                  imgurl="./img/homepage/video_learning_image-small.png"/>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
