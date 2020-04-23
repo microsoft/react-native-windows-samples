@@ -59,11 +59,11 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ### Updating your package.json
 
-You'll need to ensure you have version 0.61 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
+You'll need to ensure you have version 0.62 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
 ```cmd
-yarn add react-native@0.61 --dev
-yarn add react-native-windows@0.61 --peer
+yarn add react-native@0.62 --dev
+yarn add react-native-windows@0.62 --peer
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
@@ -101,7 +101,7 @@ You should now have a new `MyLibrary` solution file at `.\MyLibrary\MyLibrary.sl
 Additionally, for C++/WinRT projects, you'll need to change the following:
 
 1. Right click on the project and choose `Manage Nuget Packages...`
-    1. Select version 2.0.190730.2 for Microsoft.Windows.CppWinRT package.
+    1. Select version 2.0.200316.3 for Microsoft.Windows.CppWinRT package.
 1. Right-click on the project and choose `Properties`
     1. Under `Linker > Windows Metadata` set `Generate Windows Metadata` to `Yes`.
 
