@@ -3,7 +3,7 @@ id: rnw-dependencies
 title: System Requirements
 ---
 
-You can run React-Native for Windows apps only on Windows 10 devices with Windows version: 10.0.16299.0 or higher. See [Windows 10 Compatability](win10-compat.md) for version support details.
+You can run React-Native for Windows apps only on Windows 10 devices with Windows version: 10.0.16299.0 or higher. See [Windows 10 Compatibility](win10-compat.md) for version support details.
 
 To develop React-Native for Windows apps, you will need the following:
 
@@ -13,12 +13,8 @@ To develop React-Native for Windows apps, you will need the following:
 - Install [Visual Studio 2019](https://www.visualstudio.com/downloads) with the following options:
   - Workloads
     - Universal Windows Platform development
-      - Enable the optional `C++ (v141) Universal Windows Platform tools`
     - Desktop development with C++
   - Individual Components
-    - Compilers, build tools and runtimes
-      - MSVC v141 - VS 2017 C++ x64/x86 build tools (v14.16)
-      - MSVC v141 - VS 2017 C++ ARM build tools (v14.16)
     - Development activities
       - Node.js development support (optional)
 

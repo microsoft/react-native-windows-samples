@@ -82,6 +82,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataMarshallingExamples.cs" />
     <Compile Include="FancyMath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReactPackageProvider.cs" />

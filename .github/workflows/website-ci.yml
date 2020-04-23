@@ -24,6 +24,7 @@ jobs:
       run: npx unbroken
       working-directory: ./website
     - name: Yarn Install (Website)
+      if: success() || failure()
       run: yarn install --frozen-lockfile
       working-directory: ./website
     - name: Yarn Build (Website)

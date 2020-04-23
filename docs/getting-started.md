@@ -95,5 +95,6 @@ Follow these steps to build a version of your app that you can install or publis
 - Build the solution. You can now launch without first launching Metro.
 - If you want to build an appx package to share or publish, use the Project => Publish => Create App Packages... option.
 
+See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
 </body>
 </html>
