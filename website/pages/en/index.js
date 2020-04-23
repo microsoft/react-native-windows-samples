@@ -187,9 +187,11 @@ class Index extends React.Component {
       <Section background="tint">
         <div className="content">
           <div className="row">
+
             <div className="column">
               <img style={{maxWidth: '200%', marginLeft: -300, marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_windows_cropped.png" alt="rnw_cropped"/>
             </div>
+
             <div className="column">
               <Heading text="Build Windows apps using React Native" />
               <MarkdownBlock>{textContent.windowsintro}</MarkdownBlock>
@@ -201,6 +203,7 @@ class Index extends React.Component {
                 <b style={{fontSize: 24}}>Get started with Windows</b>
               </a>
             </div>
+
           </div>
         </div>
       </Section>
@@ -211,15 +214,15 @@ class Index extends React.Component {
         <div className="content">
           <div className="row">
             <div className="column">
-            <Heading text="Build MacOS apps using React Native" />
-            <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
-            <a
-              className="ActionButton primary"
-              href={baseUrl + "docs/getting-started"}
-              target="_self"
-            >
-              <b style={{fontSize: 24}}>Get started with Mac</b>
-            </a>
+              <Heading text="Build MacOS apps using React Native" />
+              <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
+              <a
+                className="ActionButton primary"
+                href={baseUrl + "docs/getting-started"}
+                target="_self"
+              >
+                <b style={{fontSize: 24}}>Get started with Mac</b>
+              </a>
             </div>
             <div className="column">
               <img style={{maxWidth: '200%', marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_mac_cropped.png" alt="rnw_cropped"/>
@@ -250,12 +253,34 @@ class Index extends React.Component {
       </Section>
     );
 
+    const Tutorials = () => (
+      <Section background="tint">
+        <div className="CenterContent" style={{marginTop: -50}}>
+          <div>
+            <h1 style={{textAlign: 'center'}}>Take Your App Further</h1>
+            <p style={{textAlign: 'center', marginTop: -10}}>Build on the basics to contruct your first React Native app</p>
+
+            <p style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexWrap: 'wrap'}}>image here</p>
+
+            <a
+              className="ActionButton primary"
+              href={baseUrl + "docs/getting-started"}
+              target="_self"
+              style={{justifyContent: 'center', alignItems: 'center', display: 'flex', flexWrap: 'wrap'}}>
+              <b style={{fontSize: 24}}>Check Out the Tutorials</b>
+            </a>
+          </div>
+        </div>
+      </Section>
+    );
+
     return (
       <div className="homepage">
         <HeaderHero />
         <Intro />
         <WindowsIntro/>
         <MacIntro/>
+        <Tutorials/>
       </div>
     );
   }
