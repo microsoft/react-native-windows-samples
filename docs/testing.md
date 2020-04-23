@@ -3,6 +3,8 @@ id: testing
 title: Testing React-Native-Windows
 ---
 
+> This page is hanging, see [Issue #60](https://github.com/microsoft/react-native-windows-samples/issues/60).
+
 When contributing to this project, unit and integration tests should be run to help prevent new bugs and regressions.
 
 ## Windows Desktop

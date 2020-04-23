@@ -37,7 +37,7 @@ for (let i = 0; i < versions.length; i++) {
         // Look for asset references
         assetFiles.forEach(assetFile => {
             const assetPath = `assets/${assetFile}`;
-            if (contents.search(`(${assetPath})`) >= 0 || contents.search(`src="${assetPath}")"`) >= 0} ) {
+            if (contents.includes(`(${assetPath})`) || contents.includes(`src="${assetPath}"`)) {
                 redirectedFiles.push({ source: doc, target: assetPath });
             }
         });

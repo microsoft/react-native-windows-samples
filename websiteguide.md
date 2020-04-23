@@ -47,7 +47,7 @@ For more details, see [Docusaurus Fallback Functionality](https://docusaurus.io/
 
 ### How/where do I modify docs for a previously released stable version 0.XX?
 
-First, make sure to read [How do the versioned snapshots work?](#How-do-the-versioned snapshots-work).
+First, make sure to read [How do the versioned snapshots work?](#how-do-the-versioned-snapshots-work).
 
 Now, if you need to update an existing doc, look through the previous snapshots (in descending order) until you find the previously versioned doc.
 
@@ -59,7 +59,7 @@ Furthermore, if the updates are still relevant for the next unreleased version, 
 
 ### How do I resolve a "File not found" error when unbroken checks the versioned_docs?
 
-First, make sure to read [How do the versioned snapshots work?](#How-do-the-versioned snapshots-work).
+First, make sure to read [How do the versioned snapshots work?](#how-do-the-versioned-snapshots-work).
 
 Now, unaware of how the snapshots are used, unbroken will just see missing files. To fix that, we have a *fix-unbroken.js* script in the website folder. Running it will update the *.unbroken_exclusions* file to ignore the "broken" links that will actually be working when the website is built.
 
