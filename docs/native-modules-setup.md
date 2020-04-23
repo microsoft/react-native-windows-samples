@@ -152,7 +152,7 @@ For each project, you'll do the following:
 1. Select the project file and click `Open`.
 
 When you are done, your solution should look like this:
-![native module dependencies](./assets/native-module-dependencies.png)
+![native module dependencies](assets/native-module-dependencies.png)
 
 You now have all of the React Native Windows projects to your solution. Next we're going to reference them in our `MyLibrary` project.
 
