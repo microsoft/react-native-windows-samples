@@ -40,6 +40,11 @@
   max-width: 390px;
 }
 
+.videocard.large {
+  max-width: 1024px;
+  margin-bottom: 24px;
+}
+
 .videocardcontent {
   flex: auto;
   display: -ms-flexbox;
@@ -112,9 +117,9 @@
   clear: both;
 }
 
-@media screen and (max-width: 1024px) {
-    .yourClass {
-        display: none !important;
+@media screen and (max-width: 800px) {
+    .discriptionadjust {
+        white-space: nowrap !important;
     }
 }
 

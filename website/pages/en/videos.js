@@ -36,7 +36,7 @@ class Videos extends React.Component {
 
     const VideoCardItem = ({ videolength, videotitle, videotype, videodifficulty, speakername, imgurl, videodisc}) => (
 
-        <div className="videocard">
+        <div className="videocard large">
             <div style={{position: 'relative'}}>
               <div style={{maxWidth: '100%', maxHeight: '100%'}}>
                 <img src={imgurl} alt="videoimg"/>
@@ -61,12 +61,12 @@ class Videos extends React.Component {
                   <p style={{fontSize: 14}}>{videotype}</p>
                   <div className="subtitledot"/>
                   <p style={{fontSize: 14}}>{videodifficulty}</p>
-                  <div>{videodisc}</div>
                 </div>
+                <p className="discriptionadjust" style={{textOverflow: 'ellipsis', maxWidth: '100%', display: 'block', overflow: 'hidden', whiteSpace: 'normal'}}>{videodisc}</p>
               </div>
               <div className="videocarddriverinfo" style={{color: '#0e53bd'}}>
                 <a href={"https://twitter.com/" + speakername}>
-                  <div className="row" style={{marginTop: 20}}>
+                  <div className="row">
                     <div style={{display: 'inline-block'}}>
                         <img style={{borderRadius: '50%', width: '32px', height: '32px'}} src={"https://avatars.io/twitter/" + speakername} alt="speakericon"/>
                     </div>
@@ -92,17 +92,14 @@ class Videos extends React.Component {
         <div className="content">
           <MarkdownBlock>{textContent.introtext}</MarkdownBlock>
           <div className="row">
-            <div className="column">
               <VideoCardItem
                 videolength="10 mins"
                 videotitle="Community Modules for Mac"
                 videotype="Walkthrough"
                 videodifficulty="Beginner"
                 speakername="alloy"
-                imgurl="./img/homepage/eloy_rn4m_preview.png"
+                imgurl="./img/homepage/eloy_rn4m_preview_full.png"
                 videodisc="Set up your Mac environment to build React Native for MacOS apps, as well as how to install community modules."/>
-            </div>
-            <div className="column">
               <VideoCardItem
                 videolength="0 mins"
                 videotitle="Example Card"
@@ -111,37 +108,6 @@ class Videos extends React.Component {
                 speakername="reactwindows"
                 imgurl="./img/homepage/video_learning_image-small.png"
                 videodisc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-            </div>
-            <div className="column">
-              <VideoCardItem
-                videolength="0 mins"
-                videotitle="Example Card"
-                videotype="Type of Video"
-                videodifficulty="Difficulty"
-                speakername="reactwindows"
-                imgurl="./img/homepage/video_learning_image-small.png"
-                videodisc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-            </div>
-            <div className="column">
-              <VideoCardItem
-                videolength="0 mins"
-                videotitle="Example Card"
-                videotype="Type of Video"
-                videodifficulty="Difficulty"
-                speakername="reactwindows"
-                imgurl="./img/homepage/video_learning_image-small.png"
-                videodisc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-            </div>
-            <div className="column">
-              <VideoCardItem
-                videolength="0 mins"
-                videotitle="Example Card"
-                videotype="Type of Video"
-                videodifficulty="Difficulty"
-                speakername="reactwindows"
-                imgurl="./img/homepage/video_learning_image-small.png"
-                videodisc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
-            </div>
           </div>
         </div>
       </Section>

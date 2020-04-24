@@ -11,15 +11,14 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 const textContent = {
   windowsintro: `
-  Building for Windows doesn't stop with just desktop experiences!
-
-  Take your apps across Xbox, Surface Tablets, dual-screens, and web with our robust Windows extension to React Native.
+  Take your apps across PC, Xbox, Surface Tablets, and dual-screens with our robust Windows extension to React Native.
   `,
   macintro: `
-  test
+  Extend your desktop experience to more than just Windows!<br>
+  Try out our fully supported MacOS extension to React Native.
   `,
   intro: `
-**React Native for Windows & Mac brings React Native support for the
+**React Native for Windows + Mac brings React Native support for the
 [Windows 10 SDK] as well as the [MacOS 10.12 SDK]**. With this, you can use Javascript to build native
 Windows apps for [all devices supported by Windows 10] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the MacOS desktop and laptop ecosystems.
@@ -224,7 +223,7 @@ class Index extends React.Component {
     const Intro = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="React Native on Windows + Mac" />
+          <Heading text="What is React Native for Windows + Mac?" />
           <MarkdownBlock>{textContent.intro}</MarkdownBlock>
         </div>
       </Section>
@@ -304,7 +303,7 @@ class Index extends React.Component {
         <div className="CenterContent" style={{marginTop: -50}}>
           <div>
             <a href="videos"><h1 style={{textAlign: 'center', color: '#0e53bd'}}>Take Your App Further</h1></a>
-            <p style={{textAlign: 'center', marginTop: -10}}>Build on the basics to constructing your first React Native for Windows + Mac app</p>
+            <p style={{textAlign: 'center', marginTop: -10}}>Speed up development with videos on how to build React Native apps for Windows and Mac</p>
 
             <div className="row">
               <div className="column">
@@ -314,7 +313,7 @@ class Index extends React.Component {
                   videotype="Walkthrough"
                   videodifficulty="Beginner"
                   speakername="alloy"
-                  imgurl="./img/homepage/eloy_rn4m_preview.png"/>
+                  imgurl="./img/homepage/eloy_rn4m_preview_full.png"/>
               </div>
               <div className="column">
                 <VideoCardItem
@@ -334,10 +333,10 @@ class Index extends React.Component {
     return (
       <div className="homepage">
         <HeaderHero />
-        <Intro />
         <WindowsIntro/>
         <MacIntro/>
         <Tutorials/>
+        <Intro />
       </div>
     );
   }
