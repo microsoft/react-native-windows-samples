@@ -8,6 +8,8 @@ const path = require('path');
 
 const versions = require('./versions.json');
 
+const normalizePath = str => path.normalize(str).replace(/\\/g, '/');
+
 console.log('Scanning asset files...');
 var assetFiles = fs.readdirSync('../docs/assets');
 
@@ -62,13 +64,13 @@ console.log('Generating exclusions...');
 var exclusions = [];
 
 // Base exclusions
-exclusions.push('!node_modules');
-exclusions.push('!blog\\2019-');
+exclusions.push(normalizePath('!node_modules'));
+exclusions.push(normalizePath('!blog\\2019-'));
 exclusions.push('');
 
 // Redirected files exclusions
 redirectedFiles.forEach(redirectedFile => {
-    exclusions.push(`File not found ${redirectedFile.target} while parsing ${redirectedFile.source}`);
+    exclusions.push(`File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`);
 });
 
 console.log('Updating .unbroken_exclusions...')
