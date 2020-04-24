@@ -23,6 +23,7 @@
   text-decoration: none;
   font-weight: 400;
   transition: color 0.15s ease-out;
+  color: black;
 }
 
 .fixedHeaderContainer header h3:hover {

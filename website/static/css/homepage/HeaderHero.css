@@ -37,7 +37,7 @@
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 390px;
+  max-width: 390px;
 }
 
 .videocardcontent {
@@ -47,7 +47,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 20px 30px 32px;
-  height: 140px;
+  min-height: 140px;
 }
 
 .videocardlengthtip {
@@ -110,6 +110,12 @@
   content: "";
   display: table;
   clear: both;
+}
+
+@media screen and (max-width: 1024px) {
+    .yourClass {
+        display: none !important;
+    }
 }
 
 .HeaderHero .title {

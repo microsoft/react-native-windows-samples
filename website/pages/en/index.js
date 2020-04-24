@@ -303,8 +303,8 @@ class Index extends React.Component {
       <Section background="tint">
         <div className="CenterContent" style={{marginTop: -50}}>
           <div>
-            <h1 style={{textAlign: 'center', color: '#0e53bd'}}>Take Your App Further</h1>
-            <p style={{textAlign: 'center', marginTop: -10}}>Build on the basics to construct your first React Native app</p>
+            <a href="videos"><h1 style={{textAlign: 'center', color: '#0e53bd'}}>Take Your App Further</h1></a>
+            <p style={{textAlign: 'center', marginTop: -10}}>Build on the basics to constructing your first React Native for Windows + Mac app</p>
 
             <div className="row">
               <div className="column">

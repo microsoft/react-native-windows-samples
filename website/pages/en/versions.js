@@ -21,9 +21,6 @@ const textContent = {
 
   Once the release has had significant time to be tested and contributers have addressed as many issues as possible, the release will be upgraded to a **Stable version** and become present in the corosponding section below.
   `,
-  latestverison: `
-  The latest and greatest, bleeding edge version release of React Native for Windows will be listed and updated here.
-  `,
   stablelegacyversions: `
   The most recent and stable version will be used automatically when the
   *npx react-native-windows-init*
@@ -74,15 +71,9 @@ class Versions extends React.Component {
     const VersioningInformation = () => (
       <Section background="light">
         <div className="content">
-          <h1 style={{fontSize: '60px', marginTop: '-20px', fontWeight: 'bold'}}>React Native for Windows Versions </h1>
+          <h1 style={{fontSize: '60px', marginTop: '-20px', fontWeight: 'bold'}}>Versions </h1>
           <MarkdownBlock>{textContent.introtext}</MarkdownBlock>
-          <h1 style={{fontWeight: 'bold'}}>Latest version</h1>
-          <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
-          <TableRow versionNumber="MASTER"
-          docLink={docsUrl + 'docs/next/getting-started'}
-          changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...master'}
-          changeLogText={'Commits since ' + currentVersion}/>
-          <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>
+          <h1 style={{fontWeight: 'bold'}}>Version History</h1>
           <MarkdownBlock>{textContent.stablelegacyversions}</MarkdownBlock>
           {stableVersions.map(function(version) {
                 return (
