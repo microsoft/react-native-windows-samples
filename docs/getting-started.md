@@ -16,18 +16,18 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
-npx react-native init <project name> --version ^0.62.2
+npx react-native init <projectName> --version ^0.62.2
 ```
 
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
-> `npx --ignore-existing react-native init <myproject> --template react-native@^0.62.2` instead.
+> `npx --ignore-existing react-native init <projectName> --template react-native@^0.62.2` instead.
 
 ### Navigate into this newly created directory
 
 Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
 
 ```
-cd <project name>
+cd <projectName>
 ```
 
 ### Install the Windows extension
@@ -57,7 +57,7 @@ npx react-native-windows-init --overwrite
 
 - Using Visual Studio
 
-  - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln`)
+  - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln` if you used `AwesomeProject` as `<projectName>`)
   - Select the `Debug` configuration and the `x64` platform from the combo box controls to the left of the `Run` button and underneath the `Team` and `Tools` menu item.
   - Run `yarn start` from your project directory, and wait for the React Native packager to report success.
   - Click the `Run` button to the right of the platform combo box control in VS, or select the `Debug`->`Start without Debugging` menu item. You now see your new app and Chrome should have loaded `http://localhost:8081/debugger-ui/` in a new tab. Press `F12` or `Ctrl+Shift+I` in Chrome to open its Developer Tools. :tada:
