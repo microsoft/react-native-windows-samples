@@ -7,10 +7,6 @@
       "parity-status",
       "windowsbrush-and-theme"
     ],
-    "Testing": [
-      "e2e-test",
-      "e2e-test-more-about"
-    ],
     "Native Modules (Windows)": [
       "native-modules",
       "view-managers",
@@ -19,6 +15,10 @@
       "native-modules-marshalling-data",
       "native-modules-jsvalue",
       "native-modules-advanced"
+    ],
+    "The Basics (MacOS)": [
+      "rnm-getting-started",
+      "rnm-dependencies"
     ]
   },
   "apis": {

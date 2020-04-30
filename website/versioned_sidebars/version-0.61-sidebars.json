@@ -7,10 +7,6 @@
       "version-0.61-parity-status",
       "version-0.61-windowsbrush-and-theme"
     ],
-    "Testing": [
-      "version-0.61-e2e-test",
-      "version-0.61-e2e-test-more-about"
-    ],
     "Native Modules (Windows)": [
       "version-0.61-native-modules",
       "version-0.61-view-managers",
@@ -19,6 +15,10 @@
       "version-0.61-native-modules-marshalling-data",
       "version-0.61-native-modules-jsvalue",
       "version-0.61-native-modules-advanced"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.61-rnm-getting-started",
+      "version-0.61-rnm-dependencies"
     ]
   },
   "version-0.61-apis": {
