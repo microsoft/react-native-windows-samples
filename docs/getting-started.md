@@ -16,18 +16,18 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
-npx react-native init <project name> --version ^0.61.5
+npx react-native init <projectName> --version ^0.62.2
 ```
 
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
-> `npx --ignore-existing react-native init <myproject> --template react-native@^0.61.5` instead.
+> `npx --ignore-existing react-native init <projectName> --template react-native@^0.62.2` instead.
 
 ### Navigate into this newly created directory
 
 Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
 
 ```
-cd <project name>
+cd <projectName>
 ```
 
 ### Install the Windows extension
@@ -38,7 +38,7 @@ Lastly, install the React Native for Windows packages.
 npx react-native-windows-init --overwrite
 ```
 
-#### Confirming Metro JS reinstallation
+> The --overwrite flag is a temporary measure that ensures the correct files are copied to metro.config.js for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the metro.config.js file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows/issues/4698).
 
 ## Running a React Native Windows App
 
@@ -57,7 +57,7 @@ npx react-native-windows-init --overwrite
 
 - Using Visual Studio
 
-  - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln`)
+  - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln` if you used `AwesomeProject` as `<projectName>`)
   - Select the `Debug` configuration and the `x64` platform from the combo box controls to the left of the `Run` button and underneath the `Team` and `Tools` menu item.
   - Run `yarn start` from your project directory, and wait for the React Native packager to report success.
   - Click the `Run` button to the right of the platform combo box control in VS, or select the `Debug`->`Start without Debugging` menu item. You now see your new app and Chrome should have loaded `http://localhost:8081/debugger-ui/` in a new tab. Press `F12` or `Ctrl+Shift+I` in Chrome to open its Developer Tools. :tada:
