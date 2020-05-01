@@ -1,6 +1,6 @@
 ---
 id: version-0.61-rnm-getting-started
-title: Getting Started
+title: Get Started with Mac
 original_id: rnm-getting-started
 ---
 
@@ -35,6 +35,9 @@ npx react-native-macos-init
 ```
 
 ## Running a React Native macOS App
+
+> Make sure a browser is launched and running before running a React Native MacOS app.
+> Also ensure your system meets all the [requirements](https://microsoft.github.io/react-native-windows/docs/rnm-dependencies) to build a MacOS app as well.
 
   In your React Native macOS project directory, run:
 

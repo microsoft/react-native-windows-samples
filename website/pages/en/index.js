@@ -107,7 +107,7 @@ class Index extends React.Component {
 
     const VideoCardItem = ({ videolength, videotitle, videotype, videodifficulty, speakername, imgurl}) => (
       <div className="CenterContent">
-        <div className="videocard">
+        <div className="videocard" style={{maxHeight: 380}}>
             <div style={{position: 'relative'}}>
               <div style={{maxWidth: '100%', maxHeight: '100%'}}>
                 <img src={imgurl} alt="videoimg"/>
@@ -263,7 +263,7 @@ class Index extends React.Component {
               <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.macintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
-                href={baseUrl + "docs/getting-started"}
+                href={baseUrl + "docs/rnm-getting-started"}
                 target="_self"
               >
                 <b style={{fontSize: 24}}>Get started with Mac</b>
@@ -307,22 +307,26 @@ class Index extends React.Component {
 
             <div className="row">
               <div className="column">
-                <VideoCardItem
-                  videolength="10 mins"
-                  videotitle="Community Modules for Mac"
-                  videotype="Walkthrough"
-                  videodifficulty="Beginner"
-                  speakername="alloy"
-                  imgurl="./img/homepage/eloy_rn4m_preview_full.png"/>
+                <a href={baseUrl + "videos"}>
+                  <VideoCardItem
+                    videolength="10 mins"
+                    videotitle="Community Modules for Mac"
+                    videotype="Walkthrough"
+                    videodifficulty="Beginner"
+                    speakername="alloy"
+                    imgurl="./img/homepage/eloy_rn4m_preview_full.png"/>
+                  </a>
               </div>
               <div className="column">
-                <VideoCardItem
-                  videolength="0 mins"
-                  videotitle="Example Card"
-                  videotype="Type of Video"
-                  videodifficulty="Difficulty"
-                  speakername="reactwindows"
-                  imgurl="./img/homepage/video_learning_image-small.png"/>
+                <a href={baseUrl + "videos"}>
+                  <VideoCardItem
+                    videolength="0 mins"
+                    videotitle="Example Card"
+                    videotype="Type of Video"
+                    videodifficulty="Difficulty"
+                    speakername="reactwindows"
+                    imgurl="./img/homepage/video_learning_image-small.png"/>
+                  </a>
               </div>
             </div>
           </div>

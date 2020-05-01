@@ -16,7 +16,6 @@ const repoUrl = siteConfig.repoUrl;
 
 const textContent = {
   introtext: `
-  Markdown text for video page.
   `,
 };
 
