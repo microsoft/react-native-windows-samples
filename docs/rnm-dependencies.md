@@ -3,7 +3,7 @@ id: rnm-dependencies
 title: System Requirements
 ---
 
-You can run React Native for macOS apps on Mac devices with versions [Mojave (10.14.6)](https://apps.apple.com/us/app/macos-mojave/id1398502828?ls=1&mt=12) or newer.
+You can run React Native for macOS apps on Mac devices with versions [Mojave (10.14.6)](https://support.apple.com/en-us/HT209149#macos10146) or newer.
 
 To develop React Native for macOS apps, you will need the following:
 
