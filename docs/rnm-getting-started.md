@@ -9,6 +9,8 @@ For information around how to set up:
 - React Native for iOS and Android: See [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started)
 - React Native for Windows: See [React Native for Windows Getting Started Guide](https://microsoft.github.io/react-native-windows/docs/getting-started)
 
+Make sure you have installed all the [development dependencies](https://microsoft.github.io/react-native-windows/docs/rnm-dependencies)
+
 ## Install React Native for macOS
 
 Remember to call `react-native init` from the place you want your project directory to live.
