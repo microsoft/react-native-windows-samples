@@ -23,6 +23,8 @@ $ yarn install
 $ yarn start
 ```
 
+Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started 
+
 ## Directory Structure
 
 Your project file structure should look something like this

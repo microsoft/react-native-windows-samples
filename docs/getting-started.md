@@ -7,7 +7,7 @@ This guide will help you get started on setting up your very first React Native 
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
-If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](building-rnw.md).
+If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](dev/building-rnw.md).
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
@@ -43,7 +43,7 @@ npx react-native-windows-init --overwrite
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
-> Also ensure your system meets all the [requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) to build a Windows app as well.
+> Also ensure your system meets all the [requirements](rnw-dependencies) to build a Windows app as well.
 
 - Without Using Visual Studio
 
