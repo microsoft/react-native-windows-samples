@@ -21,7 +21,7 @@ E2E test app, test library and test cases are in packages/E2ETest/, and they are
 
 # Run E2E test
 
-- Make sure you have installed [dependencies](../rnw-dependencies)
+- Make sure you have installed [dependencies](rnw-dependencies.md)
 
 ## Procedures to setup and run E2E test
 
@@ -200,7 +200,7 @@ A `node` test runner is the first choice since we started the investigation for 
 ### WinAppDriver + WebDriverIO + Jasmine
 There is not existing example we can follow to setup E2E testing on Windows for React Native, and I spent weeks to investigate, test and prototype for our E2E. Hereafter I explain what kind of decisions I made and why I made these decisions
 
-![Technical Decision](img/technicalDecision.png)
+![Technical Decision](assets/technical-Decision.png)
 
 #### Why WinAppDriver
 
@@ -231,16 +231,16 @@ WebdriverIO comes with its own test runner @wdio/cli. It simplified the steps fo
 
 Below chart explains how different libraries are linked together when wdio command is launched. Appium or WinAppDriver are running in separate processes, and WebDriverIo talks to them by [W3C WebDriver protocol](https://w3c.github.io/webdriver/).
 
-![wdioInternalDependencies](img/wdioInternalDependencies.png)
+![wdioInternalDependencies](assets/wdio-Internal-Dependencies.png)
 ## WinAppDriver
 
 WinAppDriver talks to TestApp by [UIA](https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/accessibility-testing), and WinAppDriver implements part the W3C WebDriver protocol which allows WebDriver to talk to him. So WinAppDriver could talk directly with WebDriverIO, and whole test framework could be either with or without Appium.
 
 There are two possible setup in dev environment based on with/without appium:
 - Option 1
-![SetupOptions1](img/SetupOptions1.png)
+![SetupOptions1](assets/Setup-Options-1.png)
 - Option 2
-![SetupOptions1](img/SetupOptions2.png)
+![SetupOptions1](assets/Setup-Options-2.png)
 
 Option 1 is recommended and implemented by default. Appium and WinAppDriver are launched before spec is executed and they are killed after the spec is finished.
 
@@ -393,7 +393,7 @@ Below configuration lets the framework launch/kill appium automatically during t
 
 But the log like below is not that readable because it has a lot of control characters which is used by terminal.
 
- ![Bad Readability](img/BadReadability.png)
+ ![Bad Readability](assets/Bad-Readability.png)
 
 You could get nice output if you launch the appium by yourself:
 

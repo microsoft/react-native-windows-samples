@@ -16,13 +16,13 @@
       "native-modules-advanced"
     ],
     "Contributor guide (Windows)": [
-      "dev/contributing",
-      "dev/project-structure",
-      "dev/branch-setup",
-      "dev/monorepo",
-      "dev/building-rnw",
-      "dev/testing",
-      "dev/e2e-testing"
+      "contributing",
+      "project-structure",
+      "branch-setup",
+      "monorepo",
+      "building-rnw",
+      "testing",
+      "e2e-testing"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",

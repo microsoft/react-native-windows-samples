@@ -127,7 +127,7 @@ We're going to add several React Native Windows projects to your solution. So to
 
 Now we're going to add all of the following React Native Windows projects to that `ReactNative` folder. All of these projects are located under the `node_modules\react-native-windows` directory in the root of your `react-native-my-library` project directory.
 
-> _For more details about what these projects do, see [Project Structure](dev/project-structure)._
+> _For more details about what these projects do, see [Project Structure](project-structure.md)._
 
 | VS Project                          | Project File                                                                     |
 | :---------------------------------- | :------------------------------------------------------------------------------- |
