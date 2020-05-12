@@ -44,8 +44,8 @@ const FeedScreen: () => React$Node = (props) => {
 
   return (
     <View style={styles.body}>
-      <View style={[styles.toolBar]}>
-        <Text style={[styles.barTitle]}>
+      <View style={styles.toolBar}>
+        <Text style={styles.barTitle}>
           Windows Blog
         </Text>
       </View>
