@@ -1,6 +1,6 @@
 ---
 id: version-0.61-rnm-getting-started
-title: Get Started with Mac
+title: Get Started with macOS
 original_id: rnm-getting-started
 ---
 

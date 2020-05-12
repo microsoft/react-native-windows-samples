@@ -34,7 +34,7 @@ class Footer extends React.Component {
                 <a href={this.props.config.baseUrl + "docs/getting-started"}>Get Started with Windows</a>
               </div>
             <div style={{color: 'white', fontWeight: 500, fontSize: 16}}>
-              <a href={this.props.config.baseUrl + "docs/rnm-getting-started"}> Get Started with Mac</a>
+              <a href={this.props.config.baseUrl + "docs/rnm-getting-started"}> Get Started with macOS</a>
             </div>
             <a href={this.props.config.baseUrl + "docs/parity-status"}>
               API parity with React Native

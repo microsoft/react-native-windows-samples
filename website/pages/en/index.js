@@ -15,7 +15,7 @@ const textContent = {
   `,
   macintro: `
   Extend your desktop experience to more than just Windows!<br>
-  Try out our fully supported MacOS extension to React Native.
+  Try out our fully supported macOS extension to React Native.
   `,
   intro: `
 **React Native for Windows + Mac brings React Native support for the
@@ -223,7 +223,7 @@ class Index extends React.Component {
     const Intro = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="What is React Native for Windows + Mac?" />
+          <Heading text="About React Native for Windows + Mac" />
           <MarkdownBlock>{textContent.intro}</MarkdownBlock>
         </div>
       </Section>
@@ -266,7 +266,7 @@ class Index extends React.Component {
                 href={baseUrl + "docs/rnm-getting-started"}
                 target="_self"
               >
-                <b style={{fontSize: 24}}>Get started with Mac</b>
+                <b style={{fontSize: 24}}>Get started with macOS</b>
               </a>
             </div>
             <div className="column">
