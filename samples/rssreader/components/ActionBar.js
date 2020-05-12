@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 10,
         marginBottom: 20,
-        // backgroundColor: '#fff'
     },
     title: {
         fontWeight: "bold",
