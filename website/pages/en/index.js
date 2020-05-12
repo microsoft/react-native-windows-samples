@@ -18,12 +18,17 @@ const textContent = {
   Try out our fully supported macOS extension to React Native.
   `,
   intro: `
+## Bring your <u>[React Native]</u> apps to some of the most powerful devices out there
+
+[React Native]: https://reactnative.dev/
+  `,
+  about: `
 **React Native for Windows + Mac brings React Native support for the
 [Windows 10 SDK] as well as the [MacOS 10.12 SDK]**. With this, you can use Javascript to build native
 Windows apps for [all devices supported by Windows 10] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the MacOS desktop and laptop ecosystems.
 
-[React Native]: http://facebook.github.io/react-native
+[React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows 10 SDK]: https://developer.microsoft.com/en-us/windows/downloads
 [MacOS 10.12 SDK]: https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_release_notes
@@ -220,13 +225,21 @@ class Index extends React.Component {
       </Section>
     );
 
-    const Intro = () => (
+    const About = () => (
       <Section background="light">
         <div className="content">
           <Heading text="About React Native for Windows + Mac" />
-          <MarkdownBlock>{textContent.intro}</MarkdownBlock>
+          <MarkdownBlock>{textContent.about}</MarkdownBlock>
         </div>
       </Section>
+    );
+
+    const Intro = () => (
+      <div background="light" className="SmallSection">
+          <div className="CenterContent" style={{paddingTop: -150}}>
+            <MarkdownBlock>{textContent.intro}</MarkdownBlock>
+          </div>
+      </div>
     );
 
     const WindowsIntro = () => (
@@ -239,7 +252,7 @@ class Index extends React.Component {
             </div>
 
             <div className="column">
-              <Heading text="Build Windows apps using React Native" />
+              <Heading text="Build for Windows" />
               <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.windowsintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
@@ -259,7 +272,7 @@ class Index extends React.Component {
         <div className="content">
           <div className="row">
             <div className="column">
-              <Heading text="Build MacOS apps using React Native" />
+              <Heading text="Build for macOS" />
               <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.macintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
@@ -337,10 +350,11 @@ class Index extends React.Component {
     return (
       <div className="homepage">
         <HeaderHero />
+        <Intro/>
         <WindowsIntro/>
         <MacIntro/>
-        <Tutorials/>
-        <Intro />
+        {/*<Tutorials/>*/}
+        <About />
       </div>
     );
   }

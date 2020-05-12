@@ -19,7 +19,7 @@ const textContent = {
   `,
 };
 
-class Videos extends React.Component {
+class Resources extends React.Component {
   render() {
 
     let currentVersion = versions.length > 0 ? versions[0] : null;
@@ -114,10 +114,14 @@ class Videos extends React.Component {
 
     return (
       <div className="homepage">
-        <VideoCardList />
+        <Section background="tint">
+          <div className="content">
+            <h2>Compehensive resources list coming soon!</h2>
+          </div>
+        </Section>
       </div>
     );
   }
 }
 
-module.exports = Videos;
+module.exports = Resources;

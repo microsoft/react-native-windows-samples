@@ -30,7 +30,7 @@ const siteConfig = {
     { doc: "getting-started", label: "Docs" },
     { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },
-    { page: "videos", label: "Videos" },
+    { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
     { href: repoUrl, label: "GitHub" }

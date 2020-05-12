@@ -20,6 +20,14 @@
   background-color: $dark;
 }
 
+.SmallSection {
+  width: 100%;
+  margin-top: -80px;
+  padding-top: 0px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid $divider;
+}
+
 .Section .content {
   max-width: 1100px;
   padding: 10px;
