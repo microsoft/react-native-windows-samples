@@ -1,1 +1,0 @@
-../../../../../../node_modules/react-native-macos/React/Modules/RCTLayoutAnimation.h

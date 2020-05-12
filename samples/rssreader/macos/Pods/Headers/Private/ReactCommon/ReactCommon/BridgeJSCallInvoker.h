@@ -1,1 +1,0 @@
-../../../../../../node_modules/react-native-macos/ReactCommon/jscallinvoker/ReactCommon/BridgeJSCallInvoker.h
