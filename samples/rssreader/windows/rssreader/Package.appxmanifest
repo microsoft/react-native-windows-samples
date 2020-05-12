@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="rssreader.App">
       <uap:VisualElements
-        DisplayName="rssreader"
+        DisplayName="Rss Reader"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="rssreader"
