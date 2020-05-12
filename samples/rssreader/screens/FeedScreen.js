@@ -3,17 +3,12 @@ import { StyleSheet, ScrollView, View, Text, FlatList, TouchableOpacity, Alert, 
 import * as rssParser from 'react-native-rss-parser';
 
 import Card from '../components/Card';
-import ActionBar from '../components/ActionBar';
 
 function Item({ id, title, published, onSelect }) {
   return (
     <TouchableOpacity
       onPress={() => onSelect(id)}
-      style={[
-        styles.item,
-        { backgroundColor: '#ffffff' },
-      ]}
-    >
+      style={styles.item}>
       <Text style={styles.date}>{published}</Text>
       <Text style={styles.title}>{title}</Text>
 
@@ -102,7 +97,7 @@ const styles = StyleSheet.create({
     maxWidth: 350
   },
   item: {
-    backgroundColor: '#ff7675',
+    backgroundColor: '#ffffff',
     padding: 10,
     marginVertical: 6,
     marginHorizontal: 4,
