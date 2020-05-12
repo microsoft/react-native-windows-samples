@@ -154,12 +154,12 @@ class Index extends React.Component {
 
     const TwitterButton = () => (
       <a
-        href="https://twitter.com/reactwindows?ref_src=twsrc%5Etfw"
+        href="https://twitter.com/ReactNativeMSFT?ref_src=twsrc%5Etfw"
         className="twitter-follow-button"
         data-size="large"
         data-show-count={false}
       >
-        Follow @ReactWindows
+        Follow @ReactNativeMSFT
       </a>
     );
 

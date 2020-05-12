@@ -49,7 +49,7 @@ class Footer extends React.Component {
           <div>
             <h5>Connect With Us On</h5>
             <a href={this.props.config.baseUrl + "blog/"}>Blog</a>
-            <a href="https://twitter.com/reactwindows" target="_blank">
+            <a href="https://twitter.com/ReactNativeMSFT" target="_blank">
               Twitter
             </a>
             <a

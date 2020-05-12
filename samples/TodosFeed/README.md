@@ -6,7 +6,7 @@ This sample showcases the usage of React Native for Windows in three different s
 - As a component, that can be used in a WPF application through [XAML Islands](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands)
 
 ### Requirements
-Make sure to have, on your machine, the correct configuration to build and run React Native for Windows projects, as highlighted [here](https://github.com/microsoft/react-native-windows/blob/master/vnext/docs/GettingStarted.md).
+Make sure to have, on your machine, the correct configuration to build and run React Native for Windows projects, as highlighted [here](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
 ### Launch TodosFeed as a standalone app
 To run the TodosFeed project as a standalone Windows application, open the **TodosFeed** folder and run the following command:

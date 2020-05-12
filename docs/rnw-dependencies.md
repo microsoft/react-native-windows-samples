@@ -33,10 +33,6 @@ To develop React-Native for Windows apps, you will need the following:
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
 
-## E2E Test
-
-Please refer to [Author and Run E2E Test for React Native Windows](e2e-test.md)
-
 ## Troubleshooting
 
 - If after running the app, the packager does not update (or) app does not show React Native content - close the packager command prompt window and the app, make sure browser is open, run `yarn start` and run the app from Visual Studio again.
