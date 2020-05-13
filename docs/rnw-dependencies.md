@@ -13,7 +13,7 @@ To develop React-Native for Windows apps, you will need the following:
 - Install [Visual Studio 2019](https://www.visualstudio.com/downloads) with the following options:
   - Workloads
     - Universal Windows Platform development
-      - Enable the optional `C++ (v141) Universal Windows Platform tools`
+      - Enable the optional `C++ (v141) Universal Windows Platform tools` ([details here](https://github.com/microsoft/react-native-windows/issues/3263#issuecomment-617797919))
     - Desktop development with C++
   - Individual Components
     - Compilers, build tools and runtimes
