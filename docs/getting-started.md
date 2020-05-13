@@ -47,7 +47,7 @@ npx react-native-windows-init --overwrite
 
 - Without Using Visual Studio
 
-  In your React Native Windows project directory, run:
+  In your React Native Windows project directory, from an elevated Command Prompt run:
 
   ```
   npx react-native run-windows
