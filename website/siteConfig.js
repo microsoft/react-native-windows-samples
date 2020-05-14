@@ -12,8 +12,8 @@ const defaultVersionShown = '0.61';
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
-  title: "React Native for Windows + Mac",
-  tagline: "Build native Windows apps with Javascript and React",
+  title: "React Native for Windows + macOS",
+  tagline: "Build native Windows & macOS apps with Javascript and React",
   url: "https://microsoft.github.io",
   baseUrl: "/react-native-windows/",
   repoUrl,
