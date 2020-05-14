@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: Get Started with Windows
 ---
 
 This guide will help you get started on setting up your very first React Native for Windows app.

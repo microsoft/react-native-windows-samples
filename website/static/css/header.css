@@ -2,10 +2,11 @@
   padding: 0;
   background-color: $deepdark;
   height: 60px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.19);
 }
 
 .fixedHeaderContainer header img {
-  height: 75%;
+  height: 0%;
 }
 
 .fixedHeaderContainer header a {
@@ -22,6 +23,7 @@
   text-decoration: none;
   font-weight: 400;
   transition: color 0.15s ease-out;
+  color: black;
 }
 
 .fixedHeaderContainer header h3:hover {
@@ -34,9 +36,9 @@ li.navSearchWrapper {
 }
 
 .fixedHeaderContainer header .headerTitleWithLogo {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.25rem;
-  color: $brand;
+  color: black;
   width: 300px;
 }
 
@@ -61,15 +63,18 @@ li.navSearchWrapper {
 
   ul.nav-site.nav-site-internal {
     margin-top: 60px;
+    color: black;
   }
 
   .navigationSlider .slidingNav ul {
-    background-color: $light;
+    background-color: $dark;
+    color: black;
   }
 
   .navigationSlider .slidingNav ul li a {
     background-color: transparent;
     transition: none;
+    color: black;
   }
 
   .navigationSlider .slidingNav ul li > a:hover {
@@ -134,7 +139,7 @@ li.navSearchWrapper {
   }
 
   .navigationSlider .slidingNav ul li:not(.reactNavSearchWrapper):focus-within {
-    background-color: $light;
+    background-color: white;
   }
 
   .navigationSlider .slidingNav ul li.siteNavItemActive::after,
@@ -149,11 +154,12 @@ li.navSearchWrapper {
   }
 
   .navigationSlider .slidingNav ul li a {
-    color: white;
+    color: black;
     background-color: transparent !important;
     transition: color 0.15s ease-out;
     height: 60px;
     padding: 0 1.5rem;
+    font-size: .9em;
   }
 
   .navigationSlider .slidingNav ul li a:hover {

@@ -1,6 +1,6 @@
 ---
 id: version-0.61-getting-started
-title: Getting Started
+title: Get Started with Windows
 original_id: getting-started
 ---
 

@@ -12,7 +12,7 @@ const defaultVersionShown = '0.61';
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
-  title: "React Native for Windows & Mac",
+  title: "React Native for Windows + Mac",
   tagline: "Build native Windows apps with Javascript and React",
   url: "https://microsoft.github.io",
   baseUrl: "/react-native-windows/",
@@ -30,6 +30,7 @@ const siteConfig = {
     { doc: "getting-started", label: "Docs" },
     { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },
+    { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
     { href: repoUrl, label: "GitHub" }
@@ -42,14 +43,14 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    brand: "#61dafb", // electric blue
-    dark: "#282c34", // dark blue
-    deepdark: "#20232a", // really dark blue
+    brand: "#0e53bd", // electric blue
+    dark: "#e1e6eb", // dark blue
+    deepdark: "#ffffff", // really dark blue
     light: "#373940", // light blue
     text: "#1a1a1a", // black substitute
-    subtle: "#6d6d6d", // light grey for text
-    divider: "#ececec", // very light grey
-    tintColor: "#f7f7f7", // slightly off white
+    subtle: "#0e53bd", // light grey for text
+    divider: "#d1d7de", // very light grey
+    tintColor: "#e1e6eb", // slightly off white
     backgroundColor: "white",
     // we don't use these any more but docusaurus complains if we don't
     primaryColor: "black",
