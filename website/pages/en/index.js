@@ -167,11 +167,23 @@ class Index extends React.Component {
       <a
         className="github-button"
         href="https://github.com/microsoft/react-native-windows"
-        data-icon="octicon-star"
+        data-icon="octicon-face"
         data-size="large"
         aria-label="Star microsoft/react-native-windows on GitHub"
       >
-        Star
+        GitHub
+      </a>
+    );
+
+    const GitHubButtonmacOS = () => (
+      <a
+        className="github-button"
+        href="https://github.com/microsoft/react-native-macos"
+        data-icon="octicon-face"
+        data-size="large"
+        aria-label="Star microsoft/react-native-macos on GitHub"
+      >
+        GitHub
       </a>
     );
 
@@ -194,14 +206,13 @@ class Index extends React.Component {
 
     const HeaderHero = () => (
       <Section background="light" className="HeaderHero">
-        <div className="socialLinks">
-          <TwitterButton />
-          <GitHubButton />
-        </div>
         <TwoColumns
           reverse
           columnOne={
             <React.Fragment>
+              <div className="socialLinks">
+                <TwitterButton />
+              </div>
               <div width={400}>
                 <img alt="" src={baseUrl + "img/homepage/cross-platform.png"} />
               </div>
@@ -253,6 +264,7 @@ class Index extends React.Component {
 
             <div className="column">
               <Heading text="Build for Windows" />
+              <GitHubButton/>
               <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.windowsintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
@@ -273,6 +285,9 @@ class Index extends React.Component {
           <div className="row">
             <div className="column">
               <Heading text="Build for macOS" />
+              <div className="socialLinks">
+                <GitHubButtonmacOS/>
+              </div>
               <div style={{marginBottom: 35}}><MarkdownBlock>{textContent.macintro}</MarkdownBlock></div>
               <a
                 className="ActionButton primary"
