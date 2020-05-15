@@ -33,7 +33,6 @@ const siteConfig = {
     { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
-    { href: repoUrl, label: "GitHub" }
   ],
 
   /* path to images for header/footer */

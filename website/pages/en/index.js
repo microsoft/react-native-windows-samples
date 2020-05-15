@@ -165,11 +165,23 @@ class Index extends React.Component {
       <a
         className="github-button"
         href="https://github.com/microsoft/react-native-windows"
-        data-icon="octicon-star"
+        data-icon="octicon-face"
         data-size="large"
         aria-label="Star microsoft/react-native-windows on GitHub"
       >
-        Star
+        GitHub
+      </a>
+    );
+
+    const GitHubButtonmacOS = () => (
+      <a
+        className="github-button"
+        href="https://github.com/microsoft/react-native-macos"
+        data-icon="octicon-face"
+        data-size="large"
+        aria-label="Star microsoft/react-native-macos on GitHub"
+      >
+        GitHub
       </a>
     );
 
@@ -192,16 +204,17 @@ class Index extends React.Component {
 
     const HeaderHero = () => (
       <Section background="light" className="HeaderHero">
-        <div className="socialLinks">
-          <TwitterButton />
-          <GitHubButton />
-        </div>
         <TwoColumns
           reverse
           columnOne={
-            <div width={400}>
-              <img alt="" src={baseUrl + "img/homepage/cross-platform.png"} />
-            </div>
+            <React.Fragment>
+              <div className="socialLinks">
+                <TwitterButton />
+              </div>
+              <div width={400}>
+                <img alt="" src={baseUrl + "img/homepage/cross-platform.png"} />
+              </div>
+            </React.Fragment>
           }
           columnTwo={
             <React.Fragment>
