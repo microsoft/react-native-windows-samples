@@ -10,7 +10,6 @@
   display: flex;
   justify-content: flex-end;
   max-width: 1200px;
-  margin: -10px auto 0px;
 }
 
 .HeaderHero .socialLinks * {
