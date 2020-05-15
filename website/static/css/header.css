@@ -39,7 +39,7 @@ li.navSearchWrapper {
   font-weight: 400;
   font-size: 1.25rem;
   color: black;
-  width: 300px;
+  width: 328px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -48,7 +48,7 @@ li.navSearchWrapper {
   }
 
   .fixedHeaderContainer header > a:first-child {
-    width: 140px;
+    width: 180px;
   }
   .fixedHeaderContainer header .headerTitleWithLogo {
     display: initial !important;
