@@ -15,7 +15,7 @@ For information around how to set up:
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
-npx react-native init <projectName> --version 0.61
+npx react-native init <projectName> --version 0.61.5
 ```
 
 ### Navigate into this newly created directory
