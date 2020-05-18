@@ -61,8 +61,8 @@ To learn more about developing on the Surface Duo with React Native, [go check o
 
 We are also rolling out a new release process and cadence in order to better ensure release quality as well as give consumers of **React Native for Windows** earlier access to the new features if needed.
 
-| <div style="width:120px">Title</div> | <div style="width:300px">Expectations</div> | <div style="width:300px">Promises</div> |
-|:--|:-----|:-----|
-| **Canary** | Released per day (ish) or per commit, depending on what's least expensive and necessary. All CI's pass.| The release builds, maybe it only builds on one flavor, but CI's work and pass.<br>No white glove experience, none to minimal communication about the release with full knowledge to consumers that things could be in a bad state/broken in places.|
-| **Preview** | All CI's pass, we have a test app we're validating against. Major issues from **Canary** have been resolved. | Some white glove experience or guidance (as necessary) for these releases.<br>However, we will voice and be clear with our communication around expectations with this release.<br><br>*This release and it's features are not guaranteed to become an **Official Release**, but there is a possibility depending on the test results of this release at this stage.* |
-| **"Official Release"**<br>*Aligned with Facebook's minor versions* | This release has been validated with VIP partner(s) and customer apps.<br>It's been in Preview for a while with major and medium-sized issues fixed. | Full white glove experience for upgrading to this release.<br>Blog posts, release notes and full transparency about upgrading and any minor breaks or deprecations are made clear.  |
+| <div style="width:50px">Title</div> | <div style="width:420px">Expectations</div> |
+|:--|:-----|
+| **Master** | builds are built directly from our master branch. These builds provide no guarantees around upstream React version, breaking changes, or overall stability. These builds should be used for development or to test bleeding edge functionality, but should not be relied upon for production use. Master builds are versioned as 0.0.0-master.x.|
+| **Preview** | builds are the first released by stable branches. These builds aim to become increasingly polished over time, and have less breaking changes than in master. react-native-windows-init will consider preview builds but warn users before installing them. Preview builds are versioned as 0.x.0-preview.y where x matches the minor release of React Native. |
+| **Latest** | builds are kept free of breaking or high-risk changes. These are considered to be stable but will still receive bug fixes for customer-blocking issues. Latest builds are versioned as 0.x.y where x matches the minor release of React Native.|
