@@ -116,7 +116,7 @@ class Resources extends React.Component {
       <div className="homepage">
         <Section background="tint">
           <div className="content">
-            <h2>Compehensive resources list coming soon!</h2>
+            <h2>Comprehensive resources list coming soon!</h2>
           </div>
         </Section>
       </div>
