@@ -38,7 +38,7 @@ To develop React-Native for Windows apps, you will need the following:
 
 ## E2E Test
 
-Please refer to [Author and Run E2E Test for React Native Windows](e2e-test)
+Please refer to [Author and Run E2E Test for React Native Windows](e2e-test.md)
 
 # Troubleshooting
 
