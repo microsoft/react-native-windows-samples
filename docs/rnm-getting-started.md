@@ -38,7 +38,7 @@ npx react-native-macos-init
 Update the CocoaPods versions
 
 ```
-cd macos && pod install && cd..
+cd macos && pod install && cd ..
 ```
 
 ## Running a React Native macOS App
