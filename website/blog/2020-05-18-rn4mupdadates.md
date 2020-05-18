@@ -1,5 +1,5 @@
 ---
-title: "React Native for macOS, and more!"
+title: "React Native for macOS"
 author: Kiki Saintonge
 authorURL: http://twitter.com/KikiSaintonge
 description: "We're on React Native core version 0.62 with new community modules, native module support across multiple platforms, and of course our official public release of React Native for macOS."
@@ -11,9 +11,9 @@ We're on React Native core version 0.62 with new community modules, native modul
 
 <!--truncate-->
 
-## Upgraded to 0.62
+## Version 0.62-preview Released
 
-As promised in our previous milestone post, we're chugging along and keeping as up-to-date with the latest React Native core version as we can. That means for this latest milestone release we are on version 0.62 of React Native.
+As promised in our previous milestone post, we're chugging along and keeping as up-to-date with the latest React Native core version as we can. That means for this latest milestone release we are officially announcing our [0.62-preview of React Native for Windows](https://www.npmjs.com/package/react-native-windows/v/0.62.0-preview.6)!
 
 As usual this means that our getting started guides and general docs will also be updated to reflect these changes.
 
