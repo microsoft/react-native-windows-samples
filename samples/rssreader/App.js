@@ -9,7 +9,6 @@ const App: () => React$Node = () => {
   const[url, setUrl] = useState('https://blogs.windows.com/');
 
   getUrlFromItem = (data) => {
-    console.log(data);
     setUrl(data);
   }
 
