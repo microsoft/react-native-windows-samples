@@ -30,7 +30,7 @@ As a preview release, we will try our best not to make breaking changes, but sti
 
 ![react-native-mac](assets/eloy_rn4m_preview_full.png)
 
-One of our biggest announcements recently is our addition and full support of the [React Native for macOS](/react-native-windows/docs/rnm-getting-started) extension! We are super excited to be developing React Native support for macOS along side our Windows effort.
+One of our biggest announcements recently is our addition and full support of the [React Native for macOS](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started) extension! We are super excited to be developing React Native support for macOS along side our Windows effort.
 
 We have an official [npm package out for React Native for macOS](https://www.npmjs.com/package/react-native-macos) and a [repo available](https://github.com/microsoft/react-native-macos) to the public to follow and contribute to - we hope to see some really cool React Native apps out there in the future that can now truly run everywhere.
 
