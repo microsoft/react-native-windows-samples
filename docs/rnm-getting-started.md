@@ -35,12 +35,6 @@ Install the React Native for macOS packages.
 npx react-native-macos-init
 ```
 
-Update the CocoaPods versions
-
-```
-cd macos && pod install && cd ..
-```
-
 ## Running a React Native macOS App
 
 - **Without using Xcode**:
