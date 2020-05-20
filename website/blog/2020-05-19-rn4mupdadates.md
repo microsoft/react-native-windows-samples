@@ -40,7 +40,7 @@ We have an official [npm package out for React Native for macOS](https://www.npm
 
 React Native runs on the Surface Duo!
 
-This is a little bit to be expected, as React Native works great today with Android, but just running on the new Surface Duo device isn't enough. We've also added support for awareness of the dual-screen device and it's status through shipping two important APIs: **TwoPaneView** and **DeviceInfoModule**.
+This is a little bit to be expected, as React Native works great today with Android, but just running on the new Surface Duo device isn't enough. We've also added support for awareness of the dual-screen device and its status through shipping two important APIs: **TwoPaneView** and **DeviceInfoModule**.
 
 To learn more about developing on the Surface Duo with React Native, [go check out our latest blog post](https://devblogs.microsoft.com/surface-duo/build-react-native-apps-for-microsoft-surface-duo/) detailing the experience.
 
