@@ -257,11 +257,9 @@ class Index extends React.Component {
       <Section background="tint">
         <div className="content">
           <div className="row">
-
             <div className="column">
               <img style={{maxWidth: '200%', marginLeft: -300, marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_windows_cropped.png" alt="rnw_cropped"/>
             </div>
-
             <div className="column">
               <Heading text="Build for Windows" />
               <GitHubButton/>
@@ -273,7 +271,6 @@ class Index extends React.Component {
                 <b style={{fontSize: 24}}>Get started with Windows</b>
               </a>
             </div>
-
           </div>
         </div>
       </Section>
