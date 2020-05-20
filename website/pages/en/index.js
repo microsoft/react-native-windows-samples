@@ -252,6 +252,7 @@ class Index extends React.Component {
             </div>
             <div className="column">
               <Heading text="Build for Windows" />
+              <GitHubButton/>
               <div style={{marginBottom: 35}}>
                 <MarkdownBlock>{textContent.windowsintro}</MarkdownBlock>
               </div>
@@ -268,6 +269,7 @@ class Index extends React.Component {
           <div className="row">
             <div className="column">
               <Heading text="Build for macOS" />
+              <GitHubButtonmacOS/>
               <div style={{marginBottom: 35}}>
                 <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
               </div>
