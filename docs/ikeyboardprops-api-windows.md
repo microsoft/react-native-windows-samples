@@ -3,7 +3,7 @@ id: ikeyboardprops-api
 title: IKeyboardProps
 ---
 
-When developing for a Windows device, the liklihood of you needing to support a rich keyboarding experience in your app is very high - this API allows you to customize and control how keyboarding works on your custom or native components.
+When developing for a Windows device, the likelihood of you needing to support a rich keyboarding experience in your app is very high - this API allows you to customize and control how keyboarding works on your custom or native components.
 
 ```
 const App = class App extends React.Component {
