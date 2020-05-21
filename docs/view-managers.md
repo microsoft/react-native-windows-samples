@@ -201,7 +201,7 @@ namespace ViewManagerSample
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use reflection to discover and bind native module, we call `AddViewManagers` extension method to register all the view managers in our assembly.
 
-Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
+Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
 _App.xaml.cs_
 
@@ -505,7 +505,7 @@ noexcept {
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. And then we call `AddViewManager` with the name of our view manager and a lambda which returns an instance of the view manager.
 
-Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
+Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
 _App.cpp_
 
