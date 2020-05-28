@@ -40,6 +40,20 @@ npx react-native-windows-init --overwrite
 
 > The --overwrite flag is a temporary measure that ensures the correct files are copied to metro.config.js for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the metro.config.js file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows/issues/4698).
 
+Here are the options that `react-native-windows-init` takes:
+```none
+Options:
+  --help       Show help                                               [boolean]
+  --version    The version of react-native-windows to use.              [string]
+  --namespace  The native project namespace.                            [string]
+  --verbose    Enables logging.                                        [boolean]
+  --language   Which language the app is written in.
+                                [string] [choices: "cs", "cpp"] [default: "cpp"]
+  --overwrite  Overwrite any existing files without prompting          [boolean]
+  ```
+  
+ 
+
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
