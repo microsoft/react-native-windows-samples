@@ -251,4 +251,4 @@ BatchedBridge.registerLazyCallableModule("MathEmitter", () => {
 });
 ```
 
-_TODO:_ We should have a better E2E example here, however in practice naitve module developers don't bother to do this, so it's impossible to find any existing examples to reference.
+_TODO:_ We should have a better E2E example here, however in practice native module developers don't bother to do this, so it's impossible to find any existing examples to reference.
