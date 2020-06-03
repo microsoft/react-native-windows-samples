@@ -324,11 +324,11 @@ struct CustomUserControlViewManager : winrt::implements<
       winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader) noexcept;
 
    // IViewManagerWithCommands
-  winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, int64_t> Commands() noexcept;
+  winrt::Windows::Foundation::Collections::IVectorView<winrt::hstring> Commands() noexcept;
 
   void DispatchCommand(
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
-      int64_t commandId,
+      const std::string& commandId,
       winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
 };
 
@@ -411,18 +411,18 @@ void CustomUserControlViewManager::UpdateProperties(
 }
 
 // IViewManagerWithCommands
-IMapView<hstring, int64_t> CustomUserControlViewManager::Commands() noexcept {
-    auto commands = winrt::single_threaded_map<hstring, int64_t>();
-    commands.Insert(L"CustomCommand", 0);
+IVectorView<hstring> CustomUserControlViewManager::Commands() noexcept {
+    auto commands = winrt::single_threaded_vector<hstring>();
+    commands.Append(L"CustomCommand");
     return commands.GetView();
 }
 
 void CustomUserControlViewManager::DispatchCommand(
     FrameworkElement const &view,
-    int64_t commandId,
+    const std::string& commandId,
     winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept {
   if (auto control = view.try_as<winrt::SampleLibraryCPP::CustomUserControlCPP>()) {
-    if (commandId == 0) {
+    if (commandId == L"CustomCommand") {
       const JSValueArray &commandArgs = JSValue::ReadArrayFrom(commandArgsReader);
       // Execute command
     }
