@@ -11,6 +11,10 @@ title: ReactApplication
 
 ## Properties
 
+### ```ReactNativeHost HostCore```
+
+TODO: Fill in stub
+
 ## Events
 
 
