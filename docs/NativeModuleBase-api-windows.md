@@ -9,7 +9,25 @@ title: NativeModuleBase
 
 ## Methods
 
+### ```void Initialize()```
+
+TODO: Fill in stub
+
 ## Properties
+
+### ```String Name```
+
+TODO: Fill in stub
+
+### ```Windows.Foundation.Collections.IMapView<String, IInspectable> Constants```
+
+TODO: Fill in stub
+
+### ```Windows.Foundation.Collections.IVectorView<MethodInfo> Methods```
+
+TODO: Fill in stub
+
+
 
 ## Events
 

@@ -11,6 +11,10 @@ title: NativeModuleRegistry
 
 ## Properties
 
+### ``` IVectorView<NativeModuleBase> Modules ```
+
+TODO: Fill in stub
+
 ## Events
 
 
