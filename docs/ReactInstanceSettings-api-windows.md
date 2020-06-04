@@ -11,6 +11,48 @@ title: ReactInstanceSettings
 
 ## Properties
 
+### ```Boolean UseWebDebugger { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean UseLiveReload { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean UseDirectDebugger { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean UseJsi { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean EnableJITCompilation { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean EnableByteCodeCaching { get; set; }```
+
+TODO: Fill in stub
+
+
+### ```String ByteCodeFileUri { get; set; }```
+
+TODO: Fill in stub
+
+### ```String DebugHost { get; set; }```
+
+TODO: Fill in stub
+
+### ```String DebugBundlePath { get; set; }```
+
+TODO: Fill in stub
+
+### ```String BundleRootPath { get; set; }```
+
+TODO: Fill in stub
+
+
 ## Events
 
 
