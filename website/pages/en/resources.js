@@ -15,7 +15,7 @@ const docsUrl = siteConfig.url + siteConfig.baseUrl;
 const repoUrl = siteConfig.repoUrl;
 
 const textContent = {
-  introtext: `
+  resourceslist: `
   `,
 };
 
@@ -33,23 +33,19 @@ class Resources extends React.Component {
     const { config: siteConfig, language = "" } = this.props;
     const { baseUrl } = siteConfig;
 
-    const VideoCardItem = ({ videolength, videotitle, videotype, videodifficulty, speakername, imgurl, videodisc}) => (
-
-        <div className="videocard large">
+    const ResourceCardItem = ({ videotitle, videotype, videodifficulty, speakername, imgurl, videodisc, cardlink}) => (
+      <div className="CenterContent">
+      <a href={cardlink}>
+        <div className="videocard" style={{maxHeight: 380, marginBottom: 50}}>
             <div style={{position: 'relative'}}>
-              <div style={{maxWidth: '100%', maxHeight: '100%'}}>
+              <div style={{maxWidth: '100%', maxHeight: '50%'}}>
                 <img src={imgurl} alt="videoimg"/>
               </div>
               <div className="videocardlengthtip">
                 <div>
-                  <div className="videocardtipbackground">
                     <div>
-                        <img src="./img/homepage/timeicon.png" alt="timeicon"/>
+                        <img style={{width: 14, height: 14}} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="timeicon"/>
                     </div>
-                    <div>
-                      <p style={{color: '#fff', marginLeft: 8, marginTop: 4, fontSize: 14}}>{videolength}</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -58,26 +54,15 @@ class Resources extends React.Component {
                 <p style={{fontsize: 46, fontWeight: 700}}>{videotitle}</p>
                 <div className="videocardinfo">
                   <p style={{fontSize: 14}}>{videotype}</p>
-                  <div className="subtitledot"/>
-                  <p style={{fontSize: 14}}>{videodifficulty}</p>
                 </div>
-                <p className="discriptionadjust" style={{textOverflow: 'ellipsis', maxWidth: '100%', display: 'block', overflow: 'hidden', whiteSpace: 'normal'}}>{videodisc}</p>
               </div>
-              <div className="videocarddriverinfo" style={{color: '#0e53bd'}}>
-                <a href={"https://twitter.com/" + speakername}>
-                  <div className="row">
-                    <div style={{display: 'inline-block'}}>
-                        <img style={{borderRadius: '50%', width: '32px', height: '32px'}} src={"https://avatars.io/twitter/" + speakername} alt="speakericon"/>
-                    </div>
-                    <div style={{display: 'inline-block', marginLeft: 5}}>
-                      <div>@{speakername}</div>
-                    </div>
-                  </div>
-
-                </a>
+              <div style={{marginBottom: 15}}>
+                <div >{videodisc}</div>
               </div>
             </div>
         </div>
+        </a>
+      </div>
     );
 
     const Section = ({ children, className, background = "light" }) => (
@@ -89,24 +74,69 @@ class Resources extends React.Component {
     const VideoCardList = () => (
       <Section background="tint">
         <div className="content">
-          <MarkdownBlock>{textContent.introtext}</MarkdownBlock>
+          <h1 style={{marginTop: -35}}>Resources</h1>
+          <p>The follow is a list of resources related to React Native for Windows and macOS to help you get started or to better accelerate your development in this area.</p>
           <div className="row">
-              <VideoCardItem
-                videolength="10 mins"
-                videotitle="Community Modules for Mac"
-                videotype="Walkthrough"
-                videodifficulty="Beginner"
-                speakername="alloy"
-                imgurl="./img/homepage/eloy_rn4m_preview_full.png"
-                videodisc="Set up your Mac environment to build React Native for MacOS apps, as well as how to install community modules."/>
-              <VideoCardItem
-                videolength="0 mins"
-                videotitle="Example Card"
-                videotype="Type of Video"
-                videodifficulty="Difficulty"
-                speakername="reactwindows"
-                imgurl="./img/homepage/video_learning_image-small.png"
-                videodisc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+             <div className="column">
+              <ResourceCardItem
+                videolength="Repo"
+                videotitle="React Native for Windows"
+                videotype="Github Repo"
+                cardlink="https://github.com/Microsoft/react-native-windows"
+                imgurl="https://raw.githubusercontent.com/microsoft/react-native-windows/master/.github/hero2.png"
+                videodisc="Official React Native for Windows framework for building native Windows applications with React."/>
+                <ResourceCardItem
+                  videolength="Repo"
+                  videotitle="Fluent UI React Native (FURN)"
+                  cardlink="https://github.com/microsoft/fluentui-react-native"
+                  videotype="Github Repo"
+                  imgurl="./img/homepage/fluentUI_image.png"
+                  videodisc="FluentUI React Native is a javascript component library providing developers with controls that are in the Fluent Design System."/>
+                  <ResourceCardItem
+                    videolength="Repo"
+                    videotitle="Hermes for Windows"
+                    cardlink="https://github.com/microsoft/hermes-windows"
+                    videotype="Github Repo"
+                    imgurl="./img/homepage/hermes_logo_small.png"
+                    videodisc="Microsoft’s fork of facebook/Hermes that brings Windows support to the lightweight JS engine for React Native."/>
+                    <ResourceCardItem
+                      videolength="Repo"
+                      videotitle="React Native Test App"
+                      videotype="Github Repo Sample"
+                      cardlink="https://github.com/microsoft/react-native-test-app"
+                      imgurl="https://raw.githubusercontent.com/microsoft/react-native-windows/master/.github/hero2.png"
+                      videodisc="React Native Test App provides test apps for all platforms as a package."/>
+             </div>
+             <div className="column">
+              <ResourceCardItem
+                videolength="Repo"
+                videotitle="React Native for macOS"
+                cardlink="https://github.com/Microsoft/react-native-macos"
+                videotype="Github Repo"
+                imgurl="./img/homepage/native_and_js_mac_cropped.png"
+                videodisc="Official React Native for macOS framework for building native macOS applications with React."/>
+                <ResourceCardItem
+                  videolength="Repo"
+                  videotitle="Dual Screen"
+                  videotype="Github Repo"
+                  imgurl="./img/homepage/duo.jpg"
+                  cardlink="https://github.com/microsoft/react-native-dualscreen"
+                  videodisc="Microsoft's offerings to streamline dual-screen cross-platform development using React Native. The modules in the repo are targeting Windows and Android."/>
+                  <ResourceCardItem
+                    videolength="Repo"
+                    videotitle="VS Code RN extension"
+                    videotype="Github Repo"
+                    imgurl="./img/homepage/vs_code_logo.png"
+                    cardlink="https://github.com/Microsoft/vscode-react-native"
+                    videodisc="React Native extension for VS Code enables you to debug your code and quickly and run react-native commands from the command palette."/>
+                    <ResourceCardItem
+                      videolength="Repo"
+                      videotitle="App Center SDK for React Native"
+                      videotype="Github Repo"
+                      imgurl="https://vsmobile.gallerycdn.vsassets.io/extensions/vsmobile/vscode-appcenter/0.1.11/1545983149447/Microsoft.VisualStudio.Services.Icons.Default"
+                      cardlink="https://github.com/microsoft/appcenter-sdk-react-native"
+                      videodisc="React Native extension for VS Code enables you to debug your code and quickly and run react-native commands from the command palette."/>
+             </div>
           </div>
         </div>
       </Section>
@@ -114,11 +144,7 @@ class Resources extends React.Component {
 
     return (
       <div className="homepage">
-        <Section background="tint">
-          <div className="content">
-            <h2>Comprehensive resources list coming soon!</h2>
-          </div>
-        </Section>
+        <VideoCardList/>
       </div>
     );
   }
