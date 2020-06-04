@@ -9,7 +9,32 @@ title: ReactInstanceManager
 
 ## Methods
 
+### ```OnSuspend() ```
+
+TODO: Fill in stub
+
+### ```OnEnteredBackground() ```
+
+TODO: Fill in stub
+
+### ```OnLeavingBackground() ```
+
+TODO: Fill in stub
+
+### ```OnResume(OnResumeAction action) ```
+
+TODO: Fill in stub
+
+### ```OnBackPressed() ```
+
+TODO: Fill in stub
+
+
 ## Properties
+
+### ```Microsoft.ReactNative.Bridge.ReactContext CurrentReactContext();```
+
+TODO: Fill in stub
 
 ## Events
 
