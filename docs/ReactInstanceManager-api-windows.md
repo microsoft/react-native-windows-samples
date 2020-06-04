@@ -3,7 +3,16 @@ id: reactinstancemanager-api
 title: ReactInstanceManager
 ---
 
-# TODO NEXT
+*Describe the API*
+
+# Reference
+
+## Methods
+
+## Properties
+
+## Events
+
 
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.

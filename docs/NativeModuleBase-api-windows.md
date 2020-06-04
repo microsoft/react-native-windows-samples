@@ -3,7 +3,16 @@ id: nativemodulebase-api
 title: NativeModuleBase
 ---
 
-# TODO NEXT
+*Describe the API*
+
+# Reference
+
+## Methods
+
+## Properties
+
+## Events
+
 
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.

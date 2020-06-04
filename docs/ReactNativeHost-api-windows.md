@@ -3,7 +3,72 @@ id: reactnativehost-api
 title: ReactNativeHost
 ---
 
-# TODO NEXT
+*Describe the API*
+
+# Reference
+
+## Methods
+
+### ```OnSuspend()```
+
+TODO: Fill in stub
+
+### ```OnEnteredBackground()```
+
+TODO: Fill in stub
+
+### ```OnLeavingBackground()```
+
+TODO: Fill in stub
+
+### ```OnResume(OnResumeAction action)```
+
+TODO: Fill in stub
+
+### ```Windows.UI.Xaml.UIElement GetOrCreateRootView(IInspectable initialProps)```
+
+TODO: Fill in stub
+
+## Properties
+
+### ```ReactInstanceManager ReactInstanceManager```
+
+TODO: Fill in stub
+
+### ```ReactInstanceSettings InstanceSettings ```
+
+TODO: Fill in stub
+
+### ```Boolean HasInstance```
+
+TODO: Fill in stub
+
+### ```overridable IVectorView<Microsoft.ReactNative.Bridge.IReactPackage> Packages```
+
+TODO: Fill in stub
+
+### ```overridable String MainComponentName```
+
+TODO: Fill in stub
+
+### ```overridable Boolean UseDeveloperSupport```
+
+TODO: Fill in stub
+
+### ```overridable String JavaScriptMainModuleName```
+
+TODO: Fill in stub
+
+### ```overridable String JavaScriptBundleFile```
+
+TODO: Fill in stub
+
+## Events
+
+### `OnResumeAction()`
+
+TODO: Fill in stub
+
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.

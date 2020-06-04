@@ -3,7 +3,15 @@ id: nativemoduleregistry-api
 title: NativeModuleRegistry
 ---
 
-# TODO NEXT
+*Describe the API*
+
+# Reference
+
+## Methods
+
+## Properties
+
+## Events
 
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.

@@ -3,7 +3,16 @@ id: reactinstancesettings-api
 title: ReactInstanceSettings
 ---
 
-# TODO NEXT
+*Describe the API*
+
+# Reference
+
+## Methods
+
+## Properties
+
+## Events
+
 
 <!-- namespace Microsoft.ReactNative
 {
