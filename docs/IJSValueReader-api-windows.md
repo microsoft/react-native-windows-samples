@@ -5,13 +5,60 @@ title: IJSValueReader
 
 *Describe the API*
 
+IJSValueReader supports the following types:
+
+```
+  enum JSValueType {
+    Null,
+    Object,
+    Array,
+    String,
+    Boolean,
+    Int64,
+    Double,
+  };
+```
+
+
 # Reference
 
 ## Methods
 
-<!-- // Copyright (c) Microsoft Corporation.
-// Licensed under the MIT License.
+### ```Boolean GetNextObjectProperty(out String propertyName)```
 
+TODO: Fill in stub
+
+### ```Boolean GetNextArrayItem()```
+
+TODO: Fill in stub
+
+### ```String GetString()```
+
+TODO: Fill in stub
+
+### ```Boolean GetBoolean()```
+
+TODO: Fill in stub
+
+### ```Int64 GetInt64()```
+
+TODO: Fill in stub
+
+### ```Double GetDouble()```
+
+TODO: Fill in stub
+
+
+## Properties
+
+### ```JSValueType ValueType { get; }```
+
+TODO: Fill in stub
+
+
+
+
+<!--
 namespace Microsoft.ReactNative {
 
   // Type of value read from JavaScript by IJSValueReader
