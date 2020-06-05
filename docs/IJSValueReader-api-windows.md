@@ -1,0 +1,39 @@
+---
+id: ijsvaluereader-api
+title: IJSValueReader
+---
+
+*Describe the API*
+
+# Reference
+
+## Methods
+
+<!-- // Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+namespace Microsoft.ReactNative {
+
+  // Type of value read from JavaScript by IJSValueReader
+  enum JSValueType {
+    Null,
+    Object,
+    Array,
+    String,
+    Boolean,
+    Int64,
+    Double,
+  };
+
+  // Forward only reader for JSON like streams or trees.
+  [webhosthidden]
+  interface IJSValueReader {
+    JSValueType ValueType { get; };
+    Boolean GetNextObjectProperty(out String propertyName);
+    Boolean GetNextArrayItem();
+    String GetString();
+    Boolean GetBoolean();
+    Int64 GetInt64();
+    Double GetDouble();
+  }
+} // namespace Microsoft.ReactNative -->
