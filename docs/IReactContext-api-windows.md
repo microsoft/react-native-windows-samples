@@ -3,11 +3,51 @@ id: ireactcontext-api
 title: IReactContext
 ---
 
-*Describe the API*
+The IReactContext is given to native modules to communicate with other native modules, views, application, and the ReactNative instance.
+
+It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the IReactContext is destroyed.
+
+- Use the Properties to share native module's data with other components.
+- Use the Notifications to exchange events with other components.
+- Use CallJSFunction to call JavaScript functions, and EmitJSEvent to raise JavaScript events.
 
 # Reference
 
 ## Methods
+
+### ```void DispatchEvent(XAML_NAMESPACE.FrameworkElement view, String eventName, JSValueArgWriter eventDataArgWriter)```
+
+> Deprecated: Use DispatchEvent on XamlUIService instead
+
+### ```void CallJSFunction(String moduleName, String methodName, JSValueArgWriter paramsArgWriter)```
+
+Call JavaScript function methodName of moduleName.
+
+### ```void EmitJSEvent(String eventEmitterName, String eventName, JSValueArgWriter paramsArgWriter)```
+
+Call JavaScript module event. It is a specialized CallJSFunction call where method name is always 'emit'.
+
+
+## Properties
+
+### ```IReactPropertyBag Properties { get; }```
+
+Properties shared with the IReactInstanceSettings.Properties. It can be used to share values and state between components.
+
+### ```IReactNotificationService Notifications { get; }```
+
+Notifications shared with the IReactInstanceSettings.Notifications. They can be used to exchange events between components.
+All subscriptions added to the IReactContext.Notifications are automatically removed after the IReactContext is destroyed.
+The subscriptions added to IReactInstanceSettings.Notifications kept as long as IReactInstanceSettings alive.
+
+### ```IReactDispatcher UIDispatcher { get; }```
+
+Get ReactDispatcherHelper::UIDispatcherProperty from the Properties property bag.
+
+### ```IReactDispatcher JSDispatcher { get; }```
+
+Get ReactDispatcherHelper::JSDispatcherProperty from the Properties property bag.
+
 
 <!-- // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
