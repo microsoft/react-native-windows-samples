@@ -30,11 +30,11 @@
     "API (Windows)": [
       "apptheme-api",
       "ikeyboardprops-api",
+      "ireactdispatcher-api",
       "ireactpackage-api",
       "iredboxhandler-api",
       "iviewwindowsprops-api",
       "reactapplication-api",
-      "reactinstancemanager-api",
       "reactinstancesettings-api",
       "reactnativehost-api"
     ]

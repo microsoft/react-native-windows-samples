@@ -3,17 +3,25 @@ id: reactinstancesettings-api
 title: ReactInstanceSettings
 ---
 
-*Describe the API*
+Provides configuration of the react instance.
 
 # Reference
 
 ## Properties
 
-### ```IReactPropertyBag Properties { get; }```
+### ```Properties```
+
+```csharp
+IReactPropertyBag Properties { get; }
+```
 
 TODO: Fill in stub
 
-### ```String MainComponentName { get; set; }```
+### ```MainComponentName```
+
+```csharp
+string MainComponentName { get; set; }
+```
 
 TODO: Fill in stub
 
@@ -27,11 +35,19 @@ bool UseDeveloperSupport { get; set; };
 
 This property will replace [EnableDeveloperMenu](#EnableDeveloperMenu) in a future version. 
 
-### ```String JavaScriptMainModuleName { get; set; }```
+### ```JavaScriptMainModuleName```
+
+```csharp
+string JavaScriptMainModuleName { get; set; }
+```
 
 TODO: Fill in stub
 
-### ```String JavaScriptBundleFile { get; set; }```
+### ```JavaScriptBundleFile```
+
+```csharp
+string JavaScriptBundleFile { get; set; }
+```
 
 TODO: Fill in stub
 
@@ -85,7 +101,7 @@ For direct debugging, whether to break on the next line of JavaScript that is ex
 
 ***Note: this is not supported with the Chakra JS engine which is the currently used JavaScript engine***
 
-### ```Boolean UseJsi { get; set; }```
+### ```UseJsi```
 
 ```csharp
 bool UseJsi { get; set; }
@@ -130,14 +146,22 @@ string ByteCodeFileUri { get; set; }
 
 Set this to a location the application has write access to in order for bytecode to be successfully cached. See [EnableByteCodeCaching](#enablebytecodecaching).
 
-### ```String DebugHost { get; set; }```
+### ```DebugHost```
+
+```csharp
+string DebugHost { get; set; }
+```
 
 default: `localhost:8081`
 
 When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server that will be used to load the bundle from.
 
 
-### ```String DebugBundlePath { get; set; }```
+### ```DebugBundlePath```
+
+```csharp
+string DebugBundlePath { get; set; }
+```
 
 TODO: Fill in stub
 

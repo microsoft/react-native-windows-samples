@@ -4,7 +4,6 @@ title: ReactApplication
 ---
 
 ReactApplication provides a BaseApplication class for use in applications that are entirely written in react-native.  ReactApplication will load the react instance on launch of your app for you and provide accessors to your application's [ReactInstanceSettings](ReactInstanceSettings-api-windows.md) and [ReactNativeHost](ReactNativeHost-api-windows.md) to customize your react instance.
-*Describe the API*
 
 # Reference
 
