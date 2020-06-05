@@ -75,7 +75,7 @@ class Resources extends React.Component {
       <Section background="tint">
         <div className="content">
           <h1 style={{marginTop: -35}}>Resources</h1>
-          <p>The follow is a list of resources related to React Native for Windows and macOS to help you get started or to better accelerate your development in this area.</p>
+          <p>The following is a suite of offerings from Microsoft in the React Native space to help you target Desktop platforms as well as accelerate your development efficiency with React Native.</p>
           <div className="row">
              <div className="column">
               <ResourceCardItem
@@ -135,7 +135,7 @@ class Resources extends React.Component {
                       videotype="Github Repo"
                       imgurl="./img/homepage/appcenter_logo.png"
                       cardlink="https://github.com/microsoft/appcenter-sdk-react-native"
-                      videodisc="React Native extension for VS Code enables you to debug your code and quickly and run react-native commands from the command palette."/>
+                      videodisc="App Center allows you to get faster release cycles, higher-quality apps, and app insights to build what users want."/>
              </div>
           </div>
         </div>
