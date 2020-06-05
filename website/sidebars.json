@@ -31,7 +31,7 @@
       "apptheme-api",
       "ikeyboardprops-api",
       "ireactdispatcher-api",
-      "ireactpackage-api",
+      "ireactpackageprovider-api",
       "iredboxhandler-api",
       "iviewwindowsprops-api",
       "reactapplication-api",
