@@ -17,9 +17,15 @@ TODO: Fill in stub
 
 TODO: Fill in stub
 
-### ```Boolean UseDeveloperSupport { get; set; }```
+### ```UseDeveloperSupport```
 
-TODO: Fill in stub
+```csharp
+bool UseDeveloperSupport { get; set; };
+```
+
+**Not currently supported**
+
+This property will replace [EnableDeveloperMenu](#EnableDeveloperMenu) in a future version. 
 
 ### ```String JavaScriptMainModuleName { get; set; }```
 
@@ -29,63 +35,135 @@ TODO: Fill in stub
 
 TODO: Fill in stub
 
-### ```Boolean UseWebDebugger { get; set; }```
+### ```UseWebDebugger```
 
-TODO: Fill in stub
+```csharp
+bool UseWebDebugger { get; set; }
+```
+Should the instance run in a remote environment such as within a browser.
+By default, this is using a browser navigated to  http://localhost:8081/debugger-ui served
+by Metro/Haul. Debugging will start as soon as the react native instance is loaded.
 
-### ```Boolean UseFastRefresh { get; set; }```
+### ```UseFastRefresh```
 
-TODO: Fill in stub
+```csharp
+bool UseFastRefresh { get; set; }
+```
 
-### ```Boolean UseLiveReload { get; set; }```
+Should the instance trigger the hot module reload logic when it first loads the instance.
+Most edits should be visible within a second or two without the instance having to reload.
+Non-compatible changes still cause full reloads.
+See [Fast Refresh](https://reactnative.dev/docs/fast-refresh) for more information on Fast Refresh.
 
-TODO: Fill in stub
+### ```UseLiveReload```
 
-### ```Boolean UseDirectDebugger { get; set; }```
+```csharp
+bool UseLiveReload { get; set; }
+```
 
-TODO: Fill in stub
+Enable live reload to load the source bundle from the React Native packager.
+When the file is saved, the packager will trigger reloading.
+**For general use this has been replaced by [UseFastRefresh](#usefastrefresh).**
 
-### ```Boolean DebuggerBreakOnNextLine { get; set; }```
+### ```UseDirectDebugger```
 
-TODO: Fill in stub
+```csharp
+bool UseDirectDebugger { get; set; };
+```
+
+Enables debugging in the JavaScript engine (if supported).  
+
+For Chakra this enables you to debug the JS runtime directly within your app using VisualStudio -> Attach to process (Script)
+
+### ```DebuggerBreakOnNextLine```
+
+```csharp
+bool DebuggerBreakOnNextLine { get; set; }
+```
+
+For direct debugging, whether to break on the next line of JavaScript that is executed.  This can help debug issues hit early in the JavaScript bundle load.
+
+***Note: this is not supported with the Chakra JS engine which is the currently used JavaScript engine***
 
 ### ```Boolean UseJsi { get; set; }```
 
-TODO: Fill in stub
+```csharp
+bool UseJsi { get; set; }
+```
 
-### ```Boolean EnableJITCompilation { get; set; }```
+This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. **It is not recommended to change this setting.**
 
-TODO: Fill in stub
 
-### ```Boolean EnableByteCodeCaching { get; set; }```
+### ```EnableJITCompilation```
 
-TODO: Fill in stub
+```csharp
+bool EnableJITCompilation { get; set; }
+```
 
-### ```Boolean EnableDeveloperMenu { get; set; }```
+default: true
 
-TODO: Fill in stub
+Flag controlling whether the JavaScript engine uses JIT compilation.
 
-### ```String ByteCodeFileUri { get; set; }```
+### ```EnableByteCodeCaching```
 
-TODO: Fill in stub
+```csharp
+bool EnableByteCodeCaching { get; set; }
+```
+
+default: false
+
+For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.  Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  [ByteCodeFileUri](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
+
+### ```EnableDeveloperMenu```
+
+```csharp
+bool EnableDeveloperMenu { get; set; };
+```
+
+This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
+
+### ```ByteCodeFileUri```
+
+```csharp
+string ByteCodeFileUri { get; set; }
+```
+
+Set this to a location the application has write access to in order for bytecode to be successfully cached. See [EnableByteCodeCaching](#enablebytecodecaching).
 
 ### ```String DebugHost { get; set; }```
 
-TODO: Fill in stub
+default: `localhost:8081`
+
+When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server that will be used to load the bundle from.
+
 
 ### ```String DebugBundlePath { get; set; }```
 
 TODO: Fill in stub
 
-### ```String BundleRootPath { get; set; }```
+### ```BundleRootPath```
 
-TODO: Fill in stub
+```csharp
+string BundleRootPath { get; set; }
+```
 
-### ```UInt16 DebuggerPort { get; set; }```
+Base path used for the location of the bundle.  If not specified then "ms-appx:///Bundle/" will be used as the base path.
 
-TODO: Fill in stub
+### ```DebuggerPort```
 
-### ```IRedBoxHandler RedBoxHandler { get; set; }```
+```csharp
+ushort DebuggerPort { get; set; }
+```
+
+default: `9229`
+
+When [UseDirectDebugger](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
+
+### ```RedBoxHandler```
+
+```csharp
+IRedBoxHandler RedBoxHandler { get; set; };
+```
 
 Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](iredboxhandler-api-windows.md) for more information.
 
