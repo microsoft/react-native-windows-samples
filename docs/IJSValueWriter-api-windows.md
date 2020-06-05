@@ -9,6 +9,55 @@ title: IJSValueWriter
 
 ## Methods
 
+### ```void WriteNull()```
+
+TODO: Fill in stub
+
+### ```void WriteBoolean(Boolean value)```
+
+TODO: Fill in stub
+
+### ```void WriteInt64(Int64 value)```
+
+TODO: Fill in stub
+
+### ```void WriteDouble(Double value)```
+
+TODO: Fill in stub
+
+### ```void WriteString(String value)```
+
+TODO: Fill in stub
+
+### ```void WriteObjectBegin()```
+
+TODO: Fill in stub
+
+### ```void WritePropertyName(String name)```
+
+TODO: Fill in stub
+
+### ```void WriteObjectEnd()```
+
+TODO: Fill in stub
+
+### ```void WriteArrayBegin()```
+
+TODO: Fill in stub
+
+### ```void WriteArrayEnd()```
+
+TODO: Fill in stub
+
+
+## Delegates
+
+### ```delegate void JSValueArgWriter(IJSValueWriter writer);```
+
+Use this delegate to pass arbitrary value to ABI API.
+  
+In a function that implements the delegate use the provided writer to stream custom values.
+
 <!-- // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
