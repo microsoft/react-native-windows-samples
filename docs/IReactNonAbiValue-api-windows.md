@@ -3,11 +3,17 @@ id: ireactnonabivalue-api
 title: IReactNonAbiValue
 ---
 
-*Describe the API*
+IReactNonAbiValue helps to wrap up a non-ABI safe C++ values into an IInspectable object. We use it to handle native module lifetime.
+
+It also can be used to store values in the IReactPropertyBag that do not need to go through the EXE/DLL boundary.
 
 # Reference
 
 ## Methods
+
+### ```Int64 GetPtr();```
+
+Get a pointer to the stored value.
 
 <!-- // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
