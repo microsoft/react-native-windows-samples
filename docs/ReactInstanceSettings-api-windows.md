@@ -33,7 +33,7 @@ bool UseDeveloperSupport { get; set; };
 
 **Not currently supported**
 
-This property will replace [EnableDeveloperMenu](#EnableDeveloperMenu) in a future version. 
+This property will replace [EnableDeveloperMenu](#enabledevelopermenu) in a future version. 
 
 ### ```JavaScriptMainModuleName```
 
