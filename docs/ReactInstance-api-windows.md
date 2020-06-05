@@ -1,6 +1,6 @@
 ---
-id: reactinstance-api
-title: ReactInstance
+id: ireactinstance-api
+title: IReactInstance
 ---
 
 *Describe the API*
@@ -9,7 +9,21 @@ title: ReactInstance
 
 ## Methods
 
+### ```void InvokeFunction(String moduleName, String method, IVectorView<IInspectable> arguments)```
+
+TODO: Fill in stub
+
+### ```Windows.Foundation.IAsyncAction InitializeAsync()```
+
+TODO: Fill in stub
+
+
 ## Properties
+
+### ```IVectorView<NativeModuleBase> NativeModules { get; }```
+
+TODO: Fill in stub
+
 
 ## Events
 

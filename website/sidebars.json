@@ -34,7 +34,7 @@
       "reactnativehost-api",
       "reactinstancesettings-api",
       "reactinstancemanager-api",
-      "reactinstance-api",
+      "ireactinstance-api",
       "reactapplication-api",
       "nativemoduleregistry-api",
       "nativemodulebase-api"
