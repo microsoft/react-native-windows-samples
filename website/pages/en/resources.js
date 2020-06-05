@@ -133,7 +133,7 @@ class Resources extends React.Component {
                       videolength="Repo"
                       videotitle="App Center SDK for React Native"
                       videotype="Github Repo"
-                      imgurl="https://vsmobile.gallerycdn.vsassets.io/extensions/vsmobile/vscode-appcenter/0.1.11/1545983149447/Microsoft.VisualStudio.Services.Icons.Default"
+                      imgurl="./img/homepage/appcenter_logo.png"
                       cardlink="https://github.com/microsoft/appcenter-sdk-react-native"
                       videodisc="React Native extension for VS Code enables you to debug your code and quickly and run react-native commands from the command palette."/>
              </div>
