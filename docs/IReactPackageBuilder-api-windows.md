@@ -9,6 +9,26 @@ title: IReactPackageBuilder
 
 ## Methods
 
+### ```void AddModule(String moduleName, ReactModuleProvider moduleProvider)```
+
+TODO: Fill in stubs
+
+### ```void AddViewManager(String viewManagerName, ReactViewManagerProvider viewManagerProvider)```
+
+TODO: Fill in stubs
+
+
+## Delegates
+
+### ```delegate Object ReactModuleProvider(IReactModuleBuilder moduleBuilder)```
+
+TODO: Fill in stubs
+
+### ```delegate IViewManager ReactViewManagerProvider()```
+
+TODO: Fill in stubs
+
+
 <!-- // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
