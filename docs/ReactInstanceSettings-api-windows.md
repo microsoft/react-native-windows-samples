@@ -9,7 +9,31 @@ title: ReactInstanceSettings
 
 ## Properties
 
+### ```IReactPropertyBag Properties { get; }```
+
+TODO: Fill in stub
+
+### ```String MainComponentName { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean UseDeveloperSupport { get; set; }```
+
+TODO: Fill in stub
+
+### ```String JavaScriptMainModuleName { get; set; }```
+
+TODO: Fill in stub
+
+### ```String JavaScriptBundleFile { get; set; }```
+
+TODO: Fill in stub
+
 ### ```Boolean UseWebDebugger { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean UseFastRefresh { get; set; }```
 
 TODO: Fill in stub
 
@@ -18,6 +42,10 @@ TODO: Fill in stub
 TODO: Fill in stub
 
 ### ```Boolean UseDirectDebugger { get; set; }```
+
+TODO: Fill in stub
+
+### ```Boolean DebuggerBreakOnNextLine { get; set; }```
 
 TODO: Fill in stub
 
@@ -33,6 +61,9 @@ TODO: Fill in stub
 
 TODO: Fill in stub
 
+### ```Boolean EnableDeveloperMenu { get; set; }```
+
+TODO: Fill in stub
 
 ### ```String ByteCodeFileUri { get; set; }```
 
@@ -50,8 +81,13 @@ TODO: Fill in stub
 
 TODO: Fill in stub
 
+### ```UInt16 DebuggerPort { get; set; }```
 
-## Events
+TODO: Fill in stub
+
+### ```IRedBoxHandler RedBoxHandler { get; set; }```
+
+Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](iredboxhandler-api-windows.md) for more information.
 
 
 <!-- namespace Microsoft.ReactNative
@@ -59,18 +95,27 @@ TODO: Fill in stub
     [webhosthidden]
     runtimeclass ReactInstanceSettings 
     {
-        ReactInstanceSettings();
+    ReactInstanceSettings();
 
-        Boolean UseWebDebugger { get; set; };
-        Boolean UseLiveReload { get; set; };
-        Boolean UseDirectDebugger { get; set; };
-        Boolean UseJsi { get; set; };
-        Boolean EnableJITCompilation { get; set; };
-        Boolean EnableByteCodeCaching { get; set; };
-
-        String ByteCodeFileUri { get; set; };
-        String DebugHost { get; set; };
-        String DebugBundlePath { get; set; };
-        String BundleRootPath { get; set; };
+    IReactPropertyBag Properties { get; };
+    String MainComponentName { get; set; };
+    Boolean UseDeveloperSupport { get; set; };
+    String JavaScriptMainModuleName { get; set; };
+    String JavaScriptBundleFile { get; set; };
+    Boolean UseWebDebugger { get; set; };
+    Boolean UseFastRefresh { get; set; };
+    Boolean UseLiveReload { get; set; };
+    Boolean UseDirectDebugger { get; set; };
+    Boolean DebuggerBreakOnNextLine { get; set; };
+    Boolean UseJsi { get; set; };
+    Boolean EnableJITCompilation { get; set; };
+    Boolean EnableByteCodeCaching { get; set; };
+    Boolean EnableDeveloperMenu { get; set; };
+    String ByteCodeFileUri { get; set; };
+    String DebugHost { get; set; };
+    String DebugBundlePath { get; set; };
+    String BundleRootPath { get; set; };
+    UInt16 DebuggerPort { get; set; };
+    IRedBoxHandler RedBoxHandler { get; set; };
     }
 } -->

@@ -3,110 +3,51 @@ id: reactnativehost-api
 title: ReactNativeHost
 ---
 
-*Describe the API*
+This is the main entry-point to create a react-native instance.  The ReactNativeHost object exists to configure the instance using [ReactInstanceSettings](ReactInstanceSettings-api-windows.md) before its loaded, as well as enabling control of when to load the instance. 
+
+
+_In the future more lifecycle events will be added to this object to provide better information on when an instance is loaded and unloaded._
 
 # Reference
 
 ## Methods
 
-### ```OnSuspend()```
+### ``` void ReloadInstance();```
 
-TODO: Fill in stub
-
-### ```OnEnteredBackground()```
-
-TODO: Fill in stub
-
-### ```OnLeavingBackground()```
-
-TODO: Fill in stub
-
-### ```OnResume(OnResumeAction action)```
-
-TODO: Fill in stub
-
-### ```Windows.UI.Xaml.UIElement GetOrCreateRootView(IInspectable initialProps)```
-
-TODO: Fill in stub
+This is used to load the instance, which will create an instance of the JS engine and launch your JavaScript code.  If an instance of this host is already running, this will shutdown the already runnng instance, and load a new instance. 
 
 ## Properties
 
-### ```ReactInstanceManager ReactInstanceManager```
+### ```IVector<IReactPackageProvider> PackageProviders { get; }```
 
-TODO: Fill in stub
+Provides access to the list of `IReactPackageProvider`'s that the react instance will use to provide native modules to the application.  This can be used to register additional package providers, such as package providers from community modules or other shared libraries
 
-### ```ReactInstanceSettings InstanceSettings ```
+```csharp
+  PackageProviders.Add(new Microsoft.ReactNative.Managed.ReactPackageProvider()); // Includes any modules in this project
+  PackageProviders.Add(new SomeCommunityPackage.ReactPackageProvider());
+  PackageProviders.Add(new AnotherCommunityPackage.ReactPackageProvider());
+```
 
-TODO: Fill in stub
+### ```ReactInstanceSettings InstanceSettings { get; set; }```
 
-### ```Boolean HasInstance```
-
-TODO: Fill in stub
-
-### ```overridable IVectorView<Microsoft.ReactNative.Bridge.IReactPackage> Packages```
-
-TODO: Fill in stub
-
-### ```overridable String MainComponentName```
-
-TODO: Fill in stub
-
-### ```overridable Boolean UseDeveloperSupport```
-
-TODO: Fill in stub
-
-### ```overridable String JavaScriptMainModuleName```
-
-TODO: Fill in stub
-
-### ```overridable String JavaScriptBundleFile```
-
-TODO: Fill in stub
-
-## Events
-
-### `OnResumeAction()`
-
-TODO: Fill in stub
-
+Provides access to your this host's [ReactInstanceSettings](ReactInstanceSettings-api-windows.md) to configure the react instance.
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
+namespace Microsoft.ReactNative {
 
-import "IReactPackage.idl";
-import "NativeModuleBase.idl";
-import "ReactInstanceManager.idl";
-import "ReactInstanceSettings.idl";
-import "ReactRootView.idl";
-
-namespace Microsoft.ReactNative
-{
   [webhosthidden]
   delegate void OnResumeAction();
 
   [webhosthidden]
   [default_interface]
-  unsealed runtimeclass ReactNativeHost
-  {
+  runtimeclass ReactNativeHost {
     ReactNativeHost();
 
-    ReactInstanceManager ReactInstanceManager{ get; };
-    ReactInstanceSettings InstanceSettings { get; };
+    IVector<IReactPackageProvider> PackageProviders { get; set; };
+    ReactInstanceSettings InstanceSettings { get; set; };
 
-    Boolean HasInstance{ get; };
+    void ReloadInstance();
+  }
+} // namespace Microsoft.ReactNative
 
-    overridable IVectorView<Microsoft.ReactNative.Bridge.IReactPackage> Packages{ get; };
-
-    overridable String MainComponentName{ get; };
-    overridable Boolean UseDeveloperSupport{ get; };
-    overridable String JavaScriptMainModuleName{ get; };
-    overridable String JavaScriptBundleFile{ get; };
-
-    Windows.UI.Xaml.UIElement GetOrCreateRootView(IInspectable initialProps);
-
-    void OnSuspend();
-    void OnEnteredBackground();
-    void OnLeavingBackground();
-    void OnResume(OnResumeAction action);
-  };
-} -->
+-->
