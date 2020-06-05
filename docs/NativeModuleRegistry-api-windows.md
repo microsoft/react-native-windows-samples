@@ -7,16 +7,11 @@ title: NativeModuleRegistry
 
 # Reference
 
-## Methods
-
 ## Properties
 
 ### ``` IVectorView<NativeModuleBase> Modules ```
 
 TODO: Fill in stub
-
-## Events
-
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.

@@ -7,17 +7,11 @@ title: ReactApplication
 
 # Reference
 
-## Methods
-
 ## Properties
 
 ### ```ReactNativeHost HostCore```
 
 TODO: Fill in stub
-
-## Events
-
-
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.

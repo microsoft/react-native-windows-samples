@@ -28,11 +28,6 @@ TODO: Fill in stub
 TODO: Fill in stub
 
 
-
-## Events
-
-
-
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 

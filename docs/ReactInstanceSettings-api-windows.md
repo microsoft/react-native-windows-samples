@@ -7,8 +7,6 @@ title: ReactInstanceSettings
 
 # Reference
 
-## Methods
-
 ## Properties
 
 ### ```Boolean UseWebDebugger { get; set; }```
