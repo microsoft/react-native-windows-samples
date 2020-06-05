@@ -30,14 +30,14 @@
     "API (Windows)": [
       "apptheme-api",
       "ikeyboardprops-api",
-      "iviewwindowsprops-api",
-      "reactnativehost-api",
-      "reactinstancesettings-api",
-      "reactinstancemanager-api",
       "ireactinstance-api",
-      "reactapplication-api",
+      "iviewwindowsprops-api",
+      "nativemodulebase-api",
       "nativemoduleregistry-api",
-      "nativemodulebase-api"
+      "reactapplication-api",
+      "reactinstancemanager-api",
+      "reactinstancesettings-api",
+      "reactnativehost-api"
     ]
   }
 }
