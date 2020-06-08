@@ -72,9 +72,9 @@ class Resources extends React.Component {
     );
 
     const VideoCardList = () => (
-      <Section background="tint">
+      <Section background="light">
         <div className="content">
-          <h1 style={{marginTop: -35}}>Resources</h1>
+          <h1 style={{marginTop: -35, fontSize: 50, fontWeight: 700}}>Repos</h1>
           <p>The following is a suite of offerings from Microsoft in the React Native space to help you target Desktop platforms as well as accelerate your development efficiency with React Native.</p>
           <div className="row">
              <div className="column">
@@ -143,8 +143,28 @@ class Resources extends React.Component {
     );
 
     return (
-      <div className="homepage">
-        <VideoCardList/>
+      <div className="row">
+        <div class="resourcesPageSideNav" className="column">
+          <Section background="tint">
+            <div style={{float: "right", marginRight: 180}}>
+              <div className="resourcesPageSideNavTitle">Resources</div>
+              <div className="resourcesPageSideNavOptions">
+                <a>Repos</a>
+              </div>
+              <div className="resourcesPageSideNavOptions">
+                <a className="resourcesPageSideNavOptions">News & Social</a>
+              </div>
+              <div className="resourcesPageSideNavOptions">
+                <a className="resourcesPageSideNavOptions">Videos</a>
+              </div>
+            </div>
+          </Section>
+        </div>
+        <div className="column">
+          <div className="homepage" style={{marginLeft: 50}}>
+            <VideoCardList/>
+          </div>
+        </div>
       </div>
     );
   }
