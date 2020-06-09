@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.5",
-    "react-native-windows": "^0.61.0-0"
+    "react-native": "0.62.0",
+    "react-native-windows": "^0.62.0-preview.8"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
