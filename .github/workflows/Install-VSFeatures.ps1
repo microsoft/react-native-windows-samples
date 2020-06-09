@@ -20,14 +20,13 @@ $p = Start-Process `
 		'--quiet' +
 		$componentList
 	) `
-	-Wait -PassThru -RedirectStandardError $env:TEMP\vsErr.txt -RedirectStandardOutput $env:TEMP\vsLog.txt
+	-Wait -PassThru
 
 $p.WaitForExit()
 Write-Output Finished with exitcode:
 Write-Output $p.ExitCode
 
-Write-Output Errors:
-Get-Content $env:TEMP\vsErr.txt
-Write-Output Log:
-Get-Content $env:TEMP\vsLog.txt
+Invoke-WebRequest -Uri http://go.microsoft.com/?LinkId=8967043 -OutFile $env:TEMP\collect.exe
+& $env:TEMP\collect.exe
+
 return $p.ExitCode
