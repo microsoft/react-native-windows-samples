@@ -30,7 +30,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: vsLogs
-          path: .\vsLogs.zip
+          path: .github\workflows\vsLogs.zip
 
       # Runs a single command using the runners shell
       - name: Yarn install
