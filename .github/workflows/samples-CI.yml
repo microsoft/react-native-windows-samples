@@ -26,7 +26,12 @@ jobs:
       - name: Install VS deps
         run: Invoke-Expression "$env:GITHUB_WORKSPACE\.github\workflows\Install-VsFeatures.ps1 -Components Microsoft.Component.MSBuild,Microsoft.VisualStudio.ComponentGroup.UWP.VC,Microsoft.VisualStudio.Component.VC.Tools.x86.x64,Microsoft.VisualStudio.Component.VC.Tools.ARM,Microsoft.VisualStudio.Component.VC.Tools.ARM64,Microsoft.VisualStudio.Component.VC.v141.x86.x64,Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141,Microsoft.VisualStudio.Component.VC.v141.ARM,Microsoft.VisualStudio.Component.VC.v141.ARM64"
         shell: pwsh 
-        
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: vsLogs
+          path: ${{ env.TEMP }}\vsLogs.zip
+
       # Runs a single command using the runners shell
       - name: Yarn install
         run: yarn install
