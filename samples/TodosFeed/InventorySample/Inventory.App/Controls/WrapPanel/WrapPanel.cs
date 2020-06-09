@@ -164,7 +164,7 @@ namespace Inventory.Controls
             }
 
             // update value with the last line
-            // if the the last loop is(parentMeasure.U > currentMeasure.U + lineMeasure.U) the total isn't calculated then calculate it
+            // if the last loop is(parentMeasure.U > currentMeasure.U + lineMeasure.U) the total isn't calculated then calculate it
             // if the last loop is (parentMeasure.U > currentMeasure.U) the currentMeasure isn't added to the total so add it here
             // for the last condition it is zeros so adding it will make no difference
             // this way is faster than an if condition in every loop for checking the last item

@@ -10,7 +10,6 @@
   display: flex;
   justify-content: flex-end;
   max-width: 1200px;
-  margin: -10px auto 0px;
 }
 
 .HeaderHero .socialLinks * {
@@ -21,8 +20,110 @@
   align-items: center;
 }
 
+.CenterContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.videocard {
+  border-radius: 6px;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+  background-color: #fff;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 390px;
+}
+
+.videocard.large {
+  max-width: 1024px;
+  margin-bottom: 24px;
+}
+
+.videocardcontent {
+  flex: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 20px 30px 32px;
+  min-height: 140px;
+}
+
+.videocardlengthtip {
+  position: absolute;
+  top: 14px;
+  left: 22px;
+}
+
+.videocardheader {
+  flex-direction: column;
+  flex: 0 0 auto;
+  display: flex;
+}
+
+.videocarddriverinfo {
+  margin: auto 0 0;
+}
+
+.videocardinfo {
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #333;
+  align-items: center;
+  display: flex;
+  margin-top: -15px;
+}
+
+.subtitledot {
+  width: 4px;
+  height: 4px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.videocardtipbackground {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.75);
+  border-radius: 4px;
+  padding: 15px 7px 5px 10px;
+  color: #fff;
+  border: none;
+  outline: none;
+  height: 30px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+    .discriptionadjust {
+        white-space: nowrap !important;
+    }
+}
+
 .HeaderHero .title {
-  font-size: 84px;
+  font-size: 36px;
   color: $brand;
   line-height: 1;
   margin-top: 0;
@@ -31,10 +132,10 @@
 }
 
 .HeaderHero .tagline {
-  font-size: 36px;
-  line-height: 1.3;
-  color: white;
-  font-weight: 500;
+  font-size: 52px;
+  line-height: 1;
+  color: #333333;
+  font-weight: 700;
 }
 
 .HeaderHero .buttons {

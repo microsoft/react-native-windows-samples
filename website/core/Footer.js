@@ -29,10 +29,13 @@ class Footer extends React.Component {
             </a>
           </div>
           <div>
-            <h5>React Native for Windows Docs</h5>
-            <a href={this.props.config.baseUrl + "docs/getting-started"}>
-              Getting Started
-            </a>
+            <h5>React Native for Windows + macOS Docs</h5>
+              <div style={{color: 'white', fontWeight: 500, fontSize: 16}}>
+                <a href={this.props.config.baseUrl + "docs/getting-started"}>Get Started with Windows</a>
+              </div>
+            <div style={{color: 'white', fontWeight: 500, fontSize: 16}}>
+              <a href={this.props.config.baseUrl + "docs/rnm-getting-started"}> Get Started with macOS</a>
+            </div>
             <a href={this.props.config.baseUrl + "docs/parity-status"}>
               API parity with React Native
             </a>
@@ -42,14 +45,11 @@ class Footer extends React.Component {
             <a href={this.props.config.baseUrl + "docs/view-managers"}>
               Native UI Components
             </a>
-            <a href={this.props.config.baseUrl + "docs/windowsbrush-and-theme"}>
-              Windows Brushes and Themes
-            </a>
           </div>
           <div>
-            <h5>More Resources</h5>
+            <h5>Connect With Us On</h5>
             <a href={this.props.config.baseUrl + "blog/"}>Blog</a>
-            <a href="https://twitter.com/reactwindows" target="_blank">
+            <a href="https://twitter.com/ReactNativeMSFT" target="_blank">
               Twitter
             </a>
             <a

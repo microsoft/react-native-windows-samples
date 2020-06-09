@@ -3,7 +3,17 @@ id: rnw-dependencies
 title: System Requirements
 ---
 
-You can run React-Native for Windows apps only on Windows 10 devices with Windows version: 10.0.16299.0 or higher. See [Windows 10 Compatibility](win10-compat.md) for version support details.
+
+# Check and install dependencies
+
+To check or install dependencies you'll need to build RNW and RNW apps, run the script [rnw-dependencies.ps1](https://github.com/microsoft/react-native-windows/blob/master/vnext/Scripts/rnw-dependencies.ps1) in an elevated PowerShell window.
+Run this command: 
+- `Start-Process -Verb RunAs powershell -ArgumentList @("-command", "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1'))")`
+
+
+### Advanced: full details
+
+You can run React-Native for Windows apps only on Windows 10 devices with Windows version: 10.0.16299.0 (aka 1709, aka Redstone 3, aka Fall Creators Update) or higher. Some features may not work on all versions. See [Windows 10 Compatibility](win10-compat.md) for version support details.
 
 To develop React-Native for Windows apps, you will need the following:
 

@@ -10,31 +10,28 @@ const CompLibrary = require("../../core/CompLibrary.js");
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 const textContent = {
+  windowsintro: `
+  Take your apps across PC, Xbox, Surface Tablets, and dual-screens with our robust Windows extension to React Native.
+  `,
+  macintro: `
+  Extend your desktop experience to more than just Windows!<br>
+  Try out our fully supported macOS extension to React Native.
+  `,
   intro: `
-[React Native] enables you to build world-class native application
-experiences on multiple platforms using a consistent developer
-experience based on Javascript and [React].
+## Bring your <u>[React Native]</u> apps to some of the most powerful devices out there
 
-**React Native for Windows & Mac brings React Native support for the
-[Windows 10 SDK] as well as the [MacOS 10.12 SDK]**. With this, you can use Javascript to build native
+[React Native]: https://reactnative.dev/
+  `,
+  about: `
+**React Native for Windows + macOS brings React Native support for the
+[Windows 10 SDK] as well as the [macOS 10.12 SDK]**. With this, you can use Javascript to build native
 Windows apps for [all devices supported by Windows 10] including PCs,
-tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the MacOS desktop and laptop ecosystems.
-
-![Written in Javascript, Running Native](img/homepage/native-and-js.png)
-
-You can use React Native for Windows & Mac in any way you need, including things like:
-  - Add Windows & Mac support to your existing React Native projects for iOS
-  and/or Android
-  - Create full Windows 10 & MacOS 10.12 apps using React Native for Windows & Mac from scratch
-  - Add React Native for Windows & Mac components to your existing native
-  Windows 10 or MacOS 10.12 projects
-  - Add React Native for Windows components to your existing Win32
-  projects using XamlIslands
+tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows 10 SDK]: https://developer.microsoft.com/en-us/windows/downloads
-[MacOS 10.12 SDK]: https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_release_notes
+[macOS 10.12 SDK]: https://developer.apple.com/documentation/macos_release_notes/macos_catalina_10_15_release_notes
 [all devices supported by Windows 10]: https://developer.microsoft.com/en-us/windows/get-started-windows-10
   `,
   roadmapwindows: `
@@ -55,7 +52,7 @@ Coming soon!
 [npm package]: https://www.npmjs.com/package/react-native-windows
   `,
   resources: `
-  Don't forget we are fully **open source**! Head over to our **[React Native for Windows]** or **[React Native for Mac]** GitHubs to learn more, file issues, contribute, or ask questions.
+  Don't forget we are fully **open source**! Head over to our **[React Native for Windows]** or **[React Native for macOS]** GitHubs to learn more, file issues, contribute, or ask questions.
 
   **Windows Resources**
 
@@ -75,12 +72,12 @@ If you're curious about the **sample apps** we have published for inspiration:
   companion for a blog post about React Native for Windows, which is
   available on the [Windows AppConsult blog].
 
-  **Mac Resources**
+  **macOS Resources**
   - Coming soon!
 
 [Get started]: docs/getting-started
 [React Native for Windows]: https://github.com/microsoft/react-native-windows
-[React Native for Mac]: https://aka.ms/react-native-mac
+[React Native for macOS]: https://github.com/microsoft/react-native-macos
 [React Native Tutorial]: https://reactnative.dev/docs/tutorial
 [React Native Components and APIs]: https://reactnative.dev/docs/components-and-apis
 [API Parity status]: docs/parity-status
@@ -101,28 +98,66 @@ class Index extends React.Component {
 
     const Heading = ({ text }) => <h2 className="Heading">{text}</h2>;
 
-    const GetStartedButton = () => (
-      <div>
-      <div style={{marginBottom: 35}}>
-        <a
-          className="ActionButton primary"
-          href={baseUrl + "docs/getting-started"}
-          target="_self"
-        >
-          Get started with Windows
-        </a>
+    const GetStartedButton = ({ pageName, platformName}) => (
+      <a
+        className="ActionButton primary"
+        href={`${baseUrl}docs/${pageName}`}
+        target="_self"
+      >
+        <b style={{fontSize: 24}}>Get started with {platformName}</b>
+      </a>
+    );
+
+    const VideoCardItem = ({ videolength, videotitle, videotype, videodifficulty, speakername, imgurl}) => (
+      <div className="CenterContent">
+        <div className="videocard" style={{maxHeight: 380}}>
+            <div style={{position: 'relative'}}>
+              <div style={{maxWidth: '100%', maxHeight: '100%'}}>
+                <img src={imgurl} alt="videoimg"/>
+              </div>
+              <div className="videocardlengthtip">
+                <div>
+                  <div className="videocardtipbackground">
+                    <div>
+                        <img src="./img/homepage/timeicon.png" alt="timeicon"/>
+                    </div>
+                    <div>
+                      <p style={{color: '#fff', marginLeft: 8, marginTop: 4, fontSize: 14}}>{videolength}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="videocardcontent">
+              <div className="videocardheader">
+                <p style={{fontsize: 46, fontWeight: 700}}>{videotitle}</p>
+                <div className="videocardinfo">
+                  <p style={{fontSize: 14}}>{videotype}</p>
+                  <div className="subtitledot"/>
+                  <p style={{fontSize: 14}}>{videodifficulty}</p>
+                </div>
+              </div>
+              <div className="videocarddriverinfo" style={{color: '#0e53bd'}}>
+                <a href={"https://twitter.com/" + speakername}>
+                  <div className="column" style={{marginRight: -130, marginLeft: -15}}>
+                    <img style={{borderRadius: '50%', width: '32px', height: '32px'}} src={"https://avatars.io/twitter/" + speakername} alt="speakericon"/>
+                  </div>
+                  <div className="column" style={{marginTop: 5}}>@{speakername}</div>
+                </a>
+              </div>
+            </div>
         </div>
       </div>
     );
 
     const TwitterButton = () => (
       <a
-        href="https://twitter.com/reactwindows?ref_src=twsrc%5Etfw"
+        href="https://twitter.com/ReactNativeMSFT?ref_src=twsrc%5Etfw"
         className="twitter-follow-button"
         data-size="large"
         data-show-count={false}
       >
-        Follow @ReactWindows
+        Follow @ReactNativeMSFT
       </a>
     );
 
@@ -130,11 +165,23 @@ class Index extends React.Component {
       <a
         className="github-button"
         href="https://github.com/microsoft/react-native-windows"
-        data-icon="octicon-star"
+        data-icon="octicon-face"
         data-size="large"
         aria-label="Star microsoft/react-native-windows on GitHub"
       >
-        Star
+        GitHub
+      </a>
+    );
+
+    const GitHubButtonmacOS = () => (
+      <a
+        className="github-button"
+        href="https://github.com/microsoft/react-native-macos"
+        data-icon="octicon-face"
+        data-size="large"
+        aria-label="Star microsoft/react-native-macos on GitHub"
+      >
+        GitHub
       </a>
     );
 
@@ -156,15 +203,14 @@ class Index extends React.Component {
     );
 
     const HeaderHero = () => (
-      <Section background="dark" className="HeaderHero">
-        <div className="socialLinks">
-          <TwitterButton />
-          <GitHubButton />
-        </div>
+      <Section background="light" className="HeaderHero">
         <TwoColumns
           reverse
           columnOne={
             <React.Fragment>
+              <div className="socialLinks">
+                <TwitterButton />
+              </div>
               <div width={400}>
                 <img alt="" src={baseUrl + "img/homepage/cross-platform.png"} />
               </div>
@@ -172,40 +218,85 @@ class Index extends React.Component {
           }
           columnTwo={
             <React.Fragment>
-              <h1 className="title">React Native</h1>
-              <p className="tagline">For Windows &amp; Mac</p>
-              <div className="buttons">
-                <GetStartedButton />
-              </div>
+              <h1 className="title">React Native for</h1>
+              <p className="tagline">Windows + macOS</p>
             </React.Fragment>
           }
         />
       </Section>
     );
 
-    const Intro = () => (
+    const About = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="Bringing React Native to Windows &amp; Mac devices" />
-          <MarkdownBlock>{textContent.intro}</MarkdownBlock>
+          <Heading text="About React Native for Windows + macOS" />
+          <MarkdownBlock>{textContent.about}</MarkdownBlock>
+        </div>
+      </Section>
+    );
+
+    const Intro = () => (
+      <div background="light" className="SmallSection">
+          <div className="CenterContent" style={{paddingTop: -150}}>
+            <MarkdownBlock>{textContent.intro}</MarkdownBlock>
+          </div>
+      </div>
+    );
+
+    const WindowsIntro = () => (
+      <Section background="tint">
+        <div className="content">
+          <div className="row">
+            <div className="column">
+              <img style={{maxWidth: '200%', marginLeft: -300, marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_windows_cropped.png" alt="rnw_cropped"/>
+            </div>
+            <div className="column">
+              <Heading text="Build for Windows" />
+              <GitHubButton/>
+              <div style={{marginBottom: 35}}>
+                <MarkdownBlock>{textContent.windowsintro}</MarkdownBlock>
+              </div>
+              <GetStartedButton pageName="getting-started" platformName="Windows" />
+            </div>
+          </div>
+        </div>
+      </Section>
+    );
+
+    const MacIntro = () => (
+      <Section background="light">
+        <div className="content">
+          <div className="row">
+            <div className="column">
+              <Heading text="Build for macOS" />
+              <GitHubButtonmacOS/>
+              <div style={{marginBottom: 35}}>
+                <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
+              </div>
+              <GetStartedButton pageName="rnm-getting-started" platformName="macOS" />
+            </div>
+            <div className="column">
+              <img style={{maxWidth: '200%', marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_mac_cropped.png" alt="rnw_cropped"/>
+            </div>
+          </div>
         </div>
       </Section>
     );
 
     const Roadmap = () => (
-      <Section background="tint">
+      <Section background="light">
         <div className="content">
           <Heading text="Status and Roadmap" />
           <h2>Windows</h2>
           <MarkdownBlock>{textContent.roadmapwindows}</MarkdownBlock>
-          <h2>Mac</h2>
+          <h2>macOS</h2>
           <MarkdownBlock>{textContent.roadmapmac}</MarkdownBlock>
         </div>
       </Section>
     );
 
     const Resources = () => (
-      <Section background="light">
+      <Section background="tint">
         <div className="content">
           <Heading text="Resources" />
           <MarkdownBlock>{textContent.resources}</MarkdownBlock>
@@ -213,12 +304,50 @@ class Index extends React.Component {
       </Section>
     );
 
+    const Tutorials = () => (
+      <Section background="tint">
+        <div className="CenterContent" style={{marginTop: -50}}>
+          <div>
+            <a href="videos"><h1 style={{textAlign: 'center', color: '#0e53bd'}}>Take Your App Further</h1></a>
+            <p style={{textAlign: 'center', marginTop: -10}}>Speed up development with videos on how to build React Native apps for Windows and macOS.</p>
+
+            <div className="row">
+              <div className="column">
+                <a href={baseUrl + "videos"}>
+                  <VideoCardItem
+                    videolength="10 mins"
+                    videotitle="Community Modules for macOS"
+                    videotype="Walkthrough"
+                    videodifficulty="Beginner"
+                    speakername="alloy"
+                    imgurl="./img/homepage/eloy_rn4m_preview_full.png"/>
+                  </a>
+              </div>
+              <div className="column">
+                <a href={baseUrl + "videos"}>
+                  <VideoCardItem
+                    videolength="0 mins"
+                    videotitle="Example Card"
+                    videotype="Type of Video"
+                    videodifficulty="Difficulty"
+                    speakername="reactwindows"
+                    imgurl="./img/homepage/video_learning_image-small.png"/>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+    );
+
     return (
       <div className="homepage">
         <HeaderHero />
-        <Intro />
-        <Roadmap />
-        <Resources />
+        <Intro/>
+        <WindowsIntro/>
+        <MacIntro/>
+        {/*<Tutorials/>*/}
+        <About />
       </div>
     );
   }

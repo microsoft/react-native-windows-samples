@@ -201,7 +201,7 @@ namespace ViewManagerSample
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use reflection to discover and bind native module, we call `AddViewManagers` extension method to register all the view managers in our assembly.
 
-Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
+Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
 _App.xaml.cs_
 
@@ -324,11 +324,11 @@ struct CustomUserControlViewManager : winrt::implements<
       winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader) noexcept;
 
    // IViewManagerWithCommands
-  winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, int64_t> Commands() noexcept;
+  winrt::Windows::Foundation::Collections::IVectorView<winrt::hstring> Commands() noexcept;
 
   void DispatchCommand(
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
-      int64_t commandId,
+      winrt::hstring const &commandId,
       winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
 };
 
@@ -411,18 +411,18 @@ void CustomUserControlViewManager::UpdateProperties(
 }
 
 // IViewManagerWithCommands
-IMapView<hstring, int64_t> CustomUserControlViewManager::Commands() noexcept {
-    auto commands = winrt::single_threaded_map<hstring, int64_t>();
-    commands.Insert(L"CustomCommand", 0);
+IVectorView<hstring> CustomUserControlViewManager::Commands() noexcept {
+    auto commands = winrt::single_threaded_vector<hstring>();
+    commands.Append(L"CustomCommand");
     return commands.GetView();
 }
 
 void CustomUserControlViewManager::DispatchCommand(
     FrameworkElement const &view,
-    int64_t commandId,
+    winrt::hstring const &commandId,
     winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept {
   if (auto control = view.try_as<winrt::SampleLibraryCPP::CustomUserControlCPP>()) {
-    if (commandId == 0) {
+    if (commandId == L"CustomCommand") {
       const JSValueArray &commandArgs = JSValue::ReadArrayFrom(commandArgsReader);
       // Execute command
     }
@@ -505,7 +505,7 @@ noexcept {
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. And then we call `AddViewManager` with the name of our view manager and a lambda which returns an instance of the view manager.
 
-Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the proviver to the `PackageProviders` property.
+Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
 _App.cpp_
 

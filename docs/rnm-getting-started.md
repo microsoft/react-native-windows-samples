@@ -1,6 +1,6 @@
 ---
 id: rnm-getting-started
-title: Getting Started
+title: Get Started with macOS
 ---
 
 This guide will help you get started on setting up your very first React Native for macOS app.
@@ -35,12 +35,6 @@ Install the React Native for macOS packages.
 npx react-native-macos-init
 ```
 
-Update the CocoaPods versions
-
-```
-cd macos && pod install && cd..
-```
-
 ## Running a React Native macOS App
 
 - **Without using Xcode**:
@@ -49,8 +43,8 @@ cd macos && pod install && cd..
   ```
   npx react-native run-macos
   ```
- 
+
 - **Using Xcode**:
-  Open macos\test.xcworkspace in Xcode or run `xed -b macos`; `yarn start:macos`. Hit the Run button. 
-  
+  Open macos\test.xcworkspace in Xcode or run `xed -b macos`; `yarn start:macos`. Hit the Run button.
+
 A new Command Prompt window will open with the React packager as well as a `react-native-macos` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! 🎉
