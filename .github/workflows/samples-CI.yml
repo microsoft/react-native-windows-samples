@@ -2,9 +2,6 @@
 
 name: Samples CI
 
-variables:
-  VsComponents: Microsoft.Component.MSBuild,Microsoft.VisualStudio.ComponentGroup.UWP.VC,Microsoft.VisualStudio.Component.VC.Tools.x86.x64,Microsoft.VisualStudio.Component.VC.Tools.ARM,Microsoft.VisualStudio.Component.VC.Tools.ARM64,Microsoft.VisualStudio.Component.VC.v141.x86.x64,Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141,Microsoft.VisualStudio.Component.VC.v141.ARM,Microsoft.VisualStudio.Component.VC.v141.ARM64
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -13,10 +10,10 @@ on:
   pull_request:
     branches: [ master, asklar:CI ]
 
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
@@ -31,7 +28,7 @@ jobs:
         with:
           # Specify the Az PowerShell script here.
           inlineScript: $(Build.SourcesDirectory)/.github/workflows/Install-VsFeatures.ps1 
-            -Components ${{ variables.vsComponents }}
+            -Components Microsoft.Component.MSBuild,Microsoft.VisualStudio.ComponentGroup.UWP.VC,Microsoft.VisualStudio.Component.VC.Tools.x86.x64,Microsoft.VisualStudio.Component.VC.Tools.ARM,Microsoft.VisualStudio.Component.VC.Tools.ARM64,Microsoft.VisualStudio.Component.VC.v141.x86.x64,Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141,Microsoft.VisualStudio.Component.VC.v141.ARM,Microsoft.VisualStudio.Component.VC.v141.ARM64
             -Collect:$true
             -Cleanup:$true
           # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
