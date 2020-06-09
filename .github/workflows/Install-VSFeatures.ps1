@@ -17,7 +17,7 @@ $p = Start-Process `
 		'--installPath', "`"$VsInstallPath`"" ,
 
 		'--norestart',
-		'--quiet',
+		'--quiet' +
 		$componentList
 	) `
 	-Wait -PassThru -RedirectStandardError $env:TEMP\vsErr.txt -RedirectStandardOutput $env:TEMP\vsLog.txt
