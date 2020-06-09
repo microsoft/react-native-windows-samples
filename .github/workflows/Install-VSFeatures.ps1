@@ -13,11 +13,11 @@ $VsInstallPath = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterpri
 $p = Start-Process `
 	-FilePath "$VsInstallerPath" `
 	-ArgumentList (
-		'modify',
+		'install',
 		'--installPath', "`"$VsInstallPath`"" ,
 
 		'--norestart',
-		'--quiet' + `
+		'--quiet',
 		$componentList
 	) `
 	-Wait -PassThru -RedirectStandardError $env:TEMP\vsErr.txt -RedirectStandardOutput $env:TEMP\vsLog.txt
