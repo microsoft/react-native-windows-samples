@@ -20,9 +20,14 @@ $p = Start-Process `
 		'--quiet' + `
 		$componentList
 	) `
-	-Wait -PassThru
+	-Wait -PassThru -RedirectStandardError $env:TEMP\vsErr.txt -RedirectStandardOutput $env:TEMP\vsLog.txt
 
 $p.WaitForExit()
 Write-Output Finished with exitcode:
 Write-Output $p.ExitCode
+
+Write-Output Errors:
+Get-Content $env:TEMP\vsErr.txt
+Write-Output Log:
+Get-Content $env:TEMP\vsLog.txt
 return $p.ExitCode
