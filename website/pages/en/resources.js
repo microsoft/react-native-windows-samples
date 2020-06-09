@@ -33,6 +33,18 @@ class Resources extends React.Component {
     const { config: siteConfig, language = "" } = this.props;
     const { baseUrl } = siteConfig;
 
+    function SelectResource (navItemName) {
+      if (typeof document !== 'undefined') {
+        var i;
+        var x = document.getElementsByClassName("resourcesSideNavLink");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(navItemName).style.display = "block";
+        console.log(document.getElementById(navItemName));
+      }
+    }
+
     const ResourceCardItem = ({ videotitle, videotype, videodifficulty, speakername, imgurl, videodisc, cardlink}) => (
       <div className="CenterContent">
       <a href={cardlink}>
@@ -71,7 +83,23 @@ class Resources extends React.Component {
       </section>
     );
 
-    const VideoCardList = () => (
+    const NewsAndSocialList = () => (
+      <Section background="light">
+        <div className="content">
+          News & Social coming soon!
+        </div>
+      </Section>
+    );
+
+    const VidoesList = () => (
+      <Section background="light">
+        <div className="content">
+          Videos list coming soon!
+        </div>
+      </Section>
+    );
+
+    const ReposCardList = () => (
       <Section background="light">
         <div className="content">
           <h1 style={{marginTop: -35, fontSize: 50, fontWeight: 700}}>Repos</h1>
@@ -149,20 +177,28 @@ class Resources extends React.Component {
             <div style={{float: "right", marginRight: 180}}>
               <div className="resourcesPageSideNavTitle">Resources</div>
               <div className="resourcesPageSideNavOptions">
-                <a>Repos</a>
+                <a className={'resourcesSideNavLink selected'}>Repos</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a className="resourcesPageSideNavOptions">News & Social</a>
+                <a className="resourcesSideNavLink" onclick={SelectResource('newssocial')}>News & Social</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a className="resourcesPageSideNavOptions">Videos</a>
+                <a className="resourcesSideNavLink" >Videos</a>
               </div>
             </div>
           </Section>
         </div>
         <div className="column">
           <div className="homepage" style={{marginLeft: 50}}>
-            <VideoCardList/>
+            <div id="repos">
+              <ReposCardList/>
+            </div>
+            <div id="newssocial" style={{display: "none"}}>
+              <NewsAndSocialList/>
+            </div>
+            <div id="videos" style={{display: "none"}}>
+              <VidoesList/>
+            </div>
           </div>
         </div>
       </div>

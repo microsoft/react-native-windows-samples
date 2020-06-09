@@ -28,6 +28,24 @@
   border-bottom: 1px solid $divider;
 }
 
+.resourcesSideNavLink:hover {
+  color: #0e53bd;
+  cursor: pointer;
+}
+
+.resourcesSideNavLink.selected {
+  color: #0e53bd;
+  font-weight: 700;
+  border-left: 5px solid #0e53bd;
+  padding-left: 25px;
+  margin-left: -30px;
+}
+
+.resourcesSideNavLink: {
+  color: #0e53bd;
+  cursor: pointer;
+}
+
 .resourcesPageSideNavTitle {
     color: #0e53bd;
     font-size: 12px;
@@ -52,7 +70,7 @@
   border-right: 1px solid $divider;
   overflow: visible;
   flex: 0 0 280px;
-  height: 1985px;
+  height: 2010px;
   display: flex;
 }
 
