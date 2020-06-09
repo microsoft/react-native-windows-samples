@@ -23,21 +23,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Azure PowerShell Action
-        uses: Azure/powershell@v1
-        with:
-          # Specify the Az PowerShell script here.
-          inlineScript: & "$(Build.SourcesDirectory)/.github/workflows/Install-VsFeatures.ps1"
-            -Components Microsoft.Component.MSBuild,Microsoft.VisualStudio.ComponentGroup.UWP.VC,Microsoft.VisualStudio.Component.VC.Tools.x86.x64,Microsoft.VisualStudio.Component.VC.Tools.ARM,Microsoft.VisualStudio.Component.VC.Tools.ARM64,Microsoft.VisualStudio.Component.VC.v141.x86.x64,Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141,Microsoft.VisualStudio.Component.VC.v141.ARM,Microsoft.VisualStudio.Component.VC.v141.ARM64
-            -Collect:$true
-            -Cleanup:$true
-          # Azure PS version to be used to execute the script, example: 1.8.0, 2.8.0, 3.4.0. To use the latest version, specify "latest".
-          azPSVersion: latest
-          # Select the value of the ErrorActionPreference variable for executing the script. Options: stop, continue, silentlyContinue. Default is Stop.
-          errorActionPreference: Stop
-          # If this is true, this task will fail if any errors are written to the error pipeline, or if any data is written to the Standard Error stream.
-          failOnStandardError: true
-    
+      - powershell: "$(Build.SourcesDirectory)/.github/workflows/Install-VsFeatures.ps1" -Components Microsoft.Component.MSBuild,Microsoft.VisualStudio.ComponentGroup.UWP.VC,Microsoft.VisualStudio.Component.VC.Tools.x86.x64,Microsoft.VisualStudio.Component.VC.Tools.ARM,Microsoft.VisualStudio.Component.VC.Tools.ARM64,Microsoft.VisualStudio.Component.VC.v141.x86.x64,Microsoft.VisualStudio.ComponentGroup.UWP.VC.v141,Microsoft.VisualStudio.Component.VC.v141.ARM,Microsoft.VisualStudio.Component.VC.v141.ARM64 -Collect:$true -Cleanup:$true
+        
       # Runs a single command using the runners shell
       - name: Yarn install
         run: yarn install
