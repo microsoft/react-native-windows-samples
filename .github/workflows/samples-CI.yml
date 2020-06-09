@@ -33,7 +33,7 @@ jobs:
           filePath: $(Build.SourcesDirectory)/.github/workflows/Install-VsFeatures.ps1
           arguments:
             -Components ${{ variables.vsComponents }}
-            -Collect: true
+            -Collect:$true
             -Cleanup:$true
 
     # Runs a single command using the runners shell
