@@ -35,5 +35,5 @@ jobs:
         working-directory: samples/Calculator
 
       - name: Build x86 Debug
-        run: npx react-native run-windows --no-launch --no-packager
+        run: npx react-native run-windows --no-launch --no-packager --logging
         working-directory: samples/Calculator
