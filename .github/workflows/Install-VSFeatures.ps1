@@ -4,9 +4,9 @@ param (
 
 	[uri] $InstallerUri = "https://download.visualstudio.microsoft.com/download/pr/c4fef23e-cc45-4836-9544-70e213134bc8/1ee5717e9a1e05015756dff77eb27d554a79a6db91f2716d836df368381af9a1/vs_Enterprise.exe",
 
-	[string] $VsInstaller = "${env:System_DefaultWorkingDirectory}\vs_Enterprise.exe",
+	[string] $VsInstaller = ".\vs_Enterprise.exe",
 
-	[string] $VsInstallOutputDir = "${env:System_DefaultWorkingDirectory}\vs",
+	[string] $VsInstallOutputDir = ".\vs",
 
 	[System.IO.FileInfo] $VsInstallPath = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise",
 
@@ -38,6 +38,7 @@ if ($UseWebInstaller) {
 
 	Write-Host "Running web installer to download requested components..."
 
+	Write-Host "Component list $componentList"
 	Start-Process `
 		-FilePath "$VsInstaller" `
 		-ArgumentList ( `
@@ -92,16 +93,16 @@ if ($UseWebInstaller) {
 if ($Collect) {
 	Invoke-WebRequest -Method Get `
 		-Uri 'https://download.microsoft.com/download/8/3/4/834E83F6-C377-4DCE-A757-69A418B6C6DF/Collect.exe' `
-		-OutFile ${env:System_DefaultWorkingDirectory}\Collect.exe
+		-OutFile .\Collect.exe
 
 	# Should generate ${env:Temp}\vslogs.zip
 	Start-Process `
-		-FilePath "${env:System_DefaultWorkingDirectory}\Collect.exe" `
+		-FilePath ".\Collect.exe" `
 		-Wait `
 		-PassThru
 
-	New-Item -ItemType Directory -Force ${env:System_DefaultWorkingDirectory}\vslogs
-	Expand-Archive -Path ${env:TEMP}\vslogs.zip -DestinationPath ${env:System_DefaultWorkingDirectory}\vslogs\
+	New-Item -ItemType Directory -Force .\vslogs
+	Expand-Archive -Path ${env:TEMP}\vslogs.zip -DestinationPath .\vslogs\
 
 	Write-Host "VC versions after installation:"
 	Get-ChildItem -Name "$VsInstallPath\VC\Tools\MSVC\"
