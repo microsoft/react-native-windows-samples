@@ -28,6 +28,6 @@ jobs:
         run: yarn install
         working-directory: samples/Calculator
 
-      - name: Build x86 Debug
-        run: npx react-native run-windows --no-launch --no-packager --logging
+      - name: Build x86 Release
+        run: npx react-native run-windows --no-launch --no-packager --logging --release
         working-directory: samples/Calculator
