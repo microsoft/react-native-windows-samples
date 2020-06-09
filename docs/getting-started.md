@@ -57,7 +57,7 @@ Options:
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
-> Also ensure your system meets all the [requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) to build a Windows app as well.
+> Also ensure your system meets all the [requirements](rnw-dependencies.md) to build a Windows app as well.
 
 - Without Using Visual Studio
 
