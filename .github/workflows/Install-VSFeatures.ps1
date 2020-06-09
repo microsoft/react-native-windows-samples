@@ -10,7 +10,7 @@ $Components | ForEach-Object {
 $VsInstallerPath = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vs_installer.exe";
 $VsInstallPath = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\2019\Enterprise";
 
-return Start-Process `
+$p = Start-Process `
 	-FilePath "$VsInstallerPath" `
 	-ArgumentList (
 		'modify',
@@ -21,3 +21,6 @@ return Start-Process `
 		$componentList
 	) `
 	-Wait -PassThru
+
+$p.WaitForExit()
+return $p.ExitCode
