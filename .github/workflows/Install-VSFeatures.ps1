@@ -23,4 +23,6 @@ $p = Start-Process `
 	-Wait -PassThru
 
 $p.WaitForExit()
+Write-Output Finished with exitcode:
+Write-Output $p.ExitCode
 return $p.ExitCode
