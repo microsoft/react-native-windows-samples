@@ -113,7 +113,7 @@ table {
   border-collapse: collapse;
   display: table;
   margin: 20px 0;
-  width: 80%;
+  width: 100%;
 }
 table thead tr {
   /* display: table-header-group; */
