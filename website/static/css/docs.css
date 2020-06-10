@@ -156,9 +156,3 @@ table tr th {
   font-family: "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
 }
-table tr th:first-of-type {
-  width: 60%;
-}
-table tr th:nth-of-type(4) {
-  width: 80%;
-}
