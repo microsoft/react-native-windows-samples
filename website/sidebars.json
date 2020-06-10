@@ -4,6 +4,7 @@
       "getting-started",
       "rnw-dependencies",
       "parity-status",
+      "config",
       "windowsbrush-and-theme"
     ],
     "Native Modules (Windows)": [
@@ -11,6 +12,7 @@
       "view-managers",
       "native-modules-setup",
       "native-modules-using",
+      "native-modules-autolinking",
       "native-modules-marshalling-data",
       "native-modules-jsvalue",
       "native-modules-advanced"
