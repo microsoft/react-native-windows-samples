@@ -73,7 +73,13 @@ class Versions extends React.Component {
         <div className="content">
           <h1 style={{fontSize: '60px', marginTop: '-20px', fontWeight: 'bold'}}>Versions </h1>
           <MarkdownBlock>{textContent.introtext}</MarkdownBlock>
-          <h1 style={{fontWeight: 'bold'}}>Version History</h1>
+          <h1 style={{fontWeight: 'bold'}}>Latest version</h1>
+          <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
+          <TableRow versionNumber="MASTER"
+          docLink={docsUrl + 'docs/next/getting-started'}
+          changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...master'}
+          changeLogText={'Commits since ' + currentVersion}/>
+          <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>
           <MarkdownBlock>{textContent.stablelegacyversions}</MarkdownBlock>
           {stableVersions.map(function(version) {
                 return (
