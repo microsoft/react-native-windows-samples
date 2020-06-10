@@ -113,7 +113,7 @@ table {
   border-collapse: collapse;
   display: table;
   margin: 20px 0;
-  width: 80%;
+  width: 100%;
 }
 table thead tr {
   /* display: table-header-group; */
@@ -155,10 +155,4 @@ table tr th {
   font-weight: bold;
   font-family: "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
-}
-table tr th:first-of-type {
-  width: 60%;
-}
-table tr th:nth-of-type(4) {
-  width: 80%;
 }
