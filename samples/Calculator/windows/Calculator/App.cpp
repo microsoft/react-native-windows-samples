@@ -2,11 +2,14 @@
 
 #include "App.h"
 #include "ReactPackageProvider.h"
-
+#include <winrt/Windows.UI.Xaml.h>
+#include <winrt/Windows.UI.Xaml.Controls.h>
 
 
 using namespace winrt::Calculator;
 using namespace winrt::Calculator::implementation;
+using namespace winrt::Windows::UI::Xaml;
+using namespace winrt::Windows::UI::Xaml::Controls;
 
 /// <summary>
 /// Initializes the singleton application object.  This is the first line of
@@ -15,8 +18,6 @@ using namespace winrt::Calculator::implementation;
 /// </summary>
 App::App() noexcept
 {
-    MainComponentName(L"Calculator");
-
 #if BUNDLE
     JavaScriptBundleFile(L"index.windows");
     InstanceSettings().UseWebDebugger(false);
@@ -36,11 +37,10 @@ App::App() noexcept
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
 
     InitializeComponent();
-
-    // This works around a cpp/winrt bug with composable/aggregable types tracked
-    // by 22116519
-    AddRef();
-    m_inner.as<::IUnknown>()->Release();
 }
 
-
+void App::OnLaunched(winrt::Windows::ApplicationModel::Activation::LaunchActivatedEventArgs e)
+{
+    base::OnLaunched(e);
+    Window::Current().Content().as<Frame>().Navigate(winrt::xaml_typename<MainPage>(), e);
+}
