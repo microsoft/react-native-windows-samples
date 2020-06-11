@@ -9,13 +9,13 @@ This extends the [View Props](https://reactnative.dev/docs/view#props) and [IKey
 
 ## Methods
 
-### ```acceptsKeyboardFocus```
+### `acceptsKeyboardFocus`
 
 | type | required |
 |:--|:--|
 | bool | No |
 
-### ```accessibilityPosInSet```
+### `accessibilityPosInSet`
 
 Indicates to accessibility services that the Component is within a set and has the given numbered position.
 
@@ -23,7 +23,7 @@ Indicates to accessibility services that the Component is within a set and has t
 |:--|:--|
 | number | No |
 
-### ```accessibilitySetSize```
+### `accessibilitySetSize`
 
 Indicates to accessibility services that the Component is within a set with the given size.
 
@@ -31,7 +31,7 @@ Indicates to accessibility services that the Component is within a set with the 
 |:--|:--|
 | number | No |
 
-### ```children```
+### `children`
 
 | type | required |
 |:--|:--|
