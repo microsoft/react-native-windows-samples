@@ -22,50 +22,95 @@ title: IJSValueWriter
 
 ## Methods
 
-### ```void WriteNull()```
+### `WriteNull()`
+
+```csharp
+void WriteNull()
+```
 
 Write a null value.
 
-### ```void WriteBoolean(Boolean value)```
+### `WriteBoolean()`
+
+```csharp
+void WriteBoolean(bool value);
+```
 
 Write a boolean value.
 
-### ```void WriteInt64(Int64 value)```
+### `WriteInt64()`
+
+```csharp
+void WriteInt64(int64 value);
+```
 
 Write a number value from an integer.
 
-### ```void WriteDouble(Double value)```
+### `WriteDouble()`
+
+```csharp
+void WriteDouble(double value);
+```
 
 Write a number value from a double.
 
-### ```void WriteString(String value)```
+### `WriteString()`
+
+```csharp
+void WriteString(string value);
+```
 
 Write a string value.
 
-### ```void WriteObjectBegin()```
+### `WriteObjectBegin()`
+
+```csharp
+void WriteObjectBegin();
+```
 
 Start writing an object.
 
-### ```void WritePropertyName(String name)```
+### `WritePropertyName()`
+
+```csharp
+void WritePropertyName(String name);
+```
 
 Write a property within an object.  This should then be followed by writing the value of that property.
 
-### ```void WriteObjectEnd()```
+### `WriteObjectEnd()`
+
+```csharp
+void WriteObjectEnd();
+```
 
 Complete writing an object.
 
-### ```void WriteArrayBegin()```
+### `WriteArrayBegin()`
+
+```csharp
+void WriteArrayBegin();
+```
 
 Start writing an array.
 
-### ```void WriteArrayEnd()```
+### `WriteArrayEnd()`
+
+```csharp
+void WriteArrayEnd();
+```
 
 Complete writing an array.
 
 
 ## Delegates
 
-### ```delegate void JSValueArgWriter(IJSValueWriter writer);```
+### ```JSValueArgWriter```
+
+```csharp
+delegate void JSValueArgWriter(IJSValueWriter writer);
+```
+
 
 Use this delegate to pass arbitrary value to ABI API.
   

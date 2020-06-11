@@ -24,38 +24,64 @@ title: IJSValueReader
 
 ## Methods
 
-### ```Boolean GetNextObjectProperty(out String propertyName)```
+### `GetNextObjectProperty()`
+
+```csharp
+bool GetNextObjectProperty(out string propertyName);
+```
 
 Returns if there is another property in the current object.  If there is ``propertyName`` will proide the name of the property.
 
-### ```Boolean GetNextArrayItem()```
+### `GetNextArrayItem()`
+
+```csharp
+bool GetNextArrayItem()
+```
 
 Moves the reader to the next array item.  Returns if there is another item in the array.
 
-### ```String GetString()```
+### `GetString()`
+
+```csharp
+string GetString();
+```
 
 Gets the current string value.
 
-### ```Boolean GetBoolean()```
+### `GetBoolean()`
+
+```csharp
+bool GetBoolean();
+```
 
 Gets the current boolean value.
 
-### ```Int64 GetInt64()```
+### `GetInt64()`
+
+```csharp
+int64 GetInt64();
+```
 
 Gets the current number value as an int.
 
-### ```Double GetDouble()```
+### `GetDouble()`
+
+```csharp
+double GetDouble();
+```
 
 Gets the current number value as a double.
 
 
 ## Properties
 
-### ```JSValueType ValueType { get; }```
+### `ValueType`
+
+```csharp
+JSValueType ValueType { get; }
+```
 
 Returns the type of the current value.
-
-
 
 
 <!--
