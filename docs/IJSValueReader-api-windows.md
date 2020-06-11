@@ -3,9 +3,9 @@ id: ijsvaluereader-api
 title: IJSValueReader
 ---
 
-*Describe the API*
+``IJSIValueReader`` is used to read data from JavaScript in custom NativeModules.  It acts as a stream.
 
-IJSValueReader supports the following types:
+``IJSIValueReader`` supports the following types:
 
 ```
   enum JSValueType {
@@ -26,34 +26,34 @@ IJSValueReader supports the following types:
 
 ### ```Boolean GetNextObjectProperty(out String propertyName)```
 
-TODO: Fill in stub
+Returns if there is another property in the current object.  If there is ``propertyName`` will proide the name of the property.
 
 ### ```Boolean GetNextArrayItem()```
 
-TODO: Fill in stub
+Moves the reader to the next array item.  Returns if there is another item in the array.
 
 ### ```String GetString()```
 
-TODO: Fill in stub
+Gets the current string value.
 
 ### ```Boolean GetBoolean()```
 
-TODO: Fill in stub
+Gets the current boolean value.
 
 ### ```Int64 GetInt64()```
 
-TODO: Fill in stub
+Gets the current number value as an int.
 
 ### ```Double GetDouble()```
 
-TODO: Fill in stub
+Gets the current number value as a double.
 
 
 ## Properties
 
 ### ```JSValueType ValueType { get; }```
 
-TODO: Fill in stub
+Returns the type of the current value.
 
 
 

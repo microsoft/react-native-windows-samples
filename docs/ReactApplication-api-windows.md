@@ -9,29 +9,55 @@ ReactApplication provides a BaseApplication class for use in applications that a
 
 ## Properties
 
-### ```ReactInstanceSettings InstanceSettings { get; set; }```
+### `InstanceSettings`
+
+```csharp
+ReactInstanceSettings InstanceSettings { get; set; }
+```
 
 Provides access to your application's [ReactInstanceSettings](ReactInstanceSettings-api-windows.md).  Generally changes to these settings will not take affect if the react instance is already loaded, unless the react instance is reloaded.  So most settings should be set in your applications constructor.
 
-### ```IVector<IReactPackageProvider> PackageProviders { get; }```
+### `PackageProviders`
+
+```csharp
+IVector<IReactPackageProvider> PackageProviders { get; }
+```
 
 Provides access to the list of `IReactPackageProvider`'s that the instance will use to provide native modules to the application.  This can be used to register additional package providers, such as package providers from community modules. See [ReactNativeHost](ReactNativeHost-api-windows.md) for more information.
 
-### ```ReactNativeHost Host { get; }```
+### `Host`
 
-TODO: Fill in stub
+```csharp
+ReactNativeHost Host { get; }
+```
 
-### ```Boolean UseDeveloperSupport { get; set; }```
+Access to the [`ReactNativeHost`](ReactNativeHost-api-windows.md) of your application.
 
-TODO: Fill in stub
+### `UseDeveloperSupport`
 
-### ```String JavaScriptMainModuleName { get; set; }```
+```csharp
+bool UseDeveloperSupport { get; set; }
+```
 
-TODO: Fill in stub
+Should the developer experience features such as the developer menu and RedBox be enabled.  See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings-api-windows.md#usedevelopersupport).
 
-### ```String JavaScriptBundleFile { get; set; }```
 
-TODO: Fill in stub
+### `JavaScriptMainModuleName`
+
+```csharp
+string JavaScriptMainModuleName { get; set; }
+```
+
+See [`ReactInstanceSettings.JavaScriptMainModuleName`](ReactInstanceSettings-api-windows.md#javascriptmainmodulename).
+
+
+### `JavaScriptBundleFile`
+
+```csharp
+string JavaScriptBundleFile { get; set; }
+```
+
+See [`ReactInstanceSettings.JavaScriptBundleFile`](ReactInstanceSettings-api-windows.md#javascriptbundlefile).
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.

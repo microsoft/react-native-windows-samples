@@ -15,15 +15,8 @@ Provides configuration of the react instance.
 IReactPropertyBag Properties { get; }
 ```
 
-TODO: Fill in stub
+Properties are shared with [`IReactContext.Properties`](IReactContext-api-windows.md#properties). It can be used to configure and share values and state between components.
 
-### ```MainComponentName```
-
-```csharp
-string MainComponentName { get; set; }
-```
-
-TODO: Fill in stub
 
 ### ```UseDeveloperSupport```
 
@@ -35,21 +28,22 @@ bool UseDeveloperSupport { get; set; };
 
 This property will replace [EnableDeveloperMenu](#enabledevelopermenu) in a future version. 
 
-### ```JavaScriptMainModuleName```
-
-```csharp
-string JavaScriptMainModuleName { get; set; }
-```
-
-TODO: Fill in stub
-
 ### ```JavaScriptBundleFile```
 
 ```csharp
 string JavaScriptBundleFile { get; set; }
 ```
 
-TODO: Fill in stub
+The name of the JavaScript bundle file to load.  This defaults to `index.windows`.  This should be a relative path from [BundleRootPath](#bundlerootpath).  `.bundle` will be appended to the end, when looking for the bundle file.
+
+
+### ```JavaScriptMainModuleName```
+
+```csharp
+string JavaScriptMainModuleName { get; set; }
+```
+
+Name of the JavaScript bundle file.  If [`JavaScriptBundleFile`](#javascriptbundlefile) is specified it is used instead.
 
 ### ```UseWebDebugger```
 
@@ -163,7 +157,7 @@ When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) 
 string DebugBundlePath { get; set; }
 ```
 
-TODO: Fill in stub
+When loading from a bundle server (such as metro), this is the path that will be requested from the server.  If this is not provided the value of [JavaScriptBundleFile](#javascriptbundlefile) or [JavaScriptMainModuleName](#javascriptmainmodulename) is used.
 
 ### ```BundleRootPath```
 
@@ -189,7 +183,15 @@ When [UseDirectDebugger](#usedirectdebugger) is enabled, this controls the port 
 IRedBoxHandler RedBoxHandler { get; set; };
 ```
 
-Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](iredboxhandler-api-windows.md) for more information.
+Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](IRedBoxHandler-api-windows.md) for more information.
+
+### ```MainComponentName```
+
+```csharp
+string MainComponentName { get; set; }
+```
+
+> Not supported - will be removed in a future version.
 
 
 <!-- namespace Microsoft.ReactNative

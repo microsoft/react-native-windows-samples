@@ -12,13 +12,22 @@ _In the future more lifecycle events will be added to this object to provide bet
 
 ## Methods
 
-### ``` void ReloadInstance();```
+### `ReloadInstance()`
+
+```csharp
+void ReloadInstance();
+```
 
 This is used to load the instance, which will create an instance of the JS engine and launch your JavaScript code.  If an instance of this host is already running, this will shutdown the already runnng instance, and load a new instance. 
 
 ## Properties
 
-### ```IVector<IReactPackageProvider> PackageProviders { get; }```
+### `PackageProviders`
+
+```csharp
+IVector<IReactPackageProvider> PackageProviders { get; }
+```
+
 
 Provides access to the list of `IReactPackageProvider`'s that the react instance will use to provide native modules to the application.  This can be used to register additional package providers, such as package providers from community modules or other shared libraries
 
@@ -28,7 +37,11 @@ Provides access to the list of `IReactPackageProvider`'s that the react instance
   PackageProviders.Add(new AnotherCommunityPackage.ReactPackageProvider());
 ```
 
-### ```ReactInstanceSettings InstanceSettings { get; set; }```
+### `InstanceSettings`
+
+```csharp
+ReactInstanceSettings InstanceSettings { get; set; }
+```
 
 Provides access to your this host's [ReactInstanceSettings](ReactInstanceSettings-api-windows.md) to configure the react instance.
 

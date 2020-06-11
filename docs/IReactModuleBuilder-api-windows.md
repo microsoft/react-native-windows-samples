@@ -3,48 +3,95 @@ id: ireactmodulebuilder-api
 title: IReactModuleBuilder
 ---
 
-Builds native modules inside of React native code based on the provided meta-data.
+Builds native modules inside of React native code based on the provided meta-data.  See [Native Modules](native-modules.md) for more usage information.
 
 # Reference
 
 ## Methods
 
-### ```void AddInitializer(InitializerDelegate initializer)```
+### `AddInitializer()`
 
-TODO: Fill in stubs
+```csharp
+void AddInitializer(InitializerDelegate initializer);
+```
 
-### ```void AddConstantProvider(ConstantProviderDelegate constantProvider)```
+An initializer is a method that will be called when the react instance starts.  It provides the native module with the [IReactContext](IReactContext-api-windows.md) for the running instance. See [InitializerDelegate](#initializerdelegate).
 
-TODO: Fill in stubs
+### `AddConstantProvider()`
 
-### ```void AddMethod(String name, MethodReturnType returnType, MethodDelegate method)```
+```csharp
+void AddConstantProvider(ConstantProviderDelegate constantProvider);
+```
 
-TODO: Fill in stubs
+The JSValue writen by the [ConstantProviderDelegate](#constantproviderdelegate) will be availiable as constants on the NativeMdodule is JavaScript.
 
-### ```void AddSyncMethod(String name, SyncMethodDelegate method)```
+### `AddMethod()`
 
-TODO: Fill in stubs
+```csharp
+void AddMethod(String name, MethodReturnType returnType, MethodDelegate method);
+```
+
+The valid values for `MethodReturnType` are:
+
+```csharp
+  enum MethodReturnType {
+    Void,
+    Callback,
+    TwoCallbacks,
+    Promise,
+  };
+```
+
+See [MethodDelegate](#methoddelegate).
+
+### `AddSyncMethod()`
+
+```csharp
+void AddSyncMethod(String name, SyncMethodDelegate method);
+```
+
+Adds a synchronous method to the NativeModule.  See [SyncMethodDelegate](#syncmethoddelegate).
 
 
 ## Delegates
 
-### ```delegate void InitializerDelegate(IReactContext reactContext)```
+### `InitializerDelegate`
+
+```csharp
+delegate void InitializerDelegate(IReactContext reactContext);
+```
 
 A delegate that will set reactContext for a module. We use it for a stand-alone initialize method, strongly typed JS events and functions.
 
-### ```delegate void MethodResultCallback(IJSValueWriter outputWriter)```
+### `MethodResultCallback`
+
+```csharp
+delegate void MethodResultCallback(IJSValueWriter outputWriter);
+```
 
 A callback to call JS code with results.
 
-### ```delegate void MethodDelegate(IJSValueReader inputReader, IJSValueWriter outputWriter, MethodResultCallback resolve, MethodResultCallback reject)```
+### `MethodDelegate`
+
+```csharp
+delegate void MethodDelegate(IJSValueReader inputReader, IJSValueWriter outputWriter, MethodResultCallback resolve, MethodResultCallback reject);
+```
 
 A delegate to call native asynchronous method.
 
-### ```delegate void SyncMethodDelegate(IJSValueReader inputReader, IJSValueWriter outputWriter)```
+### `SyncMethodDelegate`
+
+```csharp
+delegate void SyncMethodDelegate(IJSValueReader inputReader, IJSValueWriter outputWriter);
+```
 
 A delegate to call native synchronous method.
 
-### ```delegate void ConstantProviderDelegate(IJSValueWriter constantWriter)```
+### `ConstantProviderDelegate`
+
+```csharp
+delegate void ConstantProviderDelegate(IJSValueWriter constantWriter);
+```
 
 A delegate to gather constants from native modules.
 

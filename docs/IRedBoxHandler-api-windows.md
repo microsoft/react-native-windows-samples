@@ -73,7 +73,7 @@ RegisterMyRedBoxHandler()
 
 ## Methods
 
-### ```ShowNewError()```
+### `ShowNewError()`
 
 ```csharp
 void ShowNewError(IRedBoxErrorInfo info, RedBoxErrorType type)
@@ -81,7 +81,7 @@ void ShowNewError(IRedBoxErrorInfo info, RedBoxErrorType type)
 
 This method is called when an error is initially hit.
 
-### ```UpdateError()```
+### `UpdateError()`
 
 ```csharp
 void UpdateError(IRedBoxErrorInfo info)
@@ -91,7 +91,7 @@ This method is called when updated information about an error has been resolved.
 
 ## Properties
 
-### ```IsDevSupportEnabled```
+### `IsDevSupportEnabled`
 
 ```csharp
   bool IsDevSupportEnabled { get; };
@@ -113,7 +113,7 @@ This object represents a single frame within the callstack of an error.
 
 ## Properties
 
-### ```File```
+### `File`
 
 ```csharp
 string File { get; };
@@ -122,7 +122,7 @@ string File { get; };
 The file location of this frame
 
 
-### ```Method```
+### `Method`
 
 ```csharp
 string Method { get; };
@@ -131,7 +131,7 @@ string Method { get; };
 The method name of this frame
 
 
-### ```Line```
+### `Line`
 
 ```csharp
 uint Line { get; };
@@ -139,7 +139,7 @@ uint Line { get; };
 
 The line number within the file
 
-### ```Column```
+### `Column`
 
 ```csharp
 uint Column { get; };
@@ -154,7 +154,7 @@ This object provides information about the error.  For javascript errors, a call
 
 ## Properties
 
-### ```Message```
+### `Message`
 
 ```csharp
 string Message { get; };
@@ -163,7 +163,7 @@ string Message { get; };
 The error message.
 
 
-### ```Id```
+### `Id`
 
 ```csharp
 uint Id { get; };
@@ -172,7 +172,7 @@ uint Id { get; };
 This Id can be used in [UpdateError](#updateerror) to identify which error is being updated.  For native errors, this is currently always `0`, and [UpdateError](#updateerror) will never be called.
 
 
-### ```Callstack```
+### `Callstack`
 
 ```csharp
 IVector<IRedBoxErrorFrameInfo> Callstack { get; };
@@ -184,7 +184,7 @@ For JavaScript errors, this will contain the callstack of where the error occure
 
 ## Methods
 
-### ```CreateDefaultHandler```
+### `CreateDefaultHandler`
 
 ```csharp
 static IRedBoxHandler CreateDefaultHandler(ReactNativeHost host);

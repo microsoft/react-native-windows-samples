@@ -3,30 +3,46 @@ id: ireactpackagebuilder-api
 title: IReactPackageBuilder
 ---
 
-*Describe the API*
+A `ReactPackageBuilder` provides the react instance with all the NativeModules and ViewManagers that will be availiable in the react instance.
 
 # Reference
 
 ## Methods
 
-### ```void AddModule(String moduleName, ReactModuleProvider moduleProvider)```
+### `AddModule()`
 
-TODO: Fill in stubs
+```csharp
+void AddModule(String moduleName, ReactModuleProvider moduleProvider);
+```
 
-### ```void AddViewManager(String viewManagerName, ReactViewManagerProvider viewManagerProvider)```
+Adds a custom NativeModule. See [ReactModuleProvider](#reactmoduleprovider).
 
-TODO: Fill in stubs
+### `AddViewManager()`
+
+```csharp
+void AddViewManager(String viewManagerName, ReactViewManagerProvider viewManagerProvider);
+```
+
+Adds a custom NativeModule. See [ReactViewManagerProvider](#reactviewmanagerprovider).
 
 
 ## Delegates
 
-### ```delegate Object ReactModuleProvider(IReactModuleBuilder moduleBuilder)```
+### `ReactModuleProvider`
 
-TODO: Fill in stubs
+```csharp
+delegate Object ReactModuleProvider(IReactModuleBuilder moduleBuilder);
+```
 
-### ```delegate IViewManager ReactViewManagerProvider()```
+Provides information about a custom NativeModule.  See [IReactModuleBuilder](IReactModuleBuilder-api-windows.md).
 
-TODO: Fill in stubs
+### `ReactViewManagerProvider`
+
+```csharp
+delegate IViewManager ReactViewManagerProvider();
+```
+
+Provides information about a custom ViewManager.  See [IViewManager](IViewManager-api-windows.md).
 
 
 <!-- // Copyright (c) Microsoft Corporation.

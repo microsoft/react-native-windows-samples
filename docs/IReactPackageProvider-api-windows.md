@@ -3,11 +3,20 @@ id: ireactpackageprovider-api
 title: IReactPackageProvider
 ---
 
-*Describe the API*
+This interface is to be implemented by package creators.
+
 
 # Reference
 
 ## Methods
+
+### `CreatePackage()`
+
+```csharp
+void CreatePackage(IReactPackageBuilder packageBuilder);
+```
+
+Provides a [`IReactPackageBuilder`](IReactPackageBuilder-api-windows.md) which the app or package will use to register custom NativeModule and ViewManagers.
 
 <!-- 
 // Copyright (c) Microsoft Corporation.

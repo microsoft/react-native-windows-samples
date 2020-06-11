@@ -36,7 +36,6 @@
       "ireactdispatcher-api",
       "ireactmodulebuilder-api",
       "ireactnonabivalue-api",
-      "ireactnotificationservice-api",
       "ireactpackagebuilder-api",
       "ireactpackageprovider-api",
       "ireactpropertybag-api",
@@ -45,7 +44,8 @@
       "iviewwindowsprops-api",
       "reactapplication-api",
       "reactinstancesettings-api",
-      "reactnativehost-api"
+      "reactnativehost-api",
+      "xamluiservice-api"
     ]
   }
 }

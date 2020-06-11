@@ -3,7 +3,7 @@ id: apptheme-api
 title: AppTheme
 ---
 
-> This API name will be deprecated and merged with Facebook's ``Appearance`` API when we update to version 0.62 of React Native.
+> This API name is deprecated.  Use react-native's [``Appearance``](https://reactnative.dev/docs/appearance) API instead.
 
 AppTheme allows you to detect Windows app theme changes - dark, light or high contrast - as well as which theme the app is in and the theme colors being used when in high contrast mode.
 

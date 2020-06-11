@@ -3,51 +3,64 @@ id: ijsvaluewriter-api
 title: IJSValueWriter
 ---
 
-*Describe the API*
+``IJSValueWriter`` is used to read data from JavaScript in custom NativeModules.  It acts as a stream.
 
+``IJSValueWriter`` supports the following types:
+
+```
+  enum JSValueType {
+    Null,
+    Object,
+    Array,
+    String,
+    Boolean,
+    Int64,
+    Double,
+  };
+```
 # Reference
 
 ## Methods
 
 ### ```void WriteNull()```
 
-TODO: Fill in stub
+Write a null value.
 
 ### ```void WriteBoolean(Boolean value)```
 
-TODO: Fill in stub
+Write a boolean value.
 
 ### ```void WriteInt64(Int64 value)```
 
-TODO: Fill in stub
+Write a number value from an integer.
 
 ### ```void WriteDouble(Double value)```
 
-TODO: Fill in stub
+Write a number value from a double.
 
 ### ```void WriteString(String value)```
 
-TODO: Fill in stub
+Write a string value.
 
 ### ```void WriteObjectBegin()```
 
-TODO: Fill in stub
+Start writing an object.
 
 ### ```void WritePropertyName(String name)```
 
-TODO: Fill in stub
+Write a property within an object.  This should then be followed by writing the value of that property.
 
 ### ```void WriteObjectEnd()```
 
-TODO: Fill in stub
+Complete writing an object.
 
 ### ```void WriteArrayBegin()```
 
-TODO: Fill in stub
+Start writing an array.
 
 ### ```void WriteArrayEnd()```
 
-TODO: Fill in stub
+Complete writing an array.
 
 
 ## Delegates
