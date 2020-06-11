@@ -4,7 +4,8 @@
       "getting-started",
       "rnw-dependencies",
       "parity-status",
-      "windowsbrush-and-theme"
+      "windowsbrush-and-theme",
+      "winui3"
     ],
     "Native Modules (Windows)": [
       "native-modules",
