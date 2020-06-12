@@ -20,6 +20,26 @@ const textContent = {
 };
 
 class Resources extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {selectedResource: 'repos'};
+
+    // This binding is necessary to make `this` work in the callback
+    this.SelectResource = this.SelectResource.bind(this);
+  }
+
+  SelectResource (navItemName) {
+    if (typeof document !== 'undefined') {
+      var i;
+      var x = document.getElementsByClassName("resourcesSideNavLink");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(navItemName).style.display = "block";
+    }
+    console.log('poop');
+  }
+
   render() {
 
     let currentVersion = versions.length > 0 ? versions[0] : null;
@@ -32,18 +52,6 @@ class Resources extends React.Component {
 
     const { config: siteConfig, language = "" } = this.props;
     const { baseUrl } = siteConfig;
-
-    function SelectResource (navItemName) {
-      if (typeof document !== 'undefined') {
-        var i;
-        var x = document.getElementsByClassName("resourcesSideNavLink");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        document.getElementById(navItemName).style.display = "block";
-        console.log(document.getElementById(navItemName));
-      }
-    }
 
     const ResourceCardItem = ({ videotitle, videotype, videodifficulty, speakername, imgurl, videodisc, cardlink}) => (
       <div className="CenterContent">
@@ -81,22 +89,6 @@ class Resources extends React.Component {
       <section className={`Section ${className} ${background}`}>
         {children}
       </section>
-    );
-
-    const NewsAndSocialList = () => (
-      <Section background="light">
-        <div className="content">
-          News & Social coming soon!
-        </div>
-      </Section>
-    );
-
-    const VidoesList = () => (
-      <Section background="light">
-        <div className="content">
-          Videos list coming soon!
-        </div>
-      </Section>
     );
 
     const ReposCardList = () => (
@@ -172,7 +164,7 @@ class Resources extends React.Component {
 
     return (
       <div className="row">
-        <div class="resourcesPageSideNav" className="column">
+        <div className="resourcesPageSideNav">
           <Section background="tint">
             <div style={{float: "right", marginRight: 180}}>
               <div className="resourcesPageSideNavTitle">Resources</div>
@@ -180,10 +172,10 @@ class Resources extends React.Component {
                 <a className={'resourcesSideNavLink selected'}>Repos</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a className="resourcesSideNavLink" onclick={SelectResource('newssocial')}>News & Social</a>
+                <a href="./resources-news-social" className="resourcesSideNavLink" >News & Social</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a className="resourcesSideNavLink" >Videos</a>
+                <a href="./resources-videos" className="resourcesSideNavLink" >Videos</a>
               </div>
             </div>
           </Section>
@@ -192,12 +184,6 @@ class Resources extends React.Component {
           <div className="homepage" style={{marginLeft: 50}}>
             <div id="repos">
               <ReposCardList/>
-            </div>
-            <div id="newssocial" style={{display: "none"}}>
-              <NewsAndSocialList/>
-            </div>
-            <div id="videos" style={{display: "none"}}>
-              <VidoesList/>
             </div>
           </div>
         </div>

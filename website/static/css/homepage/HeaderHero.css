@@ -109,6 +109,15 @@
   padding: 10px;
 }
 
+/* Create two equal columns that floats next to each other */
+.resourcesSideNavLinkColumn {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  color: #0e53bd;
+  cursor: pointer;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
