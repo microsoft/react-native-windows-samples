@@ -3,7 +3,6 @@
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
-      "contributing",
       "parity-status",
       "windowsbrush-and-theme"
     ],
@@ -15,6 +14,15 @@
       "native-modules-marshalling-data",
       "native-modules-jsvalue",
       "native-modules-advanced"
+    ],
+    "Contributor guide (Windows)": [
+      "contributing",
+      "project-structure",
+      "branch-setup",
+      "monorepo",
+      "building-rnw",
+      "testing",
+      "e2e-testing"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
