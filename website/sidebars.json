@@ -5,7 +5,8 @@
       "rnw-dependencies",
       "parity-status",
       "config",
-      "windowsbrush-and-theme"
+      "windowsbrush-and-theme",
+      "winui3"
     ],
     "Native Modules (Windows)": [
       "native-modules",
@@ -37,9 +38,27 @@
       "glyph-component",
       "popup-component"
     ],
-    "API (Windows)": [
+    "JavaScript API (Windows)": [
       "apptheme-api",
       "ikeyboardprops-api",
-      "iviewwindowsprops-api"]
+      "iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "ijsvaluereader-api",
+      "ijsvaluewriter-api",
+      "ireactcontext-api",
+      "ireactdispatcher-api",
+      "ireactmodulebuilder-api",
+      "ireactnonabivalue-api",
+      "ireactpackagebuilder-api",
+      "ireactpackageprovider-api",
+      "ireactpropertybag-api",
+      "iredboxhandler-api",
+      "iviewmanager-api",
+      "reactapplication-api",
+      "reactinstancesettings-api",
+      "reactnativehost-api",
+      "xamluiservice-api"
+    ]
   }
 }
