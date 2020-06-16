@@ -5,7 +5,7 @@ title: Autolinking Native Modules
 
 Autolinking is a mechanism that allows your React Native app project to discover and use native modules and view managers provided by React Native libraries.
 
-This document covers autolinking for the Windows and macOS platforms. It is an extension to the [React Native CLI Autolinking doc](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md).
+This document covers autolinking for the Windows platform. It is an extension to the [React Native CLI Autolinking doc](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md).
 
 Add a library using your favorite package manager and run the build:
 
@@ -24,7 +24,7 @@ From the [React Native CLI Autolinking doc](https://github.com/react-native-comm
 
 The information provided by `config` is described in [React Native Config Schema](config.md).
 
-### Windows Platform
+## Autolinking process
 
 Autolinking is performed automatically as a part of the `run-windows` command:
 
@@ -37,7 +37,9 @@ Autolinking is performed automatically as a part of the `run-windows` command:
     > If you're using `run-windows` this check should always pass. However, if you've manually edited the generated files, or changed your npm dependencies and are building manually with Visual Studio, then the check might fail. See [manually run autolinking](#manually-run-autolinking).
 1. At runtime, when your app is starting up it will call `RegisterAutolinkedNativeModulePackages`, registering the native dependencies with React Native, making them available to JS code.
 
-#### Manually run autolinking
+## Alternatives
+
+### Manually run autolinking
 
 If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, ie:
 
@@ -49,18 +51,14 @@ npx react-native autolink-windows
 |:--------|:-|
 | --logging | Verbose output logging |
 | --check | Only check whether any autolinked files need to change |
-| --sln [string] | Override the app solution file determined by 'react-native config', e.g. windows\myApp.sln |
-| --proj [string] | Override the app project file determined by 'react-native config', e.g. windows\myApp\myApp.vcxproj |
+| --sln [string] | Override the app solution file determined by `react-native config`, e.g. *windows\myApp.sln* |
+| --proj [string] | Override the app project file determined by `react-native config`, e.g. *windows\myApp\myApp.vcxproj* |
 | -h, --help | output usage information |
 
-#### Skipping autolinking
+### Skipping autolinking
 
 If you would like to skip the autolinking process during `run-windows` you can pass `--no-autolink` option:
 
 ```cmd
 npx react-native run-windows --no-autolink
 ```
-
-### MacOS Platform
-
-*TODO*
