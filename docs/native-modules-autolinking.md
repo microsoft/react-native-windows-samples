@@ -32,7 +32,7 @@ Autolinking is performed automatically as a part of the `run-windows` command:
     1. The `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
         > Your app's solution file may also be modified to ensure the dependency projects will be built.
 
-    1. The `AutolinkedNativeModules.g.(cpp|cs)` files contain a `RegisterAutolinkedNativeModulePackages` method which will add all of the necessary `IReactPackageProvider` from the dependencies to the passed in vector.
+    1. The `AutolinkedNativeModules.g.(cpp|cs)` files contain a `RegisterAutolinkedNativeModulePackages` method which registers all of the specified `IReactPackageProvider`s from the dependencies.
 1. At build time, while `msbuild.exe` is running, but before compiling your app project, a check will verify that the autolinked files are up-to-date, and warn you if they aren't.
     > If you're using `run-windows` this check should always pass. However, if you've manually edited the generated files, or changed your npm dependencies and are building manually with Visual Studio, then the check might fail. See [manually run autolinking](#manually-run-autolinking).
 1. At runtime, when your app is starting up it will call `RegisterAutolinkedNativeModulePackages`, registering the native dependencies with React Native, making them available to JS code.
@@ -63,4 +63,4 @@ npx react-native run-windows --no-autolink
 
 ### MacOS Platform
 
-Autolinking is not yet supported for the macOS platform.
+*TODO*
