@@ -19,7 +19,7 @@ The schema fields are tagged with the following:
 
 ## projectConfig
 
-`react-native config` will generate the following JSON for app projects that have a windows implementation, as a target for auto-linking. This is done heurestically, so if the result isn't quite correct, app developers can provide a manual override file: `react-native.config.js`.
+`react-native config` will generate the following JSON for app projects that have a Windows implementation, as a target for auto-linking. This is done heuristically, so if the result isn't quite correct, app developers can provide a manual override file: `react-native.config.js`.
 
 ### Schema:
 
@@ -56,7 +56,7 @@ The top-level `project` has the following fields:
 |:------|:----:|:----:|:------------|
 | projectFile | string | req | Relative path to the VS project file under *sourceDir*, ex: *'MyApp\MyApp.vcxproj'* for *'c:\path\to\my-app\windows\MyApp\MyApp.vcxproj'* |
 | projectName | string | auto | Name of the project, determined from *projectFile*, ex: *'MyApp'* |
-| projectLang | string | auto | Language of the project, cpp or cs, determined from *projectFile* |
+| projectLang | string | auto | Language of the project, `cpp` (for C++) or `cs` (for C#), determined from *projectFile* |
 | projectGuid | string | auto | Project identifier, determined from *projectFile* |
 
 ### Example `react-native.config.js` for a *MyApp*:
@@ -77,7 +77,7 @@ module.exports = {
 
 ## dependencyConfig
 
-`react-native config` will generate the following JSON for each native module dependency under node_modules that has a windows implementation, in order to support auto-linking. This is done heurestically, so if the result isn't quite correct, native module developers can provide a manual override file: `react-native.config.js`.
+`react-native config` will generate the following JSON for each native module dependency under `node_modules` that has a Windows implementation, in order to support auto-linking. This is done heuristically, so if the result isn't quite correct, native module developers can provide a manual override file: `react-native.config.js`.
 
 ### Schema:
 
