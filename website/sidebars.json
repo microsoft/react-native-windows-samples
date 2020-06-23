@@ -5,7 +5,8 @@
       "rnw-dependencies",
       "parity-status",
       "windowsbrush-and-theme",
-      "winui3"
+      "winui3",
+      "releases"
     ],
     "Native Modules (Windows)": [
       "native-modules",

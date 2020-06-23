@@ -5,7 +5,8 @@
       "version-0.62-rnw-dependencies",
       "version-0.62-parity-status",
       "version-0.62-windowsbrush-and-theme",
-      "version-0.62-winui3"
+      "version-0.62-winui3",
+      "version-0.62-releases"
     ],
     "Native Modules (Windows)": [
       "version-0.62-native-modules",
