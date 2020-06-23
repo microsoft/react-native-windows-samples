@@ -1,0 +1,62 @@
+{
+  "version-0.62-docs": {
+    "The Basics (Windows)": [
+      "version-0.62-getting-started",
+      "version-0.62-rnw-dependencies",
+      "version-0.62-parity-status",
+      "version-0.62-windowsbrush-and-theme",
+      "version-0.62-winui3"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.62-native-modules",
+      "version-0.62-view-managers",
+      "version-0.62-native-modules-setup",
+      "version-0.62-native-modules-using",
+      "version-0.62-native-modules-marshalling-data",
+      "version-0.62-native-modules-jsvalue",
+      "version-0.62-native-modules-advanced"
+    ],
+    "Contributor guide (Windows)": [
+      "version-0.62-contributing",
+      "version-0.62-project-structure",
+      "version-0.62-branch-setup",
+      "version-0.62-monorepo",
+      "version-0.62-building-rnw",
+      "version-0.62-testing",
+      "version-0.62-e2e-testing"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.62-rnm-getting-started",
+      "version-0.62-rnm-dependencies"
+    ]
+  },
+  "version-0.62-apis": {
+    "Components (Windows)": [
+      "version-0.62-flyout-component",
+      "version-0.62-glyph-component",
+      "version-0.62-popup-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.62-apptheme-api",
+      "version-0.62-ikeyboardprops-api",
+      "version-0.62-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.62-ijsvaluereader-api",
+      "version-0.62-ijsvaluewriter-api",
+      "version-0.62-ireactcontext-api",
+      "version-0.62-ireactdispatcher-api",
+      "version-0.62-ireactmodulebuilder-api",
+      "version-0.62-ireactnonabivalue-api",
+      "version-0.62-ireactpackagebuilder-api",
+      "version-0.62-ireactpackageprovider-api",
+      "version-0.62-ireactpropertybag-api",
+      "version-0.62-iredboxhandler-api",
+      "version-0.62-iviewmanager-api",
+      "version-0.62-reactapplication-api",
+      "version-0.62-reactinstancesettings-api",
+      "version-0.62-reactnativehost-api",
+      "version-0.62-xamluiservice-api"
+    ]
+  }
+}
