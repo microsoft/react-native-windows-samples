@@ -53,8 +53,6 @@ Options:
   --useWinUI3  Targets WinUI 3.0 Alpha instead of UWP XAML             [boolean]
   ```
 
-
-
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
