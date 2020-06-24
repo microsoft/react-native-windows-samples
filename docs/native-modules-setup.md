@@ -22,8 +22,8 @@ Once your development environment has been correctly configured, you have severa
 
 - [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-project)
 - [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
-- [Add Windows support to an existing community library](#Adding-Windows-support-to-an-existing-library 
-) 
+- [Add Windows support to an existing community library](#Adding-Windows-support-to-an-existing-library
+)
 
 ## Referencing Windows APIs within a React Native for Windows project
 
@@ -53,7 +53,7 @@ Now you'll have a new native module project under `react-native-my-library`. Be 
 
 At this point, follow the steps below to add Windows support to the newly created library.
 
-## Adding Windows support to an existing library 
+## Adding Windows support to an existing library
 
 > **The plan is to automate this process as part of a CLI new library project template, see issues [3201](https://github.com/microsoft/react-native-windows/issues/3201) and [3203](https://github.com/microsoft/react-native-windows/issues/3203). However we are also documenting the manual process here for developers who are unable to use the CLI.**
 
@@ -81,9 +81,9 @@ If you're planning on writing your native module in C++, you'll want to choose `
 ![Windows Runtime Component (C++/WinRT)](assets/native-modules-setup-new-cpp-project.png)
 
 > **Important:** You want *C++/WinRT*, not *C++/CX*. Do **not** choose the C++/CX `Windows Runtime Component (Universal)` project-type:
-> 
+>
 > ![Wrong Windows Runtime Component (Universal)](assets/native-modules-setup-wrong-cpp-project.png)
-> 
+>
 > If you don't see the `Windows Runtime Component (C++/WinRT)` project type, go back and install the _C++/WinRT Visual Studio Extension_ under [Development Environment](#development-environment).
 
 1. Set the `Project Name` to `MyLibrary`.
@@ -127,7 +127,7 @@ We're going to add several React Native Windows projects to your solution. So to
 
 Now we're going to add all of the following React Native Windows projects to that `ReactNative` folder. All of these projects are located under the `node_modules\react-native-windows` directory in the root of your `react-native-my-library` project directory.
 
-> _For more details about what these projects do, see [Project Structure](project-structure.md)._
+>*For more details about what these projects do, see [Project Structure](https://github.com/microsoft/react-native-windows/blob/master/docs/project-structure.md).*
 
 | VS Project                          | Project File                                                                     |
 | :---------------------------------- | :------------------------------------------------------------------------------- |
@@ -217,15 +217,15 @@ You have now created the scaffolding to build a native module or view manager. N
 
 If you are working on an existing module that already has iOS and Android samples, and want to add Windows support to the existing test app, follow these steps (example of WebView module test app can be found [here](https://github.com/react-native-community/react-native-webview/tree/master/example)).
 
-1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app. 
+1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app.
 2. Copy the `Windows` folder from the blank RNW app into the existing sample app's sample app's folder. (The RNW CLI helps create the correct project setup that you can then copy directly into the sample app.)
 3. Open `sln` and `vxcproj` files and check `node_module` reference paths. Fix the paths if necessary based on how the folders are structured in native module repo ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows.sln#L11-L42)).
 4. Open the solution with Visual Studio and [link native module](native-modules-using.md).
 
-    
+
     >The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
 
 5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)).
 6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/master/package.json#L18)).
 7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/master/react-native.config.js#L28-L33)).
-8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)). 
+8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).

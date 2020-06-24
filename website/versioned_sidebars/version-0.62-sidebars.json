@@ -17,15 +17,6 @@
       "version-0.62-native-modules-jsvalue",
       "version-0.62-native-modules-advanced"
     ],
-    "Contributor guide (Windows)": [
-      "version-0.62-contributing",
-      "version-0.62-project-structure",
-      "version-0.62-branch-setup",
-      "version-0.62-monorepo",
-      "version-0.62-building-rnw",
-      "version-0.62-testing",
-      "version-0.62-e2e-testing"
-    ],
     "The Basics (MacOS)": [
       "version-0.62-rnm-getting-started",
       "version-0.62-rnm-dependencies"
