@@ -1,6 +1,6 @@
 ---
 id: releases
-title: Release Strategy (vnext)
+title: Release Strategy
 ---
 
 > This page is hanging, see [Issue #59](https://github.com/microsoft/react-native-windows-samples/issues/59).

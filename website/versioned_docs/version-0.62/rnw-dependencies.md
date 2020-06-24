@@ -1,6 +1,7 @@
 ---
-id: rnw-dependencies
+id: version-0.62-rnw-dependencies
 title: System Requirements
+original_id: rnw-dependencies
 ---
 
 # Windows Development Dependencies

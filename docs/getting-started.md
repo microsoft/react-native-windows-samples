@@ -50,9 +50,8 @@ Options:
   --language   Which language the app is written in.
                                 [string] [choices: "cs", "cpp"] [default: "cpp"]
   --overwrite  Overwrite any existing files without prompting          [boolean]
+  --useWinUI3  Targets WinUI 3.0 Alpha instead of UWP XAML             [boolean]
   ```
-  
- 
 
 ## Running a React Native Windows App
 
