@@ -11,7 +11,7 @@ We are working on adding **WinUI 3** support for RNW and have made some good pro
 
 ## Current status
 
-As of June 25th 2020, we support the **WinUI 3.0 Preview 1 ** release for:
+As of June 25th 2020, we support the **WinUI 3.0 Preview 1** release for:
 
 * Creating a new RNW app with either C++/WinRT or C#. 
 * The Playground app is able to build a `WinUI 3`-targetting version.
