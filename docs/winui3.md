@@ -35,5 +35,8 @@ For a RNW app to target WinUI 3, it must use a version of Microsoft.ReactNative 
 * When `react-native-windows-init` creates a WinUI 3 targeted app, it will place a sentinel file called `UseWinUI3` in the solution directory.
 * `run-windows` has logic to pass the MSBuild flag `UseWinUI3=true` if this file exists. This in turn affects what version of WinUI is used as well as MIDL, C++ and C# preprocessor defines, which control which version of WinUI the code targets.
 
+## Additional resources
+
+* [WinUI 3 Preview 1](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/)
 
 Follow overall project status in the [Re-target onto OSS XAML](https://github.com/microsoft/react-native-windows/projects/30) project.
