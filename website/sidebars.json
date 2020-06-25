@@ -4,6 +4,7 @@
       "getting-started",
       "rnw-dependencies",
       "parity-status",
+      "config",
       "windowsbrush-and-theme",
       "winui3",
       "releases"
@@ -13,6 +14,7 @@
       "view-managers",
       "native-modules-setup",
       "native-modules-using",
+      "native-modules-autolinking",
       "native-modules-marshalling-data",
       "native-modules-jsvalue",
       "native-modules-advanced"
