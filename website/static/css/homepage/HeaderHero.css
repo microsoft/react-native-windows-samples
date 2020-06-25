@@ -29,7 +29,7 @@
 
 .videocard {
   border-radius: 6px;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.4);
   background-color: #fff;
   overflow: hidden;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 20px 30px 32px;
+  padding: 10px 30px 32px;
   min-height: 140px;
 }
 
@@ -92,8 +92,8 @@
 .videocardtipbackground {
   display: flex;
   align-items: center;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.2);
-  background-color: rgba(0,0,0,.75);
+  box-shadow: 0 5px 10px 0 rgba(1,1,1,.2);
+  background-color: rgba(1,1,1,.75);
   border-radius: 4px;
   padding: 15px 7px 5px 10px;
   color: #fff;
@@ -107,6 +107,15 @@
   float: left;
   width: 50%;
   padding: 10px;
+}
+
+/* Create two equal columns that floats next to each other */
+.resourcesSideNavLinkColumn {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  color: #0e53bd;
+  cursor: pointer;
 }
 
 /* Clear floats after the columns */

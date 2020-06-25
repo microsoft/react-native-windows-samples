@@ -6,7 +6,8 @@
       "parity-status",
       "config",
       "windowsbrush-and-theme",
-      "winui3"
+      "winui3",
+      "releases"
     ],
     "Native Modules (Windows)": [
       "native-modules",
@@ -17,15 +18,6 @@
       "native-modules-marshalling-data",
       "native-modules-jsvalue",
       "native-modules-advanced"
-    ],
-    "Contributor guide (Windows)": [
-      "contributing",
-      "project-structure",
-      "branch-setup",
-      "monorepo",
-      "building-rnw",
-      "testing",
-      "e2e-testing"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",

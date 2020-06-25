@@ -7,8 +7,6 @@ This guide will help you get started on setting up your very first React Native 
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
-If you're looking to build directly from the repo or you want to make contributions to the react-native-windows, check out the guide for [building the react-native-windows repo](building-rnw.md).
-
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
 ## Install React Native for Windows
@@ -18,7 +16,7 @@ Remember to call `react-native init` from the place you want your project direct
 ```
 npx react-native init <projectName> --version ^0.62.2
 ```
-
+>To create TypeScript template, run `npx react-native init <projectName> --version ^0.62.2 --template react-native-template-typescript`.<br><br>
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
 > `npx --ignore-existing react-native init <projectName> --template react-native@^0.62.2` instead.
 
@@ -50,9 +48,8 @@ Options:
   --language   Which language the app is written in.
                                 [string] [choices: "cs", "cpp"] [default: "cpp"]
   --overwrite  Overwrite any existing files without prompting          [boolean]
+  --useWinUI3  Targets WinUI 3.0 Alpha instead of UWP XAML             [boolean]
   ```
-  
- 
 
 ## Running a React Native Windows App
 
