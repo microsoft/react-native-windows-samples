@@ -11,26 +11,32 @@ We are working on adding **WinUI 3** support for RNW and have made some good pro
 
 ## Current status
 
-As of June 2020, we support the **WinUI 3.0 Alpha** release for:
+As of June 25th 2020, we support the **WinUI 3.0 Preview 1** release for:
 
-* Creating a new RNW app C++/WinRT app. 
-* The Playground app is able to build a `WinUI 3` Configuration (you can change this in VS). This corresponds to a `Debug` build but it targets WinUI 3.
+* Creating a new RNW app with either C++/WinRT or C#. 
+* The Playground app is able to build a `WinUI 3`-targetting version.
 
 ## Not yet supported
 
-* **`Release` builds** - this is an in-development feature so it really isn't intended for release/publishing yet. You'll see build breaks when switching to Release since the `WinUI3` is based on the `Debug` configuration.
-* **WinUI 3 Preview** builds.
-* **C# apps**. This will require to have the app template use  `using Windows.UI.Xaml` / `using Microsoft.UI.Xaml` as appropriate.
 * **NPM package** - we need to create NPM package for **WinUI 3**-enabled `Microsoft.ReactNative`.
 * **Native modules support** - we need to figure out how community Native Modules will factor into using **WinUI 3** - right now it probably won't work to try to mix and match WinUI 2.x (MUXC) with 3.0.
 
 ## How to create a RNW-on-WinUI 3 app
 
-In order to create a **WinUI 3** enabled C++ app, pass the `--useWinUI3` flag when running `react-native-windows-init` (you'll pass `--language cpp` too to create a C++ app).
+In order to create a **WinUI 3** enabled C++ or C# app, pass the `--useWinUI3` flag when running `react-native-windows-init`, in addition to any other flags like `--language cpp`, etc.
 
 Example:
 ```powershell
-npx react-native-windows-init --useWinUI3 --version master --overwrite --language cpp
+npx react-native-windows-init --useWinUI3 --version canary --overwrite --language cpp
 ```
+
+## How it works
+For a RNW app to target WinUI 3, it must use a version of Microsoft.ReactNative that targets WinUI 3. All of this is done via one of the following:
+* When `react-native-windows-init` creates a WinUI 3 targeted app, it will place a sentinel file called `UseWinUI3` in the solution directory.
+* `run-windows` has logic to pass the MSBuild flag `UseWinUI3=true` if this file exists. This in turn affects what version of WinUI is used as well as MIDL, C++ and C# preprocessor defines, which control which version of WinUI the code targets.
+
+## Additional resources
+
+* [WinUI 3 Preview 1](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/)
 
 Follow overall project status in the [Re-target onto OSS XAML](https://github.com/microsoft/react-native-windows/projects/30) project.
