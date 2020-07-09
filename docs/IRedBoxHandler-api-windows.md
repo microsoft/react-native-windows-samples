@@ -148,6 +148,15 @@ uint Column { get; };
 The column within the line
 
 
+### `Collapse`
+
+```csharp
+bool Collapse { get; };
+```
+
+Tru if this frame is part of the internals of react-native, that is likely not useful for the developer to see.
+
+
 # IRedBoxErrorInfo
 
 This object provides information about the error.  For javascript errors, a callstack is also provided.
@@ -179,6 +188,41 @@ IVector<IRedBoxErrorFrameInfo> Callstack { get; };
 ```
 
 For JavaScript errors, this will contain the callstack of where the error occured.
+
+
+### `OriginalMessage`
+
+```csharp
+string OriginalMessage { get; };
+```
+
+If the message was adjusted for formatting, or otherwise processed, this contains the message before those modifications
+
+### `Name`
+
+```csharp
+string Name { get; };
+```
+
+An identifier for this error.
+
+### `ComponentStack`
+
+```csharp
+string ComponentStack { get; };
+```
+
+This will contain the component stack where the error occured, which can help identify the component that is producing the error
+
+
+### `ExtraData `
+
+```csharp
+IJSValueReader ExtraData  { get; };
+```
+
+Provides access to extra data attached to the error.  Adding additional data to the errors is not yet part of the stable API.
+
 
 # RedBoxHelper
 
