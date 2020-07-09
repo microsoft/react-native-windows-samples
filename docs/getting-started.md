@@ -16,7 +16,7 @@ Remember to call `react-native init` from the place you want your project direct
 ```
 npx react-native init <projectName> --version ^0.62.2
 ```
->To create TypeScript template, run `npx react-native init <projectName> --version ^0.62.2 --template react-native-template-typescript`.<br><br>
+>To create TypeScript template, run `npx react-native init <projectName> --version ^0.62.2 --template typescript`.<br><br>
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
 > `npx --ignore-existing react-native init <projectName> --template react-native@^0.62.2` instead.
 
