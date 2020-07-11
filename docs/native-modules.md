@@ -56,7 +56,7 @@ Here is a sample native module written in C# called `FancyMath`. It is a simple 
 _FancyMath.cs_
 
 ```csharp
-using System;
+using Microsoft.ReactNative;
 using Microsoft.ReactNative.Managed;
 
 namespace NativeModuleSample
