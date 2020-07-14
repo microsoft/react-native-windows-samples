@@ -17,11 +17,11 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
-npx react-native init <projectName> --version 0.62.2
+npx react-native init <projectName> --template react-native@^0.62.2
 ```
->To create TypeScript template, run `npx react-native init <projectName> --version 0.62.2 --template react-native-template-typescript`.<br><br>
+>To create TypeScript template, run `npx --ignore-existing react-native init <projectName> --template react-native-template-typescript@6.4.*`.<br><br>
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try running:<br>
-> `npx --ignore-existing react-native init <projectName> --template react-native-template-typescript@6.4.*` instead.
+> `npx --ignore-existing react-native init <projectName> --template react-native@^0.62.2` instead.
 
 ### Navigate into this newly created directory
 
