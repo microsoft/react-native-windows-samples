@@ -237,7 +237,7 @@ Provides access to extra data attached to the error.  Adding additional data to 
 static IRedBoxHandler CreateDefaultHandler(ReactNativeHost host);
 ```
 
-This provides access to the default [IRedBoxHandler](#iredboxhandler). This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
+This provides access to the default `IRedBoxHandler`. This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
 
 <!--
 
