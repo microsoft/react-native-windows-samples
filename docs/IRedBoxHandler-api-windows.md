@@ -139,6 +139,7 @@ uint Line { get; };
 
 The line number within the file
 
+
 ### `Column`
 
 ```csharp
@@ -198,6 +199,7 @@ string OriginalMessage { get; };
 
 If the message was adjusted for formatting, or otherwise processed, this contains the message before those modifications
 
+
 ### `Name`
 
 ```csharp
@@ -205,6 +207,7 @@ string Name { get; };
 ```
 
 An identifier for this error.
+
 
 ### `ComponentStack`
 
@@ -234,7 +237,7 @@ Provides access to extra data attached to the error.  Adding additional data to 
 static IRedBoxHandler CreateDefaultHandler(ReactNativeHost host);
 ```
 
-This provides access to the default [IRedBoxHandler](#IRedBoxHandler). This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
+This provides access to the default [IRedBoxHandler](#iredboxhandler). This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
 
 <!--
 
