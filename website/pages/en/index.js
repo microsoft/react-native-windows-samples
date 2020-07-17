@@ -24,7 +24,7 @@ const textContent = {
   `,
   about: `
 **React Native for Windows + macOS brings React Native support for the
-[Windows 10 SDK] as well as the [macOS 10.12 SDK]**. With this, you can use Javascript to build native
+[Windows 10 SDK] as well as the [macOS 10.12 SDK]**. With this, you can use JavaScript to build native
 Windows apps for [all devices supported by Windows 10] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
 
