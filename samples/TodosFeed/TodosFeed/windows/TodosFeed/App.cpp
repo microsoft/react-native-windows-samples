@@ -1,8 +1,9 @@
 #include "pch.h"
 
 #include "App.h"
-#include "ReactPackageProvider.h"
 
+#include "AutolinkedNativeModules.g.h"
+#include "ReactPackageProvider.h"
 
 
 using namespace winrt::TodosFeed;
@@ -20,11 +21,11 @@ App::App() noexcept
 #if BUNDLE
     JavaScriptBundleFile(L"index.windows");
     InstanceSettings().UseWebDebugger(false);
-    InstanceSettings().UseLiveReload(false);
+    InstanceSettings().UseFastRefresh(false);
 #else
     JavaScriptMainModuleName(L"index");
     InstanceSettings().UseWebDebugger(true);
-    InstanceSettings().UseLiveReload(true);
+    InstanceSettings().UseFastRefresh(true);
 #endif
 
 #if _DEBUG
@@ -33,14 +34,9 @@ App::App() noexcept
     InstanceSettings().EnableDeveloperMenu(false);
 #endif
 
+    RegisterAutolinkedNativeModulePackages(PackageProviders()); // Includes any autolinked modules
+
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
 
     InitializeComponent();
-
-    // This works around a cpp/winrt bug with composable/aggregable types tracked
-    // by 22116519
-    AddRef();
-    m_inner.as<::IUnknown>()->Release();
 }
-
-

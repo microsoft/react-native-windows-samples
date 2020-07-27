@@ -2,8 +2,6 @@
 
 #include "App.xaml.g.h"
 
-
-
 namespace winrt::TodosFeed::implementation
 {
     struct App : AppT<App>
