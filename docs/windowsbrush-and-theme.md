@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 
 ### Using windowsbrush to access Reveal and Acrylic
 
-Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `windowsbrush` API we provide on the Javascript layer for other brushes.
+Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `windowsbrush` API we provide on the JavaScript layer for other brushes.
 
 #### Using System Acrylic
 

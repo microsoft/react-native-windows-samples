@@ -5,13 +5,13 @@ title: WinUI 3
 
 # WinUI 3 Support in RNW
 
-[WinUI](https://microsoft.github.io/microsoft-ui-xaml/) is the modern native UI platform of Windows. As of this writing, **WinUI 3** has published [Preview 1](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
+[WinUI](https://microsoft.github.io/microsoft-ui-xaml/) is the modern native UI platform of Windows. As of this writing, **WinUI 3** has published [Preview 2](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
 
 We are working on adding **WinUI 3** support for RNW and have made some good progress towards an alpha.
 
 ## Current status
 
-As of June 25th 2020, we support the **WinUI 3.0 Preview 1** release for:
+As of July 22th 2020, we support the **WinUI 3.0 Preview 2** release for:
 
 * Creating a new RNW app with either C++/WinRT or C#. 
 * The Playground app is able to build a `WinUI 3`-targetting version.
@@ -19,7 +19,7 @@ As of June 25th 2020, we support the **WinUI 3.0 Preview 1** release for:
 ## Not yet supported
 
 * **NPM package** - we need to create NPM package for **WinUI 3**-enabled `Microsoft.ReactNative`.
-* **Native modules support** - we need to figure out how community Native Modules will factor into using **WinUI 3** - right now it probably won't work to try to mix and match WinUI 2.x (MUXC) with 3.0.
+* **Native modules support** - we need to figure out how community Native Modules will factor into using **WinUI 3** - right now if you try to load system XAML (with or without WinUI 2.x) and WinUI 3, we will crash the process, since this likely would lead to harder to diagnose issues in trying to interoperate between the two flavors of the framework.
 
 ## How to create a RNW-on-WinUI 3 app
 
@@ -37,6 +37,6 @@ For a RNW app to target WinUI 3, it must use a version of Microsoft.ReactNative 
 
 ## Additional resources
 
-* [WinUI 3 Preview 1](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/)
+* [WinUI 3 Preview 2](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/)
 
 Follow overall project status in the [Re-target onto OSS XAML](https://github.com/microsoft/react-native-windows/projects/30) project.

@@ -191,7 +191,7 @@ For JavaScript errors, this will contain the callstack of where the error occure
 static IRedBoxHandler CreateDefaultHandler(ReactNativeHost host);
 ```
 
-This provides access to the default [IRedBoxHandler](#IRedBoxHandler). This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
+This provides access to the default `IRedBoxHandler`. This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
 
 <!--
 
