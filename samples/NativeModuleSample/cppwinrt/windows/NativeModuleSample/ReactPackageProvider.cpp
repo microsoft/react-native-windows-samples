@@ -7,6 +7,7 @@
 
 #include "FancyMath.h"
 #include "DataMarshallingExamples.h"
+#include "AsyncMethodExamples.h"
 
 using namespace winrt::Microsoft::ReactNative;
 

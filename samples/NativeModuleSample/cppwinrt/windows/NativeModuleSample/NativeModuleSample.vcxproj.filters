@@ -17,6 +17,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="FancyMath.h" />
     <ClInclude Include="DataMarshallingExamples.h" />
+    <ClInclude Include="AsyncMethodExamples.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NativeModuleSample.def" />
