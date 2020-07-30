@@ -16,6 +16,7 @@
       "native-modules-using",
       "native-modules-autolinking",
       "native-modules-marshalling-data",
+      "native-modules-async",
       "native-modules-jsvalue",
       "native-modules-advanced"
     ],
