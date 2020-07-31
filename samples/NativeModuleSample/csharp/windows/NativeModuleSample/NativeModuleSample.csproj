@@ -82,6 +82,7 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AsyncMethodExamples.cs" />
     <Compile Include="DataMarshallingExamples.cs" />
     <Compile Include="FancyMath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
