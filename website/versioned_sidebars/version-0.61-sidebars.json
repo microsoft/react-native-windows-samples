@@ -13,6 +13,7 @@
       "version-0.61-native-modules-setup",
       "version-0.61-native-modules-using",
       "version-0.61-native-modules-marshalling-data",
+      "version-0.61-native-modules-async",
       "version-0.61-native-modules-jsvalue",
       "version-0.61-native-modules-advanced"
     ],
