@@ -9,6 +9,14 @@ Provides configuration of the react instance.
 
 ## Properties
 
+### ```PackageProviders```
+
+```csharp
+IVector<IReactPackageProvider> PackageProviders { get; };
+```
+
+Provides a list of additional NativeModules and custom ViewManagers that should be included in the instance.
+
 ### ```Properties```
 
 ```csharp
@@ -18,15 +26,21 @@ IReactPropertyBag Properties { get; }
 Properties are shared with [`IReactContext.Properties`](IReactContext-api-windows.md#properties). It can be used to configure and share values and state between components.
 
 
+### ```Notifications```
+
+```csharp
+IReactNotificationService Notifications { get; };
+```
+
+Provides access to the IReactNotificationService, which allows easy communication between custom NativeModules or ViewManagers.
+
 ### ```UseDeveloperSupport```
 
 ```csharp
 bool UseDeveloperSupport { get; set; };
 ```
 
-**Not currently supported**
-
-This property will replace [EnableDeveloperMenu](#enabledevelopermenu) in a future version. 
+This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox and LogBox experience and loading UI during bundle load.
 
 ### ```JavaScriptBundleFile```
 
@@ -132,6 +146,11 @@ bool EnableDeveloperMenu { get; set; };
 
 This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
 
+> This property will be remove in a future version of **react-native-windows**
+
+This property has been replaced by [UseDeveloperSupport](#usedevelopersupport). In the 0.63 both properties will do the same thing.
+
+
 ### ```ByteCodeFileUri```
 
 ```csharp
@@ -139,6 +158,29 @@ string ByteCodeFileUri { get; set; }
 ```
 
 Set this to a location the application has write access to in order for bytecode to be successfully cached. See [EnableByteCodeCaching](#enablebytecodecaching).
+
+
+### ```SourceBundleHost```
+
+```csharp
+string SourceBundleHost { get; set; }
+```
+
+default:  `localhost`
+
+When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
+
+
+### ```SourceBundlePort```
+
+```csharp
+ushort SourceBundlePort { get; set; }
+```
+
+default: 8081
+
+When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server port that will be used to load the bundle from.
+
 
 ### ```DebugHost```
 
@@ -150,6 +192,7 @@ default: `localhost:8081`
 
 When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server that will be used to load the bundle from.
 
+> This has been replaced with SourceBundleHost and SourceBundlePort and will be removed in a future version.
 
 ### ```DebugBundlePath```
 
@@ -185,13 +228,14 @@ IRedBoxHandler RedBoxHandler { get; set; };
 
 Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](IRedBoxHandler-api-windows.md) for more information.
 
-### ```MainComponentName```
+
+### ```UIDispatcher```
 
 ```csharp
-string MainComponentName { get; set; }
+IReactDispatcher UIDispatcher { get; set; };
 ```
 
-> Not supported - will be removed in a future version.
+Control the main UIDispatcher to be used by the React Instance.  If the ReactSettingsInstance object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to NativeModules and ViewManagers using [`IReactContext.UIDispatcher`](IReactContext-api-windows.md#uidispatcher)
 
 
 <!-- namespace Microsoft.ReactNative
@@ -202,7 +246,8 @@ string MainComponentName { get; set; }
     ReactInstanceSettings();
 
     IReactPropertyBag Properties { get; };
-    String MainComponentName { get; set; };
+    IReactNotificationService Notifications { get; };
+    IVector<IReactPackageProvider> PackageProviders { get; };
     Boolean UseDeveloperSupport { get; set; };
     String JavaScriptMainModuleName { get; set; };
     String JavaScriptBundleFile { get; set; };
@@ -221,5 +266,8 @@ string MainComponentName { get; set; }
     String BundleRootPath { get; set; };
     UInt16 DebuggerPort { get; set; };
     IRedBoxHandler RedBoxHandler { get; set; };
+    IReactDispatcher UIDispatcher { get; set; };
+    String SourceBundleHost { get; set; };
+    UInt16 SourceBundlePort { get; set; };
     }
 } -->
