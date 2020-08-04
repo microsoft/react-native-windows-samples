@@ -146,7 +146,7 @@ bool EnableDeveloperMenu { get; set; }
 
 This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
 
-> This property will be remove in a future version of **react-native-windows**
+> This property will be removed in a future version of **react-native-windows**
 
 This property has been replaced by [UseDeveloperSupport](#usedevelopersupport). In the 0.63 both properties will do the same thing.
 
