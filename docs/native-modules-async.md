@@ -7,7 +7,7 @@ title: Using Asynchronous Windows APIs
 
 A common scenario for [Native Modules](native-modules.md) is to call one or more native asynchronous methods from a JS asynchronous method. However it may not be immediately obvious how to properly bridge both asynchronous worlds, which can lead to unstable, difficult to debug code.
 
-This document proposes some best patterns to follow when bridging asynchronous methods from JS to native code for React Native Windows. It assumes you've already familliar with the basics of setting up and writing [Native Modules](native-modules.md).
+This document proposes some best patterns to follow when bridging asynchronous methods from JS to native code for React Native Windows. It assumes you've already familiar with the basics of setting up and writing [Native Modules](native-modules.md).
 
 > The complete source for the examples below are provided within the [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample).
 
@@ -45,7 +45,7 @@ static async Task GetHttpResponseAsync(string uri)
 
 The `GetHttpResponseAsync` method is pretty straight-forward at this point, it takes a `string` uri and "returns" a `Task` (which is to say, the method is asynchronous and doesn't actually return a value when it's done).
 
-> If you're not familliar with writing asynchronous C# code, see [Call asynchronous APIs in C# or Visual Basic](https://docs.microsoft.com/en-us/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).
+> If you're not familiar with writing asynchronous C# code, see [Call asynchronous APIs in C# or Visual Basic](https://docs.microsoft.com/en-us/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).
 
 Inside `GetHttpResponseAsync`, we see it:
 1. Creates a `HttpClient`.
@@ -119,7 +119,7 @@ public void GetHttpResponse(string uri, ReactPromise<JSValue> promise)
 
 Looks simple enough, right? We call `GetHttpResponseAsync` with the `uri` and `promise` parameters, and get back an `Task` object which we store in `task`. When this executes, `GetHttpResponseAsync` will return control when it hits its first `await`, which in turn will return control for the JS code to continure running. When everything in `GetHttpResponseAsync` succeeds, it itself is responsible for resolving the promise with the result.
 
-But wait, what happens if `GetHttpResponseAsync` doesn't succeed? We don't handle any exceptions in this exmaple, so if an exception is thrown, how do we marshal an error back to the JS? We have one more thing to do, and that's to check for unhandled exceptions:
+But wait, what happens if `GetHttpResponseAsync` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to the JS? We have one more thing to do, and that's to check for unhandled exceptions:
 
 ```csharp
 [ReactMethod]
@@ -167,7 +167,7 @@ static winrt::Windows::Foundation::IAsyncAction GetHttpResponseAsync(std::wstrin
 
 The `GetHttpResponseAsync` method is pretty straight-forward at this point, it takes a `wstring` uri and "returns" an `IAsyncAction` (which is to say, the method is asynchronous and doesn't actually return a value when it's done).
 
-> If you're not familliar with writing asynchronous C++/WinRT code, see [Concurrency and asynchronous operations with C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/concurrency).
+> If you're not familiar with writing asynchronous C++/WinRT code, see [Concurrency and asynchronous operations with C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 Inside `GetHttpResponseAsync`, we see it:
 1. Creates a `HttpClient`.
