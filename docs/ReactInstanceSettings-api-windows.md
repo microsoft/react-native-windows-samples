@@ -12,7 +12,7 @@ Provides configuration of the react instance.
 ### ```PackageProviders```
 
 ```csharp
-IVector<IReactPackageProvider> PackageProviders { get; };
+IVector<IReactPackageProvider> PackageProviders { get; }
 ```
 
 Provides a list of additional NativeModules and custom ViewManagers that should be included in the instance.
@@ -29,7 +29,7 @@ Properties are shared with [`IReactContext.Properties`](IReactContext-api-window
 ### ```Notifications```
 
 ```csharp
-IReactNotificationService Notifications { get; };
+IReactNotificationService Notifications { get; }
 ```
 
 Provides access to the IReactNotificationService, which allows easy communication between custom NativeModules or ViewManagers.
@@ -37,7 +37,7 @@ Provides access to the IReactNotificationService, which allows easy communicatio
 ### ```UseDeveloperSupport```
 
 ```csharp
-bool UseDeveloperSupport { get; set; };
+bool UseDeveloperSupport { get; set; }
 ```
 
 This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox and LogBox experience and loading UI during bundle load.
@@ -92,7 +92,7 @@ When the file is saved, the packager will trigger reloading.
 ### ```UseDirectDebugger```
 
 ```csharp
-bool UseDirectDebugger { get; set; };
+bool UseDirectDebugger { get; set; }
 ```
 
 Enables debugging in the JavaScript engine (if supported).  
@@ -141,7 +141,7 @@ For JS engines that support bytecode generation, this controls if bytecode shoul
 ### ```EnableDeveloperMenu```
 
 ```csharp
-bool EnableDeveloperMenu { get; set; };
+bool EnableDeveloperMenu { get; set; }
 ```
 
 This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
@@ -223,7 +223,7 @@ When [UseDirectDebugger](#usedirectdebugger) is enabled, this controls the port 
 ### ```RedBoxHandler```
 
 ```csharp
-IRedBoxHandler RedBoxHandler { get; set; };
+IRedBoxHandler RedBoxHandler { get; set; }
 ```
 
 Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](IRedBoxHandler-api-windows.md) for more information.
@@ -232,7 +232,7 @@ Provides an extension point to allow custom error handling within the react inst
 ### ```UIDispatcher```
 
 ```csharp
-IReactDispatcher UIDispatcher { get; set; };
+IReactDispatcher UIDispatcher { get; set; }
 ```
 
 Control the main UIDispatcher to be used by the React Instance.  If the ReactSettingsInstance object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to NativeModules and ViewManagers using [`IReactContext.UIDispatcher`](IReactContext-api-windows.md#uidispatcher)
