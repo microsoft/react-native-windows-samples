@@ -229,3 +229,82 @@ If you are working on an existing module that already has iOS and Android sample
 6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/master/package.json#L18)).
 7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/master/react-native.config.js#L28-L33)).
 8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
+
+### Adding tests for your module
+We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium), there's also a comprehensive [course on Pluralsight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [react-native-webview](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
+
+### Setup CI (continuous integration) pipeline for your module
+
+When done developing your module, it's good practice to setup CI pipeline with automated build and tests to avoid any future regressions. There are many services avialable for setting up CI pipeline. We'll use [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions) as example here since it doesn't require extra account setup if you are already hosting your code on GitHub, also the default vm image has all the tools we needed pre-installed.
+
+The vm images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed toos and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that has all (or most) of the required tools installed.
+
+Next you need to create a YAML file for GitHub Actions, the basic steps are:
+- Checkout code and setup the environment
+```yaml
+    - uses: actions/checkout@v2
+      name: Checkout Code
+     
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.9.1'
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.0
+      with:
+        vs-version: 16.5
+       
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+
+    - name: Check node modules cache
+      uses: actions/cache@v1
+      id: yarn-cache
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: Install node modules
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
+      run: yarn --pure-lockfile
+    
+    - name: yarn build
+      if: steps.yarn-cache.outputs.cache-hit == 'true'
+      run: |
+        yarn build
+        yarn tsc
+```
+- Build the project
+```yaml
+    - name: NuGet restore
+      run: nuget restore YourTestApp.sln
+
+    - name: Build x64 release
+      run: msbuild YourTestApp.sln /p:Configuration=Release /p:Platform=x64 -m
+```
+- Run tests
+```yaml
+    - name: Deploy
+      shell: powershell
+      run: |
+        cd example
+        Copy-Item -Path windows\x64\Release -Recurse -Destination windows\
+        npx react-native run-windows --arch x64 --release --no-build --no-packager
+
+    - name: Start Appium server
+      shell: powershell
+      run: Start-Process PowerShell -ArgumentList "yarn appium"
+      
+    - name: Run tests
+      run: yarn test:windows
+```
+Check out the full [react-native-webview example](https://github.com/react-native-community/react-native-webview/blob/master/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
+
+Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
+
+> GitHub Actions should be enabled by default, if it's not enabled for some reason you can go to Settings->Actions tab of the repo to enable it (requires owner access).
+
+Now push your changes and the CI pipeline should be up and running.
