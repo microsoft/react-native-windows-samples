@@ -1,0 +1,24 @@
+name: Calculator CI
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'samples/Calculator/**'
+      - '.github/workflows/samples-Calculator-CI.yml'
+
+jobs:
+  build:
+    name: CI Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Yarn install
+        run: yarn install
+        working-directory: samples/Calculator
+
+      - name: Build x86 Release
+        run: npx react-native run-windows --no-launch --no-packager --logging --release
+        working-directory: samples/Calculator
