@@ -235,7 +235,7 @@ We are using Appium + WinAppDriver for UI testing. More details [here](https://g
 
 ### Setup CI (continuous integration) pipeline for your module
 
-When done developing your module, it's good practice to setup CI pipeline with automated build and tests to avoid any future regressions. There are many services avialable for setting up CI pipeline. We'll use [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions) as example here since it doesn't require extra account setup if you are already hosting your code on GitHub, also the default vm image has all the tools we needed pre-installed.
+When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
 
 The vm images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirments.
 
