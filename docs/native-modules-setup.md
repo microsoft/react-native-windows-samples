@@ -237,7 +237,7 @@ We are using Appium + WinAppDriver for UI testing. More details [here](https://g
 
 When done developing your module, it's good practice to setup CI pipeline with automated build and tests to avoid any future regressions. There are many services avialable for setting up CI pipeline. We'll use [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions) as example here since it doesn't require extra account setup if you are already hosting your code on GitHub, also the default vm image has all the tools we needed pre-installed.
 
-The vm images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed toos and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that has all (or most) of the required tools installed.
+The vm images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirments.
 
 Next you need to create a YAML file for GitHub Actions, the basic steps are:
 - Checkout code and setup the environment
@@ -277,23 +277,13 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
         yarn build
         yarn tsc
 ```
-- Build the project
+- Build and run the project
 ```yaml
-    - name: NuGet restore
-      run: nuget restore YourTestApp.sln
-
-    - name: Build x64 release
-      run: msbuild YourTestApp.sln /p:Configuration=Release /p:Platform=x64 -m
+    - name: Run Windows x64 release
+      run: npx react-native run-windows --arch x64 --release --no-packager --logging
 ```
 - Run tests
 ```yaml
-    - name: Deploy
-      shell: powershell
-      run: |
-        cd example
-        Copy-Item -Path windows\x64\Release -Recurse -Destination windows\
-        npx react-native run-windows --arch x64 --release --no-build --no-packager
-
     - name: Start Appium server
       shell: powershell
       run: Start-Process PowerShell -ArgumentList "yarn appium"
