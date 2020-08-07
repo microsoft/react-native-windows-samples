@@ -26,12 +26,12 @@ jobs:
         run: yarn install
         working-directory: ..\..\src
 
-      - ${{ eq("matrix.configuration", "Debug") }}
+      - ${{ if eq(matrix.configuration, 'Debug') }}:
         - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
           run: npx react-native run-windows --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
           working-directory: ..\..\src
 
-      - ${{ eq("matrix.configuration", "Release") }}
+      - ${{ if eq(matrix.configuration, 'Release') }}:
         - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
           run: npx react-native run-windows --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
           working-directory: ..\..\src
