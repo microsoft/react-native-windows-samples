@@ -1,6 +1,11 @@
 name: Weekly CI
 
 on:
+  push:
+    branches: 
+      - master
+    paths:
+      - '.github/workflows/samples-weekly-CI.yml'
   pull_request:
     branches:
       - master
@@ -26,12 +31,12 @@ jobs:
         run: yarn install
         working-directory: ..\..\src
 
-      - ${{ if eq(matrix.configuration, 'Debug') }}:
-        - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
-          run: npx react-native run-windows --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
-          working-directory: ..\..\src
+      - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
 
-      - ${{ if eq(matrix.configuration, 'Release') }}:
-        - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
-          run: npx react-native run-windows --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
-          working-directory: ..\..\src
+      - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
