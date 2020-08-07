@@ -1,0 +1,10 @@
+name: Weekly CI
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/samples-weekly-CI.yml'
+
+jobs:
