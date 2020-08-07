@@ -8,3 +8,30 @@ on:
       - '.github/workflows/samples-weekly-CI.yml'
 
 jobs:
+  build:
+    name: CI Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        sample: [Calculator, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
+        architecture: [x86, x64, arm, arm64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install
+        working-directory: ..\..\src
+
+      - ${{ eq("matrix.configuration", "Debug") }}
+        - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
+          run: npx react-native run-windows --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+          working-directory: ..\..\src
+
+      - ${{ eq("matrix.configuration", "Release") }}
+        - name: Build ${{ matrix.architecture }} ${{ matrix.configuration }}
+          run: npx react-native run-windows --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+          working-directory: ..\..\src
