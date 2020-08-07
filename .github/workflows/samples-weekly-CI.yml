@@ -16,11 +16,43 @@ on:
 
 jobs:
   build:
-    name: CI Build
+    name: Build
     runs-on: windows-latest
     strategy:
       matrix:
         sample: [Calculator, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
+        architecture: [x86, x64, ARM, ARM64]
+        configuration: [Debug, Release]
+        exclude:
+          - sample: Calculator
+            architecture: x86
+          - sample: Calculator
+            architecture: x64
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+  build_and_deploy:
+    name: Build and Deploy
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        sample: [Calculator]
         architecture: [x86, x64]
         configuration: [Debug, Release]
     steps:
