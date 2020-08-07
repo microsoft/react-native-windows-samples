@@ -19,12 +19,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Relocate to reduce long paths
-        run:  Copy-item -Force -Recurse -Verbose "samples\NativeModuleSample\${{ matrix.language }}" -Destination "..\..\${{ matrix.language }}"
+        run:  Copy-item -Force -Recurse -Verbose "samples\NativeModuleSample\${{ matrix.language }}" -Destination "..\..\src"
 
       - name: Yarn install
         run: yarn install
-        working-directory: ..\..\${{ matrix.language }}
+        working-directory: ..\..\src
 
       - name: Build x86 Debug
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging
-        working-directory: ..\..\${{ matrix.language }}
+        working-directory: ..\..\src

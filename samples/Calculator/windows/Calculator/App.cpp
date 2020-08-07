@@ -1,15 +1,13 @@
 #include "pch.h"
 
 #include "App.h"
+
+#include "AutolinkedNativeModules.g.h"
 #include "ReactPackageProvider.h"
-#include <winrt/Windows.UI.Xaml.h>
-#include <winrt/Windows.UI.Xaml.Controls.h>
 
 
 using namespace winrt::Calculator;
 using namespace winrt::Calculator::implementation;
-using namespace winrt::Windows::UI::Xaml;
-using namespace winrt::Windows::UI::Xaml::Controls;
 
 /// <summary>
 /// Initializes the singleton application object.  This is the first line of
@@ -18,14 +16,16 @@ using namespace winrt::Windows::UI::Xaml::Controls;
 /// </summary>
 App::App() noexcept
 {
+    MainComponentName(L"Calculator");
+
 #if BUNDLE
     JavaScriptBundleFile(L"index.windows");
     InstanceSettings().UseWebDebugger(false);
-    InstanceSettings().UseLiveReload(false);
+    InstanceSettings().UseFastRefresh(false);
 #else
     JavaScriptMainModuleName(L"index");
     InstanceSettings().UseWebDebugger(true);
-    InstanceSettings().UseLiveReload(true);
+    InstanceSettings().UseFastRefresh(true);
 #endif
 
 #if _DEBUG
@@ -34,13 +34,9 @@ App::App() noexcept
     InstanceSettings().EnableDeveloperMenu(false);
 #endif
 
+    RegisterAutolinkedNativeModulePackages(PackageProviders()); // Includes any autolinked modules
+
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
 
     InitializeComponent();
-}
-
-void App::OnLaunched(winrt::Windows::ApplicationModel::Activation::LaunchActivatedEventArgs e)
-{
-    base::OnLaunched(e);
-    Window::Current().Content().as<Frame>().Navigate(winrt::xaml_typename<MainPage>(), e);
 }
