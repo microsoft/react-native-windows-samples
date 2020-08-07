@@ -1,6 +1,8 @@
 name: Weekly CI
 
 on:
+  schedule:
+    - cron: '0 15 * * 2' # 3PM Tuesday UTC (8AM Tuesday PST)
   push:
     branches: 
       - master
@@ -19,7 +21,7 @@ jobs:
     strategy:
       matrix:
         sample: [Calculator, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
-        architecture: [x86, x64, arm, arm64]
+        architecture: [x86, x64]
         configuration: [Debug, Release]
     steps:
       - uses: actions/checkout@v2
