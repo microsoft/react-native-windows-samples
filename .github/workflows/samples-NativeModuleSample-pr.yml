@@ -1,0 +1,31 @@
+name: NativeModuleSample PR
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'samples/NativeModuleSample/**'
+      - '.github/workflows/samples-NativeModuleSample-ci.yml'
+      - '.github/workflows/samples-NativeModuleSample-pr.yml'
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        language: [cppwinrt, csharp]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\NativeModuleSample\${{ matrix.language }}" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install
+        working-directory: ..\..\src
+
+      - name: Build x86 Debug
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging
+        working-directory: ..\..\src
