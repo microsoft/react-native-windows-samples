@@ -1,6 +1,16 @@
 # React Native Samples and Templates
-![Weekly CI](https://github.com/microsoft/react-native-windows-samples/workflows/Weekly%20CI/badge.svg)
-![RNW Website Publish](https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20Publish/badge.svg)
+
+<p align="center">
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Samples+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/Samples%20CI/badge.svg" alt="Samples CI Status" />
+  </a>
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RNW+Website+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20CI/badge.svg" alt="RNW Website CI Status" />
+  </a>
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RNW+Website+Publish%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20Publish/badge.svg" alt="RNW Website Publish Status" />
+  </a>
+</p>
 
 This repository is a companion to the [React Native for Windows](https://github.com/microsoft/react-native-windows) repo and features sample React Native apps, components, and templates.
 

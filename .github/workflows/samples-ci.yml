@@ -1,18 +1,14 @@
-name: Weekly CI
+name: Samples CI
 
 on:
   schedule:
-    - cron: '0 15 * * 2' # 3PM Tuesday UTC (8AM Tuesday PST)
+    - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
   push:
     branches: 
       - master
     paths:
-      - '.github/workflows/samples-weekly-CI.yml'
-  pull_request:
-    branches:
-      - master
-    paths:
-      - '.github/workflows/samples-weekly-CI.yml'
+      - '.github/workflows/samples-ci.yml'
+      - 'samples/**'
 
 jobs:
   build:

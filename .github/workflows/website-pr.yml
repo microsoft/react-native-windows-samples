@@ -1,9 +1,7 @@
-name: RNW Website CI
+name: RNW Website PR
 
 on:
-  schedule:
-    - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
-  push:
+  pull_request:
     branches:
       - master
     paths:
@@ -13,8 +11,8 @@ on:
       - 'website/**'
 
 jobs:
-  website_ci:
-    name: Website CI
+  website_pr:
+    name: Website PR
     runs-on: windows-latest
     steps:
     - name: Git Checkout
