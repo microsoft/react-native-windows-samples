@@ -1,14 +1,15 @@
-name: Samples CI
+name: CameraDemo CI
 
 on:
   schedule:
     - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
   push:
-    branches: 
+    branches:
       - master
     paths:
-      - '.github/workflows/samples-ci.yml'
-      - 'samples/**'
+      - 'samples/CameraDemo/**'
+      - '.github/workflows/samples-CameraDemo-ci.yml'
+      - '.github/workflows/samples-CameraDemo-pr.yml'
 
 jobs:
   build:
@@ -16,20 +17,9 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [Calculator, CameraDemo, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
-        architecture: [x86, x64, ARM, ARM64]
+        sample: [CameraDemo]
+        architecture: [ARM] # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
         configuration: [Debug, Release]
-        exclude:
-          - sample: Calculator
-            architecture: x86
-          - sample: Calculator
-            architecture: x64
-          - sample: CameraDemo
-            architecture: x86
-          - sample: CameraDemo
-            architecture: x64
-          - sample: CameraDemo # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
-            architecture: ARM64
     steps:
       - uses: actions/checkout@v2
 
@@ -54,7 +44,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [Calculator, CameraDemo]
+        sample: [CameraDemo]
         architecture: [x86, x64]
         configuration: [Debug, Release]
     steps:
