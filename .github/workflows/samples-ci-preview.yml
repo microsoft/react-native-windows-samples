@@ -1,4 +1,7 @@
-name: Samples CI
+name: Samples CI (Preview)
+
+# The purpose of this CI is to attempt to upgrade each sample to the
+# latest preview version of RNW and see if it still builds
 
 on:
   schedule:
@@ -7,7 +10,7 @@ on:
     branches: 
       - master
     paths:
-      - '.github/workflows/samples-ci.yml'
+      - '.github/workflows/samples-ci-preview.yml'
       - 'samples/Calculator/**'
       - 'samples/CameraDemo/**'
       - 'samples/NativeModuleSample/**'
@@ -21,6 +24,9 @@ jobs:
         sample: [Calculator, CameraDemo, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
         architecture: [x86, x64, ARM, ARM64]
         configuration: [Debug, Release]
+        reactVersion: ['latest']
+        reactNativeVersion: ['latest']
+        reactNativeWindowsVersion: ['preview']
         exclude:
           - sample: Calculator
             architecture: x86
@@ -42,6 +48,18 @@ jobs:
         run: yarn install
         working-directory: ..\..\src
 
+      - name: Yarn upgrade react
+        run: yarn upgrade react@${{ matrix.reactVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native
+        run: yarn upgrade react-native@${{ matrix.reactNativeVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native-windows
+        run: yarn upgrade react-native-windows@${{ matrix.reactNativeWindowsVersion }}
+        working-directory: ..\..\src
+
       - name: Build ${{ matrix.architecture }} Debug
         if: ${{ matrix.configuration == 'Debug' }}
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
@@ -59,6 +77,9 @@ jobs:
         sample: [Calculator, CameraDemo]
         architecture: [x86, x64]
         configuration: [Debug, Release]
+        reactVersion: ['latest']
+        reactNativeVersion: ['latest']
+        reactNativeWindowsVersion: ['preview']
     steps:
       - uses: actions/checkout@v2
 
@@ -67,6 +88,18 @@ jobs:
 
       - name: Yarn install
         run: yarn install
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react
+        run: yarn upgrade react@${{ matrix.reactVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native
+        run: yarn upgrade react-native@${{ matrix.reactNativeVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native-windows
+        run: yarn upgrade react-native-windows@${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
