@@ -9,7 +9,6 @@ on:
     paths:
       - 'samples/Calculator/**'
       - '.github/workflows/samples-Calculator-ci.yml'
-      - '.github/workflows/samples-Calculator-pr.yml'
 
 jobs:
   build:

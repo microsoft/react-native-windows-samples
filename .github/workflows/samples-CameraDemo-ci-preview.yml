@@ -1,19 +1,14 @@
-name: Samples CI (Preview)
-
-# The purpose of this CI is to attempt to upgrade each sample to the
-# latest preview version of RNW and see if it still builds
+name: CameraDemo CI (Preview)
 
 on:
   schedule:
     - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
   push:
-    branches: 
+    branches:
       - master
     paths:
-      - '.github/workflows/samples-ci-preview.yml'
-      - 'samples/Calculator/**'
       - 'samples/CameraDemo/**'
-      - 'samples/NativeModuleSample/**'
+      - '.github/workflows/samples-CameraDemo-ci-preview.yml'
 
 jobs:
   build:
@@ -21,23 +16,12 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [Calculator, CameraDemo, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
-        architecture: [x86, x64, ARM, ARM64]
+        sample: [CameraDemo]
+        architecture: [ARM] # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
         configuration: [Debug, Release]
         reactVersion: ['latest']
         reactNativeVersion: ['latest']
         reactNativeWindowsVersion: ['preview']
-        exclude:
-          - sample: Calculator
-            architecture: x86
-          - sample: Calculator
-            architecture: x64
-          - sample: CameraDemo
-            architecture: x86
-          - sample: CameraDemo
-            architecture: x64
-          - sample: CameraDemo # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
-            architecture: ARM64
     steps:
       - uses: actions/checkout@v2
 
@@ -74,7 +58,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [Calculator, CameraDemo]
+        sample: [CameraDemo]
         architecture: [x86, x64]
         configuration: [Debug, Release]
         reactVersion: ['latest']

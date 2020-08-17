@@ -6,8 +6,7 @@ on:
       - master
     paths:
       - 'samples/CameraDemo/**'
-      - '.github/workflows/samples-CameraDemo-ci.yml'
-      - '.github/workflows/samples-CameraDemo-pr.yml'
+      - '.github/workflows/samples-CameraDemo-*.yml'
 
 jobs:
   build:

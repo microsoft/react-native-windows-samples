@@ -1,16 +1,14 @@
-name: Samples CI
+name: Calculator CI (Preview)
 
 on:
   schedule:
     - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
   push:
-    branches: 
+    branches:
       - master
     paths:
-      - '.github/workflows/samples-ci.yml'
       - 'samples/Calculator/**'
-      - 'samples/CameraDemo/**'
-      - 'samples/NativeModuleSample/**'
+      - '.github/workflows/samples-Calculator-ci-preview.yml'
 
 jobs:
   build:
@@ -18,20 +16,17 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [Calculator, CameraDemo, NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
+        sample: [Calculator]
         architecture: [x86, x64, ARM, ARM64]
         configuration: [Debug, Release]
+        reactVersion: ['latest']
+        reactNativeVersion: ['latest']
+        reactNativeWindowsVersion: ['preview']
         exclude:
           - sample: Calculator
             architecture: x86
           - sample: Calculator
             architecture: x64
-          - sample: CameraDemo
-            architecture: x86
-          - sample: CameraDemo
-            architecture: x64
-          - sample: CameraDemo # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
-            architecture: ARM64
     steps:
       - uses: actions/checkout@v2
 
@@ -40,6 +35,18 @@ jobs:
 
       - name: Yarn install
         run: yarn install
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react
+        run: yarn upgrade react@${{ matrix.reactVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native
+        run: yarn upgrade react-native@${{ matrix.reactNativeVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native-windows
+        run: yarn upgrade react-native-windows@${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
@@ -56,9 +63,12 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [Calculator, CameraDemo]
+        sample: [Calculator]
         architecture: [x86, x64]
         configuration: [Debug, Release]
+        reactVersion: ['latest']
+        reactNativeVersion: ['latest']
+        reactNativeWindowsVersion: ['preview']
     steps:
       - uses: actions/checkout@v2
 
@@ -67,6 +77,18 @@ jobs:
 
       - name: Yarn install
         run: yarn install
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react
+        run: yarn upgrade react@${{ matrix.reactVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native
+        run: yarn upgrade react-native@${{ matrix.reactNativeVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native-windows
+        run: yarn upgrade react-native-windows@${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
