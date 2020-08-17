@@ -1,14 +1,22 @@
 # React Native Samples and Templates
 
 <p align="center">
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Samples+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/Samples%20CI/badge.svg" alt="Samples CI Status" />
-  </a>
   <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RNW+Website+CI%22">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20CI/badge.svg" alt="RNW Website CI Status" />
   </a>
   <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RNW+Website+Publish%22">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20Publish/badge.svg" alt="RNW Website Publish Status" />
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI/badge.svg" alt="Calculator CI Status" />
+  </a>
+    <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI/badge.svg" alt="CameraDemo CI Status" />
+  </a>
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%NativeModuleSample+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI/badge.svg" alt="NativeModuleSample CI Status" />
   </a>
 </p>
 

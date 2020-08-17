@@ -9,7 +9,6 @@ on:
     paths:
       - 'samples/CameraDemo/**'
       - '.github/workflows/samples-CameraDemo-ci.yml'
-      - '.github/workflows/samples-CameraDemo-pr.yml'
 
 jobs:
   build:

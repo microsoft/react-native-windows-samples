@@ -1,4 +1,4 @@
-name: NativeModuleSample CI
+name: NativeModuleSample CI (Preview)
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
       - master
     paths:
       - 'samples/NativeModuleSample/**'
-      - '.github/workflows/samples-NativeModuleSample-ci.yml'
+      - '.github/workflows/samples-NativeModuleSample-ci-preview.yml'
 
 jobs:
   build:
@@ -19,6 +19,9 @@ jobs:
         sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
         architecture: [x86, x64, ARM, ARM64]
         configuration: [Debug, Release]
+        reactVersion: ['latest']
+        reactNativeVersion: ['latest']
+        reactNativeWindowsVersion: ['preview']
     steps:
       - uses: actions/checkout@v2
 
@@ -29,13 +32,24 @@ jobs:
         run: yarn install
         working-directory: ..\..\src
 
+      - name: Yarn upgrade react
+        run: yarn upgrade react@${{ matrix.reactVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native
+        run: yarn upgrade react-native@${{ matrix.reactNativeVersion }}
+        working-directory: ..\..\src
+
+      - name: Yarn upgrade react-native-windows
+        run: yarn upgrade react-native-windows@${{ matrix.reactNativeWindowsVersion }}
+        working-directory: ..\..\src
+
       - name: Build ${{ matrix.architecture }} Debug
         if: ${{ matrix.configuration == 'Debug' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --no-autolink --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Release
         if: ${{ matrix.configuration == 'Release' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --no-autolink --release --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
-  
