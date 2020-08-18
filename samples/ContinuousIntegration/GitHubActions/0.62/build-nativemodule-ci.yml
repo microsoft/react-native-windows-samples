@@ -11,7 +11,8 @@ on:
 
 jobs:
   # This job builds both Debug and Release versions of the native module, for
-  # x86, x64, ARM and ARM64 architectures.
+  # x86, x64, ARM and ARM64 architectures. It doesn't deploy, because deploying
+  # is for apps only.
   build:
     name: Build
     runs-on: windows-latest
