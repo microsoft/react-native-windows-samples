@@ -17,13 +17,8 @@ jobs:
     strategy:
       matrix:
         sample: [Calculator]
-        architecture: [x86, x64, ARM, ARM64]
+        architecture: [ARM, ARM64]
         configuration: [Debug, Release]
-        exclude:
-          - sample: Calculator
-            architecture: x86
-          - sample: Calculator
-            architecture: x64
     steps:
       - uses: actions/checkout@v2
 
