@@ -1,6 +1,9 @@
 # ContinuousIntegration - React Native for Windows
 
-Whether you're building a new React Native Windows project or adding Windows support to an existing React Native project, at some point you may want to set up continuous integration.
+Whether you're building a new React Native Windows project or adding Windows support to an existing React Native project, at some point you may want to set up continuous integration. This would ensure that your project and native module continue to work despite updates to either
+- the app or module itself,
+- an underlying dependency (e.g. react-native, react-native-windows), 
+- the tool chain (different Visual Studio versions, compiler)
 
 This folder includes some sample continuous integration scripts.
 
