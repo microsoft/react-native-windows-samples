@@ -25,6 +25,7 @@ The following modules have been ejected as part of the React Native [Lean Core](
 | <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | |
 | <ins>[react-native-netinfo](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 | |
 | <ins>[react-native-picker](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | |
+| <ins>[react-native-progress-view](https://github.com/react-native-community/progress-view)</ins> | 0.62 | |
 | <ins>[datetimepicker](https://github.com/react-native-community/datetimepicker)</ins> | 0.62 | |
 
 In addition to the ejected modules above, Microsoft has also added support for a set of popular and highly requested community modules:
@@ -33,6 +34,8 @@ In addition to the ejected modules above, Microsoft has also added support for a
 |:-|:-|:-|
 | <ins>[react-native-camera](https://www.github.com/react-native-community/react-native-camera)</ins> | 0.61 | |
 | <ins>[react-native-device-info](https://www.github.com/react-native-community/react-native-device-info)</ins> | 0.61 | |
+| <ins>[react-native-navigation](https://github.com/react-navigation/react-navigation)</ins> | 0.62 | |
+| <ins>[react-native-reanimated](https://github.com/software-mansion/react-native-reanimated)</ins> | 0.62[*](https://github.com/microsoft/react-native-windows/issues/4151) | |
 | <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | 0.61 | |
 | <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | 0.61 | |
 
