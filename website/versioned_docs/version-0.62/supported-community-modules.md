@@ -13,26 +13,27 @@ To view which modules are available for a specific platform, you can use the Fil
 - [Modules that support Windows](https://reactnative.directory/?windows=true)
 - [Modules that support macOS](https://reactnative.directory/?macos=true)
 
-## Supported Community Modules
-We are in the process of ejecting the components and modules that are not part of React Native [Lean Core](https://github.com/facebook/react-native/issues/23313) into their respective [community repos](https://github.com/react-native-community).
+## Microsoft-supported Modules
 
-The following have been migrated out:
+The React Native team at Microsoft has worked together with the community to add Windows and macOS support to several community modules. The modules that Microsoft has added support for are listed below. 
 
-| Name | Version Supported | 
-|:-|:-|
-| <ins>[async-storage](https://github.com/react-native-community/async-storage)</ins> | 0.61 |
-| <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 |
-| <ins>[react-native-netinfo](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 |
-| <ins>[react-native-picker](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 |
-| <ins>[datetimepicker](https://github.com/react-native-community/datetimepicker)</ins> | [in progress](https://github.com/react-native-community/datetimepicker/pull/157) |
+The following modules have been ejected as part of the React Native [Lean Core](https://github.com/facebook/react-native/issues/23313) effort:
 
-In addition, we are working on adding Windows support to popular and highly requested community modules. You can keep track on the progress of both these efforts through the [Community Modules support project board](https://github.com/microsoft/react-native-windows/projects/23). Here are some modules that React Native for Windows currently supports:
+| Name | Version Supported (Windows) | Version Supported (macOS) |
+|:-|:-|:-|
+| <ins>[async-storage](https://github.com/react-native-community/async-storage)</ins> | 0.61 | |
+| <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | |
+| <ins>[react-native-netinfo](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 | |
+| <ins>[react-native-picker](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | |
+| <ins>[datetimepicker](https://github.com/react-native-community/datetimepicker)</ins> | [in progress](https://github.com/react-native-community/datetimepicker/pull/157) | |
 
-| Name | Version Supported | 
-|:-|:-|
-| <ins>[react-native-camera](https://www.github.com/react-native-community/react-native-camera)</ins> | 0.61 |
-| <ins>[react-native-device-info](https://www.github.com/react-native-community/react-native-device-info)</ins> | 0.61 |
-| <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | 0.61 |
-| <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | 0.61 |
+In addition to the ejected modules above, Microsoft has also added support for a set of popular and highly requested community modules:
+
+| Name | Version Supported (Windows) | Version Supported (macOS) |
+|:-|:-|:-|
+| <ins>[react-native-camera](https://www.github.com/react-native-community/react-native-camera)</ins> | 0.61 | |
+| <ins>[react-native-device-info](https://www.github.com/react-native-community/react-native-device-info)</ins> | 0.61 | |
+| <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | 0.61 | |
+| <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | 0.61 | |
 
 If there is an unsupported community module that you don’t see in our roadmap, please [submit a support request](https://github.com/microsoft/react-native-windows/issues/new/choose) and let us know.
