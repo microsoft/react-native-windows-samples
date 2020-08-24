@@ -22,11 +22,13 @@ The following modules have been ejected as part of the React Native [Lean Core](
 | Name | Version Supported (Windows) | Version Supported (macOS) |
 |:-|:-|:-|
 | <ins>[async-storage](https://github.com/react-native-community/async-storage)</ins> | 0.61 | 0.61 |
-| <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | 0.61 |
+| <ins>[datetimepicker](https://github.com/react-native-community/datetimepicker)</ins> | 0.62 | ? |
+| <ins>[react-native-checkbox](https://github.com/react-native-community/react-native-checkbox)</ins> | 0.62 | ? |
 | <ins>[react-native-netinfo](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 | 0.61 |
 | <ins>[react-native-picker](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | 0.61 |
 | <ins>[react-native-progress-view](https://github.com/react-native-community/progress-view)</ins> | 0.62 | ? |
-| <ins>[datetimepicker](https://github.com/react-native-community/datetimepicker)</ins> | 0.62 | ? |
+| <ins>[react-native-slider](https://github.com/react-native-community/react-native-slider)</ins> | 0.62 | ? |
+| <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | 0.61 |
 
 In addition to the ejected modules above, Microsoft has also added support for a set of popular and highly requested community modules:
 
