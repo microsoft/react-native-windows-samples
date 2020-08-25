@@ -12,7 +12,14 @@ To develop React-Native for Windows apps, you need to install several dependenci
 To check or install dependencies, run the script [rnw-dependencies.ps1](https://github.com/microsoft/react-native-windows/blob/master/vnext/Scripts/rnw-dependencies.ps1) in an elevated PowerShell window.
 
 **Run this command:**
-`Start-Process -Verb RunAs powershell -ArgumentList @("-command", "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1'))")`
+Start an **elevated** PowerShell window and run:
+<html>
+<body>
+  <p>
+  <code id="rnwdepCmd">Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1')</code>
+  </p>
+</body>
+</html>
 
 ### Manual setup
 Alternatively, you can setup your environment manually:
