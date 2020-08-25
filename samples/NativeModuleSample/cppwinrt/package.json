@@ -28,8 +28,8 @@
     "react-native-windows": "^0.62.0-0"
   },
   "devDependencies": {
-    "react": "16.11.0",
-    "react-native": "^0.62.0-0",
-    "react-native-windows": "^0.62.0-0"
+    "react": "^16.13.1",
+    "react-native": "^0.63.2",
+    "react-native-windows": "^0.63.0-preview.4"
   }
 }
