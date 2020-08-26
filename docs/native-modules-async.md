@@ -40,7 +40,7 @@ namespace NativeModuleSample
 }
 ```
 
-This makes an object available to JavaScript via the expression `NativeModules.SimpleHttpModule`. By default it will use the name of the class as the name in JavaScript. If you don't want the name of the class to match the name in JavaScript, i.e. you want to access the module the expression `NativeModules.CustomModule`. you can pass a custom name like:
+This makes an object available to JavaScript via the expression `NativeModules.SimpleHttpModule`. By default the JavaScript name will match the C# class name. If you don't want the name of the class to match the name in JavaScript, i.e. you want to access the module via the expression `NativeModules.CustomModule`. you can pass a custom name like:
 
 ```c#
   [ReactModule("CustomModule")]
