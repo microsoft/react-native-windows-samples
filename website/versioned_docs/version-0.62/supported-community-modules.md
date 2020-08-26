@@ -49,7 +49,7 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 
 The React Native team at Microsoft is continually adding native implementations for community modules. Visit the [Community Module Requests project board](https://github.com/microsoft/react-native-windows/projects/23) to see which modules are on our radar.
 
-## Help! A module I need doesn't support Windows and/or macOS!
+## Help! A module I need doesn't work with Windows and/or macOS!
 
 If you need a module that doesn't currently have a native Windows and/or macOS implementation, please [submit an issue on GitHub](https://github.com/microsoft/react-native-windows/issues/new/choose) and let us know.
 
