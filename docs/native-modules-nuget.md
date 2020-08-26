@@ -13,7 +13,7 @@ Starting with version 0.63 the team offers experimental nuget packages that can 
 
 > Disclaimer: Nuget packages are not compatible with experimental feature [WinUI3](winui3.md).
 
-The benefit of using nuget pacakges is that you get improved compilation times for your windows project and can do your development on a less powerfull computer.
+The benefit of using NuGet packages is that you get improved compilation times for your Windows project and can develop on a less powerful computer.
 
 The other benefit will be that it will be easier to update your projects to future versions or react-native-windows.
 
