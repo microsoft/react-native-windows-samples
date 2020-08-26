@@ -22,7 +22,8 @@
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
-      "rnm-dependencies"
+      "rnm-dependencies",
+      "rn-macos-hermes"
     ]
   },
   "apis": {
