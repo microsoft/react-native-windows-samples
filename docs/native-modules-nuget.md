@@ -17,7 +17,7 @@ The benefit of using nuget pacakges is that you get improved compilation times f
 
 The other benefit will be that it will be easier to update your projects to future versions or react-native-windows.
 
-We are working on getting the packages on [NuGet.org](https://nuget.org). Untill that time the packages will be available on the [react-native-public feed](https://dev.azure.com/ms/react-native/_packaging?_a=feed&feed=react-native-public) on Azure Devops.
+We are working on getting the packages on [NuGet.org](https://nuget.org). Until that time the packages will be available on the [react-native-public feed](https://dev.azure.com/ms/react-native/_packaging?_a=feed&feed=react-native-public) on Azure Devops.
 
 # How to enable on new projects
 When you eanble react-native-windows on your new project, you can pass `--experimentalNuGetDependency true`:
