@@ -45,7 +45,7 @@ Of course all the other flags still work.
    ```
 1. Update the solution file `windows\<projectName>.sln`:
    1. Open the project in Visual Studio
-   1. Remove all projects that are not your project
+   1. Remove all projects except your own app project
 1. Edit the project file `windows\<projectName>\<projectName.csproj>`
    1. Add the the nuget flag to the first property group
       ```diff
