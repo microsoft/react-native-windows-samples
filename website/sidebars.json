@@ -6,7 +6,6 @@
       "parity-status",
       "config",
       "windowsbrush-and-theme",
-      "winui3",
       "releases"
     ],
     "Native Modules (Windows)": [
@@ -23,6 +22,9 @@
     "The Basics (MacOS)": [
       "rnm-getting-started",
       "rnm-dependencies"
+    ],
+    "Experimental": [
+      "winui3"
     ]
   },
   "apis": {
