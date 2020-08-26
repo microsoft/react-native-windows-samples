@@ -112,7 +112,7 @@ as well as update the return statement from `return content;` to:
       };
 ```
 
-But wait, we only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to the JS? That is actually take care of for you by the framework, any exception in the task will be marshalled to the JavaScript side as a javascript exception.
+But wait, we've only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to JavaScript? That is actually taken care of for you by the framework: any exception in the task will be marshalled to the JavaScript side as a JavaScript exception.
 
 That's it! If you want to see the complete `SimpleHttpModule`, see [AsyncMethodExamples.cs](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
 
