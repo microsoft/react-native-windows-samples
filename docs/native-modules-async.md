@@ -27,7 +27,7 @@ NativeModules.SimpleHttpModule.GetHttpResponse('https://microsoft.github.io/reac
 
 The native module support for C# supports the common async patterns established in C# using `async`, `await` and `Task<T>`.
 
-To expose the module to javascript you need to declare a C# class. To indicate it should be exposed to javascript, you annotate with an [attribute](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/attributes) like:
+To expose the module to JavaScript you need to declare a C# class. To indicate it should be exposed to JavaScript, you annotate with an [attribute](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/attributes) like:
 
 ```c#
 namespace NativeModuleSample
