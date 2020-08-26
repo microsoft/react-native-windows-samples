@@ -1,7 +1,8 @@
 {
   "docs": {
-    "General" : [
-      "hermes"
+    "Experimental" : [
+      "hermes",
+      "winui3"
     ],
     "The Basics (Windows)": [
       "getting-started",
@@ -9,7 +10,6 @@
       "parity-status",
       "config",
       "windowsbrush-and-theme",
-      "winui3",
       "releases"
     ],
     "Native Modules (Windows)": [
