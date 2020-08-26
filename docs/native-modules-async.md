@@ -50,7 +50,7 @@ This makes an object available to JavaScript via the expression `NativeModules.S
   }
 ```
 
-Now we want to expose the method that performs the http request. It is recommended, and it is the default, to write these functions asynchroneously. Writing async code in C# is pretty straight-forward and intuitivie with the `async` and `await` keywords and the `Task<T>` types. 
+Now we want to expose the method that performs the HTTP request. It is recommended, and it is the default, to write these functions asynchronously. Writing async code in C# is pretty straight-forward and intuitive with the `async` and `await` keywords and the `Task<T>` types. 
 
 > If you're not familiar with writing asynchronous C# code, see [Call asynchronous APIs in C# or Visual Basic](https://docs.microsoft.com/en-us/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic) and [Asynchronous programming](https://docs.microsoft.com/en-us/dotnet/csharp/async) that will teach you the concepts if you are not familiar yet.
 
