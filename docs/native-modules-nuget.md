@@ -82,5 +82,5 @@ Of course all the other flags still work.
       * Microsoft.ReactNative
       * Microsoft.ReactNative.Cxx
 
-      nuget packages. UWP packages do not support `PackageRefernece` so it is not recommended to manually add these dependencies to the project file.
+      nuget packages. C++ packages do not support `PackageReference` so it is not recommended to manually add these dependencies to the project file, instead add the dependencies via the Visual Studio IDE.
       > Note: You'll need to match the nuget version with the npm version
