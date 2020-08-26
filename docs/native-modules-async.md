@@ -80,7 +80,7 @@ You are now free to fill in the logic like:
 
 Code code:
 1. Creates a `HttpClient`.
-2. Asynchronous calls the `GetAsync` method to make an HTTP request for the uri.
+2. Asynchronously calls the `GetAsync` method to make an HTTP request for the URI.
 3. Parses the status code out of the returned `HttpResponseMessage` object.
 4. Asynchronously parses the content out of the returned `HttpResponseMessage` object.
 5. returns the content
