@@ -1,5 +1,5 @@
 ---
-id: rn-macos-hermes
+id: hermes
 title: Hermes on Windows + macOS
 ---
 

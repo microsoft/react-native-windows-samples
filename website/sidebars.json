@@ -1,5 +1,8 @@
 {
   "docs": {
+    "General" : [
+      "hermes"
+    ],
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
@@ -22,8 +25,7 @@
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
-      "rnm-dependencies",
-      "rn-macos-hermes"
+      "rnm-dependencies"
     ]
   },
   "apis": {
