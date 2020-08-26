@@ -5,7 +5,7 @@ title: Using react-native-windows NuGet packages
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-The default for react-native-windows has been to build all code from source. This includes building all the code shipped by the react-native-windows team in the npm package from source. This code can be quite large and take a long time to build as well as require a performent computer. Some configurations have problems building this code with only 8Gb of memory. Especially if you are used to working only with managed code this can be a big surprise.
+The default for react-native-windows has been to build all code from source. This includes building all the code shipped by the react-native-windows team in the npm package from source. This code can be quite large and take a long time to build as well as require a performant computer. Some configurations have problems building this code with only 8 GB of memory. Especially if you are used to working only with managed code, this can be a big surprise.
 
 Starting with version 0.63 the team offers experimental nuget packages that can be used as a replacement of compiling the sources.
 
