@@ -23,11 +23,11 @@ In this example the npm version for `react-native-windows` is `0.63.0`.  Note th
 
 # Determine and update the NuGet version
 For Windows there are two project types: C++ and C#. If you don't know which one you can look in the `windows/MyProject` folder. 
-If you find a `MyProject.vcxproj` file, you have a c++ project.
-If you find a `MyProject.csproj` file, you have a c# project.
-Each project type has different instructions. For either you can use both the Visual Studio IDE or a Text editor.
-Note: The [Visual Studio IDE](https://visualstudio.microsoft.com/vs/) only runs on windows and is not the same as [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432). 
-If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), please follow the Text editor instructions.
+If you find a `MyProject.vcxproj` file, you have a C++ project.
+If you find a `MyProject.csproj` file, you have a C# project.
+Each project type has different instructions. For either you can use both the Visual Studio IDE or a text editor.
+Note: The [Visual Studio IDE](https://visualstudio.microsoft.com/vs/) only runs on Windows and is not the same as [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432). 
+If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), please follow the text editor instructions.
 
 * C#
   * [Text editor](#c-project---text-editor)
