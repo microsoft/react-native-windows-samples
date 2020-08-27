@@ -17,7 +17,7 @@ There are several benefits to this approach:
 If you create a new project from template (the recommended way), there is nothing you need to do to take advantage of this new feature, it is enabled by default.
 
 ## Return to use reflection
-If prefer to use the previous reflection logic you can do so by editing the MSBuild project (the `.vcxproj` or `.csproj` file) and add:
+If you run into issues with compile-time code generation, you can return to previous behavior by editing the MSBuild project (the `.vcxproj` or `.csproj` file) and add:
 
 ```diff
    <PropertyGroup>
@@ -42,7 +42,7 @@ Next you will have to add the reflection-based generation. Open `ReactPackagePro
             }
    ```
 
-> Disclaimer: The reflection logic might be deprecated in the near future.
+> Disclaimer: The reflection logic may be removed in the near future.
 
 ## Upgrading old projects
 When you upgrade an existing 0.62 project to 0.63 you will already have imports for the shared files so you will get the codegen by default.
