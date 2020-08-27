@@ -3,7 +3,7 @@ id: iredboxhandler-api
 title: IRedBoxHandler
 ---
 
-RedBoxHandler provides an extension point to allow custom error handling within the react instance.  This can be useful if you have an exsiting error reporting system that you want react errors to be reported to.  The default implementation of RedBoxHandler shows error messages in a full screen error screen within the application.
+RedBoxHandler provides an extension point to allow custom error handling within the react instance.  This can be useful if you have an existing error reporting system that you want react errors to be reported to.  The default implementation of RedBoxHandler shows error messages in a full screen error screen within the application.
 
 -- Insert Screenshot here --
 
@@ -13,7 +13,7 @@ If you want to maintain the existing RedBox behaviors, and also report errors to
 RedBoxHelper::CreateDefaultHandler(Host);
 ```
 
-Sample settings up a RedBoxHander that reports errors to an external system, and displays the default RedBox experience within the application:
+Sample settings up a RedBoxHandler that reports errors to an external system, and displays the default RedBox experience within the application:
 
 ```csharp
 
@@ -87,7 +87,7 @@ This method is called when an error is initially hit.
 void UpdateError(IRedBoxErrorInfo info)
 ```
 
-This method is called when updated information about an error has been resolved.  For javascript errors, this is called if source map information was able to be resolved to provide a more useful callstack.
+This method is called when updated information about an error has been resolved.  For javascript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
 
 ## Properties
 
@@ -103,13 +103,13 @@ This property will control if errors should be reported to the handler.  If this
 
 | RedBoxErrorType       | Description     |
 | :------------- | :----------- |
-| JavaScriptFatal | A JS Exception was thrown and not catched or otherwise fatal error   |
+| JavaScriptFatal | A JS Exception was thrown and not caught or otherwise fatal error   |
 | JavaScriptSoft   | An error coming from JS that isn't fatal, such as console.error |
 | Native   | An error happened in native code |
 
 # IRedBoxErrorFrameInfo
 
-This object represents a single frame within the callstack of an error.
+This object represents a single frame within the call stack of an error.
 
 ## Properties
 
@@ -160,7 +160,7 @@ Tru if this frame is part of the internals of react-native, that is likely not u
 
 # IRedBoxErrorInfo
 
-This object provides information about the error.  For javascript errors, a callstack is also provided.
+This object provides information about the error.  For javascript errors, a call stack is also provided.
 
 ## Properties
 
@@ -188,7 +188,7 @@ This Id can be used in [UpdateError](#updateerror) to identify which error is be
 IVector<IRedBoxErrorFrameInfo> Callstack { get; };
 ```
 
-For JavaScript errors, this will contain the callstack of where the error occured.
+For JavaScript errors, this will contain the call stack of where the error occurred.
 
 
 ### `OriginalMessage`
@@ -215,7 +215,7 @@ An identifier for this error.
 string ComponentStack { get; };
 ```
 
-This will contain the component stack where the error occured, which can help identify the component that is producing the error
+This will contain the component stack where the error occurred, which can help identify the component that is producing the error
 
 
 ### `ExtraData `
@@ -237,7 +237,7 @@ Provides access to extra data attached to the error.  Adding additional data to 
 static IRedBoxHandler CreateDefaultHandler(ReactNativeHost host);
 ```
 
-This provides access to the default `IRedBoxHandler`. This can be used to display the default redbox as part of a custom RedBoxHandler implementation.
+This provides access to the default `IRedBoxHandler`. This can be used to display the default RedBox as part of a custom RedBoxHandler implementation.
 
 <!--
 

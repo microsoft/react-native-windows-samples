@@ -5,7 +5,7 @@ title: Using JSValue
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-JSValue is a native, immutable invariant value type, and is meant to hold any of the commonly used JS types: bools, ints, doubles, strings, arrays, and objects. It is provided for native developers (writing native modules or view managers) who want an equivalent to the `folly::dynamic` type that is compatible with the WinRT ABI surface provided by `Microsoft.ReactNative`.
+JSValue is a native, immutable invariant value type, and is meant to hold any of the commonly used JS types: `bool`s, `int`s, `double`s, `string`s, arrays, and objects. It is provided for native developers (writing native modules or view managers) who want an equivalent to the `folly::dynamic` type that is compatible with the WinRT ABI surface provided by `Microsoft.ReactNative`.
 
 Two JSValue implementations are provided: one for C++ developers in the `Microsoft.ReactNative.Cxx` shared project, and one for C# developers in the `Microsoft.ReactNative.SharedManaged` project.
 
@@ -46,7 +46,7 @@ JSValueObject map = new JSValueObject();
 map["something"] = 12;
 map["another_something"] = map["something"].AsInt32() * 2;
 
-// JSValueObjects may be initialzed this way
+// JSValueObjects may be initialized this way
 JSValueObject map2 = new JSValueObject()
 {
     { "something", 12 },
@@ -96,7 +96,7 @@ JSValueObject map = JSValueObject{};
 map["something"] = 12;
 map["another_something"] = map["something"].AsInt32() * 2;
 
-// JSValueObjects may be initialzed this way
+// JSValueObjects may be initialized this way
 JSValueObject map2 = JSValueObject
 {
     { "something", 12 },
@@ -126,7 +126,7 @@ JSValue dint = 42;
 
 JSValue str = "foo";
 JSValue anotherStr = str + "something"; // fine
-JSValue thisDoesntCompile = str + dint; // compilation error
+JSValue thisDoesNotCompile = str + dint; // compilation error
 ```
 
 Explicit type conversions can be requested for some of the basic types:
@@ -146,8 +146,8 @@ JSValue hugeDoub = hugeInt.AsDouble(); // hugeDoub = 9.2233720368547758E+18
 JSValue dint = 42;
 
 JSValue str = "foo";
-JSValue thisDoesntCompile = str + "something"; // compilation error
-JSValue thisDoesntCompile2 = str + dint; // compilation error
+JSValue thisDoesNotCompile = str + "something"; // compilation error
+JSValue thisDoesNotCompile2 = str + dint; // compilation error
 ```
 
 Explicit type conversions can be requested for some of the basic types:
@@ -262,7 +262,7 @@ auto pos = obj.find("no_such_key");
 
 ## Use for JSON
 
-Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creating JSON strings directy from JValues.
+Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creating JSON strings directly from JValues.
 
 ## Performance
 

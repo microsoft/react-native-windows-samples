@@ -40,7 +40,7 @@ Provides access to the IReactNotificationService, which allows easy communicatio
 bool UseDeveloperSupport { get; set; }
 ```
 
-This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox and LogBox experience and loading UI during bundle load.
+This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default RedBox and LogBox experience and loading UI during bundle load.
 
 ### ```JavaScriptBundleFile```
 
@@ -144,7 +144,7 @@ For JS engines that support bytecode generation, this controls if bytecode shoul
 bool EnableDeveloperMenu { get; set; }
 ```
 
-This controls whether various developer experience features are availiable for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
+This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
 
 > This property will be removed in a future version of **react-native-windows**
 
@@ -208,7 +208,7 @@ When loading from a bundle server (such as metro), this is the path that will be
 string BundleRootPath { get; set; }
 ```
 
-Base path used for the location of the bundle.  If not specified then "ms-appx:///Bundle/" will be used as the base path.
+Base path used for the location of the bundle.  If not specified then `ms-appx:///Bundle/` will be used as the base path.
 
 ### ```DebuggerPort```
 

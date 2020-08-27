@@ -77,7 +77,7 @@ class MyAppClass extends Component {
 The following examples cover how to access and use the Windows system theme brushes and apply them in your styles.  For more information on Windows Xaml theme resources see: 
 https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources
 
-Any brush/color value within your apps native ResourceDictionary, either from the system, or custom native resources, are availiable using `PlatformColor`.
+Any brush/color value within your apps native ResourceDictionary, either from the system, or custom native resources, are available using `PlatformColor`.
 
 #### Using theme brushes in a style
 

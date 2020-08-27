@@ -3,7 +3,7 @@ id: ireactpackagebuilder-api
 title: IReactPackageBuilder
 ---
 
-A `ReactPackageBuilder` provides the react instance with all the NativeModules and ViewManagers that will be availiable in the react instance.
+A `ReactPackageBuilder` provides the react instance with all the NativeModules and ViewManagers that will be available in the react instance.
 
 # Reference
 
