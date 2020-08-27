@@ -18,7 +18,8 @@
       "native-modules-marshalling-data",
       "native-modules-async",
       "native-modules-jsvalue",
-      "native-modules-advanced"
+      "native-modules-advanced",
+      "native-modules-csharp-codegen"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
