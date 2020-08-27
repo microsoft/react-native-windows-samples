@@ -22,7 +22,7 @@ You can find the npm version by opening `package.json` at the root of your proje
 In this example the npm version for `react-native-windows` is `0.63.0`.  Note that if you use preview, Your version might include a preview marker like `0.64.0-preview.3`. 
 
 # Determine and update the NuGet version
-For windows there are two project types: C++ and C#. If you don't know which one you can look in the `windows/MyProject` folder. 
+For Windows there are two project types: C++ and C#. If you don't know which one you can look in the `windows/MyProject` folder. 
 If you find a `MyProject.vcxproj` file, you have a c++ project.
 If you find a `MyProject.csproj` file, you have a c# project.
 Each project type has different instructions. For either you can use both the Visual Studio IDE or a Text editor.
@@ -90,4 +90,3 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
       ![Visual Studio Managed NuGet dialog with the version dropdown selected.](assets/nuget-update-select-package.png)
    1. Click `install`
 1. Close dialog and save your project
-
