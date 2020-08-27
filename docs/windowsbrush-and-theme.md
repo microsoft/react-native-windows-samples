@@ -5,7 +5,7 @@ title: Using PlatformColor and Responding to Themes
 
 ## Overview
 
-Windows supports two unique native styling/themeing behaviors: one being the dark and light theme changes and the other being adaptive brushes and system colors. This article will show you how to set up your app to listen to theme changes and use the Windows brushes when and where you want.
+Windows supports two unique native styling/theming behaviors: one being the dark and light theme changes and the other being adaptive brushes and system colors. This article will show you how to set up your app to listen to theme changes and use the Windows brushes when and where you want.
 
 ### Setting up and handling theme changed events
 
