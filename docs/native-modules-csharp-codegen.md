@@ -10,7 +10,7 @@ In previous versions of React-Native-Windows the C# interop operated by reflecti
 There are several benefits to this approach:
 * The cost of analyzing and reflecting over your code doesn't have to happen at each application startup, it only happens once at build time.
 * Improved error reporting. Because the generator operates on the source code it can provide file and line information when an error is detected. 
-* You will discover all errors at compile time, rather than when the code is execersized.
+* You will discover all errors at compile time, rather than when the code is exercised.
 
 # How to use it
 ## New projects
