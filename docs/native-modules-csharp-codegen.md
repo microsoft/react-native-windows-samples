@@ -25,7 +25,7 @@ If prefer to use the previous reflection logic you can do so by editing the MSBu
 +    <ReactNativeCodeGenEnabled>true</ReactNativeCodeGenEnabled>
    </PropertyGourp>
 ```
-Next you will have to add the reflection based generation. Open `ReactPackageProvider.cs` and make the folowing changes:
+Next you will have to add the reflection-based generation. Open `ReactPackageProvider.cs` and make the following changes:
 
 1. Add a using statment at the top fo the file
    ```diff
