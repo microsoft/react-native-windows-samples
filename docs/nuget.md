@@ -52,7 +52,7 @@ Of course all the other flags still work.
       +   <UseExperimentalNuget>true</UseExperimentalNuget>
         </PropertyGroup>
       ```
-   1. If you have a project that was created before 0.63, you should remove 
+   1. If you have a project that was created before 0.63, you should remove all references to `Microsoft.ReactNative.*` projects.
    1. Add a nuget reference to "Microsoft.ReactNative.Managed".
       You can do this either through Visual Studio's UI or by adding:
       ```xml
