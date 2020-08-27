@@ -39,7 +39,7 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
 
 ## C# project - Text editor
 1. Open `windows/MyProject/MyProject.csproj` in a text editor
-1. Find Package reference section:
+1. Find the Package reference section:
    ```xml
     <PackageReference Include="Microsoft.ReactNative.Managed">
       <Version>0.63.0</Version>
