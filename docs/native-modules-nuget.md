@@ -11,7 +11,7 @@ Starting with version 0.63 the team offers experimental nuget packages that can 
 
 > Disclaimer: There are known compatibility issues with [community modules](parity-status.md#supported-community-modules), as they still rely on building the shared code from source. So the solution still needs to have all the source projects which puts all the build performance problems back.
 
-> Disclaimer: Nuget packages are not compatible with experimental feature [WinUI3](winui3.md).
+> Disclaimer: NuGet packages are not compatible with experimental feature [WinUI3](winui3.md).
 
 The benefit of using NuGet packages is that you get improved compilation times for your Windows project and can develop on a less powerful computer.
 
