@@ -1,5 +1,5 @@
 ---
-id: native-modules-nuget
+id: nuget
 title: Using react-native-windows NuGet packages
 ---
 
@@ -17,7 +17,7 @@ The benefit of using NuGet packages is that you get improved compilation times f
 
 The other benefit will be that it will be easier to update your projects to future versions or react-native-windows.
 
-We are working on getting the packages on [NuGet.org](https://nuget.org). Until that time the packages will be available on the [react-native-public feed](https://dev.azure.com/ms/react-native/_packaging?_a=feed&feed=react-native-public) on Azure Devops.
+We are working on getting the packages on [NuGet.org](https://nuget.org). Until that time the packages will be available on the [react-native-public feed](https://dev.azure.com/ms/react-native/_packaging?_a=feed&feed=react-native-public) on Azure DevOps.
 
 # How to enable on new projects
 When you eanble react-native-windows on your new project, you can pass `--experimentalNuGetDependency true`:
@@ -47,7 +47,7 @@ Of course all the other flags still work.
    1. Open the project in Visual Studio
    1. Remove all projects except your own app project
 1. Edit the project file `windows\<projectName>\<projectName.csproj>`
-   1. Add the the nuget flag to the first property group
+   1. Add the the NuGet flag to the first property group
       ```diff
       +   <UseExperimentalNuget>true</UseExperimentalNuget>
         </PropertyGroup>
@@ -84,3 +84,6 @@ Of course all the other flags still work.
 
       nuget packages. C++ packages do not support `PackageReference` so it is not recommended to manually add these dependencies to the project file, instead add the dependencies via the Visual Studio IDE.
       > Note: You'll need to match the nuget version with the npm version
+
+# Version match
+The versions of the nuget package in your project must match the npm package version. If you need to update the nuget packages there is a separate page on [Updating NuGet packages](nuget-update.md)

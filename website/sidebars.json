@@ -26,7 +26,8 @@
     ],
     "Experimental" : [
       "hermes",
-      "native-modules-nuget",
+      "nuget",
+      "nuget-update",
       "winui3"
     ]
   },
