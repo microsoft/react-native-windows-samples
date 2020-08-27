@@ -1,5 +1,5 @@
 ---
-id: native-modules-nuget
+id: nuget
 title: Using react-native-windows NuGet packages
 ---
 
@@ -84,3 +84,6 @@ Of course all the other flags still work.
 
       nuget packages. C++ packages do not support `PackageReference` so it is not recommended to manually add these dependencies to the project file, instead add the dependencies via the Visual Studio IDE.
       > Note: You'll need to match the nuget version with the npm version
+
+# Version match
+The versions of the nuget package in your project must match the npm package version. If you need to update the nuget packages there is a separate page on [Updating NuGet packages](nuget-update.md)
