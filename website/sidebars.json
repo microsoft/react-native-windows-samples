@@ -1,15 +1,11 @@
 {
   "docs": {
-    "Experimental" : [
-      "nuget"
-    ],
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
       "parity-status",
       "config",
       "windowsbrush-and-theme",
-      "winui3",
       "releases"
     ],
     "Native Modules (Windows)": [
@@ -27,6 +23,10 @@
     "The Basics (MacOS)": [
       "rnm-getting-started",
       "rnm-dependencies"
+    ],
+    "Experimental" : [
+      "native-modules-nuget",
+      "winui3"
     ]
   },
   "apis": {
