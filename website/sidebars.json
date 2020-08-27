@@ -19,7 +19,7 @@
       "native-modules-async",
       "native-modules-jsvalue",
       "native-modules-advanced",
-      "native-modules-nuget"
+      "native-modules-csharp-codegen"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
