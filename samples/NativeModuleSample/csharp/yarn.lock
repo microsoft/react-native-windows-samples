@@ -1034,10 +1034,10 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
-"@react-native-windows/cli@0.63.0-preview.3":
-  version "0.63.0-preview.3"
-  resolved "https://registry.yarnpkg.com/@react-native-windows/cli/-/cli-0.63.0-preview.3.tgz#e85ea51e0f8051504e0228bcee4a08f380e064f4"
-  integrity sha512-16TXQaYKOJJtQnngrX02w9ZH7lDfVSq40OlID93YOomSTXoX3fWGsNQ218XVPHpHo2WnjSLyib/E30AIkedbvQ==
+"@react-native-windows/cli@0.63.0":
+  version "0.63.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/cli/-/cli-0.63.0.tgz#b5deab822edaec3860aec16360c49dcc4c4563da"
+  integrity sha512-r7/plSNPH6KUCb9Ow6tg/gC2Hzb4tp0lTDPsH55Tx0Zoholmr/6/7NzQuunKihmrliwj7VZZdqDY0BlNnnD1FA==
   dependencies:
     chalk "^3.0.0"
     cli-spinners "^2.2.0"
@@ -3868,13 +3868,13 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"
   integrity sha512-gbBVYR2p8mnriqAwWx9LbuUrShnAuSCNnuPGyc7GJrMVQtPDAh8iLpv7FRuMPFb56KkaVZIYSz1PrjI9q0QPCw==
 
-react-native-windows@^0.63.0-preview.4:
-  version "0.63.0-preview.4"
-  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.0-preview.4.tgz#3e520dfcd14a1d0284accdce0bbae330dcb0d382"
-  integrity sha512-RUQdNcaLVcC8pNag6J6+maQOOvZuk7WPmOmRAxuCQpSwpwYHujLsbAbpWXQoI5U2KprCLi1pNKdiutLDhiLEQA==
+react-native-windows@^0.63.0-0:
+  version "0.63.0"
+  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.0.tgz#640968f773af62b968c6398df08347c1663a8d16"
+  integrity sha512-+MgvzrhmZAdvDv0ytBsnfVc5aP503pn+dNWV8K1lv2/AmnxejWTJxfkOibrIPJOyxM2zkti9aKq32YciAzpfjQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@react-native-windows/cli" "0.63.0-preview.3"
+    "@react-native-windows/cli" "0.63.0"
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"

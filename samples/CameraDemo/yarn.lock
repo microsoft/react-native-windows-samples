@@ -1125,10 +1125,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz#e42b1bef12d2415411519fd528e64b593b1363dc"
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
-"@react-native-windows/cli@0.63.0-preview.3":
-  version "0.63.0-preview.3"
-  resolved "https://registry.yarnpkg.com/@react-native-windows/cli/-/cli-0.63.0-preview.3.tgz#e85ea51e0f8051504e0228bcee4a08f380e064f4"
-  integrity sha512-16TXQaYKOJJtQnngrX02w9ZH7lDfVSq40OlID93YOomSTXoX3fWGsNQ218XVPHpHo2WnjSLyib/E30AIkedbvQ==
+"@react-native-windows/cli@0.63.0":
+  version "0.63.0"
+  resolved "https://registry.yarnpkg.com/@react-native-windows/cli/-/cli-0.63.0.tgz#b5deab822edaec3860aec16360c49dcc4c4563da"
+  integrity sha512-r7/plSNPH6KUCb9Ow6tg/gC2Hzb4tp0lTDPsH55Tx0Zoholmr/6/7NzQuunKihmrliwj7VZZdqDY0BlNnnD1FA==
   dependencies:
     chalk "^3.0.0"
     cli-spinners "^2.2.0"
@@ -5529,12 +5529,12 @@ react-native-camera@^3.37.0:
     prop-types "^15.6.2"
 
 react-native-windows@^0.63.0-0:
-  version "0.63.0-preview.4"
-  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.0-preview.4.tgz#3e520dfcd14a1d0284accdce0bbae330dcb0d382"
-  integrity sha512-RUQdNcaLVcC8pNag6J6+maQOOvZuk7WPmOmRAxuCQpSwpwYHujLsbAbpWXQoI5U2KprCLi1pNKdiutLDhiLEQA==
+  version "0.63.0"
+  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.0.tgz#640968f773af62b968c6398df08347c1663a8d16"
+  integrity sha512-+MgvzrhmZAdvDv0ytBsnfVc5aP503pn+dNWV8K1lv2/AmnxejWTJxfkOibrIPJOyxM2zkti9aKq32YciAzpfjQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@react-native-windows/cli" "0.63.0-preview.3"
+    "@react-native-windows/cli" "0.63.0"
     abort-controller "^3.0.0"
     anser "^1.4.9"
     base64-js "^1.1.2"
@@ -6438,10 +6438,17 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-supports-color@^7.0.0, supports-color@^7.1.0:
+supports-color@^7.0.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-7.1.0.tgz#68e32591df73e25ad1c4b49108a2ec507962bfd1"
   integrity sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
+  dependencies:
+    has-flag "^4.0.0"
+
+supports-color@^7.1.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
+  integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
 
