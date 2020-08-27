@@ -1,9 +1,5 @@
 {
   "docs": {
-    "Experimental" : [
-      "hermes",
-      "winui3"
-    ],
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
@@ -29,6 +25,7 @@
       "rnm-dependencies"
     ],
     "Experimental" : [
+      "hermes",
       "native-modules-nuget",
       "winui3"
     ]
