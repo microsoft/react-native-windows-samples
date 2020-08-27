@@ -15,9 +15,10 @@ To check or install dependencies, run the script [rnw-dependencies.ps1](https://
 Start an **elevated** PowerShell window and run:
 <html>
 <body>
-  <p>
-  <code id="rnwdepCmd">Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1')</code>
-  </p>
+  <div>
+    <div style="padding: 10px; font-family: monospace; font-size: 9pt; display: inline-block; width: 90%; background: #dddddd; border-radius: 6px;" id="rnwdepCmd">Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('<font color="#2020cc">https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1</font>')</div>
+    <inline style="font-size: 24pt; cursor: pointer" onClick="javascript:navigator.clipboard.writeText(document.getElementById('rnwdepCmd').innerText)">📋</inline>
+  </div>
 </body>
 </html>
 
