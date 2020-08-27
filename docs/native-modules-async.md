@@ -78,7 +78,7 @@ You are now free to fill in the logic like:
       return content;
 ```
 
-Code code:
+The code takes the following steps:
 1. Creates a `HttpClient`.
 2. Asynchronously calls the `GetAsync` method to make an HTTP request for the URI.
 3. Parses the status code out of the returned `HttpResponseMessage` object.
