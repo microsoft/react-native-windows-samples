@@ -62,7 +62,7 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
 
    ![Visual Studio Managed NuGet dialog with the version dropdown selected.](assets/nuget-update-select-package.png)
 1. Click `install`
-1. Close dialog and save your project
+1. Close the dialog and save your project
 
 ## C++ project - Text editor
 1. Open `windows/MyProject/packages.config` in a text editor.
