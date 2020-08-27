@@ -1,5 +1,8 @@
 {
   "docs": {
+    "Experimental" : [
+      "nuget"
+    ],
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
