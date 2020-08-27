@@ -17,7 +17,7 @@ There are several benefits to this approach:
 If you create a new project from template (the recommended way), there is nothing you need to do to take advantage of this new feature, it is enabled by default.
 
 ## Return to use reflection
-If prefer to use the previous reflection logic you can do so by edditting the msbuild project and add:
+If prefer to use the previous reflection logic you can do so by editing the MSBuild project (the `.vcxproj` or `.csproj` file) and add:
 
 ```diff
    <PropertyGroup>
