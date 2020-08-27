@@ -100,7 +100,7 @@ You should now have a new `MyLibrary` solution file at `.\MyLibrary\MyLibrary.sl
 
 Additionally, for C++/WinRT projects, you'll need to change the following:
 
-1. Right click on the project and choose `Manage Nuget Packages...`
+1. Right click on the project and choose `Manage NuGet Packages...`
     1. Select version 2.0.200316.3 for Microsoft.Windows.CppWinRT package.
 1. Right-click on the project and choose `Properties`
     1. Under `Linker > Windows Metadata` set `Generate Windows Metadata` to `Yes`.
@@ -229,7 +229,7 @@ If you are working on an existing module that already has iOS and Android sample
 8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
-We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium), there's also a comprehensive [course on Pluralsight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [react-native-webview](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
+We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium), there's also a comprehensive [course on PluralSight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [react-native-webview](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
 
 ### Setup CI (continuous integration) pipeline for your module
 

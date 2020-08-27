@@ -30,7 +30,7 @@ title: IJSValueReader
 bool GetNextObjectProperty(out string propertyName);
 ```
 
-Returns if there is another property in the current object.  If there is ``propertyName`` will proide the name of the property.
+Returns if there is another property in the current object.  If there is ``propertyName`` will provide the name of the property.
 
 ### `GetNextArrayItem()`
 

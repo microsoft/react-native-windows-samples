@@ -5,7 +5,7 @@ title: Using PlatformColor and Responding to Themes
 
 ## Overview
 
-Windows supports two unique native styling/theming behaviors: one being the dark and light theme changes and the other being adaptive brushes and system colors. This article will show you how to set up your app to listen to theme changes and use the Windows brushes when and where you want.
+Windows supports two unique native styling/themeing behaviors: one being the dark and light theme changes and the other being adaptive brushes and system colors. This article will show you how to set up your app to listen to theme changes and use the Windows brushes when and where you want.
 
 ### Setting up and handling theme changed events
 
@@ -77,7 +77,7 @@ class MyAppClass extends Component {
 The following examples cover how to access and use the Windows system theme brushes and apply them in your styles.  For more information on Windows Xaml theme resources see: 
 https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources
 
-Any brush/color value within your apps native ResourceDictionary, either from the system, or custom native resources, are availiable using `PlatformColor`.
+Any brush/color value within your apps native ResourceDictionary, either from the system, or custom native resources, are available using `PlatformColor`.
 
 #### Using theme brushes in a style
 

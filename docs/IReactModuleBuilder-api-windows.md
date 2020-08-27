@@ -23,7 +23,7 @@ An initializer is a method that will be called when the react instance starts.  
 void AddConstantProvider(ConstantProviderDelegate constantProvider);
 ```
 
-The JSValue writen by the [ConstantProviderDelegate](#constantproviderdelegate) will be availiable as constants on the NativeMdodule is JavaScript.
+The JSValue written by the [ConstantProviderDelegate](#constantproviderdelegate) will be available as constants on the native module is JavaScript.
 
 ### `AddMethod()`
 

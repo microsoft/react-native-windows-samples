@@ -14,12 +14,12 @@ We are working on adding **WinUI 3** support for RNW and have made some good pro
 As of July 22th 2020, we support the **WinUI 3.0 Preview 2** release for:
 
 * Creating a new RNW app with either C++/WinRT or C#. 
-* The Playground app is able to build a `WinUI 3`-targetting version.
+* The Playground app is able to build a `WinUI 3`-targeting version.
 
 ## Not yet supported
 
 * **NPM package** - we need to create NPM package for **WinUI 3**-enabled `Microsoft.ReactNative`.
-* **Native modules support** - we need to figure out how community Native Modules will factor into using **WinUI 3** - right now if you try to load system XAML (with or without WinUI 2.x) and WinUI 3, we will crash the process, since this likely would lead to harder to diagnose issues in trying to interoperate between the two flavors of the framework.
+* **Native modules support** - we need to figure out how community Native Modules will factor into using **WinUI 3** - right now if you try to load system XAML (with or without WinUI 2.x) and WinUI 3, we will crash the process, since this likely would lead to harder to diagnose issues in trying to inter-operate between the two flavors of the framework.
 
 ## How to create a RNW-on-WinUI 3 app
 

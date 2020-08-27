@@ -1,6 +1,6 @@
 ---
 id: native-modules-csharp-codegen
-title: Compile time code generaton for C#
+title: Compile time code generation for C#
 ---
 
 >**This documentation and the underlying platform code is a work in progress.**

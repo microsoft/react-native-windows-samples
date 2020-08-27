@@ -16,7 +16,7 @@ This interface is to be implemented by package creators.
 void CreatePackage(IReactPackageBuilder packageBuilder);
 ```
 
-Provides a [`IReactPackageBuilder`](IReactPackageBuilder-api-windows.md) which the app or package will use to register custom NativeModule and ViewManagers.
+Provides a [`IReactPackageBuilder`](IReactPackageBuilder-api-windows.md) which the app or package will use to register custom native modules and ViewManagers.
 
 <!-- 
 // Copyright (c) Microsoft Corporation.
