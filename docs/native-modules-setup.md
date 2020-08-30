@@ -22,7 +22,7 @@ Once your development environment has been correctly configured, you have severa
 
 - [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-project)
 - [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
-- [Add Windows support to an existing community library](#adding-react-native-windows-to-the-visual-studio-solution)
+- [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
 ## Referencing Windows APIs within a React Native for Windows project
 
