@@ -31,7 +31,7 @@ jobs:
         working-directory: ..\..\src
 
       - name: Upgrade react-native-windows
-        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactVersion }}
+        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
