@@ -105,9 +105,9 @@ const styles = StyleSheet.create({
 });
 ```
 
-**Note:** That the system accent colors are `Color` objects at the native layer, whereas the other examples showed the use of theme brushes are `SolidColorBrush` objects. This means that the `SolidColoBrushes` will adapt automatically based on the Theme (Light, Dark or High Contrast), while the `Colors` will remain static.
+**Note:** That the system accent colors are `Color` objects at the native layer, whereas the other examples showed the use of theme brushes are `SolidColorBrush` objects. This means that the `SolidColorBrushes` will adapt automatically based on the Theme (Light, Dark or High Contrast), while the `Colors` will remain static.
 
-### Using windowsbrush to access Reveal and Acrylic
+### Using PlatformColor to access Reveal and Acrylic
 
 Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `PlatformColor` API we provide on the JavaScript layer for other brushes.
 
@@ -115,7 +115,7 @@ Two awesome features about the native XAML platform are Reveal and Acrylic. Thes
 
 The `PlatformColor` api gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
 
-<img src="assets/rnw-acrylic-surface.png" width="277" height="227"/>
+![AcrylicBrush](assets/rnw-acrylic-surface.png)
 
 ```JSX
 const styles = StyleSheet.create({
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
 
 Reveal can be applied to surfaces exactly the same way that Acrylic and other system brushes are.
 
-<img src="assets/reveal-surface-animation.gif" width="200" height="180"/>
+![RevealBrush](assets/reveal-surface-animation.gif)
 
 ```JSX
 const styles = StyleSheet.create({
