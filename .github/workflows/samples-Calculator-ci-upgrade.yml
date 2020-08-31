@@ -1,4 +1,4 @@
-name: CameraDemo CI (Preview)
+name: Calculator CI (Upgrade)
 
 on:
   schedule:
@@ -7,8 +7,7 @@ on:
     branches:
       - master
     paths:
-      - 'samples/CameraDemo/**'
-      - '.github/workflows/samples-CameraDemo-ci-preview.yml'
+      - '.github/workflows/samples-Calculator-ci-upgrade.yml'
 
 jobs:
   build:
@@ -16,10 +15,10 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [CameraDemo]
-        architecture: [ARM] # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
+        sample: [Calculator]
+        architecture: [ARM, ARM64]
         configuration: [Debug, Release]
-        reactNativeWindowsVersion: ['latest', 'preview']
+        reactNativeWindowsVersion: ['latest'] # Add 'preview' here when a new preview is available
     steps:
       - uses: actions/checkout@v2
 
@@ -52,10 +51,10 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        sample: [CameraDemo]
+        sample: [Calculator]
         architecture: [x86, x64]
         configuration: [Debug, Release]
-        reactNativeWindowsVersion: ['latest', 'preview']
+        reactNativeWindowsVersion: ['latest'] # Add 'preview' here when a new preview is available
     steps:
       - uses: actions/checkout@v2
 

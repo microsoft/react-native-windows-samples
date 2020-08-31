@@ -9,6 +9,14 @@ param(
 
 Write-Host "UpgradeSmokeTest -RnwVersion $RnwVersion"
 
+Write-Host "Verifying react-native-windows is out of date..."
+npm outdated react-native-windows
+
+if ($LastExitCode -eq 0) {
+    Write-Host "react-native-windows is already up-to-date."
+    exit 1
+}
+
 [string]$ReactVersion = npm info react-native-windows@$RnwVersion devDependencies.react
 Write-Host "RNW $RnwVersion depends on react@$ReactVersion"
 
