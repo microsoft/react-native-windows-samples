@@ -42,7 +42,7 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 |:-|:-|:-|
 | <ins>[react-native-camera](https://www.github.com/react-native-community/react-native-camera)</ins> | 0.61 | x |
 | <ins>[react-native-device-info](https://www.github.com/react-native-community/react-native-device-info)</ins> | 0.61 | [In Progress](https://github.com/react-native-community/react-native-device-info/pull/1057) |
-| <ins>[react-native-navigation](https://github.com/react-navigation/react-navigation)</ins> | 0.62 | [Partial](https://github.com/react-navigation/react-navigation/pull/8570) |
+| <ins>[react-navigation](https://github.com/react-navigation/react-navigation)</ins> | 0.62 | [Partial](https://github.com/react-navigation/react-navigation/pull/8570) |
 | <ins>[react-native-reanimated](https://github.com/software-mansion/react-native-reanimated)</ins> | [Partial](https://github.com/microsoft/react-native-windows/issues/4151) | x |
 | <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | 0.61 | x |
 | <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | 0.61 | x |
