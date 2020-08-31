@@ -9,7 +9,7 @@ The default for react-native-windows has been to build all code from source. Thi
 
 Starting with version 0.63 the team offers experimental NuGet packages that can be used as a replacement of compiling the sources.
 
-> Disclaimer: There are known compatibility issues with [community modules](parity-status.md#supported-community-modules), as they still rely on building the shared code from source. So the solution still needs to have all the source projects which puts all the build performance problems back.
+> Disclaimer: There are known compatibility issues with [community modules](supported-community-modules.md), as they still rely on building the shared code from source. So the solution still needs to have all the source projects which puts all the build performance problems back.
 
 > Disclaimer: NuGet packages are not compatible with experimental feature [WinUI3](winui3.md).
 
