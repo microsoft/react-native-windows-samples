@@ -26,5 +26,5 @@ jobs:
         working-directory: ..\..\src
 
       - name: Build x86 Debug
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging
         working-directory: ..\..\src

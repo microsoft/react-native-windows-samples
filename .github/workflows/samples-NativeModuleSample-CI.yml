@@ -31,11 +31,11 @@ jobs:
 
       - name: Build ${{ matrix.architecture }} Debug
         if: ${{ matrix.configuration == 'Debug' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Release
         if: ${{ matrix.configuration == 'Release' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager--no-autolink  --logging --release --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
   
