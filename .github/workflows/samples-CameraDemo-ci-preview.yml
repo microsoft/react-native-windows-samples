@@ -61,9 +61,7 @@ jobs:
         sample: [CameraDemo]
         architecture: [x86, x64]
         configuration: [Debug, Release]
-        reactVersion: ['latest']
-        reactNativeVersion: ['latest']
-        reactNativeWindowsVersion: ['preview']
+        reactNativeWindowsVersion: ['latest', 'preview']
     steps:
       - uses: actions/checkout@v2
 
@@ -74,16 +72,12 @@ jobs:
         run: yarn install
         working-directory: ..\..\src
 
-      - name: Yarn upgrade react
-        run: yarn upgrade react@${{ matrix.reactVersion }}
+      - name: Upgrade react-native-windows
+        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactVersion }}
         working-directory: ..\..\src
 
-      - name: Yarn upgrade react-native
-        run: yarn upgrade react-native@${{ matrix.reactNativeVersion }}
-        working-directory: ..\..\src
-
-      - name: Yarn upgrade react-native-windows
-        run: yarn upgrade react-native-windows@${{ matrix.reactNativeWindowsVersion }}
+      - name: Run react-native-windows-init
+        run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
