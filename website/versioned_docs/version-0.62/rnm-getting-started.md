@@ -17,7 +17,7 @@ Make sure you have installed all the [development dependencies](https://microsof
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```
-npx react-native init <projectName> --version 0.61.5
+npx react-native init <projectName> --version 0.62
 ```
 
 ### Navigate into this newly created directory
