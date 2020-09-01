@@ -1,0 +1,63 @@
+{
+  "version-0.63-docs": {
+    "The Basics (Windows)": [
+      "version-0.63-getting-started",
+      "version-0.63-rnw-dependencies",
+      "version-0.63-parity-status",
+      "version-0.63-config",
+      "version-0.63-windowsbrush-and-theme",
+      "version-0.63-releases"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.63-native-modules",
+      "version-0.63-view-managers",
+      "version-0.63-native-modules-setup",
+      "version-0.63-native-modules-using",
+      "version-0.63-native-modules-autolinking",
+      "version-0.63-native-modules-marshalling-data",
+      "version-0.63-native-modules-async",
+      "version-0.63-native-modules-jsvalue",
+      "version-0.63-native-modules-advanced",
+      "version-0.63-native-modules-csharp-codegen"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.63-rnm-getting-started",
+      "version-0.63-rnm-dependencies"
+    ],
+    "Experimental": [
+      "version-0.63-hermes",
+      "version-0.63-nuget",
+      "version-0.63-nuget-update",
+      "version-0.63-winui3"
+    ]
+  },
+  "version-0.63-apis": {
+    "Components (Windows)": [
+      "version-0.63-flyout-component",
+      "version-0.63-glyph-component",
+      "version-0.63-popup-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.63-apptheme-api",
+      "version-0.63-ikeyboardprops-api",
+      "version-0.63-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.63-ijsvaluereader-api",
+      "version-0.63-ijsvaluewriter-api",
+      "version-0.63-ireactcontext-api",
+      "version-0.63-ireactdispatcher-api",
+      "version-0.63-ireactmodulebuilder-api",
+      "version-0.63-ireactnonabivalue-api",
+      "version-0.63-ireactpackagebuilder-api",
+      "version-0.63-ireactpackageprovider-api",
+      "version-0.63-ireactpropertybag-api",
+      "version-0.63-iredboxhandler-api",
+      "version-0.63-iviewmanager-api",
+      "version-0.63-reactapplication-api",
+      "version-0.63-reactinstancesettings-api",
+      "version-0.63-reactnativehost-api",
+      "version-0.63-xamluiservice-api"
+    ]
+  }
+}
