@@ -13,7 +13,12 @@ jobs:
   upgradeCheck:
     name: Upgrade Check
     runs-on: windows-latest
-    continue-on-error: true
+    outputs:
+      result: ${{ steps.env.result }}
+    strategy:
+      matrix:
+        sample: [Calculator]
+        reactNativeWindowsVersion: ['latest']  
     steps:
       - uses: actions/checkout@v2
 
@@ -25,13 +30,20 @@ jobs:
         working-directory: ..\..\src
 
       - name: Upgrade react-native-windows
+        id: upgrade
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
+      
+      - name: Set Result
+        uses: allenevans/set-env@v1.0.0
+        if: failure()
+        with:
+          result: 'failure'
   build:
     name: Build
     runs-on: windows-latest
     needs: [upgradeCheck]
-    if: needs.upgradeCheck.outputs.status == 'success'
+    if: needs.upgradeCheck.outputs.result != 'failure'
     strategy:
       matrix:
         sample: [Calculator]
@@ -69,7 +81,7 @@ jobs:
     name: Build and Deploy
     runs-on: windows-latest
     needs: [upgradeCheck]
-    if: needs.upgradeCheck.outputs.status == 'success'
+    if: needs.upgradeCheck.outputs.result != 'failure'
     strategy:
       matrix:
         sample: [Calculator]
