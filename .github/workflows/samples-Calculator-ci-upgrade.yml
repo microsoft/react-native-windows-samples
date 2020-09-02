@@ -31,6 +31,7 @@ jobs:
     name: Build
     runs-on: windows-latest
     needs: [upgradeCheck]
+    if: needs.upgradeCheck.outputs.status == 'success'
     strategy:
       matrix:
         sample: [Calculator]
@@ -68,6 +69,7 @@ jobs:
     name: Build and Deploy
     runs-on: windows-latest
     needs: [upgradeCheck]
+    if: needs.upgradeCheck.outputs.status == 'success'
     strategy:
       matrix:
         sample: [Calculator]
