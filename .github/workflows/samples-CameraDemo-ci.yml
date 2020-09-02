@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         sample: [CameraDemo]
-        architecture: [ARM] # Can't build ARM64 until https://github.com/react-native-community/react-native-camera/issues/2944
+        architecture: [ARM, ARM64]
         configuration: [Debug, Release]
     steps:
       - uses: actions/checkout@v2
