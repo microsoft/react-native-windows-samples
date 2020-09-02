@@ -10,35 +10,9 @@ on:
       - '.github/workflows/samples-NativeModuleSample-ci-upgrade.yml'
 
 jobs:
-  upgradeCheck:
-    name: Upgrade Check
-    runs-on: windows-latest
-    outputs:
-      result: ${{ steps.upgrade.outcome }}
-    strategy:
-      matrix:
-        sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
-        reactNativeWindowsVersion: ['latest'] # Add 'preview' here when a new preview is available
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Relocate to reduce long paths
-        run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
-
-      - name: Yarn install
-        run: yarn install
-        working-directory: ..\..\src
-
-      - name: Upgrade react-native-windows
-        id: upgrade
-        continue-on-error: true
-        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
-        working-directory: ..\..\src
   build:
     name: Build
     runs-on: windows-latest
-    needs: [upgradeCheck]
-    if: needs.upgradeCheck.outputs.result == 'success'
     strategy:
       matrix:
         sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
@@ -56,15 +30,17 @@ jobs:
         working-directory: ..\..\src
 
       - name: Upgrade react-native-windows
+        id: upgrade
+        continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
-        if: ${{ matrix.configuration == 'Debug' }}
+        if: ${{ steps.upgrade.outcome == 'success' && matrix.configuration == 'Debug' }}
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Release
-        if: ${{ matrix.configuration == 'Release' }}
+        if: ${{ steps.upgrade.outcome == 'success' && matrix.configuration == 'Release' }}
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --release --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
