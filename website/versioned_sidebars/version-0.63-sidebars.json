@@ -18,7 +18,8 @@
       "version-0.63-native-modules-async",
       "version-0.63-native-modules-jsvalue",
       "version-0.63-native-modules-advanced",
-      "version-0.63-native-modules-csharp-codegen"
+      "version-0.63-native-modules-csharp-codegen",
+      "version-0.63-supported-community-modules"
     ],
     "The Basics (MacOS)": [
       "version-0.63-rnm-getting-started",
