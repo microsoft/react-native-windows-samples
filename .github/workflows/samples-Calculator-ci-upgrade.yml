@@ -14,7 +14,7 @@ jobs:
     name: Upgrade Check
     runs-on: windows-latest
     outputs:
-      result: ${{ steps.upgrade.conclusion }}
+      result: ${{ steps.upgrade.outcome }}
     strategy:
       matrix:
         sample: [Calculator]
@@ -31,12 +31,9 @@ jobs:
 
       - name: Upgrade react-native-windows
         id: upgrade
+        continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
-          
-      - name: Force Successful Exit
-        if: failure()
-        run: exit 0
   build:
     name: Build
     runs-on: windows-latest
