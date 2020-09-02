@@ -5521,10 +5521,10 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-camera@^3.37.0:
-  version "3.37.0"
-  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.37.0.tgz#fd0df704392735ede5935627b6358be379e97e27"
-  integrity sha512-NlhQurRUgjHEFdu0XPxzTlhBY5p4o7iqCBYD7mJsh+sMLTNqu8STklm/avMd0S/6XMS7zsjKFY3eyKGuZfZR3Q==
+react-native-camera@^3.38.0:
+  version "3.38.0"
+  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.38.0.tgz#d51bd78306c185d8210cd89c6cf8d8b1b4cc1294"
+  integrity sha512-mczUap9TWHeFuGOY5fCoMnPWv704BiPyGNU5p4filB/XuQL4/M93Teqgw6gWMdd8KfElY9uqH4QNtHruJ67A5A==
   dependencies:
     prop-types "^15.6.2"
 

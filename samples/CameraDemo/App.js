@@ -151,7 +151,7 @@ class App extends PureComponent {
 
   recordVideo = async () => {
     if (this.camera) {
-      const options = { maxDuration: 3600 };
+      const options = { };
 
       var isRecording = await this.camera.isRecording();
       if (!isRecording) {
