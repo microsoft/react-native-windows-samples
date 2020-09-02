@@ -14,11 +14,11 @@ jobs:
     name: Upgrade Check
     runs-on: windows-latest
     outputs:
-      result: ${{ steps.env.result }}
+      result: ${{ steps.upgrade.conclusion }}
     strategy:
       matrix:
         sample: [Calculator]
-        reactNativeWindowsVersion: ['latest']  
+        reactNativeWindowsVersion: ['latest'] # Add 'preview' here when a new preview is available
     steps:
       - uses: actions/checkout@v2
 
@@ -33,17 +33,15 @@ jobs:
         id: upgrade
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
-      
-      - name: Set Result
-        uses: allenevans/set-env@v1.0.0
+          
+      - name: Force Successful Exit
         if: failure()
-        with:
-          result: 'failure'
+        run: exit 0
   build:
     name: Build
     runs-on: windows-latest
     needs: [upgradeCheck]
-    if: needs.upgradeCheck.outputs.result != 'failure'
+    if: needs.upgradeCheck.outputs.result == 'success'
     strategy:
       matrix:
         sample: [Calculator]
@@ -81,7 +79,7 @@ jobs:
     name: Build and Deploy
     runs-on: windows-latest
     needs: [upgradeCheck]
-    if: needs.upgradeCheck.outputs.result != 'failure'
+    if: needs.upgradeCheck.outputs.result == 'success'
     strategy:
       matrix:
         sample: [Calculator]
