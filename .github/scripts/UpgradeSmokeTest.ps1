@@ -100,7 +100,7 @@ Write-Host "RNW $RnwVersion depends on react@$ReactVersion"
 Write-Host "RNW $RnwVersion depends on react-native@$ReactNativeVersion"
 
 Write-Host "Upgrading to react@$ReactVersion..."
-yarn upgrade react@$ReactVersion
+yarn.cmd upgrade react@$ReactVersion
 
 if ($LastExitCode -ne 0) {
     Write-Error "Failed to upgrade to react @$ReactVersion"
@@ -108,7 +108,7 @@ if ($LastExitCode -ne 0) {
 }
 
 Write-Host "Upgrading to react-native@$ReactNativeVersion..."
-yarn upgrade react-native@$ReactNativeVersion
+yarn.cmd upgrade react-native@$ReactNativeVersion
 
 if ($LastExitCode -ne 0) {
     Write-Error "Failed to upgrade to react-native@$ReactNativeVersion"
@@ -116,7 +116,7 @@ if ($LastExitCode -ne 0) {
 }
 
 Write-Host "Upgrading to react-native-windows@$RnwVersion..."
-yarn upgrade react-native-windows@$RnwVersion
+yarn.cmd upgrade react-native-windows@$RnwVersion
 
 if ($LastExitCode -ne 0) {
     Write-Error "Failed to upgrade to react-native-windows@$RnwVersion"
