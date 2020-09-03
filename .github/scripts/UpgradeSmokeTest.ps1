@@ -13,8 +13,8 @@ Function Compare-SemVer([string]$Left, [string]$Right) {
         return 0
     }
 
-    $LeftSplit = $Left.Split(@('.','-'))
-    $RightSplit = $Right.Split(@('.','-'))
+    $LeftSplit = [System.Text.RegularExpressions.Regex]::Split($Left, "\.|-")
+    $RightSplit = [System.Text.RegularExpressions.Regex]::Split($Right, "\.|-")
 
     [int]$Result = [int]($LeftSplit[0]) - [int]($RightSplit[0])  # Major compare
     if ($Result -eq 0) {
