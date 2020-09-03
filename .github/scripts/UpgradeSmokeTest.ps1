@@ -16,17 +16,17 @@ Function Compare-SemVer([string]$Left, [string]$Right) {
     $LeftSplit = $Left.Split(".-")
     $RightSplit = $Right.Split(".-")
 
-    [int]$Result = [int]$LeftSplit[0] - [int]$RightSplit[0]  # Major compare
+    [int]$Result = [int]($LeftSplit[0]) - [int]($RightSplit[0])  # Major compare
     if ($Result -eq 0) {
-        $Result = [int]$LeftSplit[1] - [int]$RightSplit[1]  # Minor compare
+        $Result = [int]($LeftSplit[1]) - [int]($RightSplit[1])  # Minor compare
         if ($Result -eq 0) {
-            $Result = [int]$LeftSplit[2] - [int]$RightSplit[2]  # Patch compare
+            $Result = [int]($LeftSplit[2]) - [int]($RightSplit[2])  # Patch compare
             if ($Result -eq 0) {
                 # Could possibly include string label here
                 if ($LeftSplit.Length -gt 3 -and $RightSplit.Length -gt 3) {
                     $Result = [string].Compare($LeftSplit[3], $RightSplit[3])  # Label compare
                     if ($Result -eq 0) {
-                        $Result = [int]$LeftSplit[4] - [int]$RightSplit[4] 
+                        $Result = [int]($LeftSplit[4]) - [int]($RightSplit[4])
                     }
                 } elseif ($LeftSplit.Length -gt 3) {
                     $Result = -1
@@ -47,7 +47,7 @@ Write-Host "UpgradeSmokeTest -RnwVersion $RnwVersion"
 Write-Host "Determining local react-native-windows version from yarn.lock..."
 if (Test-Path "yarn.lock") {
     [bool]$lineFound = $False
-    foreach($line in [System.IO.File]::ReadLines("yarn.lock")) {
+    foreach($line in Get-Content "yarn.lock") {
     if ($lineFound) {
         $LocalRnwVersion = $line.Substring($line.IndexOf("""")).Trim("""")
         break;
