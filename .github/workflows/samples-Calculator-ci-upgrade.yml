@@ -32,7 +32,6 @@ jobs:
       - name: Upgrade react-native-windows
         id: upgrade
         continue-on-error: true
-        shell: powershell
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
 
@@ -72,7 +71,6 @@ jobs:
       - name: Upgrade react-native-windows
         id: upgrade
         continue-on-error: true
-        shell: powershell
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
 
