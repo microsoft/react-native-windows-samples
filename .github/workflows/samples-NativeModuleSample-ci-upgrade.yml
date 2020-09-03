@@ -18,7 +18,7 @@ jobs:
         sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
         architecture: [x86, x64, ARM, ARM64]
         configuration: [Debug, Release]
-        reactNativeWindowsVersion: ['latest'] # Add 'preview' here when a new preview is available
+        reactNativeWindowsVersion: [latest, preview, canary]
     steps:
       - uses: actions/checkout@v2
 
@@ -32,7 +32,7 @@ jobs:
       - name: Upgrade react-native-windows
         id: upgrade
         continue-on-error: true
-        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
+        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format("${0}", contains(matrix.reactNativeWindowsVersion, "canary")) }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
