@@ -34,6 +34,7 @@ jobs:
         continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
+        shell: powershell
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
@@ -73,6 +74,7 @@ jobs:
         continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
+        shell: powershell
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
