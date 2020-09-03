@@ -32,12 +32,13 @@ jobs:
       - name: Upgrade react-native-windows
         id: upgrade
         continue-on-error: true
-        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }}
+        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
+        shell: powershell
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
-        run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
+        run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
@@ -73,6 +74,7 @@ jobs:
         continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
+        shell: powershell
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
