@@ -233,7 +233,7 @@ For events, you'll see that we created an instance of `NativeEventEmitter` passi
 | ------------------------ | --------------------------------------------------------- |
 | `REACT_MODULE`           | Specifies the class is a native module.                   |
 | `REACT_METHOD`           | Specifies an asynchronous method.                         |
-| `REACT_SYNCMETHOD`       | Specifies a synchronous method.                           |
+| `REACT_SYNC_METHOD`      | Specifies a synchronous method.                           |
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
@@ -282,15 +282,52 @@ namespace NativeModuleSample
 
 The `REACT_MODULE` macro-attribute says that the class is a ReactNative native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
 
-You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, "math")`.
+You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, L"math")`.
 
-You can specify a different event emitter like this: `REACT_MODULE(FancyMath, "math", "mathEmitter")`.
+You can specify a different event emitter like this: `REACT_MODULE(FancyMath, L"math", L"mathEmitter")`.
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
 Then we define constants, and it's as easy as creating a public field and giving it a `REACT_CONSTANT` macro-attribute. Here FancyMath has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override this by specifying an argument in the `REACT_CONSTANT` attribute (hence `Pi` instead of `PI`).
 
 It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
+
+Methods that return more complex types (like `std::string`) can be implemented by returning void and accepting a bool and a `ReactPromise<JSValue>`:
+
+```cpp
+    REACT_METHOD(GetString, L"getString");
+    void GetString(bool error, React::ReactPromise<React::JSValue>&& result) noexcept
+    {
+      if (error) {
+        result.Reject("Failure");
+      } else {
+        std::string text = DoSomething();
+        result.Resolve(React::JSValue{ text });
+      }
+    }
+```
+
+This can be also tied in with C++/WinRT event handlers or `IAsyncOperation<T>` like so:
+
+```cpp
+    REACT_METHOD(GetString, L"getString");
+    void GetString(bool error, React::ReactPromise<React::JSValue>&& result) noexcept
+    {
+      if (error) {
+        result.Reject("Failure");
+      } else {
+        something.Completed([result] (const auto& status, const auto& operation) {
+          // do error checking, e.g. status should be Completed
+          std::wstring wtext{operation.GetResults()};
+          result.Resolve(React::JSValue{ ConvertWideStringToUtf8String(text) });
+        });
+      }
+    }
+```
+
+`REACT_SYNC_METHOD` isn't supported in Debug when the JS engine is Chrome V8. You will get an exception that reads:
+`Calling synchronous methods on native modules is not supported in Chrome. Consider providing alternative to expose this method in debug mode, e.g. by exposing constants ahead-of-time`
+See: [MessageQueue.js](https://github.com/facebook/react-native/blob/e27d656ef370958c864b052123ec05579ac9fc01/Libraries/BatchedBridge/MessageQueue.js#L175).
 
 To add custom events, we attribute a `std::function<void(double)>` delegate with `REACT_EVENT`, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `REACT_EVENT(AddEvent, "addEvent")`.
 
@@ -464,6 +501,17 @@ To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath
 Calls to methods are a little different due to the asynchronous nature of the JS engine. If the native method returns nothing, we can simply call the method. However, in this case `FancyMath.add()` returns a value, so in addition to the two necessary parameters we also include a callback function which will be called with the result of `FancyMath.add()`. In the example above, we can see that the callback raises an Alert dialog with the result value.
 
 For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath::AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
+
+## Troubleshooting and debugging C++ native modules
+
+So you added a new native module or a new method to a module but it isn't working, **now what?!**
+
+If your method isn't being hit in the VS debugger, something is blocking the call due to a mismatch, likely between the expected and actual types that your method takes/returns.
+
+To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
+
+Right-click on the breakpoint to add a Condition. Suppose the method you are interested in catching is called `getString`. 
+The conditional breakpoint condition to enter should compare the name of the method to that string: `strcmp(method.name._Mypair._Myval2._Bx._Ptr, "getString")==0`
 
 ## C# vs. C++ for Native Modules
 
