@@ -59,11 +59,11 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ### Updating your package.json
 
-You'll need to ensure you have version 0.62 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
+You'll need to ensure you have version 0.63 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
 ```cmd
-yarn add react-native@0.62 --dev
-yarn add react-native-windows@0.62 --peer
+yarn add react-native@0.63 --dev
+yarn add react-native-windows@0.63 --peer
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
