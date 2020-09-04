@@ -14,7 +14,7 @@ For information around how to set up React Native, see the [React Native Getting
 
 Remember to call `react-native init` from the place you want your project directory to live.
 
-```
+```bat
 npx react-native init <projectName> --template react-native@^0.63.2
 ```
 >To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript@6.5.*`.<br><br>
@@ -25,22 +25,22 @@ npx react-native init <projectName> --template react-native@^0.63.2
 
 Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
 
-```
-cd <projectName>
+```bat
+cd projectName
 ```
 
 ### Install the Windows extension
 
 Lastly, install the React Native for Windows packages.
 
-```
+```bat
 npx react-native-windows-init --overwrite
 ```
 
 > The --overwrite flag is a temporary measure that ensures the correct files are copied to metro.config.js for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the metro.config.js file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows/issues/4698).
 
 Here are the options that `react-native-windows-init` takes:
-```none
+```shell
 Options:
   --help       Show help                                               [boolean]
   --version    The version of react-native-windows to use.              [string]
@@ -61,7 +61,7 @@ Options:
 
   In your React Native Windows project directory, run:
 
-  ```
+  ```bat
   npx react-native run-windows
   ```
 
@@ -78,7 +78,7 @@ Options:
   - Open your applications folder in VS Code.
   - Install the [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native) plugin for VS Code.
   - Create a new file in the applications root directory, `.vscode/launch.json` and paste the following configuration:
-  ```
+  ```json
   {
       "version": "0.2.0",
       "configurations": [
