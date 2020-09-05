@@ -58,11 +58,11 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ### Updating your package.json
 
-You'll need to ensure you have version 0.62 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
+You'll need to ensure you have version 0.63 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
 ```cmd
-yarn add react-native@0.62 --dev
-yarn add react-native-windows@0.62 --peer
+yarn add react-native@0.63 --dev
+yarn add react-native-windows@0.63 --peer
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
@@ -205,6 +205,26 @@ To make sure that everything is working, you'll want to try building `MyLibrary`
 
 You have now created the scaffolding to build a native module or view manager. Now it's time to add the business logic to the module - follow the steps described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
 
+### Making your module ready for consumption in an app
+
+You will need to edit your project file manually to touch up the paths that it uses to reference project references and NuGet packages.
+1. When you add a reference to the `Microsoft.ReactNative.Cxx` project in VS, it will use a path like `..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxproj`. This however isn't going to work for a different app. 
+
+Instead you will want to replace that with a reference to the react-native-windows project that the app project might be using:
+```xml
+  <PropertyGroup>
+    <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
+  </PropertyGroup>
+  <ImportGroup Label="Shared">
+    <Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
+  </ImportGroup>
+```
+
+2. NuGet packages will show up in the vcxproj as relative references too, e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of this form with something like:
+```xml
+  <Import Project="$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.200316.3\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.200316.3\build\native\Microsoft.Windows.CppWinRT.props')" />
+```
+
 ### Testing the module before it gets published
 
 #### Option 1: Create a new test app
@@ -222,7 +242,7 @@ If you are working on an existing module that already has iOS and Android sample
 4. Open the solution with Visual Studio and [link native module](native-modules-using.md).
 > The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
 
-5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)).
+5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)). 
 6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/master/package.json#L18)).
 7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/master/react-native.config.js#L28-L33)).
 8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
