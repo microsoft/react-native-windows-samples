@@ -518,3 +518,30 @@ The conditional breakpoint condition to enter should compare the name of the met
 Although React Native for Windows supports writing modules in both C# and C++, you should be aware that your choice of language could impact performance of apps that consume your module. Modules written in C# rely on the CLR. At app launch, if there are _any_ C# dependencies, the app will load the CLR which will increase the launch time for the application. Note that this is a one-time cost regardless of the number of C# dependencies that your app relies on.
 
 That said, we recognize the engineering efficiency that comes with writing a module in C#. We strive to maintain parity in developer experience between C# and C++. If your app or module already uses C# (perhaps because it is migrating from the React Native for Windows legacy platform), you should feel empowered to continue to use C#. That said, modules that Microsoft contributes to will be written in C++ to ensure the highest level of performance. 
+
+<div style="padding: 10px; background: #ee2020;color: #fff">
+  <h3 style="color: #fff">Important</h3>
+  <h4 style="color: #fff">Mixing C# and C++</h4>
+</div>
+
+C++ apps consuming native modules written in C# need special care. There is a bug in the interop between C# and C++: https://github.com/microsoft/dotnet/issues/1196.
+
+The symptoms are that building the app will work fine but the C++ app will crash at runtime when trying to load the C# module with the error `0x80131040 : The located assembly's manifest definition does not match the assembly reference.`
+
+A write-up of the problem can be found [here](https://devblogs.microsoft.com/oldnewthing/20200615-00/?p=103868/). 
+To work around this problem there are three options:
+1. Set your C# component's target Windows version to Windows 10 version 1703 (Build 15063) or lower.
+1. Reference the .net Native nuget packages in your C++ app:
+   - Right click on the app's .vcxproj file → **Manage NuGet Packages**.
+   - Search for `Microsoft.Net.Native.Compiler`, and install it.
+   - Then add the following properties to the .vcxproj file:
+    ```xml
+    <PropertyGroup>
+      <UseDotNetNativeToolchain Condition="'$(Configuration)'=='Release'">true</UseDotNetNativeToolchain>
+      <DotNetNativeVersion>2.2.3</DotNetNativeVersion>
+    </PropertyGroup>
+    ```
+1. In your .vcxproj file, set this property in the first `<PropertyGroup>`:
+   ```xml
+   <ConsumeCSharpModules>true</ConsumeCSharpModules>
+   ```
