@@ -12,17 +12,17 @@ The development dependencies for React Native for macOS are identical to the dev
 - Install [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) version 11.3.1 or newer.
 - Ensure to install Xcode Command Line Tools. Open Xcode, then choose "Preferences..." from the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
 - Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
-   ```bash
+   ```bat
    sudo gem install cocoapods
    ```
 
 ### React Native Development Dependencies
 - Install the [standard React Native dependencies](https://reactnative.dev/docs/getting-started#node-python2-jdk)
 - Install [Node.js](https://nodejs.org) version 12 LTS or newer via [HomeBrew](https://brew.sh/)
-   ```bash
+   ```bat
    brew install node
    ```
 - Install [Watchman](https://facebook.github.io/watchman)
-   ``` bash
+   ``` bat
    brew install watchman
    ```

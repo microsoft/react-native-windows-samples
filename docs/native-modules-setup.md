@@ -44,7 +44,7 @@ The steps to create a new native module library project are:
 
 Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup.
 
-```cmd
+```bat
 npx create-react-native-module MyLibrary
 ```
 
@@ -60,7 +60,7 @@ At this point, follow the steps below to add Windows support to the newly create
 
 You'll need to ensure you have version 0.62 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
-```cmd
+```bat
 yarn add react-native@0.62 --dev
 yarn add react-native-windows@0.62 --peer
 ```

@@ -26,7 +26,7 @@ As of July 22th 2020, we support the **WinUI 3.0 Preview 2** release for:
 In order to create a **WinUI 3** enabled C++ or C# app, pass the `--useWinUI3` flag when running `react-native-windows-init`, in addition to any other flags like `--language cpp`, etc.
 
 Example:
-```powershell
+```bat
 npx react-native-windows-init --useWinUI3 --version canary --overwrite --language cpp
 ```
 

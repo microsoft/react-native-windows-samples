@@ -38,7 +38,7 @@ Alternatively, you can setup your environment manually:
 - Install the [standard React Native dependencies](https://reactnative.dev/docs/getting-started#node-python2-jdk)
 - Install [Node.js](https://nodejs.org) via one of the following methods:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
-  ```
+  ```bat
   choco install nodejs.install --version=12.9.1
   ```
   - Directly from [NodeJs](https://nodejs.org/en/download/)
