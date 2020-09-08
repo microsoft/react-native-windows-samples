@@ -15,7 +15,7 @@
     <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI%22">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI/badge.svg" alt="CameraDemo CI Status" />
   </a>
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%NativeModuleSample+CI%22">
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI%22">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI/badge.svg" alt="NativeModuleSample CI Status" />
   </a>
 </p>

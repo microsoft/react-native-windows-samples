@@ -59,11 +59,11 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ### Updating your package.json
 
-You'll need to ensure you have version 0.62 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
+You'll need to ensure you have version 0.63 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
 ```bat
-yarn add react-native@0.62 --dev
-yarn add react-native-windows@0.62 --peer
+yarn add react-native@0.63 --dev
+yarn add react-native-windows@0.63 --peer
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
@@ -205,6 +205,26 @@ To make sure that everything is working, you'll want to try building `MyLibrary`
 ### Next Steps
 
 You have now created the scaffolding to build a native module or view manager. Now it's time to add the business logic to the module - follow the steps described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
+
+### Making your module ready for consumption in an app
+
+You will need to edit your project file manually to touch up the paths that it uses to reference project references and NuGet packages.
+1. When you add a reference to the `Microsoft.ReactNative.Cxx` project in VS, it will use a path like `..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxproj`. This however isn't going to work for a different app. 
+
+Instead you will want to replace that with a reference to the react-native-windows project that the app project might be using:
+```xml
+  <PropertyGroup>
+    <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
+  </PropertyGroup>
+  <ImportGroup Label="Shared">
+    <Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
+  </ImportGroup>
+```
+
+2. NuGet packages will show up in the vcxproj as relative references too, e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of this form with something like:
+```xml
+  <Import Project="$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.200316.3\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.200316.3\build\native\Microsoft.Windows.CppWinRT.props')" />
+```
 
 ### Testing the module before it gets published
 

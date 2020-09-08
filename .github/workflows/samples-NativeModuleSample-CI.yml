@@ -36,6 +36,6 @@ jobs:
 
       - name: Build ${{ matrix.architecture }} Release
         if: ${{ matrix.configuration == 'Release' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager--no-autolink  --logging --release --arch ${{ matrix.architecture }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --release --arch ${{ matrix.architecture }}
         working-directory: ..\..\src
   
