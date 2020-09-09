@@ -9,7 +9,7 @@ This document covers autolinking for the Windows platform. It is an extension to
 
 Add a library using your favorite package manager and run the build:
 
-```
+```bat
 yarn add react-native-webview
 npx react-native run-windows
 ```
@@ -43,7 +43,7 @@ Autolinking is performed automatically as a part of the `run-windows` command:
 
 If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, ie:
 
-```cmd
+```bat
 npx react-native autolink-windows
 ```
 
@@ -59,6 +59,6 @@ npx react-native autolink-windows
 
 If you would like to skip the autolinking process during `run-windows` you can pass `--no-autolink` option:
 
-```cmd
+```bat
 npx react-native run-windows --no-autolink
 ```
