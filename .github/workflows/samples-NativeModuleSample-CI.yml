@@ -26,7 +26,7 @@ jobs:
         run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
 
       - name: Yarn install
-        run: yarn install
+        run: yarn install --frozen-lockfile
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
