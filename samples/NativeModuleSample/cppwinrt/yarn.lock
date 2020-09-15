@@ -3574,9 +3574,9 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 react-native-windows@^0.63.0-0:
-  version "0.63.1"
-  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.1.tgz#ddcf4b94b63d99ead3557e50960e8bb6f19bb902"
-  integrity sha512-2aIdG3Ybvh71txAaSkmUCSU6pRxN3f7pRYMdZN0dC4lzSJDcinMQaYXrb+NX95CUv6Lhgw7WqRrW27YEVKxHEA==
+  version "0.63.2"
+  resolved "https://registry.yarnpkg.com/react-native-windows/-/react-native-windows-0.63.2.tgz#8c06079c94ea721a52d21b49ff58367b642bd7ec"
+  integrity sha512-hUzORDVWYyfgqsHQXz+daYWF81z5xMVp/OOYw3Ist27fxUrHHabLkem4cjTBZAhfbwuniF7P8vORj82mMByQwg==
   dependencies:
     "@babel/runtime" "^7.8.4"
     "@react-native-windows/cli" "0.63.0"
