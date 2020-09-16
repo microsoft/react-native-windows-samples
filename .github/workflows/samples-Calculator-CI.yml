@@ -22,6 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Gather environment info
+        run: npx envinfo
+
       - name: Relocate to reduce long paths
         run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
 
@@ -48,6 +51,9 @@ jobs:
         configuration: [Debug, Release]
     steps:
       - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
 
       - name: Relocate to reduce long paths
         run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"

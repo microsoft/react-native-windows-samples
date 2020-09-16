@@ -18,6 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Gather environment info
+        run: npx envinfo
+
       - name: Relocate to reduce long paths
         run:  Copy-item -Force -Recurse -Verbose "samples\NativeModuleSample\${{ matrix.language }}" -Destination "..\..\src"
 

@@ -19,6 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Gather environment info
+        run: npx envinfo
+
       - name: Yarn install
         run: yarn install
 
