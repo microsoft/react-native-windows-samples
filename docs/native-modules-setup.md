@@ -53,10 +53,6 @@ Now you'll have a new native module project under `react-native-my-library`. Be 
 
 At this point, follow the steps below to add Windows support to the newly created library.
 
-## Adding Windows support to an existing library
-
-> **The plan is to automate this process as part of a CLI new library project template, see issues [3201](https://github.com/microsoft/react-native-windows/issues/3201) and [3203](https://github.com/microsoft/react-native-windows/issues/3203). However we are also documenting the manual process here for developers who are unable to use the CLI.**
-
 ### Updating your package.json
 
 You'll need to ensure you have version 0.63 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
@@ -68,7 +64,25 @@ yarn upgrade react-native@0.0.0-a36d9cd7e --dev
 yarn add react-native-windows@canary --dev
 ```
 
-Now it's time to switch into Visual Studio and create a new project.
+## Adding Windows support to an existing library (CLI)
+
+Similar to adding Windows support to an app project, you can use the CLI to add Windows support to a native module project:
+
+```bat
+npx react-native-windows-init --projectType lib --overwrite
+```
+
+This defaults to a C++/WinRT project. If you want to create a C# based native module project, use:
+
+```bat
+npx react-native-windows-init --projectType lib --language cs --overwrite
+```
+
+That's it, you should be able to open `windows\MyLibrary.sln` and start working on your project.
+
+## Adding Windows support to an existing library (manual)
+
+> **Most users should use the CLI method above. However we are also documenting the manual process here for developers who are unable to use the CLI.**
 
 ### Creating the Visual Studio Project / Solution
 
