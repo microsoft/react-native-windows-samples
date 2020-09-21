@@ -1,6 +1,7 @@
 ---
 id: native-modules-setup
 title: Native Module Setup
+original_id: native-modules-setup
 ---
 
 > **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
@@ -60,9 +61,11 @@ At this point, follow the steps below to add Windows support to the newly create
 
 You'll need to ensure you have version 0.63 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
 
-```bat
-yarn add react-native@0.63 --dev
-yarn add react-native-windows@0.63 --peer
+```cmd
+yarn install
+yarn upgrade react@16.13.1 --dev
+yarn upgrade react-native@0.0.0-a36d9cd7e --dev
+yarn add react-native-windows@canary --dev
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
@@ -128,20 +131,21 @@ Now we're going to add all of the following React Native Windows projects to tha
 
 >*For more details about what these projects do, see [Project Structure](https://github.com/microsoft/react-native-windows/blob/master/docs/project-structure.md).*
 
-| VS Project                          | Project File                                                                     |
-| :---------------------------------- | :------------------------------------------------------------------------------- |
-| Chakra                              | `Chakra\Chakra.vcxitems`                                                         |
-| Common                              | `Common\Common.vcxproj`                                                          |
-| Folly                               | `Folly\Folly.vcxproj`                                                            |
-| JSI.Shared                          | `JSI\Shared\JSI.Shared.vcxitems`                                                 |
-| JSI.Universal                       | `JSI\Universal\JSI.Universal.vcxproj`                                            |
-| Microsoft.ReactNative               | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                            |
-| Microsoft.ReactNative.Cxx           | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                   |
-| Microsoft.ReactNative.SharedManaged | `Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.shproj` |
-| Mso                                 | `Mso\Mso.vcxitems`                                                               |
-| ReactCommon                         | `ReactCommon\ReactCommon.vcxproj`                                                |
-| ReactWindowsCore                    | `ReactWindowsCore\ReactWindowsCore.vcxproj`                                      |
-| Shared                              | `Shared\Shared.vcxitems`                                                         |
+| VS Project                            | Project File                                                                         |
+| :------------------------------------ | :----------------------------------------------------------------------------------- |
+| Common                                | `Common\Common.vcxproj`                                                              |
+| Folly                                 | `Folly\Folly.vcxproj`                                                                |
+| JSI.Universal                         | `JSI\Universal\JSI.Universal.vcxproj`                                                |
+| Microsoft.ReactNative                 | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                                |
+| Microsoft.ReactNative.Managed         | `Microsoft.ReactNative.Managed\Microsoft.ReactNative.Managed.csproj`                 |
+| Microsoft.ReactNative.Managed.CodeGen | `Microsoft.ReactNative.Managed.CodeGen\Microsoft.ReactNative.Managed.CodeGen.csproj` |
+| ReactCommon                           | `ReactCommon\ReactCommon.vcxproj`                                                    |
+| Chakra                                | `Chakra\Chakra.vcxitems`                                                             |
+| Include                               | `include\Include.vcxitems`                                                           |
+| JSI.Shared                            | `JSI\Shared\JSI.Shared.vcxitems`                                                     |
+| Microsoft.ReactNative.Cxx             | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                       |
+| Microsoft.ReactNative.Shared          | `Shared\Shared.vcxitems`                                                             |
+| Mso                                   | `Mso\Mso.vcxitems`                                                                   |
 
 For each project, you'll do the following:
 
@@ -151,48 +155,109 @@ For each project, you'll do the following:
 1. Select the project file and click `Open`.
 
 When you are done, your solution should look like this:
-![native module dependencies](assets/native-module-dependencies.png)
+![native module dependencies](assets/native-module-dependencies63.png)
 
 You now have all of the React Native Windows projects to your solution. Next we're going to reference them in our `MyLibrary` project.
 
 ### Referencing React Native Windows in your Project
 
-The only project reference you **must** add is `Microsoft.ReactNative`. To add the reference:
+You'll need to edit your project file manually for this step.
 
-1. Open the Solution Explorer sidebar.
-1. Right-click on your `MyLibrary` project.
-1. Select `Add` > `Reference`.
-1. Select `Projects` on the left-hand side.
-1. Check the box next to `Microsoft.ReactNative`.
-1. Click `OK`.
+#### C++/WinRT
 
-After you've added the reference, you need to make sure it doesn't copy itself into your build (otherwise it'll cause build conflicts down the line when you're trying on consume your library):
+Open `windows\MyLibrary\MyLibrary.vcxproj` in a text editor.
 
-1. Open the Solution Explorer sidebar.
-1. Under your `MyLibrary` project, expand the `References`.
-1. Right-click on `Microsoft.ReactNative`.
-1. Select `Properties`.
-1. Under `Build`, Change `Copy Local` to `False`.
+1. Find the lines with:
+```xml
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+```
 
-Now, you're technically ready to go, but in order to improve the developer experience, it's also **highly recommended** to also add a reference to the appropriate helper shared project. These projects contain the attributes (C#) and macros (C++) as described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
+and insert the following underneath it:
 
-If you're writing in C#, you'll want to add `Microsoft.ReactNative.SharedManaged`:
+```xml
+<PropertyGroup Label="ReactNativeWindowsProps">
+  <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
+</PropertyGroup>
+```
+2. Find the lines with:
+```xml
+<ImportGroup Label="PropertySheets">
+  <Import Project="PropertySheet.props" />
+</ImportGroup>
+```
 
-1. Open the Solution Explorer sidebar.
-1. Right-click on your `MyLibrary` project.
-1. Select `Add` > `Reference`.
-1. Select `Shared Projects` on the left-hand side.
-1. Check the box next to `Microsoft.ReactNative.SharedManaged`.
-1. Click `OK`.
+and insert the following underneath it:
 
-If you're writing in C++, you'll want to add `Microsoft.ReactNative.Cxx`:
+```xml
+<ImportGroup Label="ReactNativeWindowsPropertySheets">
+  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props')" />
+</ImportGroup>
+```
 
-1. Open the Solution Explorer sidebar.
-1. Right-click on your `MyLibrary` project.
-1. Select `Add` > `Reference`.
-1. Select `Shared Projects` on the left-hand side.
-1. Check the box next to `Microsoft.ReactNative.Cxx`.
-1. Click `OK`.
+3. Find the lines with:
+```xml
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+```
+
+and insert the following underneath it:
+
+```xml
+<ImportGroup Label="ReactNativeWindowsTargets">
+  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets')" />
+</ImportGroup>
+<Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
+  <PropertyGroup>
+    <ErrorText>This project references targets in your node_modules\react-native-windows folder. The missing file is {0}.</ErrorText>
+  </PropertyGroup>
+  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props'))" />
+  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets'))" />
+</Target>
+```
+
+Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under MyLibrary > References.
+
+#### C#
+
+Open `windows\MyLibrary\MyLibrary.csproj` in a text editor.
+
+1. Find the lines with:
+```xml
+<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+```
+
+and insert the following underneath it:
+
+```xml
+<PropertyGroup Label="ReactNativeWindowsProps">
+  <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
+</PropertyGroup>
+```
+2. Find the lines with:
+```xml
+<Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+```
+
+and insert the following underneath it:
+
+```xml
+<ImportGroup Label="ReactNativeWindowsPropertySheets">
+    <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" />
+  </ImportGroup>
+  <ImportGroup Label="ReactNativeWindowsTargets">
+    <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props'))" />
+    <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets'))" />
+  </Target>
+```
+
+Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under MyLibrary > References.
+
+> Normally, you could manually add references to the correct projects using the Visual Studio UI. However you may be required to update your projects to support new versions of React Native Windows. The props and target files provided here are to help insulate you from future dependency changes.
 
 ### Testing your Build
 

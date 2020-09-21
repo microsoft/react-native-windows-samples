@@ -64,7 +64,7 @@ You'll need to ensure you have version 0.61 of both `react-native` and `react-na
 
 ```cmd
 yarn add react-native@0.61 --dev
-yarn add react-native-windows@0.61 --peer
+yarn add react-native-windows@0.61 --dev
 ```
 
 Now it's time to switch into Visual Studio and create a new project.
@@ -128,7 +128,7 @@ We're going to add several React Native Windows projects to your solution. So to
 
 Now we're going to add all of the following React Native Windows projects to that `ReactNative` folder. All of these projects are located under the `node_modules\react-native-windows` directory in the root of your `react-native-my-library` project directory.
 
-> _For more details about what these projects do, see [Project Structure](project-structure.md)._
+>*For more details about what these projects do, see [Project Structure](https://github.com/microsoft/react-native-windows/blob/0.61-stable/docs/project-structure.md).*
 
 | VS Project                          | Project File                                                                     |
 | :---------------------------------- | :------------------------------------------------------------------------------- |
@@ -153,7 +153,7 @@ For each project, you'll do the following:
 1. Select the project file and click `Open`.
 
 When you are done, your solution should look like this:
-![native module dependencies](assets/native-module-dependencies.png)
+![native module dependencies](assets/native-module-dependencies61.png)
 
 You now have all of the React Native Windows projects to your solution. Next we're going to reference them in our `MyLibrary` project.
 
