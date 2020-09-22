@@ -19,7 +19,8 @@
       "native-modules-jsvalue",
       "native-modules-advanced",
       "native-modules-csharp-codegen",
-      "supported-community-modules"
+      "supported-community-modules",
+      "native-code"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
