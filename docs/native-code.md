@@ -33,7 +33,8 @@ The app runs inside of an app container - a type of sandbox. This provides apps 
 
 ### Packaging
 
-They are signed and packaged. [Packaging](https://docs.microsoft.com/en-us/windows/uwp/packaging/) is a mechanism through which an app and its dependencies acquire an identity, which is used to determine whether API calls that require system capabilities (e.g. filesystem access) should succeed or not.
+React Native Windows apps are signed and packaged. [Packaging](https://docs.microsoft.com/en-us/windows/uwp/packaging/) is a mechanism through which an app and its dependencies acquire an identity, which is used to determine whether API calls that require system capabilities (e.g. filesystem access) should succeed or not.
+
 
 ### Distribution
 They can be distributed, installed and updated in the following ways:
