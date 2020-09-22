@@ -45,7 +45,8 @@ Here are the options that `react-native-windows-init` takes:
 | `--version`  | string                               | The version of react-native-windows to use.       |
 | `--namespace` | string                               | The native project namespace.                    | 
 | `--verbose`   | boolean                              | Enables logging.                                 |
-| `--language`  | string ["`cs`","`cpp`"] [default: "cpp"] | Which language the app is written in.            |
+| `--language`  | string ["`cs`","`cpp`"] [default: "`cpp`"] | Which language the app is written in.            |
+
 | `--overwrite` | boolean                              | Overwrite any existing files without prompting.  |
 | `--useWinUI3` | boolean                              | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
 
