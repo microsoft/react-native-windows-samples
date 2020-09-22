@@ -519,9 +519,9 @@ Although React Native for Windows supports writing modules in both C# and C++, y
 
 That said, we recognize the engineering efficiency that comes with writing a module in C#. We strive to maintain parity in developer experience between C# and C++. If your app or module already uses C# (perhaps because it is migrating from the React Native for Windows legacy platform), you should feel empowered to continue to use C#. That said, modules that Microsoft contributes to will be written in C++ to ensure the highest level of performance. 
 
-<div style="padding: 10px; background: #ee2020;color: #fff">
-  <h3 style="color: #fff">Important</h3>
-  <h4 style="color: #fff">Mixing C# and C++</h4>
+<div class="warning">
+  <h3>Important</h3>
+  <h4>Mixing C# and C++</h4>
 </div>
 
 C++ apps consuming native modules written in C# need special care. There is a bug in the interop between C# and C++: https://github.com/microsoft/dotnet/issues/1196.
