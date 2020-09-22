@@ -18,7 +18,7 @@ The current publicly supported version of .NET has built-in support for WinRT ([
 
 Whether you are new to Windows development, or you are a Win32 desktop app veteran, the following FAQs should answer some common questions.
 
-When you add Windows support to a react native app via the steps described in the [Install the windows extension](getting-started#install-the-windows-extension) section, the react-native-windows CLI will create a UWP app for you. 
+When you add Windows support to a react native app via the steps described in the [Install the windows extension](getting-started.md#install-the-windows-extension) section, the react-native-windows CLI will create a UWP app for you. 
 
 Therefore, <u>**RNW apps are UWP apps**</u> and therefore have the following characteristics:
 - The set of APIs these app can access are a subset of all Windows APIs (i.e. those accessible via WinRT). See:
