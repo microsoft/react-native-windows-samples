@@ -37,7 +37,8 @@ React Native Windows apps are signed and packaged. [Packaging](https://docs.micr
 
 
 ### Distribution
-They can be distributed, installed and updated in the following ways:
+React Native Windows apps can be distributed, installed and updated in the following ways:
+
   - via [the Microsoft Store](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-distribute).
   - via [your private Store](https://docs.microsoft.com/en-us/microsoft-store/distribute-apps-to-your-employees-microsoft-store-for-business) if you are a business or educational organization. See also [Distribute LOB apps to enterprises](https://docs.microsoft.com/en-us/windows/uwp/publish/distribute-lob-apps-to-enterprises).
   - using [App Installer](https://docs.microsoft.com/en-us/windows/msix/app-installer/installing-windows10-apps-web).
