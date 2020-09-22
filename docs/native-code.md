@@ -45,7 +45,8 @@ React Native Windows apps can be distributed, installed and updated in the follo
 
 It's worth noting that you cannot just "_copy an exe_" as the app package contains more than just the main executable, including an app manifest, assets, dependent framework libraries, etc.
 
-In addition, the Store submission process has this requirements:
+In addition, the Store submission process has these requirements:
+
 - UWP apps submitted to the store must pass [Windows App Certification Kit](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit) (WACK) validation.
 - UWP apps written in C# or other managed languages submitted to the store must be built using the [.NET Native toolchain](https://docs.microsoft.com/dotnet/framework/net-native/). This is the default when building C# apps in Release mode, **but not in Debug**, so apps built in Debug will be rejected by the Store.
 
