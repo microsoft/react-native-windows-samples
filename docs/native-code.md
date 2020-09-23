@@ -10,8 +10,7 @@ A RNW app is a [Universal Windows Platform app](https://docs.microsoft.com/windo
 The Universal Windows Platform allows you to access a set of common functionality on all Windows devices via the [Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/) (WinRT). WinRT APIs can be accessed from C++ (via [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)), or via .NET C#. 
 
 #### WinRT support in .NET
-The current publicly supported version of .NET has built-in support for WinRT ([.NET UWP](https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)) whereas future versions of .NET Core starting with .NET Core 5 will only be able to access WinRT APIs via [C#/WinRT](https://docs.microsoft.com/windows/uwp/csharp-winrt/) in a way similar to what the C++/WinRT projection enables today. 
-
+The current publicly supported version of .NET ([.NET UWP](https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)) has built-in support for WinRT.
 
 
 ## Win32 Desktop apps vs. RNW apps
@@ -63,9 +62,9 @@ For internal development, you can deploy your app for test purposes by side-load
 
 ## C# vs. C++ for Native Modules
 
-Although React Native for Windows supports writing modules in both C# and C++, you should be aware that your choice of language could impact performance of apps that consume your module. 
+Although React Native for Windows supports writing modules in both C# and C++, you should be aware that your choice of language could impact performance of apps that consume your module. C# apps submitted to the store go through a process of cross-compilation to native code (the tools that allow this are the .NET Native toolchain), which improves the performance and startup times of these apps versus their non-"native-ized" counterparts. For more information about performance in .NET Native apps, see [Measuring startup improvement with .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/measuring-startup-improvement-with-net-native).
 
-That said, we recognize the engineering efficiency that comes with writing a module in C#. We strive to maintain parity in developer experience between C# and C++. If your app or module already uses C#, you should feel empowered to continue to use C#. That said, modules that Microsoft contributes to will be written in C++ to ensure the highest level of performance. 
+C# development brings engineering efficiencies to writing a module or an app. We strive to maintain parity in developer experiences between C# and C++. If your app or module already uses C#, you should feel empowered to continue to use C#. That said, modules that Microsoft contributes to will be written in C++ to ensure the highest level of performance and interoperability.
 
 <div class="warning">
   <h3>Important</h3>
