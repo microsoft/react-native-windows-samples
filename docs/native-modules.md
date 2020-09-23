@@ -292,42 +292,7 @@ Then we define constants, and it's as easy as creating a public field and giving
 
 It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
 
-Methods that return more complex types (like `std::string`) can be implemented by returning void and accepting a bool and a `ReactPromise<JSValue>`:
-
-```cpp
-    REACT_METHOD(GetString, L"getString");
-    void GetString(bool error, React::ReactPromise<React::JSValue>&& result) noexcept
-    {
-      if (error) {
-        result.Reject("Failure");
-      } else {
-        std::string text = DoSomething();
-        result.Resolve(React::JSValue{ text });
-      }
-    }
-```
-
-This can be also tied in with C++/WinRT event handlers or `IAsyncOperation<T>` like so:
-
-```cpp
-    REACT_METHOD(GetString, L"getString");
-    void GetString(bool error, React::ReactPromise<React::JSValue>&& result) noexcept
-    {
-      if (error) {
-        result.Reject("Failure");
-      } else {
-        something.Completed([result] (const auto& status, const auto& operation) {
-          // do error checking, e.g. status should be Completed
-          std::wstring wtext{operation.GetResults()};
-          result.Resolve(React::JSValue{ ConvertWideStringToUtf8String(text) });
-        });
-      }
-    }
-```
-
-`REACT_SYNC_METHOD` isn't supported in Debug when the JS engine is Chrome V8. You will get an exception that reads:
-`Calling synchronous methods on native modules is not supported in Chrome. Consider providing alternative to expose this method in debug mode, e.g. by exposing constants ahead-of-time`
-See: [MessageQueue.js](https://github.com/facebook/react-native/blob/e27d656ef370958c864b052123ec05579ac9fc01/Libraries/BatchedBridge/MessageQueue.js#L175).
+Methods should only be marked with `REACT_SYNC_METHOD` in rare cases as its usage disallows web debugging and has performance implications.
 
 To add custom events, we attribute a `std::function<void(double)>` delegate with `REACT_EVENT`, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `REACT_EVENT(AddEvent, "addEvent")`.
 
