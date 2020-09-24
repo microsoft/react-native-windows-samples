@@ -138,10 +138,8 @@ Now we're going to add all of the following React Native Windows projects to tha
 | JSI.Universal                       | `JSI\Universal\JSI.Universal.vcxproj`                                            |
 | Microsoft.ReactNative               | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                            |
 | Microsoft.ReactNative.Cxx           | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                   |
-| Microsoft.ReactNative.SharedManaged | `Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.shproj` |
 | Mso                                 | `Mso\Mso.vcxitems`                                                               |
 | ReactCommon                         | `ReactCommon\ReactCommon.vcxproj`                                                |
-| ReactWindowsCore                    | `ReactWindowsCore\ReactWindowsCore.vcxproj`                                      |
 | Shared                              | `Shared\Shared.vcxitems`                                                         |
 
 For each project, you'll do the following:
