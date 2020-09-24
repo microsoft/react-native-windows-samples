@@ -52,6 +52,8 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactConstantProvider` | Specifies a method that provides a set of constants.      |
 | `ReactEvent`            | Specifies a field or property that represents an event.   |
 | `ReactStruct`           | Specifies a `struct` that can be used in native methods.    |
+| `ReactInit`             | Specifies a class initialization method.                  |
+| `ReactFunction`         | Specifies a field that helps calling a function.          |
 
 ### 1. Authoring your Native Module
 
@@ -173,6 +175,8 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
 | `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
+| `REACT_INIT`             | Specifies a class initialization method.                  |
+| `REACT_FUNCTION`         | Specifies a field that helps calling a function.          |
 
 ### 1. Authoring your Native Module
 
