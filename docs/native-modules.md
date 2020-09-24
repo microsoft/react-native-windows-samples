@@ -24,7 +24,7 @@ Native modules contain (or wrap) native code which can then be exposed to JS. To
    1. Add the package to your React Native application.
 1. Use your native module from your JavaScript code.
 
-React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [C# vs. C++ for Native Modules](#c-vs-c-for-native-modules) note for more information about which to choose. 
+React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [C# vs. C++ for Native Modules](native-code.md#c-vs-c-for-native-modules) note for more information about which to choose. 
 
 > NOTE: If you are unable to use the reflection-based annotation approach, you can define native modules directly using the ABI. This is outlined in the [Writing Native Modules without using Attributes](native-modules-advanced.md) document.
 
@@ -501,47 +501,3 @@ To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath
 Calls to methods are a little different due to the asynchronous nature of the JS engine. If the native method returns nothing, we can simply call the method. However, in this case `FancyMath.add()` returns a value, so in addition to the two necessary parameters we also include a callback function which will be called with the result of `FancyMath.add()`. In the example above, we can see that the callback raises an Alert dialog with the result value.
 
 For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath::AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
-
-## Troubleshooting and debugging C++ native modules
-
-So you added a new native module or a new method to a module but it isn't working, **now what?!**
-
-If your method isn't being hit in the VS debugger, something is blocking the call due to a mismatch, likely between the expected and actual types that your method takes/returns.
-
-To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
-
-Right-click on the breakpoint to add a Condition. Suppose the method you are interested in catching is called `getString`. 
-The conditional breakpoint condition to enter should compare the name of the method to that string: `strcmp(method.name._Mypair._Myval2._Bx._Ptr, "getString")==0`
-
-## C# vs. C++ for Native Modules
-
-Although React Native for Windows supports writing modules in both C# and C++, you should be aware that your choice of language could impact performance of apps that consume your module. Modules written in C# rely on the CLR. At app launch, if there are _any_ C# dependencies, the app will load the CLR which will increase the launch time for the application. Note that this is a one-time cost regardless of the number of C# dependencies that your app relies on.
-
-That said, we recognize the engineering efficiency that comes with writing a module in C#. We strive to maintain parity in developer experience between C# and C++. If your app or module already uses C# (perhaps because it is migrating from the React Native for Windows legacy platform), you should feel empowered to continue to use C#. That said, modules that Microsoft contributes to will be written in C++ to ensure the highest level of performance. 
-
-<div class="warning">
-  <h3>Important</h3>
-  <h4>Mixing C# and C++</h4>
-</div>
-
-C++ apps consuming native modules written in C# need special care. There is a bug in the interop between C# and C++: https://github.com/microsoft/dotnet/issues/1196.
-
-The symptoms are that building the app will work fine but the C++ app will crash at runtime when trying to load the C# module with the error `0x80131040 : The located assembly's manifest definition does not match the assembly reference.`
-
-A write-up of the problem can be found [here](https://devblogs.microsoft.com/oldnewthing/20200615-00/?p=103868/). 
-To work around this problem there are three options:
-1. Set your C# component's target Windows version to Windows 10 version 1703 (Build 15063) or lower.
-1. Reference the .net Native nuget packages in your C++ app:
-   - Right click on the app's .vcxproj file → **Manage NuGet Packages**.
-   - Search for `Microsoft.Net.Native.Compiler`, and install it.
-   - Then add the following properties to the .vcxproj file:
-    ```xml
-    <PropertyGroup>
-      <UseDotNetNativeToolchain Condition="'$(Configuration)'=='Release'">true</UseDotNetNativeToolchain>
-      <DotNetNativeVersion>2.2.3</DotNetNativeVersion>
-    </PropertyGroup>
-    ```
-1. In your .vcxproj file, set this property in the first `<PropertyGroup>`:
-   ```xml
-   <ConsumeCSharpModules>true</ConsumeCSharpModules>
-   ```
