@@ -24,8 +24,7 @@ Once your development environment has been correctly configured, you have severa
 
 - [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-project)
 - [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
-- [Add Windows support to an existing community library](#Adding-Windows-support-to-an-existing-library 
-) 
+- [Add Windows support to an existing community library](#Adding-Windows-support-to-an-existing-library) 
 
 ## Referencing Windows APIs within a React Native for Windows project
 
@@ -247,24 +246,13 @@ If you've followed the steps above, your module will still require a couple twea
 
 1. When you added a reference to the `Microsoft.ReactNative` project in VS (and to a shared helper), it used a relative path like `..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`. This however isn't going to work for a different app.
 
-We want instead to search for the root directory of `react-native-windows`.
+We want to instead search for the root directory of `react-native-windows`.
 
 Open your project file (`windows\MyLibrary\MyLibrary.vcxproj` for C++ or ``windows\MyLibrary\MyLibrary.csproj` for C#) in a text editor.
 
 Open `windows\MyLibrary\MyLibrary.vcxproj` in a text editor.
 
-Find the lines with (for C++):
-```xml
-<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-```
-
-or (for C#):
-
-```xml
-<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-```
-
-and insert the following underneath it:
+You're going to insert the following:
 
 ```xml
 <PropertyGroup Label="ReactNativeWindowsProps">
@@ -272,20 +260,63 @@ and insert the following underneath it:
 </PropertyGroup>
 ```
 
-Now you'll want to replace later reference in the file like `..\..\node_modules\react-native-windows\Microsoft.ReactNative` with `$(ReactNativeWindowsDir)\Microsoft.ReactNative`: 
+**For C++ projects:**
 
-2. If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
-
-Example, change this:
-
-```xml
-  <Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
+```diff
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
++<PropertyGroup Label="ReactNativeWindowsProps">
++  <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
++</PropertyGroup>
 ```
 
-to this:
+**For C# projects:**
 
-```xml
-  <Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
+```diff
+<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
++<PropertyGroup Label="ReactNativeWindowsProps">
++  <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
++</PropertyGroup>
+```
+
+Now you'll want to replace later references in the file like `..\..\node_modules\react-native-windows\Microsoft.ReactNative` with `$(ReactNativeWindowsDir)\Microsoft.ReactNative`:
+
+**For C++ and C# projects:**
+
+```diff
+<ItemGroup>
+-  <ProjectReference Include="..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj">
++  <ProjectReference Include="$(ReactNativeWindowsDir)\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj">
+    <Project>{f7d32bd0-2749-483e-9a0d-1635ef7e3136}</Project>
+    <Private>false</Private>
+  </ProjectReference>
+</ItemGroup>
+```
+
+**For C++ projects:**
+
+```diff
+<ImportGroup Label="Shared">
+-<Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
++<Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
+</ImportGroup>
+```
+
+**For C# projects:**
+
+```diff
+<ImportGroup Label="Shared">
+-<Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
++<Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
+</ImportGroup>
+```
+
+2. If you are writing a C++/WinRT module you'll see references to NuGet packages in your vcxproj file with relative paths e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
+
+**Example:**
+
+```diff
+-<Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
++<Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
 ```
 
 ### Testing the module before it gets published

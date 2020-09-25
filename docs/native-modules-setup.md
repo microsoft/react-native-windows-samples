@@ -1,7 +1,6 @@
 ---
 id: native-modules-setup
 title: Native Module Setup
-original_id: native-modules-setup
 ---
 
 > **This documentation and the underlying platform code is a work in progress.**
@@ -61,7 +60,7 @@ At this point, follow the steps below to add Windows support to the newly create
 Many native module libraries (including the default library template) target older versions of `react` and `react-native` than Windows supports, so you'll need to upgrade to newer versions in order to add support for `react-native-windows`.
 
 > Properly defining your NPM dependencies is an essential part of creating and maintaining a React Native library, especially one that supports multiple platforms. The instructions here represent the minimum steps required to start targeting `react-native-windows`. If you're adding Windows support to a library you don't own, you'll need to work with the library owners to make sure any changes made to `package.json` are appropriate.
-> 
+>
 > For more information on how NPM dependencies work, see [Specifying dependencies and devDependencies in a package.json file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
 You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest `canary` version of `react-native-windows`.
@@ -123,9 +122,11 @@ However, there are some things you may need to check:
 
 1. If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
 
+**Example:**
+
 ```diff
--  <Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
-+  <Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
+-<Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
++<Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
 ```
 
 ### Testing the module before it gets published
@@ -145,7 +146,7 @@ If you are working on an existing module that already has iOS and Android sample
 4. Open the solution with Visual Studio and [link native module](native-modules-using.md).
 > The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
 
-5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)). 
+5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)).
 6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/master/package.json#L18)).
 7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/master/react-native.config.js#L28-L33)).
 8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
@@ -164,7 +165,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
 ```yaml
     - uses: actions/checkout@v2
       name: Checkout Code
-     
+
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
@@ -174,7 +175,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
       uses: microsoft/setup-msbuild@v1.0.0
       with:
         vs-version: 16.5
-       
+
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
 
@@ -190,7 +191,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Install node modules
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn --pure-lockfile
-    
+
     - name: yarn build
       if: steps.yarn-cache.outputs.cache-hit == 'true'
       run: |
@@ -207,7 +208,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Start Appium server
       shell: powershell
       run: Start-Process PowerShell -ArgumentList "yarn appium"
-      
+
     - name: Run tests
       run: yarn test:windows
 ```

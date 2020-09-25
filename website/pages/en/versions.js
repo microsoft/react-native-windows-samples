@@ -11,7 +11,7 @@ const CWD = process.cwd();
 const siteConfig = require(CWD + '/siteConfig.js');
 const versions = require(CWD + '/versions.json');
 
-const docsUrl = siteConfig.url + siteConfig.baseUrl;
+const docsUrl = siteConfig.baseUrl;
 const repoUrl = siteConfig.repoUrl;
 
 const textContent = {
