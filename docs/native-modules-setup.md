@@ -54,9 +54,11 @@ Now you'll have a new native module project under `MyLibrary`. Be sure to look a
 
 At this point, follow the steps below to add Windows support to the newly created library.
 
+## Adding Windows support to an existing library
+
 ### Updating your package.json
 
-Unfortunately the default library template targets older versions of `react` and `react-native` that Windows supports, so you'll need to upgrade to newer versions of `react` and `react-native` in order to add support for `react-native-windows`.
+Many native module libraries (including the default library template) target older versions of `react` and `react-native` than Windows supports, so you'll need to upgrade to newer versions in order to add support for `react-native-windows`.
 
 > Properly defining your NPM dependencies is an essential part of creating and maintaining a React Native library, especially one that supports multiple platforms. The instructions here represent the minimum steps required to start targeting `react-native-windows`. If you're adding Windows support to a library you don't own, you'll need to work with the library owners to make sure any changes made to `package.json` are appropriate.
 > 
@@ -88,11 +90,7 @@ Again, take the result of that command (let's say it's `0.0.0-a36d9cd7e`) and us
 yarn upgrade react-native@0.0.0-a36d9cd7e --dev
 ```
 
-Now you should be ready to add Windows support with the CLI.
-
-## Adding Windows support to an existing library
-
-Similar to adding Windows support to an app project, you can use the CLI to add Windows support to a native module project, but you'll need to specify `--projectType lib`:
+Now you should be ready to add Windows support with `react-native-windows-init`. The process is similar to adding Windows support to an app project, but you'll need to specify `--projectType lib`:
 
 ```bat
 npx react-native-windows-init --version canary --projectType lib --overwrite
@@ -125,16 +123,9 @@ However, there are some things you may need to check:
 
 1. If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
 
-Example, change this:
-
-```xml
-  <Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
-```
-
-to this:
-
-```xml
-  <Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
+```diff
+-  <Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
++  <Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
 ```
 
 ### Testing the module before it gets published
