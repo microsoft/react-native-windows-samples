@@ -56,7 +56,7 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ### Updating your package.json
 
-Unfortunately the default library template targets older versions of `react` and `react-native` that Windows supports, so you'll need to upgrade to newer versions of `react` and `react-native` in order to add supprot for `react-native-windows`.
+Unfortunately the default library template targets older versions of `react` and `react-native` that Windows supports, so you'll need to upgrade to newer versions of `react` and `react-native` in order to add support for `react-native-windows`.
 
 > Properly defining your NPM dependencies is an essential part of creating and maintaining a React Native library, especially one that supports multiple platforms. The instructions here represent the minimum steps required to start targeting `react-native-windows`. If you're adding Windows support to a library you don't own, you'll need to work with the library owners to make sure any changes made to `package.json` are appropriate.
 > 
