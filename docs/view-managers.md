@@ -34,7 +34,7 @@ Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) t
 
 Once you have set up your development environment and project structure, you are ready to write code. 
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
+If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed [Getting Started](getting-started.md), where
 1. You ran `npx react-native-windows-init --overwrite` to add Windows to your project, and

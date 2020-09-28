@@ -25,7 +25,7 @@ Once your development environment has been correctly configured, you have severa
 
 ## Referencing Windows APIs within a React Native for Windows app project
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
+If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed the [Getting Started](.\getting-started.md) guide, where
 1. You ran `npx react-native-windows-init` to add Windows to your project, and
@@ -79,7 +79,7 @@ Take the result of that command (let's say it's `16.13.1`) and use it to upgrade
 yarn upgrade react@16.13.1 --dev
 ```
 
-You'll need to repeat the steps for `react-native`, ie:
+You'll need to repeat the steps for `react-native`, i.e.:
 
 ```bat
 npm info react-native-windows@canary devDependencies.react-native
