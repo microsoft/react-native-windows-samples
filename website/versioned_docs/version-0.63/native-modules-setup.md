@@ -195,32 +195,30 @@ You now have all of the React Native Windows projects to your solution. Next we'
 
 ### Referencing React Native Windows in your Project
 
-You'll need to edit your project file manually for this step.
+You'll need to edit your project file manually for this step. Open your project file (`windows\MyLibrary\MyLibrary.vcxproj` for C++ or `windows\MyLibrary\MyLibrary.csproj` for C#) in a text editor.
+
+> Normally, you could manually add references to the correct projects using the Visual Studio UI. However you may be required to update your projects to maintain support for new versions of React Native Windows. The props and target files provided here are to help insulate you from future dependency changes.
 
 #### C++/WinRT
 
-Open `windows\MyLibrary\MyLibrary.vcxproj` in a text editor.
-
-1. Find the lines with:
-```xml
-<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-```
-
-and insert the following underneath it:
+1. Insert the following
 
 ```xml
 <PropertyGroup Label="ReactNativeWindowsProps">
   <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
 </PropertyGroup>
 ```
-2. Find the lines with:
-```xml
-<ImportGroup Label="PropertySheets">
-  <Import Project="PropertySheet.props" />
-</ImportGroup>
+
+here:
+
+```diff
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
++<PropertyGroup Label="ReactNativeWindowsProps">
++  <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
++</PropertyGroup>
 ```
 
-and insert the following underneath it:
+2. Insert the following
 
 ```xml
 <ImportGroup Label="ReactNativeWindowsPropertySheets">
@@ -228,12 +226,18 @@ and insert the following underneath it:
 </ImportGroup>
 ```
 
-3. Find the lines with:
-```xml
-<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+here:
+
+```diff
+<ImportGroup Label="PropertySheets">
+  <Import Project="PropertySheet.props" />
+</ImportGroup>
++<ImportGroup Label="ReactNativeWindowsPropertySheets">
++  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props')" />
++</ImportGroup>
 ```
 
-and insert the following underneath it:
+3. Insert the following:
 
 ```xml
 <ImportGroup Label="ReactNativeWindowsTargets">
@@ -248,50 +252,81 @@ and insert the following underneath it:
 </Target>
 ```
 
+here:
+
+```diff
+<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
++<ImportGroup Label="ReactNativeWindowsTargets">
++  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets')" />
++</ImportGroup>
++<Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
++  <PropertyGroup>
++    <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>
++  </PropertyGroup>
++  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.props'))" />
++  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppLib.targets'))" />
++</Target>
+```
+
 Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under MyLibrary > References.
 
 #### C#
 
-Open `windows\MyLibrary\MyLibrary.csproj` in a text editor.
-
-1. Find the lines with:
-```xml
-<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-```
-
-and insert the following underneath it:
+1. Insert the following:
 
 ```xml
 <PropertyGroup Label="ReactNativeWindowsProps">
   <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
 </PropertyGroup>
 ```
-2. Find the lines with:
-```xml
-<Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+
+here:
+
+```diff
+<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
++<PropertyGroup Label="ReactNativeWindowsProps">
++  <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
++</PropertyGroup>
 ```
 
-and insert the following underneath it:
+2. Insert the following:
 
 ```xml
 <ImportGroup Label="ReactNativeWindowsPropertySheets">
-    <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" />
-  </ImportGroup>
-  <ImportGroup Label="ReactNativeWindowsTargets">
-    <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props'))" />
-    <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets'))" />
-  </Target>
+  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" />
+</ImportGroup>
+<ImportGroup Label="ReactNativeWindowsTargets">
+  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" />
+</ImportGroup>
+<Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
+  <PropertyGroup>
+    <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>
+  </PropertyGroup>
+  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props'))" />
+  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets'))" />
+</Target>
+```
+
+here:
+
+```diff
+<Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
++<ImportGroup Label="ReactNativeWindowsPropertySheets">
++  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" />
++</ImportGroup>
++<ImportGroup Label="ReactNativeWindowsTargets">
++  <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" />
++</ImportGroup>
++<Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
++  <PropertyGroup>
++    <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>
++  </PropertyGroup>
++  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.props'))" />
++  <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpLib.targets'))" />
++</Target>
 ```
 
 Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under MyLibrary > References.
-
-> Normally, you could manually add references to the correct projects using the Visual Studio UI. However you may be required to update your projects to support new versions of React Native Windows. The props and target files provided here are to help insulate you from future dependency changes.
 
 ### Testing your Build
 
@@ -310,7 +345,9 @@ If you've followed the steps above, your module should be ready for consumption 
 
 However, there are some things you may need to check:
 
-1. If you are writing a C++/WinRT module you'll see references to NuGet packages in your vcxproj file with relative paths e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
+#### 1. Fixing relative Nuget paths
+
+If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
 
 **Example:**
 

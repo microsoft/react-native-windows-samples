@@ -246,13 +246,13 @@ You have now created the scaffolding to build a native module or view manager. N
 
 If you've followed the steps above, your module will still require a couple tweaks to be ready for consumption. You will need to edit your project file manually to touch up the paths that it uses to reference project references and NuGet packages.
 
-1. When you added a reference to the `Microsoft.ReactNative` project in VS (and to a shared helper), it used a relative path like `..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`. This however isn't going to work for a different app.
+#### 1. Fixing relative Microsoft.ReactNative project paths
+
+When you added a reference to the `Microsoft.ReactNative` project in VS (and to a shared helper), it used a relative path like `..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`. This however isn't going to work for a different app.
 
 We want to instead search for the root directory of `react-native-windows`.
 
-Open your project file (`windows\MyLibrary\MyLibrary.vcxproj` for C++ or ``windows\MyLibrary\MyLibrary.csproj` for C#) in a text editor.
-
-Open `windows\MyLibrary\MyLibrary.vcxproj` in a text editor.
+Open your project file (`windows\MyLibrary\MyLibrary.vcxproj` for C++ or `windows\MyLibrary\MyLibrary.csproj` for C#) in a text editor.
 
 You're going to insert the following:
 
@@ -280,7 +280,7 @@ You're going to insert the following:
 +</PropertyGroup>
 ```
 
-Now you'll want to replace later references in the file like `..\..\node_modules\react-native-windows\Microsoft.ReactNative` with `$(ReactNativeWindowsDir)\Microsoft.ReactNative`:
+Now you'll want to replace later path references in the file like `..\..\node_modules\react-native-windows\Microsoft.ReactNative` with `$(ReactNativeWindowsDir)\Microsoft.ReactNative`:
 
 **For C++ and C# projects:**
 
@@ -298,8 +298,8 @@ Now you'll want to replace later references in the file like `..\..\node_modules
 
 ```diff
 <ImportGroup Label="Shared">
--<Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
-+<Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
+-  <Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
++  <Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
 </ImportGroup>
 ```
 
@@ -307,12 +307,14 @@ Now you'll want to replace later references in the file like `..\..\node_modules
 
 ```diff
 <ImportGroup Label="Shared">
--<Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
-+<Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
+-  <Import Project="..\..\node_modules\react-native-windows\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
++  <Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.projitems" Label="Shared" />
 </ImportGroup>
 ```
 
-2. If you are writing a C++/WinRT module you'll see references to NuGet packages in your vcxproj file with relative paths e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
+#### 2. Fixing relative Nuget paths
+
+If you are writing a C++/WinRT module you'll see references to NuGet packages in your vcxproj file with relative paths e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
 
 **Example:**
 
