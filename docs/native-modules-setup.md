@@ -55,6 +55,8 @@ At this point, follow the steps below to add Windows support to the newly create
 
 ## Adding Windows support to an existing library
 
+> The steps below are written as if you're working with the `MyLibrary` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
+
 ### Updating your package.json
 
 Many native module libraries (including the default library template) target older versions of `react` and `react-native` than Windows supports, so you'll need to upgrade to newer versions in order to add support for `react-native-windows`.
