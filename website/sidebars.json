@@ -26,6 +26,9 @@
       "rnm-getting-started",
       "rnm-dependencies"
     ],
+    "Troubleshooting": [
+      "metro-config-out-tree-platforms"
+    ],
     "Experimental" : [
       "hermes",
       "nuget",

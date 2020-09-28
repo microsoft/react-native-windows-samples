@@ -317,7 +317,7 @@ This can be also tied in with C++/WinRT event handlers or `IAsyncOperation<T>` l
       if (error) {
         result.Reject("Failure");
       } else {
-        something.Completed([result] (const auto& status, const auto& operation) {
+        something.Completed([result] (const auto& operation, const auto& status) {
           // do error checking, e.g. status should be Completed
           std::wstring wtext{operation.GetResults()};
           result.Resolve(React::JSValue{ ConvertWideStringToUtf8String(text) });
