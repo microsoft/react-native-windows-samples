@@ -6,7 +6,8 @@
       "parity-status",
       "config",
       "windowsbrush-and-theme",
-      "releases"
+      "releases",
+      "platform"
     ],
     "Native Modules (Windows)": [
       "native-modules",
