@@ -135,10 +135,10 @@ Objects in the `projects` array have the following fields:
 | projectName | string | auto | Name of the project, determined from *projectFile*, ex: *'MyModule'* |
 | projectLang | string | auto | Language of the project, cpp or cs, determined from *projectFile* |
 | projectGuid | string | auto | Project identifier, determined from *projectFile* |
-| cppHeaders | array | opt | Array of cpp header include lines, ie: *'winrt/MyModule.h'*, to be transformed into `#include <winrt/MyModule.h>` |
-| cppPackageProviders | array | opt | Array of fully qualified cpp IReactPackageProviders, ie: *'MyModule::ReactPackageProvider'* |
-| csNamespaces | array | opt | Array of cs namespaces, ie: *'MyModule'*, to be transformed into `using MyModule;` |
-| csPackageProviders | array | opt | Array of fully qualified cs IReactPackageProviders, ie: *'MyModule.ReactPackageProvider'* |
+| cppHeaders | array | opt | Array of cpp header include lines, i.e.: *'winrt/MyModule.h'*, to be transformed into `#include <winrt/MyModule.h>` |
+| cppPackageProviders | array | opt | Array of fully qualified cpp IReactPackageProviders, i.e.: *'MyModule::ReactPackageProvider'* |
+| csNamespaces | array | opt | Array of cs namespaces, i.e.: *'MyModule'*, to be transformed into `using MyModule;` |
+| csPackageProviders | array | opt | Array of fully qualified cs IReactPackageProviders, i.e.: *'MyModule.ReactPackageProvider'* |
 
 ### Nuget Package Object Fields:
 
@@ -148,10 +148,10 @@ Objects in the `nugetPackages` array have the following fields:
 |:------|:----:|:----:|:------------|
 | packageName | string | req | Name of the NuGet package to install |
 | packageVersion | string | req | Version of the NuGet package to install |
-| cppHeaders | array | req | Array of cpp header include lines, ie: *'winrt/NugetModule.h'*, to be transformed into `#include <winrt/NugetModule.h>` |
-| cppPackageProviders | array | req | Array of fully qualified cpp IReactPackageProviders, ie: *'NugetModule::ReactPackageProvider'* |
-| csNamespaces | array | req | Array of cs namespaces, ie: *'NugetModule'*, to be transformed into `using NugetModule;` |
-| csPackageProviders | array | req | Array of fully qualified cs IReactPackageProviders, ie: *'NugetModule.ReactPackageProvider'* |
+| cppHeaders | array | req | Array of cpp header include lines, i.e.: *'winrt/NugetModule.h'*, to be transformed into `#include <winrt/NugetModule.h>` |
+| cppPackageProviders | array | req | Array of fully qualified cpp IReactPackageProviders, i.e.: *'NugetModule::ReactPackageProvider'* |
+| csNamespaces | array | req | Array of cs namespaces, i.e.: *'NugetModule'*, to be transformed into `using NugetModule;` |
+| csPackageProviders | array | req | Array of fully qualified cs IReactPackageProviders, i.e.: *'NugetModule.ReactPackageProvider'* |
 
 ### Example `react-native.config.js` for a *MyModule*:
 

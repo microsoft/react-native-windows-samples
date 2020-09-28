@@ -67,4 +67,4 @@ You can run the script from the website folder with `yarn run fix-unbroken`.
 
 If you're still seeing "File not found" errors (not warnings) after you've updated the *.unbroken_exclusions* file, then you have an actual missing file to resolve.
 
-The most common problem are with asset files. Make sure that all asset files are present in the repo root's *docs/assets* folder, and that you use links relative to the root docs folder, ie: exactly *assets/image.png*, not *./assets/image.png*, */docs/assets/image.png*, etc.
+The most common problem are with asset files. Make sure that all asset files are present in the repo root's *docs/assets* folder, and that you use links relative to the root docs folder, i.e.: exactly *assets/image.png*, not *./assets/image.png*, */docs/assets/image.png*, etc.

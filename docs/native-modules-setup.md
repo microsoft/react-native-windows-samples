@@ -3,7 +3,8 @@ id: native-modules-setup
 title: Native Module Setup
 ---
 
-> **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
+> **This documentation and the underlying platform code is a work in progress.**
+> **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
 > - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
@@ -14,19 +15,17 @@ This guide will help set you up with the Visual Studio infrastructure to author 
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
-If you're planning on writing in C++, you *must* install the [C++/WinRT Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264).
-
 ## Choose your own adventure
 
 Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
-- [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-project)
+- [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-app-project)
 - [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
 - [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
-## Referencing Windows APIs within a React Native for Windows project
+## Referencing Windows APIs within a React Native for Windows app project
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
+If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed the [Getting Started](.\getting-started.md) guide, where
 1. You ran `npx react-native-windows-init` to add Windows to your project, and
@@ -45,154 +44,66 @@ The steps to create a new native module library project are:
 Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup.
 
 ```bat
-npx create-react-native-module MyLibrary
+npx create-react-native-module --module-name "MyLibrary" MyLibrary
+cd MyLibrary
+yarn install
 ```
 
-Now you'll have a new native module project under `react-native-my-library`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
+Now you'll have a new native module project under `MyLibrary`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
 
 At this point, follow the steps below to add Windows support to the newly created library.
 
 ## Adding Windows support to an existing library
 
-> **The plan is to automate this process as part of a CLI new library project template, see issues [3201](https://github.com/microsoft/react-native-windows/issues/3201) and [3203](https://github.com/microsoft/react-native-windows/issues/3203). However we are also documenting the manual process here for developers who are unable to use the CLI.**
+> The steps below are written as if you're working with the `MyLibrary` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
 
 ### Updating your package.json
 
-You'll need to ensure you have version 0.63 of both `react-native` and `react-native-windows`. In the directory for your native module project, you can update the dependencies with the following:
+Many native module libraries (including the default library template) target older versions of `react` and `react-native` than Windows supports, so you'll need to upgrade to newer versions in order to add support for `react-native-windows`.
+
+> Properly defining your NPM dependencies is an essential part of creating and maintaining a React Native library, especially one that supports multiple platforms. The instructions here represent the minimum steps required to start targeting `react-native-windows`. If you're adding Windows support to a library you don't own, you'll need to work with the library owners to make sure any changes made to `package.json` are appropriate.
+>
+> For more information on how NPM dependencies work, see [Specifying dependencies and devDependencies in a package.json file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
+
+You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest `canary` version of `react-native-windows`.
+
+Use the following command to find the matching versions of `react`:
 
 ```bat
-yarn add react-native@0.63 --dev
-yarn add react-native-windows@0.63 --peer
+npm info react-native-windows@canary devDependencies.react
 ```
 
-Now it's time to switch into Visual Studio and create a new project.
+Take the result of that command (let's say it's `16.13.1`) and use it to upgrade the dev dependency:
 
-### Creating the Visual Studio Project / Solution
+```bat
+yarn upgrade react@16.13.1 --dev
+```
 
-Open Visual Studio and select `Create a new project`. You're going to create a new `Windows Runtime Component` project, which produces a library that is compatible with Windows UWP apps.
+You'll need to repeat the steps for `react-native`, i.e.:
 
-If you're planning on writing your native module in C#, you'll want to choose the C# `Windows Runtime Component (Universal Windows)`:
+```bat
+npm info react-native-windows@canary devDependencies.react-native
+```
 
-![C# Windows Runtime Component (Universal Windows)](assets/native-modules-setup-new-cs-project.png)
+Again, take the result of that command (let's say it's `0.0.0-a36d9cd7e`) and use it to upgrade the dev dependency:
 
-If you're planning on writing your native module in C++, you'll want to choose `Windows Runtime Component (C++/WinRT)`:
+```bat
+yarn upgrade react-native@0.0.0-a36d9cd7e --dev
+```
 
-![Windows Runtime Component (C++/WinRT)](assets/native-modules-setup-new-cpp-project.png)
+Now you should be ready to add Windows support with `react-native-windows-init`. The process is similar to adding Windows support to an app project, but you'll need to specify `--projectType lib`:
 
-> **Important:** You want *C++/WinRT*, not *C++/CX*. Do **not** choose the C++/CX `Windows Runtime Component (Universal)` project-type:
->
-> ![Wrong Windows Runtime Component (Universal)](assets/native-modules-setup-wrong-cpp-project.png)
->
-> If you don't see the `Windows Runtime Component (C++/WinRT)` project type, go back and install the _C++/WinRT Visual Studio Extension_ under [Development Environment](#development-environment).
+```bat
+npx react-native-windows-init --version canary --projectType lib --overwrite
+```
 
-1. Set the `Project Name` to `MyLibrary`.
-1. Set the `Location` to the native module directory (typically the same directory with the `ios` and `android` sub-directories).
-1. Set the `Solution Name` to `MyLibrary`.
-1. Click `Create`.
+This defaults to a C++/WinRT project. If you want to create a C# based native module project, use:
 
-Next you'll be prompted to select the versions of Windows you'll support. This should match the values for React Native Windows, which as of version 0.62, are:
+```bat
+npx react-native-windows-init --version canary --projectType lib --language cs --overwrite
+```
 
-1. Set the `Target version` to `Windows 10, version 1903 (10.0; Build 18362)`.
-1. Set the `Minimum version` to `Windows 10 Fall Creators Update (10.0; Build 16299)`.
-
-You should now have a new `MyLibrary` solution file at `.\MyLibrary\MyLibrary.sln` and a `MyLibrary` project at `.\MyLibrary\MyLibrary\MyLibrary.csproj` for C# or `.\MyLibrary\MyLibrary\MyLibrary.vcxproj` for C++.
-
-Additionally, for C++/WinRT projects, you'll need to change the following:
-
-1. Right click on the project and choose `Manage NuGet Packages...`
-    1. Select version 2.0.200316.3 for Microsoft.Windows.CppWinRT package.
-1. Right-click on the project and choose `Properties`
-    1. Under `Linker > Windows Metadata` set `Generate Windows Metadata` to `Yes`.
-
-Now, before we go any further we'll want to rename the root directory of the Windows native code to `windows` to match the peer `android` and `ios` directories:
-
-1. Close the solution with `File` > `Close Solution`.
-1. Rename that top `MyLibrary` directory `windows`.
-1. Re-open the solution file at `windows\MyLibrary.sln`.
-
-> *Optional*: Whether you're creating a new native module from scratch, or adding windows support to an existing ios/android module, if you're using git, you'll want to add Visual Studio-specific entries in your project's `.gitignore`.
-> The simplest way to do this is to get [VisualStudio.gitignore](https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore) and save it as `windows\.gitignore`.
-
-Now it's time to add React Native Windows into the solution.
-
-### Adding React Native Windows to the Visual Studio Solution
-
-We're going to add several React Native Windows projects to your solution. So to avoid confusing them with your own code, we're first going to create a solution folder called `ReactNative`:
-
-1. Open the Solution Explorer sidebar.
-1. Right-click on `Solution 'MyLibrary'` at the top.
-1. Select `Add` > `New Solution Folder`.
-1. Name the folder `ReactNative`.
-
-Now we're going to add all of the following React Native Windows projects to that `ReactNative` folder. All of these projects are located under the `node_modules\react-native-windows` directory in the root of your `react-native-my-library` project directory.
-
->*For more details about what these projects do, see [Project Structure](https://github.com/microsoft/react-native-windows/blob/master/docs/project-structure.md).*
-
-| VS Project                          | Project File                                                                     |
-| :---------------------------------- | :------------------------------------------------------------------------------- |
-| Chakra                              | `Chakra\Chakra.vcxitems`                                                         |
-| Common                              | `Common\Common.vcxproj`                                                          |
-| Folly                               | `Folly\Folly.vcxproj`                                                            |
-| JSI.Shared                          | `JSI\Shared\JSI.Shared.vcxitems`                                                 |
-| JSI.Universal                       | `JSI\Universal\JSI.Universal.vcxproj`                                            |
-| Microsoft.ReactNative               | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                            |
-| Microsoft.ReactNative.Cxx           | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                   |
-| Microsoft.ReactNative.SharedManaged | `Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.shproj` |
-| Mso                                 | `Mso\Mso.vcxitems`                                                               |
-| ReactCommon                         | `ReactCommon\ReactCommon.vcxproj`                                                |
-| ReactWindowsCore                    | `ReactWindowsCore\ReactWindowsCore.vcxproj`                                      |
-| Shared                              | `Shared\Shared.vcxitems`                                                         |
-
-For each project, you'll do the following:
-
-1. Open the Solution Explorer sidebar.
-1. Right-click on the `ReactNative` folder.
-1. Select `Add` > `Existing Project...`.
-1. Select the project file and click `Open`.
-
-When you are done, your solution should look like this:
-![native module dependencies](assets/native-module-dependencies.png)
-
-You now have all of the React Native Windows projects to your solution. Next we're going to reference them in our `MyLibrary` project.
-
-### Referencing React Native Windows in your Project
-
-The only project reference you **must** add is `Microsoft.ReactNative`. To add the reference:
-
-1. Open the Solution Explorer sidebar.
-1. Right-click on your `MyLibrary` project.
-1. Select `Add` > `Reference`.
-1. Select `Projects` on the left-hand side.
-1. Check the box next to `Microsoft.ReactNative`.
-1. Click `OK`.
-
-After you've added the reference, you need to make sure it doesn't copy itself into your build (otherwise it'll cause build conflicts down the line when you're trying on consume your library):
-
-1. Open the Solution Explorer sidebar.
-1. Under your `MyLibrary` project, expand the `References`.
-1. Right-click on `Microsoft.ReactNative`.
-1. Select `Properties`.
-1. Under `Build`, Change `Copy Local` to `False`.
-
-Now, you're technically ready to go, but in order to improve the developer experience, it's also **highly recommended** to also add a reference to the appropriate helper shared project. These projects contain the attributes (C#) and macros (C++) as described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
-
-If you're writing in C#, you'll want to add `Microsoft.ReactNative.SharedManaged`:
-
-1. Open the Solution Explorer sidebar.
-1. Right-click on your `MyLibrary` project.
-1. Select `Add` > `Reference`.
-1. Select `Shared Projects` on the left-hand side.
-1. Check the box next to `Microsoft.ReactNative.SharedManaged`.
-1. Click `OK`.
-
-If you're writing in C++, you'll want to add `Microsoft.ReactNative.Cxx`:
-
-1. Open the Solution Explorer sidebar.
-1. Right-click on your `MyLibrary` project.
-1. Select `Add` > `Reference`.
-1. Select `Shared Projects` on the left-hand side.
-1. Check the box next to `Microsoft.ReactNative.Cxx`.
-1. Click `OK`.
+That's it, you should be able to open `windows\MyLibrary.sln` and start working on your project.
 
 ### Testing your Build
 
@@ -207,22 +118,19 @@ You have now created the scaffolding to build a native module or view manager. N
 
 ### Making your module ready for consumption in an app
 
-You will need to edit your project file manually to touch up the paths that it uses to reference project references and NuGet packages.
-1. When you add a reference to the `Microsoft.ReactNative.Cxx` project in VS, it will use a path like `..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxproj`. This however isn't going to work for a different app. 
+If you've followed the steps above, your module should be ready for consumption thanks to [Autolinking](native-modules-autolinking.md).
 
-Instead you will want to replace that with a reference to the react-native-windows project that the app project might be using:
-```xml
-  <PropertyGroup>
-    <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
-  </PropertyGroup>
-  <ImportGroup Label="Shared">
-    <Import Project="$(ReactNativeWindowsDir)\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
-  </ImportGroup>
-```
+However, there are some things you may need to check:
 
-2. NuGet packages will show up in the vcxproj as relative references too, e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of this form with something like:
-```xml
-  <Import Project="$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.200316.3\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.200316.3\build\native\Microsoft.Windows.CppWinRT.props')" />
+#### 1. Fixing relative Nuget paths
+
+If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
+
+**Example:**
+
+```diff
+-<Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
++<Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
 ```
 
 ### Testing the module before it gets published
@@ -242,7 +150,7 @@ If you are working on an existing module that already has iOS and Android sample
 4. Open the solution with Visual Studio and [link native module](native-modules-using.md).
 > The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
 
-5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)). 
+5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)).
 6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/master/package.json#L18)).
 7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/master/react-native.config.js#L28-L33)).
 8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
@@ -261,7 +169,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
 ```yaml
     - uses: actions/checkout@v2
       name: Checkout Code
-     
+
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
@@ -271,7 +179,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
       uses: microsoft/setup-msbuild@v1.0.0
       with:
         vs-version: 16.5
-       
+
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
 
@@ -287,7 +195,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Install node modules
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn --pure-lockfile
-    
+
     - name: yarn build
       if: steps.yarn-cache.outputs.cache-hit == 'true'
       run: |
@@ -304,7 +212,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Start Appium server
       shell: powershell
       run: Start-Process PowerShell -ArgumentList "yarn appium"
-      
+
     - name: Run tests
       run: yarn test:windows
 ```

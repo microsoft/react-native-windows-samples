@@ -39,16 +39,16 @@ npx react-native-windows-init --overwrite
 > The --overwrite flag is a temporary measure that ensures the correct files are copied to metro.config.js for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the metro.config.js file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows/issues/4698).
 
 Here are the options that `react-native-windows-init` takes:
-| Option      | Input Type                           | Description                                        |
-|-------------|--------------------------------------|----------------------------------------------------|
-| `--help`      | boolean                              | Show help.                                       |
-| `--version`  | string                               | The version of react-native-windows to use.       |
-| `--namespace` | string                               | The native project namespace.                    | 
-| `--verbose`   | boolean                              | Enables logging.                                 |
-| `--language`  | string ["`cs`","`cpp`"] [default: "`cpp`"] | Which language the app is written in.            |
-
-| `--overwrite` | boolean                              | Overwrite any existing files without prompting.  |
-| `--useWinUI3` | boolean                              | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
+| Option          | Input Type                                  | Description                                      |
+|-----------------|---------------------------------------------|--------------------------------------------------|
+| `--help`        | boolean                                     | Show help.                                       |
+| `--version`     | string                                      | The version of react-native-windows to use.      |
+| `--namespace`   | string                                      | The native project namespace.                    | 
+| `--verbose`     | boolean                                     | Enables logging.                                 |
+| `--language`    | string ["`cs`","`cpp`"] [default: "`cpp`"]  | Which language the app is written in.            |
+| `--projectType` | string ["`app`","`lib`"] [default: "`app`"] | The type of project to initialize.               |
+| `--overwrite`   | boolean                                     | Overwrite any existing files without prompting.  |
+| `--useWinUI3`   | boolean                                     | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
 
 ## Running a React Native Windows App
 

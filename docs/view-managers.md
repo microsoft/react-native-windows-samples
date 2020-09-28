@@ -3,8 +3,9 @@ id: view-managers
 title: Native UI Components
 ---
 
->**This documentation and the underlying platform code is a work in progress.**
->**Examples (C# and C++/WinRT):**
+> **This documentation and the underlying platform code is a work in progress.**
+> **Examples (C# and C++/WinRT):**
+>
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
 > - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
 
@@ -33,7 +34,7 @@ Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) t
 
 Once you have set up your development environment and project structure, you are ready to write code. 
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
+If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed [Getting Started](getting-started.md), where
 1. You ran `npx react-native-windows-init --overwrite` to add Windows to your project, and

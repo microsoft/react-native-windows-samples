@@ -41,7 +41,7 @@ Autolinking is performed automatically as a part of the `run-windows` command:
 
 ### Manually run autolinking
 
-If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, ie:
+If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, i.e.:
 
 ```bat
 npx react-native autolink-windows
