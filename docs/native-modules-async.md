@@ -226,9 +226,9 @@ void GetHttpResponse(std::wstring uri,
 }
 ```
 
-Looks simple enough, right? We call `GetHttpResponseAsync` with the `uri` and `promise` parameters, and get back an `IAsyncAction` object which we store in `asyncOp`. When this executes, `GetHttpResponseAsync` will return control when it hits its first `co_await`, which in turn will return control for the JS code to continure running. When everything in `GetHttpResponseAsync` succeeds, it itself is responsible for resolving the promise with the result.
+Looks simple enough, right? We call `GetHttpResponseAsync` with the `uri` and `promise` parameters, and get back an `IAsyncAction` object which we store in `asyncOp`. When this executes, `GetHttpResponseAsync` will return control when it hits its first `co_await`, which in turn will return control for the JS code to continue running. When everything in `GetHttpResponseAsync` succeeds, it itself is responsible for resolving the promise with the result.
 
-But wait, what happens if `GetHttpResponseAsync` doesn't succeed? We don't handle any exceptions in this exmaple, so if an exception is thrown, how do we marshal an error back to the JS? We have one more thing to do, and that's to check for unhandled exceptions:
+But wait, what happens if `GetHttpResponseAsync` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to the JS? We have one more thing to do, and that's to check for unhandled exceptions:
 
 ```cpp
 REACT_METHOD(GetHttpResponse);
