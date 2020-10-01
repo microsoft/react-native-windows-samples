@@ -293,17 +293,25 @@ Then we define constants, and it's as easy as creating a public field and giving
 
 It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
 
-Methods that return more complex types (like `std::string`) can be implemented by returning void and accepting a bool and a `ReactPromise<JSValue>`:
+Native modules do not have the ability to check that the parameter types and the number of parameters match between what's called from JavaScript and what the native code accepts. However, the framework will validate that the number of promises-like parameters match: if the JavaScript API is async, it will expect that there is one "promise-like" parameter in the native method implementation signature.
+
+A "promise-like" parameter is either:
+- `React::ReactPromise<T>`
+- a callback function or functor.
+
+See [Using Asynchronous Windows APIs](native-modules-async.md).
+
+Here is an example of an async method that returns a string. 
 
 ```cpp
     REACT_METHOD(GetString, L"getString");
-    void GetString(bool error, React::ReactPromise<React::JSValue>&& result) noexcept
+    void GetString(React::ReactPromise<std::string>&& result) noexcept
     {
       if (error) {
         result.Reject("Failure");
       } else {
         std::string text = DoSomething();
-        result.Resolve(React::JSValue{ text });
+        result.Resolve(text);
       }
     }
 ```
@@ -312,21 +320,24 @@ This can be also tied in with C++/WinRT event handlers or `IAsyncOperation<T>` l
 
 ```cpp
     REACT_METHOD(GetString, L"getString");
-    void GetString(bool error, React::ReactPromise<React::JSValue>&& result) noexcept
+    void GetString(React::ReactPromise<std::string>&& result) noexcept
     {
       if (error) {
         result.Reject("Failure");
       } else {
         something.Completed([result] (const auto& operation, const auto& status) {
           // do error checking, e.g. status should be Completed
-          std::wstring wtext{operation.GetResults()};
-          result.Resolve(React::JSValue{ ConvertWideStringToUtf8String(text) });
+          winrt::hstring result{operation.GetResults()};
+          result.Resolve(winrt::to_string(result));
         });
       }
     }
 ```
+See [JavaScript and Windows Runtime strings](#javascript-and-windows-runtime-strings) for more details.
 
-`REACT_SYNC_METHOD` isn't supported in Debug when the JS engine is Chrome V8. You will get an exception that reads:
+The [`JSValue`](native-modules-jsvalue.md) type can be used when the API returns a JavaScript objects or takes JavaScript objects as input parameters.
+
+Native modules will want to use `REACT_METHOD` instead of `REACT_SYNC_METHOD` since the latter precludes web debugging and has performance implications. When using web debugging you will see an exception that reads:
 `Calling synchronous methods on native modules is not supported in Chrome. Consider providing alternative to expose this method in debug mode, e.g. by exposing constants ahead-of-time`
 See: [MessageQueue.js](https://github.com/facebook/react-native/blob/e27d656ef370958c864b052123ec05579ac9fc01/Libraries/BatchedBridge/MessageQueue.js#L175).
 
@@ -502,3 +513,7 @@ To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath
 Calls to methods are a little different due to the asynchronous nature of the JS engine. If the native method returns nothing, we can simply call the method. However, in this case `FancyMath.add()` returns a value, so in addition to the two necessary parameters we also include a callback function which will be called with the result of `FancyMath.add()`. In the example above, we can see that the callback raises an Alert dialog with the result value.
 
 For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath::AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
+
+### JavaScript and Windows Runtime strings
+Note that JavaScript strings are UTF8 (i.e. `std::string`) but WinRT strings (`winrt::hstring` in C++/WinRT) are UTF16 (and therefore translate ot `std::wstring`), so when inter-operating between JavaScript and WinRT APIs, you will likely need to convert between these two formats.
+See [String handling in C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/strings), specifically [`winrt::to_string`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-string) and [`winrt::to_hstring`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-hstring).
