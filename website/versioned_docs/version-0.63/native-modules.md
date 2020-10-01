@@ -561,5 +561,5 @@ To work around this problem there are three options:
     ```
 
 ### JavaScript and Windows Runtime strings
-Note that JavaScript strings are UTF8 (i.e. `std::string`) but WinRT strings (`winrt::hstring` in C++/WinRT) are UTF16 (and therefore translate ot `std::wstring`), so when inter-operating between JavaScript and WinRT APIs, you will likely need to convert between these two formats.
+Note that JavaScript strings are UTF8 (i.e. `std::string`) but WinRT strings are UTF16 (i.e. `winrt::hstring` in C++/WinRT), so when inter-operating between JavaScript and WinRT APIs, you will need to convert between these two encodings.
 See [String handling in C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/strings), specifically [`winrt::to_string`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-string) and [`winrt::to_hstring`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-hstring).
