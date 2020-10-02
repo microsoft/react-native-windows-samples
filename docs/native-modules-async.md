@@ -202,7 +202,7 @@ static winrt::Windows::Foundation::IAsyncAction GetHttpResponseAsync(std::wstrin
 }
 ```
 
-What have we done here? First off, we've "captured" the `promise` locally within the asynchronous method by copying it into `capturedPromise`. We do this because this is an asynchornous method calling other asynchronous methods, and otherwise we risk the `ReactPromise` object getting deleted prematurely by React Native Windows.
+What have we done here? First off, we've "captured" the `promise` locally within the asynchronous method by copying it into `capturedPromise`. We do this because this is an asynchronous method calling other asynchronous methods, and otherwise we risk the `ReactPromise` object getting deleted prematurely by React Native Windows.
 
 > **Important:** Our only input parameter in this example is a `wstring`, but if your method uses `JSValue`, `JSValueArray`, or `JSValueObject` parameter types, you'll need to "capture" those with a copy too. Example:
 > ```cpp
@@ -226,9 +226,9 @@ void GetHttpResponse(std::wstring uri,
 }
 ```
 
-Looks simple enough, right? We call `GetHttpResponseAsync` with the `uri` and `promise` parameters, and get back an `IAsyncAction` object which we store in `asyncOp`. When this executes, `GetHttpResponseAsync` will return control when it hits its first `co_await`, which in turn will return control for the JS code to continure running. When everything in `GetHttpResponseAsync` succeeds, it itself is responsible for resolving the promise with the result.
+Looks simple enough, right? We call `GetHttpResponseAsync` with the `uri` and `promise` parameters, and get back an `IAsyncAction` object which we store in `asyncOp`. When this executes, `GetHttpResponseAsync` will return control when it hits its first `co_await`, which in turn will return control for the JS code to continue running. When everything in `GetHttpResponseAsync` succeeds, it itself is responsible for resolving the promise with the result.
 
-But wait, what happens if `GetHttpResponseAsync` doesn't succeed? We don't handle any exceptions in this exmaple, so if an exception is thrown, how do we marshal an error back to the JS? We have one more thing to do, and that's to check for unhandled exceptions:
+But wait, what happens if `GetHttpResponseAsync` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to the JS? We have one more thing to do, and that's to check for unhandled exceptions:
 
 ```cpp
 REACT_METHOD(GetHttpResponse);
