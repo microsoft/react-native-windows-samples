@@ -15,7 +15,7 @@ Provides configuration of the react instance.
 IVector<IReactPackageProvider> PackageProviders { get; }
 ```
 
-Provides a list of additional NativeModules and custom ViewManagers that should be included in the instance.
+Provides a list of additional native modules and custom view managers that should be included in the instance.
 
 ### ```Properties```
 
@@ -32,7 +32,7 @@ Properties are shared with [`IReactContext.Properties`](IReactContext-api-window
 IReactNotificationService Notifications { get; }
 ```
 
-Provides access to the IReactNotificationService, which allows easy communication between custom NativeModules or ViewManagers.
+Provides access to the `IReactNotificationService`, which allows easy communication between custom native modules or view managers.
 
 ### ```UseDeveloperSupport```
 
@@ -40,7 +40,7 @@ Provides access to the IReactNotificationService, which allows easy communicatio
 bool UseDeveloperSupport { get; set; }
 ```
 
-This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default RedBox and LogBox experience and loading UI during bundle load.
+This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default `RedBox` and `LogBox` experience and loading UI during bundle load.
 
 ### ```JavaScriptBundleFile```
 
@@ -48,7 +48,7 @@ This controls whether various developer experience features are available for th
 string JavaScriptBundleFile { get; set; }
 ```
 
-The name of the JavaScript bundle file to load.  This defaults to `index.windows`.  This should be a relative path from [BundleRootPath](#bundlerootpath).  `.bundle` will be appended to the end, when looking for the bundle file.
+The name of the JavaScript bundle file to load.  This defaults to `index.windows`.  This should be a relative path from [`BundleRootPath`](#bundlerootpath).  `.bundle` will be appended to the end, when looking for the bundle file.
 
 
 ### ```JavaScriptMainModuleName```
@@ -87,7 +87,7 @@ bool UseLiveReload { get; set; }
 
 Enable live reload to load the source bundle from the React Native packager.
 When the file is saved, the packager will trigger reloading.
-**For general use this has been replaced by [UseFastRefresh](#usefastrefresh).**
+**For general use this has been replaced by [`UseFastRefresh`](#usefastrefresh).**
 
 ### ```UseDirectDebugger```
 
@@ -97,7 +97,7 @@ bool UseDirectDebugger { get; set; }
 
 Enables debugging in the JavaScript engine (if supported).  
 
-For Chakra this enables you to debug the JS runtime directly within your app using VisualStudio -> Attach to process (Script)
+For Chakra this enables you to debug the JS runtime directly within your app using Visual Studio -> Attach to process (Script)
 
 ### ```DebuggerBreakOnNextLine```
 
@@ -136,7 +136,7 @@ bool EnableByteCodeCaching { get; set; }
 
 default: false
 
-For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.  Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  [ByteCodeFileUri](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
+For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.  Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  [`ByteCodeFileUri`](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
 
 ### ```EnableDeveloperMenu```
 
@@ -144,11 +144,11 @@ For JS engines that support bytecode generation, this controls if bytecode shoul
 bool EnableDeveloperMenu { get; set; }
 ```
 
-This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default RedBox experience and the loading UI during bundle load.
+This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default `RedBox` experience and the loading UI during bundle load.
 
 > This property will be removed in a future version of **react-native-windows**
 
-This property has been replaced by [UseDeveloperSupport](#usedevelopersupport). In the 0.63 both properties will do the same thing.
+This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In the 0.63 both properties will do the same thing.
 
 
 ### ```ByteCodeFileUri```
@@ -157,7 +157,7 @@ This property has been replaced by [UseDeveloperSupport](#usedevelopersupport). 
 string ByteCodeFileUri { get; set; }
 ```
 
-Set this to a location the application has write access to in order for bytecode to be successfully cached. See [EnableByteCodeCaching](#enablebytecodecaching).
+Set this to a location the application has write access to in order for bytecode to be successfully cached. See [`EnableByteCodeCaching`](#enablebytecodecaching).
 
 
 ### ```SourceBundleHost```
@@ -168,7 +168,7 @@ string SourceBundleHost { get; set; }
 
 default:  `localhost`
 
-When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
 
 
 ### ```SourceBundlePort```
@@ -179,7 +179,7 @@ ushort SourceBundlePort { get; set; }
 
 default: 8081
 
-When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server port that will be used to load the bundle from.
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server port that will be used to load the bundle from.
 
 
 ### ```DebugHost```
@@ -190,9 +190,9 @@ string DebugHost { get; set; }
 
 default: `localhost:8081`
 
-When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) or [UseWebDebugger](#usewebdebugger) this is the server that will be used to load the bundle from.
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
 
-> This has been replaced with SourceBundleHost and SourceBundlePort and will be removed in a future version.
+> This has been replaced with `SourceBundleHost` and `SourceBundlePort` and will be removed in a future version.
 
 ### ```DebugBundlePath```
 
@@ -200,7 +200,7 @@ When using a [UseFastRefresh](#usefastrefresh), [UseLiveReload](#uselivereload) 
 string DebugBundlePath { get; set; }
 ```
 
-When loading from a bundle server (such as metro), this is the path that will be requested from the server.  If this is not provided the value of [JavaScriptBundleFile](#javascriptbundlefile) or [JavaScriptMainModuleName](#javascriptmainmodulename) is used.
+When loading from a bundle server (such as metro), this is the path that will be requested from the server.  If this is not provided the value of [`JavaScriptBundleFile`](#javascriptbundlefile) or [`JavaScriptMainModuleName`](#javascriptmainmodulename) is used.
 
 ### ```BundleRootPath```
 
@@ -218,7 +218,7 @@ ushort DebuggerPort { get; set; }
 
 default: `9229`
 
-When [UseDirectDebugger](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
+When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
 
 ### ```RedBoxHandler```
 
@@ -226,7 +226,7 @@ When [UseDirectDebugger](#usedirectdebugger) is enabled, this controls the port 
 IRedBoxHandler RedBoxHandler { get; set; }
 ```
 
-Provides an extension point to allow custom error handling within the react instance. See [IRedBoxHandler](IRedBoxHandler-api-windows.md) for more information.
+Provides an extension point to allow custom error handling within the react instance. See [`IRedBoxHandler`](IRedBoxHandler-api-windows.md) for more information.
 
 
 ### ```UIDispatcher```
@@ -235,7 +235,7 @@ Provides an extension point to allow custom error handling within the react inst
 IReactDispatcher UIDispatcher { get; set; }
 ```
 
-Control the main UIDispatcher to be used by the React Instance.  If the ReactSettingsInstance object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to NativeModules and ViewManagers using [`IReactContext.UIDispatcher`](IReactContext-api-windows.md#uidispatcher)
+Control the main UI dispatcher to be used by the React instance.  If the `ReactSettingsInstance` object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to native modules and view managers using [`IReactContext.UIDispatcher`](IReactContext-api-windows.md#uidispatcher)
 
 
 <!-- namespace Microsoft.ReactNative

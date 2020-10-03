@@ -3,7 +3,7 @@ id: ijsvaluewriter-api
 title: IJSValueWriter
 ---
 
-``IJSValueWriter`` is used to read data from JavaScript in custom NativeModules.  It acts as a stream.
+``IJSValueWriter`` is used to read data from JavaScript in custom native modules.  It acts as a stream.
 
 ``IJSValueWriter`` supports the following types:
 

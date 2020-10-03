@@ -27,7 +27,7 @@ Add a reference to `ReactNativeFooCpp` to your main application project. From Vi
 2. Check `ReactNativeFooCpp` from Solution Projects
 
 
-## Step 3: Update the pch.h file
+## Step 3: Update the `pch.h` file
 
 Add `#include "winrt/ReactNativeFooCPP.h"`.
 

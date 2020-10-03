@@ -32,7 +32,7 @@ import { useColorScheme } from 'react-native'
       };
 ```
 
-> Note: useColorScheme() will always return 'light' when remote debugging.
+> Note: `useColorScheme()` will always return 'light' when remote debugging.
 
 #### Setting up your app to be sensitive to theme changes without hooks
 
@@ -69,15 +69,15 @@ class MyAppClass extends Component {
 }
 ```
 
-> Note: getColorScheme() will always return 'light' when remote debugging.
+> Note: `getColorScheme()` will always return 'light' when remote debugging.
 
 
 ### Using Windows-defined theme brushes
 
-The following examples cover how to access and use the Windows system theme brushes and apply them in your styles.  For more information on Windows Xaml theme resources see: 
+The following examples cover how to access and use the Windows system theme brushes and apply them in your styles.  For more information on Windows XAML theme resources see: 
 https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources
 
-Any brush/color value within your apps native ResourceDictionary, either from the system, or custom native resources, are available using `PlatformColor`.
+Any brush/color value within your apps native `ResourceDictionary`, either from the system, or custom native resources, are available using `PlatformColor`.
 
 #### Using theme brushes in a style
 
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 
 #### Applying a system accent color variant
 
-In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the windowsbrush object.
+In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the `windowsbrush` object.
 
 ```JSX
 const styles = StyleSheet.create({
@@ -107,13 +107,13 @@ const styles = StyleSheet.create({
 
 **Note:** That the system accent colors are `Color` objects at the native layer, whereas the other examples showed the use of theme brushes are `SolidColorBrush` objects. This means that the `SolidColorBrushes` will adapt automatically based on the Theme (Light, Dark or High Contrast), while the `Colors` will remain static.
 
-### Using PlatformColor to access Reveal and Acrylic
+### Using `PlatformColor` to access Reveal and Acrylic
 
 Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `PlatformColor` API we provide on the JavaScript layer for other brushes.
 
 #### Using System Acrylic
 
-The `PlatformColor` api gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
+The `PlatformColor` API gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
 
 ![AcrylicBrush](assets/rnw-acrylic-surface.png)
 

@@ -42,7 +42,7 @@ React Native Windows apps can be distributed, installed and updated in the follo
   - via [your private Store](https://docs.microsoft.com/microsoft-store/distribute-apps-to-your-employees-microsoft-store-for-business) if you are a business or educational organization. See also [Distribute LOB apps to enterprises](https://docs.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises).
   - using [App Installer](https://docs.microsoft.com/windows/msix/app-installer/installing-windows10-apps-web).
 
-It's worth noting that you cannot just "_copy an exe_" as the app package contains more than just the main executable, including an app manifest, assets, dependent framework libraries, etc.
+It's worth noting that you cannot just "_copy an EXE_" as the app package contains more than just the main executable, including an app manifest, assets, dependent framework libraries, etc.
 
 In addition, the Store submission process has these requirements:
 
@@ -51,7 +51,7 @@ In addition, the Store submission process has these requirements:
 
 
 ### Use of non-WinRT libraries
-Any libraries you use should be built as WinRT components. In other words, you cannot easily link libraries built for win32 desktop apps without additional work.
+Any libraries you use should be built as WinRT components. In other words, you cannot easily link libraries built for Win32 desktop apps without additional work.
   - C++/CX is a dialect of C++ that allows writing UWP apps, however this is **not supported** for writing a RNW app. The article [How to use existing C++ code in a Universal Windows Platform app](https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app) talks about how to consume non-WinRT libraries in a WinRT context using C++/CX, but most of the content should be applicable to using C++/WinRT which is the supported way to write RNW apps.
   - See also the guide for [moving from C++/CX to C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
   - Libraries built for .NET desktop framework cannot be directly accessed by UWP. You can create a .NET Standard library that calls into the .NET framework one, and call from the UWP app into the .NET Standard middleware.
@@ -72,7 +72,7 @@ C# development brings engineering efficiencies to writing a module or an app. We
 </div>
 
 ### App crashes when trying to load the C# component or instantiate one of its types
-**Error 0x80131040 “The located assembly’s manifest definition does not match the assembly reference”**
+**`Error 0x80131040 "The located assembly’s manifest definition does not match the assembly reference"`**
 
 C++ apps consuming native modules written in C# need special care. There is a bug in the interop between C# and C++: https://github.com/microsoft/dotnet/issues/1196.
 
@@ -81,7 +81,7 @@ The symptoms are that building the app will work fine but the C++ app will crash
 A write-up of the problem can be found [here](https://devblogs.microsoft.com/oldnewthing/20200615-00/?p=103868/). 
 To work around this problem there are three options:
 1. Set your C# component's target Windows version to Windows 10 version 1703 (Build 15063) or lower.
-1. Reference the .NET Native nuget packages in your C++ app:
+1. Reference the .NET Native NuGet packages in your C++ app:
    - Right click on the app's .vcxproj file → **Manage NuGet Packages**.
    - Search for `Microsoft.Net.Native.Compiler`, and install it.
    - Then add the following properties to the .vcxproj file:
@@ -102,12 +102,12 @@ So you added a new native module or a new method to a module but it isn't workin
 
 If your method isn't being hit in the VS debugger, something is blocking the call due to a mismatch, likely between the expected and actual types that your method takes/returns.
 
-To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
+To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [`ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp`](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
 
 Right-click on the breakpoint to add a Condition. Suppose the method you are interested in catching is called `getString`. 
 The conditional breakpoint condition to enter should compare the name of the method to that string: `strcmp(method.name._Mypair._Myval2._Bx._Ptr, "getString")==0`
 
-### Compile error 'XamlMetaDataProvider': is not a member of 'winrt::MyModuleName'
+### `Compile error 'XamlMetaDataProvider': is not a member of 'winrt::MyModuleName'`
 ```
 Error	C2039	'XamlMetaDataProvider': is not a member of 'winrt::MyModuleName'
 Error	C2039	'MyModuleName_XamlTypeInfo': is not a member of 'winrt::MyModuleName'

@@ -3,7 +3,7 @@ id: ijsvaluereader-api
 title: IJSValueReader
 ---
 
-``IJSIValueReader`` is used to read data from JavaScript in custom NativeModules.  It acts as a stream.
+``IJSIValueReader`` is used to read data from JavaScript in custom native modules.  It acts as a stream.
 
 ``IJSIValueReader`` supports the following types:
 

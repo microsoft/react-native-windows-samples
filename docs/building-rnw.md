@@ -15,7 +15,7 @@ title: Building React-Native-Windows
   cd react-native-windows
   ```
 
-- Install dependencies, and run JS build steps
+- Install dependencies, and run JavaScript build steps
   ```cmd
   yarn
   yarn build

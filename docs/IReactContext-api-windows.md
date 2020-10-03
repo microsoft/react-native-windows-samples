@@ -3,13 +3,13 @@ id: ireactcontext-api
 title: IReactContext
 ---
 
-The IReactContext is given to native modules to communicate with other native modules, views, application, and the ReactNative instance.
+The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance.
 
-It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the IReactContext is destroyed.
+It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed.
 
 - Use the Properties to share native module's data with other components.
 - Use the Notifications to exchange events with other components.
-- Use CallJSFunction to call JavaScript functions, and EmitJSEvent to raise JavaScript events.
+- Use `CallJSFunction` to call JavaScript functions, and `EmitJSEvent` to raise JavaScript events.
 
 # Reference
 
@@ -21,7 +21,7 @@ It has the same lifetime as the React instance. When the React instance is reloa
 void DispatchEvent(XAML_NAMESPACE.FrameworkElement view, String eventName, JSValueArgWriter eventDataArgWriter);
 ```
 
-> Deprecated: Use DispatchEvent on [XamlUIService](XamlUIService-api-windows.md) instead
+> Deprecated: Use `DispatchEvent` on [`XamlUIService`](XamlUIService-api-windows.md) instead
 
 ### `CallJSFunction()`
 
@@ -29,7 +29,7 @@ void DispatchEvent(XAML_NAMESPACE.FrameworkElement view, String eventName, JSVal
 void CallJSFunction(String moduleName, String methodName, JSValueArgWriter paramsArgWriter);
 ```
 
-Call JavaScript function methodName of moduleName.
+Call the JavaScript function named `methodName` of `moduleName`.
 
 ### `EmitJSEvent()`
 
@@ -37,7 +37,7 @@ Call JavaScript function methodName of moduleName.
 void EmitJSEvent(String eventEmitterName, String eventName, JSValueArgWriter paramsArgWriter);
 ```
 
-Call JavaScript module event. It is a specialized CallJSFunction call where method name is always 'emit'.
+Call JavaScript module event. It is a specialized `CallJSFunction` call where method name is always 'emit'.
 
 
 ## Properties
@@ -48,7 +48,7 @@ Call JavaScript module event. It is a specialized CallJSFunction call where meth
 IReactPropertyBag Properties { get; }
 ```
 
-Properties shared with the IReactInstanceSettings.Properties. It can be used to share values and state between components.
+Properties shared with the `IReactInstanceSettings.Properties`. It can be used to share values and state between components.
 
 ### `Notifications`
 
@@ -56,9 +56,9 @@ Properties shared with the IReactInstanceSettings.Properties. It can be used to 
 IReactNotificationService Notifications { get; }
 ```
 
-Notifications shared with the IReactInstanceSettings.Notifications. They can be used to exchange events between components.
-All subscriptions added to the IReactContext.Notifications are automatically removed after the IReactContext is destroyed.
-The subscriptions added to IReactInstanceSettings.Notifications kept as long as IReactInstanceSettings alive.
+Notifications shared with the `IReactInstanceSettings.Notifications`. They can be used to exchange events between components.
+All subscriptions added to the `IReactContext.Notifications` are automatically removed after the `IReactContext` is destroyed.
+The subscriptions added to the `IReactInstanceSettings.Notifications` are kept as long as `IReactInstanceSettings` is alive.
 
 ### `UIDispatcher`
 
@@ -66,7 +66,7 @@ The subscriptions added to IReactInstanceSettings.Notifications kept as long as 
 IReactDispatcher UIDispatcher { get; }
 ```
 
-Get ReactDispatcherHelper::UIDispatcherProperty from the Properties property bag.
+Get `ReactDispatcherHelper::UIDispatcherProperty` from the Properties property bag.
 
 ### `JSDispatcher`
 
@@ -74,7 +74,7 @@ Get ReactDispatcherHelper::UIDispatcherProperty from the Properties property bag
 IReactDispatcher JSDispatcher { get; }
 ```
 
-Get ReactDispatcherHelper::JSDispatcherProperty from the Properties property bag.
+Get `ReactDispatcherHelper::JSDispatcherProperty` from the Properties property bag.
 
 
 <!-- // Copyright (c) Microsoft Corporation.

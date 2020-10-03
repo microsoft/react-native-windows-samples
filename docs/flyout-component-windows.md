@@ -9,7 +9,7 @@ title: Flyout
 
 Inherits [View Props](https://reactnative.dev/docs/view#props).
 
-### horizonalOffset
+### `horizonalOffset`
 
 Specifies horizontal offset from spawn point.
 
@@ -17,7 +17,7 @@ Specifies horizontal offset from spawn point.
 |:--|:--|
 | number | No |
 
-### verticalOffset
+### `verticalOffset`
 
 Specifies vertical offset from spawn point.
 
@@ -25,9 +25,9 @@ Specifies vertical offset from spawn point.
 |:--|:--|
 | number | No |
 
-### isLightDismissEnabled
+### `isLightDismissEnabled`
 
-Whether or not the flyout will close if the user clicks away from the popup.
+Whether or not the flyout will close if the user clicks outside of it.
 
 Set to false if you want your flyout to be modal.
 
@@ -35,7 +35,7 @@ Set to false if you want your flyout to be modal.
 |:--|:--|
 | bool | No |
 
-### isOverlayEnabled
+### `isOverlayEnabled`
 
 Specifies whether the area outside the flyout is darkened.
 
@@ -43,7 +43,7 @@ Specifies whether the area outside the flyout is darkened.
 |:--|:--|
 | bool | No |
 
-### isOpen
+### `isOpen`
 
 A boolean that returns true when the flyout is active/open, and false when it's not.
 
@@ -51,7 +51,7 @@ A boolean that returns true when the flyout is active/open, and false when it's 
 |:--|:--|
 | bool | No |
 
-### onDismiss
+### `onDismiss`
 
 An event that fires when the flyout is dismissed.
 
@@ -61,15 +61,15 @@ This must update the [`isOpen`](#isopen) property.
 |:--|:--|
 | function | Yes |
 
-### target
+### `target`
 
 A component that the flyout is attached to and will show from when [`isOpen`](#isopen) is true.
 
 | type | required |
 |:--|:--|
-| React.ReactNode | Yes |
+| `React.ReactNode` | Yes |
 
-### placement
+### `placement`
 
 The relative placement of the flyout in relation to the [`target`](#target) set.
 
@@ -77,17 +77,17 @@ Accepted placements value types are:
 
 - `top`
 - `bottom`
- - `left`
- - `right`
- - `full`
- - `top-edge-aligned-left`
- - `top-edge-aligned-right`
- - `bottom-edge-aligned-left`
- - `bottom-edge-aligned-right`
- - `left-edge-aligned-top`
- - `right-edge-aligned-top`
- - `left-edge-aligned-bottom`
- - `right-edge-aligned-bottom`
+- `left`
+- `right`
+- `full`
+- `top-edge-aligned-left`
+- `top-edge-aligned-right`
+- `bottom-edge-aligned-left`
+- `bottom-edge-aligned-right`
+- `left-edge-aligned-top`
+- `right-edge-aligned-top`
+- `left-edge-aligned-bottom`
+- `right-edge-aligned-bottom`
 
 | type | required |
 |:--|:--|

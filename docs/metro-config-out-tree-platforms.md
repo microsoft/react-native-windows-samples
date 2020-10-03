@@ -11,7 +11,7 @@ The information here only applies to versions of `react-native-macos` **>=0.62.1
 
 # What does the metro config for macOS/Windows need to do
 
-The way that `react-native-macos` and `react-native-windows` provide an implementation for `react-native` is by providing an additional copy of the `react-native` JavaScript files that implement their respective platforms.  This JavaScript code is not includede in the `react-native` package.  When you do an `import from 'react-native'` normally matro will look for `node_modules/react-native` somewhere up the file path to file that module.  Unfortuntely when using `react-native-macos` or `react-native-windows` this will return the wrong JavaScript code.  A simple solution might be to add a metro-config that includes
+The way that `react-native-macos` and `react-native-windows` provide an implementation for `react-native` is by providing an additional copy of the `react-native` JavaScript files that implement their respective platforms.  This JavaScript code is not included in the `react-native` package.  When you do an `import from 'react-native'` normally metro will look for `node_modules/react-native` somewhere up the file path to file that module.  Unfortunately when using `react-native-macos` or `react-native-windows` this will return the wrong JavaScript code.  A simple solution might be to add a metro-config that includes
 ```js
 resolver {
     extraNodeModules: {
@@ -33,7 +33,7 @@ The usual way that these show up is a failure something like
 Error: Unable to resolve module `./Libraries/Components/AccessibilityInfo/AccessibilityInfo` from <Some file path here>
 ```
 
-Its usually an import to `AccessibilityInfo` that fails, this is because this is the first module that `react-native` itself tries to resolve, which only includes a .ios and .android version of the file within `react-native`.
+Its usually an import to `AccessibilityInfo` that fails, this is because this is the first module that `react-native` itself tries to resolve, which only includes a `.ios` and `.android` version of the file within `react-native`.
 
 
 ## Reset your metro cache
@@ -43,7 +43,7 @@ Sometimes after bumping package versions or modifying your metro config, the met
 
 ## Verify the platform is installed and hooked into the CLI
 
-Run `npx react-native config`.  Look at the output and verify that the json contains either the `platforms.macos.npmPackageName` property or the `platforms.windows.npmPackageName` property (or both) depending on which platform you are using:
+Run `npx react-native config`.  Look at the output and verify that the JSON contains either the `platforms.macos.npmPackageName` property or the `platforms.windows.npmPackageName` property (or both) depending on which platform you are using:
 ```json
 {
     ...
@@ -65,9 +65,9 @@ Run `npx react-native config`.  Look at the output and verify that the json cont
 
 You can run `node -p require.resolve('react-native-windows')` if you are not sure where `react-native-windows` is installed.  Ensure that the `react-native-windows` folder is not included within the blacklist in your `metro.config.js`.
 
-## Verify that react-native-macos/react-native-windows is in your watchFolders
+## Verify that react-native-macos/react-native-windows is in your `watchFolders`
 
-By default metro config will see all files within your pacakge's folder.  Many pacakge managers, especially when running in monorepos (yarn workspaces etc) will hoist pacakges to a location outside of the package's local file structure.  In this case you may need to add addition folders to metros watch list.  This can be done adding to metro config:
+By default metro config will see all files within your package's folder.  Many package managers, especially when running in monorepos (yarn workspaces etc) will hoist packages to a location outside of the package's local file structure.  In this case you may need to add addition folders to metros watch list.  This can be done adding to metro config:
 
 ```js
   watchFolders: [

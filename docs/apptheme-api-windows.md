@@ -5,7 +5,7 @@ title: AppTheme
 
 > This API name is deprecated.  Use react-native's [``Appearance``](https://reactnative.dev/docs/appearance) API instead.
 
-AppTheme allows you to detect Windows app theme changes - dark, light or high contrast - as well as which theme the app is in and the theme colors being used when in high contrast mode.
+`AppTheme` allows you to detect Windows app theme changes - dark, light or high contrast - as well as which theme the app is in and the theme colors being used when in high contrast mode.
 
 ```
 import { AppTheme } from 'react-native-windows'

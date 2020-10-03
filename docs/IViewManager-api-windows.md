@@ -3,7 +3,7 @@ id: iviewmanager-api
 title: IViewManager
 ---
 
-See the documentation of [Native UI Components](view-managers.md) for information on how to author a ViewManager.
+See the documentation of [Native UI Components](view-managers.md) for information on how to author a view manager.
 
 >**This documentation and the underlying platform code is a work in progress.**
 

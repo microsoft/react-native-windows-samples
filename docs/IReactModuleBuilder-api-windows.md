@@ -15,7 +15,7 @@ Builds native modules inside of React native code based on the provided meta-dat
 void AddInitializer(InitializerDelegate initializer);
 ```
 
-An initializer is a method that will be called when the react instance starts.  It provides the native module with the [IReactContext](IReactContext-api-windows.md) for the running instance. See [InitializerDelegate](#initializerdelegate).
+An initializer is a method that will be called when the react instance starts.  It provides the native module with the [`IReactContext`](IReactContext-api-windows.md) for the running instance. See [`InitializerDelegate`](#initializerdelegate).
 
 ### `AddConstantProvider()`
 
@@ -23,7 +23,7 @@ An initializer is a method that will be called when the react instance starts.  
 void AddConstantProvider(ConstantProviderDelegate constantProvider);
 ```
 
-The JSValue written by the [ConstantProviderDelegate](#constantproviderdelegate) will be available as constants on the native module is JavaScript.
+The `JSValue` written by the [`ConstantProviderDelegate`](#constantproviderdelegate) will be available as constants on the native module is JavaScript.
 
 ### `AddMethod()`
 
@@ -42,7 +42,7 @@ The valid values for `MethodReturnType` are:
   };
 ```
 
-See [MethodDelegate](#methoddelegate).
+See [`MethodDelegate`](#methoddelegate).
 
 ### `AddSyncMethod()`
 
@@ -50,7 +50,7 @@ See [MethodDelegate](#methoddelegate).
 void AddSyncMethod(String name, SyncMethodDelegate method);
 ```
 
-Adds a synchronous method to the NativeModule.  See [SyncMethodDelegate](#syncmethoddelegate).
+Adds a synchronous method to the native module.  See [`SyncMethodDelegate`](#syncmethoddelegate).
 
 
 ## Delegates
@@ -61,7 +61,7 @@ Adds a synchronous method to the NativeModule.  See [SyncMethodDelegate](#syncme
 delegate void InitializerDelegate(IReactContext reactContext);
 ```
 
-A delegate that will set reactContext for a module. We use it for a stand-alone initialize method, strongly typed JS events and functions.
+A delegate that will set `reactContext` for a module. We use it for a stand-alone initialize method, strongly typed JS events and functions.
 
 ### `MethodResultCallback`
 

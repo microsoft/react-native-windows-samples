@@ -3,10 +3,10 @@ id: ireactpropertybag-api
 title: IReactPropertyBag
 ---
 
-The IReactPropertyBag provides a thread-safe property storage.
-Properties are identified by IReactPropertyName instance.
+`IReactPropertyBag` provides a thread-safe property storage.
+Properties are identified by an instance of `IReactPropertyName`.
 It is expected that there will be no direct use of this interface.
-Ideally, all usage should happen through a strongly typed accessors.
+Ideally, all usage should happen through strongly-typed accessors.
 
 # Reference
 
@@ -14,29 +14,29 @@ Ideally, all usage should happen through a strongly typed accessors.
 
 ### ```Object Get(IReactPropertyName name)```
 
-Get property value by its name. It returns null if the property does not exist.
+Get a property's value. It returns null if the property does not exist.
 
 ### ```Object GetOrCreate(IReactPropertyName name, ReactCreatePropertyValue createValue)```
 
-Get property value for the property name. If the property does not exist, then create it by calling createValue delegate.
+Get a property's value. If the property does not exist, this method creates it by calling the `createValue` delegate.
 
-The function may return null if the createValue returns null when called.
+The function may return null if the `createValue` returns null when called.
 
-The createValue is called outside of lock. It is possible that its result is not used in case if other thread sets the property value before the created value is applied.
+The `createValue` is called outside of any locks. It is possible that its result is not used in case another thread sets the property value before the created value is applied.
 
 ### ```Object Set(IReactPropertyName name, Object value)```
 
-Set property value for the property name.
+Set a property's value.
 
-It returns previously stored property value.
-It returns null if property did not exist.
+It returns the previously-stored property value.
+It returns null if the property did not exist.
 If the new value is null, then the property is removed.
 
 ## Delegates
 
 ### ```delegate Object ReactCreatePropertyValue()```
 
-The delegate is used to create property value on-demand.
+This delegate is used to create a property value on-demand.
 
 
 <!-- 

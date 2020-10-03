@@ -3,7 +3,7 @@ id: ireactpackagebuilder-api
 title: IReactPackageBuilder
 ---
 
-A `ReactPackageBuilder` provides the react instance with all the NativeModules and ViewManagers that will be available in the react instance.
+A `ReactPackageBuilder` provides the react instance with all the native modules and view managers that will be available in the React instance.
 
 # Reference
 
@@ -15,7 +15,7 @@ A `ReactPackageBuilder` provides the react instance with all the NativeModules a
 void AddModule(String moduleName, ReactModuleProvider moduleProvider);
 ```
 
-Adds a custom NativeModule. See [ReactModuleProvider](#reactmoduleprovider).
+Adds a custom native module. See [`ReactModuleProvider`](#reactmoduleprovider).
 
 ### `AddViewManager()`
 
@@ -23,7 +23,7 @@ Adds a custom NativeModule. See [ReactModuleProvider](#reactmoduleprovider).
 void AddViewManager(String viewManagerName, ReactViewManagerProvider viewManagerProvider);
 ```
 
-Adds a custom NativeModule. See [ReactViewManagerProvider](#reactviewmanagerprovider).
+Adds a custom native module. See [`ReactViewManagerProvider`](#reactviewmanagerprovider).
 
 
 ## Delegates
@@ -34,7 +34,7 @@ Adds a custom NativeModule. See [ReactViewManagerProvider](#reactviewmanagerprov
 delegate Object ReactModuleProvider(IReactModuleBuilder moduleBuilder);
 ```
 
-Provides information about a custom NativeModule.  See [IReactModuleBuilder](IReactModuleBuilder-api-windows.md).
+Provides information about a custom native module.  See [`IReactModuleBuilder`](IReactModuleBuilder-api-windows.md).
 
 ### `ReactViewManagerProvider`
 
@@ -42,7 +42,7 @@ Provides information about a custom NativeModule.  See [IReactModuleBuilder](IRe
 delegate IViewManager ReactViewManagerProvider();
 ```
 
-Provides information about a custom ViewManager.  See [IViewManager](IViewManager-api-windows.md).
+Provides information about a custom view manager.  See [`IViewManager`](IViewManager-api-windows.md).
 
 
 <!-- // Copyright (c) Microsoft Corporation.

@@ -3,7 +3,7 @@ id: ireactdispatcher-api
 title: IReactDispatcher
 ---
 
-IReactDispatcher provides the core threading / task management interface for ensuring code happens in the right order on the right thread.  One primary dispatcher that applications may require is the [UIDispatcher](IReactContext-api-windows.md#uidispatcher) which provides NativeModules access to the UI thread associated with this react instance.   Another one is the [JSDispatcher](IReactContext-api-windows.md#jsdispatcher) which allows apps to post tasks to the JS engine thread.
+`IReactDispatcher` provides the core threading / task management interface for ensuring code happens in the right order on the right thread.  One primary dispatcher that applications may require is the [`UIDispatcher`](IReactContext-api-windows.md#uidispatcher) which provides native modules access to the UI thread associated with this react instance.   Another one is the [`JSDispatcher`](IReactContext-api-windows.md#jsdispatcher) which allows apps to post tasks to the JS engine thread.
 
 # Reference
 

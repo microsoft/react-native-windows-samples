@@ -3,17 +3,17 @@ id: iredboxhandler-api
 title: IRedBoxHandler
 ---
 
-RedBoxHandler provides an extension point to allow custom error handling within the react instance.  This can be useful if you have an existing error reporting system that you want react errors to be reported to.  The default implementation of RedBoxHandler shows error messages in a full screen error screen within the application.
+`IRedBoxHandler` provides an extension point to allow custom error handling within the React instance.  This can be useful if you have an existing error reporting system that you want React errors to be reported to.  The default implementation of `RedBoxHandler` shows an error messages in a error screen that covers the whole application window.
 
 -- Insert Screenshot here --
 
-If you want to maintain the existing RedBox behaviors, and also report errors to your own reporting system, your implementation can call into the default RedBoxHandler, which can be obtained by calling 
+If you want to maintain the existing `RedBox` behaviors, and also report errors to your own reporting system, your implementation can call into the default `RedBoxHandler`, which can be obtained by calling :
 
 ```csharp
 RedBoxHelper::CreateDefaultHandler(Host);
 ```
 
-Sample settings up a RedBoxHandler that reports errors to an external system, and displays the default RedBox experience within the application:
+Sample settings up a `RedBoxHandler` that reports errors to an external system, and displays the default `RedBox` experience within the application:
 
 ```csharp
 
@@ -69,7 +69,7 @@ RegisterMyRedBoxHandler()
 
 # Reference
 
-# IRedBoxHandler
+# `IRedBoxHandler`
 
 ## Methods
 
@@ -87,7 +87,7 @@ This method is called when an error is initially hit.
 void UpdateError(IRedBoxErrorInfo info)
 ```
 
-This method is called when updated information about an error has been resolved.  For javascript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
+This method is called when updated information about an error has been resolved.  For JavaScript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
 
 ## Properties
 
@@ -97,17 +97,17 @@ This method is called when updated information about an error has been resolved.
   bool IsDevSupportEnabled { get; };
 ```
 
-This property will control if errors should be reported to the handler.  If this returns false, [ShowNewError](#shownewerror) and [UpdateError](#updateerror) will not be called.
+This property will control if errors should be reported to the handler.  If this returns false, [`ShowNewError`](#shownewerror) and [`UpdateError`](#updateerror) will not be called.
 
-# RedBoxErrorType (enum)
+# `RedBoxErrorType` (enum)
 
-| RedBoxErrorType       | Description     |
+| `RedBoxErrorType`       | Description     |
 | :------------- | :----------- |
-| JavaScriptFatal | A JS Exception was thrown and not caught or otherwise fatal error   |
-| JavaScriptSoft   | An error coming from JS that isn't fatal, such as console.error |
-| Native   | An error happened in native code |
+| `JavaScriptFatal` | A JS Exception was thrown and not caught or otherwise fatal error   |
+| `JavaScriptSoft`   | An error coming from JS that isn't fatal, such as `console.error` |
+| `Native`   | An error happened in native code |
 
-# IRedBoxErrorFrameInfo
+# `IRedBoxErrorFrameInfo`
 
 This object represents a single frame within the call stack of an error.
 
@@ -155,12 +155,12 @@ The column within the line
 bool Collapse { get; };
 ```
 
-Tru if this frame is part of the internals of react-native, that is likely not useful for the developer to see.
+True if this frame is part of the internals of `react-native`, that is likely not useful for the developer to see.
 
 
-# IRedBoxErrorInfo
+# `IRedBoxErrorInfo`
 
-This object provides information about the error.  For javascript errors, a call stack is also provided.
+This object provides information about the error.  For JavaScript errors, a call stack is also provided.
 
 ## Properties
 
@@ -179,7 +179,7 @@ The error message.
 uint Id { get; };
 ```
 
-This Id can be used in [UpdateError](#updateerror) to identify which error is being updated.  For native errors, this is currently always `0`, and [UpdateError](#updateerror) will never be called.
+This Id can be used in [`UpdateError`](#updateerror) to identify which error is being updated.  For native errors, this is currently always `0`, and [`UpdateError`](#updateerror) will never be called.
 
 
 ### `Callstack`
@@ -227,7 +227,7 @@ IJSValueReader ExtraData  { get; };
 Provides access to extra data attached to the error.  Adding additional data to the errors is not yet part of the stable API.
 
 
-# RedBoxHelper
+# `RedBoxHelper`
 
 ## Methods
 
@@ -237,7 +237,7 @@ Provides access to extra data attached to the error.  Adding additional data to 
 static IRedBoxHandler CreateDefaultHandler(ReactNativeHost host);
 ```
 
-This provides access to the default `IRedBoxHandler`. This can be used to display the default RedBox as part of a custom RedBoxHandler implementation.
+This provides access to the default `IRedBoxHandler`. This can be used to display the default `RedBox` as part of a custom `RedBoxHandler` implementation.
 
 <!--
 
