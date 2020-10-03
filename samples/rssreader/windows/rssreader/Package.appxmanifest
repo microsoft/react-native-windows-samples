@@ -8,10 +8,10 @@
 
  <Identity
     Name="RssReader"
-    Publisher="CN=React Native at Microsoft"
+    Publisher="CN=React Native Microsoft"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="1172f29b-bce9-4cb5-8b51-6cc7e7bb45b5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="ca994a16-ea1f-4327-8b8b-ae6111eee415" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Rss Reader</DisplayName>
