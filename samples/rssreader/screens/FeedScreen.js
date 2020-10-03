@@ -29,7 +29,7 @@ const FeedScreen: () => React$Node = (props) => {
   const [rssItems, setRssItems] = useState();
 
   const getRssFeed = async () => {
-    var response = await fetch('https://blogs.windows.com/feed/');
+    var response = await fetch('https://devblogs.microsoft.com/surface-duo/feed/');
     var data = await response.text();
     var rss = await rssParser.parse(data);
     setRssItems(rss.items);
@@ -46,7 +46,7 @@ const FeedScreen: () => React$Node = (props) => {
     <View style={styles.body}>
       <View style={styles.toolBar}>
         <Text style={styles.barTitle}>
-          Windows Blog
+          Surface Duo Blog
         </Text>
       </View>
 
