@@ -122,7 +122,7 @@ The top-level object has the following fields:
 | sourceDir | string | opt, req if projects defined | Relative path to the windows implementation under *folder*, ex: *'windows'* |
 | solutionFile | string | opt | Relative path to the module's VS solution file under *sourceDir*, ex: *'MyModule.sln'* |
 | projects | array | opt | Array of VS projects that must be added to the consuming app's solution file, so they are built |
-| nugetPackages | array | opt | Array of nuget packages including native modules that must be added as a dependency to the consuming app. It can be empty, but by its nature it can't be calculated |
+| nugetPackages | array | opt | Array of NuGet packages including native modules that must be added as a dependency to the consuming app. It can be empty, but by its nature it can't be calculated |
 
 ### Project Object Fields:
 
@@ -135,10 +135,10 @@ Objects in the `projects` array have the following fields:
 | projectName | string | auto | Name of the project, determined from *projectFile*, ex: *'MyModule'* |
 | projectLang | string | auto | Language of the project, cpp or cs, determined from *projectFile* |
 | projectGuid | string | auto | Project identifier, determined from *projectFile* |
-| cppHeaders | array | opt | Array of cpp header include lines, ie: *'winrt/MyModule.h'*, to be transformed into `#include <winrt/MyModule.h>` |
-| cppPackageProviders | array | opt | Array of fully qualified cpp IReactPackageProviders, ie: *'MyModule::ReactPackageProvider'* |
-| csNamespaces | array | opt | Array of cs namespaces, ie: *'MyModule'*, to be transformed into `using MyModule;` |
-| csPackageProviders | array | opt | Array of fully qualified cs IReactPackageProviders, ie: *'MyModule.ReactPackageProvider'* |
+| cppHeaders | array | opt | Array of cpp header include lines, i.e.: *'winrt/MyModule.h'*, to be transformed into `#include <winrt/MyModule.h>` |
+| cppPackageProviders | array | opt | Array of fully qualified cpp IReactPackageProviders, i.e.: *'MyModule::ReactPackageProvider'* |
+| csNamespaces | array | opt | Array of cs namespaces, i.e.: *'MyModule'*, to be transformed into `using MyModule;` |
+| csPackageProviders | array | opt | Array of fully qualified cs IReactPackageProviders, i.e.: *'MyModule.ReactPackageProvider'* |
 
 ### Nuget Package Object Fields:
 
@@ -146,12 +146,12 @@ Objects in the `nugetPackages` array have the following fields:
 
 | Field | Type | Tag  | Description |
 |:------|:----:|:----:|:------------|
-| packageName | string | req | Name of the nuget package to install |
-| packageVersion | string | req | Version of the nuget package to install |
-| cppHeaders | array | req | Array of cpp header include lines, ie: *'winrt/NugetModule.h'*, to be transformed into `#include <winrt/NugetModule.h>` |
-| cppPackageProviders | array | req | Array of fully qualified cpp IReactPackageProviders, ie: *'NugetModule::ReactPackageProvider'* |
-| csNamespaces | array | req | Array of cs namespaces, ie: *'NugetModule'*, to be transformed into `using NugetModule;` |
-| csPackageProviders | array | req | Array of fully qualified cs IReactPackageProviders, ie: *'NugetModule.ReactPackageProvider'* |
+| packageName | string | req | Name of the NuGet package to install |
+| packageVersion | string | req | Version of the NuGet package to install |
+| cppHeaders | array | req | Array of cpp header include lines, i.e.: *'winrt/NugetModule.h'*, to be transformed into `#include <winrt/NugetModule.h>` |
+| cppPackageProviders | array | req | Array of fully qualified cpp IReactPackageProviders, i.e.: *'NugetModule::ReactPackageProvider'* |
+| csNamespaces | array | req | Array of cs namespaces, i.e.: *'NugetModule'*, to be transformed into `using NugetModule;` |
+| csPackageProviders | array | req | Array of fully qualified cs IReactPackageProviders, i.e.: *'NugetModule.ReactPackageProvider'* |
 
 ### Example `react-native.config.js` for a *MyModule*:
 

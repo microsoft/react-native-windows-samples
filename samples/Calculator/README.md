@@ -1,33 +1,42 @@
 # Calculator - React Native for Windows
 
-This sample showcases the usage of React Native for Windows to build a simple calculator.
+<p align="center">
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI/badge.svg" alt="Calculator CI Status" />
+  </a>
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI+%28Upgrade%29%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI%20(Upgrade)/badge.svg" alt="Calculator CI (Upgrade) Status" />
+  </a>
+</p>
 
-It currently targets React Native Windows 0.62.
+This sample showcases the usage of React Native for Windows to build a simple calculator.	
 
-### Setup
-First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
+It currently targets React Native Windows 0.63.	
 
-Then, within this folder, install the applications's dependencies. If you have `yarn` installed:
+### Setup	
+First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).	
 
-```cmd
-yarn install
-```
+Then, within this folder, install the applications's dependencies. If you have `yarn` installed:	
 
-Otherwise, you can just use npm:
+```cmd	
+yarn install	
+```	
 
-```cmd
-npm install
-```
+Otherwise, you can just use npm:	
 
-### Run
-Once you have all of the dependencies installed, you can run the application with the following command:
+```cmd	
+npm install	
+```	
 
-```cmd
-npx react-native run-windows
-```
+### Run	
+Once you have all of the dependencies installed, you can run the application with the following command:	
 
-The command will:
-* Build the application and all dependencies
-* Deploy the application
-* Launch the React Native Server and Debugger
+```cmd	
+npx react-native run-windows	
+```	
+
+The command will:	
+* Build the application and all dependencies	
+* Deploy the application	
+* Launch the React Native Server and Debugger	
 * Launch the application

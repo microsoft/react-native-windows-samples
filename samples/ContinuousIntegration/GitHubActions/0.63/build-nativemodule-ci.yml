@@ -1,0 +1,39 @@
+# This workflow will build all flavors of your React Native for Windows native
+#  module project every time changes are pushed to master. This checks that
+# every change builds on Windows.
+
+name: Native Module CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  # This job builds both Debug and Release versions of the native module, for
+  # x86, x64, ARM and ARM64 architectures. It doesn't deploy, because deploying
+  # is for apps only.
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        architecture: [x86, x64, ARM, ARM64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --arch ${{ matrix.architecture }}
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --release --arch ${{ matrix.architecture }}
+  

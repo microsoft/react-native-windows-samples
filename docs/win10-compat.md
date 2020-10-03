@@ -15,12 +15,13 @@ _Note : There is an ongoing effort to decouple the Windows UI platform from the 
 | **Fall Creators Update**<br> Version-1709 ; Build-10.0.16299.91 | Unsupported : Same as above |
 | **Creators Update**<br> Version-1703 ; Build-10.0.15063.468 | Unsupported : (Same as above plus): <ul><li>Keyboard events</li><li>TextInput.placeholderTextColor</li><li>TextInput.secureTextEntry may have some fast typing issues</li> |
 
-## React Native App Suported OS Versions
+## React Native App Supported OS Versions
 
 The following table captures the versions of Windows 10 that a React Native for Windows app supports. The "Target" is the version of the SDK that the app is compiled against, and the "Minimum" is the lowest version that the app will run on.
 
 | React Native Windows | Target OS Version | Minimum OS Version |
 | :--: | :-: | :-: |
+| 0.63 | **May 2019 update**<br> Version-1903 ; Build-10.0.18362.1 | **Fall Creators Update**<br> Version-1709 ; Build-10.0.16299.91 |
 | 0.62 | **May 2019 update**<br> Version-1903 ; Build-10.0.18362.1 | **Fall Creators Update**<br> Version-1709 ; Build-10.0.16299.91 |
 | 0.61 | **May 2019 update**<br> Version-1903 ; Build-10.0.18362.1 | **Creators Update**<br> Version-1703 ; Build-10.0.15063.468 |
 | 0.60 | **May 2019 update**<br> Version-1903 ; Build-10.0.18362.1 | **Creators Update**<br> Version-1703 ; Build-10.0.15063.468 |

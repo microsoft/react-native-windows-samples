@@ -1,15 +1,18 @@
 #include "pch.h"
 
 #include "App.h"
+
+#include "AutolinkedNativeModules.g.h"
 #include "ReactPackageProvider.h"
-#include <winrt/Windows.UI.Xaml.h>
-#include <winrt/Windows.UI.Xaml.Controls.h>
 
 
 using namespace winrt::Calculator;
 using namespace winrt::Calculator::implementation;
-using namespace winrt::Windows::UI::Xaml;
-using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt;
+using namespace Windows::UI::Xaml;
+using namespace Windows::UI::Xaml::Controls;
+using namespace Windows::UI::Xaml::Navigation;
+using namespace Windows::ApplicationModel;
 
 /// <summary>
 /// Initializes the singleton application object.  This is the first line of
@@ -21,26 +24,57 @@ App::App() noexcept
 #if BUNDLE
     JavaScriptBundleFile(L"index.windows");
     InstanceSettings().UseWebDebugger(false);
-    InstanceSettings().UseLiveReload(false);
+    InstanceSettings().UseFastRefresh(false);
 #else
     JavaScriptMainModuleName(L"index");
     InstanceSettings().UseWebDebugger(true);
-    InstanceSettings().UseLiveReload(true);
+    InstanceSettings().UseFastRefresh(true);
 #endif
 
 #if _DEBUG
-    InstanceSettings().EnableDeveloperMenu(true);
+    InstanceSettings().UseDeveloperSupport(true);
 #else
-    InstanceSettings().EnableDeveloperMenu(false);
+    InstanceSettings().UseDeveloperSupport(false);
 #endif
+
+    RegisterAutolinkedNativeModulePackages(PackageProviders()); // Includes any autolinked modules
 
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
 
     InitializeComponent();
 }
 
-void App::OnLaunched(winrt::Windows::ApplicationModel::Activation::LaunchActivatedEventArgs e)
+/// <summary>
+/// Invoked when the application is launched normally by the end user.  Other entry points
+/// will be used such as when the application is launched to open a specific file.
+/// </summary>
+/// <param name="e">Details about the launch request and process.</param>
+void App::OnLaunched(activation::LaunchActivatedEventArgs const& e)
 {
-    base::OnLaunched(e);
-    Window::Current().Content().as<Frame>().Navigate(winrt::xaml_typename<MainPage>(), e);
+    super::OnLaunched(e);
+
+    Frame rootFrame = Window::Current().Content().as<Frame>();
+    rootFrame.Navigate(xaml_typename<Calculator::MainPage>(), box_value(e.Arguments()));
+}
+
+/// <summary>
+/// Invoked when application execution is being suspended.  Application state is saved
+/// without knowing whether the application will be terminated or resumed with the contents
+/// of memory still intact.
+/// </summary>
+/// <param name="sender">The source of the suspend request.</param>
+/// <param name="e">Details about the suspend request.</param>
+void App::OnSuspending([[maybe_unused]] IInspectable const& sender, [[maybe_unused]] SuspendingEventArgs const& e)
+{
+    // Save application state and stop any background activity
+}
+
+/// <summary>
+/// Invoked when Navigation to a certain page fails
+/// </summary>
+/// <param name="sender">The Frame which failed navigation</param>
+/// <param name="e">Details about the navigation failure</param>
+void App::OnNavigationFailed(IInspectable const&, NavigationFailedEventArgs const& e)
+{
+    throw hresult_error(E_FAIL, hstring(L"Failed to load Page ") + e.SourcePageType().Name);
 }

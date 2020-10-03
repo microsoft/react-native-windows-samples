@@ -1,0 +1,7 @@
+{
+    "search.exclude": {
+      "**/node_modules": true,
+      "/website/versioned_docs": true,
+      "/website/versioned_sidebars": true
+    }
+}

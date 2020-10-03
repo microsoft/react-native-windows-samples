@@ -1,0 +1,73 @@
+name: Calculator CI
+
+on:
+  schedule:
+    - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
+  push:
+    branches:
+      - master
+    paths:
+      - 'samples/Calculator/**'
+      - '.github/workflows/samples-Calculator-ci.yml'
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        sample: [Calculator]
+        architecture: [ARM, ARM64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+  build_and_deploy:
+    name: Build and Deploy
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        sample: [Calculator]
+        architecture: [x86, x64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src

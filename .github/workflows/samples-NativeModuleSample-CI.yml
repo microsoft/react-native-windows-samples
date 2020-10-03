@@ -1,0 +1,44 @@
+name: NativeModuleSample CI
+
+on:
+  schedule:
+    - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
+  push:
+    branches:
+      - master
+    paths:
+      - 'samples/NativeModuleSample/**'
+      - '.github/workflows/samples-NativeModuleSample-ci.yml'
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
+        architecture: [x86, x64, ARM, ARM64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --release --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+  

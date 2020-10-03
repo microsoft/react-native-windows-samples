@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include "pch.h"
 #include <string>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
+#include "JSValue.h"
 #include "NativeModules.h"
 
 namespace NativeModuleSample

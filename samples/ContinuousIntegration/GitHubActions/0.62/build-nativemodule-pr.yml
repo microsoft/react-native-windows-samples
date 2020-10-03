@@ -1,0 +1,29 @@
+# This workflow will build just one configuration (Debug x86) of your React
+# Native for Windows native module project on every pull request targeting
+# master. This is meant to be a quick sanity check that a pull request doesn't
+# break the build, without spending the resources to build every flavor /
+# configuration.
+
+name: Native Module PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  # This job builds the Debug x86 version of the native module.
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Build x86 Debug
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging

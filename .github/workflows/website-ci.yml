@@ -1,11 +1,14 @@
 name: RNW Website CI
 
 on:
-  pull_request:
+  schedule:
+    - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
+  push:
     branches:
       - master
     paths:
       - '.github/workflows/website-ci.yml'
+      - '.github/workflows/website-pr.yml'
       - 'docs/**'
       - 'website/**'
 

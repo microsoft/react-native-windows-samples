@@ -6,8 +6,8 @@
       "parity-status",
       "config",
       "windowsbrush-and-theme",
-      "winui3",
-      "releases"
+      "releases",
+      "platform"
     ],
     "Native Modules (Windows)": [
       "native-modules",
@@ -16,12 +16,25 @@
       "native-modules-using",
       "native-modules-autolinking",
       "native-modules-marshalling-data",
+      "native-modules-async",
       "native-modules-jsvalue",
-      "native-modules-advanced"
+      "native-modules-advanced",
+      "native-modules-csharp-codegen",
+      "supported-community-modules",
+      "native-code"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
       "rnm-dependencies"
+    ],
+    "Troubleshooting": [
+      "metro-config-out-tree-platforms"
+    ],
+    "Experimental" : [
+      "hermes",
+      "nuget",
+      "nuget-update",
+      "winui3"
     ]
   },
   "apis": {

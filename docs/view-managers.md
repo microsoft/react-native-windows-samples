@@ -3,8 +3,9 @@ id: view-managers
 title: Native UI Components
 ---
 
->**This documentation and the underlying platform code is a work in progress.**
->**Examples (C# and C++/WinRT):**
+> **This documentation and the underlying platform code is a work in progress.**
+> **Examples (C# and C++/WinRT):**
+>
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
 > - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
 
@@ -20,13 +21,20 @@ Similarly to authoring native modules, at a high level you must:
 2. Register your new ViewManager within the native code of your React Native host application.
 3. Reference the new Component within your React Native JSX code.
 
+### Note about UWP XAML controls
+Some UWP XAML controls do not support being hosted in environments where 3D transforms are involved (i.e. the [`Transform3D`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement.transform3d) property is set on the control or on any of the control's ancestors in the XAML tree). 
+
+Currently, React Native for Windows uses a global PerspectiveTransform to provide a 3D look to objects being rotated along the `x` or `y` axes, which means these non-3D-aware controls will not work out of the box (e.g. [InkCanvas](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)). However, a React Native for Windows app can opt out of the 3D perspective (and in so doing, enable these non-3D-aware controls) by setting the [`IsPerspectiveEnabled`](https://github.com/microsoft/react-native-windows/blob/4e775b9a59c55996d7598aadaeb82c93c40cbb6f/vnext/Microsoft.ReactNative/ReactRootView.idl#L18) property on the `ReactRootView`.
+
+__Important__: The `IsPerspectiveEnabled` property is experimental and support for it may be removed in the future.
+
 ## Initial Setup
 
 Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows
 
 Once you have set up your development environment and project structure, you are ready to write code. 
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
+If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed [Getting Started](getting-started.md), where
 1. You ran `npx react-native-windows-init --overwrite` to add Windows to your project, and

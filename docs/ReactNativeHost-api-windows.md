@@ -18,7 +18,7 @@ _In the future more lifecycle events will be added to this object to provide bet
 void ReloadInstance();
 ```
 
-This is used to load the instance, which will create an instance of the JS engine and launch your JavaScript code.  If an instance of this host is already running, this will shutdown the already runnng instance, and load a new instance. 
+This is used to load the instance, which will create an instance of the JS engine and launch your JavaScript code.  If an instance of this host is already running, this will shutdown the already running instance, and load a new instance. 
 
 ## Properties
 

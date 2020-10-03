@@ -1,0 +1,64 @@
+# This workflow will build all flavors of your React Native for Windows app
+# project every time changes are pushed to master. This checks that every
+# change builds on Windows.
+
+name: App CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  # This job builds and deploys both Debug and Release versions of the app,
+  # for both x86 and x64 architectures.
+  build_and_deploy:
+    name: Build and Deploy
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        architecture: [x86, x64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
+  
+  # This job builds (but does not deploy) both Debug and Release versions of
+  # the app, for both ARM and ARM64 architectures. They are not deployed
+  # because the build machines are x64 and the deploy would fail.
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        architecture: [ARM, ARM64]
+        configuration: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Yarn install
+        run: yarn install
+
+      - name: Build ${{ matrix.architecture }} Debug
+        if: ${{ matrix.configuration == 'Debug' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
+
+      - name: Build ${{ matrix.architecture }} Release
+        if: ${{ matrix.configuration == 'Release' }}
+        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}

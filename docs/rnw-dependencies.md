@@ -12,7 +12,15 @@ To develop React-Native for Windows apps, you need to install several dependenci
 To check or install dependencies, run the script [rnw-dependencies.ps1](https://github.com/microsoft/react-native-windows/blob/master/vnext/Scripts/rnw-dependencies.ps1) in an elevated PowerShell window.
 
 **Run this command:**
-`Start-Process -Verb RunAs powershell -ArgumentList @("-command", "iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1'))")`
+Start an **elevated** PowerShell window and run:
+<html>
+<body>
+  <div>
+    <div style="padding: 10px; font-family: monospace; font-size: 9pt; display: inline-block; width: 90%; background: #dddddd; border-radius: 6px;" id="rnwdepCmd">Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('<font color="#2020cc">https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1</font>')</div>
+    <inline style="font-size: 24pt; cursor: pointer" onClick="javascript:navigator.clipboard.writeText(document.getElementById('rnwdepCmd').innerText)">📋</inline>
+  </div>
+</body>
+</html>
 
 ### Manual setup
 Alternatively, you can setup your environment manually:
@@ -29,8 +37,8 @@ Alternatively, you can setup your environment manually:
 
 - Install the [standard React Native dependencies](https://reactnative.dev/docs/getting-started#node-python2-jdk)
 - Install [Node.js](https://nodejs.org) via one of the following methods:
-  - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolately, from an elevated Command Prompt, run:
-  ```
+  - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
+  ```bat
   choco install nodejs.install --version=12.9.1
   ```
   - Directly from [NodeJs](https://nodejs.org/en/download/)

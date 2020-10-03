@@ -14,8 +14,10 @@
       "version-0.62-native-modules-setup",
       "version-0.62-native-modules-using",
       "version-0.62-native-modules-marshalling-data",
+      "version-0.62-native-modules-async",
       "version-0.62-native-modules-jsvalue",
-      "version-0.62-native-modules-advanced"
+      "version-0.62-native-modules-advanced",
+      "version-0.62-supported-community-modules"
     ],
     "The Basics (MacOS)": [
       "version-0.62-rnm-getting-started",

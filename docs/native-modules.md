@@ -3,12 +3,13 @@ id: native-modules
 title: Native Modules
 ---
 
-> **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
+> **This documentation and the underlying platform code is a work in progress.**
+> **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
 > - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
 
-Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to reimplement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
+Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to re-implement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 
 React Native was designed such that it is possible for you to write real native code and have access to the full power of the platform. This is a more advanced feature and we don't expect it to be part of the usual development process, however it is essential that it exists. If React Native doesn't support a native feature that you need, you should be able to build it yourself.
 
@@ -24,7 +25,7 @@ Native modules contain (or wrap) native code which can then be exposed to JS. To
    1. Add the package to your React Native application.
 1. Use your native module from your JavaScript code.
 
-React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [C# vs. C++ for Native Modules](#c-vs-c-for-native-modules) note for more information about which to choose. 
+React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [C# vs. C++ for Native Modules](native-code.md#c-vs-c-for-native-modules) note for more information about which to choose. 
 
 > NOTE: If you are unable to use the reflection-based annotation approach, you can define native modules directly using the ABI. This is outlined in the [Writing Native Modules without using Attributes](native-modules-advanced.md) document.
 
@@ -99,120 +100,6 @@ The `[ReactConstant]` attribute is how you can define constants. Here FancyMath 
 The `[ReactMethod]` attribute is how you define methods. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. As before, you can optionally customize the name like this: `[ReactMethod("add")]`.
 
 The `[ReactEvent]` attribute is how you define events. In FancyMath we have one event, `AddEvent`, which uses the `ReactEvent<double>` delegate, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `[ReactEvent("addEvent")]`.
-
-#### Using asynchronous APIs
-Many of the APIs included in the Universal Windows Platform are implemented using an asynchronous pattern, in order to avoid blocking the UI thread while the operation is in progress.
-C# makes easy to consume asynchronous APIs, by leveraging the [async and await](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/) keywords.
-Typically, when you create a method in C# that uses the asynchronous pattern, you define it with the following rules:
-
-1. You mark the method with the `async` keyword
-2. The method must return `Task` or `Task<T>`, where `T` is the type of result you need to return
-3. When you invoke an asynchronous API, you add the `await` prefix
-
-For example, let's say you want to implement a method to retrieve the current position of the user and you want to return a string with the longitude and latitude. This is how you would implement the method in C#
-
-```csharp
-namespace GeolocationModule
-{
-    class GeolocationModule
-    {
-        public async Task<string> GetCoordinates()
-        {
-            Geolocator geolocator = new Geolocator();
-            var position = await geolocator.GetGeopositionAsync();
-
-            string result = $"Latitude: {position.Coordinate.Point.Position.Latitude} - Longitude: {position.Coordinate.Point.Position.Longitude}";
-
-            return result;
-        }
-    }
-}
-```
-
-However, this approach is currently not supported by React Native for Windows, since `Task` isn't a supported return type. If you implement a module using this pattern, you will get errors when you try to consume them from JavaScript.
-
-React Native for Windows supports two ways to build modules which leverages asynchronous native APIs, based on how you want to consume them from JavaScript.
-
-##### Using a Promise
-If you want to use a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) in JavaScript, you can use the `IReactPromise<T>` interface exposed by the `Microsoft.ReactNative.Managed` namespace.
-This is how we can turn the previous sample method into a working React Native module:
-
-```csharp
-using Microsoft.ReactNative.Managed;
-using System;
-using Windows.Devices.Geolocation;
-
-namespace GeolocationModule
-{
-    [ReactModule]
-    class GeolocationModule
-    {
-        [ReactMethod("getCoordinatesWithPromise")]
-        public async void GetCoordinatesWithPromise(IReactPromise<string> promise)
-        {
-            try
-            {
-                Geolocator geolocator = new Geolocator();
-                var position = await geolocator.GetGeopositionAsync();
-
-                string result = $"Latitude: {position.Coordinate.Point.Position.Latitude} - Longitude: {position.Coordinate.Point.Position.Longitude}";
-
-                promise.Resolve(result);
-            }
-            catch (Exception e)
-            {
-                promise.Reject(new ReactError { Exception = e });
-            }
-        }
-    }
-}
-```
-
-As first step, we need to declare the method as `async void`, in order to be compliant with the React Native requirements. To handle the asynchronous nature of the method, the key component is the requested parameter, which type is `IReactPromise<T>`, where `T` is the type of the value we want to return. In the previous example we want to return a string with the coordinates, so we're using the `IReactPromise<string>` type.
-
-Then you can continue building your method like you would for a regular Windows application built with C#, by adding the `await` prefix to asynchronous methods.
-
-Once we have completed the work and we have obtained the result we want to return, we need to pass it to the `Resolve()` method exposed by the `IReactPromise` parameter. The method expects a value which type is equal to `T`. In our case, we would get an error if we try to pass anything but a `string`.
-
-In case something goes wrong, instead, we can use the `Reject()` method to surface the error to the React Native application, by creating a new `ReactError` object. You can customize it with different parameters, like `Code`, `Message` and `UserInfo`. In this example we raise the whole exception, so we set the `Exception` property exposed by the `try / catch` block.
-
-##### Using callbacks
-If you prefer to use callbacks in JavaScript to handle asynchronous methods, you need to use actions instead of the `IReactPromise` interface. This is how the previous code sample can be rewritten to support callbacks:
-
-```csharp
-using Microsoft.ReactNative.Managed;
-using System;
-using Windows.Devices.Geolocation;
-
-namespace GeolocationModule
-{
-    [ReactModule]
-    class GeolocationModule
-    {
-        [ReactMethod("getCoordinatesWithCallback")]
-        public async void GetCoordinatesWithCallback(Action<string> resolve, Action<string> reject)
-        {
-            try
-            {
-                Geolocator geolocator = new Geolocator();
-                var position = await geolocator.GetGeopositionAsync();
-
-                string result = $"Latitude: {position.Coordinate.Point.Position.Latitude} - Longitude: {position.Coordinate.Point.Position.Longitude}";
-
-                resolve(result);
-            }
-            catch (Exception e)
-            {
-                reject(e.Message);
-            }
-        }
-    }
-}
-```
-
-Instead of accepting an `IReactPromise` parameter, the method now requires two parameters which type is `Action<T>`. The first one will be used when the method completes successfully, the second one when instead something goes wrong. As usual, `T` is the type of the data we want to return so, in our scenario, it's a `string` in both cases. In case of success, we want to return the usual string with the full coordinates; in case of failure, we want to return the message of the exception.
-
-The rest of the code is similar to the one we have used to support the Promise scenario. The only difference is that, when we have achieved our result, we just pass it to the `resolve()` function; when something goes wrong, instead, we call the `reject()` function. The main difference compared to the previous approach is that `Action<T>` isn't a structured object like the `IReactNative<T>` interface. As such, it doesn't support to pass the full exception but, in this case, we choose to pass only the `Message` property of the exception.
 
 ### 2. Registering your Native Module
 
@@ -337,45 +224,6 @@ Calls to methods are a little different due to the asynchronous nature of the JS
 
 For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath.AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
 
-#### Using a Promise to handle asynchronous APIs
-If you have implemented the native module using the `IReactPromise<T>` interface to handle asynchronous operation, the JavaScript method will return a Promise instead of using callbacks.
-In this case, your JavaScript event handler will look like this:
-
-```javascript
-_onPressHandler() {
-   // Calling FancyMath.add method
-   NativeModules.FancyMath.add(
-     /* arg a */ NativeModules.FancyMath.Pi,
-     /* arg b */ NativeModules.FancyMath.E)
-     .then( (result) => {
-          Alert.alert(
-         'FancyMath',
-         `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
-         [{ text: 'OK' }],
-         {cancelable: false});
-     })
- }
-```
-The operation to trigger when the asynchronous method is completed is defined inside the `then()` function, which is appended to our original function (`add()`). Alternatively, you can leverage a Promise also with a syntax very similar to the C# one, based on the `async` and `await` keywords:
-
-```javascript
-async _onPressHandler() {
-   // Calling FancyMath.add method
-   var result = await NativeModules.FancyMath.add(
-     /* arg a */ NativeModules.FancyMath.Pi,
-     /* arg b */ NativeModules.FancyMath.E);
-
-      Alert.alert(
-     'FancyMath',
-     `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
-     [{ text: 'OK' }],
-     {cancelable: false});
-     })
- }
-```
-
-In this case, you simply mark the JavaScript function with the `async` keyword and you add the `await` prefix before calling the asynchronous method. The result of the `add()` function can be directly stored in a variable and reused later to display the alert.
-
 ## Sample Native Module (C++)
 
 > NOTE: C++ does not have custom attributes and reflection as C#. Instead we use macros to simulate use of custom attributes and C++ templates to implement the binding. The binding is done during compilation time and there is virtually no overhead at runtime.
@@ -386,7 +234,7 @@ In this case, you simply mark the JavaScript function with the `async` keyword a
 | ------------------------ | --------------------------------------------------------- |
 | `REACT_MODULE`           | Specifies the class is a native module.                   |
 | `REACT_METHOD`           | Specifies an asynchronous method.                         |
-| `REACT_SYNCMETHOD`       | Specifies a synchronous method.                           |
+| `REACT_SYNC_METHOD`      | Specifies a synchronous method.                           |
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
@@ -435,15 +283,63 @@ namespace NativeModuleSample
 
 The `REACT_MODULE` macro-attribute says that the class is a ReactNative native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
 
-You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, "math")`.
+You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, L"math")`.
 
-You can specify a different event emitter like this: `REACT_MODULE(FancyMath, "math", "mathEmitter")`.
+You can specify a different event emitter like this: `REACT_MODULE(FancyMath, L"math", L"mathEmitter")`.
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
 Then we define constants, and it's as easy as creating a public field and giving it a `REACT_CONSTANT` macro-attribute. Here FancyMath has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override this by specifying an argument in the `REACT_CONSTANT` attribute (hence `Pi` instead of `PI`).
 
 It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
+
+Native modules do not have the ability to check that the parameter types and the number of parameters match between what's called from JavaScript and what the native code accepts. However, the framework will validate that the number of promises-like parameters match: if the JavaScript API is async, it will expect that there is one "promise-like" parameter in the native method implementation signature.
+
+A "promise-like" parameter is either:
+- `React::ReactPromise<T>`
+- a callback function or functor.
+
+See [Using Asynchronous Windows APIs](native-modules-async.md).
+
+Here is an example of an async method that returns a string. 
+
+```cpp
+    REACT_METHOD(GetString, L"getString");
+    void GetString(React::ReactPromise<std::string>&& result) noexcept
+    {
+      if (error) {
+        result.Reject("Failure");
+      } else {
+        std::string text = DoSomething();
+        result.Resolve(text);
+      }
+    }
+```
+
+This can be also tied in with C++/WinRT event handlers or `IAsyncOperation<T>` like so:
+
+```cpp
+    REACT_METHOD(GetString, L"getString");
+    void GetString(React::ReactPromise<std::string>&& result) noexcept
+    {
+      if (error) {
+        result.Reject("Failure");
+      } else {
+        something.Completed([result] (const auto& operation, const auto& status) {
+          // do error checking, e.g. status should be Completed
+          winrt::hstring result{operation.GetResults()};
+          result.Resolve(winrt::to_string(result));
+        });
+      }
+    }
+```
+See [JavaScript and Windows Runtime strings](#javascript-and-windows-runtime-strings) for more details.
+
+The [`JSValue`](native-modules-jsvalue.md) type can be used when the API returns a JavaScript objects or takes JavaScript objects as input parameters.
+
+Native modules will want to use `REACT_METHOD` instead of `REACT_SYNC_METHOD` since the latter precludes web debugging and has performance implications. When using web debugging you will see an exception that reads:
+`Calling synchronous methods on native modules is not supported in Chrome. Consider providing alternative to expose this method in debug mode, e.g. by exposing constants ahead-of-time`
+See: [MessageQueue.js](https://github.com/facebook/react-native/blob/e27d656ef370958c864b052123ec05579ac9fc01/Libraries/BatchedBridge/MessageQueue.js#L175).
 
 To add custom events, we attribute a `std::function<void(double)>` delegate with `REACT_EVENT`, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `REACT_EVENT(AddEvent, "addEvent")`.
 
@@ -618,8 +514,6 @@ Calls to methods are a little different due to the asynchronous nature of the JS
 
 For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath::AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
 
-## C# vs. C++ for Native Modules
-
-Although React Native for Windows supports writing modules in both C# and C++, you should be aware that your choice of language could impact performance of apps that consume your module. Modules written in C# rely on the CLR. At app launch, if there are _any_ C# dependencies, the app will load the CLR which will increase the launch time for the application. Note that this is a one-time cost regardless of the number of C# dependencies that your app relies on.
-
-That said, we recognize the engineering efficiency that comes with writing a module in C#. We strive to maintain parity in developer experience between C# and C++. If your app or module already uses C# (perhaps because it is migrating from the React Native for Windows legacy platform), you should feel empowered to continue to use C#. That said, modules that Microsoft contributes to will be written in C++ to ensure the highest level of performance. 
+### JavaScript and Windows Runtime strings
+Note that JavaScript strings are UTF8 (i.e. `std::string`) but WinRT strings are UTF16 (i.e. `winrt::hstring` in C++/WinRT), so when inter-operating between JavaScript and WinRT APIs, you will need to convert between these two encodings.
+See [String handling in C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/strings), specifically [`winrt::to_string`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-string) and [`winrt::to_hstring`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-hstring).

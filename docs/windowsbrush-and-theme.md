@@ -1,6 +1,6 @@
 ---
 id: windowsbrush-and-theme
-title: Using Windows Brushes and Responding to Themes
+title: Using PlatformColor and Responding to Themes
 ---
 
 ## Overview
@@ -15,12 +15,31 @@ In this example, we'll look at three things:
 - How to switch styles when a theme change has occurred
 - Handling a theme changed event
 
-#### Setting up your app to be sensitive to theme changes
+#### Using hooks to be sensitive to theme changes
 
-First import the Platform API into your React Native app.
+First import the `useColorScheme` hook into your React Native app.
 
 ```JSX
-import { AppTheme } from 'react-native-windows'
+import { useColorScheme } from 'react-native'
+```
+
+```JSX
+ const MyAppComponent = () => {
+        const colorScheme = useColorScheme();
+        return (
+          <Button title='click me' color={colorScheme === 'dark' ? 'grey' : 'orange'}/>
+        );
+      };
+```
+
+> Note: useColorScheme() will always return 'light' when remote debugging.
+
+#### Setting up your app to be sensitive to theme changes without hooks
+
+First import the `Appearance` API into your React Native app.
+
+```JSX
+import { Appearance } from 'react-native'
 ```
 
 Create a local variable to use in a style conditional or to reference elsewhere, and then supply mounting functions to ensure that you are listening to the theme change events correctly.
@@ -28,35 +47,37 @@ Create a local variable to use in a style conditional or to reference elsewhere,
 ```JSX
 class MyAppClass extends Component {
   state = {
-    currentTheme: AppTheme.currentTheme
+    currentTheme: Appearance.getColorScheme()
   };
 
   componentDidMount() {
-    AppTheme.addListener('appThemeChanged', this.onAppThemeChanged);
+    Appearance.addChangeListener(this.onAppThemeChanged);
   };
 
   componentWillUnmount() {
-    AppTheme.removeListener('appThemeChanged', this.onAppThemeChanged);
+    Appearance.addChangeListener(this.onAppThemeChanged);
   };
 
-  onAppThemeChanged = (event) => {
-    const currentTheme = AppTheme.currentTheme;
+  onAppThemeChanged = (theme) => {
+    const currentTheme = theme;
     this.setState({currentTheme});
   };
+
+  render() {
+    <Button title='click me' color={this.state.currentTheme === 'dark' ? 'grey' : 'orange'}/>
+  }
 }
 ```
 
-#### Switching styles based on the app's theme
+> Note: getColorScheme() will always return 'light' when remote debugging.
 
-If the app author wants to switch the style of their component manually based on the system's theme (Dark or Light), they can do so with CSS-like style conditionals.
-
-```JSX
- <Button title='click me' color={this.state.currentTheme === 'dark' ? 'grey' : 'orange'}/>
-```
 
 ### Using Windows-defined theme brushes
 
-These examples cover how to access and use the Windows system theme brushes and apply them in your styles.
+The following examples cover how to access and use the Windows system theme brushes and apply them in your styles.  For more information on Windows Xaml theme resources see: 
+https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/xaml-theme-resources
+
+Any brush/color value within your apps native ResourceDictionary, either from the system, or custom native resources, are available using `PlatformColor`.
 
 #### Using theme brushes in a style
 
@@ -65,7 +86,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 19,
     fontWeight: 'bold',
-    color: {windowsbrush: 'SystemControlPageTextBaseHighBrush'}
+    color: PlatformColor('SystemControlPageTextBaseHighBrush')
   },
 });
 ```
@@ -79,27 +100,27 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 19,
     fontWeight: 'bold',
-    color: {windowsbrush: 'SystemAccentColorLight3'}
+    color: PlatformColor('SystemAccentColorLight3')
   },
 });
 ```
 
-**Note:** That the system accent colors are `Color` objects at the native layer, whereas the other examples showed the use of theme brushes are `SolidColorBrush` objects. This means that the `SolidColoBrushes` will adapt automatically based on the Theme (Light, Dark or High Contrast), while the `Colors` will remain static.
+**Note:** That the system accent colors are `Color` objects at the native layer, whereas the other examples showed the use of theme brushes are `SolidColorBrush` objects. This means that the `SolidColorBrushes` will adapt automatically based on the Theme (Light, Dark or High Contrast), while the `Colors` will remain static.
 
-### Using windowsbrush to access Reveal and Acrylic
+### Using PlatformColor to access Reveal and Acrylic
 
-Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `windowsbrush` API we provide on the JavaScript layer for other brushes.
+Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `PlatformColor` API we provide on the JavaScript layer for other brushes.
 
 #### Using System Acrylic
 
-The `windowsbrush` api gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
+The `PlatformColor` api gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
 
-<img src="assets/rnw-acrylic-surface.png" width="277" height="227"/>
+![AcrylicBrush](assets/rnw-acrylic-surface.png)
 
 ```JSX
 const styles = StyleSheet.create({
   viewcomponent: {
-    backgroundColor: {windowsbrush: 'SystemControlAcrylicWindowBrush'}
+    backgroundColor: PlatformColor('SystemControlAcrylicWindowBrush')
   },
 });
 ```
@@ -108,12 +129,12 @@ const styles = StyleSheet.create({
 
 Reveal can be applied to surfaces exactly the same way that Acrylic and other system brushes are.
 
-<img src="assets/reveal-surface-animation.gif" width="200" height="180"/>
+![RevealBrush](assets/reveal-surface-animation.gif)
 
 ```JSX
 const styles = StyleSheet.create({
   viewcomponent: {
-    backgroundColor: {windowsbrush: 'SystemControlBackgroundAccentRevealBorderBrush'}
+    backgroundColor: PlatformColor('SystemControlBackgroundAccentRevealBorderBrush')
   },
 });
 ```
