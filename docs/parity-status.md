@@ -17,7 +17,7 @@ If you encounter an unsupported API that should be tracked, please [submit an is
 
 ## Windows APIs and Components
 
-In addition to the React Native core APIs, there are a handful of APIs that are either new in React Native for Windows to support desktop (like keyboarding, mouse, popups, windowing, multi-instance etc.,) scenarios as well as signature Windows 10 scenarios (like Themes, Acrylic brushes etc.,). You can find documentation on these under the [APIs](https://microsoft.github.io/react-native-windows/docs/flyout-component) tab. 
+In addition to the React Native core APIs, there are a handful of APIs that are either new in React Native for Windows to support desktop (like keyboarding, mouse, pop-ups, windowing, multi-instance, etc.,) scenarios as well as signature Windows 10 scenarios (like Themes, Acrylic brushes etc.,). You can find documentation on these under the [APIs](https://microsoft.github.io/react-native-windows/docs/flyout-component) tab. 
 
 ## More APIs and Components
 

@@ -15,7 +15,7 @@ title: XamlUIService
 static XamlUIService FromContext(IReactContext context);
 ```
 
-Use this method to gain access to the XamlUIService from a ReactContext.
+Use this method to gain access to the `XamlUIService` from a `ReactContext`.
 
 ### `ElementFromReactTag()`
 

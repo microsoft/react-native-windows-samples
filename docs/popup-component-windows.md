@@ -9,25 +9,25 @@ title: Popup
 
 Inherits [View Props](https://reactnative.dev/docs/view#props).
 
-### isOpen
+### `isOpen`
 
-A boolean that returns true when the flyout is active/open, and false when it's not.
-
-| type | required |
-|:--|:--|
-| bool | No |
-
-### isLightDismissEnabled
-
-Whether or not the flyout will close if the user clicks away from the popup.
-
-Set to false if you want your flyout to be modal.
+A boolean that returns true when the `Popup` is active/open, and false when it's not.
 
 | type | required |
 |:--|:--|
 | bool | No |
 
-### horizonalOffset
+### `isLightDismissEnabled`
+
+Whether or not the `Popup` will close if the user clicks outside of it.
+
+Set to false if you want your `Popup` to be modal.
+
+| type | required |
+|:--|:--|
+| bool | No |
+
+### `horizonalOffset`
 
 Specifies horizontal offset from spawn point.
 
@@ -35,7 +35,7 @@ Specifies horizontal offset from spawn point.
 |:--|:--|
 | number | No |
 
-### verticalOffset
+### `verticalOffset`
 
 Specifies vertical offset from spawn point.
 
@@ -43,9 +43,9 @@ Specifies vertical offset from spawn point.
 |:--|:--|
 | number | No |
 
-### onDismiss
+### `onDismiss`
 
-An event that fires when the flyout is dismissed.
+An event that fires when the `Popup` is dismissed.
 
 This must update the [`isOpen`](#isopen) property.
 
@@ -53,10 +53,10 @@ This must update the [`isOpen`](#isopen) property.
 |:--|:--|
 | function | Yes |
 
-### target
+### `target`
 
-A component that the flyout is attached to and will show from when [`isOpen`](flyout-component-windows.md#isopen) is true.
+A component that the `Popup` is attached to and will show from when [`isOpen`](flyout-component-windows.md#isopen) is true.
 
 | type | required |
 |:--|:--|
-| React.ReactNode | Yes |
+| `React.ReactNode` | Yes |

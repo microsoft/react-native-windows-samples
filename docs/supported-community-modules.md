@@ -3,7 +3,7 @@ id: supported-community-modules
 title: Supported Community Modules
 ---
 
-## ReactNative.Directory
+## `ReactNative.Directory`
 
 The [React Native Directory](https://reactnative.directory/) lists libraries and native modules that are available across all of the React Native platforms including iOS, Android, Windows, macOS, and more. 
 
@@ -16,7 +16,7 @@ To view which modules are available for a specific platform, you can use the Fil
 
 The React Native team at Microsoft has worked together with community maintainers to add Windows and macOS implementations to several community modules. These modules are listed below.
 
-### Ejected Modules 
+### Ejected Modules
 
 The React Native [Lean Core](https://github.com/facebook/react-native/issues/23313) effort slims down the core functionality of React Native by ejecting specific modules into their own repos. 
 
@@ -24,14 +24,15 @@ The following modules have either been ejected from core, or are on path to be e
 
 | Name | Version Supported (Windows) | Version Supported (macOS) |
 |:-|:-|:-|
-| <ins>[async-storage](https://github.com/react-native-community/async-storage)</ins> | 0.61 | 0.61 |
-| <ins>[datetimepicker](https://github.com/react-native-community/datetimepicker)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/389) |
-| <ins>[react-native-checkbox](https://github.com/react-native-community/react-native-checkbox)</ins> | 0.62 | x |
-| <ins>[react-native-netinfo](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 | 0.61 |
-| <ins>[react-native-picker](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/395) |
-| <ins>[react-native-progress-view](https://github.com/react-native-community/progress-view)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/391) |
-| <ins>[react-native-slider](https://github.com/react-native-community/react-native-slider)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/394) |
-| <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | 0.61 |
+| <ins>[`async-storage`](https://github.com/react-native-community/async-storage)</ins> | 0.61 | 0.61 |
+| <ins>[`datetimepicker`](https://github.com/react-native-community/datetimepicker)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/389) |
+| <ins>[`react-native-checkbox`](https://github.com/react-native-community/react-native-checkbox)</ins> | 0.62 | x |
+| <ins>[`react-native-netinfo`](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 | 0.61 |
+| <ins>[`react-native-picker`](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/395) |
+| <ins>[`react-native-progress-view`](https://github.com/react-native-community/progress-view)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/391) |
+| <ins>[`react-native-slider`](https://github.com/react-native-community/react-native-slider)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/394) |
+| <ins>[`react-native-webview`](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | 0.61 |
+| <ins>[`clipboard`](https://www.github.com/react-native-community/clipboard)</ins> | 0.61 | 0.61 |
 
 ### Community modules
 

@@ -3,7 +3,7 @@ id: reactnativehost-api
 title: ReactNativeHost
 ---
 
-This is the main entry-point to create a react-native instance.  The ReactNativeHost object exists to configure the instance using [ReactInstanceSettings](ReactInstanceSettings-api-windows.md) before its loaded, as well as enabling control of when to load the instance. 
+This is the main entry-point to create a react-native instance.  The `ReactNativeHost` object exists to configure the instance using [`ReactInstanceSettings`](ReactInstanceSettings-api-windows.md) before its loaded, as well as enabling control of when to load the instance. 
 
 
 _In the future more lifecycle events will be added to this object to provide better information on when an instance is loaded and unloaded._
@@ -43,7 +43,7 @@ Provides access to the list of `IReactPackageProvider`'s that the react instance
 ReactInstanceSettings InstanceSettings { get; set; }
 ```
 
-Provides access to your this host's [ReactInstanceSettings](ReactInstanceSettings-api-windows.md) to configure the react instance.
+Provides access to your this host's [`ReactInstanceSettings`](ReactInstanceSettings-api-windows.md) to configure the react instance.
 
 <!-- // Copyright (c) Microsoft Corporation. All rights reserved.
 namespace Microsoft.ReactNative {

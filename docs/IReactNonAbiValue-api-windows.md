@@ -3,9 +3,9 @@ id: ireactnonabivalue-api
 title: IReactNonAbiValue
 ---
 
-IReactNonAbiValue helps to wrap up a non-ABI safe C++ values into an IInspectable object. We use it to handle native module lifetime.
+`IReactNonAbiValue` helps to wrap up a non-ABI-safe C++ values into an `IInspectable` object. We use it to handle native module lifetime.
 
-It also can be used to store values in the IReactPropertyBag that do not need to go through the EXE/DLL boundary.
+It also can be used to store values in the `IReactPropertyBag` that do not need to go through the EXE/DLL boundary.
 
 # Reference
 

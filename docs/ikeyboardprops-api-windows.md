@@ -63,7 +63,13 @@ static OnKeyUpCapture()
 enum eventPhase
 ```
 
-Enum for types of keyboard event phases.
+Enumeration of types of keyboard event phases.
+Possible values:
+
+- `None`
+- `Capturing`
+- `AtTarget`
+- `Bubbling`
 
 ### ```keyDownEvents```
 
