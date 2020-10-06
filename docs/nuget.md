@@ -78,7 +78,7 @@ Of course all the other flags still work.
         </PackageReference>
       </ItemGroup>
       ```
-      > Note: You'll need to match the et version with the npm version
+      > Note: You'll need to match the NuGet version with the npm version
 
 1. Update the C# logic for the new [compile-time C# codeGen](native-modules-csharp-codegen.md)
 
