@@ -1,8 +1,9 @@
 #include "pch.h"
 
 #include "App.h"
-#include "ReactPackageProvider.h"
 
+#include "AutolinkedNativeModules.g.h"
+#include "ReactPackageProvider.h"
 
 
 using namespace winrt::rssreader;
@@ -33,17 +34,10 @@ App::App() noexcept
     InstanceSettings().EnableDeveloperMenu(false);
 #endif
 
+    RegisterAutolinkedNativeModulePackages(PackageProviders()); // Includes any autolinked modules
+
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
     PackageProviders().Append(winrt::ReactNativeWebView::ReactPackageProvider());
 
-    REACT_REGISTER_NATIVE_MODULE_PACKAGES(); //code-gen macro from autolink
-
     InitializeComponent();
-
-    // This works around a cpp/winrt bug with composable/aggregable types tracked
-    // by 22116519
-    AddRef();
-    m_inner.as<::IUnknown>()->Release();
 }
-
-

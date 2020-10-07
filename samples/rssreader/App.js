@@ -6,7 +6,7 @@ import ContentScreen from './screens/ContentScreen';
 
 const App: () => React$Node = () => {
 
-  const[url, setUrl] = useState('https://blogs.windows.com/');
+  const[url, setUrl] = useState('https://devblogs.microsoft.com/surface-duo');
 
   getUrlFromItem = (data) => {
     setUrl(data);
