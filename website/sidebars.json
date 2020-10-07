@@ -21,7 +21,8 @@
       "native-modules-advanced",
       "native-modules-csharp-codegen",
       "supported-community-modules",
-      "native-code"
+      "native-code",
+      "win10-vm"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
