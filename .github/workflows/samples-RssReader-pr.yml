@@ -1,0 +1,30 @@
+name: RssReader PR
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'samples/rssreader/**'
+      - '.github/workflows/samples-rssreader-*.yml'
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Gather environment info
+        run: npx envinfo
+
+      - name: Relocate to reduce long paths
+        run:  Copy-item -Force -Recurse -Verbose "samples\rssreader" -Destination "..\..\src"
+
+      - name: Yarn install
+        run: yarn install --frozen-lockfile
+        working-directory: ..\..\src
+
+      - name: Build x86 Debug
+        run: npx react-native run-windows --no-launch --no-packager --logging
+        working-directory: ..\..\src
