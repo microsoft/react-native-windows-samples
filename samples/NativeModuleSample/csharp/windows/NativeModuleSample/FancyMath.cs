@@ -18,11 +18,11 @@ namespace NativeModuleSample
             public double PI = Math.PI;
 
             [ReactMethod("add")]
-            public double Add(double a, double b)
+            public void Add(double a, double b, ReactPromise<double> promise)
             {
                 double result = a + b;
                 AddEvent(result);
-                return result;
+                promise.Resolve(result);
             }
 
             [ReactEvent]
