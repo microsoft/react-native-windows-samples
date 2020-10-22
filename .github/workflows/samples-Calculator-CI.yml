@@ -8,7 +8,7 @@ on:
       - master
     paths:
       - 'samples/Calculator/**'
-      - '.github/workflows/samples-Calculator-ci.yml'
+      - '.github/workflows/samples-Calculator-CI.yml'
 
 jobs:
   build:
