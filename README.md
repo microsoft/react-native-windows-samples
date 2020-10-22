@@ -18,6 +18,9 @@
   <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI%22">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI/badge.svg" alt="NativeModuleSample CI Status" />
   </a>
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RssReader+CI%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RssReader%20CI/badge.svg" alt="RssReader CI Status" />
+  </a>
 </p>
 
 This repository is a companion to the [React Native for Windows](https://github.com/microsoft/react-native-windows) and [React Native for macOS](https://github.com/microsoft/react-native-macos) repos.
