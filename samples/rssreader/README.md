@@ -9,6 +9,6 @@
   </a>
 </p>
 
-This sample showcases the usage of React Native for Windows to build a rssreader.	
+This sample showcases the usage of React Native for Windows to build a [RSS](https://en.wikipedia.org/wiki/RSS) reader.	
 
 It currently targets React Native Windows 0.62.
