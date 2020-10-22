@@ -8,7 +8,7 @@ on:
       - master
     paths:
       - 'samples/NativeModuleSample/**'
-      - '.github/workflows/samples-NativeModuleSample-ci.yml'
+      - '.github/workflows/samples-NativeModuleSample-CI.yml'
 
 jobs:
   build:
