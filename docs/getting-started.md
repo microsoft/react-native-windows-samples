@@ -49,6 +49,7 @@ Here are the options that `react-native-windows-init` takes:
 | `--projectType` | string ["`app`","`lib`"] [default: "`app`"] | The type of project to initialize.               |
 | `--overwrite`   | boolean                                     | Overwrite any existing files without prompting.  |
 | `--useWinUI3`   | boolean                                     | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
+| `--no-telemetry`| boolean                                     | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 
 ## Running a React Native Windows App
 
