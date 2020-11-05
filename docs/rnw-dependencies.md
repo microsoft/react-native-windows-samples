@@ -22,15 +22,23 @@ Start an **elevated** PowerShell window and run:
 </html>
 
 ### Manual setup
+
+> The recommended way is to use the script above as the information in this manual section is likely to get out of date
+
 Alternatively, you can setup your environment manually:
 - Ensure Developer Mode is turned ON in Windows Settings App.
 - Install [Visual Studio 2019](https://www.visualstudio.com/downloads) **with the following options checked**:
   - Workloads
     - Universal Windows Platform development
     - Desktop development with C++
+    - .NET Desktop development
   - Individual Components
     - Development activities
       - Node.js development support (optional)
+
+You will also need to ensure that certain settings are enabled:
+- Long path support
+- Developer mode enabled
 
 #### React Native Development Dependencies
 
