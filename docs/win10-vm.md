@@ -3,7 +3,7 @@ id: win10-vm
 title: Developing Windows apps on a non-Windows PC
 ---
 
-It is possible to develop Windows apps on a non-Windows PC by creating using a virtual machine either locally or on Azure.
+It is possible to develop Windows apps on a non-Windows PC by using a virtual machine. The virtual machine can run either locally or on Azure.
 
 ### Local VM
 
