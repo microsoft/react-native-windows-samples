@@ -16,5 +16,5 @@ It is possible to develop Windows apps on a non-Windows PC by using a virtual ma
 
 ### Azure VM
 
-1. Go to https://docs.microsoft.com/en-us/azure/virtual-machines/windows/using-visual-studio-vm and follow the instructions to create a Visual Studio 2019 on Windows 10 in Azure.
+1. Go to https://docs.microsoft.com/en-us/azure/virtual-machines/windows/using-visual-studio-vm and follow the instructions to create a **Visual Studio 2019 Latest** virtual machine on "Windows 10 Enterprise N" in Azure.
 2. Follow the instructions on [dependencies](rnw-dependencies.md).
