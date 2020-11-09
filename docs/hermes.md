@@ -29,7 +29,7 @@ pod 'libevent', :podspec => '../node_modules/react-native-macos/third-party-pods
 Hermes is experimentally supported on Windows, generally providing better performance characteristics than the default Chakra engine.
 
 ### Enabling Hermes for new projects
-The easiest way to enable Hermes is to pass the `--useHermes` flag to `react-native-windows-init` when creating a new project. This will set up your project to use the Herems engine and to generate bundles as Hermes bytecode instead of JavaScript.
+The easiest way to enable Hermes is to pass the `--useHermes` flag to `react-native-windows-init` when creating a new project. This will set up your project to use the Hermes engine and to generate bundles as Hermes bytecode instead of JavaScript.
 
 ### Using Hermes in an existing project
 Hermes can be enabled in existing projects with a few edits.
@@ -70,4 +70,3 @@ If you've built a project using Hermes and want to opt-out, the above instructio
 - Enabling Hermes leads to a very large download on initial build. This will become smaller in the future
 - Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI3
 - The binary for Hermes is not yet signed by Microsoft
-
