@@ -26,13 +26,47 @@ pod 'libevent', :podspec => '../node_modules/react-native-macos/third-party-pods
 > Be sure to set your target's deployment target to at least 10.14 before running `pod install`
 
 ## Hermes on Windows:
-We are working on bringing Hermes support to React Native for Windows through the official [Microsoft fork of Hermes](https://github.com/microsoft/hermes-windows).
+Hermes is experimentally supported on Windows, generally providing better performance characteristics than the default Chakra engine.
 
-Hermes for React Native for Windows has been updated to support the latest version 0.4.3 and can be turned on with a build flag for experimental use while we complete the feature set and get it ready for shipping.
+### Enabling Hermes for new projects
+The easiest way to enable Hermes is to pass the `--useHermes` flag to `react-native-windows-init` when creating a new project. This will set up your project to use the Herems engine and to generate bundles as Hermes bytecode instead of JavaScript.
 
-Here are the instructions to enable it:
-1.	Uncomment the Hermes reference in [`vnext/Microsoft.ReactNative/packages.config`](https://github.com/microsoft/react-native-windows/blob/917adf8349ddf7f1a9943fc89096df7e2303ae7c/vnext/Microsoft.ReactNative/packages.config#L10)
-2.	Build RNW with `USE_HERMES=true`, or set it to true in [`vnext/PropertySheets/React.Cpp.props`](https://github.com/microsoft/react-native-windows/blob/917adf8349ddf7f1a9943fc89096df7e2303ae7c/vnext/PropertySheets/React.Cpp.props#L29)
-3.	Set `host.InstanceSettings().JSIEngineOverride(Microsoft::ReactNative::JSIEngine::Hermes)`
+### Using Hermes in an existing project
+Hermes can be enabled in existing projects with a few edits.
 
-You can also see an [example of how to enable it here](https://github.com/microsoft/react-native-windows/blob/917adf8349ddf7f1a9943fc89096df7e2303ae7c/packages/playground/windows/playground/MainPage.cpp#L64) for reference.
+First, set the `UseHermes` property to `true` in the `BuildFlags.props` file in your project's `windows` directory:
+
+```xml
+<PropertyGroup Label="Microsoft.ReactNative Build Flags">
+  ...
+  <UseHermes>true</UseHermes>
+</PropertyGroup>
+```
+
+Second, add the Hermes NuGet package to `packages.config`, found next to your projects `vcxproj` file:
+
+```xml
+<packages>
+  ...
+  <package id="ReactNative.Hermes.Windows" version="0.7.1" targetFramework="native" />
+</packages>
+```
+
+Finally, edit the `ExtensionTargets` ItemGroup in your project's `vcxproj` file to import targets from the NuGet package:
+
+```xml
+<ImportGroup Label="ExtensionTargets">
+  ...
+  <Import Project="..\packages\ReactNative.Hermes.Windows.0.7.1\build\native\ReactNative.Hermes.Windows.targets" Condition="Exists('..\packages\ReactNative.Hermes.Windows.0.7.1\build\native\ReactNative.Hermes.Windows.targets')" />
+</ImportGroup>
+```
+
+### Disabling Hermes
+If you've built a project using Hermes and want to opt-out, the above instructions may be reversed.
+
+### Known limitations
+- Hermes debugger is not yet supported
+- Enabling Hermes leads to a very large download on initial build. This will become smaller in the future
+- Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI3
+- The binary for Hermes is not yet signed by Microsoft
+
