@@ -72,3 +72,5 @@ theming
 2.x
 RNW-on-WinUI
 preprocessor
+ItemGroup
+WinUI3
