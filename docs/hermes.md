@@ -68,5 +68,5 @@ If you've built a project using Hermes and want to opt-out, the above instructio
 - Hermes is not yet supported when using C# projects
 - Hermes debugger is not yet supported
 - Enabling Hermes leads to a very large download on initial build. This will become smaller in the future
-- Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI3
+- Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI 3
 - The binary for Hermes is not yet signed by Microsoft
