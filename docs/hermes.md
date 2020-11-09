@@ -65,6 +65,7 @@ Finally, edit the `ExtensionTargets` ItemGroup in your project's `vcxproj` file 
 If you've built a project using Hermes and want to opt-out, the above instructions may be reversed.
 
 ### Known limitations
+- Hermes does not yet support C# projects
 - Hermes debugger is not yet supported
 - Enabling Hermes leads to a very large download on initial build. This will become smaller in the future
 - Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI3
