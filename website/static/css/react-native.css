@@ -160,6 +160,12 @@ a code {
   }
 }
 
+@media only screen and (min-width: 2048px) {
+  .separateOnPageNav .headerWrapper.wrapper, .separateOnPageNav .wrapper {
+    max-width: 2048px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .mainContainer .component-grid.component-grid-border {
     border-bottom: 1px solid #f1eff0;
