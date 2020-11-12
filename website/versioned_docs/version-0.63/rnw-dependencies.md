@@ -34,17 +34,17 @@ Alternatively, you can setup your environment manually:
     - Development activities
       - Node.js development support (optional)
 
-## React Native Development Dependencies
+#### React Native Development Dependencies
 
-- Install the [standard React Native dependencies](https://reactnative.dev/docs/getting-started#node-python2-jdk)
+- Install the [standard React Native dependencies](https://reactnative.dev/docs/environment-setup)
 - Install [Node.js](https://nodejs.org) via one of the following methods:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
   ```bat
   choco install nodejs.install --version=12.9.1
   ```
-  - Directly from [NodeJs](https://nodejs.org/en/download/)
+  - Directly from [Node.js](https://nodejs.org/en/download/)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
-  > For both of the non-choco installations, ensure that you are installing version 12.9.1 as that is the recommended version when building React Native Windows apps.
+  > For installations not using `choco`, ensure that you are installing version 12.9.1 as that is the recommended version when building React Native Windows apps.
 
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
