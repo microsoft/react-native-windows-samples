@@ -27,7 +27,7 @@ Start an **elevated** PowerShell window and run:
 
 Alternatively, you can setup your environment manually:
 - Ensure Developer Mode is turned ON in Windows Settings App.
-- Install [Visual Studio 2019](https://www.visualstudio.com/downloads) **with the following options checked**:
+- Install [Visual Studio 2019 (version 16.5 or greater)](https://www.visualstudio.com/downloads) **with the following options checked**:
   - Workloads
     - Universal Windows Platform development
     - Desktop development with C++
