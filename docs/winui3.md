@@ -5,13 +5,13 @@ title: WinUI 3
 
 # WinUI 3 Support in RNW
 
-[WinUI](https://microsoft.github.io/microsoft-ui-xaml/) is the modern native UI platform of Windows. As of this writing, **WinUI 3** has published [Preview 2](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
+[WinUI](https://microsoft.github.io/microsoft-ui-xaml/) is the modern native UI platform of Windows. For more information about **WinUI 3** see [this](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
 
 We are working on adding **WinUI 3** support for RNW and have made some good progress towards an alpha.
 
 ## Current status
 
-As of July 22th 2020, we support the **WinUI 3.0 Preview 2** release for:
+As of November 19th 2020, we support the **WinUI 3.0 Preview 3** release for:
 
 * Creating a new RNW app with either C++/WinRT or C#. 
 * The Playground app is able to build a `WinUI 3`-targeting version.
@@ -37,6 +37,6 @@ For a RNW app to target WinUI 3, it must use a version of `Microsoft.ReactNative
 
 ## Additional resources
 
-* [WinUI 3 Preview 2](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/)
+* [WinUI 3](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/)
 
 Follow overall project status in the [Re-target onto OSS XAML](https://github.com/microsoft/react-native-windows/projects/30) project.
