@@ -5,7 +5,6 @@ title: MethodDelegate
 
 Kind: `delegate`
 
-## Description
 A delegate to call native asynchronous method.
 
 ## Invoke

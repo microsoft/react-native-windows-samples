@@ -7,7 +7,6 @@ Kind: `interface`
 
 
 
-## Description
 This interface is to be implemented by package creators.
 
 
@@ -16,6 +15,8 @@ This interface is to be implemented by package creators.
 ### CreatePackage
 void **`CreatePackage`**([`IReactPackageBuilder`](IReactPackageBuilder) packageBuilder)
 
-Provides a [`IReactPackageBuilder`](IReactPackageBuilder.md) which the app or package will use to register custom native modules and view managers.
+Provides a [`IReactPackageBuilder`](IReactPackageBuilder) which the app or package will use to register custom native modules and view managers.
+
+
 
 

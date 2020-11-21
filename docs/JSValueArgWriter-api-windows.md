@@ -5,7 +5,6 @@ title: JSValueArgWriter
 
 Kind: `delegate`
 
-## Description
 Use this delegate to pass arbitrary value to ABI API. <br/>In a function that implements the delegate use the provided writer to stream custom values.
 
 ## Invoke

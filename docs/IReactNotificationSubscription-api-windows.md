@@ -7,14 +7,13 @@ Kind: `interface`
 
 
 
-## Description
-A subscription to a notification. The subscription is removed when this object is deleted or the [`Unsubscribe`](#Unsubscribe) method is called.
+A subscription to a notification. The subscription is removed when this object is deleted or the [`Unsubscribe`](#unsubscribe) method is called.
 
 ## Properties
 ### Dispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `Dispatcher`
 
-The [`IReactDispatcher`](IReactDispatcher.md) provided when the notification subscription created. All notifications will be handled using this dispatcher.
+The [`IReactDispatcher`](IReactDispatcher) provided when the notification subscription created. All notifications will be handled using this dispatcher.
 
 ### IsSubscribed
 `readonly`  bool `IsSubscribed`
@@ -32,6 +31,8 @@ Name of the notification.
 ### Unsubscribe
 void **`Unsubscribe`**()
 
-Remove the subscription. Because of the multi-threaded nature of the notifications, the handler can be still called after the Unsubscribe method called if the IsSubscribed property is already checked. Consider calling the Unsubscribe method and the handler in the same [`IReactDispatcher`](IReactDispatcher.md) to ensure that no handler is invoked after the Unsubscribe method call.
+Remove the subscription. Because of the multi-threaded nature of the notifications, the handler can be still called after the Unsubscribe method called if the IsSubscribed property is already checked. Consider calling the Unsubscribe method and the handler in the same [`IReactDispatcher`](IReactDispatcher) to ensure that no handler is invoked after the Unsubscribe method call.
+
+
 
 

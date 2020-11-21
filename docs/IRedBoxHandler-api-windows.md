@@ -7,7 +7,6 @@ Kind: `interface`
 
 
 
-## Description
 `IRedBoxHandler` provides an extension point to allow custom error handling within the React instance.  This can be useful if you have an existing error reporting system that you want React errors to be reported to.  The default implementation of `RedBoxHandler` shows an error messages in a error screen that covers the whole application window.
 
 -- Insert Screenshot here --
@@ -28,8 +27,7 @@ class MyRedBoxHandler : IRedBoxHandler
       innerHandler = defaultHandler;
     }
 
-   public
-    void ShowNewError(IRedBoxErrorInfo info, RedBoxErrorType type) {
+   public void ShowNewError(IRedBoxErrorInfo info, RedBoxErrorType type) {
       // Dont report non-fatal errors (optional)
       if (type != RedBoxErrorType.JavaScriptSoft)
         ReportErrorToMyErrorReportingSystem(info, type);
@@ -39,8 +37,7 @@ class MyRedBoxHandler : IRedBoxHandler
         innerHandler.ShowNewError(info, type);
     }
 
-   public
-    bool IsDevSupportEnabled {
+   public bool IsDevSupportEnabled {
       get;
     }
     {
@@ -50,20 +47,17 @@ class MyRedBoxHandler : IRedBoxHandler
       return true;
     }
 
-   public
-    void UpdateError(IRedBoxErrorInfo info) {
+   public void UpdateError(IRedBoxErrorInfo info) {
       if (innerHandler.IsDevSupportEnabled)
         innerHandler.UpdateError(info);
     }
 
-   public
-    void DismissRedBox() {
+   public void DismissRedBox() {
       if (innerHandler.IsDevSupportEnabled)
         innerHandler.DismissRedBox();
     }
 
-   private
-    IRedBoxHandler innerHandler;
+   private IRedBoxHandler innerHandler;
 }
 
 
@@ -93,9 +87,13 @@ void **`ShowNewError`**([`IRedBoxErrorInfo`](IRedBoxErrorInfo) info, [`RedBoxErr
 
 This method is called when an error is initially hit.
 
+
+
 ### UpdateError
 void **`UpdateError`**([`IRedBoxErrorInfo`](IRedBoxErrorInfo) info)
 
 This method is called when updated information about an error has been resolved.  For JavaScript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
+
+
 
 

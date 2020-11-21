@@ -5,7 +5,6 @@ title: SyncMethodDelegate
 
 Kind: `delegate`
 
-## Description
 A delegate to call native synchronous method.
 
 ## Invoke

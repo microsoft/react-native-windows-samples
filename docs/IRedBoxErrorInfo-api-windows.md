@@ -7,7 +7,6 @@ Kind: `interface`
 
 
 
-## Description
 This object provides information about the error.  For JavaScript errors, a call stack is also provided.
 
 ## Properties

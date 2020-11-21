@@ -7,8 +7,7 @@ Kind: `interface`
 
 
 
-## Description
-The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. <br/>It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. <br/>- Use the Properties to share native module's data with other components. <br/>- Use the Notifications to exchange events with other components. <br/>- Use `CallJSFunction` to call JavaScript functions, and `EmitJSEvent` to raise JavaScript events.
+The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. <br/>It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. <br/>- Use the Properties to share native module's data with other components. <br/>- Use the Notifications to exchange events with other components. <br/>- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events.
 
 ## Properties
 ### BundleRootPath
@@ -74,14 +73,20 @@ void **`CallJSFunction`**(string moduleName, string methodName, [`JSValueArgWrit
 
 Call the JavaScript function named `methodName` of `moduleName`.
 
+
+
 ### DispatchEvent
 void **`DispatchEvent`**([`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) view, string eventName, [`JSValueArgWriter`](JSValueArgWriter) eventDataArgWriter)
 
-> Deprecated: Use `DispatchEvent` on [`XamlUIService`](XamlUIService) instead
+> **Deprecated**: Use [`XamlUIService.DispatchEvent`](XamlUIService#dispatchevent) instead
+
+
 
 ### EmitJSEvent
 void **`EmitJSEvent`**(string eventEmitterName, string eventName, [`JSValueArgWriter`](JSValueArgWriter) paramsArgWriter)
 
 Call JavaScript module event. It is a specialized `CallJSFunction` call where method name is always 'emit'.
+
+
 
 

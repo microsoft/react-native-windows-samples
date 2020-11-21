@@ -7,7 +7,6 @@ Kind: `class`
 
 
 
-## Description
 Provides configuration of the react instance.
 
 ## Properties
@@ -31,7 +30,9 @@ When loading from a bundle server (such as metro), this is the path that will be
 ### DebugHost
  string `DebugHost`
 
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.<br/>> This has been replaced with `SourceBundleHost` and `SourceBundlePort` and will be removed in a future version.<br/>
+> **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in a future version.
+
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
 
 Default value: `localhost:8081`
 
@@ -57,7 +58,9 @@ Default value: `false`
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
 
-This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default `RedBox` experience and the loading UI during bundle load.<br/>> This property will be removed in a future version of **react-native-windows**<br/>This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In the 0.63 both properties will do the same thing.
+> **Deprecated**: This property has been replaced by[`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing.
+
+This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default `RedBox` experience and the loading UI during bundle load.
 
 ### EnableJITCompilation
  bool `EnableJITCompilation`
@@ -79,7 +82,7 @@ Default value: `index.windows`
 ### JavaScriptMainModuleName
  string `JavaScriptMainModuleName`
 
-**Deprecated**: use JavaScriptBundleFile instead
+> **Deprecated**: use JavaScriptBundleFile instead
 
 Name of the JavaScript bundle file.  If [`JavaScriptBundleFile`](#javascriptbundlefile) is specified it is used instead.
 
@@ -140,7 +143,7 @@ Should the instance trigger the hot module reload logic when it first loads the 
 ### UseJsi
  bool `UseJsi`
 
-This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. **It is not recommended to change this setting.**
+This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. <br/>> **It is not recommended to change this setting.**
 
 ### UseLiveReload
  bool `UseLiveReload`

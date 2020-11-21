@@ -7,14 +7,13 @@ Kind: `class`
 
 
 
-## Description
-This is the main entry-point to create a react-native instance.  The `ReactNativeHost` object exists to configure the instance using [`ReactInstanceSettings`](ReactInstanceSettings.md) before its loaded, as well as enabling control of when to load the instance. <br/>_In the future more lifecycle events will be added to this object to provide better information on when an instance is loaded and unloaded._
+This is the main entry-point to create a react-native instance.  The `ReactNativeHost` object exists to configure the instance using [`ReactInstanceSettings`](ReactInstanceSettings) before its loaded, as well as enabling control of when to load the instance. <br/>_In the future more lifecycle events will be added to this object to provide better information on when an instance is loaded and unloaded._
 
 ## Properties
 ### InstanceSettings
  [`ReactInstanceSettings`](ReactInstanceSettings) `InstanceSettings`
 
-Provides access to your this host's [`ReactInstanceSettings`](ReactInstanceSettings.md) to configure the react instance.
+Provides access to your this host's [`ReactInstanceSettings`](ReactInstanceSettings) to configure the react instance.
 
 ### PackageProviders
 `readonly`  [`IVector`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector-1)<[`IReactPackageProvider`](IReactPackageProvider)> `PackageProviders`
@@ -44,6 +43,8 @@ Provides access to the list of `IReactPackageProvider`'s that the react instance
 [`IAsyncAction`](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) **`ReloadInstance`**()
 
 This is used to load the instance, which will create an instance of the JS engine and launch your JavaScript code.  If an instance of this host is already running, this will shutdown the already running instance, and load a new instance.
+
+
 
 ### UnloadInstance
 [`IAsyncAction`](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) **`UnloadInstance`**()

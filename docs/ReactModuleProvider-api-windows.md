@@ -5,8 +5,7 @@ title: ReactModuleProvider
 
 Kind: `delegate`
 
-## Description
-Provides information about a custom native module.  See [`IReactModuleBuilder`](IReactModuleBuilder.md).
+Provides information about a custom native module.  See [`IReactModuleBuilder`](IReactModuleBuilder).
 
 ## Invoke
 Object **`Invoke`**([`IReactModuleBuilder`](IReactModuleBuilder) moduleBuilder)

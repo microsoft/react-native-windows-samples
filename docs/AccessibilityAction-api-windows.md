@@ -9,10 +9,6 @@ Kind: `struct`
 ### Label
 Type: `string`
 
-
-
 ### Name
 Type: `string`
-
-
 

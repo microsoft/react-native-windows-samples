@@ -5,7 +5,6 @@ title: ConstantProviderDelegate
 
 Kind: `delegate`
 
-## Description
 A delegate to gather constants from native modules.
 
 ## Invoke

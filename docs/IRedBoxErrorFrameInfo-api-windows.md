@@ -7,7 +7,6 @@ Kind: `interface`
 
 
 
-## Description
 This object represents a single frame within the call stack of an error.
 
 ## Properties

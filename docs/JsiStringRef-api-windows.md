@@ -9,5 +9,3 @@ Kind: `struct`
 ### Data
 Type: `uint64_t`
 
-
-

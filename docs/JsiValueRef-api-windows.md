@@ -9,10 +9,6 @@ Kind: `struct`
 ### Data
 Type: `uint64_t`
 
-
-
 ### Kind
 Type: [`JsiValueKind`](JsiValueKind)
-
-
 

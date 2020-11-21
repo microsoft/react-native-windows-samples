@@ -7,7 +7,6 @@ Kind: `interface`
 
 
 
-## Description
 `IJSIValueReader` is used to read data from JavaScript in custom native modules.  It acts as a stream and supports all the types in [`JSValueType`](JSValueType).
 
 ## Properties
@@ -24,29 +23,41 @@ bool **`GetBoolean`**()
 
 Gets the current boolean value.
 
+
+
 ### GetDouble
 double **`GetDouble`**()
 
 Gets the current number value as a double.
+
+
 
 ### GetInt64
 int64_t **`GetInt64`**()
 
 Gets the current number value as an int.
 
+
+
 ### GetNextArrayItem
 bool **`GetNextArrayItem`**()
 
 Moves the reader to the next array item.  Returns if there is another item in the array.
+
+
 
 ### GetNextObjectProperty
 bool **`GetNextObjectProperty`**(**out** string propertyName)
 
 Returns whether there is another property in the current object.  If there is `propertyName` indicates the name of the property.
 
+
+
 ### GetString
 string **`GetString`**()
 
 Gets the current string value.
+
+
 
 
