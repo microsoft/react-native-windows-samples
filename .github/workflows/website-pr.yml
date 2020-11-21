@@ -18,7 +18,7 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@v2
     - name: Spell-check docs
-      run: npx markdown-spellcheck "docs\*.md" --en-us --ignore-acronyms --ignore-numbers --report
+      run: npx markdown-spellcheck "docs\*.md" "!docs\*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report
     - name: Check for Broken Links (Docs)
       run: npx unbroken
       working-directory: ./docs
