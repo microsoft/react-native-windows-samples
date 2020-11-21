@@ -13,9 +13,9 @@ Provides configuration of the react instance.
 ### BundleRootPath
  string `BundleRootPath`
 
-Base path used for the location of the bundle.
+**Default value**: `ms-appx:///Bundle/`
 
-Default value: `ms-appx:///Bundle/`
+Base path used for the location of the bundle.
 
 ### ByteCodeFileUri
  string `ByteCodeFileUri`
@@ -32,9 +32,9 @@ When loading from a bundle server (such as metro), this is the path that will be
 
 > **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in a future version.
 
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
+**Default value**: `localhost:8081`
 
-Default value: `localhost:8081`
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
 
 ### DebuggerBreakOnNextLine
  bool `DebuggerBreakOnNextLine`
@@ -44,16 +44,16 @@ For direct debugging, whether to break on the next line of JavaScript that is ex
 ### DebuggerPort
  uint16_t `DebuggerPort`
 
-When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
+**Default value**: `9229`
 
-Default value: `9229`
+When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
 
 ### EnableByteCodeCaching
  bool `EnableByteCodeCaching`
 
-For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.<br/>Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  <br/>[`ByteCodeFileUri`](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
+**Default value**: `false`
 
-Default value: `false`
+For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.<br/>Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  <br/>[`ByteCodeFileUri`](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
 
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
@@ -65,9 +65,9 @@ This controls whether various developer experience features are available for th
 ### EnableJITCompilation
  bool `EnableJITCompilation`
 
-Flag controlling whether the JavaScript engine uses JIT compilation.
+**Default value**: `true`
 
-Default value: `true`
+Flag controlling whether the JavaScript engine uses JIT compilation.
 
 ### JSIEngineOverride
  [`JSIEngine`](JSIEngine) `JSIEngineOverride`
@@ -75,9 +75,9 @@ Default value: `true`
 ### JavaScriptBundleFile
  string `JavaScriptBundleFile`
 
-The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath).  `.bundle` will be appended to the end, when looking for the bundle file.
+**Default value**: `index.windows`
 
-Default value: `index.windows`
+The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath).  `.bundle` will be appended to the end, when looking for the bundle file.
 
 ### JavaScriptMainModuleName
  string `JavaScriptMainModuleName`
@@ -109,16 +109,16 @@ Provides an extension point to allow custom error handling within the react inst
 ### SourceBundleHost
  string `SourceBundleHost`
 
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
+**Default value**: `localhost`
 
-Default value: `localhost`
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
 
 ### SourceBundlePort
  uint16_t `SourceBundlePort`
 
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server port that will be used to load the bundle from.
+**Default value**: `8081`
 
-Default value: `8081`
+When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server port that will be used to load the bundle from.
 
 ### UIDispatcher
  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
