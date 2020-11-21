@@ -1,56 +1,41 @@
 ---
-id: xamluiservice-api
+id: XamlUIService
 title: XamlUIService
 ---
 
-`XamlUIService` provides access to XAML UI specific functionality.  It provides access to APIs to get a XAML element from a react tag, and to dispatch events to JS components.
+Kind: `class`
 
-# Reference
+
+
+## Description
+Provides access to XAML UI-specific functionality. It provides access to APIs to get a XAML element from a react tag, and to dispatch events to JS components.
+
+
 
 ## Methods
+### DispatchEvent
+void **`DispatchEvent`**([`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) view, string eventName, [`JSValueArgWriter`](JSValueArgWriter) eventDataArgWriter)
 
-### `FromContext()`
+Dispatch an event to a JS component.
 
-```csharp
-static XamlUIService FromContext(IReactContext context);
-```
+### ElementFromReactTag
+[`DependencyObject`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) **`ElementFromReactTag`**(int64_t reactTag)
+
+Get the backing XAML element from a react tag.
+
+### FromContext
+`static` [`XamlUIService`](XamlUIService) **`FromContext`**([`IReactContext`](IReactContext) context)
 
 Use this method to gain access to the `XamlUIService` from a `ReactContext`.
 
-### `ElementFromReactTag()`
-
-```csharp
-Windows.UI.Xaml.DependencyObject ElementFromReactTag(Int64 reactTag);
-```
-
-Get the backing XAML element, from a react tag.
-
-### `DispatchEvent()`
-
-```csharp
-void DispatchEvent(Windows.UI.Xaml.FrameworkElement view, String eventName, JSValueArgWriter eventDataArgWriter);
-```
-
-Dispatch an event to a JS component.  
+### GetXamlRoot
+`static` [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) **`GetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties)
 
 
-<!-- // Copyright (c) Microsoft Corporation.
-// Licensed under the MIT License.
- 
-import "IReactContext.idl";
 
-namespace Microsoft.ReactNative {
+### SetXamlRoot
+`static` void **`SetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties, [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) xamlRoot)
 
-  [default_interface]
-  [webhosthidden]
-  runtimeclass XamlUIService {
-    static XamlUIService FromContext(IReactContext context);
 
-    Windows.UI.Xaml.DependencyObject ElementFromReactTag(Int64 reactTag);
 
-    // Dispatch UI event. This method is to be moved to IReactViewContext.
-    void DispatchEvent(Windows.UI.Xaml.FrameworkElement view, String eventName, JSValueArgWriter eventDataArgWriter);
-  }
 
-} // namespace Microsoft.ReactNative
--->

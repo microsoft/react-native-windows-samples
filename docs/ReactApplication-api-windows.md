@@ -1,87 +1,54 @@
 ---
-id: reactapplication-api
+id: ReactApplication
 title: ReactApplication
 ---
 
-`ReactApplication` provides a base application class for use in applications that are entirely written in React Native. `ReactApplication` will load the React instance on launch of your app for you and provide accessors to your application's [`ReactInstanceSettings`](ReactInstanceSettings-api-windows.md) and [`ReactNativeHost`](ReactNativeHost-api-windows.md) to customize your React instance.
+Kind: `class`
 
-# Reference
+Extends: [`Application`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)
+
+
+
+## Description
+`ReactApplication` provides a base application class for use in applications that are entirely written in React Native. `ReactApplication` will load the React instance on launch of your app for you and provide accessors to your application's [`ReactInstanceSettings`](ReactInstanceSettings.md) and [`ReactNativeHost`](ReactNativeHost.md) to customize your React instance.
 
 ## Properties
+### Host
+`readonly`  [`ReactNativeHost`](ReactNativeHost) `Host`
 
-### `InstanceSettings`
+Access to the [`ReactNativeHost`](ReactNativeHost.md) of your application.
 
-```csharp
-ReactInstanceSettings InstanceSettings { get; set; }
-```
+### InstanceSettings
+ [`ReactInstanceSettings`](ReactInstanceSettings) `InstanceSettings`
 
-Provides access to your application's [`ReactInstanceSettings`](ReactInstanceSettings-api-windows.md).  Generally, changes to these settings will not take effect if the React instance is already loaded, unless the React instance is reloaded, so most settings should be set in your applications constructor.
+Provides access to your application's [`ReactInstanceSettings`](ReactInstanceSettings.md).  Generally, changes to these settings will not take effect if the React instance is already loaded, unless the React instance is reloaded, so most settings should be set in your applications constructor.
 
-### `PackageProviders`
+### JavaScriptBundleFile
+ string `JavaScriptBundleFile`
 
-```csharp
-IVector<IReactPackageProvider> PackageProviders { get; }
-```
+See [`ReactInstanceSettings.JavaScriptBundleFile`](ReactInstanceSettings.md#javascriptbundlefile).
 
-Provides access to the list of `IReactPackageProvider`'s that the instance will use to provide native modules to the application. This can be used to register additional package providers, such as package providers from community modules. See [`ReactNativeHost`](ReactNativeHost-api-windows.md) for more information.
+### JavaScriptMainModuleName
+ string `JavaScriptMainModuleName`
 
-### `Host`
+See [`ReactInstanceSettings.JavaScriptMainModuleName`](ReactInstanceSettings.md#javascriptmainmodulename).
 
-```csharp
-ReactNativeHost Host { get; }
-```
+### PackageProviders
+`readonly`  [`IVector`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector-1)<[`IReactPackageProvider`](IReactPackageProvider)> `PackageProviders`
 
-Access to the [`ReactNativeHost`](ReactNativeHost-api-windows.md) of your application.
+Provides access to the list of `IReactPackageProvider`'s that the instance will use to provide native modules to the application. This can be used to register additional package providers, such as package providers from community modules. See [`ReactNativeHost`](ReactNativeHost.md) for more information.
 
-### `UseDeveloperSupport`
+### UseDeveloperSupport
+ bool `UseDeveloperSupport`
 
-```csharp
-bool UseDeveloperSupport { get; set; }
-```
-
-Should the developer experience features such as the developer menu and `RedBox` be enabled.  See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings-api-windows.md#usedevelopersupport).
+Should the developer experience features such as the developer menu and `RedBox` be enabled.  See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings.md#usedevelopersupport).
 
 
-### `JavaScriptMainModuleName`
-
-```csharp
-string JavaScriptMainModuleName { get; set; }
-```
-
-See [`ReactInstanceSettings.JavaScriptMainModuleName`](ReactInstanceSettings-api-windows.md#javascriptmainmodulename).
+## Constructors
+### ReactApplication
+ **`ReactApplication`**()
 
 
-### `JavaScriptBundleFile`
 
-```csharp
-string JavaScriptBundleFile { get; set; }
-```
-
-See [`ReactInstanceSettings.JavaScriptBundleFile`](ReactInstanceSettings-api-windows.md#javascriptbundlefile).
-
-<!-- // Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
-
-import "ReactNativeHost.idl";
-import "ReactApplicationDelegate.idl";
-
-
-namespace Microsoft.ReactNative {
-
-  [webhosthidden]
-  [default_interface]
-  unsealed runtimeclass ReactApplication : XAML_NAMESPACE.Application {
-    ReactApplication();
-
-    ReactInstanceSettings InstanceSettings { get; set; };
-    IVector<IReactPackageProvider> PackageProviders { get; };
-    ReactNativeHost Host { get; };
-
-    Boolean UseDeveloperSupport { get; set; };
-    String JavaScriptMainModuleName { get; set; };
-    String JavaScriptBundleFile { get; set; };
-  }
-} // namespace Microsoft.ReactNative
--->
 
 
