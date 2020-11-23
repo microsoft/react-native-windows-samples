@@ -7,7 +7,7 @@ Kind: `interface`
 
 
 
-Builds native modules inside of React native code based on the provided meta-data. See [Native Modules](native-module) for more usage information.
+Builds native modules inside of React native code based on the provided meta-data. See [Native Modules](native-modules) for more usage information.
 
 
 

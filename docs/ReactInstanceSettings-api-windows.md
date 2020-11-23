@@ -123,7 +123,7 @@ When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#useliverelo
 ### UIDispatcher
  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
 
-Control the main UI dispatcher to be used by the React instance.  If the [`ReactSettingsInstance`](ReactSettingsInstance) object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to native modules and view managers using [`IReactContext.UIDispatcher`](IReactContext#uidispatcher)
+Control the main UI dispatcher to be used by the React instance.  If the [`ReactInstanceSettings`](ReactInstanceSettings) object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to native modules and view managers using [`IReactContext.UIDispatcher`](IReactContext#uidispatcher)
 
 ### UseDeveloperSupport
  bool `UseDeveloperSupport`

@@ -28,7 +28,7 @@ Provides access to extra data attached to the error.  Adding additional data to 
 ### Id
 `readonly`  uint32_t `Id`
 
-This Id can be used in [`UpdateError`](#updateerror) to identify which error is being updated.  For native errors, this is currently always `0`, and [`UpdateError`](#updateerror) will never be called.
+This Id can be used in [`IRedBoxHandler.UpdateError`](IRedBoxHandler#updateerror) to identify which error is being updated.  For native errors, this is currently always `0`, and [`IRedBoxHandler.UpdateError`](IRedBoxHandler#updateerror) will never be called.
 
 ### Message
 `readonly`  string `Message`

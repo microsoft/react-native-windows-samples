@@ -15,14 +15,14 @@ A `ReactPackageBuilder` provides the react instance with all the native modules 
 ### AddModule
 void **`AddModule`**(string moduleName, [`ReactModuleProvider`](ReactModuleProvider) moduleProvider)
 
-Adds a custom native module. See [`ReactModuleProvider`](#reactmoduleprovider).
+Adds a custom native module. See [`ReactModuleProvider`](ReactModuleProvider).
 
 
 
 ### AddViewManager
 void **`AddViewManager`**(string viewManagerName, [`ReactViewManagerProvider`](ReactViewManagerProvider) viewManagerProvider)
 
-Adds a custom native module. See [`ReactViewManagerProvider`](#reactviewmanagerprovider).
+Adds a custom native module. See [`ReactViewManagerProvider`](ReactViewManagerProvider).
 
 
 
