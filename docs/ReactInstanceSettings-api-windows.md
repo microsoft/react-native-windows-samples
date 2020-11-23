@@ -58,7 +58,7 @@ For JS engines that support bytecode generation, this controls if bytecode shoul
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
 
-> **Deprecated**: This property has been replaced by[`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing.
+> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing.
 
 This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default `RedBox` experience and the loading UI during bundle load.
 
@@ -123,7 +123,7 @@ When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#useliverelo
 ### UIDispatcher
  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
 
-Control the main UI dispatcher to be used by the React instance.  If the `ReactSettingsInstance` object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to native modules and view managers using [`IReactContext.UIDispatcher`](IReactContext#uidispatcher)
+Control the main UI dispatcher to be used by the React instance.  If the [`ReactSettingsInstance`](ReactSettingsInstance) object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to native modules and view managers using [`IReactContext.UIDispatcher`](IReactContext#uidispatcher)
 
 ### UseDeveloperSupport
  bool `UseDeveloperSupport`

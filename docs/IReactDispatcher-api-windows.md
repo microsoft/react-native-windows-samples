@@ -7,7 +7,7 @@ Kind: `interface`
 
 
 
-`IReactDispatcher` provides the core threading/task management interface for ensuring code happens in the right order on the right thread. One primary dispatcher that applications may require is the [`UIDispatcher`](IReactContext#uidispatcher) which provides native modules access to the UI thread associated with this react instance.   Another one is the [`JSDispatcher`](IReactContext#jsdispatcher) which allows apps to post tasks to the JS engine thread.
+`IReactDispatcher` provides the core threading/task management interface for ensuring code happens in the right order on the right thread. One primary dispatcher that applications may require is the [`IReactContext.UIDispatcher`](IReactContext#uidispatcher) which provides native modules access to the UI thread associated with this react instance.   Another one is the [`IReactContext.JSDispatcher`](IReactContext#jsdispatcher) which allows apps to post tasks to the JS engine thread.
 
 ## Properties
 ### HasThreadAccess

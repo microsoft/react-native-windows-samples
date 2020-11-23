@@ -22,7 +22,7 @@ The JavaScript values written by the [`ConstantProviderDelegate`](ConstantProvid
 ### AddInitializer
 void **`AddInitializer`**([`InitializerDelegate`](InitializerDelegate) initializer)
 
-An initializer is a method that will be called when the react instance starts.  It provides the native module with the [`IReactContext`](IReactContext) for the running instance. See [`InitializerDelegate`](#initializerdelegate).
+An initializer is a method that will be called when the react instance starts.  It provides the native module with the [`IReactContext`](IReactContext) for the running instance. See [`InitializerDelegate`](InitializerDelegate).
 
 
 

@@ -31,7 +31,7 @@ Name of the notification.
 ### Unsubscribe
 void **`Unsubscribe`**()
 
-Remove the subscription. Because of the multi-threaded nature of the notifications, the handler can be still called after the Unsubscribe method called if the IsSubscribed property is already checked. Consider calling the Unsubscribe method and the handler in the same [`IReactDispatcher`](IReactDispatcher) to ensure that no handler is invoked after the Unsubscribe method call.
+Remove the subscription. Because of the multi-threaded nature of the notifications, the handler can be still called after the Unsubscribe method called if the [`IsSubscribed`](#issubscribed) property is already checked. Consider calling the Unsubscribe method and the handler in the same [`IReactDispatcher`](IReactDispatcher) to ensure that no handler is invoked after the Unsubscribe method call.
 
 
 
