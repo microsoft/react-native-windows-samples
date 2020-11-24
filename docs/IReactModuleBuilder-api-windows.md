@@ -39,3 +39,7 @@ Adds a synchronous method to the native module.  See [`SyncMethodDelegate`](Sync
 
 
 
+
+
+## Referenced by
+- [`ReactModuleProvider`](ReactModuleProvider)

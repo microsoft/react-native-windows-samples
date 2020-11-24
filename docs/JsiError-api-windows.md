@@ -26,3 +26,7 @@ Kind: `class`
 
 
 
+
+
+## Referenced by
+- [`JsiRuntime`](JsiRuntime)

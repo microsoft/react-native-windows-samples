@@ -27,3 +27,9 @@ Subscribe to a notification. The `notificationName` is a non-null property name 
 
 
 
+
+
+## Referenced by
+- [`IReactContext`](IReactContext)
+- [`ReactInstanceSettings`](ReactInstanceSettings)
+- [`ReactNotificationServiceHelper`](ReactNotificationServiceHelper)

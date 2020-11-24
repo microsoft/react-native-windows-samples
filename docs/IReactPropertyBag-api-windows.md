@@ -34,3 +34,10 @@ Set a property's value. It returns the previously-stored property value. It retu
 
 
 
+
+
+## Referenced by
+- [`IReactContext`](IReactContext)
+- [`ReactInstanceSettings`](ReactInstanceSettings)
+- [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
+- [`XamlUIService`](XamlUIService)

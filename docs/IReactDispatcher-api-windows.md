@@ -26,3 +26,11 @@ Post a task to the dispatcher.  This callback will be called asynchronously on t
 
 
 
+
+
+## Referenced by
+- [`IReactContext`](IReactContext)
+- [`IReactNotificationService`](IReactNotificationService)
+- [`IReactNotificationSubscription`](IReactNotificationSubscription)
+- [`ReactDispatcherHelper`](ReactDispatcherHelper)
+- [`ReactInstanceSettings`](ReactInstanceSettings)

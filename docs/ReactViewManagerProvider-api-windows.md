@@ -12,3 +12,7 @@ Provides information about a custom view manager.  See [`IViewManager`](IViewMan
 
 
 
+
+
+## Referenced by
+- [`IReactPackageBuilder`](IReactPackageBuilder)

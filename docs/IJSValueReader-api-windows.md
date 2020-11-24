@@ -61,3 +61,11 @@ Gets the current string value.
 
 
 
+
+
+## Referenced by
+- [`IRedBoxErrorInfo`](IRedBoxErrorInfo)
+- [`IViewManagerWithCommands`](IViewManagerWithCommands)
+- [`IViewManagerWithNativeProperties`](IViewManagerWithNativeProperties)
+- [`MethodDelegate`](MethodDelegate)
+- [`SyncMethodDelegate`](SyncMethodDelegate)

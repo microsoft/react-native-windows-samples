@@ -10,3 +10,7 @@ Kind: `enum`
 |`Clamp` | 0x0  |  |
 |`Wrap` | 0x1  |  |
 |`Mirror` | 0x2  |  |
+
+
+## Referenced by
+- [`BorderEffect`](BorderEffect)

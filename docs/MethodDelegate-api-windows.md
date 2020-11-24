@@ -12,3 +12,7 @@ void **`Invoke`**([`IJSValueReader`](IJSValueReader) inputReader, [`IJSValueWrit
 
 
 
+
+
+## Referenced by
+- [`IReactModuleBuilder`](IReactModuleBuilder)

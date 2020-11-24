@@ -12,3 +12,7 @@ Kind: `delegate`
 
 
 
+
+
+## Referenced by
+- [`JsiRuntime`](JsiRuntime)

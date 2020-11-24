@@ -14,3 +14,7 @@ Kind: `enum`
 |`Boolean` | 0x4  |  |
 |`Int64` | 0x5  |  |
 |`Double` | 0x6  |  |
+
+
+## Referenced by
+- [`IJSValueReader`](IJSValueReader)

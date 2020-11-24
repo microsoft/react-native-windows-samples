@@ -90,3 +90,13 @@ Call JavaScript module event. It is a specialized `CallJSFunction` call where me
 
 
 
+
+
+## Referenced by
+- [`IViewManagerWithReactContext`](IViewManagerWithReactContext)
+- [`InitializerDelegate`](InitializerDelegate)
+- [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
+- [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
+- [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
+- [`ReactNativeHost`](ReactNativeHost)
+- [`XamlUIService`](XamlUIService)

@@ -12,3 +12,7 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) outputWriter)
 
 
 
+
+
+## Referenced by
+- [`MethodDelegate`](MethodDelegate)

@@ -27,3 +27,7 @@ Adds a custom native module. See [`ReactViewManagerProvider`](ReactViewManagerPr
 
 
 
+
+
+## Referenced by
+- [`IReactPackageProvider`](IReactPackageProvider)

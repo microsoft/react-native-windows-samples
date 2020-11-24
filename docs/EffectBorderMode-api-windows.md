@@ -9,3 +9,7 @@ Kind: `enum`
 |--|--|--|
 |`Soft` | 0x0  |  |
 |`Hard` | 0x1  |  |
+
+
+## Referenced by
+- [`GaussianBlurEffect`](GaussianBlurEffect)

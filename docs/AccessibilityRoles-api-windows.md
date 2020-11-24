@@ -38,3 +38,7 @@ Kind: `enum`
 |`ListItem` | 0x1c  |  |
 |`Unknown` | 0x1d  |  |
 |`CountRoles` | 0x1e  |  |
+
+
+## Referenced by
+- [`DynamicAutomationProperties`](DynamicAutomationProperties)

@@ -12,3 +12,10 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) writer)
 
 
 
+
+
+## Referenced by
+- [`IReactContext`](IReactContext)
+- [`ReactRootView`](ReactRootView)
+- [`XamlHelper`](XamlHelper)
+- [`XamlUIService`](XamlUIService)

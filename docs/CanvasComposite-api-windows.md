@@ -20,3 +20,7 @@ Kind: `enum`
 |`Copy` | 0xa  |  |
 |`BoundedCopy` | 0xb  |  |
 |`MaskInvert` | 0xc  |  |
+
+
+## Referenced by
+- [`CompositeStepEffect`](CompositeStepEffect)

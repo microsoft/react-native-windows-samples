@@ -22,3 +22,7 @@ See the documentation of [Native UI Components](view-managers) for information o
 
 
 
+
+
+## Referenced by
+- [`ReactViewManagerProvider`](ReactViewManagerProvider)

@@ -17,3 +17,7 @@ Kind: `class`
 
 
 
+
+
+## Referenced by
+- [`ReactInstanceSettings`](ReactInstanceSettings)

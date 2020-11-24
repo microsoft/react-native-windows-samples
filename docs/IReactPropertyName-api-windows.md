@@ -17,3 +17,11 @@ Kind: `interface`
 
 
 
+
+
+## Referenced by
+- [`IReactNotificationService`](IReactNotificationService)
+- [`IReactNotificationSubscription`](IReactNotificationSubscription)
+- [`IReactPropertyBag`](IReactPropertyBag)
+- [`ReactDispatcherHelper`](ReactDispatcherHelper)
+- [`ReactPropertyBagHelper`](ReactPropertyBagHelper)

@@ -14,3 +14,7 @@ Kind: `enum`
 |`Symbol` | 0x4  |  |
 |`String` | 0x5  |  |
 |`Object` | 0x6  |  |
+
+
+## Referenced by
+- [`JsiValueRef`](JsiValueRef)

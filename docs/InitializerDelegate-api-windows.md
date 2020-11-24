@@ -12,3 +12,7 @@ void **`Invoke`**([`IReactContext`](IReactContext) reactContext)
 
 
 
+
+
+## Referenced by
+- [`IReactModuleBuilder`](IReactModuleBuilder)

@@ -36,3 +36,8 @@ Remove the subscription. Because of the multi-threaded nature of the notificatio
 
 
 
+
+
+## Referenced by
+- [`IReactNotificationArgs`](IReactNotificationArgs)
+- [`IReactNotificationService`](IReactNotificationService)

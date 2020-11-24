@@ -9,3 +9,7 @@ Kind: `struct`
 ### Data
 Type: `uint64_t`
 
+
+
+## Referenced by
+- [`JsiRuntime`](JsiRuntime)

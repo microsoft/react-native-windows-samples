@@ -52,3 +52,9 @@ This is used to load the instance, which will create an instance of the JS engin
 
 
 
+
+
+## Referenced by
+- [`ReactApplication`](ReactApplication)
+- [`ReactRootView`](ReactRootView)
+- [`RedBoxHelper`](RedBoxHelper)

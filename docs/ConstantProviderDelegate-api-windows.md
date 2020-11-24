@@ -12,3 +12,9 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) constantWriter)
 
 
 
+
+
+## Referenced by
+- [`IReactModuleBuilder`](IReactModuleBuilder)
+- [`IViewManagerWithExportedEventTypeConstants`](IViewManagerWithExportedEventTypeConstants)
+- [`IViewManagerWithExportedViewConstants`](IViewManagerWithExportedViewConstants)

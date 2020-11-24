@@ -171,3 +171,9 @@ Type: [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
 Type: [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
 ### `InstanceLoaded`
 Type: [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
+
+
+## Referenced by
+- [`QuirkSettings`](QuirkSettings)
+- [`ReactApplication`](ReactApplication)
+- [`ReactNativeHost`](ReactNativeHost)

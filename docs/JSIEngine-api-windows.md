@@ -10,3 +10,7 @@ Kind: `enum`
 |`Chakra` | 0x0  |  |
 |`Hermes` | 0x1  |  |
 |`V8` | 0x2  |  |
+
+
+## Referenced by
+- [`ReactInstanceSettings`](ReactInstanceSettings)

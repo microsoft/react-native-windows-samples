@@ -97,3 +97,8 @@ This method is called when updated information about an error has been resolved.
 
 
 
+
+
+## Referenced by
+- [`ReactInstanceSettings`](ReactInstanceSettings)
+- [`RedBoxHelper`](RedBoxHelper)

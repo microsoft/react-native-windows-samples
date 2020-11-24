@@ -17,3 +17,7 @@ Kind: `interface`
 
 
 
+
+
+## Referenced by
+- [`ReactNotificationHandler`](ReactNotificationHandler)

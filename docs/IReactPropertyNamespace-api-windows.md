@@ -14,3 +14,8 @@ Kind: `interface`
 
 
 
+
+
+## Referenced by
+- [`IReactPropertyName`](IReactPropertyName)
+- [`ReactPropertyBagHelper`](ReactPropertyBagHelper)

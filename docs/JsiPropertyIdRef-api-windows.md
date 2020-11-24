@@ -9,3 +9,8 @@ Kind: `struct`
 ### Data
 Type: `uint64_t`
 
+
+
+## Referenced by
+- [`IJsiHostObject`](IJsiHostObject)
+- [`JsiRuntime`](JsiRuntime)
