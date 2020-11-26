@@ -239,7 +239,7 @@ For events, you'll see that we created an instance of `NativeEventEmitter` passi
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
-| `REACT_STRUCT`           | Specifies a struct that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
+| `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
 
 ### 1. Authoring your Native Module
 
