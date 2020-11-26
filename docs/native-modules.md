@@ -49,7 +49,7 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactConstant`         | Specifies a field or property that represents a constant. |
 | `ReactConstantProvider` | Specifies a method that provides a set of constants.      |
 | `ReactEvent`            | Specifies a field or property that represents an event.   |
-| `ReactStruct`           | Specifies a struct that can be used in native methods.    |
+| `ReactStruct`           | Specifies a `struct` that can be used in native methods.    |
 
 ### 1. Authoring your Native Module
 
