@@ -54,6 +54,7 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactStruct`           | Specifies a `struct` that can be used in native methods.    |
 | `ReactInit`             | Specifies a class initialization method.                  |
 | `ReactFunction`         | Specifies a field that helps calling a function.          |
+| `ReactStruct`           | Specifies a `struct` that can be used in native methods.    |
 
 ### 1. Authoring your Native Module
 
@@ -177,6 +178,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 | `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
 | `REACT_INIT`             | Specifies a class initialization method.                  |
 | `REACT_FUNCTION`         | Specifies a field that helps calling a function.          |
+| `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
 
 ### 1. Authoring your Native Module
 
