@@ -28,7 +28,7 @@ const textContent = {
 Windows apps for [all devices supported by Windows 10] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
 
-Some build-time tools will send non-personal telemetry to Microsoft by default. No telemetry is collected or transmitted in the final app. You can prevent the telemetry from being sent by using the --no-telemetry command line option. See the --help command or README file for more details.
+Some build-time tools will send telemetry to Microsoft by default. No telemetry is collected or transmitted in the final app. You can prevent the telemetry from being sent by using the --no-telemetry command line option. See the --help command or README file for more details.
 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
