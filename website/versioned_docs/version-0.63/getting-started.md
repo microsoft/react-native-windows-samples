@@ -51,7 +51,7 @@ Here are the options that `react-native-windows-init` takes:
 | `--useWinUI3` | boolean                               | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
 | `--no-telemetry`| boolean                                     | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 
-This sends non-personal telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
+This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
 
 ## Running a React Native Windows App
 
@@ -68,7 +68,7 @@ This sends non-personal telemetry to Microsoft by default. You can prevent the t
 
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
-  This sends non-personal telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
+  This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
 
 - Using Visual Studio
 
