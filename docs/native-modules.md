@@ -75,15 +75,16 @@ namespace NativeModuleSample
     [ReactMethod("add")]
     public double Add(double a, double b)
     {
-        double result = a + b;
-        AddEvent(result);
-        return result;
+      double result = a + b;
+      AddEvent(result);
+      return result;
     }
 
     [ReactEvent]
-    public ReactEvent<double> AddEvent { get; set; }
+    public Action<double> AddEvent { get; set; }
   }
 }
+
 ```
 
 First off, you see that we're making use of the `Microsoft.ReactNative.Managed` shared library, which provides the easiest (and recommended) experience for authoring native modules. `Microsoft.ReactNative.Managed` provides the mechanism that discovers the native module annotations to build bindings at runtime.
@@ -100,7 +101,7 @@ The `[ReactConstant]` attribute is how you can define constants. Here `FancyMath
 
 The `[ReactMethod]` attribute is how you define methods. In `FancyMath` we have one method, `add`, which takes two doubles and returns their sum. As before, you can optionally customize the name like this: `[ReactMethod("add")]`.
 
-The `[ReactEvent]` attribute is how you define events. In `FancyMath` we have one event, `AddEvent`, which uses the `ReactEvent<double>` delegate, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `[ReactEvent("addEvent")]`.
+The `[ReactEvent]` attribute is how you define events. In `FancyMath` we have one event, `AddEvent`, which uses the `Action<double>` delegate, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `[ReactEvent("addEvent")]`.
 
 ### 2. Registering your Native Module
 
@@ -111,21 +112,27 @@ Now, we want to register our new `FancyMath` module with React Native so we can 
 `ReactPackageProvider.cs`:
 
 ```csharp
+using Microsoft.ReactNative;
 using Microsoft.ReactNative.Managed;
 
 namespace NativeModuleSample
 {
-  public sealed class ReactPackageProvider : IReactPackageProvider
+  public partial class ReactPackageProvider : IReactPackageProvider
   {
     public void CreatePackage(IReactPackageBuilder packageBuilder)
     {
-      packageBuilder.AddAttributedModules();
+      CreatePackageImplementation(packageBuilder);
     }
+
+    /// <summary>
+    /// This method is implemented by the C# code generator
+    /// </summary>
+    partial void CreatePackageImplementation(IReactPackageBuilder packageBuilder);
   }
 }
 ```
 
-Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use reflection to discover and bind native module, we call `AddAttributedModules` extension method to register all native modules in our assembly that have the `ReactModule` attribute.
+Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Then, we use `CreatePackageImplementation` method to discover and bind native module.
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
