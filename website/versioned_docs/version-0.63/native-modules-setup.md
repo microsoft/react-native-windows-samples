@@ -399,12 +399,12 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
         node-version: '12.9.1'
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.0
+      uses: microsoft/setup-msbuild@v1
       with:
         vs-version: 16.5
        
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: NuGet/setup-nuget@v1
 
     - name: Check node modules cache
       uses: actions/cache@v1
