@@ -34,7 +34,7 @@ While you can manually use the `IJSValueReader` and `IJSValueWriter` interfaces,
 
 The end-to-end data flow looks something like this:
 
-![Data Marshalling Flow](assets/data-marshalling-flow.png)
+![Data Marshalling Flow](assets/data-marshaling-flow.png)
 
 ## Examples
 

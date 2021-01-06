@@ -25,7 +25,7 @@ Native modules contain (or wrap) native code which can then be exposed to JS. To
    1. Add the package to your React Native application.
 1. Use your native module from your JavaScript code.
 
-React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [C# vs. C++ for Native Modules](native-code.md#c-vs-c-for-native-modules) note for more information about which to choose. 
+React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [Choosing C++ or C# for native code](native-code-language-choice.md) note for more information about which to choose. 
 
 > NOTE: If you are unable to use the reflection-based annotation approach, you can define native modules directly using the ABI. This is outlined in the [Writing Native Modules without using Attributes](native-modules-advanced.md) document.
 
