@@ -61,7 +61,7 @@ Generally, code written in C++ can run faster and use less memory than code writ
 
 In the past, C# apps relied on just-in-time (JIT) compilation of their IL into machine code at runtime. This means the IL is delivered to end user machines and this JIT process does not occur until the user runs the app, which can negatively impact the app's performance and startup time.
 
-However, this is not the case for UWP apps, which instead default to using the [.NET Native toolchain](https://docs.microsoft.com/en-us/dotnet/framework/net-native/). The .Net Native toolchain (enabled when building a "Release" configuration of your app) will cross-compile your IL code into native machine code at build time. As such, when you submit your app to the Microsoft store, only the finished, "native-ized" code will be delivered to end user machines. This improves the performance and startup times of these apps versus their non-"native-ized" counterparts. For more information about performance in .NET Native apps, see [Measuring startup improvement with .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/measuring-startup-improvement-with-net-native).
+However, this is not the case for UWP apps, which instead default to using the [.NET Native toolchain](https://docs.microsoft.com/en-us/dotnet/framework/net-native/). The .NET Native toolchain (enabled when building a "Release" configuration of your app) will cross-compile your IL code into native machine code at build time. As such, when you submit your app to the Microsoft store, only the finished, "native-ized" code will be delivered to end user machines. This improves the performance and startup times of these apps versus their non-"native-ized" counterparts. For more information about performance in .NET Native apps, see [Measuring startup improvement with .NET Native](https://docs.microsoft.com/dotnet/framework/net-native/measuring-startup-improvement-with-net-native).
 
 In the end, only proper performance profiling and testing of your actual code can determine whether the performance differences of the two languages are significant and/or noticeable by end users.
 
@@ -75,4 +75,4 @@ However, if your app or module already uses C#, you should feel empowered to con
 
 ## Additional Resources
 
-[Getting started with UWP for iOS Developers: Choosing a programming language](https://docs.microsoft.com/en-us/windows/uwp/porting/getting-started-choosing-a-programming-language)
+[Getting started with UWP for iOS Developers: Choosing a programming language](https://docs.microsoft.com/windows/uwp/porting/getting-started-choosing-a-programming-language)
