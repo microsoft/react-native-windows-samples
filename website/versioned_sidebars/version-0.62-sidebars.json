@@ -17,7 +17,10 @@
       "version-0.62-native-modules-async",
       "version-0.62-native-modules-jsvalue",
       "version-0.62-native-modules-advanced",
-      "version-0.62-supported-community-modules"
+      "version-0.62-native-modules-troubleshooting",
+      "version-0.62-supported-community-modules",
+      "version-0.62-native-code",
+      "version-0.62-native-code-language-choice"
     ],
     "The Basics (MacOS)": [
       "version-0.62-rnm-getting-started",
