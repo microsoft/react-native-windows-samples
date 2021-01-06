@@ -41,7 +41,7 @@ A write-up of the problem can be found [here](https://devblogs.microsoft.com/old
 
 As of RNW 0.62, you can enable a `ConsumeCSharpModules` property in your C++ app to fix the issue:
 
-1. In your .vcxproj file, set this property within the `<PropertyGroup Label="ReactNativeWindowsProps">` PropertyGroup:
+1. In your .vcxproj file, set this property within `<PropertyGroup Label="ReactNativeWindowsProps">`:
 ```diff
 <PropertyGroup Label="ReactNativeWindowsProps">
   <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'node_modules\react-native-windows\package.json'))\node_modules\react-native-windows\</ReactNativeWindowsDir>
