@@ -65,14 +65,8 @@ var exclusions = [];
 
 // Base exclusions
 exclusions.push(normalizePath('!node_modules'));
-exclusions.push(normalizePath('!blog\\2019-'));
-exclusions.push('');
-
-// MyBuild Sessions
-exclusions.push('URL not found https://mybuild.microsoft.com/sessions/b1306a79-b43b-43be-bd59-460b8db0c7a8 while parsing blog/2020-06-01-build2020recap.md (HTTP 404)');
-exclusions.push('URL not found https://mybuild.microsoft.com/sessions/d10c502e-325d-4c77-9471-462b37744db1 while parsing blog/2020-06-01-build2020recap.md (HTTP 404)');
-exclusions.push('URL not found https://mybuild.microsoft.com/sessions/53ccd339-7cc0-4e66-bdb9-3eee6b270658 while parsing blog/2020-06-01-build2020recap.md (HTTP 404)');
-exclusions.push('URL not found https://mybuild.microsoft.com/sessions/cf5901a1-2cd2-4913-b4b7-f1af32db934a while parsing blog/2020-06-01-build2020recap.md (HTTP 404)');
+exclusions.push(normalizePath('!blog\\2019-*'));
+exclusions.push(normalizePath('!blog\\2020-*'));
 exclusions.push('');
 
 // Redirected files exclusions

@@ -1,6 +1,7 @@
 ---
-id: native-code
+id: version-0.62-native-code
 title: Working with native code on Windows
+original_id: native-code
 ---
 
 ## What is a React Native for Windows app?

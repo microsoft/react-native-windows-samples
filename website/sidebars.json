@@ -19,9 +19,11 @@
       "native-modules-async",
       "native-modules-jsvalue",
       "native-modules-advanced",
+      "native-modules-troubleshooting",
       "native-modules-csharp-codegen",
       "supported-community-modules",
       "native-code",
+      "native-code-language-choice",
       "win10-vm"
     ],
     "The Basics (MacOS)": [
