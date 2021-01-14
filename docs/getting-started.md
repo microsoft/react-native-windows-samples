@@ -69,7 +69,9 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
   This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
-
+  
+  For a description of the options that `run-windows` offers, see [https://github.com/microsoft/react-native-windows/blob/master/packages/@react-native-windows/cli/README.md#usage](run-windows usage).
+  
 - Using Visual Studio
 
   - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln` if you used `AwesomeProject` as `<projectName>`)
