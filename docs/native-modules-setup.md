@@ -180,9 +180,6 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
       with:
         vs-version: 16.5
 
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1
-
     - name: Check node modules cache
       uses: actions/cache@v1
       id: yarn-cache
