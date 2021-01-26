@@ -9,9 +9,9 @@ So you added a new native module or a new method to a module but it isn't workin
 
 ### My native method isn't being hit in the VS debugger
 
-If your method isn't being hit in the VS debugger, something is blocking the call due to a mismatch, likely between the expected and actual types that your method takes/returns.
+A possible reason a method isn't called is a mismatch between the expected and actual types that your method accepts/returns.
 
-To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [`ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp`](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
+To debug into what is rejecting the call, set a breakpoint in `facebook::react::CxxNativeModule::invoke`. This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
 
 Right-click on the breakpoint to add a Condition. Suppose the method you are interested in catching is called `getString`. 
 The conditional breakpoint condition to enter should compare the name of the method to that string: `strcmp(method.name._Mypair._Myval2._Bx._Ptr, "getString")==0`
