@@ -46,11 +46,10 @@ You will also need to ensure that certain settings are enabled:
 - Install [Node.js](https://nodejs.org) via one of the following methods:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
   ```bat
-  choco install nodejs.install --version=12.9.1
+  choco install nodejs-lts
   ```
   - Directly from [Node.js](https://nodejs.org/en/download/)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
-  > For installations not using `choco`, ensure that you are installing version 12.9.1 as that is the recommended version when building React Native Windows apps.
 
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
