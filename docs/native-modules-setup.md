@@ -156,7 +156,7 @@ If you are working on an existing module that already has iOS and Android sample
 8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
-We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium), there's also a comprehensive [course on PluralSight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
+We are using WebdriverIO + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium). For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
 
 ### Setup CI (continuous integration) pipeline for your module
 
@@ -173,31 +173,18 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '12.9.1'
+        node-version: '14'
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v1.0.2
       with:
-        vs-version: 16.5
-
-    - name: Check node modules cache
-      uses: actions/cache@v1
-      id: yarn-cache
-      with:
-        path: ./node_modules
-        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+        vs-version: 16.8
 
     - name: Install node modules
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn --pure-lockfile
+      run: yarn --frozen-lockfile
 
     - name: yarn build
-      if: steps.yarn-cache.outputs.cache-hit == 'true'
-      run: |
-        yarn build
-        yarn tsc
+      run:  yarn build
 ```
 - Build and run the project
 ```yaml
