@@ -251,4 +251,65 @@ BatchedBridge.registerLazyCallableModule("MathEmitter", () => {
 });
 ```
 
-_TODO:_ We should have a better E2E example here, however in practice native module developers don't bother to do this, so it's impossible to find any existing examples to reference.
+## Native Modules with Initializer and as a way to access ReactContext
+
+If your native module needs to perform some initialization logic on the native (Csharp) side, there is an easy mechanism for you to do so when the app is setting up. ALl you need to do is add a method that takes a [`ReactContext`](IReactContext) and has `[ReactInitializer]` attribute.
+An example could be if you need to do something periodically on the native side for your module, setting up the timer during initialization makes sense.
+
+```csharp
+[ReactModule]
+internal sealed class NativeModuleSample
+{
+  private ThreadPoolTimer m_timer;
+
+  [ReactInitializer]
+  public void Initialize(ReactContext reactContext)
+  {
+    m_timer = ThreadPoolTimer.CreatePeriodicTimer(
+      new TimerElapsedHandler((timer) =>
+      {
+          // Do something every 5 seconds
+      }),
+      TimeSpan.FromSeconds(5)
+    );
+  }
+  
+  ~NativeModuleSample()
+  {
+    _timer?.Cancel();
+  }
+}
+```
+
+If your module needs access to the [`ReactContext`](IReactContext) context or [`ReactNativeHost`](ReactNativeHost), grabbing a handle to it in the ReactInitializer is a good place.
+
+```csharp
+[ReactModule]
+internal sealed class NativeModuleSample
+{
+  private ReactContext m_reactContext;
+
+  [ReactInitializer]
+  public void Initialize(ReactContext reactContext)
+  {
+    m_reactContext = reactContext;
+  }
+
+  [ReactMethod]
+  public Task SampleAccessToHost()
+  {
+    var reactNativeHost = ReactNativeHost.FromContext(m_reactContext.Handle);
+    // Use debugging api that reloads the instance
+    reactNativeHost.ReloadInstance()
+  }
+
+  [ReactMethod]
+  public Task EmitRCTDeviceEvent()
+  {
+    m_reactContext.EmitJSEvent("RCTDeviceEventEmitter", "MyCustomJsEvent", 42);
+  }
+}
+```
+
+<hr />
+> _TODO:_ We should have a better E2E example here, however in practice native module developers don't bother to do this, so it's impossible to find any existing examples to reference.
