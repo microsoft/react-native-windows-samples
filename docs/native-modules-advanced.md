@@ -251,7 +251,7 @@ BatchedBridge.registerLazyCallableModule("MathEmitter", () => {
 });
 ```
 
-## Native Modules with Initializer and as a way to access ReactContext
+## C# Native Modules with Initializer and as a way to access `ReactContext`
 
 If your native module needs to perform some initialization logic on the native (C#) side, there is an easy mechanism for you to do so when the app is setting up. All you need to do is add a method that takes a [`ReactContext`](IReactContext) and has `[ReactInitializer]` attribute.
 If your native module needs to perform some operation periodically, you can do so by setting up a timer during your module's initialization as in the following example:
