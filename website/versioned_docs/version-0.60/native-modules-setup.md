@@ -166,3 +166,6 @@ To make sure that everything is working, you'll want to try building `MyLibrary`
 ### Next Steps
 
 You have now created the scaffolding to build a native module or view manager. Now it's time to add the business logic to the module - follow the steps described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
+
+### Documenting Your Module
+Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that it's information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples] with your native module's information.

@@ -46,6 +46,7 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 | <ins>[react-native-reanimated](https://github.com/software-mansion/react-native-reanimated)</ins> | [Partial](https://github.com/microsoft/react-native-windows/issues/4151) | x |
 | <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | 0.61 | x |
 | <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | 0.61 | x |
+| <ins>[react-native-orientation-locker](https://github.com/wonday/react-native-orientation-locker)</ins> | 0.63 | x |
 
 The React Native team at Microsoft is continually adding native implementations for community modules. Visit the [Community Module Requests project board](https://github.com/microsoft/react-native-windows/projects/23) to see which modules are on our radar.
 
