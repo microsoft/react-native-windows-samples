@@ -281,7 +281,7 @@ internal sealed class NativeModuleSample
 }
 ```
 
-If your module needs access to the [`ReactContext`](IReactContext) context or [`ReactNativeHost`](ReactNativeHost), grabbing a handle to it in the ReactInitializer is a good place.
+If your module needs access to the [`ReactContext`](IReactContext) context or [`ReactNativeHost`](ReactNativeHost), you can hold on to the context passed onto the method that is marked `[ReactInitializer]`.
 
 ```csharp
 [ReactModule]
