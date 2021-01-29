@@ -5,7 +5,7 @@ title: Compile time code generation for C#
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-In previous versions of React Native for Windows, code generation for C# modules was performed using reflection. In 0.63 we improved this by adding a compile time code generation.
+In previous versions of React Native for Windows, code generation for C# modules was performed using reflection. Since 0.63 we improved this by adding a compile time code generation.
 
 There are several benefits to this approach:
 * The cost of analyzing and reflecting over your code doesn't have to happen at each application startup, it only happens once at build time.
@@ -45,7 +45,7 @@ Next you will have to add the reflection-based generation. Open `ReactPackagePro
 > Disclaimer: The reflection logic may be removed in the near future.
 
 ## Upgrading old projects
-When you upgrade an existing 0.62 project to 0.63 you will already have imports for the shared files so you will get the codegen by default.
+When you upgrade an existing 0.62 project to a later version you will already have imports for the shared files so you will get the codegen by default.
 It might be the case that your C# code is not yet set up for this. To enable codegen you'll need to do the following:
 
 1. Add a file `ReactPackageProvider.cs` with the following content, filling in the correct namespace of your application:
