@@ -65,42 +65,42 @@ Many native module libraries (including the default library template) target old
 >
 > For more information on how NPM dependencies work, see [Specifying dependencies and `devDependencies` in a `package.json` file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
-You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest `canary` version of `react-native-windows`.
+You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest stable version of `react-native-windows`.
 
 Use the following command to find the matching versions of `react`:
 
 ```bat
-npm info react-native-windows@canary devDependencies.react
+npm info react-native-windows@latest devDependencies.react
 ```
 
-Take the result of that command (let's say it's `16.13.1`) and use it to upgrade the dev dependency:
+Take the result of that command (let's say it's `x.y.z`) and use it to upgrade the dev dependency:
 
 ```bat
-yarn upgrade react@16.13.1 --dev
+yarn upgrade react@x.y.z --dev
 ```
 
 You'll need to repeat the steps for `react-native`, i.e.:
 
 ```bat
-npm info react-native-windows@canary devDependencies.react-native
+npm info react-native-windows@latest devDependencies.react-native
 ```
 
-Again, take the result of that command (let's say it's `0.0.0-a36d9cd7e`) and use it to upgrade the dev dependency:
+Again, take the result of that command (let's say it's `0.x.y`) and use it to upgrade the dev dependency:
 
 ```bat
-yarn upgrade react-native@0.0.0-a36d9cd7e --dev
+yarn upgrade react-native@0.x.y --dev
 ```
 
 Now you should be ready to add Windows support with `react-native-windows-init`. The process is similar to adding Windows support to an app project, but you'll need to specify `--projectType lib`:
 
 ```bat
-npx react-native-windows-init --version canary --projectType lib --overwrite
+npx react-native-windows-init --version latest --projectType lib --overwrite
 ```
 
 This defaults to a C++/WinRT project. If you want to create a C# based native module project, use:
 
 ```bat
-npx react-native-windows-init --version canary --projectType lib --language cs --overwrite
+npx react-native-windows-init --version latest --projectType lib --language cs --overwrite
 ```
 
 That's it, you should be able to open `windows\MyLibrary.sln` and start working on your project.
