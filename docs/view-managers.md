@@ -143,7 +143,7 @@ namespace ViewManagerSample
         {
             if (null != value)
             {
-                view.SetValue(CustomUserControl.LabelProperty, value);
+                view.Label = value;
             }
             else
             {
@@ -156,7 +156,7 @@ namespace ViewManagerSample
         {
             if (null != value)
             {
-                view.SetValue(Control.ForegroundProperty, value);
+                view.Foreground = value;
             }
             else
             {
@@ -169,7 +169,7 @@ namespace ViewManagerSample
         {
             if (null != value)
             {
-                view.SetValue(Control.BackgroundProperty, value);
+                view.Background = value;
             }
             else
             {
@@ -397,19 +397,19 @@ void CustomUserControlViewManager::UpdateProperties(
       if (propertyName == "label") {
         if (propertyValue != nullptr) {
           auto const &value = winrt::box_value(winrt::to_hstring(propertyValue.String()));
-          control.SetValue(winrt::ViewManagerSample::CustomUserControl::LabelProperty(), propertyValue);
+          control.Label(value);
         } else {
           control.ClearValue(winrt::ViewManagerSample::CustomUserControl::LabelProperty());
         }
       } else if (propertyName == "color") {
         if (auto value = propertyValue.To<Brush>()) {
-          control.SetValue(Control::ForegroundProperty(), value);
+          control.Foreground(value);
         } else {
           control.ClearValue(Control::ForegroundProperty());
         }
       } else if (propertyName == "backgroundColor") {
         if (auto value = propertyValue.To<Brush>()) {
-          control.SetValue(Control::BackgroundProperty(), value);
+          control.Background(value);
         } else {
           control.ClearValue(Control::BackgroundProperty());
         }
