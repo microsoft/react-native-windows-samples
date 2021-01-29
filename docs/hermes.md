@@ -48,7 +48,7 @@ Second, add the Hermes NuGet package to `packages.config`, found next to your pr
 ```xml
 <packages>
   ...
-  <package id="ReactNative.Hermes.Windows" version="0.7.1" targetFramework="native" />
+  <package id="ReactNative.Hermes.Windows" version="0.7.2" targetFramework="native" />
 </packages>
 ```
 
@@ -57,7 +57,7 @@ Finally, edit the `ExtensionTargets` ItemGroup in your project's `vcxproj` file 
 ```xml
 <ImportGroup Label="ExtensionTargets">
   ...
-  <Import Project="..\packages\ReactNative.Hermes.Windows.0.7.1\build\native\ReactNative.Hermes.Windows.targets" Condition="Exists('..\packages\ReactNative.Hermes.Windows.0.7.1\build\native\ReactNative.Hermes.Windows.targets')" />
+  <Import Project="..\packages\ReactNative.Hermes.Windows.0.7.2\build\native\ReactNative.Hermes.Windows.targets" Condition="Exists('..\packages\ReactNative.Hermes.Windows.0.7.2\build\native\ReactNative.Hermes.Windows.targets')" />
 </ImportGroup>
 ```
 
