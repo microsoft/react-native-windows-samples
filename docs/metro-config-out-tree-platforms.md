@@ -61,9 +61,9 @@ Run `npx react-native config`.  Look at the output and verify that the JSON cont
 }
 ```
 
-## If in a mono-repo, verify that react-native-macos/react-native-windows is not in your blacklist
+## If in a mono-repo, verify that react-native-macos/react-native-windows is not in your exclusionList
 
-You can run `node -p require.resolve('react-native-windows')` if you are not sure where `react-native-windows` is installed.  Ensure that the `react-native-windows` folder is not included within the blacklist in your `metro.config.js`.
+You can run `node -p require.resolve('react-native-windows')` if you are not sure where `react-native-windows` is installed.  Ensure that the `react-native-windows` folder is not included within the exclusionList in your `metro.config.js`.
 
 ## Verify that react-native-macos/react-native-windows is in your `watchFolders`
 
