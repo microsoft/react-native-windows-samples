@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
 
 #### Applying a system accent color variant
 
-In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the windowsbrush object.
+In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the `windowsbrush` object.
 
 ```JSX
 const styles = StyleSheet.create({
