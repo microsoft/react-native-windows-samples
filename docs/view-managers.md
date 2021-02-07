@@ -350,6 +350,7 @@ struct CustomUserControlViewManager : winrt::implements<
 #include "CustomUserControlViewManager.h"
 
 #include "JSValueReader.h"
+#include "JSValueXaml.h"
 #include "NativeModules.h"
 
 using namespace winrt;
