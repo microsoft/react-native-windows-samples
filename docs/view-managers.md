@@ -136,7 +136,7 @@ using System.Collections.Generic;
 
 namespace ViewManagerSample
 {
-    internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControlCS>
+    internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>
     {
         [ViewManagerProperty("label")]
         public void SetLabel(CustomUserControl view, view, string value)
@@ -313,7 +313,9 @@ struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
                                              winrt::Microsoft::ReactNative::IViewManager,
                                              winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
-                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands> {
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
  public:
   CustomUserControlViewManager() = default;
 
@@ -331,13 +333,26 @@ struct CustomUserControlViewManager : winrt::implements<
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
       winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader) noexcept;
 
-   // IViewManagerWithCommands
+  // IViewManagerWithCommands
   winrt::Windows::Foundation::Collections::IVectorView<winrt::hstring> Commands() noexcept;
 
   void DispatchCommand(
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
       winrt::hstring const &commandId,
       winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
+
+  // IViewManagerWithExportedEventTypeConstants
+  winrt::Microsoft::ReactNative::ConstantProviderDelegate ExportedCustomBubblingEventTypeConstants() noexcept;
+
+  winrt::Microsoft::ReactNative::ConstantProviderDelegate ExportedCustomDirectEventTypeConstants() noexcept;
+
+  // IViewManagerWithReactContext
+  winrt::Microsoft::ReactNative::IReactContext ReactContext() noexcept;
+
+  void ReactContext(winrt::Microsoft::ReactNative::IReactContext reactContext) noexcept;
+
+private:
+  winrt::Microsoft::ReactNative::IReactContext m_reactContext{ nullptr };
 };
 
 }
@@ -430,12 +445,37 @@ void CustomUserControlViewManager::DispatchCommand(
     FrameworkElement const &view,
     winrt::hstring const &commandId,
     winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept {
-  if (auto control = view.try_as<winrt::SampleLibraryCPP::CustomUserControlCPP>()) {
+  if (auto control = view.try_as<winrt::ViewManagerSample::CustomUserControl>()) {
     if (commandId == L"CustomCommand") {
       const JSValueArray &commandArgs = JSValue::ReadArrayFrom(commandArgsReader);
       // Execute command
     }
   }
+}
+
+// IViewManagerWithExportedEventTypeConstants
+ConstantProviderDelegate CustomUserControlViewManager::ExportedCustomBubblingEventTypeConstants() noexcept {
+  return [](winrt::Microsoft::ReactNative::IJSValueWriter const& constantWriter) {
+    // use constantWriter to define bubbling events, see ExportedCustomDirectEventTypeConstants
+  }
+}
+
+ConstantProviderDelegate CustomUserControlViewManager::ExportedCustomDirectEventTypeConstants() noexcept {
+  return [](winrt::Microsoft::ReactNative::IJSValueWriter const& constantWriter) {
+    constantWriter.WritePropertyName(L"topMyEvent");
+    constantWriter.WriteObjectBegin();
+    WriteProperty(constantWriter, L"registrationName", L"onMyEvent");
+    constantWriter.WriteObjectEnd();
+  };
+}
+
+// IViewManagerWithReactContext
+IReactContext CustomUserControlViewManager::ReactContext() noexcept {
+  return m_reactContext;
+}
+
+void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noexcept {
+  m_reactContext = reactContext;
 }
 
 }
