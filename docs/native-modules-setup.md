@@ -9,7 +9,7 @@ title: Native Module Setup
 > - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
 > - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
 
-This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `MyLibrary` native module.
+This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
 
 ## Development Environment
 
@@ -44,18 +44,18 @@ The steps to create a new native module library project are:
 Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup.
 
 ```bat
-npx create-react-native-module --module-name "MyLibrary" MyLibrary
-cd MyLibrary
+npx create-react-native-module --module-name "NativeModuleSample" NativeModuleSample
+cd NativeModuleSample
 yarn install
 ```
 
-Now you'll have a new native module project under `MyLibrary`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
+Now you'll have a new native module project under `NativeModuleSample`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
 
 At this point, follow the steps below to add Windows support to the newly created library.
 
 ## Adding Windows support to an existing library
 
-> The steps below are written as if you're working with the `MyLibrary` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
+> The steps below are written as if you're working with the `NativeModuleSample` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
 
 ### Updating your `package.json`
 
@@ -103,11 +103,11 @@ This defaults to a C++/WinRT project. If you want to create a C# based native mo
 npx react-native-windows-init --version latest --projectType lib --language cs --overwrite
 ```
 
-That's it, you should be able to open `windows\MyLibrary.sln` and start working on your project.
+That's it, you should be able to open `windows\NativeModuleSample.sln` and start working on your project.
 
 ### Testing your Build
 
-To make sure that everything is working, you'll want to try building `MyLibrary`. First you'll want to make sure you've chosen a supported platform:
+To make sure that everything is working, you'll want to try building `NativeModuleSample`. First you'll want to make sure you've chosen a supported platform:
 
 1. At the top, change the `Solution Platform` to `x86` or `x64`.
 1. In the `Build` menu, select `Build Solution`.
@@ -137,7 +137,7 @@ If you are writing a C++/WinRT module and have added any NuGet package dependenc
 
 #### Option 1: Create a new test app
 1. Follow the [getting started guide](getting-started.md) to create a new React Native Windows app.
-2. Run `npm i <module-local-path> --save` (e.g. `npm i D:\MyLibrary --save`) to install the local module.
+2. Run `npm i <module-local-path> --save` (e.g. `npm i D:\NativeModuleSample --save`) to install the local module.
 3. [Link the native module](native-modules-using.md).
 
 #### Option 2: Adding Windows support to existing sample app
