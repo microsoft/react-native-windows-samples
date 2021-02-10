@@ -54,7 +54,7 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 | <ins>[react-native-permissions](https://github.com/react-native-community/react-native-permissions)</ins> | 0.63 | x |
 | <ins>[react-native-config](https://github.com/luggit/react-native-config)</ins> | 0.63 | x |
 | <ins>[rn-fetch-blob](https://github.com/joltup/rn-fetch-blob)</ins> | [0.63](https://github.com/joltup/rn-fetch-blob/pull/701) | x |
-| <ins>[codepush](https://github.com/Microsoft/react-native-code-push)</ins> | 0.63 | x |
+| <ins>[react-native-code-push](https://github.com/Microsoft/react-native-code-push)</ins> | 0.63 | x |
 | <ins>[react-native-tts](https://github.com/ak1394/react-native-tts)</ins> | 0.63 | x |
 
 
