@@ -28,8 +28,8 @@ The following modules have either been ejected from core, or are on path to be e
 | <ins>[`datetimepicker`](https://github.com/react-native-community/datetimepicker)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/389) |
 | <ins>[`react-native-checkbox`](https://github.com/react-native-community/react-native-checkbox)</ins> | 0.62 | x |
 | <ins>[`react-native-netinfo`](https://www.github.com/react-native-community/react-native-netinfo)</ins> | 0.61 | 0.61 |
-| <ins>[`react-native-picker`](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/395) |
-| <ins>[`react-native-progress-view`](https://github.com/react-native-community/progress-view)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/391) |
+| <ins>[`react-native-picker`](https://github.com/react-native-community/react-native-picker)</ins> | 0.61 | 0.61 |
+| <ins>[`react-native-progress-view`](https://github.com/react-native-community/progress-view)</ins> | 0.62 | 0.62 |
 | <ins>[`react-native-slider`](https://github.com/react-native-community/react-native-slider)</ins> | 0.62 | [Not yet ejected](https://github.com/microsoft/react-native-macos/issues/394) |
 | <ins>[`react-native-webview`](https://www.github.com/react-native-community/react-native-webview)</ins> | 0.61 | 0.61 |
 | <ins>[`clipboard`](https://www.github.com/react-native-community/clipboard)</ins> | 0.61 | 0.61 |
