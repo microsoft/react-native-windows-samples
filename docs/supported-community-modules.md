@@ -48,14 +48,15 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 | <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | 0.61 | x |
 | <ins>[react-native-orientation-locker](https://github.com/wonday/react-native-orientation-locker)</ins> | 0.63 | x |
 | <ins>[react-native-print](https://github.com/christopherdro/react-native-print)</ins> | 0.63 | x |
-| <ins>[react-native-pdf](https://github.com/wonday/react-native-pdf)</ins> | 0.63 | x |
-| <ins>[react-native-sensitve-info](https://github.com/mCodex/react-native-sensitive-info)</ins> | 0.63 | x |
+| <ins>[react-native-pdf](https://github.com/wonday/react-native-pdf)</ins> | 0.62 | x |
+| <ins>[react-native-sensitive-info](https://github.com/mCodex/react-native-sensitive-info)</ins> | 0.61 | x |
 | <ins>[react-native-responsive-screen](https://github.com/marudy/react-native-responsive-screen)</ins> | 0.63 | x |
 | <ins>[react-native-permissions](https://github.com/react-native-community/react-native-permissions)</ins> | 0.63 | x |
-| <ins>[react-native-config](https://github.com/luggit/react-native-config)</ins> | 0.63 | x |
-| <ins>[rn-fetch-blob](https://github.com/joltup/rn-fetch-blob)</ins> | [0.63](https://github.com/joltup/rn-fetch-blob/pull/701) | x |
+| <ins>[react-native-config](https://github.com/luggit/react-native-config)</ins> | 0.61 | x |
+| <ins>[rn-fetch-blob](https://github.com/joltup/rn-fetch-blob)</ins> | [0.62](https://github.com/joltup/rn-fetch-blob/pull/701) | x |
 | <ins>[react-native-code-push](https://github.com/Microsoft/react-native-code-push)</ins> | 0.63 | x |
-| <ins>[react-native-tts](https://github.com/ak1394/react-native-tts)</ins> | 0.63 | x |
+| <ins>[react-native-tts](https://github.com/ak1394/react-native-tts)</ins> | 0.62 | x |
+| <ins>[react-native-sketch-canvas](https://github.com/creambyemute/react-native-sketch-canvas)</ins> | 0.63 | x |
 
 
 The React Native team at Microsoft is continually adding native implementations for community modules. Visit the [Community Module Requests project board](https://github.com/microsoft/react-native-windows/projects/23) to see which modules are on our radar.
