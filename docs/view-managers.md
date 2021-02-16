@@ -121,7 +121,7 @@ namespace ViewManagerSample
 </ResourceDictionary>
 ```
 
-#### 1. Authoring your View Manager
+### 1. Authoring your View Manager
 
 Here is a sample view manager written in C# called `CustomUserControlViewManager`.
 
@@ -186,7 +186,7 @@ namespace ViewManagerSample
 }
 ```
 
-#### 2. Registering your View Manager
+### 2. Registering your View Manager
 
 As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
@@ -237,7 +237,7 @@ This example assumes that the `ViewManagerSample.ReactPackageProvider` we create
 
 The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your view managers directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
-#### 3. Using your View Manager in JSX
+### 3. Using your View Manager in JSX
 
 `ViewManagerSample.js`:
 
@@ -294,7 +294,7 @@ AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
 
 For this sample, assume we already have the `CustomUserControl` defined in the C# example.
 
-#### 1. Authoring your View Manager
+### 1. Authoring your View Manager
 
 Here is a sample view manager written in C++ called `CustomUserControlViewManager`.
 
@@ -481,7 +481,7 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 }
 ```
 
-#### 2. Registering your View Manager
+### 2. Registering your View Manager
 
 As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
@@ -584,7 +584,7 @@ This example assumes that the `ViewManagerSample::ReactPackageProvider` we creat
 
 The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your native modules directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
-#### 3. Using your View Manager in JSX
+### 3. Using your View Manager in JSX
 
 `ViewManagerSample.js`:
 
