@@ -300,7 +300,7 @@ Here is a sample view manager written in C++ called `CustomUserControlViewManage
 
 `CustomUserControlViewManager.h`:
 
-```c++
+```cpp
 #pragma once
 
 #include "pch.h"
@@ -360,7 +360,7 @@ private:
 
 `CustomUserControlViewManager.cpp`:
 
-```c++
+```cpp
 #include "pch.h"
 #include "CustomUserControlViewManager.h"
 
@@ -487,7 +487,7 @@ As with native modules, we want to register our new `CustomUserControlViewManage
 
 `ReactPackageProvider.idl`:
 
-```c++
+```cpp
 namespace ViewManagerSample
 {
     [webhosthidden]
@@ -558,7 +558,7 @@ Now that we have the `ReactPackageProvider`, it's time to register it within our
 
 `App.cpp`:
 
-```c++
+```cpp
 #include "pch.h"
 
 #include "App.h"
