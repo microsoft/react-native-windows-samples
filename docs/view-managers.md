@@ -481,6 +481,38 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 }
 ```
 
+#### Further extensibility
+
+- In some scenarios, a view manager might need to have more context at control creation time in order to decide what kind of control to instantiate. This is possible by having the view manager implement the `IViewManagerCreateWithProperties` interface:
+```diff
+struct CustomUserControlViewManager : winrt::implements<
+                                             CustomUserControlViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,
++                                             winrt::Microsoft::ReactNative::IViewManagerCreateWithProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
++  // IViewManagerCreateWithProperties
++  winrt::Windows::Foundation::IInspectable CreateWithProperties(winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader);
+```
+The `CreateWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader` just like it is done in the `UpdateProperties` method.
+
+
+- Your view manager is also able to declare that it wants to be responsible for its own sizing and layout. This is useful in scenarios where you are wrapping a native XAML control. To do so, implement the `winrt::Microsoft::ReactNative::IViewManagerRequiresNativeLayout` interface:
+```diff
+struct CustomUserControlViewManager : winrt::implements<
+                                             CustomUserControlViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,
++                                             winrt::Microsoft::ReactNative::IViewManagerRequiresNativeLayout,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
++   // IViewManagerRequiresNativeLayout
++   bool RequiresNativeLayout() { return true; }
+```
+
 ### 2. Registering your View Manager
 
 As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
