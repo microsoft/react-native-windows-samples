@@ -72,6 +72,10 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
 
 - Using Visual Studio
 
+  - From the root of the project directory, run the following script which will automatically link your app's dependencies:
+    ```bat
+    npx react-native autolink-windows
+    ```
   - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln` if you used `AwesomeProject` as `<projectName>`)
   - Select the `Debug` configuration and the `x64` platform from the combo box controls to the left of the `Run` button and underneath the `Team` and `Tools` menu item.
   - Run `yarn start` from your project directory, and wait for the React Native packager to report success.
