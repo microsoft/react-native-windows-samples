@@ -5,6 +5,7 @@
 #include "AutolinkedNativeModules.g.h"
 #include "ReactPackageProvider.h"
 
+
 using namespace winrt::CameraDemo;
 using namespace winrt::CameraDemo::implementation;
 using namespace winrt;
@@ -25,7 +26,7 @@ App::App() noexcept
     InstanceSettings().UseWebDebugger(false);
     InstanceSettings().UseFastRefresh(false);
 #else
-    JavaScriptBundleFile(L"index");
+    JavaScriptMainModuleName(L"index");
     InstanceSettings().UseWebDebugger(true);
     InstanceSettings().UseFastRefresh(true);
 #endif
@@ -39,7 +40,7 @@ App::App() noexcept
     RegisterAutolinkedNativeModulePackages(PackageProviders()); // Includes any autolinked modules
 
     PackageProviders().Append(make<ReactPackageProvider>()); // Includes all modules in this project
-    PackageProviders().Append(winrt::ReactNativeCameraCPP::ReactPackageProvider());
+
     InitializeComponent();
 }
 

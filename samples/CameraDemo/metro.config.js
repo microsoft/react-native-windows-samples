@@ -5,11 +5,11 @@
  * @format
  */
 const path = require('path');
-const exclusionList = require('metro-config/src/defaults/exclusionList');
+const blacklist = require('metro-config/src/defaults/blacklist');
 
 module.exports = {
   resolver: {
-    blockList: exclusionList([
+    blacklistRE: blacklist([
       // This stops "react-native run-windows" from causing the metro server to crash if its already running
       new RegExp(
         `${path.resolve(__dirname, 'windows').replace(/[/\\]/g, '/')}.*`,
@@ -22,7 +22,7 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true,
+        inlineRequires: false,
       },
     }),
   },
