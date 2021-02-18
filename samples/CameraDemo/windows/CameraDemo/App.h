@@ -16,5 +16,3 @@ namespace winrt::CameraDemo::implementation
         using super = AppT<App>;
     };
 } // namespace winrt::CameraDemo::implementation
-
-

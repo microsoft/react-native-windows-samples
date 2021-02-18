@@ -6,16 +6,16 @@
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   IgnorableNamespaces="uap mp">
 
- <Identity
-    Name="445b6ad3-1de2-40b6-960a-ffc820cd7a80"
-    Publisher="CN=jthysell"
+  <Identity
+    Name="050e31e1-4652-4c7e-b1d3-47a9aab41298"
+    Publisher="CN=chiaramooney"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="445b6ad3-1de2-40b6-960a-ffc820cd7a80" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="050e31e1-4652-4c7e-b1d3-47a9aab41298" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CameraDemo</DisplayName>
-    <PublisherDisplayName>jthysell</PublisherDisplayName>
+    <PublisherDisplayName>chiaramooney</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -46,9 +46,5 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <uap:Capability Name="videosLibrary"/>
-    <uap:Capability Name="picturesLibrary"/>
-    <DeviceCapability Name="webcam"/>
-    <DeviceCapability Name="microphone"/>
   </Capabilities>
 </Package>
