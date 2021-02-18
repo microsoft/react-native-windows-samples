@@ -28,6 +28,11 @@ Currently, React Native for Windows uses a global `PerspectiveTransform` to prov
 
 __Important__: The `IsPerspectiveEnabled` property is experimental and support for it may be removed in the future.
 
+### Note about wrapping Windows controls
+As described above, some native UI components such as `ScrollView` and `TextInput` have been built by wrapping native Windows controls from the UWP XAML controls library. As a result, their visual appearance, animations, etc. will always match their native Windows counterpart. UI components can also be built using Javascript. In this case the component's source code does not wrap a native control, but rather combines already contructed React Native Windows components to build itself. Components built in this way contain no C++/C# code.
+
+If you are looking for your constructed component to always match the styling of it counterpart in Windows, choosing to build your component by wrapping a XAML control would be the best option for you. Follow the steps below to learn how to build your native UI component. Conversely, if this characteristic is not important for your component's purpose, construct the component in Javascript using other React Native Windows components as building blocks. Follow the steps [here](https://reactnative.dev/docs/intro-react) to learn how to build your component. 
+
 ## Initial Setup
 
 Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows
