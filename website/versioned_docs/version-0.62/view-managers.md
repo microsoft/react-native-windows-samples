@@ -22,6 +22,13 @@ Similarly to authoring native modules, at a high level you must:
 2. Register your new ViewManager within the native code of your React Native host application.
 3. Reference the new Component within your React Native JSX code.
 
+### Note about wrapping Windows controls
+As described above, some native UI components such as `ScrollView` and `TextInput` have been built by wrapping native Windows controls from the UWP XAML controls library. As a result, their visual appearance, animations, user experience, accessibility, etc. will always match their native Windows counterpart. 
+
+UI components can also be built using JavaScript. In this case, the component's source code does not wrap a native control, but rather combines already constructed React Native Windows components to build itself. Components built in this way contain no native code.
+
+If you are looking for your constructed component to always match the styling of its counterpart in Windows, choosing to build your component by wrapping a XAML control would be the best option for you. Follow the steps below to learn how to build your native UI component. Conversely, if this characteristic is not important for your component's purpose, construct the component in JavaScript using other React Native Windows components as building blocks. Follow the steps [here](https://reactnative.dev/docs/intro-react) to learn how to build your component. 
+
 ## Initial Setup
 
 Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) to create the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows
