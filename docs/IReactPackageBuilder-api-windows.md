@@ -7,7 +7,7 @@ Kind: `interface`
 
 
 
-A `ReactPackageBuilder` provides the react instance with all the native modules and view managers that will be available in the React instance.
+Builds ReactNative package with the set of native modules and view managers.
 
 
 
@@ -15,14 +15,14 @@ A `ReactPackageBuilder` provides the react instance with all the native modules 
 ### AddModule
 void **`AddModule`**(string moduleName, [`ReactModuleProvider`](ReactModuleProvider) moduleProvider)
 
-Adds a custom native module. See [`ReactModuleProvider`](ReactModuleProvider).
+Adds a custom native module.  See [`ReactModuleProvider`](ReactModuleProvider).
 
 
 
 ### AddViewManager
 void **`AddViewManager`**(string viewManagerName, [`ReactViewManagerProvider`](ReactViewManagerProvider) viewManagerProvider)
 
-Adds a custom native module. See [`ReactViewManagerProvider`](ReactViewManagerProvider).
+Adds a custom view manager.  See [`ReactViewManagerProvider`](ReactViewManagerProvider).
 
 
 

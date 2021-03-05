@@ -7,7 +7,7 @@ Kind: `interface`
 
 
 
-JSON-like stream writer.<br/>It is used to write data that is sent between native modules and the Microsoft.ReactNative.dll.<br/><br/>The JSON-like streams are data structures that satisfy the [JSON specification](https://tools.ietf.org/html/rfc8259). The data structure may have objects with name-value pairs and arrays of items. Property values or array items can be of type `Null`, `Object`, `Array`, `String`, `Boolean`, or `Number`. The `IJSValueWriter` treats the `Number` type as `Int64` or `Double`. See [`JSValueType`](JSValueType).<br/><br/>See the [`IJSValueReader`](IJSValueReader) for the corresponding reader interface.<br/><br/>The [`IJSValueReader`](IJSValueReader) and [`IJSValueWriter`](IJSValueWriter) must be rarely used directly. Use them to create serializer and deserializer functions for a type. The rest of application code must use these functions to serialize/deserialize values. The `Microsoft.ReactNative.Cxx` and `Microsoft.ReactNative.Managed` projects offer serializer/deserializer functions for many standard types. Use them directly or to define serializer/deserializer functions for your types.
+`IJSValueWriter` is used to write JavaScript values from custom native modules.  It acts as a stream and supports all the types in [`JSValueType`](JSValueType).
 
 
 
@@ -15,70 +15,70 @@ JSON-like stream writer.<br/>It is used to write data that is sent between nativ
 ### WriteArrayBegin
 void **`WriteArrayBegin`**()
 
-Starts writing an array.
+Start writing an array.
 
 
 
 ### WriteArrayEnd
 void **`WriteArrayEnd`**()
 
-Completes writing an array.
+Complete writing an array.
 
 
 
 ### WriteBoolean
 void **`WriteBoolean`**(bool value)
 
-Writes a `Boolean` value.
+Write a boolean value.
 
 
 
 ### WriteDouble
 void **`WriteDouble`**(double value)
 
-Writes a `Number` value from a double.
+Write a number value from a double.
 
 
 
 ### WriteInt64
 void **`WriteInt64`**(int64_t value)
 
-Writes a `Number` value from an integer.
+Write a number value from an integer.
 
 
 
 ### WriteNull
 void **`WriteNull`**()
 
-Writes a `Null` value.
+Write a null value.
 
 
 
 ### WriteObjectBegin
 void **`WriteObjectBegin`**()
 
-Starts writing an `Object`.
+Start writing an object.
 
 
 
 ### WriteObjectEnd
 void **`WriteObjectEnd`**()
 
-Completes writing an object.
+Complete writing an object.
 
 
 
 ### WritePropertyName
 void **`WritePropertyName`**(string name)
 
-Writes a property name within an object. This call should then be followed by writing the value of that property.
+Write a property within an object.  This should then be followed by writing the value of that property.
 
 
 
 ### WriteString
 void **`WriteString`**(string value)
 
-Writes a `String` value
+Write a string value
 
 
 

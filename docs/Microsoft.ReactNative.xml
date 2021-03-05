@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.ReactNative</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.ReactNative.ReactApplication">
+      <summary><c>ReactApplication</c> provides a base application class for use in applications that are entirely written in React Native. <c>ReactApplication</c> will load the React instance on launch of your app for you and provide accessors to your application's <see cref="ReactInstanceSettings"/> and <see cref="ReactNativeHost"/> to customize your React instance.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactApplication.Host">
+      <summary>Access to the <see cref="ReactNativeHost"/> of your application.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactApplication.InstanceSettings">
+      <summary>Provides access to your application's <see cref="ReactInstanceSettings"/>.  Generally, changes to these settings will not take effect if the React instance is already loaded, unless the React instance is reloaded, so most settings should be set in your applications constructor.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactApplication.JavaScriptBundleFile">
+      <summary>See <see cref="ReactInstanceSettings.JavaScriptBundleFile"/>.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactApplication.JavaScriptMainModuleName">
+      <summary>See <see cref="ReactInstanceSettings.JavaScriptMainModuleName"/>.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactApplication.PackageProviders">
+      <summary>Provides access to the list of <c>IReactPackageProvider</c>'s that the instance will use to provide native modules to the application. This can be used to register additional package providers, such as package providers from community modules. See <see cref="ReactNativeHost"/> for more information.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactApplication.UseDeveloperSupport">
+      <summary>Should the developer experience features such as the developer menu and <c>RedBox</c> be enabled.  See <see cref="ReactInstanceSettings.UseDeveloperSupport"/>.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactInstanceSettings">
+      <summary>Provides configuration of the react instance.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.BundleRootPath">
+      <summary>Base path used for the location of the bundle.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.ByteCodeFileUri">
+      <summary>Set this to a location the application has write access to in order for bytecode to be successfully cached. See <see cref="EnableByteCodeCaching"/>.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.DebugBundlePath">
+      <summary>When loading from a bundle server (such as metro), this is the path that will be requested from the server.  If this is not provided the value of <see cref="JavaScriptBundleFile"/> or <see cref="JavaScriptMainModuleName"/> is used.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.DebugHost">
+      <summary>When using a <see cref="UseFastRefresh"/>, <see cref="UseLiveReload"/> or <see cref="UseWebDebugger"/> this is the server that will be used to load the bundle from.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.DebuggerBreakOnNextLine">
+      <summary>For direct debugging, whether to break on the next line of JavaScript that is executed.  This can help debug issues hit early in the JavaScript bundle load.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.DebuggerPort">
+      <summary>When <see cref="UseDirectDebugger"/> is enabled, this controls the port that the JavaScript engine debugger will run on.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.EnableByteCodeCaching">
+      <summary>For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.EnableDeveloperMenu">
+      <summary>This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default <c>RedBox</c> experience and the loading UI during bundle load.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.EnableJITCompilation">
+      <summary>Flag controlling whether the JavaScript engine uses JIT compilation.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.JavaScriptBundleFile">
+      <summary>The name of the JavaScript bundle file to load. This should be a relative path from <see cref="BundleRootPath"/>.  <c>.bundle</c> will be appended to the end, when looking for the bundle file.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.JavaScriptMainModuleName">
+      <summary>Name of the JavaScript bundle file.  If <see cref="JavaScriptBundleFile"/> is specified it is used instead.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.Notifications">
+      <summary>Provides access to the <c>IReactNotificationService</c>, which allows easy communication between custom native modules or view managers.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.PackageProviders">
+      <summary>Provides a list of additional native modules and custom view managers that should be included in the instance.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.Properties">
+      <summary>Properties are shared with <see cref="IReactContext.Properties"/>. It can be used to configure and share values and state between components.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.RedBoxHandler">
+      <summary>Provides an extension point to allow custom error handling within the react instance. See <see cref="IRedBoxHandler"/> for more information.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.SourceBundleHost">
+      <summary>When using a <see cref="UseFastRefresh"/>, <see cref="UseLiveReload"/> or <see cref="UseWebDebugger"/> this is the server hostname that will be used to load the bundle from.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.SourceBundlePort">
+      <summary>When using a <see cref="UseFastRefresh"/>, <see cref="UseLiveReload"/> or <see cref="UseWebDebugger"/> this is the server port that will be used to load the bundle from.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UIDispatcher">
+      <summary>Control the main UI dispatcher to be used by the React instance.  If the <see cref="ReactInstanceSettings"/> object is initially created on a UI thread, then this will default to that thread.  The value provided here will be available to native modules and view managers using <see cref="IReactContext.UIDispatcher"/></summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UseDeveloperSupport">
+      <summary>This controls whether various developer experience features are available for this instance.  In particular the developer menu, the default <c>RedBox</c> and <c>LogBox</c> experience and loading UI during bundle load.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UseDirectDebugger">
+      <summary>Enables debugging in the JavaScript engine (if supported).  
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UseFastRefresh">
+      <summary>Should the instance trigger the hot module reload logic when it first loads the instance.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UseJsi">
+      <summary>This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. 
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UseLiveReload">
+      <summary>Enable live reload to load the source bundle from the React Native packager.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactInstanceSettings.UseWebDebugger">
+      <summary>Should the instance run in a remote environment such as within a browser.
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactNativeHost">
+      <summary>This is the main entry-point to create a react-native instance.  The <c>ReactNativeHost</c> object exists to configure the instance using <see cref="ReactInstanceSettings"/> before its loaded, as well as enabling control of when to load the instance. 
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactNativeHost.InstanceSettings">
+      <summary>Provides access to your this host's <see cref="ReactInstanceSettings"/> to configure the react instance.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.ReactNativeHost.PackageProviders">
+      <summary>Provides access to the list of <c>IReactPackageProvider</c>'s that the react instance will use to provide native modules to the application.  This can be used to register additional package providers, such as package providers from community modules or other shared libraries</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.ReactNativeHost.ReloadInstance">
+      <summary>This is used to load the instance, which will create an instance of the JS engine and launch your JavaScript code.  If an instance of this host is already running, this will shutdown the already running instance, and load a new instance.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactNotificationServiceHelper">
+      <summary>Helper methods for the notification service implementation.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.ReactNotificationServiceHelper.CreateNotificationService">
+      <summary>Creates new instance of IReactNotificationService</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.RedBoxHelper.CreateDefaultHandler">
+      <summary>This provides access to the default <see cref="IRedBoxHandler"/>. This can be used to display the default <c>RedBox</c> as part of a custom <c>RedBoxHandler</c> implementation.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.XamlUIService">
+      <summary>Provides access to XAML UI-specific functionality. It provides access to APIs to get a XAML element from a react tag, and to dispatch events to JS components.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.XamlUIService.DispatchEvent">
+      <summary>Dispatch an event to a JS component.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.XamlUIService.ElementFromReactTag">
+      <summary>Get the backing XAML element from a react tag.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.XamlUIService.FromContext">
+      <summary>Use this method to gain access to the <c>XamlUIService</c> from a <c>ReactContext</c>.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IJSValueReader">
+      <summary><c>IJSIValueReader</c> is used to read data from JavaScript in custom native modules.  It acts as a stream and supports all the types in <see cref="JSValueType"/>.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IJSValueReader.ValueType">
+      <summary>Returns the type of the current value.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueReader.GetBoolean">
+      <summary>Gets the current boolean value.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueReader.GetDouble">
+      <summary>Gets the current number value as a double.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueReader.GetInt64">
+      <summary>Gets the current number value as an int.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueReader.GetNextArrayItem">
+      <summary>Moves the reader to the next array item.  Returns if there is another item in the array.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueReader.GetNextObjectProperty">
+      <summary>Returns whether there is another property in the current object.  If there is <c>propertyName</c> indicates the name of the property.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueReader.GetString">
+      <summary>Gets the current string value.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IJSValueWriter">
+      <summary><c>IJSValueWriter</c> is used to write JavaScript values from custom native modules.  It acts as a stream and supports all the types in <see cref="JSValueType"/>.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteArrayBegin">
+      <summary>Start writing an array.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteArrayEnd">
+      <summary>Complete writing an array.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteBoolean">
+      <summary>Write a boolean value.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteDouble">
+      <summary>Write a number value from a double.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteInt64">
+      <summary>Write a number value from an integer.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteNull">
+      <summary>Write a null value.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteObjectBegin">
+      <summary>Start writing an object.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteObjectEnd">
+      <summary>Complete writing an object.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WritePropertyName">
+      <summary>Write a property within an object.  This should then be followed by writing the value of that property.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IJSValueWriter.WriteString">
+      <summary>Write a string value</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactContext">
+      <summary>The <c>IReactContext</c> object is given to native modules to communicate with other native modules, views, application, and the React Native instance. 
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactContext.JSDispatcher">
+      <summary>Get the JS thread dispatcher. 
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactContext.JSRuntime">
+      <summary>Get the JavaScript runtime for the running React instance. It can be null if Web debugging is used.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactContext.Notifications">
+      <summary>Notifications shared with the <see cref="ReactInstanceSettings.Notifications"/>. They can be used to exchange events between components. 
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactContext.Properties">
+      <summary>Properties shared with the <see cref="ReactInstanceSettings.Properties"/>. It can be used to share values and state between components.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactContext.SettingsSnapshot">
+      <summary>Get settings snapshot that were used to start the React instance.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactContext.UIDispatcher">
+      <summary>Get the UI thread dispatcher. 
+</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactContext.CallJSFunction">
+      <summary>Call the JavaScript function named <c>methodName</c> of <c>moduleName</c>.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactContext.EmitJSEvent">
+      <summary>Call JavaScript module event. It is a specialized <c>CallJSFunction</c> call where method name is always 'emit'.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactDispatcher">
+      <summary><c>IReactDispatcher</c> provides the core threading/task management interface for ensuring code happens in the right order on the right thread. One primary dispatcher that applications may require is the <see cref="IReactContext.UIDispatcher"/> which provides native modules access to the UI thread associated with this react instance.   Another one is the <see cref="IReactContext.JSDispatcher"/> which allows apps to post tasks to the JS engine thread.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactDispatcher.HasThreadAccess">
+      <summary><c>true</c> if the dispatcher uses current thread.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactDispatcher.Post">
+      <summary>Post a task to the dispatcher.  This callback will be called asynchronously on the thread/queue associated with this dispatcher.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactModuleBuilder">
+      <summary>Builds native module inside of ReactNative code based on the provided meta-data.
+</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactModuleBuilder.AddConstantProvider">
+      <summary>Adds a constant provider method to define constants for the native module.  See <see cref="ConstantProviderDelegate"/>.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactModuleBuilder.AddInitializer">
+      <summary>Adds an initializer method called on the native module initialization.
+</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactModuleBuilder.AddMethod">
+      <summary>Adds an asynchronous method to the native module.  See <see cref="MethodDelegate"/>.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactModuleBuilder.AddSyncMethod">
+      <summary>Adds a synchronous method to the native module.  See <see cref="SyncMethodDelegate"/>.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactNonAbiValue">
+      <summary><c>IReactNonAbiValue</c> helps wrap a non-ABI-safe C++ value into an <c>IInspectable</c> object. Use it to handle native module lifetime. It also can be used to store values in the <see cref="IReactPropertyBag"/> that do not need to go through the EXE/DLL boundary.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactNonAbiValue.GetPtr">
+      <summary>Get a pointer to the stored value.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactNotificationArgs">
+      <summary>Notification args provided to the notification handler.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactNotificationArgs.Data">
+      <summary>The data sent with the notification. It can be any WinRT type. Consider using <see cref="IReactPropertyBag"/> for semi-structured data. It can be null if notification has no data. </summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactNotificationArgs.Subscription">
+      <summary>The notification subscription that can be used to unsubscribe in the notification handler. It also has the name and dispatcher associated with the notification.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactNotificationService">
+      <summary>The notification service is used to subscribe to notifications and to send notifications.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactNotificationService.SendNotification">
+      <summary>Sends the notification with <c>notificationName</c>.
+</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactNotificationService.Subscribe">
+      <summary>Subscribes to a notification.
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactNotificationSubscription">
+      <summary>A subscription to a notification.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactNotificationSubscription.Dispatcher">
+      <summary>The <see cref="IReactDispatcher"/> provided when the notification subscription created.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactNotificationSubscription.IsSubscribed">
+      <summary>True if the subscription is still active.
+</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactNotificationSubscription.NotificationName">
+      <summary>Name of the notification.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IReactNotificationSubscription.NotificationService">
+      <summary>The notification service for the subscription.
+</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactNotificationSubscription.Unsubscribe">
+      <summary>Removes the subscription.
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactPackageBuilder">
+      <summary>Builds ReactNative package with the set of native modules and view managers.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPackageBuilder.AddModule">
+      <summary>Adds a custom native module.  See <see cref="ReactModuleProvider"/>.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPackageBuilder.AddViewManager">
+      <summary>Adds a custom view manager.  See <see cref="ReactViewManagerProvider"/>.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactPackageBuilderExperimental">
+      <summary>Experimental extensions to the <see cref="IReactPackageBuilder"/>.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPackageBuilderExperimental.AddTurboModule">
+      <summary>Adds a custom TurboModule that uses direct access to JS Engine API.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactPackageProvider">
+      <summary>This interface is to be implemented by package creators.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPackageProvider.CreatePackage">
+      <summary>Provides a <see cref="IReactPackageBuilder"/> which the app or package will use to register custom native modules and view managers.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IReactPropertyBag">
+      <summary><c>IReactPropertyBag</c> provides a thread-safe property storage. Properties are identified by an instance of <c>IReactPropertyName</c>. It is expected that there will be no direct use of this interface. Ideally, all usage should happen through strongly-typed accessors.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPropertyBag.Get">
+      <summary>Get a property's value. It returns null if the property does not exist.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPropertyBag.GetOrCreate">
+      <summary>Get a property's value. If the property does not exist, this method creates it by calling the <c>createValue</c> delegate. The function may return null if the <c>createValue</c> returns null when called.The <c>createValue</c> is called outside of any locks. It is possible that its result is not used in case another thread sets the property value before the created value is applied.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IReactPropertyBag.Set">
+      <summary>Set a property's value. It returns the previously-stored property value. It returns null if the property did not exist. If the new value is null, then the property is removed.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IRedBoxErrorFrameInfo">
+      <summary>This object represents a single frame within the call stack of an error.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorFrameInfo.Collapse">
+      <summary>True if this frame is part of the internals of <c>react-native</c>, that is likely not useful for the developer to see.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorFrameInfo.Column">
+      <summary>The column within the line</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorFrameInfo.File">
+      <summary>The file location of this frame</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorFrameInfo.Line">
+      <summary>The line number within the file</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorFrameInfo.Method">
+      <summary>The method name of this frame</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IRedBoxErrorInfo">
+      <summary>This object provides information about the error.  For JavaScript errors, a call stack is also provided.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.Callstack">
+      <summary>For JavaScript errors, this will contain the call stack of where the error occurred.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.ComponentStack">
+      <summary>This will contain the component stack where the error occurred, which can help identify the component that is producing the error</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.ExtraData">
+      <summary>Provides access to extra data attached to the error.  Adding additional data to the errors is not yet part of the stable API.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.Id">
+      <summary>This Id can be used in <see cref="IRedBoxHandler.UpdateError"/> to identify which error is being updated.  For native errors, this is currently always <c>0</c>, and <see cref="IRedBoxHandler.UpdateError"/> will never be called.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.Message">
+      <summary>The error message.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.Name">
+      <summary>An identifier for this error.</summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxErrorInfo.OriginalMessage">
+      <summary>If the message was adjusted for formatting, or otherwise processed, this contains the message before those modifications</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IRedBoxHandler">
+      <summary><c>IRedBoxHandler</c> provides an extension point to allow custom error handling within the React instance.  This can be useful if you have an existing error reporting system that you want React errors to be reported to.  The default implementation of <c>RedBoxHandler</c> shows an error messages in a error screen that covers the whole application window.
+
+-- Insert Screenshot here --
+
+If you want to maintain the existing <c>RedBox</c> behaviors, and also report errors to your own reporting system, your implementation can call into the default <c>RedBoxHandler</c>, which can be obtained by calling :
+
+<example><code>RedBoxHelper::CreateDefaultHandler(Host);</code></example>
+Sample settings up a <c>RedBoxHandler</c> that reports errors to an external system, and displays the default <c>RedBox</c> experience within the application:
+
+<example><code>
+class MyRedBoxHandler : IRedBoxHandler
+{
+    MyRedBoxHandler(IRedBoxHandler defaultHandler) {
+      innerHandler = defaultHandler;
+    }
+
+   public void ShowNewError(IRedBoxErrorInfo info, RedBoxErrorType type) {
+      // Dont report non-fatal errors (optional)
+      if (type != RedBoxErrorType.JavaScriptSoft)
+        ReportErrorToMyErrorReportingSystem(info, type);
+
+      // Display errors in app if the instance is running with DevSupportEnabled
+      if (innerHandler.IsDevSupportEnabled)
+        innerHandler.ShowNewError(info, type);
+    }
+
+   public bool IsDevSupportEnabled {
+      get;
+    }
+    {
+      // The default handler will return true if the instance has DevSupport turned on
+      // But if you want to record error information in released versions of your app
+      // Then you should return true here, so that all errors get reported.
+      return true;
+    }
+
+   public void UpdateError(IRedBoxErrorInfo info) {
+      if (innerHandler.IsDevSupportEnabled)
+        innerHandler.UpdateError(info);
+    }
+
+   public void DismissRedBox() {
+      if (innerHandler.IsDevSupportEnabled)
+        innerHandler.DismissRedBox();
+    }
+
+   private IRedBoxHandler innerHandler;
+}
+
+
+RegisterMyRedBoxHandler()
+{
+    Host.InstanceSettings.RedBoxHandler = new MyRedBoxHandler(RedBoxHelper.CreateDefaultHandler(Host));
+}
+</code></example></summary>
+    </member>
+    <member name="P:Microsoft.ReactNative.IRedBoxHandler.IsDevSupportEnabled">
+      <summary>This property will control if errors should be reported to the handler.  If this returns false, <see cref="ShowNewError"/> and <see cref="UpdateError"/> will not be called.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IRedBoxHandler.ShowNewError">
+      <summary>This method is called when an error is initially hit.</summary>
+    </member>
+    <member name="M:Microsoft.ReactNative.IRedBoxHandler.UpdateError">
+      <summary>This method is called when updated information about an error has been resolved.  For JavaScript errors, this is called if source map information was able to be resolved to provide a more useful call stack.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IViewManager">
+      <summary>See the documentation of [Native UI Components](view-managers) for information on how to author a view manager.
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IViewManagerCreateWithProperties">
+      <summary>Enables a view manager to create views whose behavior depend on the the property values passed to the view manager at creation time.   For example, a view manager could choose to create different types of UI elements based on the properties passed in.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.IViewManagerRequiresNativeLayout">
+      <summary>Enables a view manager to be responsible for its own layout and sizing.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ConstantProviderDelegate">
+      <summary>A delegate to gather constants for the native module.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.InitializerDelegate">
+      <summary>A delegate that sets <c>reactContext</c> for a module.
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.JSValueArgWriter">
+      <summary>Use this delegate to pass arbitrary value to ABI API. 
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.MethodDelegate">
+      <summary>A delegate to call native asynchronous method.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.MethodResultCallback">
+      <summary>A callback to call JS code with results.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactCreatePropertyValue">
+      <summary>This delegate is used to create a property value on-demand.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactDispatcherCallback">
+      <summary>The delegate is used to create property value on-demand.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactModuleProvider">
+      <summary>Provides information about a custom native module.  See <see cref="IReactModuleBuilder"/>.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactNotificationHandler">
+      <summary>Delegate to handle notifications.
+</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.ReactViewManagerProvider">
+      <summary>Provides information about a custom view manager.  See <see cref="IViewManager"/>.</summary>
+    </member>
+    <member name="T:Microsoft.ReactNative.SyncMethodDelegate">
+      <summary>A delegate to call native synchronous method.</summary>
+    </member>
+  </members>
+</doc>

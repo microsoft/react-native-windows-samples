@@ -7,7 +7,7 @@ Kind: `interface`
 
 
 
-Builds native modules inside of React native code based on the provided meta-data. See [Native Modules](native-modules) for more usage information.
+Builds native module inside of ReactNative code based on the provided meta-data.<br/>See [Native Modules](native-modules) for more usage information.
 
 
 
@@ -15,19 +15,21 @@ Builds native modules inside of React native code based on the provided meta-dat
 ### AddConstantProvider
 void **`AddConstantProvider`**([`ConstantProviderDelegate`](ConstantProviderDelegate) constantProvider)
 
-The JavaScript values written by the [`ConstantProviderDelegate`](ConstantProviderDelegate) will be available as constants on the native module is JavaScript.
+Adds a constant provider method to define constants for the native module.  See [`ConstantProviderDelegate`](ConstantProviderDelegate).
 
 
 
 ### AddInitializer
 void **`AddInitializer`**([`InitializerDelegate`](InitializerDelegate) initializer)
 
-An initializer is a method that will be called when the react instance starts.  It provides the native module with the [`IReactContext`](IReactContext) for the running instance. See [`InitializerDelegate`](InitializerDelegate).
+Adds an initializer method called on the native module initialization.<br/>It provides the native module with the [`IReactContext`](IReactContext) for the running ReactNative instance.  See [`InitializerDelegate`](InitializerDelegate).<br/>There can be multiple initializer methods which are called in the order they were registered.
 
 
 
 ### AddMethod
 void **`AddMethod`**(string name, [`MethodReturnType`](MethodReturnType) returnType, [`MethodDelegate`](MethodDelegate) method)
+
+Adds an asynchronous method to the native module.  See [`MethodDelegate`](MethodDelegate).
 
 
 

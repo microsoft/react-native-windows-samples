@@ -5,6 +5,8 @@ title: ReactNotificationHandler
 
 Kind: `delegate`
 
+Delegate to handle notifications.<br/>The `sender` parameter is the object that sent the notification. It can be null. The `args` contain the notification-specific data and the notification subscription.
+
 ## Invoke
 void **`Invoke`**(Object sender, [`IReactNotificationArgs`](IReactNotificationArgs) args)
 
