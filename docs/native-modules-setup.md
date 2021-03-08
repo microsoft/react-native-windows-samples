@@ -3,7 +3,7 @@ id: native-modules-setup
 title: Native Module Setup
 ---
 
-> **This documentation and the underlying platform code is a work in progress.**
+> **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
