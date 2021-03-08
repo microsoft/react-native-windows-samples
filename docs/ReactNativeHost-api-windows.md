@@ -7,7 +7,8 @@ Kind: `class`
 
 
 
-This is the main entry-point to create a react-native instance.  The `ReactNativeHost` object exists to configure the instance using [`ReactInstanceSettings`](ReactInstanceSettings) before its loaded, as well as enabling control of when to load the instance. <br/>_In the future more lifecycle events will be added to this object to provide better information on when an instance is loaded and unloaded._
+This is the main entry-point to create a react-native instance.  The `ReactNativeHost` object exists to configure the instance using [`ReactInstanceSettings`](ReactInstanceSettings) before its loaded, as well as enabling control of when to load the instance. 
+_In the future more lifecycle events will be added to this object to provide better information on when an instance is loaded and unloaded._
 
 ## Properties
 ### InstanceSettings

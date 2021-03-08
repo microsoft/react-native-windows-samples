@@ -7,13 +7,20 @@ Kind: `interface`
 
 
 
-The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. <br/>It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. <br/>- Use the Properties to share native module's data with other components. <br/>- Use the Notifications to exchange events with other components. <br/>- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events. <br/>- Use [`UIDispatcher`](#uidispatcher) to schedule work in the UI thread. <br/>- Use [`JSDispatcher`](#jsdispatcher) to schedule work in the JavaScript thread.
+The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. 
+It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. 
+- Use the Properties to share native module's data with other components. 
+- Use the Notifications to exchange events with other components. 
+- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events. 
+- Use [`UIDispatcher`](#uidispatcher) to schedule work in the UI thread. 
+- Use [`JSDispatcher`](#jsdispatcher) to schedule work in the JavaScript thread.
 
 ## Properties
 ### JSDispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `JSDispatcher`
 
-Get the JS thread dispatcher. <br/>It is a shortcut for the [`ReactDispatcherHelper.JSDispatcherProperty`](ReactDispatcherHelper#jsdispatcherproperty) from the [`Properties`](#properties-1) property bag.
+Get the JS thread dispatcher. 
+It is a shortcut for the [`ReactDispatcherHelper.JSDispatcherProperty`](ReactDispatcherHelper#jsdispatcherproperty) from the [`Properties`](#properties-1) property bag.
 
 ### JSRuntime
 `readonly`  Object `JSRuntime`
@@ -23,7 +30,9 @@ Get the JavaScript runtime for the running React instance. It can be null if Web
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
 
-Notifications shared with the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications). They can be used to exchange events between components. <br/>All subscriptions added to the `IReactContext.Notifications` are automatically removed after the `IReactContext` is destroyed. <br/>The subscriptions added to the `ReactInstanceSettings.Notifications` are kept as long as `ReactInstanceSettings` is alive.
+Notifications shared with the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications). They can be used to exchange events between components. 
+All subscriptions added to the `IReactContext.Notifications` are automatically removed after the `IReactContext` is destroyed. 
+The subscriptions added to the `ReactInstanceSettings.Notifications` are kept as long as `ReactInstanceSettings` is alive.
 
 ### Properties
 `readonly`  [`IReactPropertyBag`](IReactPropertyBag) `Properties`
@@ -38,7 +47,8 @@ Get settings snapshot that were used to start the React instance.
 ### UIDispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
 
-Get the UI thread dispatcher. <br/>It is a shortcut for the [`ReactDispatcherHelper.UIDispatcherProperty`](ReactDispatcherHelper#uidispatcherproperty) from the [`Properties`](#properties-1) property bag.
+Get the UI thread dispatcher. 
+It is a shortcut for the [`ReactDispatcherHelper.UIDispatcherProperty`](ReactDispatcherHelper#uidispatcherproperty) from the [`Properties`](#properties-1) property bag.
 
 
 

@@ -39,7 +39,8 @@ When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#useliverelo
 ### DebuggerBreakOnNextLine
  bool `DebuggerBreakOnNextLine`
 
-For direct debugging, whether to break on the next line of JavaScript that is executed.  This can help debug issues hit early in the JavaScript bundle load.<br/>***Note: this is not supported with the Chakra JS engine which is the currently used JavaScript engine***
+For direct debugging, whether to break on the next line of JavaScript that is executed.  This can help debug issues hit early in the JavaScript bundle load.
+***Note: this is not supported with the Chakra JS engine which is the currently used JavaScript engine***
 
 ### DebuggerPort
  uint16_t `DebuggerPort`
@@ -53,7 +54,9 @@ When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the por
 
 **Default value**: `false`
 
-For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.<br/>Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  <br/>[`ByteCodeFileUri`](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
+For JS engines that support bytecode generation, this controls if bytecode should be generated when a JavaScript bundle is first loaded.
+Subsequent runs of the application should be faster as the JavaScript will be loaded from bytecode instead of the raw JavaScript.  
+[`ByteCodeFileUri`](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
 
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
@@ -133,27 +136,36 @@ This controls whether various developer experience features are available for th
 ### UseDirectDebugger
  bool `UseDirectDebugger`
 
-Enables debugging in the JavaScript engine (if supported).  <br/>For Chakra this enables you to debug the JS runtime directly within your app using Visual Studio -> Attach to process (Script)
+Enables debugging in the JavaScript engine (if supported).  
+For Chakra this enables you to debug the JS runtime directly within your app using Visual Studio -> Attach to process (Script)
 
 ### UseFastRefresh
  bool `UseFastRefresh`
 
-Should the instance trigger the hot module reload logic when it first loads the instance.<br/>Most edits should be visible within a second or two without the instance having to reload.<br/>Non-compatible changes still cause full reloads.<br/>See [Fast Refresh](https://reactnative.dev/docs/fast-refresh) for more information on Fast Refresh.
+Should the instance trigger the hot module reload logic when it first loads the instance.
+Most edits should be visible within a second or two without the instance having to reload.
+Non-compatible changes still cause full reloads.
+See [Fast Refresh](https://reactnative.dev/docs/fast-refresh) for more information on Fast Refresh.
 
 ### UseJsi
  bool `UseJsi`
 
-This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. <br/>> **It is not recommended to change this setting.**
+This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. 
+> **It is not recommended to change this setting.**
 
 ### UseLiveReload
  bool `UseLiveReload`
 
-Enable live reload to load the source bundle from the React Native packager.<br/>When the file is saved, the packager will trigger reloading.<br/>**For general use this has been replaced by [`UseFastRefresh`](#usefastrefresh).**
+Enable live reload to load the source bundle from the React Native packager.
+When the file is saved, the packager will trigger reloading.
+**For general use this has been replaced by [`UseFastRefresh`](#usefastrefresh).**
 
 ### UseWebDebugger
  bool `UseWebDebugger`
 
-Should the instance run in a remote environment such as within a browser.<br/>By default, this is using a browser navigated to  http://localhost:8081/debugger-ui served by Metro/Haul.<br/>Debugging will start as soon as the react native instance is loaded.
+Should the instance run in a remote environment such as within a browser.
+By default, this is using a browser navigated to  http://localhost:8081/debugger-ui served by Metro/Haul.
+Debugging will start as soon as the react native instance is loaded.
 
 
 ## Constructors

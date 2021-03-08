@@ -7,7 +7,8 @@ Kind: `interface`
 
 
 
-Builds native module inside of ReactNative code based on the provided meta-data.<br/>See [Native Modules](native-modules) for more usage information.
+Builds native module inside of ReactNative code based on the provided meta-data.
+See [Native Modules](native-modules) for more usage information.
 
 
 
@@ -22,7 +23,9 @@ Adds a constant provider method to define constants for the native module.  See 
 ### AddInitializer
 void **`AddInitializer`**([`InitializerDelegate`](InitializerDelegate) initializer)
 
-Adds an initializer method called on the native module initialization.<br/>It provides the native module with the [`IReactContext`](IReactContext) for the running ReactNative instance.  See [`InitializerDelegate`](InitializerDelegate).<br/>There can be multiple initializer methods which are called in the order they were registered.
+Adds an initializer method called on the native module initialization.
+It provides the native module with the [`IReactContext`](IReactContext) for the running ReactNative instance.  See [`InitializerDelegate`](InitializerDelegate).
+There can be multiple initializer methods which are called in the order they were registered.
 
 
 
