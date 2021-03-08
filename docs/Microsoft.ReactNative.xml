@@ -132,7 +132,7 @@ _In the future more lifecycle events will be added to this object to provide bet
       <summary>Helper methods for the notification service implementation.</summary>
     </member>
     <member name="M:Microsoft.ReactNative.ReactNotificationServiceHelper.CreateNotificationService">
-      <summary>Creates new instance of IReactNotificationService</summary>
+      <summary>Creates a new instance of IReactNotificationService</summary>
     </member>
     <member name="M:Microsoft.ReactNative.RedBoxHelper.CreateDefaultHandler">
       <summary>This provides access to the default <see cref="IRedBoxHandler"/>. This can be used to display the default <c>RedBox</c> as part of a custom <c>RedBoxHandler</c> implementation.</summary>
@@ -339,7 +339,7 @@ The subscription is removed when this object is deleted or the <see cref="Unsubs
     <member name="P:Microsoft.ReactNative.IReactNotificationSubscription.Dispatcher">
       <summary>The <see cref="IReactDispatcher"/> provided when the notification subscription created.
 All notifications will be handled using this dispatcher.
-In case if it is null, the events are handled synchronously.</summary>
+If the dispatcher is null, the events are handled synchronously.</summary>
     </member>
     <member name="P:Microsoft.ReactNative.IReactNotificationSubscription.IsSubscribed">
       <summary>True if the subscription is still active.
@@ -360,16 +360,16 @@ Because of the multi-threaded nature of the notifications, the handler can be st
       <summary>Builds ReactNative package with the set of native modules and view managers.</summary>
     </member>
     <member name="M:Microsoft.ReactNative.IReactPackageBuilder.AddModule">
-      <summary>Adds a custom native module.  See <see cref="ReactModuleProvider"/>.</summary>
+      <summary>Adds a custom native module. See <see cref="ReactModuleProvider"/>.</summary>
     </member>
     <member name="M:Microsoft.ReactNative.IReactPackageBuilder.AddViewManager">
-      <summary>Adds a custom view manager.  See <see cref="ReactViewManagerProvider"/>.</summary>
+      <summary>Adds a custom view manager. See <see cref="ReactViewManagerProvider"/>.</summary>
     </member>
     <member name="T:Microsoft.ReactNative.IReactPackageBuilderExperimental">
       <summary>Experimental extensions to the <see cref="IReactPackageBuilder"/>.</summary>
     </member>
     <member name="M:Microsoft.ReactNative.IReactPackageBuilderExperimental.AddTurboModule">
-      <summary>Adds a custom TurboModule that uses direct access to JS Engine API.</summary>
+      <summary>Adds a custom TurboModule that directly uses the JS Engine API.</summary>
     </member>
     <member name="T:Microsoft.ReactNative.IReactPackageProvider">
       <summary>This interface is to be implemented by package creators.</summary>
@@ -502,7 +502,7 @@ RegisterMyRedBoxHandler()
 >**This documentation and the underlying platform code is a work in progress.**</summary>
     </member>
     <member name="T:Microsoft.ReactNative.IViewManagerCreateWithProperties">
-      <summary>Enables a view manager to create views whose behavior depend on the the property values passed to the view manager at creation time.   For example, a view manager could choose to create different types of UI elements based on the properties passed in.</summary>
+      <summary>Enables a view manager to create views whose behavior depend on the the property values passed to the view manager at creation time. For example, a view manager could choose to create different types of UI elements based on the properties passed in.</summary>
     </member>
     <member name="T:Microsoft.ReactNative.IViewManagerRequiresNativeLayout">
       <summary>Enables a view manager to be responsible for its own layout and sizing.</summary>

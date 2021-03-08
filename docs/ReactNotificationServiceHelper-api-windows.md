@@ -15,7 +15,7 @@ Helper methods for the notification service implementation.
 ### CreateNotificationService
 `static` [`IReactNotificationService`](IReactNotificationService) **`CreateNotificationService`**()
 
-Creates new instance of IReactNotificationService
+Creates a new instance of IReactNotificationService
 
 
 

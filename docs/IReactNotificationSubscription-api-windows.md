@@ -16,7 +16,7 @@ The subscription is removed when this object is deleted or the [`Unsubscribe`](#
 
 The [`IReactDispatcher`](IReactDispatcher) provided when the notification subscription created.
 All notifications will be handled using this dispatcher.
-In case if it is null, the events are handled synchronously.
+If the dispatcher is null, the events are handled synchronously.
 
 ### IsSubscribed
 `readonly`  bool `IsSubscribed`
