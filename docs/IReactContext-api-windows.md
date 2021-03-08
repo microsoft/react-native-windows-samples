@@ -7,13 +7,13 @@ Kind: `interface`
 
 
 
-The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. <br/>It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. <br/>- Use the Properties to share native module's data with other components. <br/>- Use the Notifications to exchange events with other components. <br/>- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events. <br/>- Use [`UIDispatcher`](#uidispatcher) to schedule work in UI thread. <br/>- Use [`JSDispatcher`](#jsdispatcher) to schedule work in UI thread.
+The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. <br/>It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. <br/>- Use the Properties to share native module's data with other components. <br/>- Use the Notifications to exchange events with other components. <br/>- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events. <br/>- Use [`UIDispatcher`](#uidispatcher) to schedule work in the UI thread. <br/>- Use [`JSDispatcher`](#jsdispatcher) to schedule work in the JavaScript thread.
 
 ## Properties
 ### JSDispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `JSDispatcher`
 
-Get the JS thread dispatcher. <br/>It is a shortcut for the `ReactDispatcherHelper::JSDispatcherProperty` from the [`Properties`](#properties-1) property bag.
+Get the JS thread dispatcher. <br/>It is a shortcut for the [`ReactDispatcherHelper.JSDispatcherProperty`](ReactDispatcherHelper#jsdispatcherproperty) from the [`Properties`](#properties-1) property bag.
 
 ### JSRuntime
 `readonly`  Object `JSRuntime`
@@ -38,7 +38,7 @@ Get settings snapshot that were used to start the React instance.
 ### UIDispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
 
-Get the UI thread dispatcher. <br/>It is a shortcut for the `ReactDispatcherHelper::UIDispatcherProperty` from the [`Properties`](#properties-1) property bag.
+Get the UI thread dispatcher. <br/>It is a shortcut for the [`ReactDispatcherHelper.UIDispatcherProperty`](ReactDispatcherHelper#uidispatcherproperty) from the [`Properties`](#properties-1) property bag.
 
 
 
