@@ -237,6 +237,41 @@ This example assumes that the `ViewManagerSample.ReactPackageProvider` we create
 
 The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your view managers directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
+### More extensibility points
+
+- In some scenarios, a view manager might need to have more context at control creation time in order to decide what kind of control to instantiate.
+This is possible by having the view manager implement the `IViewManagerCreateWithProperties` interface. The `CreateWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
+
+```diff
+-internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
++internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>, IViewManagerCreateWithProperties {
+// rest of the view manager goes here...
++  // IViewManagerCreateWithProperties
++  public virtual object CreateWithProperties(Microsoft.ReactNative.IJSValueReader propertyMapReader) {
++    propertyMapReader.ReaderValue(out IDictionary<string, JSValue> propertyMap);
++    // create a XAML FrameworkElement based on properties in propertyMap
++    if (propertyMap.ContainsKey("foo)) { 
++      return new Button(); 
++    } else {
++      return new TextBox();
++    }
++  }
+}
++}
+```
+
+- Your view manager is also able to declare that it wants to be responsible for its own sizing and layout.
+This is useful in scenarios where you are wrapping a native XAML control. To do so, implement the `Microsoft.ReactNative.IViewManagerRequiresNativeLayout` interface:
+
+```diff
+-internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
++internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>, IViewManagerRequiresNativeLayout {
+// rest of the view manager goes here...
++   // IViewManagerRequiresNativeLayout
++   virtual bool RequiresNativeLayout() { return true; }
+```
+
+
 ### 3. Using your View Manager in JSX
 
 `ViewManagerSample.js`:
@@ -481,9 +516,11 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 }
 ```
 
-#### Further extensibility
 
-- In some scenarios, a view manager might need to have more context at control creation time in order to decide what kind of control to instantiate. This is possible by having the view manager implement the `IViewManagerCreateWithProperties` interface:
+### More extensibility points
+
+- In some scenarios, a view manager might need to have more context at control creation time in order to decide what kind of control to instantiate.
+This is possible by having the view manager implement the `IViewManagerCreateWithProperties` interface:
 ```diff
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
@@ -500,6 +537,7 @@ The `CreateWithProperties` method can then access the properties set in JSX by i
 
 
 - Your view manager is also able to declare that it wants to be responsible for its own sizing and layout. This is useful in scenarios where you are wrapping a native XAML control. To do so, implement the `winrt::Microsoft::ReactNative::IViewManagerRequiresNativeLayout` interface:
+
 ```diff
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
@@ -512,6 +550,7 @@ struct CustomUserControlViewManager : winrt::implements<
 +   // IViewManagerRequiresNativeLayout
 +   bool RequiresNativeLayout() { return true; }
 ```
+
 
 ### 2. Registering your View Manager
 
