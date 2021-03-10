@@ -520,7 +520,7 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This is possible by having the view manager implement the `IViewManagerCreateWithProperties` interface:
+This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface:
 ```diff
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
