@@ -47,6 +47,7 @@
       "version-0.63-iviewwindowsprops-api"
     ],
     "Native API (Windows)": [
+      "version-0.63-Native-API-Reference",
       "version-0.63-ijsvaluereader-api",
       "version-0.63-ijsvaluewriter-api",
       "version-0.63-ireactcontext-api",
