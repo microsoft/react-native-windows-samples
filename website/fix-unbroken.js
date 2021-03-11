@@ -63,11 +63,24 @@ console.log('Generating exclusions...');
 
 var exclusions = [];
 
-// Base exclusions
-exclusions.push(normalizePath('!node_modules'));
-exclusions.push(normalizePath('!blog\\2019-*'));
-exclusions.push(normalizePath('!blog\\2020-*'));
-exclusions.push('');
+// Load existing base exclusions
+const existingExclusions = fs.readFileSync('.unbroken_exclusions').toString().split(/\r?\n/) || [];
+
+for (var i = 0; i < existingExclusions.length; i++) {
+    const exclusion = existingExclusions[i].trim();
+
+    if (exclusion === '') {
+        exclusions.push(exclusion);
+    }
+    else if (exclusion.startsWith('#fix-unbroken.js')) {
+        exclusions.push(exclusion);
+        break;
+    }
+    else
+    {
+        exclusions.push(normalizePath(exclusion));
+    }
+}
 
 // Redirected files exclusions
 redirectedFiles.forEach(redirectedFile => {
