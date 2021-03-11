@@ -66,8 +66,8 @@ var exclusions = [];
 // Load existing base exclusions
 const existingExclusions = fs.readFileSync('.unbroken_exclusions').toString().split(/\r?\n/) || [];
 
-for (var i = 0; i < existingExclusions.length; i++) {
-    const exclusion = existingExclusions[i].trim();
+for (let exclusion of existingExclusions) {
+    exclusion = exclusion.trim();
 
     if (exclusion === '') {
         exclusions.push(exclusion);
