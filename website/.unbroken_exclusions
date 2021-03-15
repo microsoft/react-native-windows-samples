@@ -2,6 +2,7 @@
 !blog/2019-*
 !blog/2020-*
 !versioned_docs/version-0.63/*-api-windows*.md
+!versioned_docs/version-0.64/*-api-windows*.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
