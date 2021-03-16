@@ -16,5 +16,3 @@ namespace winrt::Calculator::implementation
         using super = AppT<App>;
     };
 } // namespace winrt::Calculator::implementation
-
-
