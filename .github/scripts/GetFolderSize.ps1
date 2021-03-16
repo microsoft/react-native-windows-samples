@@ -1,7 +1,6 @@
 #
-# GetFolderSize.ps1 is a PowerShell script designed to upgrade the
-# react, react-native, and react-native-windows dependencies of a
-# project to match the specified react-native-windows version
+# GetFolderSize.ps1 is a PowerShell script designed to calculate
+# the total size of a folder in MB
 
 param(
     [string]$location = '.'
