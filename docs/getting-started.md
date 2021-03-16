@@ -36,7 +36,7 @@ Lastly, install the React Native for Windows packages.
 npx react-native-windows-init --overwrite
 ```
 
-> The --overwrite flag is a temporary measure that ensures the correct files are copied to `metro.config.js` for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows/issues/4698).
+> The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
 
 Here are the options that `react-native-windows-init` takes:
 | Option          | Input Type                                  | Description                                      |
@@ -74,6 +74,10 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
   
 - Using Visual Studio
 
+  - From the root of the project directory, run the following script which will automatically link your app's dependencies:
+    ```bat
+    npx react-native autolink-windows
+    ```
   - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln` if you used `AwesomeProject` as `<projectName>`)
   - Select the `Debug` configuration and the `x64` platform from the combo box controls to the left of the `Run` button and underneath the `Team` and `Tools` menu item.
   - Run `yarn start` from your project directory, and wait for the React Native packager to report success.

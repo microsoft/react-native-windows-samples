@@ -4,7 +4,7 @@ title: Native Module Setup
 original_id: native-modules-setup
 ---
 
-> **This documentation and the underlying platform code is a work in progress.**
+> **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
@@ -22,8 +22,8 @@ If you're planning on writing in C++, you *must* install the [C++/WinRT Visual S
 
 Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
-- [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-project)
-- [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
+- [Reference the APIs directly from within a React Native for Windows project](#referencing-windows-apis-within-a-react-native-for-windows-project)
+- [Create a new native module library that can be can be distributed separately from your app](#creating-a-new-native-module-library-project)
 - [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
 ## Referencing Windows APIs within a React Native for Windows project
@@ -104,7 +104,7 @@ yarn add react-native-windows@latest --dev
 
 Now it's time to switch into Visual Studio and create a new project.
 
-> **These steps are unnecessary as of 0.64, as `react-native-windows-init` will create the correct projects and solutions for you. However we have retained the manual process here for developers who are unable to use the CLI.**
+> **These are the version specific manual steps for setting up the native projects and solutions. If you upgrade your module to RN >= 0.64, the `react-native-windows-init` command can create the correct projects and solutions for you, using the `--projectType lib` flag.**
 
 Open Visual Studio and select `Create a new project`. You're going to create a new `Windows Runtime Component` project, which produces a library that is compatible with Windows UWP apps.
 

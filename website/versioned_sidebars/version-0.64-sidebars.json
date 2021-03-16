@@ -1,0 +1,75 @@
+{
+  "version-0.64-docs": {
+    "The Basics (Windows)": [
+      "version-0.64-getting-started",
+      "version-0.64-rnw-dependencies",
+      "version-0.64-parity-status",
+      "version-0.64-config",
+      "version-0.64-windowsbrush-and-theme",
+      "version-0.64-releases",
+      "version-0.64-platform"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.64-native-modules",
+      "version-0.64-view-managers",
+      "version-0.64-native-modules-setup",
+      "version-0.64-native-modules-using",
+      "version-0.64-native-modules-autolinking",
+      "version-0.64-native-modules-advanced",
+      "version-0.64-supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "version-0.64-native-code",
+      "version-0.64-native-code-language-choice",
+      "version-0.64-native-modules-marshalling-data",
+      "version-0.64-native-modules-async",
+      "version-0.64-native-modules-jsvalue",
+      "version-0.64-native-modules-csharp-codegen",
+      "version-0.64-win10-vm"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.64-rnm-getting-started",
+      "version-0.64-rnm-dependencies"
+    ],
+    "Troubleshooting": [
+      "version-0.64-native-modules-troubleshooting",
+      "version-0.64-metro-config-out-tree-platforms"
+    ],
+    "Experimental": [
+      "version-0.64-hermes",
+      "version-0.64-nuget",
+      "version-0.64-nuget-update",
+      "version-0.64-winui3"
+    ]
+  },
+  "version-0.64-apis": {
+    "Components (Windows)": [
+      "version-0.64-flyout-component",
+      "version-0.64-glyph-component",
+      "version-0.64-popup-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.64-apptheme-api",
+      "version-0.64-ikeyboardprops-api",
+      "version-0.64-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.64-IJSValueReader",
+      "version-0.64-IJSValueWriter",
+      "version-0.64-IReactContext",
+      "version-0.64-IReactDispatcher",
+      "version-0.64-IReactModuleBuilder",
+      "version-0.64-IReactNonAbiValue",
+      "version-0.64-IReactPackageBuilder",
+      "version-0.64-IReactPackageProvider",
+      "version-0.64-IReactPropertyBag",
+      "version-0.64-IRedBoxHandler",
+      "version-0.64-IViewManager",
+      "version-0.64-ReactApplication",
+      "version-0.64-ReactInstanceSettings",
+      "version-0.64-ReactNativeHost",
+      "version-0.64-XamlUIService",
+      "version-0.64-Native-API-Reference"
+    ]
+  }
+}

@@ -15,15 +15,16 @@
       "native-modules-setup",
       "native-modules-using",
       "native-modules-autolinking",
+      "native-modules-advanced",
+      "supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "native-code",
+      "native-code-language-choice",
       "native-modules-marshalling-data",
       "native-modules-async",
       "native-modules-jsvalue",
-      "native-modules-advanced",
-      "native-modules-troubleshooting",
       "native-modules-csharp-codegen",
-      "supported-community-modules",
-      "native-code",
-      "native-code-language-choice",
       "win10-vm"
     ],
     "The Basics (MacOS)": [
@@ -31,6 +32,7 @@
       "rnm-dependencies"
     ],
     "Troubleshooting": [
+      "native-modules-troubleshooting",
       "metro-config-out-tree-platforms"
     ],
     "Experimental" : [

@@ -3,7 +3,7 @@ id: native-modules-setup
 title: Native Module Setup
 ---
 
-> **This documentation and the underlying platform code is a work in progress.**
+> **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
@@ -19,8 +19,8 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
-- [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-app-project)
-- [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
+- [Reference the APIs directly from within a React Native for Windows project](#referencing-windows-apis-within-a-react-native-for-windows-app-project)
+- [Create a new native module library that can be can be distributed separately from your app](#creating-a-new-native-module-library-project)
 - [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
 ## Referencing Windows APIs within a React Native for Windows app project
