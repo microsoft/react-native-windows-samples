@@ -28,6 +28,10 @@ jobs:
       - name: Relocate to reduce long paths
         run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
 
+      - name: Get starting folder size
+        run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+        working-directory: ..\..\src
+
       - name: Yarn install
         run: yarn install --frozen-lockfile
         working-directory: ..\..\src
@@ -40,5 +44,9 @@ jobs:
       - name: Build ${{ matrix.architecture }} Release
         if: ${{ matrix.configuration == 'Release' }}
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --release --arch ${{ matrix.architecture }}
+        working-directory: ..\..\src
+
+      - name: Get final folder size
+        run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
         working-directory: ..\..\src
   
