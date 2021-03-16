@@ -2,7 +2,6 @@
 
 #include "winrt/Microsoft.ReactNative.h"
 
-
 namespace winrt::CameraDemo::implementation
 {
     struct ReactPackageProvider : winrt::implements<ReactPackageProvider, winrt::Microsoft::ReactNative::IReactPackageProvider>
@@ -11,5 +10,4 @@ namespace winrt::CameraDemo::implementation
         void CreatePackage(winrt::Microsoft::ReactNative::IReactPackageBuilder const &packageBuilder) noexcept;
     };
 } // namespace winrt::CameraDemo::implementation
-
 

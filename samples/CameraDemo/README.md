@@ -11,7 +11,7 @@
 
 This sample showcases the usage of React Native for Windows to build an app which consumes an external community module, in this case, [react-native-camera](https://github.com/react-native-community/react-native-camera).
 
-It currently targets React Native Windows 0.63.
+It currently targets React Native Windows 0.64.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
