@@ -328,5 +328,4 @@ void **`SymbolToUtf8`**([`JsiSymbolRef`](JsiSymbolRef) symbol, [`JsiByteArrayUse
 
 ## Referenced by
 - [`IJsiHostObject`](IJsiHostObject)
-- [`IReactContext`](IReactContext)
 - [`JsiHostFunction`](JsiHostFunction)

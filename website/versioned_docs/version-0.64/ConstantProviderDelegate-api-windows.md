@@ -6,7 +6,7 @@ original_id: ConstantProviderDelegate
 
 Kind: `delegate`
 
-A delegate to gather constants from native modules.
+A delegate to gather constants for the native module.
 
 ## Invoke
 void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) constantWriter)
