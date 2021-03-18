@@ -3,13 +3,13 @@ id: native-modules-setup
 title: Native Module Setup
 ---
 
-> **This documentation and the underlying platform code is a work in progress.**
+> **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
 
-This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `MyLibrary` native module.
+This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
 
 ## Development Environment
 
@@ -19,8 +19,8 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
-- [Reference the APIs directly from within a React Native for Windows project](#Referencing-Windows-APIs-within-a-React-Native-for-Windows-app-project)
-- [Create a new native module library that can be can be distributed separately from your app](#Creating-a-new-native-module-library-project)
+- [Reference the APIs directly from within a React Native for Windows project](#referencing-windows-apis-within-a-react-native-for-windows-app-project)
+- [Create a new native module library that can be can be distributed separately from your app](#creating-a-new-native-module-library-project)
 - [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
 ## Referencing Windows APIs within a React Native for Windows app project
@@ -44,18 +44,18 @@ The steps to create a new native module library project are:
 Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup.
 
 ```bat
-npx create-react-native-module --module-name "MyLibrary" MyLibrary
-cd MyLibrary
+npx create-react-native-module --module-name "NativeModuleSample" NativeModuleSample
+cd NativeModuleSample
 yarn install
 ```
 
-Now you'll have a new native module project under `MyLibrary`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
+Now you'll have a new native module project under `NativeModuleSample`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
 
 At this point, follow the steps below to add Windows support to the newly created library.
 
 ## Adding Windows support to an existing library
 
-> The steps below are written as if you're working with the `MyLibrary` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
+> The steps below are written as if you're working with the `NativeModuleSample` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
 
 ### Updating your `package.json`
 
@@ -65,49 +65,49 @@ Many native module libraries (including the default library template) target old
 >
 > For more information on how NPM dependencies work, see [Specifying dependencies and `devDependencies` in a `package.json` file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
-You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest `canary` version of `react-native-windows`.
+You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest stable version of `react-native-windows`.
 
 Use the following command to find the matching versions of `react`:
 
 ```bat
-npm info react-native-windows@canary devDependencies.react
+npm info react-native-windows@latest devDependencies.react
 ```
 
-Take the result of that command (let's say it's `16.13.1`) and use it to upgrade the dev dependency:
+Take the result of that command (let's say it's `x.y.z`) and use it to upgrade the dev dependency:
 
 ```bat
-yarn upgrade react@16.13.1 --dev
+yarn upgrade react@x.y.z --dev
 ```
 
 You'll need to repeat the steps for `react-native`, i.e.:
 
 ```bat
-npm info react-native-windows@canary devDependencies.react-native
+npm info react-native-windows@latest devDependencies.react-native
 ```
 
-Again, take the result of that command (let's say it's `0.0.0-a36d9cd7e`) and use it to upgrade the dev dependency:
+Again, take the result of that command (let's say it's `0.x.y`) and use it to upgrade the dev dependency:
 
 ```bat
-yarn upgrade react-native@0.0.0-a36d9cd7e --dev
+yarn upgrade react-native@0.x.y --dev
 ```
 
 Now you should be ready to add Windows support with `react-native-windows-init`. The process is similar to adding Windows support to an app project, but you'll need to specify `--projectType lib`:
 
 ```bat
-npx react-native-windows-init --version canary --projectType lib --overwrite
+npx react-native-windows-init --version latest --projectType lib --overwrite
 ```
 
 This defaults to a C++/WinRT project. If you want to create a C# based native module project, use:
 
 ```bat
-npx react-native-windows-init --version canary --projectType lib --language cs --overwrite
+npx react-native-windows-init --version latest --projectType lib --language cs --overwrite
 ```
 
-That's it, you should be able to open `windows\MyLibrary.sln` and start working on your project.
+That's it, you should be able to open `windows\NativeModuleSample.sln` and start working on your project.
 
 ### Testing your Build
 
-To make sure that everything is working, you'll want to try building `MyLibrary`. First you'll want to make sure you've chosen a supported platform:
+To make sure that everything is working, you'll want to try building `NativeModuleSample`. First you'll want to make sure you've chosen a supported platform:
 
 1. At the top, change the `Solution Platform` to `x86` or `x64`.
 1. In the `Build` menu, select `Build Solution`.
@@ -137,7 +137,7 @@ If you are writing a C++/WinRT module and have added any NuGet package dependenc
 
 #### Option 1: Create a new test app
 1. Follow the [getting started guide](getting-started.md) to create a new React Native Windows app.
-2. Run `npm i <module-local-path> --save` (e.g. `npm i D:\MyLibrary --save`) to install the local module.
+2. Run `npm i <module-local-path> --save` (e.g. `npm i D:\NativeModuleSample --save`) to install the local module.
 3. [Link the native module](native-modules-using.md).
 
 #### Option 2: Adding Windows support to existing sample app
@@ -156,7 +156,7 @@ If you are working on an existing module that already has iOS and Android sample
 8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
-We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium), there's also a comprehensive [course on PluralSight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
+We are using WebdriverIO + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium). For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
 
 ### Setup CI (continuous integration) pipeline for your module
 
@@ -173,34 +173,18 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '12.9.1'
+        node-version: '14'
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v1.0.2
       with:
-        vs-version: 16.5
-
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1
-
-    - name: Check node modules cache
-      uses: actions/cache@v1
-      id: yarn-cache
-      with:
-        path: ./node_modules
-        key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+        vs-version: 16.8
 
     - name: Install node modules
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn --pure-lockfile
+      run: yarn --frozen-lockfile
 
     - name: yarn build
-      if: steps.yarn-cache.outputs.cache-hit == 'true'
-      run: |
-        yarn build
-        yarn tsc
+      run:  yarn build
 ```
 - Build and run the project
 ```yaml
@@ -223,3 +207,6 @@ Add the YAML file to `.github\workflows\` and then commit. To know more about th
 > GitHub Actions should be enabled by default, if it's not enabled for some reason you can go to Settings->Actions tab of the repo to enable it (requires owner access).
 
 Now push your changes and the CI pipeline should be up and running.
+
+### Documenting Your Module
+Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that its information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples] with your native module's information.

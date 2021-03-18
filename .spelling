@@ -73,3 +73,5 @@ theming
 RNW-on-WinUI
 preprocessor
 ItemGroup
+WebdriverIO
+exclusionList

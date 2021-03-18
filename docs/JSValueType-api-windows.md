@@ -5,6 +5,8 @@ title: JSValueType
 
 Kind: `enum`
 
+Type of value read by [`IJSValueReader`](IJSValueReader).
+
 | Name |  Value | Description |
 |--|--|--|
 |`Null` | 0x0  |  |

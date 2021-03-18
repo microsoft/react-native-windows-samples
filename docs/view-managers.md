@@ -7,7 +7,7 @@ title: Native UI Components
 > **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
 
 There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like `ScrollView` and `TextInput`, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, we can wrap up these existing components for seamless integration with your React Native application.
 
@@ -121,7 +121,7 @@ namespace ViewManagerSample
 </ResourceDictionary>
 ```
 
-#### 1. Authoring your View Manager
+### 1. Authoring your View Manager
 
 Here is a sample view manager written in C# called `CustomUserControlViewManager`.
 
@@ -136,14 +136,14 @@ using System.Collections.Generic;
 
 namespace ViewManagerSample
 {
-    internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControlCS>
+    internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>
     {
         [ViewManagerProperty("label")]
         public void SetLabel(CustomUserControl view, view, string value)
         {
             if (null != value)
             {
-                view.SetValue(CustomUserControl.LabelProperty, value);
+                view.Label = value;
             }
             else
             {
@@ -156,7 +156,7 @@ namespace ViewManagerSample
         {
             if (null != value)
             {
-                view.SetValue(Control.ForegroundProperty, value);
+                view.Foreground = value;
             }
             else
             {
@@ -169,7 +169,7 @@ namespace ViewManagerSample
         {
             if (null != value)
             {
-                view.SetValue(Control.BackgroundProperty, value);
+                view.Background = value;
             }
             else
             {
@@ -186,7 +186,7 @@ namespace ViewManagerSample
 }
 ```
 
-#### 2. Registering your View Manager
+### 2. Registering your View Manager
 
 As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
@@ -237,7 +237,42 @@ This example assumes that the `ViewManagerSample.ReactPackageProvider` we create
 
 The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your view managers directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
-#### 3. Using your View Manager in JSX
+### More extensibility points
+
+- In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
+This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface. The `CreateWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
+
+```diff
+-internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
++internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>, IViewManagerCreateWithProperties {
+// rest of the view manager goes here...
++  // IViewManagerCreateWithProperties
++  public virtual object CreateWithProperties(Microsoft.ReactNative.IJSValueReader propertyMapReader) {
++    propertyMapReader.ReaderValue(out IDictionary<string, JSValue> propertyMap);
++    // create a XAML FrameworkElement based on properties in propertyMap
++    if (propertyMap.ContainsKey("foo)) { 
++      return new Button(); 
++    } else {
++      return new TextBox();
++    }
++  }
+}
++}
+```
+
+- Your view manager is also able to declare that it wants to be responsible for its own sizing and layout.
+This is useful in scenarios where you are wrapping a native XAML control. To do so, implement the `Microsoft.ReactNative.IViewManagerRequiresNativeLayout` interface:
+
+```diff
+-internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
++internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>, IViewManagerRequiresNativeLayout {
+// rest of the view manager goes here...
++   // IViewManagerRequiresNativeLayout
++   virtual bool RequiresNativeLayout() { return true; }
+```
+
+
+### 3. Using your View Manager in JSX
 
 `ViewManagerSample.js`:
 
@@ -294,13 +329,13 @@ AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
 
 For this sample, assume we already have the `CustomUserControl` defined in the C# example.
 
-#### 1. Authoring your View Manager
+### 1. Authoring your View Manager
 
 Here is a sample view manager written in C++ called `CustomUserControlViewManager`.
 
 `CustomUserControlViewManager.h`:
 
-```c++
+```cpp
 #pragma once
 
 #include "pch.h"
@@ -313,7 +348,9 @@ struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
                                              winrt::Microsoft::ReactNative::IViewManager,
                                              winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
-                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands> {
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
  public:
   CustomUserControlViewManager() = default;
 
@@ -331,13 +368,26 @@ struct CustomUserControlViewManager : winrt::implements<
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
       winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader) noexcept;
 
-   // IViewManagerWithCommands
+  // IViewManagerWithCommands
   winrt::Windows::Foundation::Collections::IVectorView<winrt::hstring> Commands() noexcept;
 
   void DispatchCommand(
       winrt::Windows::UI::Xaml::FrameworkElement const &view,
       winrt::hstring const &commandId,
       winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept;
+
+  // IViewManagerWithExportedEventTypeConstants
+  winrt::Microsoft::ReactNative::ConstantProviderDelegate ExportedCustomBubblingEventTypeConstants() noexcept;
+
+  winrt::Microsoft::ReactNative::ConstantProviderDelegate ExportedCustomDirectEventTypeConstants() noexcept;
+
+  // IViewManagerWithReactContext
+  winrt::Microsoft::ReactNative::IReactContext ReactContext() noexcept;
+
+  void ReactContext(winrt::Microsoft::ReactNative::IReactContext reactContext) noexcept;
+
+private:
+  winrt::Microsoft::ReactNative::IReactContext m_reactContext{ nullptr };
 };
 
 }
@@ -345,11 +395,12 @@ struct CustomUserControlViewManager : winrt::implements<
 
 `CustomUserControlViewManager.cpp`:
 
-```c++
+```cpp
 #include "pch.h"
 #include "CustomUserControlViewManager.h"
 
 #include "JSValueReader.h"
+#include "JSValueXaml.h"
 #include "NativeModules.h"
 
 using namespace winrt;
@@ -397,19 +448,19 @@ void CustomUserControlViewManager::UpdateProperties(
       if (propertyName == "label") {
         if (propertyValue != nullptr) {
           auto const &value = winrt::box_value(winrt::to_hstring(propertyValue.String()));
-          control.SetValue(winrt::ViewManagerSample::CustomUserControl::LabelProperty(), propertyValue);
+          control.Label(value);
         } else {
           control.ClearValue(winrt::ViewManagerSample::CustomUserControl::LabelProperty());
         }
       } else if (propertyName == "color") {
         if (auto value = propertyValue.To<Brush>()) {
-          control.SetValue(Control::ForegroundProperty(), value);
+          control.Foreground(value);
         } else {
           control.ClearValue(Control::ForegroundProperty());
         }
       } else if (propertyName == "backgroundColor") {
         if (auto value = propertyValue.To<Brush>()) {
-          control.SetValue(Control::BackgroundProperty(), value);
+          control.Background(value);
         } else {
           control.ClearValue(Control::BackgroundProperty());
         }
@@ -429,7 +480,7 @@ void CustomUserControlViewManager::DispatchCommand(
     FrameworkElement const &view,
     winrt::hstring const &commandId,
     winrt::Microsoft::ReactNative::IJSValueReader const &commandArgsReader) noexcept {
-  if (auto control = view.try_as<winrt::SampleLibraryCPP::CustomUserControlCPP>()) {
+  if (auto control = view.try_as<winrt::ViewManagerSample::CustomUserControl>()) {
     if (commandId == L"CustomCommand") {
       const JSValueArray &commandArgs = JSValue::ReadArrayFrom(commandArgsReader);
       // Execute command
@@ -437,16 +488,77 @@ void CustomUserControlViewManager::DispatchCommand(
   }
 }
 
+// IViewManagerWithExportedEventTypeConstants
+ConstantProviderDelegate CustomUserControlViewManager::ExportedCustomBubblingEventTypeConstants() noexcept {
+  return [](winrt::Microsoft::ReactNative::IJSValueWriter const& constantWriter) {
+    // use constantWriter to define bubbling events, see ExportedCustomDirectEventTypeConstants
+  }
+}
+
+ConstantProviderDelegate CustomUserControlViewManager::ExportedCustomDirectEventTypeConstants() noexcept {
+  return [](winrt::Microsoft::ReactNative::IJSValueWriter const& constantWriter) {
+    constantWriter.WritePropertyName(L"topMyEvent");
+    constantWriter.WriteObjectBegin();
+    WriteProperty(constantWriter, L"registrationName", L"onMyEvent");
+    constantWriter.WriteObjectEnd();
+  };
+}
+
+// IViewManagerWithReactContext
+IReactContext CustomUserControlViewManager::ReactContext() noexcept {
+  return m_reactContext;
+}
+
+void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noexcept {
+  m_reactContext = reactContext;
+}
+
 }
 ```
 
-#### 2. Registering your View Manager
+
+### More extensibility points
+
+- In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
+This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface:
+```diff
+struct CustomUserControlViewManager : winrt::implements<
+                                             CustomUserControlViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,
++                                             winrt::Microsoft::ReactNative::IViewManagerCreateWithProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
++  // IViewManagerCreateWithProperties
++  winrt::Windows::Foundation::IInspectable CreateWithProperties(winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader);
+```
+The `CreateWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader` just like it is done in the `UpdateProperties` method.
+
+
+- Your view manager is also able to declare that it wants to be responsible for its own sizing and layout. This is useful in scenarios where you are wrapping a native XAML control. To do so, implement the `winrt::Microsoft::ReactNative::IViewManagerRequiresNativeLayout` interface:
+
+```diff
+struct CustomUserControlViewManager : winrt::implements<
+                                             CustomUserControlViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManager,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithNativeProperties,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithCommands,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithExportedEventTypeConstants,
++                                             winrt::Microsoft::ReactNative::IViewManagerRequiresNativeLayout,
+                                             winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
++   // IViewManagerRequiresNativeLayout
++   bool RequiresNativeLayout() { return true; }
+```
+
+
+### 2. Registering your View Manager
 
 As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 `ReactPackageProvider.idl`:
 
-```c++
+```cpp
 namespace ViewManagerSample
 {
     [webhosthidden]
@@ -517,7 +629,7 @@ Now that we have the `ReactPackageProvider`, it's time to register it within our
 
 `App.cpp`:
 
-```c++
+```cpp
 #include "pch.h"
 
 #include "App.h"
@@ -543,7 +655,7 @@ This example assumes that the `ViewManagerSample::ReactPackageProvider` we creat
 
 The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your native modules directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
-#### 3. Using your View Manager in JSX
+### 3. Using your View Manager in JSX
 
 `ViewManagerSample.js`:
 

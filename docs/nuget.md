@@ -58,7 +58,7 @@ Of course all the other flags still work.
       ```xml
       <ItemGroup>
         <PackageReference Include="Microsoft.ReactNative.Managed">
-          <Version>0.63.0</Version>
+          <Version>0.64.0</Version>
         </PackageReference>
       </ItemGroup>
       ```
@@ -86,4 +86,4 @@ Of course all the other flags still work.
       > Note: You'll need to match the NuGet version with the npm version
 
 # Version match
-The versions of the NuGet package in your project must match the npm package version. If you need to update the NuGet packages there is a separate page on [Updating NuGet packages](NuGet-update.md)
+The versions of the NuGet package in your project must match the npm package version. If you need to update the NuGet packages there is a separate page on [Updating NuGet packages](nuget-update.md)
