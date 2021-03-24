@@ -10,11 +10,11 @@ A common scenario for [Native Modules](native-modules.md) is to call one or more
 
 This document proposes some best patterns to follow when bridging asynchronous methods from JS to native code for React Native Windows. It assumes you've already familiar with the basics of setting up and writing [Native Modules](native-modules.md).
 
-> The complete source for the examples below are provided within the [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample).
+> The complete source for the examples below are provided within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample).
 
 ## Writing Native Modules that call Asynchronous Windows APIs
 
-Let's write a native module which uses asynchronous Windows APIs to perform a simple HTTP request. We'll call it `SimpleHttpModule` and it needs a single, promise-based method named `GetHttpResponse` that takes a uri string as a parameter and on success returns an object with both the HTTP status code and text content.
+Let's write a native module which uses asynchronous Windows APIs to perform a simple HTTP request. We'll call it `SimpleHttpModule` and it needs a single, promise-based method named `GetHttpResponse` that takes a URI string as a parameter and on success returns an object with both the HTTP status code and text content.
 
 In the end, we'll want to call the method from JS as follows:
 
@@ -24,11 +24,11 @@ NativeModules.SimpleHttpModule.GetHttpResponse('https://microsoft.github.io/reac
   .catch(error => console.log(error));
 ```
 
-### SimpleHttpModule in C#
+### `SimpleHttpModule` in C#
 
-The native module support for C# supports the common async patterns established in C# using `async`, `await` and `Task<T>`.
+The native module support for C# supports the common asynchronous programming patterns established in C# using `async`, `await` and `Task<T>`.
 
-To expose the module to JavaScript you need to declare a C# class. To indicate it should be exposed to JavaScript, you annotate with an [attribute](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/attributes) like:
+To expose the module to JavaScript you need to declare a C# class. To indicate it should be exposed to JavaScript, you annotate with a `[ReactModule]`  [attribute](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/attributes) like:
 
 ```c#
 namespace NativeModuleSample
@@ -51,7 +51,7 @@ This makes an object available to JavaScript via the expression `NativeModules.S
   }
 ```
 
-Now we want to expose the method that performs the HTTP request. It is recommended, and it is the default, to write these functions asynchronously. Writing async code in C# is pretty straight-forward and intuitive with the `async` and `await` keywords and the `Task<T>` types. 
+Now we want to expose the method that performs the HTTP request. It is recommended, and it is the default, to write these functions asynchronously. Writing asynchronous code in C# is pretty straight-forward and intuitive with the `async` and `await` keywords and the `Task<T>` types. 
 
 > If you're not familiar with writing asynchronous C# code, see [Call asynchronous APIs in C# or Visual Basic](https://docs.microsoft.com/en-us/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic) and [Asynchronous programming](https://docs.microsoft.com/en-us/dotnet/csharp/async) that will teach you the concepts if you are not familiar yet.
 
@@ -73,7 +73,6 @@ You are now free to fill in the logic like:
       // Send the GET request asynchronously
       var httpResponseMessage = await httpClient.GetAsync(new Uri(uri));
 
-      var statusCode = httpResponseMessage.StatusCode;
       var content = await httpResponseMessage.Content.ReadAsStringAsync();
       
       return content;
@@ -87,7 +86,7 @@ The code takes the following steps:
 5. returns the content
 
 This code only returns a string. You might want to return a more complex object that contains both the content and the status code.
-For that you can simply declare a C# struct that will be marshalled to JavasScript like:
+For that you can simply declare a C# `struct` that will be marshaled to JavaScript like:
 
 ```cs
   internal struct Result {
@@ -96,16 +95,18 @@ For that you can simply declare a C# struct that will be marshalled to JavasScri
   }
 ```
 
-It is recommended to follow JavaScript naming conventions here as of now there is no auto-mapping of names between the common style guides of C# and Js
+It is recommended to follow JavaScript naming conventions here as of now there is no auto-mapping of names between the common style guides of C# and JS
 
 To return the value you'll of course have to update the signature of the method from returning a `string` to the `Result`:
 
 ```cs
     public async Task<Result> GetHttpResponseAsync(string uri) {
 ```
-as well as update the return statement from `return content;` to:
+as well as store the status code and update the return statement from `return content;` to:
 
 ```cs
+      var statusCode = httpResponseMessage.StatusCode;
+
       return new Result()
       {
         statusCode = (int)statusCode,
@@ -113,11 +114,11 @@ as well as update the return statement from `return content;` to:
       };
 ```
 
-But wait, we've only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to JavaScript? That is actually taken care of for you by the framework: any exception in the task will be marshalled to the JavaScript side as a JavaScript exception.
+But wait, we've only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example. If an exception is thrown, how do we marshal an error back to JavaScript? That is actually taken care of for you by the framework: any exception in the task will be marshaled to the JavaScript side as a JavaScript exception.
 
-That's it! If you want to see the complete `SimpleHttpModule`, see [AsyncMethodExamples.cs](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
+That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.cs`](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
 
-### SimpleHttpModule in C++/WinRT
+### `SimpleHttpModule` in C++/WinRT
 
 Let's start with the asynchronous native method which performs the HTTP request:
 
@@ -138,13 +139,13 @@ static winrt::Windows::Foundation::IAsyncAction GetHttpResponseAsync(std::wstrin
 }
 ```
 
-The `GetHttpResponseAsync` method is pretty straight-forward at this point, it takes a `wstring` uri and "returns" an `IAsyncAction` (which is to say, the method is asynchronous and doesn't actually return a value when it's done).
+The `GetHttpResponseAsync` method is pretty straight-forward at this point, it takes a `wstring` URI and "returns" an `IAsyncAction` (which is to say, the method is asynchronous and doesn't actually return a value when it's done).
 
 > If you're not familiar with writing asynchronous C++/WinRT code, see [Concurrency and asynchronous operations with C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 Inside `GetHttpResponseAsync`, we see it:
 1. Creates a `HttpClient`.
-2. Asynchronous calls the `GetAsync` method to make an HTTP request for the uri.
+2. Asynchronous calls the `GetAsync` method to make an HTTP request for the URI.
 3. Parses the status code out of the returned `HttpResponseMessage` object.
 4. Asynchronously parses the content out of the returned `HttpResponseMessage` object.
 
@@ -171,9 +172,9 @@ Here we simply define `SimpleHttpModule` with an empty `GetHttpResponse` method.
 
 Notice the method itself is `void` and that the last parameter in the signature is of type `ReactPromise<JSValueObject>`. This indicates to React Native Windows that we want a promise-based method in JS, and that the expected return value of a success is of type `JSValueObject`.
 
-All method parameters before this final promise are the input parameters we expect to be marshalled in from the JS. In this case, we want a single string for the uri to request.
+All method parameters before this final promise are the input parameters we expect to be marshaled in from the JS. In this case, we want a single string for the URI to request.
 
-The `promise` object is our interface for handling the promise and marshalling a result to the JS. To do so we simply call `promise.Resolve()` with the result object (if the operation was a success) or `promise.Reject()` with an error (if the operation failed).
+The `promise` object is our interface for handling the promise and marshaling a result to the JS. To do so we simply call `promise.Resolve()` with the result object (if the operation was a success) or `promise.Reject()` with an error (if the operation failed).
 
 Now that we know how to return results, let's prep `GetHttpResponseAsync` to take in a `ReactPromise<JSValueObject>` parameter and use it:
 
@@ -203,7 +204,7 @@ static winrt::Windows::Foundation::IAsyncAction GetHttpResponseAsync(std::wstrin
 }
 ```
 
-What have we done here? First off, we've "captured" the `promise` locally within the asynchronous method by copying it into `capturedPromise`. We do this because this is an asynchornous method calling other asynchronous methods, and otherwise we risk the `ReactPromise` object getting deleted prematurely by React Native Windows.
+What have we done here? First off, we've "captured" the `promise` locally within the asynchronous method by copying it into `capturedPromise`. We do this because this is an asynchronous method calling other asynchronous methods, and otherwise we risk the `ReactPromise` object getting deleted prematurely by React Native Windows.
 
 > **Important:** Our only input parameter in this example is a `wstring`, but if your method uses `JSValue`, `JSValueArray`, or `JSValueObject` parameter types, you'll need to "capture" those with a copy too. Example:
 > ```cpp
@@ -252,8 +253,8 @@ void GetHttpResponse(std::wstring uri,
 }
 ```
 
-We've defined an `AsyncActionCompletedHandler` lambda and set it to be run when `asyncOp` completes. Here we check if the action failed (ie `status == AsyncStatus::Error`) and if so, we build a `ReactError` object where the message contains both the error code (a Windows `HRESULT`) and the error message for that code. Then we pass that error to `promise.Reject()`, thereby marshalling the error back to the JS.
+We've defined an `AsyncActionCompletedHandler` lambda and set it to be run when `asyncOp` completes. Here we check if the action failed (i.e. `status == AsyncStatus::Error`) and if so, we build a `ReactError` object where the message contains both the error code (a Windows `HRESULT`) and the error message for that code. Then we pass that error to `promise.Reject()`, thereby marshaling the error back to the JS.
 
 > **Important:** This example shows the minimum case, where you don't handle any errors within `GetHttpResponseAsync`, but you're not limited to this. You're free to detect error conditions within your code and call `capturedPromise.Reject()` yourself with (more useful) error messages at any time. However you should *always* include this final handler, to catch any unexpected and unhandled exceptions that may occur, especially when calling Windows APIs. Just be sure that you only call `Reject()` once and that nothing executes afterwards.
 
-That's it! If you want to see the complete `SimpleHttpModule`, see [AsyncMethodExamples.h](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/cppwinrt/windows/NativeModuleSample/AsyncMethodExamples.h).
+That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.h`](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/cppwinrt/windows/NativeModuleSample/AsyncMethodExamples.h).

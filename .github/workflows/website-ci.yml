@@ -20,11 +20,11 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@v2
     - name: Check for Broken Links (Docs)
-      run: npx unbroken
+      run: npx unbroken --parse-ids
       working-directory: ./docs
     - name: Check for Broken Links (Website)
       if: success() || failure()
-      run: npx unbroken
+      run: npx unbroken --parse-ids
       working-directory: ./website
     - name: Yarn Install (Website)
       if: success() || failure()

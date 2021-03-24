@@ -7,7 +7,7 @@ title: Native Modules
 > **Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/microsoft-reactnative-sampleapps)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
 
 Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to re-implement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 
@@ -25,7 +25,7 @@ Native modules contain (or wrap) native code which can then be exposed to JS. To
    1. Add the package to your React Native application.
 1. Use your native module from your JavaScript code.
 
-React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [C# vs. C++ for Native Modules](native-code.md#c-vs-c-for-native-modules) note for more information about which to choose. 
+React Native for Windows supports authoring native modules in both C# and C++. Examples of both are provided below. Please see the [Choosing C++ or C# for native code](native-code-language-choice.md) note for more information about which to choose. 
 
 > NOTE: If you are unable to use the reflection-based annotation approach, you can define native modules directly using the ABI. This is outlined in the [Writing Native Modules without using Attributes](native-modules-advanced.md) document.
 
@@ -49,6 +49,7 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactConstant`         | Specifies a field or property that represents a constant. |
 | `ReactConstantProvider` | Specifies a method that provides a set of constants.      |
 | `ReactEvent`            | Specifies a field or property that represents an event.   |
+| `ReactStruct`           | Specifies a `struct` that can be used in native methods.    |
 
 ### 1. Authoring your Native Module
 
@@ -238,6 +239,7 @@ For events, you'll see that we created an instance of `NativeEventEmitter` passi
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
+| `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
 
 ### 1. Authoring your Native Module
 
@@ -343,7 +345,7 @@ See: [`MessageQueue.js`](https://github.com/facebook/react-native/blob/e27d656ef
 
 To add custom events, we attribute a `std::function<void(double)>` delegate with `REACT_EVENT`, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `REACT_EVENT(AddEvent, "addEvent")`.
 
-#### 2. Registering your Native Module
+### 2. Registering your Native Module
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 

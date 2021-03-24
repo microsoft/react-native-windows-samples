@@ -1,142 +1,93 @@
 ---
-id: ijsvaluewriter-api
+id: IJSValueWriter
 title: IJSValueWriter
 ---
 
-``IJSValueWriter`` is used to read data from JavaScript in custom native modules.  It acts as a stream.
+Kind: `interface`
 
-``IJSValueWriter`` supports the following types:
 
-```
-  enum JSValueType {
-    Null,
-    Object,
-    Array,
-    String,
-    Boolean,
-    Int64,
-    Double,
-  };
-```
-# Reference
+
+JSON-like stream writer.<br/>It is used to write data that is sent between native modules and the Microsoft.ReactNative.dll.<br/><br/>The JSON-like streams are data structures that satisfy the [JSON specification](https://tools.ietf.org/html/rfc8259). The data structure may have objects with name-value pairs and arrays of items. Property values or array items can be of type `Null`, `Object`, `Array`, `String`, `Boolean`, or `Number`. The `IJSValueWriter` treats the `Number` type as `Int64` or `Double`. See [`JSValueType`](JSValueType).<br/><br/>See the [`IJSValueReader`](IJSValueReader) for the corresponding reader interface.<br/><br/>The [`IJSValueReader`](IJSValueReader) and [`IJSValueWriter`](IJSValueWriter) must be rarely used directly. Use them to create serializer and deserializer functions for a type. The rest of application code must use these functions to serialize/deserialize values. The `Microsoft.ReactNative.Cxx` and `Microsoft.ReactNative.Managed` projects offer serializer/deserializer functions for many standard types. Use them directly or to define serializer/deserializer functions for your types.
+
+
 
 ## Methods
+### WriteArrayBegin
+void **`WriteArrayBegin`**()
 
-### `WriteNull()`
-
-```csharp
-void WriteNull()
-```
-
-Write a null value.
-
-### `WriteBoolean()`
-
-```csharp
-void WriteBoolean(bool value);
-```
-
-Write a boolean value.
-
-### `WriteInt64()`
-
-```csharp
-void WriteInt64(int64 value);
-```
-
-Write a number value from an integer.
-
-### `WriteDouble()`
-
-```csharp
-void WriteDouble(double value);
-```
-
-Write a number value from a double.
-
-### `WriteString()`
-
-```csharp
-void WriteString(string value);
-```
-
-Write a string value.
-
-### `WriteObjectBegin()`
-
-```csharp
-void WriteObjectBegin();
-```
-
-Start writing an object.
-
-### `WritePropertyName()`
-
-```csharp
-void WritePropertyName(String name);
-```
-
-Write a property within an object.  This should then be followed by writing the value of that property.
-
-### `WriteObjectEnd()`
-
-```csharp
-void WriteObjectEnd();
-```
-
-Complete writing an object.
-
-### `WriteArrayBegin()`
-
-```csharp
-void WriteArrayBegin();
-```
-
-Start writing an array.
-
-### `WriteArrayEnd()`
-
-```csharp
-void WriteArrayEnd();
-```
-
-Complete writing an array.
+Starts writing an array.
 
 
-## Delegates
 
-### ```JSValueArgWriter```
+### WriteArrayEnd
+void **`WriteArrayEnd`**()
 
-```csharp
-delegate void JSValueArgWriter(IJSValueWriter writer);
-```
+Completes writing an array.
 
 
-Use this delegate to pass arbitrary value to ABI API.
-  
-In a function that implements the delegate use the provided writer to stream custom values.
 
-<!-- // Copyright (c) Microsoft Corporation.
-// Licensed under the MIT License.
+### WriteBoolean
+void **`WriteBoolean`**(bool value)
 
-namespace Microsoft.ReactNative {
+Writes a `Boolean` value.
 
-  // Writer for JSON-like streams or tree structures
-  [webhosthidden]
-  interface IJSValueWriter {
-    void WriteNull();
-    void WriteBoolean(Boolean value);
-    void WriteInt64(Int64 value);
-    void WriteDouble(Double value);
-    void WriteString(String value);
-    void WriteObjectBegin();
-    void WritePropertyName(String name);
-    void WriteObjectEnd();
-    void WriteArrayBegin();
-    void WriteArrayEnd();
-  }
 
-  // Use this delegate to pass arbitrary value to ABI API.
-  // In a function that implements the delegate use the provided writer to stream custom values.
-  delegate void JSValueArgWriter(IJSValueWriter writer);
-} // namespace Microsoft.ReactNative -->
+
+### WriteDouble
+void **`WriteDouble`**(double value)
+
+Writes a `Number` value from a double.
+
+
+
+### WriteInt64
+void **`WriteInt64`**(int64_t value)
+
+Writes a `Number` value from an integer.
+
+
+
+### WriteNull
+void **`WriteNull`**()
+
+Writes a `Null` value.
+
+
+
+### WriteObjectBegin
+void **`WriteObjectBegin`**()
+
+Starts writing an `Object`.
+
+
+
+### WriteObjectEnd
+void **`WriteObjectEnd`**()
+
+Completes writing an object.
+
+
+
+### WritePropertyName
+void **`WritePropertyName`**(string name)
+
+Writes a property name within an object. This call should then be followed by writing the value of that property.
+
+
+
+### WriteString
+void **`WriteString`**(string value)
+
+Writes a `String` value
+
+
+
+
+
+
+## Referenced by
+- [`ConstantProviderDelegate`](ConstantProviderDelegate)
+- [`JSValueArgWriter`](JSValueArgWriter)
+- [`MethodDelegate`](MethodDelegate)
+- [`MethodResultCallback`](MethodResultCallback)
+- [`SyncMethodDelegate`](SyncMethodDelegate)

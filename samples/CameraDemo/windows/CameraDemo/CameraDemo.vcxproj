@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.200615.7\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.200615.7\build\native\Microsoft.Windows.CppWinRT.props')" />
+  <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{a0219698-e7bd-4845-93aa-224aff7529ab}</ProjectGuid>
+    <ProjectGuid>{fc67bf49-ac91-4812-9661-159eded13c5a}</ProjectGuid>
     <ProjectName>CameraDemo</ProjectName>
     <RootNamespace>CameraDemo</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
@@ -16,7 +17,7 @@
     <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
     <PackageCertificateKeyFile>CameraDemo_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>14973A557C6BD04C048179D135A762FE8F2347BD</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>B34F08E9DBE3D3BFA6B3E2E8F664BD24BDF8C52C</PackageCertificateThumbprint>
     <PackageCertificatePassword>password</PackageCertificatePassword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -176,7 +177,7 @@
   </ImportGroup>
   <Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references targets in your node_modules\react-native-windows folder. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.props'))" />
     <Error Condition="!Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CppApp.targets'))" />

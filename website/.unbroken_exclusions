@@ -1,11 +1,124 @@
 !node_modules
-!blog/2019-
+!blog/2019-*
+!blog/2020-*
+!versioned_docs/version-0.63/*-api-windows*.md
+!versioned_docs/version-0.64/*-api-windows*.md
 
-URL not found https://mybuild.microsoft.com/sessions/b1306a79-b43b-43be-bd59-460b8db0c7a8 while parsing blog/2020-06-01-build2020recap.md (HTTP 404)
-URL not found https://mybuild.microsoft.com/sessions/d10c502e-325d-4c77-9471-462b37744db1 while parsing blog/2020-06-01-build2020recap.md (HTTP 404)
-URL not found https://mybuild.microsoft.com/sessions/53ccd339-7cc0-4e66-bdb9-3eee6b270658 while parsing blog/2020-06-01-build2020recap.md (HTTP 404)
-URL not found https://mybuild.microsoft.com/sessions/cf5901a1-2cd2-4913-b4b7-f1af32db934a while parsing blog/2020-06-01-build2020recap.md (HTTP 404)
+# See Issue 410
+File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found ReactNativeHost while parsing versioned_docs/version-0.64/native-modules-advanced.md
 
+#fix-unbroken.js auto-generated do not edit this line or below
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/getting-started.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/hermes.md
+File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.64/iviewwindowsprops-api-windows.md
+File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.64/iviewwindowsprops-api-windows.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found config.md while parsing versioned_docs/version-0.64/native-modules-autolinking.md
+File not found native-modules-marshalling-data.md while parsing versioned_docs/version-0.64/native-modules-jsvalue.md
+File not found assets/data-marshaling-flow.png while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found assets/rn-windows-app-layout-with-native-modules.png while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found assets/rn-windows-app-layout.png while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules-advanced.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules-advanced.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules-autolinking.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules-using.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found testing.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-code-language-choice.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-advanced.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-advanced.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules.md
+File not found assets/nuget-update-cpp-project.png while parsing versioned_docs/version-0.64/nuget-update.md
+File not found assets/nuget-update-cs-project.png while parsing versioned_docs/version-0.64/nuget-update.md
+File not found assets/nuget-update-packages-manager-installed-tab.png while parsing versioned_docs/version-0.64/nuget-update.md
+File not found assets/nuget-update-select-package.png while parsing versioned_docs/version-0.64/nuget-update.md
+File not found nuget.md while parsing versioned_docs/version-0.64/nuget-update.md
+File not found native-modules-csharp-codegen.md while parsing versioned_docs/version-0.64/nuget.md
+File not found nuget-update.md while parsing versioned_docs/version-0.64/nuget.md
+File not found winui3.md while parsing versioned_docs/version-0.64/nuget.md
+File not found supported-community-modules.md while parsing versioned_docs/version-0.64/nuget.md
+File not found winui3.md while parsing versioned_docs/version-0.64/nuget.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.64/popup-component-windows.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.64/popup-component-windows.md
+File not found win10-compat.md while parsing versioned_docs/version-0.64/rnw-dependencies.md
+File not found win10-compat.md while parsing versioned_docs/version-0.64/rnw-dependencies.md
+File not found win10-compat.md while parsing versioned_docs/version-0.64/rnw-dependencies.md
+File not found win10-compat.md while parsing versioned_docs/version-0.64/rnw-dependencies.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found getting-started.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found native-modules.md while parsing versioned_docs/version-0.64/view-managers.md
+File not found winui3.md while parsing versioned_docs/version-0.64/win10-compat.md
+File not found winui3.md while parsing versioned_docs/version-0.64/win10-compat.md
+File not found assets/powershell-start-menu.png while parsing versioned_docs/version-0.64/win10-vm.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/win10-vm.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/win10-vm.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/win10-vm.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/win10-vm.md
+File not found assets/reveal-surface-animation.gif while parsing versioned_docs/version-0.64/windowsbrush-and-theme.md
+File not found assets/rnw-acrylic-surface.png while parsing versioned_docs/version-0.64/windowsbrush-and-theme.md
 File not found native-modules.md while parsing versioned_docs/version-0.63/getting-started.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.63/getting-started.md
 File not found native-modules.md while parsing versioned_docs/version-0.63/getting-started.md
@@ -49,8 +162,11 @@ File not found rnw-dependencies.md while parsing versioned_docs/version-0.63/nat
 File not found testing.md while parsing versioned_docs/version-0.63/native-modules-setup.md
 File not found view-managers.md while parsing versioned_docs/version-0.63/native-modules-setup.md
 File not found native-modules-advanced.md while parsing versioned_docs/version-0.63/native-modules.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.63/native-modules.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.63/native-modules.md
 File not found view-managers.md while parsing versioned_docs/version-0.63/native-modules.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.63/native-modules.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.63/native-modules.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.63/native-modules.md
 File not found view-managers.md while parsing versioned_docs/version-0.63/native-modules.md
 File not found native-modules-advanced.md while parsing versioned_docs/version-0.63/native-modules.md
@@ -91,6 +207,8 @@ File not found native-modules.md while parsing versioned_docs/version-0.62/IReac
 File not found view-managers.md while parsing versioned_docs/version-0.62/IViewManager-api-windows.md
 File not found view-managers.md while parsing versioned_docs/version-0.62/IViewManager-api-windows.md
 File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.62/iviewwindowsprops-api-windows.md
+File not found getting-started.md while parsing versioned_docs/version-0.62/native-code.md
+File not found getting-started.md while parsing versioned_docs/version-0.62/native-code.md
 File not found native-modules.md while parsing versioned_docs/version-0.62/native-modules-advanced.md
 File not found native-modules.md while parsing versioned_docs/version-0.62/native-modules-advanced.md
 File not found native-modules.md while parsing versioned_docs/version-0.62/native-modules-async.md
@@ -124,7 +242,7 @@ File not found native-modules.md while parsing versioned_docs/version-0.61/getti
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.61/getting-started.md
 File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.61/iviewwindowsprops-api-windows.md
 File not found native-modules.md while parsing versioned_docs/version-0.61/native-modules-async.md
-File not found assets/data-marshalling-flow.png while parsing versioned_docs/version-0.61/native-modules-marshalling-data.md
+File not found assets/data-marshaling-flow.png while parsing versioned_docs/version-0.61/native-modules-marshalling-data.md
 File not found assets/rn-windows-app-layout-with-native-modules.png while parsing versioned_docs/version-0.61/native-modules-marshalling-data.md
 File not found assets/rn-windows-app-layout.png while parsing versioned_docs/version-0.61/native-modules-marshalling-data.md
 File not found native-modules-advanced.md while parsing versioned_docs/version-0.61/native-modules-marshalling-data.md

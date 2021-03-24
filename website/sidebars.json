@@ -15,13 +15,16 @@
       "native-modules-setup",
       "native-modules-using",
       "native-modules-autolinking",
+      "native-modules-advanced",
+      "supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "native-code",
+      "native-code-language-choice",
       "native-modules-marshalling-data",
       "native-modules-async",
       "native-modules-jsvalue",
-      "native-modules-advanced",
       "native-modules-csharp-codegen",
-      "supported-community-modules",
-      "native-code",
       "win10-vm"
     ],
     "The Basics (MacOS)": [
@@ -29,6 +32,7 @@
       "rnm-dependencies"
     ],
     "Troubleshooting": [
+      "native-modules-troubleshooting",
       "metro-config-out-tree-platforms"
     ],
     "Experimental" : [
@@ -50,21 +54,22 @@
       "iviewwindowsprops-api"
     ],
     "Native API (Windows)": [
-      "ijsvaluereader-api",
-      "ijsvaluewriter-api",
-      "ireactcontext-api",
-      "ireactdispatcher-api",
-      "ireactmodulebuilder-api",
-      "ireactnonabivalue-api",
-      "ireactpackagebuilder-api",
-      "ireactpackageprovider-api",
-      "ireactpropertybag-api",
-      "iredboxhandler-api",
-      "iviewmanager-api",
-      "reactapplication-api",
-      "reactinstancesettings-api",
-      "reactnativehost-api",
-      "xamluiservice-api"
+      "IJSValueReader",
+      "IJSValueWriter",
+      "IReactContext",
+      "IReactDispatcher",
+      "IReactModuleBuilder",
+      "IReactNonAbiValue",
+      "IReactPackageBuilder",
+      "IReactPackageProvider",
+      "IReactPropertyBag",
+      "IRedBoxHandler",
+      "IViewManager",
+      "ReactApplication",
+      "ReactInstanceSettings",
+      "ReactNativeHost",
+      "XamlUIService",
+      "Native-API-Reference"
     ]
   }
 }

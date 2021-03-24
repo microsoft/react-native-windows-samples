@@ -14,11 +14,11 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```bat
-npx react-native init <projectName> --template react-native@^0.63.2
+npx react-native init <projectName> --template react-native@^0.64.0
 ```
->To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript@6.5.*`.<br><br>
+>To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try adding `--ignore-existing` to your `npx` command:<br>
-> `npx --ignore-existing react-native init <projectName> --template react-native@^0.63.2` instead.
+> `npx --ignore-existing react-native init <projectName> --template react-native@^0.64.0` instead.
 
 ### Navigate into this newly created directory
 
@@ -36,7 +36,7 @@ Lastly, install the React Native for Windows packages.
 npx react-native-windows-init --overwrite
 ```
 
-> The --overwrite flag is a temporary measure that ensures the correct files are copied to `metro.config.js` for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows/issues/4698).
+> The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
 
 Here are the options that `react-native-windows-init` takes:
 | Option          | Input Type                                  | Description                                      |
@@ -49,6 +49,9 @@ Here are the options that `react-native-windows-init` takes:
 | `--projectType` | string ["`app`","`lib`"] [default: "`app`"] | The type of project to initialize.               |
 | `--overwrite`   | boolean                                     | Overwrite any existing files without prompting.  |
 | `--useWinUI3`   | boolean                                     | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
+| `--no-telemetry`| boolean                                     | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
+
+This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
 
 ## Running a React Native Windows App
 
@@ -65,8 +68,16 @@ Here are the options that `react-native-windows-init` takes:
 
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
+  This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
+  
+  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/master/packages/@react-native-windows/cli/README.md#usage).
+  
 - Using Visual Studio
 
+  - From the root of the project directory, run the following script which will automatically link your app's dependencies:
+    ```bat
+    npx react-native autolink-windows
+    ```
   - Open the solution file in the application folder in Visual Studio (e.g., `AwesomeProject/windows/AwesomeProject.sln` if you used `AwesomeProject` as `<projectName>`)
   - Select the `Debug` configuration and the `x64` platform from the combo box controls to the left of the `Run` button and underneath the `Team` and `Tools` menu item.
   - Run `yarn start` from your project directory, and wait for the React Native packager to report success.
@@ -104,6 +115,9 @@ Follow these steps to build a version of your app that you can install or publis
 - Select the Release configuration from the Configuration Manager drop-down.
 - Build the solution. You can now launch without first launching Metro.
 - If you want to build an APPX package to share or publish, use the **Project** > **Publish** > **Create App Packages...** option.
+
+> The Debug configuration uses the Web Debugger by default, which means the application's JavaScript code runs in Chrome.<br>
+> If you're getting different runtime behavior between the Release and Debug configurations, consider disabling the `UseWebDebugger` setting in [`App.cpp`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cpp-app/src/App.cpp#L30) or [`App.xaml.cs`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cs-app/src/App.xaml.cs#L20) to get the same behavior in the Debug configuration.
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
 </body>

@@ -18,8 +18,11 @@
       "version-0.63-native-modules-async",
       "version-0.63-native-modules-jsvalue",
       "version-0.63-native-modules-advanced",
+      "version-0.63-native-modules-troubleshooting",
       "version-0.63-native-modules-csharp-codegen",
-      "version-0.63-supported-community-modules"
+      "version-0.63-supported-community-modules",
+      "version-0.63-native-code",
+      "version-0.63-native-code-language-choice"
     ],
     "The Basics (MacOS)": [
       "version-0.63-rnm-getting-started",
@@ -44,6 +47,7 @@
       "version-0.63-iviewwindowsprops-api"
     ],
     "Native API (Windows)": [
+      "version-0.63-Native-API-Reference",
       "version-0.63-ijsvaluereader-api",
       "version-0.63-ijsvaluewriter-api",
       "version-0.63-ireactcontext-api",

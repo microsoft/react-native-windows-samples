@@ -27,7 +27,7 @@ NativeModules.SimpleHttpModule.GetHttpResponse('https://microsoft.github.io/reac
 
 The native module support for C# supports the common asynchronous programming patterns established in C# using `async`, `await` and `Task<T>`.
 
-To expose the module to JavaScript you need to declare a C# class. To indicate it should be exposed to JavaScript, you annotate with an [attribute](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/attributes) like:
+To expose the module to JavaScript you need to declare a C# class. To indicate it should be exposed to JavaScript, you annotate with a `[ReactModule]`  [attribute](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/attributes) like:
 
 ```c#
 namespace NativeModuleSample
@@ -72,7 +72,6 @@ You are now free to fill in the logic like:
       // Send the GET request asynchronously
       var httpResponseMessage = await httpClient.GetAsync(new Uri(uri));
 
-      var statusCode = httpResponseMessage.StatusCode;
       var content = await httpResponseMessage.Content.ReadAsStringAsync();
       
       return content;
@@ -102,9 +101,11 @@ To return the value you'll of course have to update the signature of the method 
 ```cs
     public async Task<Result> GetHttpResponseAsync(string uri) {
 ```
-as well as update the return statement from `return content;` to:
+as well as store the status code and update the return statement from `return content;` to:
 
 ```cs
+      var statusCode = httpResponseMessage.StatusCode;
+
       return new Result()
       {
         statusCode = (int)statusCode,
@@ -112,7 +113,7 @@ as well as update the return statement from `return content;` to:
       };
 ```
 
-But wait, we've only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example, so if an exception is thrown, how do we marshal an error back to JavaScript? That is actually taken care of for you by the framework: any exception in the task will be marshaled to the JavaScript side as a JavaScript exception.
+But wait, we've only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example. If an exception is thrown, how do we marshal an error back to JavaScript? That is actually taken care of for you by the framework: any exception in the task will be marshaled to the JavaScript side as a JavaScript exception.
 
 That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.cs`](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
 
