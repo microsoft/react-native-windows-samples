@@ -1,4 +1,4 @@
-This website was created with [Docusaurus](https://docusaurus.io/).
+This website was created with [Docusaurus](https://v1.docusaurus.io/).
 
 # What's In This Document
 
@@ -67,7 +67,7 @@ title: This Doc Needs To Be Edited
 Edit me...
 ```
 
-For more information about docs, click [here](https://docusaurus.io/docs/en/navigation)
+For more information about docs, click [here](https://v1.docusaurus.io/docs/en/navigation)
 
 ## Editing an existing blog post
 
@@ -83,7 +83,7 @@ title: This Blog Post Needs To Be Edited
 Edit me...
 ```
 
-For more information about blog posts, click [here](https://docusaurus.io/docs/en/adding-blog)
+For more information about blog posts, click [here](https://v1.docusaurus.io/docs/en/adding-blog)
 
 # Adding Content
 
@@ -116,7 +116,7 @@ My new content here..
 }
 ```
 
-For more information about adding new docs, click [here](https://docusaurus.io/docs/en/navigation)
+For more information about adding new docs, click [here](https://v1.docusaurus.io/docs/en/navigation)
 
 ## Adding a new blog post
 
@@ -146,7 +146,7 @@ title: New Blog Post
 Lorem Ipsum...
 ```
 
-For more information about blog posts, click [here](https://docusaurus.io/docs/en/adding-blog)
+For more information about blog posts, click [here](https://v1.docusaurus.io/docs/en/adding-blog)
 
 ## Adding items to your site's top navigation bar
 
@@ -169,7 +169,7 @@ For more information about blog posts, click [here](https://docusaurus.io/docs/e
 }
 ```
 
-For more information about the navigation bar, click [here](https://docusaurus.io/docs/en/navigation)
+For more information about the navigation bar, click [here](https://v1.docusaurus.io/docs/en/navigation)
 
 ## Adding custom pages
 
@@ -188,8 +188,8 @@ For more information about the navigation bar, click [here](https://docusaurus.i
 }
 ```
 
-For more information about custom pages, click [here](https://docusaurus.io/docs/en/custom-pages).
+For more information about custom pages, click [here](https://v1.docusaurus.io/docs/en/custom-pages).
 
 # Full Documentation
 
-Full documentation can be found on the [website](https://docusaurus.io/).
+Full documentation can be found on the [website](https://v1.docusaurus.io/).
