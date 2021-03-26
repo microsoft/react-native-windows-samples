@@ -162,9 +162,11 @@ See [Fast Refresh](https://reactnative.dev/docs/fast-refresh) for more informati
 ### UseLiveReload
  bool `UseLiveReload`
 
+> **Deprecated**: For general use this has been replaced by [`UseFastRefresh`](#usefastrefresh).
+
 Enables live reload to load the source bundle from the React Native packager.
 When the file is saved, the packager will trigger reloading.
-**For general use this has been replaced by [`UseFastRefresh`](#usefastrefresh).**
+
 
 ### UseWebDebugger
  bool `UseWebDebugger`

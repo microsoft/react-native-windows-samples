@@ -31,7 +31,7 @@ Creates new instance of [`IReactPropertyBag`](IReactPropertyBag)
 `static` [`IReactPropertyName`](IReactPropertyName) **`GetName`**([`IReactPropertyNamespace`](IReactPropertyNamespace) ns, string localName)
 
 Gets atomic [`IReactPropertyName`](IReactPropertyName) for the namespace `ns` and the `localName`.
-**Note that passing `null` as `ns` is reserved for local values in version 0.65. In previous versions is was the same as passing [`GlobalNamespace`](#globalnamespace).**
+**Note that passing `null` as `ns` is reserved for local values in version 0.65. In previous versions it was the same as passing [`GlobalNamespace`](#globalnamespace).**
 
 
 

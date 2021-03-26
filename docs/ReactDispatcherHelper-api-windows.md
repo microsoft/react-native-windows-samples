@@ -14,7 +14,7 @@ Helper methods for the [`IReactDispatcher`](IReactDispatcher) implementation.
 `static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `JSDispatcherProperty`
 
 Gets name of the `JSDispatcher` property for the [`IReactPropertyBag`](IReactPropertyBag).
-Generally you can use [`ReactContext.JSDispatcher`](ReactContext#jsdispatcher) to get the value of this property for a specific React instance.
+Generally you can use [`IReactContext.JSDispatcher`](IReactContext#jsdispatcher) to get the value of this property for a specific React instance.
 
 ### UIDispatcherProperty
 `static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `UIDispatcherProperty`

@@ -46,13 +46,13 @@ The name of the JavaScript bundle file to load. This should be a relative path f
 `readonly`  string `SourceBundleHost`
 
 A read-only snapshot of the [`ReactInstanceSettings.SourceBundleHost`](ReactInstanceSettings#sourcebundlehost) property value at the time when the React instance was created.
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
+When using [`ReactInstanceSettings.UseFastRefresh`](ReactInstanceSettings#usefastrefresh), [`ReactInstanceSettings.UseLiveReload`](ReactInstanceSettings#uselivereload), or [`ReactInstanceSettings.UseWebDebugger`](ReactInstanceSettings#usewebdebugger) this is the server hostname that will be used to load the bundle from.
 
 ### SourceBundlePort
 `readonly`  uint16_t `SourceBundlePort`
 
 A read-only snapshot of the [`ReactInstanceSettings.SourceBundlePort`](ReactInstanceSettings#sourcebundleport) property value at the time when the React instance was created.
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this is the server port that will be used to load the bundle from.
+When using [`ReactInstanceSettings.UseFastRefresh`](ReactInstanceSettings#usefastrefresh), [`ReactInstanceSettings.UseLiveReload`](ReactInstanceSettings#uselivereload), or [`ReactInstanceSettings.UseWebDebugger`](ReactInstanceSettings#usewebdebugger) this is the server port that will be used to load the bundle from.
 
 ### UseDirectDebugger
 `readonly`  bool `UseDirectDebugger`

@@ -36,7 +36,7 @@ Use this method to get access to the [`XamlUIService`](XamlUIService) associated
 ### GetAccessibleRoot
 `static` [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) **`GetAccessibleRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties)
 
-Retrieves accessible FrameworkElement for app.
+Retrieves the default [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) that will be used for the app for accessibility purposes (e.g. to announce).
 
 
 
@@ -50,14 +50,14 @@ Gets the window handle HWND (as an UInt64) used as the XAML Island window for th
 ### GetXamlRoot
 `static` [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) **`GetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties)
 
-Retrieves XamlRoot for app.
+Retrieves the default [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) for the app.
 
 
 
 ### SetAccessibleRoot
 `static` void **`SetAccessibleRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties, [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) accessibleRoot)
 
-Sets the [`Windows.UI.Xaml.FrameworkElement`](Windows#ui.xaml.frameworkelement) that will act as the default accessible element for the app. The element must be able to create an automation peer (see [`Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer`](Windows#ui.xaml.automation.peers.frameworkelementautomationpeer)), or have a Landmark property set (see [`Windows.UI.Xaml.Automation.AutomationProperties.LandmarkTypeProperty`](Windows#ui.xaml.automation.automationproperties.landmarktypeproperty) Property).
+Sets the [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) that will act as the default accessible element for the app. The element must be able to create an automation peer (see [`FrameworkElementAutomationPeer`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer)), or have the Landmark type property set (see [`AutomationProperties.LandmarkTypeProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties.LandmarkTypeProperty)).
 This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) when using XAML Islands to have access to functionality related to accessibility.
 
 
@@ -73,7 +73,7 @@ Pass the value returned by IDesktopWindowXamlSourceNative get_WindowHandle.
 ### SetXamlRoot
 `static` void **`SetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties, [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) xamlRoot)
 
-Sets the [`Windows.UI.Xaml.XamlRoot`](Windows#ui.xaml.xamlroot) element for the app. This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) object when using XAML Islands so that certain APIs work correctly.
+Sets the [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) element for the app. This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) object when using XAML Islands so that certain APIs work correctly.
 For more information, see [Host WinRT XAML Controls in desktop apps (XAML Islands)](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
 
 
