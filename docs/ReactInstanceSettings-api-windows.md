@@ -31,7 +31,7 @@ When loading from a bundle server (such as metro), this is the path that will be
 ### DebugHost
  string `DebugHost`
 
-> **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in a version 0.65.
+> **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in version 0.65.
 
 **Default value**: `localhost:8081`
 
