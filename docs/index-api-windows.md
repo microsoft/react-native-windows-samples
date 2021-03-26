@@ -2,6 +2,7 @@
 id: Native-API-Reference
 title: namespace Microsoft.ReactNative
 sidebar_label: Full reference
+
 ---
 
 ## Enums
@@ -37,10 +38,13 @@ sidebar_label: Full reference
 - [`IReactPropertyBag`](IReactPropertyBag)
 - [`IReactPropertyName`](IReactPropertyName)
 - [`IReactPropertyNamespace`](IReactPropertyNamespace)
+- [`IReactSettingsSnapshot`](IReactSettingsSnapshot)
 - [`IRedBoxErrorFrameInfo`](IRedBoxErrorFrameInfo)
 - [`IRedBoxErrorInfo`](IRedBoxErrorInfo)
 - [`IRedBoxHandler`](IRedBoxHandler)
 - [`IViewManager`](IViewManager)
+- [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties)
+- [`IViewManagerRequiresNativeLayout`](IViewManagerRequiresNativeLayout)
 - [`IViewManagerWithChildren`](IViewManagerWithChildren)
 - [`IViewManagerWithCommands`](IViewManagerWithCommands)
 - [`IViewManagerWithExportedEventTypeConstants`](IViewManagerWithExportedEventTypeConstants)
@@ -49,6 +53,7 @@ sidebar_label: Full reference
 - [`IViewManagerWithReactContext`](IViewManagerWithReactContext)
 ## Structs
 - [`AccessibilityAction`](AccessibilityAction)
+- [`DesktopWindowMessage`](DesktopWindowMessage)
 - [`JsiObjectRef`](JsiObjectRef)
 - [`JsiPropertyIdRef`](JsiPropertyIdRef)
 - [`JsiScopeState`](JsiScopeState)

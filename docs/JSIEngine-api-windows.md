@@ -5,6 +5,8 @@ title: JSIEngine
 
 Kind: `enum`
 
+A JavaScript engine type that can be set for a React instance in [`ReactInstanceSettings.JSIEngineOverride`](ReactInstanceSettings#jsiengineoverride)
+
 | Name |  Value | Description |
 |--|--|--|
 |`Chakra` | 0x0  |  |

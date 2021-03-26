@@ -7,17 +7,20 @@ Kind: `interface`
 
 
 
-`IRedBoxHandler` provides an extension point to allow custom error handling within the React instance.  This can be useful if you have an existing error reporting system that you want React errors to be reported to.  The default implementation of `RedBoxHandler` shows an error messages in a error screen that covers the whole application window.
+`IRedBoxHandler` provides an extension point to allow custom error handling within the React instance.
+This can be useful if you have an existing error reporting system that you want React errors to be reported to.
+The default implementation of `RedBoxHandler` shows an error messages in a error screen
+that covers the whole application window.
 
--- Insert Screenshot here --
-
-If you want to maintain the existing `RedBox` behaviors, and also report errors to your own reporting system, your implementation can call into the default `RedBoxHandler`, which can be obtained by calling :
+If you want to maintain the existing `RedBox` behaviors, and also report errors to your own reporting system,
+your implementation can call into the default `RedBoxHandler`, which can be obtained by calling :
 
 ```csharp
 RedBoxHelper::CreateDefaultHandler(Host);
 ```
 
-Sample settings up a `RedBoxHandler` that reports errors to an external system, and displays the default `RedBox` experience within the application:
+Sample settings up a `RedBoxHandler` that reports errors to an external system, and displays the default `RedBox`
+experience within the application:
 
 ```csharp
 
@@ -72,7 +75,7 @@ RegisterMyRedBoxHandler()
 ### IsDevSupportEnabled
 `readonly`  bool `IsDevSupportEnabled`
 
-This property will control if errors should be reported to the handler.  If this returns false, [`ShowNewError`](#shownewerror) and [`UpdateError`](#updateerror) will not be called.
+This property will control if errors should be reported to the handler. If this returns false, [`ShowNewError`](#shownewerror) and [`UpdateError`](#updateerror) will not be called.
 
 
 
@@ -92,7 +95,7 @@ This method is called when an error is initially hit.
 ### UpdateError
 void **`UpdateError`**([`IRedBoxErrorInfo`](IRedBoxErrorInfo) info)
 
-This method is called when updated information about an error has been resolved.  For JavaScript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
+This method is called when updated information about an error has been resolved. For JavaScript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
 
 
 

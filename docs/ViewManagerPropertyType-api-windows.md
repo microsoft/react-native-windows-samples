@@ -13,3 +13,4 @@ Kind: `enum`
 |`Array` | 0x3  |  |
 |`Map` | 0x4  |  |
 |`Color` | 0x5  |  |
+|`Function` | 0x6  |  |

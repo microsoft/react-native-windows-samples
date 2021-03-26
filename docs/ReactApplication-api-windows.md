@@ -9,7 +9,7 @@ Extends: [`Application`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Appl
 
 
 
-`ReactApplication` provides a base application class for use in applications that are entirely written in React Native. `ReactApplication` will load the React instance on launch of your app for you and provide accessors to your application's [`ReactInstanceSettings`](ReactInstanceSettings) and [`ReactNativeHost`](ReactNativeHost) to customize your React instance.
+The `ReactApplication` is a base application class for use in applications that are entirely written in React Native. When the app launches, the `ReactApplication` will load the React instance. Use [`ReactInstanceSettings`](ReactInstanceSettings) and [`ReactNativeHost`](ReactNativeHost) properties to customize React instance in your application's constructor.
 
 ## Properties
 ### Host
@@ -20,7 +20,8 @@ Access to the [`ReactNativeHost`](ReactNativeHost) of your application.
 ### InstanceSettings
  [`ReactInstanceSettings`](ReactInstanceSettings) `InstanceSettings`
 
-Provides access to your application's [`ReactInstanceSettings`](ReactInstanceSettings).  Generally, changes to these settings will not take effect if the React instance is already loaded, unless the React instance is reloaded, so most settings should be set in your applications constructor.
+Provides access to your application's [`ReactInstanceSettings`](ReactInstanceSettings).
+Generally, changes to these settings will not take effect if the React instance is already loaded, unless the React instance is reloaded, so most settings should be set in your application's constructor.
 
 ### JavaScriptBundleFile
  string `JavaScriptBundleFile`
@@ -42,12 +43,15 @@ Provides access to the list of `IReactPackageProvider`'s that the instance will 
 ### UseDeveloperSupport
  bool `UseDeveloperSupport`
 
-Should the developer experience features such as the developer menu and `RedBox` be enabled.  See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings#usedevelopersupport).
+Controls whether the developer experience features such as the developer menu and `RedBox` are enabled.
+See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings#usedevelopersupport).
 
 
 ## Constructors
 ### ReactApplication
  **`ReactApplication`**()
+
+Creates a new instance of [`ReactApplication`](ReactApplication)
 
 
 
