@@ -27,7 +27,7 @@ It is a shortcut for the [`ReactDispatcherHelper.JSDispatcherProperty`](ReactDis
 
 Gets the JavaScript runtime for the running React instance.
 It can be null if Web debugging is used.
-**Node: do not use this property directly. It is an experimental property that may be removed or changed in version 0.65.
+**Note: do not use this property directly. It is an experimental property that may be removed or changed in version 0.65.
 
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
