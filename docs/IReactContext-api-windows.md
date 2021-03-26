@@ -7,63 +7,52 @@ Kind: `interface`
 
 
 
-The `IReactContext` object is given to native modules to communicate with other native modules, views, application, and the React Native instance. <br/>It has the same lifetime as the React instance. When the React instance is reloaded or unloaded, the `IReactContext` is destroyed. <br/>- Use the Properties to share native module's data with other components. <br/>- Use the Notifications to exchange events with other components. <br/>- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events.
+The `IReactContext` object is a weak pointer to the React instance. It allows native modules and view managers to communicate with the application, and with other native modules and view managers.
+Since the [`IReactContext`](IReactContext) is a weak pointer to the React instance, some of its functionality becomes unavailable after the React instance is unloaded. When a React instance is reloaded inside of the [`ReactNativeHost`](ReactNativeHost), the previous React instance is unloaded and then a new React instance is created with a new [`IReactContext`](IReactContext).
+- Use the [`Properties`](#properties-1) to share native module's data with other components.
+- Use the [`Notifications`](#notifications) to exchange events with other components.
+- Use [`CallJSFunction`](#calljsfunction) to call JavaScript functions, and [`EmitJSEvent`](#emitjsevent) to raise JavaScript events.
+- Use [`UIDispatcher`](#uidispatcher) to post asynchronous work in the UI thread.
+- Use [`JSDispatcher`](#jsdispatcher) to post asynchronous work in the JavaScript engine thread.
 
 ## Properties
-### BundleRootPath
-`readonly`  string `BundleRootPath`
-
-### DebugBundlePath
-`readonly`  string `DebugBundlePath`
-
-### DebuggerBreakOnNextLine
-`readonly`  bool `DebuggerBreakOnNextLine`
-
-### DebuggerPort
-`readonly`  uint16_t `DebuggerPort`
-
 ### JSDispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `JSDispatcher`
 
-Get `ReactDispatcherHelper::JSDispatcherProperty` from the Properties property bag.
+Gets the JavaScript engine thread dispatcher.
+It is a shortcut for the [`ReactDispatcherHelper.JSDispatcherProperty`](ReactDispatcherHelper#jsdispatcherproperty) from the [`Properties`](#properties-1) property bag.
 
-### JavaScriptBundleFile
-`readonly`  string `JavaScriptBundleFile`
+### JSRuntime
+`readonly`  Object `JSRuntime`
 
-### JsiRuntime
-`readonly`  [`JsiRuntime`](JsiRuntime) `JsiRuntime`
-
-Get the JSI runtime for the running React instance. It can be null if Web debugging is used.
+Gets the JavaScript runtime for the running React instance.
+It can be null if Web debugging is used.
+**Node: do not use this property directly. It is an experimental property that may be removed or changed in version 0.65.
 
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
 
-Notifications shared with the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications). They can be used to exchange events between components. <br/>All subscriptions added to the `IReactContext.Notifications` are automatically removed after the `IReactContext` is destroyed. <br/>The subscriptions added to the `ReactInstanceSettings.Notifications` are kept as long as `ReactInstanceSettings` is alive.
+Gets [`IReactNotificationService`](IReactNotificationService) shared with the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications).
+It can be used to send notifications events between components and the application.
+All notification subscriptions added to the [`IReactContext.Notifications`](IReactContext#notifications) are automatically removed after the [`IReactContext`](IReactContext) is destroyed.
+The notification subscriptions added to the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications) are kept as long as the [`ReactInstanceSettings`](ReactInstanceSettings) is alive.
 
 ### Properties
 `readonly`  [`IReactPropertyBag`](IReactPropertyBag) `Properties`
 
-Properties shared with the [`ReactInstanceSettings.Properties`](ReactInstanceSettings#properties-1). It can be used to share values and state between components.
+Gets [`IReactPropertyBag`](IReactPropertyBag) shared with the [`ReactInstanceSettings.Properties`](ReactInstanceSettings#properties-1).
+It can be used to share values and state between components and the applications.
 
-### SourceBundleHost
-`readonly`  string `SourceBundleHost`
+### SettingsSnapshot
+`readonly`  [`IReactSettingsSnapshot`](IReactSettingsSnapshot) `SettingsSnapshot`
 
-### SourceBundlePort
-`readonly`  uint16_t `SourceBundlePort`
+Gets the settings snapshot that was used to start the React instance.
 
 ### UIDispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
 
-Get `ReactDispatcherHelper::UIDispatcherProperty` from the Properties property bag.
-
-### UseDirectDebugger
-`readonly`  bool `UseDirectDebugger`
-
-### UseFastRefresh
-`readonly`  bool `UseFastRefresh`
-
-### UseWebDebugger
-`readonly`  bool `UseWebDebugger`
+Gets the UI thread dispatcher.
+It is a shortcut for the [`ReactDispatcherHelper.UIDispatcherProperty`](ReactDispatcherHelper#uidispatcherproperty) from the [`Properties`](#properties-1) property bag.
 
 
 
@@ -71,7 +60,8 @@ Get `ReactDispatcherHelper::UIDispatcherProperty` from the Properties property b
 ### CallJSFunction
 void **`CallJSFunction`**(string moduleName, string methodName, [`JSValueArgWriter`](JSValueArgWriter) paramsArgWriter)
 
-Call the JavaScript function named `methodName` of `moduleName`.
+Calls the JavaScript function named `methodName` of `moduleName` with the `paramsArgWriter`.
+The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that receives [`IJSValueWriter`](IJSValueWriter) to serialize the method parameters.
 
 
 
@@ -80,12 +70,16 @@ void **`DispatchEvent`**([`FrameworkElement`](https://docs.microsoft.com/uwp/api
 
 > **Deprecated**: Use [`XamlUIService.DispatchEvent`](XamlUIService#dispatchevent) instead
 
+Deprecated property. Use [`XamlUIService.DispatchEvent`](XamlUIService#dispatchevent) instead. It will be removed in version 0.65.
+
 
 
 ### EmitJSEvent
 void **`EmitJSEvent`**(string eventEmitterName, string eventName, [`JSValueArgWriter`](JSValueArgWriter) paramsArgWriter)
 
-Call JavaScript module event. It is a specialized `CallJSFunction` call where method name is always 'emit'.
+Emits JavaScript module event `eventName` for the `eventEmitterName` with the `paramsArgWriter`.
+It is a specialized [`CallJSFunction`](#calljsfunction)` call where the method name is always `emit` and the `eventName` is added to parameters.
+The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that receives [`IJSValueWriter`](IJSValueWriter) to serialize the event parameters.
 
 
 
