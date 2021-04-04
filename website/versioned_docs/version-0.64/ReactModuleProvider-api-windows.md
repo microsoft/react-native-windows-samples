@@ -6,7 +6,7 @@ original_id: ReactModuleProvider
 
 Kind: `delegate`
 
-Provides information about a custom native module.  See [`IReactModuleBuilder`](IReactModuleBuilder).
+Provides information about a custom native module. See [`IReactModuleBuilder`](IReactModuleBuilder).
 
 ## Invoke
 Object **`Invoke`**([`IReactModuleBuilder`](IReactModuleBuilder) moduleBuilder)

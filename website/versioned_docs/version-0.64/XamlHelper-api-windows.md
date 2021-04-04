@@ -8,11 +8,7 @@ Kind: `class`
 
 
 
-
-## Constructors
-### XamlHelper
- **`XamlHelper`**()
-
+XAML helper methods to implement custom view managers.
 
 
 
@@ -20,10 +16,14 @@ Kind: `class`
 ### BrushFrom
 `static` [`Brush`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) **`BrushFrom`**([`JSValueArgWriter`](JSValueArgWriter) valueProvider)
 
+Returns a Brush from [`JSValueArgWriter`](JSValueArgWriter).
+
 
 
 ### ColorFrom
 `static` [`Color`](https://docs.microsoft.com/uwp/api/Windows.UI.Color) **`ColorFrom`**([`JSValueArgWriter`](JSValueArgWriter) valueProvider)
+
+Returns a Color from [`JSValueArgWriter`](JSValueArgWriter).
 
 
 

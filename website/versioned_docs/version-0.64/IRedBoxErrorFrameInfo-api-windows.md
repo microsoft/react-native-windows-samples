@@ -19,22 +19,22 @@ True if this frame is part of the internals of `react-native`, that is likely no
 ### Column
 `readonly`  uint32_t `Column`
 
-The column within the line
+The column within the line.
 
 ### File
 `readonly`  string `File`
 
-The file location of this frame
+The file location of this frame.
 
 ### Line
 `readonly`  uint32_t `Line`
 
-The line number within the file
+The line number within the file.
 
 ### Method
 `readonly`  string `Method`
 
-The method name of this frame
+The method name of this frame.
 
 
 
