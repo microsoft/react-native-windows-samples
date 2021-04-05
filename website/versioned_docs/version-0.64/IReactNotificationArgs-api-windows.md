@@ -14,7 +14,7 @@ Notification args provided to the notification handler.
 ### Data
 `readonly`  Object `Data`
 
-The data sent with the notification. It can be any WinRT type. Consider using [`IReactPropertyBag`](IReactPropertyBag) for semi-structured data. It can be null if notification has no data. 
+The data sent with the notification. It can be any WinRT type. Consider using [`IReactPropertyBag`](IReactPropertyBag) for sending semi-structured data. It can be null if the notification has no data associated with it.
 
 ### Subscription
 `readonly`  [`IReactNotificationSubscription`](IReactNotificationSubscription) `Subscription`

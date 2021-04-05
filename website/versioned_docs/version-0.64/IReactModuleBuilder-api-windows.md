@@ -17,7 +17,7 @@ See [Native Modules](native-modules) for more usage information.
 ### AddConstantProvider
 void **`AddConstantProvider`**([`ConstantProviderDelegate`](ConstantProviderDelegate) constantProvider)
 
-Adds a constant provider method to define constants for the native module.  See [`ConstantProviderDelegate`](ConstantProviderDelegate).
+Adds a constant provider method to define constants for the native module. See [`ConstantProviderDelegate`](ConstantProviderDelegate).
 
 
 
@@ -25,7 +25,7 @@ Adds a constant provider method to define constants for the native module.  See 
 void **`AddInitializer`**([`InitializerDelegate`](InitializerDelegate) initializer)
 
 Adds an initializer method called on the native module initialization.
-It provides the native module with the [`IReactContext`](IReactContext) for the running ReactNative instance.  See [`InitializerDelegate`](InitializerDelegate).
+It provides the native module with the [`IReactContext`](IReactContext) for the running ReactNative instance. See [`InitializerDelegate`](InitializerDelegate).
 There can be multiple initializer methods which are called in the order they were registered.
 
 
@@ -33,14 +33,14 @@ There can be multiple initializer methods which are called in the order they wer
 ### AddMethod
 void **`AddMethod`**(string name, [`MethodReturnType`](MethodReturnType) returnType, [`MethodDelegate`](MethodDelegate) method)
 
-Adds an asynchronous method to the native module.  See [`MethodDelegate`](MethodDelegate).
+Adds an asynchronous method to the native module. See [`MethodDelegate`](MethodDelegate).
 
 
 
 ### AddSyncMethod
 void **`AddSyncMethod`**(string name, [`SyncMethodDelegate`](SyncMethodDelegate) method)
 
-Adds a synchronous method to the native module.  See [`SyncMethodDelegate`](SyncMethodDelegate).
+Adds a synchronous method to the native module. See [`SyncMethodDelegate`](SyncMethodDelegate).
 
 
 

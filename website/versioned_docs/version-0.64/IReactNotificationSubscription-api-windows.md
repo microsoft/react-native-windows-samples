@@ -8,22 +8,22 @@ Kind: `interface`
 
 
 
-A subscription to a notification.
+A subscription to a [`IReactNotificationService`](IReactNotificationService) notification.
 The subscription is removed when this object is deleted or the [`Unsubscribe`](#unsubscribe) method is called.
 
 ## Properties
 ### Dispatcher
 `readonly`  [`IReactDispatcher`](IReactDispatcher) `Dispatcher`
 
-The [`IReactDispatcher`](IReactDispatcher) provided when the notification subscription created.
-All notifications will be handled using this dispatcher.
-If the dispatcher is null, the events are handled synchronously.
+The [`IReactDispatcher`](IReactDispatcher) that was provided when the notification subscription was created.
+All notifications for this subscription will be handled using this dispatcher.
+If the dispatcher is null, then the events are handled synchronously.
 
 ### IsSubscribed
 `readonly`  bool `IsSubscribed`
 
 True if the subscription is still active.
-This property is checked before notification handler is invoked.
+This property is checked internally before the notification handler is invoked.
 
 ### NotificationName
 `readonly`  [`IReactPropertyName`](IReactPropertyName) `NotificationName`
@@ -34,7 +34,7 @@ Name of the notification.
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `NotificationService`
 
 The notification service for the subscription.
-It can be null if [`IsSubscribed`](#issubscribed) is true and the service is already deleted.
+It can be null if [`IsSubscribed`](#issubscribed) is true and the notification service was already deleted.
 
 
 
@@ -43,7 +43,7 @@ It can be null if [`IsSubscribed`](#issubscribed) is true and the service is alr
 void **`Unsubscribe`**()
 
 Removes the subscription.
-Because of the multi-threaded nature of the notifications, the handler can be still called after the [`Unsubscribe`](#unsubscribe) method called if the [`IsSubscribed`](#issubscribed) property is already checked. Consider calling the [`Unsubscribe`](#unsubscribe) method and the handler in the same [`IReactDispatcher`](IReactDispatcher) to ensure that no handler is invoked after the [`Unsubscribe`](#unsubscribe) method call.
+Because of the multi-threaded nature of the notifications, the handler can be still called after the [`Unsubscribe`](#unsubscribe) method has been called if the [`IsSubscribed`](#issubscribed) property has already been checked. Consider calling the [`Unsubscribe`](#unsubscribe) method and the handler in the same [`IReactDispatcher`](IReactDispatcher) to ensure that no handler is invoked after the [`Unsubscribe`](#unsubscribe) method call.
 
 
 

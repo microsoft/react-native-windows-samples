@@ -8,7 +8,8 @@ Kind: `interface`
 
 
 
-The notification service is used to subscribe to notifications and to send notifications.
+The notification service that can be used to send notifications between different components in an app.
+Use the [`Subscribe`](#subscribe) method to subscribe to notifications and the [`SendNotification`](#sendnotification) method to send notifications.
 
 
 
@@ -17,9 +18,9 @@ The notification service is used to subscribe to notifications and to send notif
 void **`SendNotification`**([`IReactPropertyName`](IReactPropertyName) notificationName, Object sender, Object data)
 
 Sends the notification with `notificationName`.
-The `notificationName` must not be null.
-The `sender` is the object that sends notification. It can be null.
-The `data` is the data associated with the notification. It can be null.
+- `notificationName` is the name of the notification to send. It must not be null.
+- `sender` is the object that sends notification. It can be null.
+- `data` is the data associated with the notification. It can be null.
 Consider using [`IReactPropertyBag`](IReactPropertyBag) for sending semi-structured data. It can be created using the [`ReactPropertyBagHelper.CreatePropertyBag`](ReactPropertyBagHelper#createpropertybag) method.
 
 
@@ -28,9 +29,9 @@ Consider using [`IReactPropertyBag`](IReactPropertyBag) for sending semi-structu
 [`IReactNotificationSubscription`](IReactNotificationSubscription) **`Subscribe`**([`IReactPropertyName`](IReactPropertyName) notificationName, [`IReactDispatcher`](IReactDispatcher) dispatcher, [`ReactNotificationHandler`](ReactNotificationHandler) handler)
 
 Subscribes to a notification.
-The `notificationName` is a non-null property name and can belong to a specific namespace.
-The `dispatcher` is used to call notification handlers. If it is null, then the handler is called synchronously.
-The `handler` is a delegate that can be implemented as a lambda to handle notifications.
+- `notificationName` is a non-null notification name that can belong to a specific namespace  like any [`IReactPropertyName`](IReactPropertyName).
+- `dispatcher` is used to call notification handlers. If it is null, then the handler is called synchronously.
+- `handler` is a delegate that can be implemented as a lambda to handle notifications.
 The method returns a [`IReactNotificationSubscription`](IReactNotificationSubscription) that must be kept alive while the subscription is active. The subscription is removed when the [`IReactNotificationSubscription`](IReactNotificationSubscription) is destroyed.
 
 

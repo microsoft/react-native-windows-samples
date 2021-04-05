@@ -8,11 +8,7 @@ Kind: `class`
 
 
 
-
-## Constructors
-### RedBoxHelper
- **`RedBoxHelper`**()
-
+A helper static class for [`IRedBoxHandler`](IRedBoxHandler).
 
 
 
