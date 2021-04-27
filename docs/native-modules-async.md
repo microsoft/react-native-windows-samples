@@ -257,3 +257,15 @@ We've defined an `AsyncActionCompletedHandler` lambda and set it to be run when 
 > **Important:** This example shows the minimum case, where you don't handle any errors within `GetHttpResponseAsync`, but you're not limited to this. You're free to detect error conditions within your code and call `capturedPromise.Reject()` yourself with (more useful) error messages at any time. However you should *always* include this final handler, to catch any unexpected and unhandled exceptions that may occur, especially when calling Windows APIs. Just be sure that you only call `Reject()` once and that nothing executes afterwards.
 
 That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.h`](https://github.com/microsoft/react-native-windows-samples/blob/master/samples/NativeModuleSample/cppwinrt/windows/NativeModuleSample/AsyncMethodExamples.h).
+
+## Executing calls to API on the UI thread
+
+From version 0.64 the native module's code does no longer run on the UI thread. It means that each call to the API that should be executed on the UI thread now needs to be explicitly dispatched.
+
+To do that the [UIDispatcher](https://microsoft.github.io/react-native-windows/docs/IReactDispatcher) should be used.
+
+This part will cover the basic usage scenario of the `UIDispatcher` and it's `Post()` method with the *FileOpenPicker* (for the explanation of opening files and folder with a picker on UWP please check the [Open files and folders with a picker](https://docs.microsoft.com/en-us/windows/uwp/files/quickstart-using-file-and-folder-pickers)).
+
+### Using `UIDispatcher` with C#
+
+### Using `UIDispatcher` with C++/WinRT
