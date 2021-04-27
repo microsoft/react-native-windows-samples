@@ -332,3 +332,68 @@ To do it, let's
 Now if we call the `openFile` method in our JS code the file picker's window will open.
 
 ### Using `UIDispatcher` with C++/WinRT
+
+Let's suppose we have the native module which opens and loads the file using the *FileOpenPicker*.  
+Following the official example the native module's method launching the picker would look like:
+
+```cpp
+  REACT_METHOD( OpenFile, L"openFile" );
+  winrt::fire_and_forget OpenFile() noexcept
+  {
+    winrt::Windows::Storage::Pickers::FileOpenPicker openPicker;
+    // Other initialization code
+    winrt::Windows::Storage::StorageFile file = co_await openPicker.PickSingleFileAsync();
+
+    if (file != nullptr)
+    {
+      // File opened successfully
+    }
+    else
+    {
+      // Error while opening the file
+    }
+  }
+```
+However, from 0.64 this method would end up with `ERROR_INVALID_WINDOW_HANDLE`.
+So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
+
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we should get as a `REACT_INIT` method:
+> ```cpp
+>  REACT_INIT(Initialize);
+>  void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
+>  {
+>      context = reactContext;
+>  }
+>```
+
+To do it, let's
+1. separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
+```cpp
+  winrt::fire_and_forget OpenFile() noexcept
+  {
+    winrt::Windows::Storage::Pickers::FileOpenPicker openPicker;
+    // Other initialization code
+    winrt::Windows::Storage::StorageFile file = co_await openPicker.PickSingleFileAsync();
+
+    if (file != nullptr)
+    {
+      // File opened successfully
+    }
+    else
+    {
+      // Error while opening the file
+    }
+  }
+```
+2. Call this private method as a callback of `UIDispatcher.Post()` method:
+```cpp
+  REACT_METHOD(OpenFile, L"openFile" );
+  void OpenFile() noexcept
+  {
+    context.UIDispatcher().Post(
+      [this]()->void { LaunchPicker(); }
+    );
+  }
+```
+
+Now if we call the `openFile` method in our JS code the file picker's window will open.
