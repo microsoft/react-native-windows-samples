@@ -268,4 +268,67 @@ This part will cover the basic usage scenario of the `UIDispatcher` and it's `Po
 
 ### Using `UIDispatcher` with C#
 
+Let's suppose we have the native module which opens and loads the file using the *FileOpenPicker*.  
+Following the official example the native module's method launching the picker would look like:
+
+```cs
+  [ReactMethod("openFile")]
+  public async void OpenFile()
+  {
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+    // Other initialization code
+    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+
+    if (file != null)
+    {
+      // File opened successfully
+    }
+    else
+    {
+      // Error while opening the file
+    }
+  }
+```
+However, from 0.64 this method would end up with `System.Exception: Invalid window handle`.
+So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
+
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we should get as a `ReactInitializer` method:
+> ```cs
+>  [ReactInitializer]
+>  public void Initialize( ReactContext reactContext )
+>  {
+>      context = reactContext;
+>  }
+>```
+
+To do it, let's
+1. separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
+```cs
+  private async void LaunchPicker()
+  {
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+    // Other initialization code
+    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+
+    if (file != null)
+    {
+      // File opened successfully
+    }
+    else
+    {
+      // Error while opening the file
+    }
+  }
+```
+2. Call this private method as a callback of `UIDispatcher.Post()` method:
+```cs
+  [ReactMethod("openFile")]
+  public void OpenFile()
+  {
+      context.Handle.UIDispatcher.Post(() => LaunchPicker());
+  }
+```
+
+Now if we call the `openFile` method in our JS code the file picker's window will open.
+
 ### Using `UIDispatcher` with C++/WinRT
