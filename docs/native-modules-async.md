@@ -260,16 +260,16 @@ That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethod
 
 ## Executing calls to API on the UI thread
 
-From version 0.64 the native module's code does no longer run on the UI thread. It means that each call to the API that should be executed on the UI thread now needs to be explicitly dispatched.
+Since version 0.64 the native module's code no longer runs on the UI thread. It means that each call to the API that should be executed on the UI thread now needs to be explicitly dispatched.
 
 To do that the [UIDispatcher](https://microsoft.github.io/react-native-windows/docs/IReactDispatcher) should be used.
 
-This part will cover the basic usage scenario of the `UIDispatcher` and it's `Post()` method with the *FileOpenPicker* (for the explanation of opening files and folder with a picker on UWP please check the [Open files and folders with a picker](https://docs.microsoft.com/en-us/windows/uwp/files/quickstart-using-file-and-folder-pickers)).
+This part will cover the basic usage scenario of the `UIDispatcher` and its `Post()` method with the *FileOpenPicker* (for the explanation of opening files and folder with a picker on UWP please check the [Open files and folders with a picker](https://docs.microsoft.com/en-us/windows/uwp/files/quickstart-using-file-and-folder-pickers)).
 
 ### Using `UIDispatcher` with C#
 
-Let's suppose we have the native module which opens and loads the file using the *FileOpenPicker*.  
-Following the official example the native module's method launching the picker would look like:
+Let's suppose we have a native module which opens a file using the *FileOpenPicker*.  
+Following the official example the native module's method launching the picker would look like the following:
 
 ```cs
   [ReactMethod("openFile")]
@@ -289,10 +289,10 @@ Following the official example the native module's method launching the picker w
     }
   }
 ```
-However, from 0.64 this method would end up with `System.Exception: Invalid window handle`.
+However, since v0.64 this method would end up with `System.Exception: Invalid window handle`.
 So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
 
-> **Note:** `UIDispatcher` is available via the `ReactContext`, which we should get as a `ReactInitializer` method:
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as `ReactInitializer`:
 > ```cs
 >  [ReactInitializer]
 >  public void Initialize( ReactContext reactContext )
@@ -302,7 +302,7 @@ So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
 >```
 
 To do it, let's
-1. separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
+1. Separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
 ```cs
   private async void LaunchPicker()
   {
@@ -325,7 +325,9 @@ To do it, let's
   [ReactMethod("openFile")]
   public void OpenFile()
   {
-      context.Handle.UIDispatcher.Post(() => LaunchPicker());
+      context.Handle.UIDispatcher.Post(
+        () => LaunchPicker()
+      );
   }
 ```
 
@@ -354,10 +356,10 @@ Following the official example the native module's method launching the picker w
     }
   }
 ```
-However, from 0.64 this method would end up with `ERROR_INVALID_WINDOW_HANDLE`.
+However, since v0.64 this method would end up with `ERROR_INVALID_WINDOW_HANDLE`.
 So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
 
-> **Note:** `UIDispatcher` is available via the `ReactContext`, which we should get as a `REACT_INIT` method:
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as `REACT_METHOD`:
 > ```cpp
 >  REACT_INIT(Initialize);
 >  void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
@@ -367,9 +369,9 @@ So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
 >```
 
 To do it, let's
-1. separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
+1. Separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
 ```cpp
-  winrt::fire_and_forget OpenFile() noexcept
+  winrt::fire_and_forget LaunchPicker() noexcept
   {
     winrt::Windows::Storage::Pickers::FileOpenPicker openPicker;
     // Other initialization code
