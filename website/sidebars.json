@@ -37,7 +37,7 @@
     ],
     "Experimental" : [
       "hermes",
-      "nuget",
+      "NuGet",
       "nuget-update",
       "winui3"
     ]
