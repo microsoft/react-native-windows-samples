@@ -260,16 +260,16 @@ That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethod
 
 ## Executing calls to API on the UI thread
 
-Since version 0.64 the native module's code no longer runs on the UI thread. It means that each call to the API that should be executed on the UI thread now needs to be explicitly dispatched.
+Since version 0.64, calls to native modules longer run on the UI thread. This means that each call to the APIs that must be executed on the UI thread now needs to be explicitly dispatched.
 
-To do that the [UIDispatcher](https://microsoft.github.io/react-native-windows/docs/IReactDispatcher) should be used.
+To do that the [`UIDispatcher`](https://microsoft.github.io/react-native-windows/docs/IReactDispatcher) should be used.
 
-This part will cover the basic usage scenario of the `UIDispatcher` and its `Post()` method with the *FileOpenPicker* (for the explanation of opening files and folder with a picker on UWP please check the [Open files and folders with a picker](https://docs.microsoft.com/en-us/windows/uwp/files/quickstart-using-file-and-folder-pickers)).
+This section will cover the basic usage scenario of the `UIDispatcher` and its `Post()` method with the WinRT `FileOpenPicker` (for a description of opening files and folder with a picker on UWP please see the [Open files and folders with a picker](https://docs.microsoft.com/en-us/windows/uwp/files/quickstart-using-file-and-folder-pickers)).
 
 ### Using `UIDispatcher` with C#
 
-Let's suppose we have a native module which opens a file using the *FileOpenPicker*.  
-Following the official example the native module's method launching the picker would look like the following:
+Let's suppose we have a native module which opens a file using the `FileOpenPicker`.  
+Following the official example the native module's method launching the picker would look like this:
 
 ```cs
   [ReactMethod("openFile")]
@@ -289,15 +289,15 @@ Following the official example the native module's method launching the picker w
     }
   }
 ```
-However, since v0.64 this method would end up with `System.Exception: Invalid window handle`.
-So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
+However, starting with react-native-windows 0.64, this method would end up with `System.Exception: Invalid window handle`.
+Since the `FileOpenPicker` API requires running on the UI thread, we need to wrap this call with the `UIDispatcher.Post` method.
 
-> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as `ReactInitializer`:
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as [`ReactInitializer`](native-modules-advanced.md#c-native-modules-with-initializer-and-as-a-way-to-access-reactcontex)
 > ```cs
 >  [ReactInitializer]
->  public void Initialize( ReactContext reactContext )
+>  public void Initialize(ReactContext reactContext)
 >  {
->      context = reactContext;
+>    context = reactContext;
 >  }
 >```
 
@@ -335,8 +335,8 @@ Now if we call the `openFile` method in our JS code the file picker's window wil
 
 ### Using `UIDispatcher` with C++/WinRT
 
-Let's suppose we have the native module which opens and loads the file using the *FileOpenPicker*.  
-Following the official example the native module's method launching the picker would look like:
+Let's suppose we have the native module which opens and loads the file using the `FileOpenPicker`.  
+Following the official example the native module's method launching the picker would look like this:
 
 ```cpp
   REACT_METHOD( OpenFile, L"openFile" );
@@ -356,10 +356,10 @@ Following the official example the native module's method launching the picker w
     }
   }
 ```
-However, since v0.64 this method would end up with `ERROR_INVALID_WINDOW_HANDLE`.
-So to avoid that, we need to wrap this call with the `UIDispatcher.Post` method.
+However, starting with react-native-windows 0.64, this method would end up with `ERROR_INVALID_WINDOW_HANDLE`.
+Since the `FileOpenPicker` API requires running on the UI thread, we need to wrap this call with the `UIDispatcher.Post` method.
 
-> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as `REACT_METHOD`:
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as [`REACT_METHOD`](native-modules-advanced.md#c-native-modules-with-initializer-and-as-a-way-to-access-reactcontex)
 > ```cpp
 >  REACT_INIT(Initialize);
 >  void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
