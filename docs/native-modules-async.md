@@ -329,7 +329,7 @@ Let's suppose we have the native module which opens and loads the file using the
 Following the official example the native module's method launching the picker would look like this:
 
 ```cpp
-  REACT_METHOD( OpenFile, L"openFile" );
+  REACT_METHOD(OpenFile, L"openFile");
   winrt::fire_and_forget OpenFile() noexcept
   {
     winrt::Windows::Storage::Pickers::FileOpenPicker openPicker;
@@ -350,7 +350,7 @@ However, starting with react-native-windows 0.64, this method would end up with 
 Since the `FileOpenPicker` API requires running on the UI thread, we need to wrap this call with the `UIDispatcher.Post` method.
 
 ```cpp
-  REACT_METHOD(OpenFile, L"openFile" );
+  REACT_METHOD(OpenFile, L"openFile");
   void OpenFile() noexcept
   {
     context.UIDispatcher().Post([]()->winrt::fire_and_forget {
@@ -374,7 +374,7 @@ Since the `FileOpenPicker` API requires running on the UI thread, we need to wra
 >  REACT_INIT(Initialize);
 >  void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
 >  {
->      context = reactContext;
+>    context = reactContext;
 >  }
 >```
 
