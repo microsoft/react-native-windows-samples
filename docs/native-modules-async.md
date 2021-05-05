@@ -292,6 +292,26 @@ Following the official example the native module's method launching the picker w
 However, starting with react-native-windows 0.64, this method would end up with `System.Exception: Invalid window handle`.
 Since the `FileOpenPicker` API requires running on the UI thread, we need to wrap this call with the `UIDispatcher.Post` method.
 
+```cs
+  [ReactMethod("openFile")]
+  public void OpenFile()
+  {
+    context.Handle.UIDispatcher.Post(async () => {
+      var picker = new Windows.Storage.Pickers.FileOpenPicker();
+      // Other initialization code
+      Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+
+      if (file != null)
+      {
+        // File opened successfully
+      }
+      else
+      {
+        // Error while opening the file
+      }
+    });
+  }
+```
 > **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as [`ReactInitializer`](native-modules-advanced.md#c-native-modules-with-initializer-and-as-a-way-to-access-reactcontex)
 > ```cs
 >  [ReactInitializer]
@@ -300,36 +320,6 @@ Since the `FileOpenPicker` API requires running on the UI thread, we need to wra
 >    context = reactContext;
 >  }
 >```
-
-To do it, let's
-1. Separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
-```cs
-  private async void LaunchPicker()
-  {
-    var picker = new Windows.Storage.Pickers.FileOpenPicker();
-    // Other initialization code
-    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-
-    if (file != null)
-    {
-      // File opened successfully
-    }
-    else
-    {
-      // Error while opening the file
-    }
-  }
-```
-2. Call this private method as a callback of `UIDispatcher.Post()` method:
-```cs
-  [ReactMethod("openFile")]
-  public void OpenFile()
-  {
-      context.Handle.UIDispatcher.Post(
-        () => LaunchPicker()
-      );
-  }
-```
 
 Now if we call the `openFile` method in our JS code the file picker's window will open.
 
@@ -359,6 +349,26 @@ Following the official example the native module's method launching the picker w
 However, starting with react-native-windows 0.64, this method would end up with `ERROR_INVALID_WINDOW_HANDLE`.
 Since the `FileOpenPicker` API requires running on the UI thread, we need to wrap this call with the `UIDispatcher.Post` method.
 
+```cpp
+  REACT_METHOD(OpenFile, L"openFile" );
+  void OpenFile() noexcept
+  {
+    context.UIDispatcher().Post([]()->winrt::fire_and_forget {
+      winrt::Windows::Storage::Pickers::FileOpenPicker openPicker;
+      // Other initialization code
+      winrt::Windows::Storage::StorageFile file = co_await openPicker.PickSingleFileAsync();
+
+      if (file != nullptr)
+      {
+        // File opened successfully
+      }
+      else
+      {
+        // Error while opening the file
+      }
+    });
+  }
+```
 > **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as [`REACT_METHOD`](native-modules-advanced.md#c-native-modules-with-initializer-and-as-a-way-to-access-reactcontex)
 > ```cpp
 >  REACT_INIT(Initialize);
@@ -367,35 +377,5 @@ Since the `FileOpenPicker` API requires running on the UI thread, we need to wra
 >      context = reactContext;
 >  }
 >```
-
-To do it, let's
-1. Separate the file's opening and handling from the UI thread logic, by moving this logic to the private method:
-```cpp
-  winrt::fire_and_forget LaunchPicker() noexcept
-  {
-    winrt::Windows::Storage::Pickers::FileOpenPicker openPicker;
-    // Other initialization code
-    winrt::Windows::Storage::StorageFile file = co_await openPicker.PickSingleFileAsync();
-
-    if (file != nullptr)
-    {
-      // File opened successfully
-    }
-    else
-    {
-      // Error while opening the file
-    }
-  }
-```
-2. Call this private method as a callback of `UIDispatcher.Post()` method:
-```cpp
-  REACT_METHOD(OpenFile, L"openFile" );
-  void OpenFile() noexcept
-  {
-    context.UIDispatcher().Post(
-      [this]()->void { LaunchPicker(); }
-    );
-  }
-```
 
 Now if we call the `openFile` method in our JS code the file picker's window will open.
