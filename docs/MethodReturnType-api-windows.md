@@ -5,6 +5,8 @@ title: MethodReturnType
 
 Kind: `enum`
 
+Native method return type.
+
 | Name |  Value | Description |
 |--|--|--|
 |`Void` | 0x0  |  |

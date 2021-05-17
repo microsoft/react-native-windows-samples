@@ -6,7 +6,7 @@ original_id: ReactCreatePropertyValue
 
 Kind: `delegate`
 
-This delegate is used to create a property value on-demand.
+This delegate is used to create a [`IReactPropertyBag`](IReactPropertyBag) property value on-demand.
 
 ## Invoke
 Object **`Invoke`**()

@@ -7,7 +7,7 @@ Kind: `class`
 
 
 
-Helper methods for the notification service implementation.
+Helper methods for the [`IReactNotificationService`](IReactNotificationService) implementation.
 
 
 
@@ -15,7 +15,7 @@ Helper methods for the notification service implementation.
 ### CreateNotificationService
 `static` [`IReactNotificationService`](IReactNotificationService) **`CreateNotificationService`**()
 
-Create new instance of IReactNotificationService
+Creates a new instance of [`IReactNotificationService`](IReactNotificationService)
 
 
 

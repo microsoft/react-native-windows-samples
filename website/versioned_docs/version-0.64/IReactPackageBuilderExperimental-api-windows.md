@@ -18,7 +18,7 @@ Experimental extensions to the [`IReactPackageBuilder`](IReactPackageBuilder).
 ### AddTurboModule
 void **`AddTurboModule`**(string moduleName, [`ReactModuleProvider`](ReactModuleProvider) moduleProvider)
 
-Adds a custom TurboModule that directly uses the JS Engine API.
+Adds a custom TurboModule that directly uses the JS Engine API (JSI).
 
 
 
