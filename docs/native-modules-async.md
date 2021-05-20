@@ -260,7 +260,7 @@ That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethod
 
 ## Executing calls to API on the UI thread
 
-Since version 0.64, calls to native modules longer run on the UI thread. This means that each call to the APIs that must be executed on the UI thread now needs to be explicitly dispatched.
+Since version 0.64, calls to native modules no longer run on the UI thread. This means that each call to the APIs that must be executed on the UI thread now needs to be explicitly dispatched.
 
 To do that the [`UIDispatcher`](https://microsoft.github.io/react-native-windows/docs/IReactDispatcher) should be used.
 
