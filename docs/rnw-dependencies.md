@@ -29,31 +29,32 @@ Alternatively, you can setup your environment manually:
 - Ensure Developer Mode is turned ON in Windows Settings App.
 - It is _highly_ recommended to update the Windows system.
 - Install [Visual Studio 2019 (version 16.5 or greater)](https://www.visualstudio.com/downloads) **with the following options checked**:
-  - Workloads
+  - **Workloads**
     - Universal Windows Platform development
       - Include `C++ (v142) Universal Windows Platform tools` (under 'Optional')
       - Older Windows 10 SDK version may be needed at this point.
     - Desktop development with C++
     - .NET Desktop development
-  - Individual Components
-    - Development activities
-      - Node.js development support (optional; included by the `Node.js development` workload; not needed if Node.js is installed in a different way)
+    - Node.js development, or one of the following alternatives:
+      - Install from **Individual Components**:
+        - Development activities
+          - Node.js development support
+      - Install Node.js separately, see below for some options
 - Ensure that long path support is enabled.
 
-#### React Native Development Dependencies
-
-- Install [Node.js](https://nodejs.org) via one of the following methods:
+Options to install [Node.js](https://nodejs.org) separately:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
   ```bat
   choco install nodejs-lts
   ```
   - Using [another package manager](https://nodejs.org/en/download/package-manager/) such as [Scoop](https://scoop.sh/) or [Node Version Switcher (nvs)](https://github.com/jasongin/nvs)
   - Directly from [Node.js](https://nodejs.org/en/download/)
-  - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
 
-- Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
-- Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
-- *Highly recommended:* Install `git` using a method such as:
+Optional steps that are _highly recommended_:
+
+- Install [Chrome](https://www.google.com/chrome/) (needed for JS debugging)
+- Install [Yarn](https://yarnpkg.com/en/docs/install) (**required** to contribute to react-native-windows)
+- Install `git` using a method such as:
   - Using a package manager such as [Chocolatey](https://chocolatey.org/) or [Scoop](https://scoop.sh/)
   - Install [git for Windows](https://gitforwindows.org/)
   - Install [GitHub Desktop](https://desktop.github.com/)
