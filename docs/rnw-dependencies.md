@@ -42,7 +42,6 @@ Alternatively, you can setup your environment manually:
 
 #### React Native Development Dependencies
 
-- Install the [standard React Native dependencies](https://reactnative.dev/docs/environment-setup)
 - Install [Node.js](https://nodejs.org) via one of the following methods:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
   ```bat
