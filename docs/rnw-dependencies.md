@@ -35,7 +35,7 @@ Alternatively, you can setup your environment manually:
     - .NET Desktop development
   - Individual Components
     - Development activities
-      - Node.js development support (optional)
+      - Node.js development support (optional; included by the `Node.js development` workload)
 
 You will also need to ensure that certain settings are enabled:
 - Long path support
