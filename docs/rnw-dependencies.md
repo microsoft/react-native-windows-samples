@@ -32,6 +32,7 @@ Alternatively, you can setup your environment manually:
   - Workloads
     - Universal Windows Platform development
       - Include `C++ (v142) Universal Windows Platform tools` (under 'Optional')
+      - Older Windows 10 SDK version may be needed at this point.
     - Desktop development with C++
     - .NET Desktop development
   - Individual Components
