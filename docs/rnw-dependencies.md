@@ -36,10 +36,7 @@ Alternatively, you can setup your environment manually:
   - Individual Components
     - Development activities
       - Node.js development support (optional; included by the `Node.js development` workload; not needed if Node.js is installed in a different way)
-
-You will also need to ensure that certain settings are enabled:
-- Long path support
-- Developer mode enabled
+- Ensure that long path support is enabled.
 
 #### React Native Development Dependencies
 
