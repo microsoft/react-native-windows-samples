@@ -30,8 +30,8 @@ Alternatively, you can setup your environment manually:
 - Install [Visual Studio 2019 (version 16.5 or greater)](https://www.visualstudio.com/downloads) **with the following options checked**:
   - Workloads
     - Universal Windows Platform development
-      - Include `C++ (v142) Universal Windows Platform tools` (under 'Optional')
-      - Include 1-2 Windows 10 SDK versions back under "Optional"
+      - Include `C++ (v142) Universal Windows Platform tools` under `Optional` drop-down list
+      - Include 1-2 Windows 10 SDK versions back under `Optional` drop-down list
     - Desktop development with C++
     - .NET Desktop development
   - Individual Components
