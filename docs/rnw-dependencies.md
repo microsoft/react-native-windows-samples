@@ -49,6 +49,7 @@ You will also need to ensure that certain settings are enabled:
   ```bat
   choco install nodejs-lts
   ```
+  - Using [another package manager](https://nodejs.org/en/download/package-manager/) such as [Scoop](https://scoop.sh/) or [Node Version Switcher (nvs)](https://github.com/jasongin/nvs)
   - Directly from [Node.js](https://nodejs.org/en/download/)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
 
