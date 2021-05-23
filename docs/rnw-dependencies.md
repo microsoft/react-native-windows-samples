@@ -54,6 +54,10 @@ Alternatively, you can setup your environment manually:
 
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
+- *Highly recommended:* Install `git` using a method such as:
+  - Using a package manager such as [Chocolatey](https://chocolatey.org/) or [Scoop](https://scoop.sh/)
+  - Install [git for Windows](https://gitforwindows.org/)
+  - Install [GitHub Desktop](https://desktop.github.com/)
 
 ### Troubleshooting
 
