@@ -4,23 +4,23 @@ This document outlines the procedures for appropriately updating the website.
 
 ## Primary Scenarios
 
-### Changes in master
+### Changes in main branch
 
-1. Submit code updates to react-native-windows `master` branch.
-1. Submit documentation updates to this repo's `master` branch.
+1. Submit code updates to react-native-windows `main` branch.
+1. Submit documentation updates to this repo's `main` branch.
     1. Documents should be added/updated in [docs](docs/)
     1. Update sidebar contents in **sidebars.json** in [website](website/)
 
 ### Changes to an stable version 0.XX
 
 1. Submit code updates to react-native-windows `0.XX-stable` branch.
-1. Submit documentation updates to this repo's `master` branch.
+1. Submit documentation updates to this repo's `main` branch.
     1. Documents should be added/updated in **version-0.XX** folder under [website/versioned_docs](website/versioned_docs/).
     1. Update sidebar contents in **version-0.XX-sidebars.json** in [website/versioned_sidebars](website/versioned_sidebars/).
 
-### Changes in master and backported to stable version 0.XX
+### Changes in main branch and backported to stable version 0.XX
 
-Complete the documentation updates for both master and stable version 0.XX above.
+Complete the documentation updates for both main branch and stable version 0.XX above.
 
 ### New stable version 0.XX released
 

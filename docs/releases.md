@@ -8,7 +8,7 @@ For every major version update of `react-native`, React Native for Windows relea
 2.	Preview (@preview)
 3.	Latest (@latest)
 
-`canary` builds are built directly from our master branch. These builds provide no guarantees around upstream React version, breaking changes, or overall stability. These builds should be used for development or to test bleeding edge functionality but should not be relied upon for production use. Master builds are versioned as `0.0.0-canary.x`.
+`canary` builds are built directly from our main branch. These builds provide no guarantees around upstream React version, breaking changes, or overall stability. These builds should be used for development or to test bleeding edge functionality but should not be relied upon for production use. Main branch builds are versioned as `0.0.0-canary.x`.
 
 `preview` builds are the first released by stable branches. These builds aim to become increasingly polished over time and have fewer breaking changes than in canary. react-native-windows-init will work out of the box with preview builds when none else are available, but will warn users before installing them. Preview builds are versioned as `0.x.0-preview.y`, where x matches the minor release of React Native.
 

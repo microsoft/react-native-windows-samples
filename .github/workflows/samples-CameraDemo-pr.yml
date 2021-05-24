@@ -3,6 +3,7 @@ name: CameraDemo PR
 on:
   pull_request:
     branches:
+      - main
       - master
     paths:
       - 'samples/CameraDemo/**'

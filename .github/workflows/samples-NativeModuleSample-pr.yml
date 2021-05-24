@@ -3,6 +3,7 @@ name: NativeModuleSample PR
 on:
   pull_request:
     branches:
+      - main
       - master
     paths:
       - 'samples/NativeModuleSample/**'

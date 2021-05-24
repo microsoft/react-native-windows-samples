@@ -8,14 +8,14 @@ You can run React-Native for Windows apps only on Windows 10 devices with Window
 To develop React-Native for Windows apps, you need to install several dependencies.
 
 ## Install the development dependencies
-To check or install dependencies, run the script [`rnw-dependencies.ps1`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Scripts/rnw-dependencies.ps1) in an elevated PowerShell window.
+To check or install dependencies, run the script [`rnw-dependencies.ps1`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Scripts/rnw-dependencies.ps1) in an elevated PowerShell window.
 
 **Run this command:**
 Start an **elevated** PowerShell window and run:
 <html>
 <body>
   <div>
-    <div style="padding: 10px; font-family: monospace; font-size: 9pt; display: inline-block; width: 90%; background: #dddddd; border-radius: 6px;" id="rnwdepCmd">Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('<font color="#2020cc">https://raw.githubusercontent.com/microsoft/react-native-windows/master/vnext/Scripts/rnw-dependencies.ps1</font>')</div>
+    <div style="padding: 10px; font-family: monospace; font-size: 9pt; display: inline-block; width: 90%; background: #dddddd; border-radius: 6px;" id="rnwdepCmd">Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('<font color="#2020cc">https://raw.githubusercontent.com/microsoft/react-native-windows/main/vnext/Scripts/rnw-dependencies.ps1</font>')</div>
     <inline style="font-size: 24pt; cursor: pointer" onClick="javascript:navigator.clipboard.writeText(document.getElementById('rnwdepCmd').innerText)">📋</inline>
   </div>
 </body>
