@@ -12,12 +12,10 @@ To learn more about what it is and how to use it, check out the [React Native](h
 Hermes is experimentally supported on Windows, generally providing better performance characteristics than the default Chakra engine.
 
 ### Enabling Hermes for new projects
-The easiest way to enable Hermes is to pass the `--useHermes` flag to `react-native-windows-init` when creating a new project. This will set up your project to use the Hermes engine and to generate bundles as Hermes bytecode instead of JavaScript.
+Pass the `--useHermes` flag to `react-native-windows-init` when creating a new project. This will set up your project to use the Hermes engine and to generate bundles as Hermes bytecode instead of JavaScript.
 
 ### Using Hermes in an existing project
-Hermes can be enabled in existing projects with a few edits.
-
-First, set the `UseHermes` property to `true` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
+Set the `UseHermes` property to `true` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
 
 ```xml
 <PropertyGroup Label="Microsoft.ReactNative Experimental Features">
@@ -26,26 +24,15 @@ First, set the `UseHermes` property to `true` in the `ExperimentalFeatures.props
 </PropertyGroup>
 ```
 
-Second, add the Hermes NuGet package to `packages.config`, found next to your projects `vcxproj` file:
-
-```xml
-<packages>
-  ...
-  <package id="ReactNative.Hermes.Windows" version="0.7.2" targetFramework="native" />
-</packages>
-```
-
-Finally, edit the `ExtensionTargets` ItemGroup in your project's `vcxproj` file to import targets from the NuGet package:
-
-```xml
-<ImportGroup Label="ExtensionTargets">
-  ...
-  <Import Project="..\packages\ReactNative.Hermes.Windows.0.7.2\build\native\ReactNative.Hermes.Windows.targets" Condition="Exists('..\packages\ReactNative.Hermes.Windows.0.7.2\build\native\ReactNative.Hermes.Windows.targets')" />
-</ImportGroup>
-```
-
 ### Disabling Hermes
-If you've built a project using Hermes and want to opt-out, the above instructions may be reversed.
+Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
+
+```xml
+<PropertyGroup Label="Microsoft.ReactNative Experimental Features">
+  ...
+  <UseHermes>false</UseHermes>
+</PropertyGroup>
+```
 
 ### Known limitations
 - Hermes is not yet supported when using C# projects
