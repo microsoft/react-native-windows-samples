@@ -30,16 +30,16 @@ Alternatively, you can setup your environment manually:
 - It is _highly_ recommended to update the Windows system.
 - Install a recent version of [Visual Studio 2019](https://www.visualstudio.com/downloads) **with the following options checked**:
   - **Workloads**
-    - Universal Windows Platform development
-      - Include `C++ (v142) Universal Windows Platform tools` (under 'Optional')
-      - Older Windows 10 SDK version may be needed at this point.
-    - Desktop development with C++
-    - .NET Desktop development
     - Node.js development, or one of the following alternatives:
       - Install from **Individual Components**:
         - Development activities
           - Node.js development support
       - Install Node.js separately, see below for some options
+    - .NET Desktop development
+    - Desktop development with C++
+    - Universal Windows Platform development
+      - Include `C++ (v142) Universal Windows Platform tools` (under 'Optional')
+      - Older Windows 10 SDK version may be needed at this point.
 - Ensure that long path support is enabled.
 
 Options to install [Node.js](https://nodejs.org) separately:
