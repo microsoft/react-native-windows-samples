@@ -75,3 +75,4 @@ preprocessor
 ItemGroup
 WebdriverIO
 exclusionList
+nvs
