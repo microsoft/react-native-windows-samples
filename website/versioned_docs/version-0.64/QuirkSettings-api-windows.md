@@ -20,6 +20,11 @@ Runtime setting allowing Networking (HTTP, WebSocket) connections to skip certif
 
 
 
+### SetEnableFabric
+`static` void **`SetEnableFabric`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+
+
 ### SetMatchAndroidAndIOSStretchBehavior
 `static` void **`SetMatchAndroidAndIOSStretchBehavior`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
 
@@ -27,13 +32,6 @@ Runtime setting allowing Networking (HTTP, WebSocket) connections to skip certif
 
 Older versions of react-native-windows did not use [Yoga](https://github.com/facebook/yoga)'s legacy stretch behavior. This meant that react-native-windows would layout views slightly differently that in iOS and Android.
 Set this setting to false to maintain the behavior from react-native-windows <= 0.62.
-
-
-
-### SetUseLegacyWebSocketModule
-`static` void **`SetUseLegacyWebSocketModule`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
-
-Transitional setting allowing to use the deprecated `LegacyWebSocketModule`.
 
 
 

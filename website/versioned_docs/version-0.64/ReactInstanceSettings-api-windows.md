@@ -160,12 +160,6 @@ Most edits should be visible within a second or two without the instance having 
 Non-compatible changes still cause full reloads.
 See [Fast Refresh](https://reactnative.dev/docs/fast-refresh) for more information on Fast Refresh.
 
-### UseJsi
- bool `UseJsi`
-
-This controls if the JavaScript bridge should use the newer JSI runtime or use the legacy executor.  The JSI runtime is used by default, and the legacy executor will be removed in a future release. 
-> **It is not recommended to change this setting.**
-
 ### UseLiveReload
  bool `UseLiveReload`
 

@@ -17,7 +17,7 @@ When `IJSValueReader` reads data it must walk the whole tree without skipping an
 
 See the [`IJSValueWriter`](IJSValueWriter) for the corresponding writer interface.
 
-The [`IJSValueReader`](IJSValueReader) and [`IJSValueWriter`](IJSValueWriter) must be rarely used directly. Use them to create functions that serialize and deserialize from/to a native type. The rest of application code must use these functions to serialize/deserialize values. The `Microsoft.ReactNative.Cxx` and `Microsoft.ReactNative.Managed` projects offer serializer/deserializer functions for many standard types. Use them directly or to define serializer/deserializer functions for your types.
+The [`IJSValueReader`](IJSValueReader) and [`IJSValueWriter`](IJSValueWriter) must be rarely used directly. Use them to create functions that serialize a native type or deserialize into a native type. The rest of application code must use these functions to serialize/deserialize values. The `Microsoft.ReactNative.Cxx` and `Microsoft.ReactNative.Managed` projects offer serializer/deserializer functions for many standard types. Use them directly or to define serializer/deserializer functions for your types.
 
 ## Properties
 ### ValueType

@@ -34,10 +34,40 @@ Use this method to get access to the [`XamlUIService`](XamlUIService) associated
 
 
 
+### GetAccessibleRoot
+`static` [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) **`GetAccessibleRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties)
+
+Retrieves the default [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) that will be used for the app for accessibility purposes (e.g. to announce).
+
+
+
+### GetIslandWindowHandle
+`static` uint64_t **`GetIslandWindowHandle`**([`IReactPropertyBag`](IReactPropertyBag) properties)
+
+Gets the window handle HWND (as an UInt64) used as the XAML Island window for the current React instance.
+
+
+
 ### GetXamlRoot
 `static` [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) **`GetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties)
 
 Retrieves the default [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) for the app.
+
+
+
+### SetAccessibleRoot
+`static` void **`SetAccessibleRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties, [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) accessibleRoot)
+
+Sets the [`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) that will act as the default accessible element for the app. The element must be able to create an automation peer (see [`FrameworkElementAutomationPeer`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer)), or have the Landmark type property set (see [`AutomationProperties.LandmarkTypeProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties.LandmarkTypeProperty)).
+This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) when using XAML Islands to have access to functionality related to accessibility.
+
+
+
+### SetIslandWindowHandle
+`static` void **`SetIslandWindowHandle`**([`IReactPropertyBag`](IReactPropertyBag) properties, uint64_t windowHandle)
+
+Sets the windowHandle HWND (as an UInt64) to be the XAML Island window for the current React instance.
+Pass the value returned by IDesktopWindowXamlSourceNative get_WindowHandle.
 
 
 

@@ -9,13 +9,13 @@ Kind: `interface`
 
 
 JSON-like stream writer.
-It is used to write data that is sent between native modules and the Microsoft.ReactNative.dll.
+It is used to write data that is sent between native modules and the Microsoft.ReactNative library.
 
 The JSON-like streams are data structures that satisfy the [JSON specification](https://tools.ietf.org/html/rfc8259). The data structure may have objects with name-value pairs and arrays of items. Property values or array items can be of type `Null`, `Object`, `Array`, `String`, `Boolean`, or `Number`. The `IJSValueWriter` treats the `Number` type as `Int64` or `Double`. See [`JSValueType`](JSValueType).
 
 See the [`IJSValueReader`](IJSValueReader) for the corresponding reader interface.
 
-The [`IJSValueReader`](IJSValueReader) and [`IJSValueWriter`](IJSValueWriter) must be rarely used directly. Use them to create serializer and deserializer functions for a type. The rest of application code must use these functions to serialize/deserialize values. The `Microsoft.ReactNative.Cxx` and `Microsoft.ReactNative.Managed` projects offer serializer/deserializer functions for many standard types. Use them directly or to define serializer/deserializer functions for your types.
+The [`IJSValueReader`](IJSValueReader) and [`IJSValueWriter`](IJSValueWriter) must be rarely used directly. Use them to create functions that serialize a native type or deserialize into a native type. The rest of application code must use these functions to serialize/deserialize values. The `Microsoft.ReactNative.Cxx` and `Microsoft.ReactNative.Managed` projects offer serializer/deserializer functions for many standard types. Use them directly or to define serializer/deserializer functions for your types.
 
 
 

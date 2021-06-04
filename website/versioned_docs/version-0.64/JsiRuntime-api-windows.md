@@ -127,6 +127,11 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 
 
+### DrainMicrotasks
+bool **`DrainMicrotasks`**(int maxMicrotasksHint)
+
+
+
 ### EvaluateJavaScript
 [`JsiValueRef`](JsiValueRef) **`EvaluateJavaScript`**([`IJsiByteBuffer`](IJsiByteBuffer) buffer, string sourceUrl)
 
