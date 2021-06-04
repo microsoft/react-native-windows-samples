@@ -23,7 +23,7 @@ So our `raise` method will take a JS object, which will include what template th
 
 ### Create a module 
 
-For the purpose of our demo, we will add a native module directly to a C++/WinRT example app. If you prefer, you can follow the steps below and apply them to a separate native module project.
+For the purpose of our demo, we will add a native module directly to a C++/WinRT example app. If you prefer, you can follow the steps below and apply them to a separate native module project. Note that you can also use C# to write native modules in a similar manner.  For more information about choosing between C++/WinRT and C#, see [Native code language choice](https://microsoft.github.io/react-native-windows/docs/native-code-language-choice).
 We will start with our standard native module setup, by adding a `Notifications.h` file to our example app project. In this initial version, we'll use the simplest static Toast template (one string of text), so we'll have our `raise` method take a string:
 
 ```cpp
