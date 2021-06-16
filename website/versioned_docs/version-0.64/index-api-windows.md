@@ -54,6 +54,7 @@ original_id: Native-API-Reference
 - [`IViewManagerWithReactContext`](IViewManagerWithReactContext)
 ## Structs
 - [`AccessibilityAction`](AccessibilityAction)
+- [`DesktopWindowMessage`](DesktopWindowMessage)
 - [`JsiObjectRef`](JsiObjectRef)
 - [`JsiPropertyIdRef`](JsiPropertyIdRef)
 - [`JsiScopeState`](JsiScopeState)
