@@ -49,7 +49,7 @@ Here are the options that `react-native-windows-init` takes:
 | `--projectType` | string ["`app`","`lib`"] [default: "`app`"] | The type of project to initialize.               |
 | `--overwrite`   | boolean                                     | Overwrite any existing files without prompting.  |
 | `--useWinUI3`   | boolean                                     | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
-| `--useHermes`   | boolean                                     | Use Hermes instead of Chakra as the JS engine (supported on 0.64+) |
+| `--useHermes`   | boolean                                     | Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects) |
 | `--no-telemetry`| boolean                                     | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 
 This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
