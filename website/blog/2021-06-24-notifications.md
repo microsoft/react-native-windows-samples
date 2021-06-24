@@ -4,7 +4,7 @@ author: Alexander Sklar
 authorURL: https://twitter.com/alexsklar
 description: "Add Windows toast notifications to a React Native for Windows application"
 is_blog: true
-published_date: June 04, 2021
+published_date: June 24, 2021
 ---
 
 In this article, we will discuss how to enable your app to show toast notifications, which you can use to notify the user that something needs their attention, or to notify them that a long running operation has completed.
