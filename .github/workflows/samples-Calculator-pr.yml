@@ -3,6 +3,7 @@ name: Calculator PR
 on:
   pull_request:
     branches:
+      - main
       - master
     paths:
       - 'samples/Calculator/**'

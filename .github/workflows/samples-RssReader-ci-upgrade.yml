@@ -5,6 +5,7 @@ on:
     - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
   push:
     branches:
+      - main
       - master
     paths:
       - '.github/workflows/samples-RssReader-ci-upgrade.yml'

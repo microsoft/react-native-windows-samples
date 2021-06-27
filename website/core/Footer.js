@@ -59,7 +59,7 @@ class Footer extends React.Component {
               GitHub
             </a>
             <a
-              href="https://github.com/microsoft/react-native-windows-samples/tree/master/samples"
+              href="https://github.com/microsoft/react-native-windows-samples/tree/main/samples"
               target="_blank"
             >
               Samples

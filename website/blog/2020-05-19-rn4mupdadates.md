@@ -58,7 +58,7 @@ Lastly, in addition to contributing to these community modules personally, we wa
 
 The WebView module sets you up with the barebones web hosting tech that's available nativly on the device you're targetting. This module has been updated to support Windows and macOS.
 
-> To get your own version of the app in this short clip, check out the [RssReader sample](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/rssreader).
+> To get your own version of the app in this short clip, check out the [RssReader sample](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/rssreader).
 
 ### Camera
 

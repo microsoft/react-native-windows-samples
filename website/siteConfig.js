@@ -23,7 +23,7 @@ const siteConfig = {
   organizationName: "microsoft",
 
   editUrl:
-    "https://github.com/microsoft/react-native-windows-samples/blob/master/docs/",
+    "https://github.com/microsoft/react-native-windows-samples/blob/main/docs/",
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
@@ -31,7 +31,7 @@ const siteConfig = {
     { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },
     { page: "resources", label: "Resources" },
-    { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
+    { href: repoUrl + "-samples/tree/main/samples", label: "Samples" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
   ],
 

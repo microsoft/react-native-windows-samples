@@ -103,7 +103,7 @@ class Resources extends React.Component {
                 videotitle="React Native for Windows"
                 videotype="Github Repo"
                 cardlink="https://github.com/Microsoft/react-native-windows"
-                imgurl="https://raw.githubusercontent.com/microsoft/react-native-windows/master/.github/hero2.png"
+                imgurl="https://raw.githubusercontent.com/microsoft/react-native-windows/main/.github/hero2.png"
                 videodisc="Official React Native for Windows framework for building native Windows applications with React."/>
                 <ResourceCardItem
                   videolength="Repo"
@@ -124,7 +124,7 @@ class Resources extends React.Component {
                       videotitle="React Native Test App"
                       videotype="Github Repo Sample"
                       cardlink="https://github.com/microsoft/react-native-test-app"
-                      imgurl="https://raw.githubusercontent.com/microsoft/react-native-windows/master/.github/hero2.png"
+                      imgurl="https://raw.githubusercontent.com/microsoft/react-native-windows/main/.github/hero2.png"
                       videodisc="React Native Test App provides test apps for all platforms as a package."/>
              </div>
              <div className="column">

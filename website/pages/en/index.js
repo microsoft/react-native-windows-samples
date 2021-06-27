@@ -87,8 +87,8 @@ If you're curious about the **sample apps** we have published for inspiration:
 [check out our list here]: docs/flyout-component
 [Native modules]: docs/native-modules
 [Native UI components]: docs/view-managers
-[Calculator app]: https://github.com/microsoft/react-native-windows-samples/tree/master/samples/Calculator
-[ToDos Feed app]: https://github.com/microsoft/react-native-windows-samples/tree/master/samples/TodosFeed
+[Calculator app]: https://github.com/microsoft/react-native-windows-samples/tree/main/samples/Calculator
+[ToDos Feed app]: https://github.com/microsoft/react-native-windows-samples/tree/main/samples/TodosFeed
 [Windows AppConsult blog]: https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Getting-started-with-React-Native-for-Windows/ba-p/912093
   `
 };

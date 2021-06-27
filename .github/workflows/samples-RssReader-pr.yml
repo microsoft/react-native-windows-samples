@@ -3,6 +3,7 @@ name: RssReader PR
 on:
   pull_request:
     branches:
+      - main
       - master
     paths:
       - 'samples/rssreader/**'
