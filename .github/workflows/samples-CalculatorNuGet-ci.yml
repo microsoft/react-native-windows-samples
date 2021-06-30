@@ -8,7 +8,7 @@ on:
       - master
     paths:
       - 'samples/CalculatorNuGet/**'
-      - '.github/workflows/samples-CalculatorNuGet-CI.yml'
+      - '.github/workflows/samples-CalculatorNuGet-ci.yml'
 
 jobs:
   build:
