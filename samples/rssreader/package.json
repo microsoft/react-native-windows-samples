@@ -16,7 +16,7 @@
     "react-native": "^0.62.0-0",
     "react-native-macos": "^0.62.0-0",
     "react-native-rss-parser": "^1.4.0",
-    "react-native-webview": "^10.9.2",
+    "react-native-webview": "^11.6.4",
     "react-native-windows": "^0.62.0-0"
   },
   "devDependencies": {
