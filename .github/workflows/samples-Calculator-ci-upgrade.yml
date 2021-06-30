@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         sample: [Calculator]
-        architecture: [ARM, ARM64]
+        architecture: [ARM64]
         configuration: [Debug, Release]
         reactNativeWindowsVersion: [latest, preview, canary]
     steps:
