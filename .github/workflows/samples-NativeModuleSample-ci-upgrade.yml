@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
-        architecture: [x86, x64, ARM, ARM64]
+        architecture: [x86, x64, ARM64]
         configuration: [Debug, Release]
         reactNativeWindowsVersion: [latest, preview, canary]
     steps:
