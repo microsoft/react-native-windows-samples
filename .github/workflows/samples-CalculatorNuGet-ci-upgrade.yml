@@ -40,7 +40,7 @@ jobs:
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
-        run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }}
+        run: npx react-native-windows-init --overwrite --experimentalNuGetDependency true --version ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
@@ -82,7 +82,7 @@ jobs:
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
-        run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }}
+        run: npx react-native-windows-init --overwrite --experimentalNuGetDependency true --version ${{ matrix.reactNativeWindowsVersion }}
         working-directory: ..\..\src
 
       - name: Build ${{ matrix.architecture }} Debug
