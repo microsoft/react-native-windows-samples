@@ -4,6 +4,9 @@
   <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI%22">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI/badge.svg" alt="CalculatorNuGet CI Status" />
   </a>
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI+%28Upgrade%29%22">
+    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI%20(Upgrade)/badge.svg" alt="CalculatorNuGet CI (Upgrade) Status" />
+  </a>
 </p>
 
 This sample showcases the usage of React Native for Windows to build a simple Calculator, using the Microsoft.ReactNative NuGet.	
