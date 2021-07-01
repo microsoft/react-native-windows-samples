@@ -48,6 +48,6 @@ jobs:
         if: ${{ steps.upgrade.outcome == 'success' }}
         run: npx react-native run-windows --logging --no-packager --no-launch $DEPLOY_ARG $RELEASE_ARG --arch ${{ matrix.architecture }}
         env:
-          DEPLOY_ARG: ${{ startsWith('ARM') && '--no-deploy' || '' }}
+          DEPLOY_ARG: ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }}
           RELEASE_ARG: ${{ matrix.configuration == 'Release' && '--release' || '' }}
         working-directory: ..\..\src
