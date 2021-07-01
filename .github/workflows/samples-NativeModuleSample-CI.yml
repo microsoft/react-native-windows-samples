@@ -15,6 +15,7 @@ jobs:
     name: Build
     runs-on: windows-latest
     strategy:
+      fail-fast: false
       matrix:
         sample: [NativeModuleSample\cppwinrt, NativeModuleSample\csharp]
         architecture: [x86, x64, ARM64]
@@ -35,15 +36,9 @@ jobs:
       - name: Yarn install
         run: yarn install --frozen-lockfile
         working-directory: ..\..\src
-
-      - name: Build ${{ matrix.architecture }} Debug
-        if: ${{ matrix.configuration == 'Debug' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --arch ${{ matrix.architecture }}
-        working-directory: ..\..\src
-
-      - name: Build ${{ matrix.architecture }} Release
-        if: ${{ matrix.configuration == 'Release' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging --release --arch ${{ matrix.architecture }}
+      
+      - name: Run react-native run-windows
+        run: npx react-native run-windows --logging --no-autolink --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}
         working-directory: ..\..\src
 
       - name: Get final folder size
