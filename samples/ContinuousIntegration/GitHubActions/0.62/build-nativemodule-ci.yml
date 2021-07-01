@@ -29,11 +29,5 @@ jobs:
       - name: Yarn install
         run: yarn install
 
-      - name: Build ${{ matrix.architecture }} Debug
-        if: ${{ matrix.configuration == 'Debug' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --arch ${{ matrix.architecture }}
-
-      - name: Build ${{ matrix.architecture }} Release
-        if: ${{ matrix.configuration == 'Release' }}
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --logging --release --arch ${{ matrix.architecture }}
-  
+      - name: Run react-native run-windows
+        run: npx react-native run-windows --logging --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}
