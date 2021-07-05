@@ -76,3 +76,5 @@ ItemGroup
 WebdriverIO
 exclusionList
 nvs
+packages.config
+ExperimentalFlags.props
