@@ -66,7 +66,13 @@ const siteConfig = {
   scripts: [
     "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js",
     "https://platform.twitter.com/widgets.js",
-    "https://buttons.github.io/buttons.js"
+    "https://buttons.github.io/buttons.js",
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    '/react-native-windows/js/code-block-buttons.js',
+  ],
+
+  stylesheets: [
+    '/react-native-windows/css/code-block-buttons.css',
   ],
 
   // On page navigation for the current documentation page.
