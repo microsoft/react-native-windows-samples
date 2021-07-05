@@ -44,7 +44,10 @@ Then you can simply open the Visual Studio solution in the `windows` folder and 
 
 If you are instead creating a standalone native module, or adding Windows support to an existing native module, check out the [Native Modules Setup](native-modules-setup.md) guide first.
 
-## Sample view manager (C#)
+## Sample view manager
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--C#-->
 
 ### Attributes
 
@@ -240,14 +243,14 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface. The `CreateWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
+This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties) interface. The `CreateViewWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
 
 ```diff
 -internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
 +internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>, IViewManagerCreateWithProperties {
 // rest of the view manager goes here...
 +  // IViewManagerCreateWithProperties
-+  public virtual object CreateWithProperties(Microsoft.ReactNative.IJSValueReader propertyMapReader) {
++  public virtual object CreateViewWithProperties(Microsoft.ReactNative.IJSValueReader propertyMapReader) {
 +    propertyMapReader.ReaderValue(out IDictionary<string, JSValue> propertyMap);
 +    // create a XAML FrameworkElement based on properties in propertyMap
 +    if (propertyMap.ContainsKey("foo)) { 
@@ -271,62 +274,7 @@ This is useful in scenarios where you are wrapping a native XAML control. To do 
 +   virtual bool RequiresNativeLayout() { return true; }
 ```
 
-
-### 3. Using your View Manager in JSX
-
-`ViewManagerSample.js`:
-
-```js
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  Button,
-  requireNativeComponent,
-  StyleSheet,
-  UIManager,
-  View,
-} from 'react-native';
-
-let CustomUserControl = requireNativeComponent('CustomUserControl');
-
-class ViewManagerSample extends Component {
-  onPress() {
-    if (_customControlRef) {
-      const tag = findNodeHandle(this._customControlRef);
-      UIManager.dispatchViewManagerCommand(tag, UIManager.getViewManagerConfig('CustomUserControl').Commands.CustomCommand, ['arg1', 'arg2']);
-    }
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-         <CustomUserControl style={styles.customcontrol} label="CustomUserControl!" ref={(ref) => { this._customControlRef = ref; }} />
-         <Button onPress={() => { this.onPress(); }} title="Call CustomUserControl Commands!" />
-      </View>);
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  customcontrol: {
-    color: '#333333',
-    backgroundColor: '#006666',
-    width: 200,
-    height: 20,
-    margin: 10,
-  },
-});
-
-AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
-```
-
-## Sample view manager (C++)
-
+<!--C++-->
 For this sample, assume we already have the `CustomUserControl` defined in the C# example.
 
 ### 1. Authoring your View Manager
@@ -520,7 +468,7 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface:
+This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties) interface:
 ```diff
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
@@ -531,9 +479,9 @@ struct CustomUserControlViewManager : winrt::implements<
 +                                             winrt::Microsoft::ReactNative::IViewManagerCreateWithProperties,
                                              winrt::Microsoft::ReactNative::IViewManagerWithReactContext> {
 +  // IViewManagerCreateWithProperties
-+  winrt::Windows::Foundation::IInspectable CreateWithProperties(winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader);
++  winrt::Windows::Foundation::IInspectable CreateViewWithProperties(winrt::Microsoft::ReactNative::IJSValueReader const &propertyMapReader);
 ```
-The `CreateWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader` just like it is done in the `UpdateProperties` method.
+The `CreateViewWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader` just like it is done in the `UpdateProperties` method.
 
 
 - Your view manager is also able to declare that it wants to be responsible for its own sizing and layout. This is useful in scenarios where you are wrapping a native XAML control. To do so, implement the `winrt::Microsoft::ReactNative::IViewManagerRequiresNativeLayout` interface:
@@ -655,6 +603,8 @@ This example assumes that the `ViewManagerSample::ReactPackageProvider` we creat
 
 The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your native modules directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### 3. Using your View Manager in JSX
 
 `ViewManagerSample.js`:
@@ -676,15 +626,20 @@ class ViewManagerSample extends Component {
   onPress() {
     if (_customControlRef) {
       const tag = findNodeHandle(this._customControlRef);
-      UIManager.dispatchViewManagerCommand(tag, UIManager.getViewManagerConfig('CustomUserControl').Commands.CustomCommand, ['arg1', 'arg2']);
+      UIManager.dispatchViewManagerCommand(tag, 
+        UIManager.getViewManagerConfig('CustomUserControl').Commands.CustomCommand,
+        ['arg1', 'arg2']);
     }
   }
 
   render() {
     return (
       <View style={styles.container}>
-         <CustomUserControl style={styles.customcontrol} label="CustomUserControl!" ref={(ref) => { this._customControlRef = ref; }} />
-         <Button onPress={() => { this.onPress(); }} title="Call CustomUserControl Commands!" />
+         <CustomUserControl style={styles.customcontrol} 
+           label="CustomUserControl!" 
+           ref={(ref) => { this._customControlRef = ref; }} />
+         <Button onPress={() => { this.onPress(); }} 
+           title="Call CustomUserControl Commands!" />
       </View>);
   }
 }
@@ -707,3 +662,4 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
 ```
+

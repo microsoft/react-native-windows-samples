@@ -11,9 +11,10 @@ Two `JSValue` implementations are provided: one for C++ developers in the `Micro
 
 > This purpose of this document is to provide equivalency to the scenarios supported by [`folly/dynamic.h`](https://github.com/facebook/folly/blob/master/folly/docs/Dynamic.md).
 
-## Overview
+<!--DOCUSAURUS_CODE_TABS-->
+<!--C#-->
 
-### C#
+## Overview
 
 Here are some code samples to get started (assumes a `using Microsoft.ReactNative.Managed;` was used):
 
@@ -63,7 +64,88 @@ JSValue map4 = map2;
 Debug.Assert(map4.AsObject().Count == 2);
 ```
 
-### C++/WinRT
+## Runtime Type Checking and Conversions
+
+While most unsupported operations will cause compilation errors, some operations on `JSValue`s require checking at runtime that the stored type is compatible with the operation. Some operations may throw runtime exceptions or produce unexpected behavior as type conversions fail and default values are returned.
+
+More examples should hopefully clarify this:
+
+```csharp
+JSValue dint = 42;
+
+JSValue str = "foo";
+JSValue anotherStr = str + "something"; // fine
+JSValue thisDoesNotCompile = str + dint; // compilation error
+```
+
+Explicit type conversions can be requested for some of the basic types:
+
+```csharp
+JSValue dint = 12345678;
+JSValue doub = dint.AsDouble(); // doub will hold 12345678.0
+JSValue str = dint.AsString(); // str == "12345678"
+
+JSValue hugeInt = long.MaxValue; // hugeInt = 9223372036854775807
+JSValue hugeDoub = hugeInt.AsDouble(); // hugeDoub = 9.2233720368547758E+18
+```
+
+## Iteration and Lookup
+
+You can iterate over `JSValueArray`s as you would over any C# enumerable.
+
+```csharp
+JSValueArray array = new JSValueArray() { 2, 3, "foo" };
+
+foreach (var val in array)
+{
+    doSomethingWith(val);
+}
+```
+
+You can iterate over `JSValueObject`s just like any other `IDictionary<string, JSValue>`.
+
+```csharp
+JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
+
+foreach (var kvp in obj)
+{
+    // Key is kvp.Key, value is kvp.Value
+    processKey(kvp.Key);
+    processValue(kvp.Value);
+}
+
+foreach (var key in obj.Keys)
+{
+    processKey(key);
+}
+
+foreach (var value in obj.Values)
+{
+    processValue(value);
+}
+```
+
+You can find an element by key in a `JSValueObject` using the `TryGetValue()` method,
+which takes the key and returns `true` if a key is present and provides the value as an out variable. If the key is not preset, it returns `false` and the out variable will be null.
+
+```csharp
+JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
+
+if (obj.TryGetValue("hello", out JSValue value))
+{
+    // value is "world"
+}
+
+if (obj.TryGetValue("no_such_key", out JSValue value2))
+{
+    // this block will not be executed
+}
+// value2 is null
+```
+
+<!--C++/WinRT-->
+
+## Overview
 
 Here are some code samples to get started (assumes a `#include "JSValue.h"` was used):
 
@@ -119,29 +201,6 @@ While most unsupported operations will cause compilation errors, some operations
 
 More examples should hopefully clarify this:
 
-### C#
-
-```csharp
-JSValue dint = 42;
-
-JSValue str = "foo";
-JSValue anotherStr = str + "something"; // fine
-JSValue thisDoesNotCompile = str + dint; // compilation error
-```
-
-Explicit type conversions can be requested for some of the basic types:
-
-```csharp
-JSValue dint = 12345678;
-JSValue doub = dint.AsDouble(); // doub will hold 12345678.0
-JSValue str = dint.AsString(); // str == "12345678"
-
-JSValue hugeInt = long.MaxValue; // hugeInt = 9223372036854775807
-JSValue hugeDoub = hugeInt.AsDouble(); // hugeDoub = 9.2233720368547758E+18
-```
-
-### C++/WinRT
-
 ```c++
 JSValue dint = 42;
 
@@ -166,61 +225,6 @@ JSValue hugeDoub = hugeInt.AsDouble();
 
 ## Iteration and Lookup
 
-### C#
-
-You can iterate over `JSValueArray`s as you would over any C# enumerable.
-
-```csharp
-JSValueArray array = new JSValueArray() { 2, 3, "foo" };
-
-foreach (var val in array)
-{
-    doSomethingWith(val);
-}
-```
-
-You can iterate over `JSValueObject`s just like any other `IDictionary<string, JSValue>`.
-
-```csharp
-JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
-
-foreach (var kvp in obj)
-{
-    // Key is kvp.Key, value is kvp.Value
-    processKey(kvp.Key);
-    processValue(kvp.Value);
-}
-
-foreach (var key in obj.Keys)
-{
-    processKey(key);
-}
-
-foreach (var value in obj.Values)
-{
-    processValue(value);
-}
-```
-
-You can find an element by key in a `JSValueObject` using the `TryGetValue()` method,
-which takes the key and returns `true` if a key is present and provides the value as an out variable. If the key is not preset, it returns `false` and the out variable will be null.
-
-```csharp
-JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
-
-if (obj.TryGetValue("hello", out JSValue value))
-{
-    // value is "world"
-}
-
-if (obj.TryGetValue("no_such_key", out JSValue value2))
-{
-    // this block will not be executed
-}
-// value2 is null
-```
-
-### C++/WinRT
 
 You can iterate over `JSValueArray`s as you would over any C++ sequence container.
 
@@ -259,6 +263,8 @@ auto pos = obj.find("hello");
 auto pos = obj.find("no_such_key");
 // pos == obj.end()
 ```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ## Use for JSON
 
