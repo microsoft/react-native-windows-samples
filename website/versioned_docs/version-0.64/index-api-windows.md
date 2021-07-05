@@ -3,7 +3,6 @@ id: version-0.64-Native-API-Reference
 title: namespace Microsoft.ReactNative
 sidebar_label: Full reference
 original_id: Native-API-Reference
-
 ---
 
 ## Enums
