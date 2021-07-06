@@ -29,7 +29,9 @@ When you enable react-native-windows on your new project, you can pass `--experi
 Of course all the other flags still work.
 
 # How to update a previously created project
-## C# projects
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--C# projects-->
 1. Add a NuGet configuration file `NuGet.config` in the `windows` folder next to the `.sln` file
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +68,7 @@ Of course all the other flags still work.
 
 1. Update the C# logic for the new [compile-time C# codeGen](native-modules-csharp-codegen.md)
 
-## C++ projects
+<!--C++ projects-->
 1. Update the solution file `windows\<projectName>.sln`:
    1. Open the project in Visual Studio
    1. Remove all projects that are not your project
@@ -84,6 +86,8 @@ Of course all the other flags still work.
 
       C++ packages do not support `PackageReference` so it is not recommended to manually add these dependencies to the project file, instead add the dependencies via the Visual Studio IDE.
       > Note: You'll need to match the NuGet version with the npm version
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 # Version match
 The versions of the NuGet package in your project must match the npm package version. If you need to update the NuGet packages there is a separate page on [Updating NuGet packages](nuget-update.md)
