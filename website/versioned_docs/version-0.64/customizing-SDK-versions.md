@@ -4,20 +4,20 @@ title: Customizing SDK versions
 original_id: customizing-sdk-versions
 ---
 
-In React Native for Windows 0.64, we have made it easier for an app to customize which versions of the Windows SDK and WinUI 2.x to use.
+In React Native for Windows 0.64.3, we have made it easier for an app to customize which versions of the Windows SDK and WinUI 2.x to use.
 
 ### Details
 
 Each app has a file `ExperimentalFeatures.props` which describes the different SDK and library versions that the app depends on. This file can be found in the same directory as the app's `.sln` file.
 
-Native Modules created in 0.64+ will locate and import this file at build time when they are linked into an app. This means that native modules will end up using the Windows SDK versions and WinUI 2.x versions that the app chose to use.
+Native Modules created in 0.64.3+ will locate and import this file at build time when they are linked into an app. This means that native modules will end up using the Windows SDK versions and WinUI 2.x versions that the app chose to use.
 
 The `ExperimentalFeatures.props` file can be used to set a number of properties that determine which dependencies to use, including:
 | Property name | Description |
 |--|--|
 | `WinUI2xVersion` | Version of the WinUI 2.x package to use, e.g. `2.6.0` |
 | `WindowsTargetPlatformVersion` | Version of the Windows 10 SDK to use, e.g. `10.0.19041.0` |
-| `UseHermes` | Whether to use the [Hermes JavaScript engine](hermes.md). |
+| `UseHermes` | Whether to use the [Hermes JavaScript engine](hermes). |
 
 ## Other properties
 
@@ -39,6 +39,7 @@ Using a dependency involves the following two tasks:
 - Importing the package's build properties and targets
 
 For C# apps, the two steps are combined thanks to the built-in  [`<PackageReference>`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) support.
+However, C# apps restore NuGet packages to a location under your user profile, whereas C++ projects expect NuGet packages to be in the solution directory. The Microsoft.ReactNative project which implements the RNW framework is a C++ project so it needs to be able to find the WinUI package under the solution `packages` directory. A workaround for this, is to edit the file `node_modules\react-native-windows\Microsoft.ReactNative\packages.config` to update the WinUI version and have it restore to the solution directory correctly.
 
 C++ apps use `packages.config` to specify the set of NuGet packages, and then manually import the right `.props` and `.targets` files from the package.
 
@@ -49,7 +50,7 @@ For C++ apps, in addition to setting the property value, you will also need to m
 <!--DOCUSAURUS_CODE_TABS-->
 <!--C# app-->
 
-#### ExperimentalFlags.props
+#### windows\ExperimentalFlags.props
 
 ```xml title="ExperimentalFlags.props"
 <PropertyGroup>
@@ -58,9 +59,22 @@ For C++ apps, in addition to setting the property value, you will also need to m
 </PropertyGroup>
 ```
 
+#### node_modules\react-native-windows\Microsoft.ReactNative\packages.config
+
+```diff
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="Microsoft.Windows.CppWinRT" version="2.0.200615.7" targetFramework="native" />
+  <!-- more packages -->
+-  <package id="Microsoft.UI.Xaml" version="2.3.191129002" targetFramework="native" />
++  <package id="Microsoft.UI.Xaml" version="2.6.0" targetFramework="native" />
+</packages>
+```
+
+
 <!--C++ app-->
 
-#### ExperimentalFlags.props
+#### windows\ExperimentalFlags.props
 
 ```xml
 <PropertyGroup>
@@ -69,7 +83,7 @@ For C++ apps, in addition to setting the property value, you will also need to m
 </PropertyGroup>
 ```
 
-#### packages.config
+#### windows\MyApp\packages.config
 
 ```diff
 <?xml version="1.0" encoding="utf-8"?>
