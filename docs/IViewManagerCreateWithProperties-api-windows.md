@@ -1,6 +1,7 @@
 ---
-id: IViewManagerCreateWithProperties
+id: version-0.65-IViewManagerCreateWithProperties
 title: IViewManagerCreateWithProperties
+original_id: IViewManagerCreateWithProperties
 ---
 
 Kind: `interface`

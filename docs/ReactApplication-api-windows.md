@@ -1,6 +1,7 @@
 ---
-id: ReactApplication
+id: version-0.65-ReactApplication
 title: ReactApplication
+original_id: ReactApplication
 ---
 
 Kind: `class`
@@ -27,13 +28,6 @@ Generally, changes to these settings will not take effect if the React instance 
  string `JavaScriptBundleFile`
 
 See [`ReactInstanceSettings.JavaScriptBundleFile`](ReactInstanceSettings#javascriptbundlefile).
-
-### JavaScriptMainModuleName
- string `JavaScriptMainModuleName`
-
-> **Deprecated**: Use [`JavaScriptBundleFile`](#javascriptbundlefile) instead
-
-See [`ReactInstanceSettings.JavaScriptMainModuleName`](ReactInstanceSettings#javascriptmainmodulename).
 
 ### PackageProviders
 `readonly`  [`IVector`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVector-1)<[`IReactPackageProvider`](IReactPackageProvider)> `PackageProviders`

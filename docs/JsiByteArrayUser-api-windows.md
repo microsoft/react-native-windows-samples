@@ -1,6 +1,7 @@
 ---
-id: JsiByteArrayUser
+id: version-0.65-JsiByteArrayUser
 title: JsiByteArrayUser
+original_id: JsiByteArrayUser
 ---
 
 Kind: `delegate`

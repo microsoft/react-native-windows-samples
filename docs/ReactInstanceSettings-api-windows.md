@@ -1,6 +1,7 @@
 ---
-id: ReactInstanceSettings
+id: version-0.65-ReactInstanceSettings
 title: ReactInstanceSettings
+original_id: ReactInstanceSettings
 ---
 
 Kind: `class`
@@ -26,16 +27,7 @@ Set this to a location the application has write access to in order for bytecode
 ### DebugBundlePath
  string `DebugBundlePath`
 
-When loading from a bundle server (such as metro), this is the path that will be requested from the server. If this is not provided the value of [`JavaScriptBundleFile`](#javascriptbundlefile) or [`JavaScriptMainModuleName`](#javascriptmainmodulename) is used.
-
-### DebugHost
- string `DebugHost`
-
-> **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in version 0.65.
-
-**Default value**: `localhost:8081`
-
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
+When loading from a bundle server (such as metro), this is the path that will be requested from the server. If this is not provided, the value of [`JavaScriptBundleFile`](#javascriptbundlefile) is used.
 
 ### DebuggerBreakOnNextLine
  bool `DebuggerBreakOnNextLine`
@@ -89,13 +81,6 @@ In order the override to work the Microsoft.ReactNative must be compiled with su
 **Default value**: `index.windows`
 
 The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath). The `.bundle` extension will be appended to the end, when looking for the bundle file.
-
-### JavaScriptMainModuleName
- string `JavaScriptMainModuleName`
-
-> **Deprecated**: Use [`JavaScriptBundleFile`](#javascriptbundlefile) instead. It will be removed in version 0.65.
-
-Name of the JavaScript bundle file. If [`JavaScriptBundleFile`](#javascriptbundlefile) is specified it is used instead.
 
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`

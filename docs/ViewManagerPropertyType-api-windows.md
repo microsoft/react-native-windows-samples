@@ -1,6 +1,7 @@
 ---
-id: ViewManagerPropertyType
+id: version-0.65-ViewManagerPropertyType
 title: ViewManagerPropertyType
+original_id: ViewManagerPropertyType
 ---
 
 Kind: `enum`

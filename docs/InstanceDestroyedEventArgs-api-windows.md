@@ -1,6 +1,7 @@
 ---
-id: InstanceDestroyedEventArgs
+id: version-0.65-InstanceDestroyedEventArgs
 title: InstanceDestroyedEventArgs
+original_id: InstanceDestroyedEventArgs
 ---
 
 Kind: `class`

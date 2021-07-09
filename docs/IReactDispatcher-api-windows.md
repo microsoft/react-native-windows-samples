@@ -1,6 +1,7 @@
 ---
-id: IReactDispatcher
+id: version-0.65-IReactDispatcher
 title: IReactDispatcher
+original_id: IReactDispatcher
 ---
 
 Kind: `interface`

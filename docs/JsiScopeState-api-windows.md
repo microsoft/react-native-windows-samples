@@ -1,6 +1,7 @@
 ---
-id: JsiScopeState
+id: version-0.65-JsiScopeState
 title: JsiScopeState
+original_id: JsiScopeState
 ---
 
 Kind: `struct`

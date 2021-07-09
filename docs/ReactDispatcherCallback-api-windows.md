@@ -1,6 +1,7 @@
 ---
-id: ReactDispatcherCallback
+id: version-0.65-ReactDispatcherCallback
 title: ReactDispatcherCallback
+original_id: ReactDispatcherCallback
 ---
 
 Kind: `delegate`
@@ -16,3 +17,4 @@ void **`Invoke`**()
 
 ## Referenced by
 - [`IReactDispatcher`](IReactDispatcher)
+- [`ReactCoreInjection`](ReactCoreInjection)

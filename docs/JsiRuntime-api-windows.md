@@ -1,6 +1,7 @@
 ---
-id: JsiRuntime
+id: version-0.65-JsiRuntime
 title: JsiRuntime
+original_id: JsiRuntime
 ---
 
 Kind: `class`
@@ -123,6 +124,11 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ### CreateWeakObject
 [`JsiWeakObjectRef`](JsiWeakObjectRef) **`CreateWeakObject`**([`JsiObjectRef`](JsiObjectRef) obj)
+
+
+
+### DrainMicrotasks
+bool **`DrainMicrotasks`**(int maxMicrotasksHint)
 
 
 

@@ -1,6 +1,7 @@
 ---
-id: ReactNotificationHandler
+id: version-0.65-ReactNotificationHandler
 title: ReactNotificationHandler
+original_id: ReactNotificationHandler
 ---
 
 Kind: `delegate`

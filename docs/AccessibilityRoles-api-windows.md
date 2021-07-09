@@ -1,6 +1,7 @@
 ---
-id: AccessibilityRoles
+id: version-0.65-AccessibilityRoles
 title: AccessibilityRoles
+original_id: AccessibilityRoles
 ---
 
 Kind: `enum`

@@ -1,6 +1,7 @@
 ---
-id: JsiError
+id: version-0.65-JsiError
 title: JsiError
+original_id: JsiError
 ---
 
 Kind: `class`

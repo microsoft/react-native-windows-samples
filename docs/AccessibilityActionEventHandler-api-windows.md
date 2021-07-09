@@ -1,6 +1,7 @@
 ---
-id: AccessibilityActionEventHandler
+id: version-0.65-AccessibilityActionEventHandler
 title: AccessibilityActionEventHandler
+original_id: AccessibilityActionEventHandler
 ---
 
 Kind: `delegate`

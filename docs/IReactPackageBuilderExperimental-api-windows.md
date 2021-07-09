@@ -1,6 +1,7 @@
 ---
-id: IReactPackageBuilderExperimental
+id: version-0.65-IReactPackageBuilderExperimental
 title: IReactPackageBuilderExperimental
+original_id: IReactPackageBuilderExperimental
 ---
 
 Kind: `interface`

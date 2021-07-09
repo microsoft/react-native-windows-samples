@@ -1,6 +1,7 @@
 ---
-id: IReactPropertyBag
+id: version-0.65-IReactPropertyBag
 title: IReactPropertyBag
+original_id: IReactPropertyBag
 ---
 
 Kind: `interface`
@@ -44,6 +45,8 @@ If the new value is null, then the property is removed.
 
 ## Referenced by
 - [`IReactContext`](IReactContext)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
+- [`UIBatchCompleteCallback`](UIBatchCompleteCallback)
 - [`XamlUIService`](XamlUIService)

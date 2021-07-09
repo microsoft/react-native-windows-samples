@@ -1,6 +1,7 @@
 ---
-id: ReactRootView
+id: version-0.65-ReactRootView
 title: ReactRootView
+original_id: ReactRootView
 ---
 
 Kind: `class`

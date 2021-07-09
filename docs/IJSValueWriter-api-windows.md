@@ -1,6 +1,7 @@
 ---
-id: IJSValueWriter
+id: version-0.65-IJSValueWriter
 title: IJSValueWriter
+original_id: IJSValueWriter
 ---
 
 Kind: `interface`

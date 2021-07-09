@@ -1,6 +1,7 @@
 ---
-id: IReactNotificationArgs
+id: version-0.65-IReactNotificationArgs
 title: IReactNotificationArgs
+original_id: IReactNotificationArgs
 ---
 
 Kind: `interface`

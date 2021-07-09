@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithReactContext
+id: version-0.65-IViewManagerWithReactContext
 title: IViewManagerWithReactContext
+original_id: IViewManagerWithReactContext
 ---
 
 Kind: `interface`

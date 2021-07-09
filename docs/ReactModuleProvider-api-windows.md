@@ -1,6 +1,7 @@
 ---
-id: ReactModuleProvider
+id: version-0.65-ReactModuleProvider
 title: ReactModuleProvider
+original_id: ReactModuleProvider
 ---
 
 Kind: `delegate`

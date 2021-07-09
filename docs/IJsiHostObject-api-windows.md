@@ -1,6 +1,7 @@
 ---
-id: IJsiHostObject
+id: version-0.65-IJsiHostObject
 title: IJsiHostObject
+original_id: IJsiHostObject
 ---
 
 Kind: `interface`

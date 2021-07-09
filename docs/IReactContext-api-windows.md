@@ -1,6 +1,7 @@
 ---
-id: IReactContext
+id: version-0.65-IReactContext
 title: IReactContext
+original_id: IReactContext
 ---
 
 Kind: `interface`
@@ -87,10 +88,12 @@ The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that 
 
 
 ## Referenced by
+- [`IReactViewInstance`](IReactViewInstance)
 - [`IViewManagerWithReactContext`](IViewManagerWithReactContext)
 - [`InitializerDelegate`](InitializerDelegate)
 - [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
 - [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
 - [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`XamlUIService`](XamlUIService)

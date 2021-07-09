@@ -1,6 +1,7 @@
 ---
-id: IJsiByteBuffer
+id: version-0.65-IJsiByteBuffer
 title: IJsiByteBuffer
+original_id: IJsiByteBuffer
 ---
 
 Kind: `interface`

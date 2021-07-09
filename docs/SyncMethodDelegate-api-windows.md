@@ -1,6 +1,7 @@
 ---
-id: SyncMethodDelegate
+id: version-0.65-SyncMethodDelegate
 title: SyncMethodDelegate
+original_id: SyncMethodDelegate
 ---
 
 Kind: `delegate`

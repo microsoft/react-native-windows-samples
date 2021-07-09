@@ -1,6 +1,7 @@
 ---
-id: IReactPropertyName
+id: version-0.65-IReactPropertyName
 title: IReactPropertyName
+original_id: IReactPropertyName
 ---
 
 Kind: `interface`

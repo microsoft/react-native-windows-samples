@@ -1,6 +1,7 @@
 ---
-id: IReactNonAbiValue
+id: version-0.65-IReactNonAbiValue
 title: IReactNonAbiValue
+original_id: IReactNonAbiValue
 ---
 
 Kind: `interface`

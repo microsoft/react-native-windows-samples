@@ -1,6 +1,7 @@
 ---
-id: JSValueArgWriter
+id: version-0.65-JSValueArgWriter
 title: JSValueArgWriter
+original_id: JSValueArgWriter
 ---
 
 Kind: `delegate`
@@ -18,5 +19,6 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) writer)
 ## Referenced by
 - [`IReactContext`](IReactContext)
 - [`ReactRootView`](ReactRootView)
+- [`ReactViewOptions`](ReactViewOptions)
 - [`XamlHelper`](XamlHelper)
 - [`XamlUIService`](XamlUIService)

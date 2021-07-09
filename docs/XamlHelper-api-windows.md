@@ -1,6 +1,7 @@
 ---
-id: XamlHelper
+id: version-0.65-XamlHelper
 title: XamlHelper
+original_id: XamlHelper
 ---
 
 Kind: `class`
