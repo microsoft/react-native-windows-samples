@@ -3,6 +3,7 @@ id: version-0.65-Native-API-Reference
 title: namespace Microsoft.ReactNative
 sidebar_label: Full reference
 original_id: Native-API-Reference
+
 ---
 
 ## Enums
@@ -39,6 +40,8 @@ original_id: Native-API-Reference
 - [`IReactPropertyName`](IReactPropertyName)
 - [`IReactPropertyNamespace`](IReactPropertyNamespace)
 - [`IReactSettingsSnapshot`](IReactSettingsSnapshot)
+- [`IReactViewHost`](IReactViewHost)
+- [`IReactViewInstance`](IReactViewInstance)
 - [`IRedBoxErrorFrameInfo`](IRedBoxErrorFrameInfo)
 - [`IRedBoxErrorInfo`](IRedBoxErrorInfo)
 - [`IRedBoxHandler`](IRedBoxHandler)
@@ -78,12 +81,14 @@ original_id: Native-API-Reference
 - [`JsiRuntime`](JsiRuntime)
 - [`QuirkSettings`](QuirkSettings)
 - [`ReactApplication`](ReactApplication)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactDispatcherHelper`](ReactDispatcherHelper)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`ReactNotificationServiceHelper`](ReactNotificationServiceHelper)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
 - [`ReactRootView`](ReactRootView)
+- [`ReactViewOptions`](ReactViewOptions)
 - [`RedBoxHelper`](RedBoxHelper)
 - [`ViewControl`](ViewControl)
 - [`ViewPanel`](ViewPanel)
@@ -106,3 +111,4 @@ original_id: Native-API-Reference
 - [`ReactNotificationHandler`](ReactNotificationHandler)
 - [`ReactViewManagerProvider`](ReactViewManagerProvider)
 - [`SyncMethodDelegate`](SyncMethodDelegate)
+- [`UIBatchCompleteCallback`](UIBatchCompleteCallback)
