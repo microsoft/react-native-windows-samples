@@ -42,3 +42,48 @@ The command will:
 * Deploy the application
 * Launch the React Native Server and Debugger
 * Launch the application
+
+### Upgrade
+To upgrade this sample to the latest version of RNW:
+
+1. Open a command prompt and navigate to the `samples` folder:
+    ```cmd
+    cd ..
+    ```
+2. Delete this folder:
+    ```cmd
+    rd /s /q CameraDemo
+    ```
+3. Create a new React Native app:
+    ```cmd
+    npx react-native init CameraDemo --version latest
+    ```
+4. Add `react-native-camera` package:
+    ```cmd
+    cd CameraDemo
+    yarn add react-native-camera
+    ```
+5. Add Windows support:
+    ```cmd
+    npx react-native-windows-init --version latest --overwrite
+    ```
+6. Restore these original app files:
+    ```
+    git restore README.md
+    git restore App.js
+    ```
+7. Restore these lines in `windows\CameraDemo\Package.appxmanifest`:
+    ```diff
+    <Capabilities>
+      <Capability Name="internetClient" />
+    +  <uap:Capability Name="videosLibrary"/>
+    +  <uap:Capability Name="picturesLibrary"/>
+    +  <DeviceCapability Name="webcam"/>
+    +  <DeviceCapability Name="microphone"/>
+    </Capabilities>
+    ```
+8. Verify the new app builds and runs:
+    ```
+    npx react-native run-windows
+    ```
+9. Update this readme with the new major version at the top.
