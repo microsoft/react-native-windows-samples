@@ -41,9 +41,7 @@ Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file
 
 ### Known limitations
 
-- Hermes is not yet supported when using C# projects
-- Hermes debugger is not yet supported
-- Enabling Hermes leads to a very large download on initial build. This will become smaller in the future
+- CPU Sampling profiler is not yet supported
 - Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI 3
 - The binary for Hermes is not yet signed by Microsoft
 - Debug builds of an app that uses Hermes are very slow
