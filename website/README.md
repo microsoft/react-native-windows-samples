@@ -6,6 +6,7 @@ This website was created with [Docusaurus](https://v1.docusaurus.io/).
 * [Directory Structure](#directory-structure)
 * [Editing Content](#editing-content)
 * [Adding Content](#adding-content)
+* [Cutting Documentation for New React Native Windows Release](#cutting-documentation-for-a-new-react-native-windows-release)
 * [Full Documentation](#full-documentation)
 
 # Get Started in 5 Minutes
@@ -189,6 +190,11 @@ For more information about the navigation bar, click [here](https://v1.docusauru
 ```
 
 For more information about custom pages, click [here](https://v1.docusaurus.io/docs/en/custom-pages).
+
+# Cutting Documentation for a New React Native Windows Release
+1. Run `yarn run version <0.xx>`. This will create a new directory of versioned docs, `version-0.xx`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.xx. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
+2. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation to your new `version-0.xx` directory.
+3. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.xx for its `defaultVersionShow` constant.
 
 # Full Documentation
 
