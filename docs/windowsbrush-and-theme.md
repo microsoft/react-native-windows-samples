@@ -13,7 +13,7 @@ In this example, we'll look at three things:
 
 - How to set up your React Native app to be style and event sensitive to the system themes
 - How to switch styles when a theme change has occurred
-- Handling a theme changed event
+- Handlingggg a theme changed event
 
 #### Using hooks to be sensitive to theme changes
 
