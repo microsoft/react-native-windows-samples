@@ -75,9 +75,9 @@ class Versions extends React.Component {
           <MarkdownBlock>{textContent.introtext}</MarkdownBlock>
           <h1 style={{fontWeight: 'bold'}}>Latest version</h1>
           <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
-          <TableRow versionNumber="MASTER"
+          <TableRow versionNumber="MAIN"
           docLink={docsUrl + 'docs/next/getting-started'}
-          changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...master'}
+          changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...main'}
           changeLogText={'Commits since ' + currentVersion}/>
           <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>
           <MarkdownBlock>{textContent.stablelegacyversions}</MarkdownBlock>
