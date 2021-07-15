@@ -3,7 +3,7 @@ name: CameraDemo PR
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'samples/CameraDemo/**'
       - '.github/workflows/samples-CameraDemo-*.yml'

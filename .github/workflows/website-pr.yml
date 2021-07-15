@@ -3,7 +3,7 @@ name: RNW Website PR
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/website-ci.yml'
       - '.github/workflows/website-pr.yml'

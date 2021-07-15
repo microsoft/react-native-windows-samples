@@ -1,5 +1,5 @@
 # This workflow will build all flavors of your React Native for Windows app
-# project every time changes are pushed to master. This checks that every
+# project every time changes are pushed to main. This checks that every
 # change builds on Windows.
 
 name: App CI
@@ -7,7 +7,7 @@ name: App CI
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   # This job builds both Debug and Release versions of the app, for all
