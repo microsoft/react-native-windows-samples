@@ -191,10 +191,67 @@ For more information about the navigation bar, click [here](https://v1.docusauru
 
 For more information about custom pages, click [here](https://v1.docusaurus.io/docs/en/custom-pages).
 
-# Cutting Documentation for a New React Native Windows Release
-1. Run `yarn run version <0.xx>`. This will create a new directory of versioned docs, `version-0.xx`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.xx. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
-2. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation to your new `version-0.xx` directory.
-3. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.xx for its `defaultVersionShow` constant.
+# Updating the Documentation Following Changes in react-native-windows
+## Changes in main
+
+1. Submit code updates to react-native-windows `main` branch.
+1. Submit documentation updates to this repo's `main` branch.
+    1. Documents should be added/updated in [docs](docs/)
+    1. Update sidebar contents in **sidebars.json** in [website](website/)
+
+## Changes to a stable version 0.XX
+
+1. Submit code updates to react-native-windows `0.XX-stable` branch.
+1. Submit documentation updates to this repo's `main` branch.
+    1. Documents should be added/updated in **version-0.XX** folder under [website/versioned_docs](website/versioned_docs/).
+    1. Update sidebar contents in **version-0.XX-sidebars.json** in [website/versioned_sidebars](website/versioned_sidebars/).
+
+## Changes in main and backported to stable version 0.XX
+
+Complete the documentation updates for both main and stable version 0.XX above.
+
+## Cutting Documentation for a New React Native Windows Release
+1. Update necessary version references in [docs](docs/).
+1. Snapshot the website for version 0.XX: 
+        1. `cd website`
+        1. `yarn run version 0.XX`
+        1. `yarn run fix-unbroken`
+  This will create a new directory of versioned docs, `version-0.XX`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.XX. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
+1. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation to your new `version-0.XX` directory.
+1. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.xx for its `defaultVersionShown` constant.
+
+# FAQ
+## How do the versioned snapshots work?
+
+When Docusaurus creates a versioned "snapshot" folder under *versioned_docs*, only the docs that have been created/modified since the last "snapshot" are copied in. Asset files are not copied, and relative links are not updated. When building the website, the tool has its own fallback for building all of the correct pages and resolving the relative links.
+
+Basically, assets are not versioned and must be kept in the repo root's *docs/assets* folder, and for the docs, if a doc is not present for a specific version, the tool looks back to the previous snapshots until it finds it.
+
+For more details, see [Docusaurus Fallback Functionality](https://docusaurus.io/docs/en/versioning#fallback-functionality).
+
+## How/where do I modify docs for a previously released stable version 0.XX?
+
+First, make sure to read [How do the versioned snapshots work?](#how-do-the-versioned-snapshots-work).
+
+Now, if you need to update an existing doc, look through the previous snapshots (in descending order) until you find the previously versioned doc.
+
+If the changes you need to make are relevant to all versions >= that previous version, then simply modify that doc so all versioned snapshots >= that previous version will see the same changes when the website is rebuilt.
+
+However, let's say that the information in that doc *was* correct for that previous version, but the behavior has changed for later versions. You'll need to copy that doc into the first snapshot where the change is relevant, update its `id` at the top of the file, and make your changes there. Again, now all versioned snapshots >= that previous version will see the same changes when the website is rebuilt.
+
+Furthermore, if the updates are still relevant for the next unreleased version, be sure to make those changes to the docs in the root docs folder as well.
+
+## How do I resolve a "File not found" error when unbroken checks the versioned_docs?
+
+First, make sure to read [How do the versioned snapshots work?](#how-do-the-versioned-snapshots-work).
+
+Now, unaware of how the snapshots are used, unbroken will just see missing files. To fix that, we have a *fix-unbroken.js* script in the website folder. Running it will update the *.unbroken_exclusions* file to ignore the "broken" links that will actually be working when the website is built.
+
+You can run the script from the website folder with `yarn run fix-unbroken`.
+
+If you're still seeing "File not found" errors (not warnings) after you've updated the *.unbroken_exclusions* file, then you have an actual missing file to resolve.
+
+The most common problem are with asset files. Make sure that all asset files are present in the repo root's *docs/assets* folder, and that you use links relative to the root docs folder, i.e.: exactly *assets/image.png*, not *./assets/image.png*, */docs/assets/image.png*, etc.
 
 # Full Documentation
 
