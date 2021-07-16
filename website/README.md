@@ -6,7 +6,8 @@ This website was created with [Docusaurus](https://v1.docusaurus.io/).
 * [Directory Structure](#directory-structure)
 * [Editing Content](#editing-content)
 * [Adding Content](#adding-content)
-* [Cutting Documentation for New React Native Windows Release](#cutting-documentation-for-a-new-react-native-windows-release)
+* [Updating the Documentation Following Changes in react-native-windows](#updating-the-documentation-following-changes-in-react-native-windows)
+* [FAQ](#faq)
 * [Full Documentation](#full-documentation)
 
 # Get Started in 5 Minutes
