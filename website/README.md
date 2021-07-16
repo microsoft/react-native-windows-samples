@@ -197,22 +197,22 @@ For more information about custom pages, click [here](https://v1.docusaurus.io/d
 
 1. Submit code updates to react-native-windows `main` branch.
 1. Submit documentation updates to this repo's `main` branch.
-    1. Documents should be added/updated in [docs](docs/)
-    1. Update sidebar contents in **sidebars.json** in [website](website/)
+    1. Documents should be added/updated in [docs](../docs/)
+    1. Update sidebar contents in **sidebars.json** in [website](../website/)
 
 ## Changes to a stable version 0.XX
 
 1. Submit code updates to react-native-windows `0.XX-stable` branch.
 1. Submit documentation updates to this repo's `main` branch.
-    1. Documents should be added/updated in **version-0.XX** folder under [website/versioned_docs](website/versioned_docs/).
-    1. Update sidebar contents in **version-0.XX-sidebars.json** in [website/versioned_sidebars](website/versioned_sidebars/).
+    1. Documents should be added/updated in **version-0.XX** folder under [/website/versioned_docs](../website/versioned_docs/).
+    1. Update sidebar contents in **version-0.XX-sidebars.json** in [/website/versioned_sidebars](../website/versioned_sidebars/).
 
 ## Changes in main and backported to stable version 0.XX
 
 Complete the documentation updates for both main and stable version 0.XX above.
 
 ## Cutting Documentation for a New React Native Windows Release
-1. Update necessary version references in [docs](docs/).
+1. Update necessary version references in [docs](../docs/).
 2. Snapshot the website for version 0.XX: 
     1. `cd website`
     1. `yarn run version 0.XX`
