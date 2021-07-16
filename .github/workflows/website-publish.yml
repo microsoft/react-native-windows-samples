@@ -3,7 +3,7 @@ name: RNW Website Publish
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/website-publish.yml'
       - 'docs/**'

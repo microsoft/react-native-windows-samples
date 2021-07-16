@@ -1,5 +1,5 @@
 # This workflow will build just one configuration (Debug x86) of your React
-# Native for Windows app project on every pull request targeting master. This
+# Native for Windows app project on every pull request targeting main. This
 # is meant to be a quick sanity check that a pull request doesn't break the
 # build, without spending the resources to build every flavor / configuration.
 
@@ -8,7 +8,7 @@ name: App PR
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   # This job builds the Debug x86 version of the app.
