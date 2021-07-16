@@ -213,13 +213,14 @@ Complete the documentation updates for both main and stable version 0.XX above.
 
 ## Cutting Documentation for a New React Native Windows Release
 1. Update necessary version references in [docs](docs/).
-1. Snapshot the website for version 0.XX: 
-        1. `cd website`
-        1. `yarn run version 0.XX`
-        1. `yarn run fix-unbroken`
-  This will create a new directory of versioned docs, `version-0.XX`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.XX. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
-1. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation to your new `version-0.XX` directory.
-1. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.xx for its `defaultVersionShown` constant.
+2. Snapshot the website for version 0.XX: 
+    1. `cd website`
+    1. `yarn run version 0.XX`
+    1. `yarn run fix-unbroken`
+
+    This will create a new directory of versioned docs, `version-0.XX`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.XX. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
+3. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation to your new `version-0.XX` directory.
+4. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.XX for its `defaultVersionShown` constant.
 
 # FAQ
 ## How do the versioned snapshots work?
