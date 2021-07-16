@@ -60,7 +60,7 @@ Of course all the other flags still work.
       ```xml
       <ItemGroup>
         <PackageReference Include="Microsoft.ReactNative.Managed">
-          <Version>0.64.0</Version>
+          <Version>0.65.0</Version>
         </PackageReference>
       </ItemGroup>
       ```
