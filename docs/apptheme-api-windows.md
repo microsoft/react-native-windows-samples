@@ -15,7 +15,7 @@ import { Text } from 'react-native';
 import { AppTheme } from 'react-native-windows';
 
 const HighContrastEnabledText = () => {
-  const [isHighConstrast, setHighContrast] = useState(false);
+  const [isHighConstrast, setHighContrast] = useState(AppTheme.isHighContrast);
   
   useEffect(() => {
     function onHighContrastChanged() {
