@@ -369,7 +369,7 @@ Since the `FileOpenPicker` API requires running on the UI thread, we need to wra
     });
   }
 ```
-> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as [`REACT_METHOD`](native-modules-advanced.md#c-native-modules-with-initializer-and-as-a-way-to-access-reactcontext)
+> **Note:** `UIDispatcher` is available via the `ReactContext`, which we can inject through a method marked as [`REACT_INIT`](native-modules-advanced.md#c-native-modules-with-initializer-and-as-a-way-to-access-reactcontext)
 > ```cpp
 >  REACT_INIT(Initialize);
 >  void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
