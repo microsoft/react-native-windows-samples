@@ -10,7 +10,7 @@ title: AppTheme
 `AppTheme` allows you to detect when an application is in high constrast mode, and the colors that should be used when inside of it.
 
 ```jsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Text } from 'react-native';
 import { AppTheme } from 'react-native-windows';
 
