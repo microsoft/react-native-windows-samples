@@ -15,26 +15,26 @@ import { Text } from 'react-native';
 import { AppTheme } from 'react-native-windows';
 
 const HighContrastEnabledText = () => {
-  const [isHighConstrast, setHighContrast] = useState(AppTheme.isHighContrast);
-  
+  const [isHighContrast, setHighContrast] = useState(AppTheme.isHighContrast);
+
   useEffect(() => {
     function onHighContrastChanged() {
       setHighContrast(AppTheme.isHighContrast);
     }
-  
-    AppTheme.addListener("highContrastChanged", onHighContrastChanged);
-    
+
+    AppTheme.addListener('highContrastChanged', onHighContrastChanged);
+
     return () => {
-      AppTheme.removeListener("highContrastChanged", onHighContrastChanged);
-    }
+      AppTheme.removeListener('highContrastChanged', onHighContrastChanged);
+    };
   });
-  
+
   if (isHighContrast) {
     return <Text>High Contrast Enabled</Text>;
   } else {
     return <Text>High Contrast Disabled</Text>;
   }
-}
+};
 
 export default HighContrastEnabledText;
 ```
