@@ -61,7 +61,7 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
 
 - Without Using Visual Studio
 
-  In your React Native Windows project directory, run:
+  In your React Native Windows project directory, from an elevated Command Prompt run:
 
   ```bat
   npx react-native run-windows
