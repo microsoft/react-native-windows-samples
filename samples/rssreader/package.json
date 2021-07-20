@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "react": "16.11.0",
-    "react-native": "^0.62.0-0",
+    "react-native": "^0.62.3",
     "react-native-macos": "^0.62.0-0",
     "react-native-rss-parser": "^1.4.0",
     "react-native-webview": "^11.6.4",
