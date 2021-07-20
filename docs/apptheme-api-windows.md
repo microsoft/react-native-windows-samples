@@ -14,19 +14,15 @@ import { useEffect, useState } from 'react';
 import { Text } from 'react-native';
 import { AppTheme } from 'react-native-windows';
 
-const HighContrastEnabledText = () => {
+const SampleComponent = () => {
   const [isHighContrast, setHighContrast] = useState(AppTheme.isHighContrast);
 
   useEffect(() => {
-    function onHighContrastChanged() {
+    const subscription = AppTheme.addListener('highContrastChanged', () => {
       setHighContrast(AppTheme.isHighContrast);
-    }
+    });
 
-    AppTheme.addListener('highContrastChanged', onHighContrastChanged);
-
-    return () => {
-      AppTheme.removeListener('highContrastChanged', onHighContrastChanged);
-    };
+    return () => subscription.remove();
   });
 
   if (isHighContrast) {
@@ -36,7 +32,7 @@ const HighContrastEnabledText = () => {
   }
 };
 
-export default HighContrastEnabledText;
+export default SampleComponent;
 ```
 
 # Reference
