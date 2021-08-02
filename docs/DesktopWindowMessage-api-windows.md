@@ -1,6 +1,7 @@
 ---
-id: DesktopWindowMessage
+id: version-0.65-DesktopWindowMessage
 title: DesktopWindowMessage
+original_id: DesktopWindowMessage
 ---
 
 Kind: `struct`

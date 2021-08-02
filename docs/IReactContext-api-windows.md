@@ -1,6 +1,7 @@
 ---
-id: IReactContext
+id: version-0.65-IReactContext
 title: IReactContext
+original_id: IReactContext
 ---
 
 Kind: `interface`
@@ -27,7 +28,7 @@ It is a shortcut for the [`ReactDispatcherHelper.JSDispatcherProperty`](ReactDis
 
 Gets the JavaScript runtime for the running React instance.
 It can be null if Web debugging is used.
-**Note: do not use this property directly. It is an experimental property that may be removed or changed in version 0.65.
+**Note: do not use this property directly. It is an experimental property that may be removed or changed in a future version.
 
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
@@ -70,7 +71,7 @@ void **`DispatchEvent`**([`FrameworkElement`](https://docs.microsoft.com/uwp/api
 
 > **Deprecated**: Use [`XamlUIService.DispatchEvent`](XamlUIService#dispatchevent) instead
 
-Deprecated property. Use [`XamlUIService.DispatchEvent`](XamlUIService#dispatchevent) instead. It will be removed in version 0.65.
+Deprecated property. Use [`XamlUIService.DispatchEvent`](XamlUIService#dispatchevent) instead. It will be removed in a future version.
 
 
 
@@ -87,10 +88,12 @@ The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that 
 
 
 ## Referenced by
+- [`IReactViewInstance`](IReactViewInstance)
 - [`IViewManagerWithReactContext`](IViewManagerWithReactContext)
 - [`InitializerDelegate`](InitializerDelegate)
 - [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
 - [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
 - [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`XamlUIService`](XamlUIService)

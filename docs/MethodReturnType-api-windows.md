@@ -1,6 +1,7 @@
 ---
-id: MethodReturnType
+id: version-0.65-MethodReturnType
 title: MethodReturnType
+original_id: MethodReturnType
 ---
 
 Kind: `enum`

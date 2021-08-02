@@ -1,6 +1,7 @@
 ---
-id: AccessibilityAction
+id: version-0.65-AccessibilityAction
 title: AccessibilityAction
+original_id: AccessibilityAction
 ---
 
 Kind: `struct`

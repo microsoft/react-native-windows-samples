@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithExportedEventTypeConstants
+id: version-0.65-IViewManagerWithExportedEventTypeConstants
 title: IViewManagerWithExportedEventTypeConstants
+original_id: IViewManagerWithExportedEventTypeConstants
 ---
 
 Kind: `interface`

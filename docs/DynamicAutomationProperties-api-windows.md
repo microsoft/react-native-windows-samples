@@ -1,6 +1,7 @@
 ---
-id: DynamicAutomationProperties
+id: version-0.65-DynamicAutomationProperties
 title: DynamicAutomationProperties
+original_id: DynamicAutomationProperties
 ---
 
 Kind: `class`

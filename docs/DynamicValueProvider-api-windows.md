@@ -1,6 +1,7 @@
 ---
-id: DynamicValueProvider
+id: version-0.65-DynamicValueProvider
 title: DynamicValueProvider
+original_id: DynamicValueProvider
 ---
 
 Kind: `class`

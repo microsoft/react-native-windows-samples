@@ -1,6 +1,7 @@
 ---
-id: ReactViewManagerProvider
+id: version-0.65-ReactViewManagerProvider
 title: ReactViewManagerProvider
+original_id: ReactViewManagerProvider
 ---
 
 Kind: `delegate`

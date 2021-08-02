@@ -1,6 +1,7 @@
 ---
-id: DynamicAutomationPeer
+id: version-0.65-DynamicAutomationPeer
 title: DynamicAutomationPeer
+original_id: DynamicAutomationPeer
 ---
 
 Kind: `class`

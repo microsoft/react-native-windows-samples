@@ -1,6 +1,7 @@
 ---
-id: IReactNotificationService
+id: version-0.65-IReactNotificationService
 title: IReactNotificationService
+original_id: IReactNotificationService
 ---
 
 Kind: `interface`

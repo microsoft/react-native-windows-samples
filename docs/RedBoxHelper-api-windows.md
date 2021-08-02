@@ -1,6 +1,7 @@
 ---
-id: RedBoxHelper
+id: version-0.65-RedBoxHelper
 title: RedBoxHelper
+original_id: RedBoxHelper
 ---
 
 Kind: `class`

@@ -1,6 +1,7 @@
 ---
-id: XamlMetaDataProvider
+id: version-0.65-XamlMetaDataProvider
 title: XamlMetaDataProvider
+original_id: XamlMetaDataProvider
 ---
 
 Kind: `class`

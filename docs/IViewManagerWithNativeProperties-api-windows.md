@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithNativeProperties
+id: version-0.65-IViewManagerWithNativeProperties
 title: IViewManagerWithNativeProperties
+original_id: IViewManagerWithNativeProperties
 ---
 
 Kind: `interface`

@@ -1,6 +1,7 @@
 ---
-id: ViewControl
+id: version-0.65-ViewControl
 title: ViewControl
+original_id: ViewControl
 ---
 
 Kind: `class`

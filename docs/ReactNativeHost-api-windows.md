@@ -1,6 +1,7 @@
 ---
-id: ReactNativeHost
+id: version-0.65-ReactNativeHost
 title: ReactNativeHost
+original_id: ReactNativeHost
 ---
 
 Kind: `class`
@@ -71,5 +72,6 @@ The React instance destruction can be observed with the [`ReactInstanceSettings.
 
 ## Referenced by
 - [`ReactApplication`](ReactApplication)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactRootView`](ReactRootView)
 - [`RedBoxHelper`](RedBoxHelper)

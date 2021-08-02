@@ -1,6 +1,7 @@
 ---
-id: ReactNotificationServiceHelper
+id: version-0.65-ReactNotificationServiceHelper
 title: ReactNotificationServiceHelper
+original_id: ReactNotificationServiceHelper
 ---
 
 Kind: `class`

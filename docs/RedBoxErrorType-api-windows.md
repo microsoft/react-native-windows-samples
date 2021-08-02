@@ -1,6 +1,7 @@
 ---
-id: RedBoxErrorType
+id: version-0.65-RedBoxErrorType
 title: RedBoxErrorType
+original_id: RedBoxErrorType
 ---
 
 Kind: `enum`

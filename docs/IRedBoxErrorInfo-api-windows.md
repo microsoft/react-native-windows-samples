@@ -1,6 +1,7 @@
 ---
-id: IRedBoxErrorInfo
+id: version-0.65-IRedBoxErrorInfo
 title: IRedBoxErrorInfo
+original_id: IRedBoxErrorInfo
 ---
 
 Kind: `interface`

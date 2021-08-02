@@ -1,6 +1,7 @@
 ---
-id: EffectOptimization
+id: version-0.65-EffectOptimization
 title: EffectOptimization
+original_id: EffectOptimization
 ---
 
 Kind: `enum`

@@ -1,6 +1,7 @@
 ---
-id: MethodDelegate
+id: version-0.65-MethodDelegate
 title: MethodDelegate
+original_id: MethodDelegate
 ---
 
 Kind: `delegate`

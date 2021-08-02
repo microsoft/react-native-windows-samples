@@ -1,6 +1,7 @@
 ---
-id: GaussianBlurEffect
+id: version-0.65-GaussianBlurEffect
 title: GaussianBlurEffect
+original_id: GaussianBlurEffect
 ---
 
 Kind: `class`
