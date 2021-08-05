@@ -7,7 +7,7 @@ original_id: native-modules-setup
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
+> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
 > - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
 
 This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
@@ -47,7 +47,7 @@ The steps to create a new native module library project are:
 Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup.
 
 ```bat
-npx create-react-native-module --module-name "NativeModuleSample" NativeModuleSample
+npx create-react-native-module NativeModuleSample
 cd NativeModuleSample
 yarn install
 ```
@@ -68,12 +68,12 @@ Many native module libraries (including the default library template) target old
 > 
 > For more information on how NPM dependencies work, see [Specifying dependencies and devDependencies in a package.json file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
-You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the `latest` version of `react-native-windows`.
+You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the `v0.63-stable` version of `react-native-windows`.
 
 Use the following command to find the matching versions of `react`:
 
 ```bat
-npm info react-native-windows@latest devDependencies.react
+npm info react-native-windows@v0.63-stable devDependencies.react
 ```
 
 Take the result of that command (let's say it's `16.13.1`) and use it to upgrade the dev dependency:
@@ -85,7 +85,7 @@ yarn upgrade react@16.13.1 --dev
 You'll need to repeat the steps for `react-native`, i.e.:
 
 ```bat
-npm info react-native-windows@latest devDependencies.react-native
+npm info react-native-windows@v0.63-stable devDependencies.react-native
 ```
 
 Again, take the result of that command (let's say it's `0.63.2`) and use it to upgrade the dev dependency:
@@ -97,7 +97,7 @@ yarn upgrade react-native@0.63.2 --dev
 Now you should be ready to add `react-native-windows`.
 
 ```bat
-yarn add react-native-windows@latest --dev
+yarn add react-native-windows@v0.63-stable --dev
 ```
 
 ### Creating the Visual Studio Project / Solution

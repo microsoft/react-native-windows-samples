@@ -23,7 +23,7 @@ const siteConfig = {
   organizationName: "microsoft",
 
   editUrl:
-    "https://github.com/microsoft/react-native-windows-samples/blob/master/docs/",
+    "https://github.com/microsoft/react-native-windows-samples/blob/main/docs/",
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
@@ -31,7 +31,7 @@ const siteConfig = {
     { doc: "flyout-component", label: "APIs" },
     { blog: true, label: "Blog" },
     { page: "resources", label: "Resources" },
-    { href: repoUrl + "-samples/tree/master/samples", label: "Samples" },
+    { href: repoUrl + "-samples/tree/main/samples", label: "Samples" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
   ],
 
@@ -66,7 +66,13 @@ const siteConfig = {
   scripts: [
     "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js",
     "https://platform.twitter.com/widgets.js",
-    "https://buttons.github.io/buttons.js"
+    "https://buttons.github.io/buttons.js",
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    '/react-native-windows/js/code-block-buttons.js',
+  ],
+
+  stylesheets: [
+    '/react-native-windows/css/code-block-buttons.css',
   ],
 
   // On page navigation for the current documentation page.

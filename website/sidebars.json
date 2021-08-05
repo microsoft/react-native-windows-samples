@@ -25,7 +25,8 @@
       "native-modules-async",
       "native-modules-jsvalue",
       "native-modules-csharp-codegen",
-      "win10-vm"
+      "win10-vm",
+      "customizing-sdk-versions"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",

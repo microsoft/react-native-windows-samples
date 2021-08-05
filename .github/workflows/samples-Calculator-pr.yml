@@ -3,7 +3,7 @@ name: Calculator PR
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'samples/Calculator/**'
       - '.github/workflows/samples-Calculator-*.yml'

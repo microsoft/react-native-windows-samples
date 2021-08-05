@@ -25,7 +25,8 @@
       "version-0.64-native-modules-async",
       "version-0.64-native-modules-jsvalue",
       "version-0.64-native-modules-csharp-codegen",
-      "version-0.64-win10-vm"
+      "version-0.64-win10-vm",
+      "customizing-sdk-versions"
     ],
     "The Basics (MacOS)": [
       "version-0.64-rnm-getting-started",

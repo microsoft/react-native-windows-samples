@@ -11,7 +11,7 @@ on:
 
 jobs:
   # This job builds both Debug and Release versions of the native module, for
-  # x86, x64, ARM and ARM64 architectures. It doesn't deploy, because deploying
+  # x86, x64, and ARM64 architectures. It doesn't deploy, because deploying
   # is for apps only.
   build:
     name: Build
@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        architecture: [x86, x64, ARM, ARM64]
+        architecture: [x86, x64, ARM64]
         configuration: [Debug, Release]
     steps:
       - uses: actions/checkout@v2
@@ -31,4 +31,4 @@ jobs:
         run: yarn install
 
       - name: Run react-native run-windows
-        run: npx react-native run-windows --logging --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}
+        run: npx react-native run-windows --logging --no-autolink --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}

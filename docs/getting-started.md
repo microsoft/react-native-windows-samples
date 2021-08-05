@@ -14,11 +14,11 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```bat
-npx react-native init <projectName> --template react-native@^0.64.0
+npx react-native init <projectName> --template react-native@^0.65.0
 ```
 >To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
 > If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try adding `--ignore-existing` to your `npx` command:<br>
-> `npx --ignore-existing react-native init <projectName> --template react-native@^0.64.0` instead.
+> `npx --ignore-existing react-native init <projectName> --template react-native@^0.65.0` instead.
 
 ### Navigate into this newly created directory
 
@@ -49,7 +49,7 @@ Here are the options that `react-native-windows-init` takes:
 | `--projectType` | string ["`app`","`lib`"] [default: "`app`"] | The type of project to initialize.               |
 | `--overwrite`   | boolean                                     | Overwrite any existing files without prompting.  |
 | `--useWinUI3`   | boolean                                     | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
-| `--useHermes`   | boolean                                     | Use Hermes instead of Chakra as the JS engine (supported on 0.64+) |
+| `--useHermes`   | boolean                                     | Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects) |
 | `--no-telemetry`| boolean                                     | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 
 This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
@@ -71,7 +71,7 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
 
   This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
   
-  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/master/packages/@react-native-windows/cli/README.md#usage).
+  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/main/packages/@react-native-windows/cli/README.md#usage).
   
 - Using Visual Studio
 

@@ -6,8 +6,8 @@ title: Native Modules
 > **This documentation and the underlying platform code is a work in progress.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to re-implement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 
@@ -37,8 +37,10 @@ Once you have set up your development environment and project structure, you are
 
 Open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
 
-## Sample Native Module (C#)
+## Sample Native Module
+<!--DOCUSAURUS_CODE_TABS-->
 
+<!--C#-->
 ### Attributes
 
 | Attribute               | Use                                                       |
@@ -102,11 +104,12 @@ The `[ReactMethod]` attribute is how you define methods. In `FancyMath` we have 
 
 The `[ReactEvent]` attribute is how you define events. In `FancyMath` we have one event, `AddEvent`, which uses the `ReactEvent<double>` delegate, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `[ReactEvent("addEvent")]`.
 
+
 ### 2. Registering your Native Module
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 
-Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 `ReactPackageProvider.cs`:
 
@@ -155,77 +158,7 @@ This example assumes that the `NativeModuleSample.ReactPackageProvider` we creat
 
 The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your native modules directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
-### 3. Using your Native Module in JS
-
-Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
-
-`NativeModuleSample.js`:
-
-```js
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  Alert,
-  Text,
-  View,
-} from 'react-native';
-
-import { NativeModules, NativeEventEmitter } from 'react-native';
-
-const FancyMathEventEmitter = new NativeEventEmitter(NativeModules.FancyMath);
-
-class NativeModuleSample extends Component {
-
-  componentDidMount() {
-    // Subscribing to FancyMath.AddEvent
-    FancyMathEventEmitter.addListener('AddEvent', eventHandler, this);
-  }
-
-  componentWillUnmount() {
-    // Unsubscribing from FancyMath.AddEvent
-    FancyMathEventEmitter.removeListener('AddEvent', eventHandler, this);
-  }
-
-  eventHandler(result) {
-    console.log("Event was fired with: " + result);
-  }
-
-  _onPressHandler() {
-    // Calling FancyMath.add method
-    NativeModules.FancyMath.add(
-      /* arg a */ NativeModules.FancyMath.Pi,
-      /* arg b */ NativeModules.FancyMath.E,
-      /* callback */ function (result) {
-        Alert.alert(
-          'FancyMath',
-          `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
-          [{ text: 'OK' }],
-          {cancelable: false});
-      });
-  }
-
-  render() {
-    return (
-      <View>
-         <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
-         <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
-         <Button onPress={this._onPressHandler} title="Click me!"/>
-      </View>);
-  }
-}
-
-AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
-```
-
-To access your native modules, you need to import `NativeModules` from `react-native`. All of the native modules registered with your host application (including both the built-in ones that come with React Native for Windows in addition to the ones you've added) are available as members of `NativeModules`. Since our native modules fires events, we're also bringing in `NativeEventEmitter`.
-
-To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath.E` and `NativeModules.FancyMath.Pi`.
-
-Calls to methods are a little different due to the asynchronous nature of the JS engine. If the native method returns nothing, we can simply call the method. However, in this case `FancyMath.add()` returns a value, so in addition to the two necessary parameters we also include a callback function which will be called with the result of `FancyMath.add()`. In the example above, we can see that the callback raises an Alert dialog with the result value.
-
-For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath.AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
-
-## Sample Native Module (C++)
+<!-- C++ -->
 
 > NOTE: C++ does not have custom attributes and reflection as C#. Instead we use macros to simulate use of custom attributes and C++ templates to implement the binding. The binding is done during compilation time and there is virtually no overhead at runtime.
 
@@ -349,7 +282,7 @@ To add custom events, we attribute a `std::function<void(double)>` delegate with
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 
-Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl). It starts with defining an interface definition (`.idl`) file:
+Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl). It starts with defining an interface definition (`.idl`) file:
 
 `ReactPackageProvider.idl`:
 
@@ -446,6 +379,13 @@ This example assumes that the `NativeModuleSample::ReactPackageProvider` we crea
 
 The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all native modules and view managers defined within the app project automatically get registered. So if you're creating your native modules directly within the app project, you won't actually want to define a separate `ReactPackageProvider`.
 
+
+### JavaScript and Windows Runtime strings
+Note that JavaScript strings are UTF8 (i.e. `std::string`) but WinRT strings are UTF16 (i.e. `winrt::hstring` in C++/WinRT), so when inter-operating between JavaScript and WinRT APIs, you will need to convert between these two encodings.
+See [String handling in C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/strings), specifically [`winrt::to_string`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-string) and [`winrt::to_hstring`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-hstring).
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### 3. Using your Native Module in JS
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
@@ -514,8 +454,9 @@ To access our `FancyMath` constants, we can simply call `NativeModules.FancyMath
 
 Calls to methods are a little different due to the asynchronous nature of the JS engine. If the native method returns nothing, we can simply call the method. However, in this case `FancyMath.add()` returns a value, so in addition to the two necessary parameters we also include a callback function which will be called with the result of `FancyMath.add()`. In the example above, we can see that the callback raises an Alert dialog with the result value.
 
-For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath::AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
+For events, you'll see that we created an instance of `NativeEventEmitter` passing in our `NativeModules.FancyMath` module, and called it `FancyMathEventEmitter`. We can then use the `FancyMathEventEmitter.addListener()` and `FancyMathEventEmitter.removeListener()` methods to subscribe to our `FancyMath.AddEvent`. In this case, when `AddEvent` is fired in the native code, `eventHandler` will get called, which logs the result to the console log.
 
-### JavaScript and Windows Runtime strings
-Note that JavaScript strings are UTF8 (i.e. `std::string`) but WinRT strings are UTF16 (i.e. `winrt::hstring` in C++/WinRT), so when inter-operating between JavaScript and WinRT APIs, you will need to convert between these two encodings.
-See [String handling in C++/WinRT](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/strings), specifically [`winrt::to_string`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-string) and [`winrt::to_hstring`](https://docs.microsoft.com/uwp/cpp-ref-for-winrt/to-hstring).
+
+
+
+

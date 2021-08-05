@@ -8,26 +8,26 @@
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20Publish/badge.svg" alt="Website Publish Status" />
   </a>
 </p>
-<p align="center">
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI/badge.svg" alt="Calculator CI Status" />
-  </a>
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI/badge.svg" alt="CalculatorNuGet CI Status" />
-  </a>
-    <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI/badge.svg" alt="CameraDemo CI Status" />
-  </a>
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI/badge.svg" alt="NativeModuleSample CI Status" />
-  </a>
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RssReader+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RssReader%20CI/badge.svg" alt="RssReader CI Status" />
-  </a>
-</p>
 
 This repository is a companion to the [React Native for Windows](https://github.com/microsoft/react-native-windows) and [React Native for macOS](https://github.com/microsoft/react-native-macos) repos.
 The content here features React Native sample apps, components, and templates for Windows, macOS and Duo.
+
+## Samples
+
+<div align="center">
+
+| Sample | CI | CI (Upgrade) |
+|:------:|:--:|:------------:|
+| [Calculator](samples/Calculator) | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI/badge.svg" alt="Calculator CI Status" /></a> | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI%20(Upgrade)/badge.svg" alt="Calculator CI (Upgrade) Status" /></a> |
+| [CalculatorNuGet](samples/CalculatorNuGet) | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI/badge.svg" alt="CalculatorNuGet CI Status" /></a> | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI%20(Upgrade)/badge.svg" alt="CalculatorNuGet CI (Upgrade) Status" /></a> |
+| [CameraDemo](samples/CameraDemo) | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI%22"> <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI/badge.svg" alt="CameraDemo CI Status" /></a> | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI%20(Upgrade)/badge.svg" alt="CameraDemo CI (Upgrade) Status" /></a> |
+| [ContinuousIntegration](samples/ContinuousIntegration) | N/A | N/A |
+| [NativeModuleSample](samples/NativeModuleSample) | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI/badge.svg" alt="NativeModuleSample CI Status" /></a> | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI%20(Upgrade)/badge.svg" alt="NativeModuleSample CI (Upgrade) Status" /></a> |
+| [RssReader](samples/rssreader) | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RssReader+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/RssReader%20CI/badge.svg" alt="RssReader CI Status" /></a> | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RssReader+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/RssReader%20CI%20(Upgrade)/badge.svg" alt="RssReader CI (Upgrade) Status" /></a> |
+| [TestProject](samples/TestProject) | N/A | N/A |
+| [TodosFeed](samples/TodosFeed) | N/A | N/A |
+
+</div>
 
 ## Contributions
 We welcome your contributions and suggestions!  Most contributions require you to agree to a
