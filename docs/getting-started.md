@@ -94,7 +94,7 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
       "configurations": [
           {
               "name": "Debug Windows",
-              "cwd": "${workspaceFolder}",
+              "cwd": `${workspaceFolder}`,
               "type": "reactnative",
               "request": "launch",
               "platform": "windows"
