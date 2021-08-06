@@ -9,6 +9,7 @@ on:
     paths:
       - 'samples/AppServiceDemo/**'
       - '.github/workflows/samples-AppServiceDemo-CI.yml'
+  workflow_dispatch:
 
 jobs:
   build:
