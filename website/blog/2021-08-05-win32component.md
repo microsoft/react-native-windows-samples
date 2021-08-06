@@ -43,7 +43,7 @@ A [Windows Application Packaging Project](https://docs.microsoft.com//windows/ms
 
 The diagram below shows how all these components are tight together:
 
-![](assets/2021-05-08-win32component/architecture.png)
+![The architecture of the solution we're going to build in the article](assets/2021-05-08-win32component/architecture.png)
 
 1. The user launches the React Native application which, at the same time, starts also the classic Windows process.
 2. The Windows process, at startup, establishes a communication with the React Native application using an App Service and it stores a reference to the channel.
@@ -243,7 +243,7 @@ public async Task LaunchFullTrustProcessAsync()
 This method uses the `FullTrustProcessLauncher` API to launch a classic Windows process from a UWP application. We just need to call it as it is. We're going to specify the information about the process to launch later in the manifest. Later, we're going to call this method from the JavaScript layer when the application starts.
 By default, the `FullTrustProcessLauncher` class won't be found. The reason is that this API isn't included in UWP by default, but it's part of the specific extensions for desktop. As such, you have to right click on the native module's project, choose **Add reference** and, in the **Universal Windows -> Extensions** section, click on the latest version of the `Windows Desktop Extension for UWP`.
 
-![](assets/2021-05-08-win32component/desktop-extensions.png)
+![How to enable the Windows Desktop Extensions for UWP](assets/2021-05-08-win32component/desktop-extensions.png)
 
 Let's see now the second method:
 
@@ -290,7 +290,7 @@ For this exact reason, make sure to make the following changes in the `Package.a
 
 The first change is declaring the App Service. If you remember, previously in code we had to specify two information to connect to the App Service from the Windows classic process: the name and the Package Family Name. The name is defined exactly in the manifest. Double click on the **Package.appxmanifest** file, move to the **Declarations** tab and, from the dropdown, choose **App Service** and click **Add**. The only required field is **Name**, which we have to fill with the same name that we have previously specified in code, which is `RegistryService`. Since it's an in-proc App Service, we don't have to specify any other information.
 
-![](assets/2021-05-08-win32component/appservice-manifest.png)
+![How to declare an App Service in the manifest](assets/2021-05-08-win32component/appservice-manifest.png)
 
 The second change is declaring which is the classic Windows process that we want to launch when we use the `FullTrustLauncher` API. This feature isn't supported by the Visual Studio UI, so you'll have to right click on the `Package.appxmanifest` file and choose **View code**. You will find a section called `Extensions`, where the App Service has been declared. Exactly below, add the following entry:
 
@@ -340,7 +340,7 @@ If you have used native modules before, the code should be easy to understand. W
 
 The outcome is that, when you launch the main app from the Start menu, also the classic Windows process will be launched. However, since it doesn't have any UI, it will run in background. You'll be able to see it using Task Manager: 
 
-![](assets/2021-05-08-win32component/registryapp.png)
+![The Windows classic process running in background in Task Manager](assets/2021-05-08-win32component/registryapp.png)
 
 Now we need to store two information in the component's state: the name of the registry key we want to get (which will be filled by the user using a `TextInput` control) and its value, which will be returned by our native module. Since I'm using a functional component, I'm going to use the `useState` hook:
 
@@ -394,12 +394,12 @@ with
 
 If you're building the project for the first time, it will take a while. Once it's deployed, you will find two entries in the Start menu: one for the base host app (for example, `appservicedemo`) and one for the WAP project (for example, `appservicedemo.Package`). Don't worry, when you will generate a MSIX package for release this won't happen anymore. However, if you want to remove this confusion also while you're debugging, just go back to Visual Studio, choose **Build -> Configuration Manager** and make sure that the **Deploy** flag is turned on only for the WAP project.
 
-![](assets/2021-05-08-win32component/defaultproject.png)
+![The Visual Studio configuration to deploy only the WAP project](assets/2021-05-08-win32component/defaultproject.png)
 
 Before clicking on the Start menu entry for the WAP project, make sure to open a terminal on the folder which contains your project and run `yarn start` to launch the Metro packager.
 If everything went well, the UI of the app should show up. Specify in the text box the name of one of the keys in the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` registry hive (for example, `BuildLab`) and press the button. If you did everything correctly, the value of the key will be displayed:
 
-![](assets/2021-05-08-win32component/final-app.png)
+![The final application running](assets/2021-05-08-win32component/final-app.png)
 
 If you want to create a package for release (to publish on the Microsoft Store or sideload on another machines), make sure to start the wizard (**Publish --> Create App Packages**) from the WAP project and not from the host app, otherwise the classic Windows process won't be included.
 
