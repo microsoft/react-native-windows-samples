@@ -1,4 +1,4 @@
-name: RssReader CI
+name: AppServiceDemo CI
 
 on:
   schedule:
