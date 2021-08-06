@@ -10,7 +10,7 @@ published_date: August 5, 2021
 If you have adopted React Native to build your Windows applications, you'll know that the final output is a [Universal Windows Platform application](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). This development platform gives you access to all the latest enhancements in the Windows ecosystem (modern UI platform, notifications, integration with features like inking and Windows Hello, etc.), plus greater security and reliability thanks to the sandbox the application runs in.
 However, there might be scenarios where UWP isn't enough and you need to perform one or more tasks which are supported only by the Win32 ecosystem: working with any file on the disk without user intervention, reading a key from the registry, integrating a SDK which doesn't support the Windows Runtime.
 
-In this post we're going to explore a solution that will enable you to get the best of both worlds: a React Native for Windows application which integrates a classic Windows process. We're going to build a sample React Native application which will be able to read a registry key and display it. The goal is to display to the user values stored in the `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` hive, which contains many information about the currently installed version of Windows.
+In this post we're going to explore a solution that will enable you to get the best of both worlds: a React Native for Windows application which integrates a classic Win32 process. We're going to build a sample React Native application which will be able to read a registry key and display it. The goal is to display to the user values stored in the `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` hive, which contains many information about the currently installed version of Windows.
 
 <!--truncate-->
 
@@ -28,7 +28,7 @@ This will be a traditional React Native for Windows application. However, as we'
 
 [App Services](https://docs.microsoft.com/windows/uwp/launch-resume/app-services) is a UWP feature that enables a Windows application to host one or more background tasks that can be consumed by other applications. You can think of this feature like REST services, but exposed locally. Once a UWP application which exposes an App Service is deployed on a machine, other applications can connect to it using its name and the Package Family Name of the hosting application. Once the communication channel is established, the calling application can send data to the App Service, which will process it and send back the results.
 
-In our context, App Service will enable us to create a communication channel between the React Native application and the classic Windows process. The main difference compared to the traditional usage is that the App Service will be hosted and consumed by the same package, since the two processes (UWP and classic Win32) will be packaged together.
+In our context, App Service will enable us to create a communication channel between the React Native application and the classic Win32 process. The main difference compared to the traditional usage is that the App Service will be hosted and consumed by the same package, since the two processes (UWP and classic Win32) will be packaged together.
 
 App Services support two approaches: [in-proc](https://docs.microsoft.com/windows/uwp/launch-resume/convert-app-service-in-process) (when the implementation of the service is defined in the main application itself) and [out-of-proc](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) (when the implementation of the service is defined in an external Windows Runtime Component, which gets executed in a different process). For our scenario, we must use the in-proc approach, since we need to hold a direct connection with the main application.
 
@@ -39,17 +39,17 @@ The native module is needed as a glue between the React Native world and the UWP
 
 #### Windows Application Packaging Project
 
-A [Windows Application Packaging Project](https://docs.microsoft.com//windows/msix/desktop/desktop-to-uwp-packaging-dot-net) (WAP project, from now on) is a template available in Visual Studio, which is typically used to package as MSIX classic Windows application. In our context, we're going to use it to bundle together the classic Windows process and the React Native for Windows application in the same MSIX package.
+A [Windows Application Packaging Project](https://docs.microsoft.com//windows/msix/desktop/desktop-to-uwp-packaging-dot-net) (WAP project, from now on) is a template available in Visual Studio, which is typically used to package as MSIX classic Windows application. In our context, we're going to use it to bundle together the classic Win32 process and the React Native for Windows application in the same MSIX package.
 
 The diagram below shows how all these components are tight together:
 
 ![The architecture of the solution we're going to build in the article](assets/2021-05-08-win32component/architecture.png)
 
-1. The user launches the React Native application which, at the same time, starts also the classic Windows process.
-2. The Windows process, at startup, establishes a communication with the React Native application using an App Service and it stores a reference to the channel.
-3. The user presses a button in the React Native application. 
-4. The button will invoke a method method exposed by the native module. The method will push a message to the communication channel, so that it can be received by the classic Windows process. The message will contain the information about the key that the Windows process must retrieve from the registry.
-5. The classic Windows process retrieves the desired key from the registry, it stores it inside another message and it sends it back to the communication channel. 
+1. The user launches the React Native application which, at the same time, starts also the classic Win32 process.
+2. The Win32 process, at startup, establishes a communication with the React Native application using an App Service and it stores a reference to the channel.
+3. The user presses a button in the React Native application.
+4. The button will invoke a method method exposed by the native module. The method will push a message to the communication channel, so that it can be received by the classic Win32 process. The message will contain the information about the key that the Windows process must retrieve from the registry.
+5. The classic Win32 process retrieves the desired key from the registry, it stores it inside another message and it sends it back to the communication channel.
 6. The native module, which is using the App Service to keep the communication channel open, receives the message with the retrieved key and it sends it back to the JavaScript layer.
 7. The React Native application can now show to the user the value of the registry key.
 
@@ -57,7 +57,7 @@ Let's start building all the components!
 
 > All the samples you'll find below (including the native module and the React Native host app) will be based on C#, since it's the language I'm most familiar with. However, the same goal can be achieved also using the C++ templates.
 
-### The classic Windows process
+### The classic Win32 process
 
 For the purpose of this sample, we're going to use a .NET 5.0 console application. Open with Visual Studio the solution included in the `windows` folder of your React Native application, right click on it and choose **Add -> New project**. Choose **Console application** as template.
 
@@ -65,9 +65,9 @@ Before starting to write some code, we need to make a few changes:
 
 1. Double click on the project and change the `TargetFramework` from `net5.0` to `net5.0-windows10.0.19041.0`. The new target will enable you to leverage Windows 10 APIs from your .NET application. It's required in our scenario since we need to use the App Service APIs.
 2. Right click on the project, choose **Manage NuGet Packages** and install the [Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) package. It will give us access to the APIs to interact with the Windows registry.
-3. Right click on the project, choose **Properties** and change the **Output type** from **Console Application** to **Windows Application**. Thanks to this change, our application will run headless, without any visible UI. This helps to achieve a good user experience, since our classic Windows process will run only in background. All the UI and interaction will be handled by the React Naive application.
+3. Right click on the project, choose **Properties** and change the **Output type** from **Console Application** to **Windows Application**. Thanks to this change, our application will run headless, without any visible UI. This helps to achieve a good user experience, since our classic Win32 process will run only in background. All the UI and interaction will be handled by the React Naive application.
 
-The application will run continuously in background, until the main React Native application will be closed. To achieve this goal, we start the main process in a separate thread, which gets terminated when the connection with the App Service is closed (which means that the application is closed). This approach ensures that the classic Windows application doesn't become a "zombie" process, which stays alive even if the main app has been shut down.
+The application will run continuously in background, until the main React Native application will be closed. To achieve this goal, we start the main process in a separate thread, which gets terminated when the connection with the App Service is closed (which means that the application is closed). This approach ensures that the classic Win32 application doesn't become a "zombie" process, which stays alive even if the main app has been shut down.
 
 ```csharp
 static AutoResetEvent appServiceExit;
@@ -109,7 +109,7 @@ static async void ThreadProc()
 We create a new `AppServiceConnection` and we configure it in the following way:
 
 - We specify the name of the App Service we want to connect to, using the `AppServiceName` property. This name must match the one we're going to include inside the manifest of the Windows Application Packaging Project in a later stage.
-- We specify the Package Family Name of the application which hosts the App Service. In our scenario, since the React Native application and the classic Windows process are hosted in the same package, we can retrieve it using the `Windows.ApplicationModel.Package` APIs.
+- We specify the Package Family Name of the application which hosts the App Service. In our scenario, since the React Native application and the classic Win32 process are hosted in the same package, we can retrieve it using the `Windows.ApplicationModel.Package` APIs.
 - We subscribe to two events: `RequestReceived`, which is triggered when the React Native application sends a message; `ServiceClosed`, which is triggered when the App Service channel is shut down.
 
 Then we use the `OpenAsync()` method to open the connection. If it isn't successful, there's no need for this process to stay alive, so we call `Set()` on the `AutoResetEvent` object, so that the `Main()` method can terminate.
@@ -195,7 +195,7 @@ The code creates a new property bag, which is composed by a namespace (`Registry
 
 ### The native module
 
-Now we are ready to interact with the classic Windows process we have previously built. In a regular UWP scenario, we would have interacted with the App Service directly in the main application. However, in React Native for Windows, the UWP app is just a host for the JavaScript layer, so we need to build a native module to expose the APIs we need to JavaScript.
+Now we are ready to interact with the classic Win32 process we have previously built. In a regular UWP scenario, we would have interacted with the App Service directly in the main application. However, in React Native for Windows, the UWP app is just a host for the JavaScript layer, so we need to build a native module to expose the APIs we need to JavaScript.
 
 The next step is to add a native module to your solution. This is well documented in the [official documentation](https://microsoft.github.io/react-native-windows/docs/native-modules-setup). The module I'm going to build is a C# Windows Runtime Component, but of course you can do the same in C++.
 
@@ -240,7 +240,7 @@ public async Task LaunchFullTrustProcessAsync()
 }
 ```
 
-This method uses the `FullTrustProcessLauncher` API to launch a classic Windows process from a UWP application. We just need to call it as it is. We're going to specify the information about the process to launch later in the manifest. Later, we're going to call this method from the JavaScript layer when the application starts.
+This method uses the `FullTrustProcessLauncher` API to launch a classic Win32 process from a UWP application. We just need to call it as it is. We're going to specify the information about the process to launch later in the manifest. Later, we're going to call this method from the JavaScript layer when the application starts.
 By default, the `FullTrustProcessLauncher` class won't be found. The reason is that this API isn't included in UWP by default, but it's part of the specific extensions for desktop. As such, you have to right click on the native module's project, choose **Add reference** and, in the **Universal Windows -> Extensions** section, click on the latest version of the `Windows Desktop Extension for UWP`.
 
 ![How to enable the Windows Desktop Extensions for UWP](assets/2021-05-08-win32component/desktop-extensions.png)
@@ -271,7 +271,7 @@ public async Task<string> GetRegistryKey(string key)
 ```
 
 This is the method that we'll invoke from the React Native application when we want to retrieve the value of a registry key. Through the `ReactContext` object we have retrieved in the initialization of the module, we can use the `Properties` collection to access to the property bags. We look for one called `AppServiceConnection` in the `RegistryChannel` namespace, which contains the reference to our App Service channel.
-Once we have the channel, we can use it to send a message with the name of the key we want to retrieve (encapsulated in a `ValueSet` object) to the classic Windows process using the `SendMessageAsync()` method. The message will be received by the Windows process, which will retrieve the value of the requested key from the registry, and then it will send it back to our native module, as result of the `SendMessageAsync()` method. The response will be included in the `Message` collection with key `RegistryKeyValue`: we simply return this value to the JavaScript layer, so that the React Native app can display it.
+Once we have the channel, we can use it to send a message with the name of the key we want to retrieve (encapsulated in a `ValueSet` object) to the classic Win32 process using the `SendMessageAsync()` method. The message will be received by the Win32 process, which will retrieve the value of the requested key from the registry, and then it will send it back to our native module, as result of the `SendMessageAsync()` method. The response will be included in the `Message` collection with key `RegistryKeyValue`: we simply return this value to the JavaScript layer, so that the React Native app can display it.
 
 There's one last step to do. Since we have manually created this module, we have also to manually register it in the main host application. As first step, right click on the host app, choose **Add reference** and select the native module. Then move to the `App` class and, in the constructor, add the following line before the `InitializeComponent()` method is invoked:
 
@@ -283,16 +283,16 @@ In case you have created the native module with a different name, make sure to r
 
 ### The Windows Application Packaging Project
 
-The last step before we can try our solution is to add a Windows Application Packaging Project, which will help us to put together inside the same package the host UWP app and the classic Windows process. Right click on the solution, choose **Add -> New project** and look for the template called **Windows Application Packaging Project**. Once you have added it, right click on it and choose **Add reference**. Now you have to select two projects from your solution: the React Native host UWP app and the classic Windows process. Once it's done, expand the **Applications** node, right click on the name of the host UWP app and choose **Set as entry point**. This will ensure that, when you click on the app icon in the Start menu, the main React Native app will be the one being launched.
+The last step before we can try our solution is to add a Windows Application Packaging Project, which will help us to put together inside the same package the host UWP app and the classic Win32 process. Right click on the solution, choose **Add -> New project** and look for the template called **Windows Application Packaging Project**. Once you have added it, right click on it and choose **Add reference**. Now you have to select two projects from your solution: the React Native host UWP app and the classic Win32 process. Once it's done, expand the **Applications** node, right click on the name of the host UWP app and choose **Set as entry point**. This will ensure that, when you click on the app icon in the Start menu, the main React Native app will be the one being launched.
 
 Now we have to make a few changes to the manifest. One of the important differences you have to be aware when you introduce the Windows Application Packaging Project in a scenario like ours is that its manifest becomes the main one. As such, if you have previously customized the manifest of your host UWP app (for example, by adding assets for the icons, changing the identity or adding a few capabilities), you will have to port them in the manifest of the WAP project.
 For this exact reason, make sure to make the following changes in the `Package.appxmanifest` file of the WAP project and not in the one of the host UWP app.
 
-The first change is declaring the App Service. If you remember, previously in code we had to specify two information to connect to the App Service from the Windows classic process: the name and the Package Family Name. The name is defined exactly in the manifest. Double click on the **Package.appxmanifest** file, move to the **Declarations** tab and, from the dropdown, choose **App Service** and click **Add**. The only required field is **Name**, which we have to fill with the same name that we have previously specified in code, which is `RegistryService`. Since it's an in-proc App Service, we don't have to specify any other information.
+The first change is declaring the App Service. If you remember, previously in code we had to specify two information to connect to the App Service from the Win32 classic process: the name and the Package Family Name. The name is defined exactly in the manifest. Double click on the **Package.appxmanifest** file, move to the **Declarations** tab and, from the dropdown, choose **App Service** and click **Add**. The only required field is **Name**, which we have to fill with the same name that we have previously specified in code, which is `RegistryService`. Since it's an in-proc App Service, we don't have to specify any other information.
 
 ![How to declare an App Service in the manifest](assets/2021-05-08-win32component/appservice-manifest.png)
 
-The second change is declaring which is the classic Windows process that we want to launch when we use the `FullTrustLauncher` API. This feature isn't supported by the Visual Studio UI, so you'll have to right click on the `Package.appxmanifest` file and choose **View code**. You will find a section called `Extensions`, where the App Service has been declared. Exactly below, add the following entry:
+The second change is declaring which is the classic Win32 process that we want to launch when we use the `FullTrustLauncher` API. This feature isn't supported by the Visual Studio UI, so you'll have to right click on the `Package.appxmanifest` file and choose **View code**. You will find a section called `Extensions`, where the App Service has been declared. Exactly below, add the following entry:
 
 ```xml
 <Extensions>
@@ -303,7 +303,7 @@ The second change is declaring which is the classic Windows process that we want
 </Extensions>
 ```
 
-The `Executable` attribute specifies the path of the classic Windows process inside the package. By default, the WAP project puts all the build outputs inside a folder with the same name of the project. As such, our classic Windows app will be available at the path `RegistryApp\RegistryApp.exe`. 
+The `Executable` attribute specifies the path of the classic Win32 process inside the package. By default, the WAP project puts all the build outputs inside a folder with the same name of the project. As such, our classic Win32 app will be available at the path `RegistryApp\RegistryApp.exe`. 
 To make this extension working, you will have also to declare the `desktop` namespace at the top, since it isn't included by default:
 
 ```xml
@@ -314,7 +314,7 @@ To make this extension working, you will have also to declare the `desktop` name
   IgnorableNamespaces="uap desktop">
 ```
 
-The final change we would need to make is to add a capability called **runFullTrust**, which enables our package to include a classic Windows component and not just a UWP application. However, the default manifest included in the WAP project already defines that. You can see it in the `Capabilities` section of the manifest:
+The final change we would need to make is to add a capability called **runFullTrust**, which enables our package to include a classic Win32 component and not just a UWP application. However, the default manifest included in the WAP project already defines that. You can see it in the `Capabilities` section of the manifest:
 
 ```xml
 <Capabilities>
@@ -325,7 +325,7 @@ The final change we would need to make is to add a capability called **runFullTr
 
 ### The React Native application
 
-Finally, we now have all the pieces of the puzzle and we can start working on the JavaScript layer. As first step, we need to launch the classic Windows process when the React Native application starts. If you're using a functional component, you can use the `useEffect` hook; if you're using a class component, you can use the `componentDidMount` event. In my case, I'm going for the first option, so I added in my application the following function:
+Finally, we now have all the pieces of the puzzle and we can start working on the JavaScript layer. As first step, we need to launch the classic Win32 process when the React Native application starts. If you're using a functional component, you can use the `useEffect` hook; if you're using a class component, you can use the `componentDidMount` event. In my case, I'm going for the first option, so I added in my application the following function:
 
 ```javascript
 useEffect(() => {
@@ -338,9 +338,9 @@ useEffect(() => {
 
 If you have used native modules before, the code should be easy to understand. We use the `NativeModules` API in React to access to our native module, by specifying its name (`ReactNativeAppServiceModule`, which we have set using the `[ReactModule]` attribute) and the method (`launchFullTrustProcess()`, which we have set using the `[ReactMethod]` attribute).
 
-The outcome is that, when you launch the main app from the Start menu, also the classic Windows process will be launched. However, since it doesn't have any UI, it will run in background. You'll be able to see it using Task Manager: 
+The outcome is that, when you launch the main app from the Start menu, also the classic Win32 process will be launched. However, since it doesn't have any UI, it will run in background. You'll be able to see it using Task Manager:
 
-![The Windows classic process running in background in Task Manager](assets/2021-05-08-win32component/registryapp.png)
+![The Win32 classic process running in background in Task Manager](assets/2021-05-08-win32component/registryapp.png)
 
 Now we need to store two information in the component's state: the name of the registry key we want to get (which will be filled by the user using a `TextInput` control) and its value, which will be returned by our native module. Since I'm using a functional component, I'm going to use the `useState` hook:
 
@@ -401,7 +401,7 @@ If everything went well, the UI of the app should show up. Specify in the text b
 
 ![The final application running](assets/2021-05-08-win32component/final-app.png)
 
-If you want to create a package for release (to publish on the Microsoft Store or sideload on another machines), make sure to start the wizard (**Publish --> Create App Packages**) from the WAP project and not from the host app, otherwise the classic Windows process won't be included.
+If you want to create a package for release (to publish on the Microsoft Store or sideload on another machines), make sure to start the wizard (**Publish --> Create App Packages**) from the WAP project and not from the host app, otherwise the classic Win32 process won't be included.
 
 ### Conclusion
 
