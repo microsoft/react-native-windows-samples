@@ -362,7 +362,7 @@ The approach is the same as the previous one: the only difference is that, this 
 
 Now let's build a minimal UI: a `TextInput` control, which will read the name of the registry key and store it in the state; a `Button`, which will invoke the `getRegistryKey()` function; a `Text`, which will display the value returned by the function.
 
-```javascript
+```jsx
 <View>
   <TextInput onChangeText={text => setRegistryKeyName(text)} />
   <Button title="Get registry key" onPress={getRegistryKey} />
