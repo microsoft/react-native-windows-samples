@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
 
 ### Using `PlatformColor` to access Reveal and Acrylic
 
-Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `PlatformColor` API we provide on the JavaScript layer for other brushes.
+Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 and Windows 11 apps, but can easily be accessed through the same `PlatformColor` API we provide on the JavaScript layer for other brushes.
 
 #### Using System Acrylic
 
