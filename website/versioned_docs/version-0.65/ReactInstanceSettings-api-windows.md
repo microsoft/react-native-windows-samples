@@ -56,7 +56,7 @@ Subsequent runs of the application should be faster as the JavaScript will be lo
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
 
-> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing. It will be removed in version 0.65.
+> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing. It will be removed in a future version.
 
 This controls whether various developer experience features are available for this instance. In particular the developer menu, and the default `RedBox` experience.
 
