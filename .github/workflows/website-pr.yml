@@ -3,7 +3,7 @@ name: RNW Website PR
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/website-ci.yml'
       - '.github/workflows/website-pr.yml'
@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Spell-check docs
-      run: npx markdown-spellcheck "docs\*.md" "!docs\*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report
+      run: npx markdown-spellcheck "docs\*.md" "!docs\*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report --color
 
     - name: Check unbroken exclusions file
       run: ${{github.workspace}}\.github\scripts\CheckUnbrokenExclusions.ps1

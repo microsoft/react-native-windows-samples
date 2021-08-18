@@ -38,7 +38,7 @@ The end-to-end data flow looks something like this:
 
 ## Examples
 
-For examples of using data automatically marshaled into both static and dynamic native types, see the `DataMarshalingExamples` module within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample). Implementations for both C# and C++/WinRT are provided.
+For examples of using data automatically marshaled into both static and dynamic native types, see the `DataMarshalingExamples` module within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample). Implementations for both C# and C++/WinRT are provided.
 
 For further examples of using the dynamic `JSValue` type, see [Using `JSValue`](native-modules-jsvalue.md).
 

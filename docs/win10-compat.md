@@ -3,7 +3,8 @@ id: win10-compat
 title: Backward compatibility with Windows versions
 ---
 
-React Native for Windows supports Windows 10 devices. React Native for Windows layers cleanly on top of the [native Windows UI platform](https://github.com/microsoft/microsoft-ui-xaml) which means there are some APIs that may not be supported in all versions of Windows since the corresponding native capabilities were not backward compatible with older OS versions. The following table captures these deltas. If you are using any of the APIs below, they will gracefully fail (no-op) when the app is running on Windows 10 devices of corresponding OS versions.
+React Native for Windows supports devices running on Windows 10 and higher.
+React Native for Windows layers cleanly on top of the [native Windows UI platform](https://github.com/microsoft/microsoft-ui-xaml) which means there are some APIs that may not be supported in all versions of Windows since the corresponding native capabilities were not backward compatible with older OS versions. The following table captures these deltas. If you are using any of the APIs below, they will gracefully fail (no-op) when the app is running on Windows devices of corresponding OS versions.
 
 _Note : There is an ongoing effort to decouple the Windows UI platform from the UWP SDK and ship out of band – [WinUI 3.0](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md#winui-3-q4-2019---2020). React Native for Windows will layer on top of this lifted WinUI platform once it is available at which time several of the below unsupported APIs may start lighting up. For more information on WinUI 3 support and status, see [this page](winui3.md)._
 
@@ -21,7 +22,5 @@ The following table captures the versions of Windows 10 that a React Native for 
 
 | React Native Windows | Target OS Version | Minimum OS Version |
 | :--: | :-: | :-: |
-| 0.63 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
-| 0.62 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
-| 0.61 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 |
-| 0.60 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 |
+| 0.62 - 0.65 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
+| 0.60 - 0.61 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 |

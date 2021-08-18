@@ -9,12 +9,6 @@ This extends the [View Props](https://reactnative.dev/docs/view#props) and [`IKe
 
 ## Methods
 
-### `acceptsKeyboardFocus`
-
-| type | required |
-|:--|:--|
-| bool | No |
-
 ### `accessibilityPosInSet`
 
 Indicates to accessibility services that the Component is within a set and has the given numbered position.
