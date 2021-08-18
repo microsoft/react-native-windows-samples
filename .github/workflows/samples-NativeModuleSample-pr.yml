@@ -3,7 +3,7 @@ name: NativeModuleSample PR
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'samples/NativeModuleSample/**'
       - '.github/workflows/samples-NativeModuleSample-*.yml'

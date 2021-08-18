@@ -5,7 +5,7 @@ title: Working with native code on Windows
 
 ## What is a React Native for Windows app?
 
-A RNW app is a [Universal Windows Platform app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) (aka UWP or Windows 10 app).
+When you create a React Native for Windows app with the CLI, you will get a [Universal Windows Platform app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) (aka UWP app).
 
 The Universal Windows Platform allows you to access a set of common functionality on all Windows devices via the [Windows Runtime](https://docs.microsoft.com/windows/uwp/winrt-components/) (WinRT). WinRT APIs can be accessed from C++ (via [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)), or via .NET C#.
 

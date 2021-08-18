@@ -24,17 +24,17 @@ const textContent = {
   `,
   about: `
 **React Native for Windows + macOS brings React Native support for the
-[Windows 10 SDK] as well as the [macOS 10.13 SDK]**. With this, you can use JavaScript to build native
-Windows apps for [all devices supported by Windows 10] including PCs,
+[Windows SDK] as well as the [macOS 10.13 SDK]**. With this, you can use JavaScript to build native
+Windows apps for [all devices supported by Windows 10 and higher] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
 
 Some build-time tools will send telemetry to Microsoft by default. No telemetry is collected or transmitted in the final app. You can prevent the telemetry from being sent by using the --no-telemetry command line option. See the --help command or README file for more details.
 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
-[Windows 10 SDK]: https://developer.microsoft.com/en-us/windows/downloads
+[Windows SDK]: https://developer.microsoft.com/en-us/windows/downloads
 [macOS 10.13 SDK]: https://www.apple.com/newsroom/2017/09/macos-high-sierra-now-available-as-a-free-update/
-[all devices supported by Windows 10]: https://developer.microsoft.com/en-us/windows/get-started-windows-10
+[all devices supported by Windows 10 and higher]: https://developer.microsoft.com/windows/get-started-windows-10
   `,
   roadmapwindows: `
 We are actively developing React Native for Windows in alignment with
@@ -87,8 +87,8 @@ If you're curious about the **sample apps** we have published for inspiration:
 [check out our list here]: docs/flyout-component
 [Native modules]: docs/native-modules
 [Native UI components]: docs/view-managers
-[Calculator app]: https://github.com/microsoft/react-native-windows-samples/tree/master/samples/Calculator
-[ToDos Feed app]: https://github.com/microsoft/react-native-windows-samples/tree/master/samples/TodosFeed
+[Calculator app]: https://github.com/microsoft/react-native-windows-samples/tree/main/samples/Calculator
+[ToDos Feed app]: https://github.com/microsoft/react-native-windows-samples/tree/main/samples/TodosFeed
 [Windows AppConsult blog]: https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Getting-started-with-React-Native-for-Windows/ba-p/912093
   `
 };
