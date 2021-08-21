@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "header": "App1",
+      "category": "1st party",
+      "description": "description description description description description description description description description description description description description description description description description",
+      "link": "http://microsoft.com",
+      "img": "http://microsoft.github.io/react-native-windows/img/header_logo.svg"
+    },
+    {
+      "header": "App2",
+      "category": "3rd party",
+      "description": "description description description description description description description description description description description description description description description description description",
+      "link": "http://microsoft.com",
+      "img": "http://microsoft.github.io/react-native-windows/img/header_logo.svg"
+    },
+    {
+      "header": "App3",
+      "category": "3rd party",
+      "description": "description description description description description description description description description description description description description description description description description",
+      "link": "http://microsoft.com",
+      "img": [
+        "http://microsoft.github.io/react-native-windows/img/header_logo.svg",
+        "http://microsoft.github.io/react-native-windows/img/header_logo.svg",
+        "http://microsoft.github.io/react-native-windows/img/header_logo.svg"
+      ]
+    }
+  ]
+}
