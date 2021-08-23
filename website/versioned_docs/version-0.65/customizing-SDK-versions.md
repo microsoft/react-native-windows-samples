@@ -1,6 +1,7 @@
 ---
-id: customizing-sdk-versions
+id: version-0.65-customizing-sdk-versions
 title: Customizing SDK versions
+original_id: customizing-sdk-versions
 ---
 
 It is easy for an app to customize which versions of the Windows SDK and WinUI 2.x to use.
@@ -15,7 +16,7 @@ The `ExperimentalFeatures.props` file can be used to set a number of properties 
 | Property name | Description |
 |--|--|
 | `WinUI2xVersion` | Version of the WinUI 2.x package to use, e.g. `2.6.0` |
-| `WindowsTargetPlatformVersion` | Version of the Windows platform SDK to use, e.g. `10.0.19041.0` |
+| `WindowsTargetPlatformVersion` | Version of the Windows 10 SDK to use, e.g. `10.0.19041.0` |
 | `UseHermes` | Whether to use the [Hermes JavaScript engine](hermes.md). |
 
 ## Other properties
