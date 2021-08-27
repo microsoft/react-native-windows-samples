@@ -1,0 +1,76 @@
+{
+  "version-0.65-docs": {
+    "The Basics (Windows)": [
+      "version-0.65-getting-started",
+      "version-0.65-rnw-dependencies",
+      "version-0.65-parity-status",
+      "version-0.65-config",
+      "version-0.65-windowsbrush-and-theme",
+      "version-0.65-releases",
+      "version-0.65-platform"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.65-native-modules",
+      "version-0.65-view-managers",
+      "version-0.65-native-modules-setup",
+      "version-0.65-native-modules-using",
+      "version-0.65-native-modules-autolinking",
+      "version-0.65-native-modules-advanced",
+      "version-0.65-supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "version-0.65-native-code",
+      "version-0.65-native-code-language-choice",
+      "version-0.65-native-modules-marshalling-data",
+      "version-0.65-native-modules-async",
+      "version-0.65-native-modules-jsvalue",
+      "version-0.65-native-modules-csharp-codegen",
+      "version-0.65-win10-vm",
+      "version-0.65-customizing-sdk-versions"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.65-rnm-getting-started",
+      "version-0.65-rnm-dependencies"
+    ],
+    "Troubleshooting": [
+      "version-0.65-native-modules-troubleshooting",
+      "version-0.65-metro-config-out-tree-platforms"
+    ],
+    "Experimental": [
+      "version-0.65-hermes",
+      "version-0.65-NuGet",
+      "version-0.65-nuget-update",
+      "version-0.65-winui3"
+    ]
+  },
+  "version-0.65-apis": {
+    "Components (Windows)": [
+      "version-0.65-flyout-component",
+      "version-0.65-glyph-component",
+      "version-0.65-popup-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.65-apptheme-api",
+      "version-0.65-ikeyboardprops-api",
+      "version-0.65-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.65-IJSValueReader",
+      "version-0.65-IJSValueWriter",
+      "version-0.65-IReactContext",
+      "version-0.65-IReactDispatcher",
+      "version-0.65-IReactModuleBuilder",
+      "version-0.65-IReactNonAbiValue",
+      "version-0.65-IReactPackageBuilder",
+      "version-0.65-IReactPackageProvider",
+      "version-0.65-IReactPropertyBag",
+      "version-0.65-IRedBoxHandler",
+      "version-0.65-IViewManager",
+      "version-0.65-ReactApplication",
+      "version-0.65-ReactInstanceSettings",
+      "version-0.65-ReactNativeHost",
+      "version-0.65-XamlUIService",
+      "version-0.65-Native-API-Reference"
+    ]
+  }
+}
