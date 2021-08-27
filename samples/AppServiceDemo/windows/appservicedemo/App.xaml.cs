@@ -1,16 +1,17 @@
-﻿using Microsoft.ReactNative;
+using Microsoft.ReactNative;
+#if USE_WINUI3
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+#else
 using Windows.ApplicationModel.Activation;
-using Windows.ApplicationModel.AppService;
-using Windows.ApplicationModel.Background;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+#endif
 
 namespace appservicedemo
 {
     sealed partial class App : ReactApplication
     {
-        private BackgroundTaskDeferral appServiceDeferral;
-
         public App()
         {
 #if BUNDLE
@@ -32,7 +33,6 @@ namespace appservicedemo
             Microsoft.ReactNative.Managed.AutolinkedNativeModules.RegisterAutolinkedNativeModulePackages(PackageProviders); // Includes any autolinked modules
 
             PackageProviders.Add(new Microsoft.ReactNative.Managed.ReactPackageProvider());
-            PackageProviders.Add(new ReactNativeAppServiceModule.ReactPackageProvider());
             PackageProviders.Add(new ReactPackageProvider());
 
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace appservicedemo
         /// <summary>
         /// Invoked when the application is activated by some means other than normal launching.
         /// </summary>
-        protected override void OnActivated(IActivatedEventArgs e)
+        protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs e)
         {
             var preActivationContent = Window.Current.Content;
             base.OnActivated(e);
@@ -62,21 +62,6 @@ namespace appservicedemo
                 // Display the initial content
                 var frame = (Frame)Window.Current.Content;
                 frame.Navigate(typeof(MainPage), null);
-            }
-        }
-
-        protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
-        {
-            base.OnBackgroundActivated(args);
-
-            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details)
-            {
-                appServiceDeferral = args.TaskInstance.GetDeferral();
-
-                var ns = ReactPropertyBagHelper.GetNamespace("RegistryChannel");
-                var name = ReactPropertyBagHelper.GetName(ns, "AppServiceConnection");
-
-                InstanceSettings.Properties.Set(name, details.AppServiceConnection);
             }
         }
     }
