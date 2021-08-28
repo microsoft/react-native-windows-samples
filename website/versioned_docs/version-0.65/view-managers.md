@@ -7,8 +7,8 @@ original_id: view-managers
 > **This documentation and the underlying platform code is a work in progress.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like `ScrollView` and `TextInput`, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, we can wrap up these existing components for seamless integration with your React Native application.
 
@@ -192,7 +192,7 @@ namespace ViewManagerSample
 
 ### 2. Registering your View Manager
 
-As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 `ReactPackageProvider.cs`:
 
@@ -244,7 +244,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties-api-windows.md) interface. The `CreateViewWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
+This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties) interface. The `CreateViewWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
 
 ```diff
 -internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
@@ -469,7 +469,7 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties-api-windows.md) interface:
+This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties) interface:
 ```diff
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
@@ -503,7 +503,7 @@ struct CustomUserControlViewManager : winrt::implements<
 
 ### 2. Registering your View Manager
 
-As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 `ReactPackageProvider.idl`:
 
