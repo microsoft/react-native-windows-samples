@@ -8,6 +8,10 @@
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
 File not found ReactNativeHost while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found IReactContext while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found ReactNativeHost while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found IViewManagerCreateWithProperties-api-windows.md while parsing versioned_docs/version-0.65/view-managers.md
+File not found IViewManagerCreateWithProperties while parsing versioned_docs/version-0.65/view-managers.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
 File not found hermes.md while parsing versioned_docs/version-0.65/customizing-SDK-versions.md
@@ -30,6 +34,20 @@ File not found rnm-getting-started.md while parsing versioned_docs/version-0.65/
 File not found getting-started.md while parsing versioned_docs/version-0.65/hermes.md
 File not found rnm-getting-started.md while parsing versioned_docs/version-0.65/hermes.md
 File not found getting-started.md while parsing versioned_docs/version-0.65/hermes.md
+File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.65/iviewwindowsprops-api-windows.md
+File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.65/iviewwindowsprops-api-windows.md
+File not found ikeyboardprops-api-windows.md while parsing versioned_docs/version-0.65/iviewwindowsprops-api-windows.md
+File not found getting-started.md while parsing versioned_docs/version-0.65/native-code.md
+File not found getting-started.md while parsing versioned_docs/version-0.65/native-code.md
+File not found getting-started.md while parsing versioned_docs/version-0.65/native-code.md
+File not found native-code-language-choice.md while parsing versioned_docs/version-0.65/native-code.md
+File not found getting-started.md while parsing versioned_docs/version-0.65/native-code.md
+File not found getting-started.md while parsing versioned_docs/version-0.65/native-code.md
+File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-advanced.md
 File not found native-modules-advanced.md while parsing versioned_docs/version-0.65/native-modules-async.md
 File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-async.md
 File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-async.md
@@ -100,7 +118,6 @@ File not found win10-compat.md while parsing versioned_docs/version-0.65/rnw-dep
 File not found win10-compat.md while parsing versioned_docs/version-0.65/rnw-dependencies.md
 File not found win10-compat.md while parsing versioned_docs/version-0.65/rnw-dependencies.md
 File not found getting-started.md while parsing versioned_docs/version-0.65/view-managers.md
-File not found IViewManagerCreateWithProperties-api-windows.md while parsing versioned_docs/version-0.65/view-managers.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.65/view-managers.md
 File not found native-modules.md while parsing versioned_docs/version-0.65/view-managers.md
 File not found getting-started.md while parsing versioned_docs/version-0.65/view-managers.md
@@ -115,6 +132,11 @@ File not found native-modules.md while parsing versioned_docs/version-0.65/view-
 File not found getting-started.md while parsing versioned_docs/version-0.65/view-managers.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.65/view-managers.md
 File not found native-modules.md while parsing versioned_docs/version-0.65/view-managers.md
+File not found winui3.md while parsing versioned_docs/version-0.65/win10-compat.md
+File not found winui3.md while parsing versioned_docs/version-0.65/win10-compat.md
+File not found winui3.md while parsing versioned_docs/version-0.65/win10-compat.md
+File not found assets/reveal-surface-animation.gif while parsing versioned_docs/version-0.65/windowsbrush-and-theme.md
+File not found assets/rnw-acrylic-surface.png while parsing versioned_docs/version-0.65/windowsbrush-and-theme.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/building-rnw.md
