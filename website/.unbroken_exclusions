@@ -8,6 +8,10 @@
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
 File not found ReactNativeHost while parsing versioned_docs/version-0.64/native-modules-advanced.md
+File not found IReactContext while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found ReactNativeHost while parsing versioned_docs/version-0.65/native-modules-advanced.md
+File not found IViewManagerCreateWithProperties-api-windows.md while parsing versioned_docs/version-0.65/view-managers.md
+
 
 #fix-unbroken.js auto-generated do not edit this line or below
 File not found hermes.md while parsing versioned_docs/version-0.65/customizing-SDK-versions.md
