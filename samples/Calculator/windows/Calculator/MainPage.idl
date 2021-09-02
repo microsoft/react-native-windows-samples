@@ -1,7 +1,9 @@
-namespace Calculator
+#include "NamespaceRedirect.h"
+
+namespace calculator
 {
     [default_interface]
-    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    runtimeclass MainPage : XAML_NAMESPACE.Controls.Page
     {
         MainPage();
     }
