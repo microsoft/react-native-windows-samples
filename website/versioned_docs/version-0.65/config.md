@@ -1,6 +1,7 @@
 ---
-id: config
+id: version-0.65-config
 title: React Native Config Schema
+original_id: config
 ---
 
 The CLI command [`npx react-native config`](https://github.com/react-native-community/cli/blob/master/docs/commands.md#config) outputs project and dependencies configuration in JSON format to `stdout`.
@@ -48,7 +49,6 @@ The top-level object has the following fields:
 | `solutionFile` | string | req | Relative path to the app's VS solution file under *`sourceDir`*, ex: *`MyApp.sln`* |
 | `project` | object | req | Object describing the app's VS project |
 | `useWinUI3` | boolean | opt | If true, use WinUI 3. If false, use Windows XAML and WinUI 2. If missing, the value from `rnwRoot\PropertySheets\ExperimentalFeatures.props` will be used. |
-| `experimentalFeatures` | object | auto | Properties extracted from `ExperimentalFeatures.props` |
 
 ### Project Object Fields:
 
