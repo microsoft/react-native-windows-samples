@@ -1,9 +1,11 @@
 using Microsoft.ReactNative;
+using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.AppService;
+using Windows.ApplicationModel.Background;
 #if USE_WINUI3
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 #else
-using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
@@ -12,6 +14,8 @@ namespace appservicedemo
 {
     sealed partial class App : ReactApplication
     {
+        private BackgroundTaskDeferral appServiceDeferral;
+
         public App()
         {
 #if BUNDLE
@@ -63,6 +67,21 @@ namespace appservicedemo
                 // Display the initial content
                 var frame = (Frame)Window.Current.Content;
                 frame.Navigate(typeof(MainPage), null);
+            }
+        }
+
+        protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        {
+            base.OnBackgroundActivated(args);
+
+            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details)
+            {
+                appServiceDeferral = args.TaskInstance.GetDeferral();
+
+                var ns = ReactPropertyBagHelper.GetNamespace("RegistryChannel");
+                var name = ReactPropertyBagHelper.GetName(ns, "AppServiceConnection");
+
+                InstanceSettings.Properties.Set(name, details.AppServiceConnection);
             }
         }
     }
