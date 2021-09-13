@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "appservicedemo.Package", "appservicedemo.Package\appservicedemo.Package.wapproj", "{E0C2D328-2554-4450-BB40-DEABF4E44BB8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appservicedemo", "appservicedemo\appservicedemo.csproj", "{418AD1A7-D045-478A-AA6B-34A597088C0D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Folly", "..\node_modules\react-native-windows\Folly\Folly.vcxproj", "{A990658C-CE31-4BCC-976F-0FC6B1AF693D}"
@@ -37,8 +39,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNativeAppServiceModule", "ReactNativeAppServiceModule\ReactNativeAppServiceModule.csproj", "{21084E77-E1D6-4D36-8FA3-BBDA06102CF8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistryApp", "RegistryApp\RegistryApp.csproj", "{0A122BD2-9C76-4B58-A0E1-C4D9844D857C}"
-EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "appservicedemo.Package", "appservicedemo.Package\appservicedemo.Package.wapproj", "{E0C2D328-2554-4450-BB40-DEABF4E44BB8}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
