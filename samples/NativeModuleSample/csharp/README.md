@@ -70,7 +70,7 @@ To upgrade this sample to the latest version of RNW:
             ```
         3. Check if the `<ProjectGuid>` property at the top of the file has been updated. If so, take note of the new Guid (for later) and restore the original Guid.
     2. For `windows\NativeModuleSample\NativeModulesSample.sln`:
-        1. If the project guid was changed in Step 8.1.3 above, you'll want to restore the original Guid here too. The easiest way to do this is to just do a find-replace on the new Guid with the (uppercased) old one.
+        1. If the project guid was changed in Step 7.1.3 above, you'll want to restore the original Guid here too. The easiest way to do this is to just do a find-replace on the new Guid with the (uppercased) old one.
     3. For `ReactPackageProvider.cs`:
         1. Restore the copyright notice at the top of the file:
             ```diff
