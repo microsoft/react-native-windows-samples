@@ -14,7 +14,6 @@
     <ClInclude Include="DataMarshallingExamples.h" />
     <ClInclude Include="AsyncMethodExamples.h" />
     <ClInclude Include="ReactPackageProvider.h" />
-    <ClInclude Include="ReactNativeModule.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
