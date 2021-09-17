@@ -43,6 +43,7 @@ Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file
 
 - Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI 3
 - Hermes dll is not signed by Microsoft and the PDBs are not uploaded to the symbol servers
+- Hermes cannot be used at the same time as the Web Debugger, since the browser engine is used instead
 
 ## Hermes on macOS
 
