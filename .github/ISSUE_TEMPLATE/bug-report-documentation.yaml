@@ -1,5 +1,5 @@
 name: Bug report for the documentation
-description: File a bug report for the documentation website
+description: File a bug report for the [documentation website](https://aka.ms/reactnative)
 title: Describe the problem
 labels: [bug, documentation]
 body:

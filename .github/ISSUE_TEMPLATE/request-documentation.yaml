@@ -12,7 +12,7 @@ body:
       required: true
     attributes:
       label: Suggestion
-  - type: label
+  - type: input
     attributes:
       label: Location
       description: |

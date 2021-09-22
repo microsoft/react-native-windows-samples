@@ -1,5 +1,5 @@
 name: Bug report for a sample
-description: File a bug report for one of the samples
+description: File a bug report for one of the [samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples)
 title: Describe the problem
 labels: [bug, samples]
 body:
