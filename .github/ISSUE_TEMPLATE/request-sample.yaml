@@ -6,18 +6,28 @@ body:
   - type: markdown
     attributes:
       value: |
-        Your issue will be triaged by the RNW team according to [this process](https://github.com/microsoft/react-native-windows/wiki/Triage-Process).
+        Your issue will be triaged according to [this process](https://github.com/microsoft/react-native-windows/wiki/Triage-Process).
   - type: textarea
     validations:
       required: true
     attributes:
       label: Suggestion
-  - type: textarea
+- type: dropdown
     validations:
       required: true
     attributes:
-      label: Why a Windows/macOS specific sample?
-      description: This repo is not intended to cover generic React Native samples. It only includes desktop-specific scenarios that impact Windows and macOS. Please describe why this sample is specific to these desktop platforms. 
+      label: Platforms
+      description: |
+        For which platforms would this sample be relevent?
+
+        Note that this repo is not intended to cover generic React Native samples. It only includes desktop-specific scenarios that impact Windows and macOS. Please describe above why this sample is specific to these desktop platforms. 
+      multiple: true
+      options:
+        - "Android"
+        - "iOS"
+        - "macOS"
+        - "Web"
+        - "Windows"
   - type: textarea
     attributes:
       label: Sample code

@@ -1,16 +1,16 @@
 name: Bug report for a sample
-description: File a bug report for one of the [samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples)
+description: File a bug report for one of the samples
 title: Describe the problem
 labels: [bug, samples]
 body:
   - type: markdown
     attributes:
       value: |
-        This repo contains the source for the [React Native for Windows + macOS website](https://aka.ms/reactnative), as well as various code samples for those platforms. Issues on this repo should be constrained to problems/suggestions for the website and the samples. If you have an issue with the platforms themselves, you can file your issues here:
+        This repo contains the source for the [React Native for Windows + macOS website](https://aka.ms/reactnative), as well as various [code samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples) for those platforms. Issues on this repo should be constrained to problems/suggestions for the website and the samples. If you have an issue with the platforms themselves, you can file your issues here:
         - [React Native for Windows](https://github.com/microsoft/react-native-windows/issues/new/choose)
         - [React Native for macOS](https://github.com/microsoft/react-native-macos/issues/new/choose)
 
-        Your issue will be triaged by the RNW team according to [this process](https://github.com/microsoft/react-native-windows/wiki/Triage-Process).
+        Your issue will be triaged according to [this process](https://github.com/microsoft/react-native-windows/wiki/Triage-Process).
   - type: dropdown
     validations:
       required: true
