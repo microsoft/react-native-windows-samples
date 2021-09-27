@@ -9,6 +9,14 @@ This extends the [View Props](https://reactnative.dev/docs/view#props) and [`IKe
 
 ## Methods
 
+### `accessibilityLandmarkType`
+
+Specifies the UIA Landmark Type for the View. 
+
+| type | required |
+|:--|:--|
+| string | No |
+
 ### `accessibilityPosInSet`
 
 Indicates to accessibility services that the Component is within a set and has the given numbered position.
