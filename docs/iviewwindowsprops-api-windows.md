@@ -11,7 +11,14 @@ This extends the [View Props](https://reactnative.dev/docs/view#props) and [`IKe
 
 ### `accessibilityLandmarkType`
 
-Specifies the UIA Landmark Type for the View. 
+Specifies the automation landmark type for the View. Choose one of the known UIA Landmark types (preferred) or enter a custom string to give the landmark a different name.  
+
+Predefined UIA Landmark Types:
+- Form
+- Main
+- Navigation
+- None 
+- Search
 
 | type | required |
 |:--|:--|
