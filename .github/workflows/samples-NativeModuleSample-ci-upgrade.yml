@@ -41,5 +41,5 @@ jobs:
 
       - name: Run react-native run-windows
         if: ${{ steps.upgrade.outcome == 'success' }}
-        run: npx react-native run-windows --logging --no-autolink --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}
+        run: npx react-native run-windows --logging --no-autolink --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release --deploy-from-layout' || '' }}
         working-directory: ..\..\src
