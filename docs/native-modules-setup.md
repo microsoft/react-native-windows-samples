@@ -191,7 +191,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
 - Build and run the project
 ```yaml
     - name: Run Windows x64 release
-      run: npx react-native run-windows --arch x64 --release --no-packager --logging
+      run: npx react-native run-windows --arch x64 --release --no-packager --logging --deploy-from-layout
 ```
 - Run tests
 ```yaml
