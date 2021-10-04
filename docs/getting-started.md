@@ -115,7 +115,7 @@ Follow these steps to build a version of your app that you can install or publis
 - Build the solution. You can now launch without first launching Metro.
 - If you want to build an APPX package to share or publish, use the **Project** > **Publish** > **Create App Packages...** option.
 
-- If you want to build via the CLI, run `npx react-native run-windows --release` in your project root. Note your project must have a [certificate](https://docs.microsoft.com/en-us/windows/msix/package/create-certificate-package-signing) in `windows/<App>` before running this command.
+- If you want to build via the CLI, run `npx react-native run-windows --release` in your project root. Note your project must have a [certificate](https://docs.microsoft.com/windows/msix/package/create-certificate-package-signing) in `windows/<App>` before running this command.
 
 > The Debug configuration uses the Web Debugger by default, which means the application's JavaScript code runs in Chrome.<br>
 > If you're getting different runtime behavior between the Release and Debug configurations, consider disabling the `UseWebDebugger` setting in [`App.cpp`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cpp-app/src/App.cpp#L30) or [`App.xaml.cs`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cs-app/src/App.xaml.cs#L20) to get the same behavior in the Debug configuration.
