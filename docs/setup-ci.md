@@ -59,11 +59,13 @@ Now push your changes and the CI pipeline should be up and running.
 Certificates are used to sign RNW apps so that they can be installed locally or published to the Microsoft Store. This data should not be publically published, so we need to do extra steps if we wish to build/run signed RNW app packages through Github Actions.
 
 ### Storing Certificates Securely
-There are a couple of options for where you can securing store your certificate information. Three options we have worked with are Github Secrets, Azure DevOps Secure Files, and Azure Key Vault. Github Secrets works well, when you are using Github Actions to run your pipeline. The latter two work well, if you are using Azure DevOps to run your pipeline. 
+There are a several options where you can securely store your certificate information:
 
-Here is documentation on how to set up a Github Secret: [Github Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
-Here is documentation on how to set up an Azure Secure File: [Azure Secure Files](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/secure-files?view=azure-devops)
-Here is documentation on how to set up an Azure Key Vault Secret: [Azure Key Vault Secrets](https://docs.microsoft.com/en-us/azure/key-vault/secrets/about-secrets)
+- [Github Secrets](https://docs.github.com/actions/reference/encrypted-secrets)
+- [Azure Secure Files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)
+- [Azure Key Vault Secrets](https://docs.microsoft.com/azure/key-vault/secrets/about-secrets)
+
+Github Secrets works well, when you are using Github Actions to run your pipeline. The latter two work well, if you are using Azure DevOps to run your pipeline.
 
 For Azure Secure Files, you will upload the .pfx itself. The remaining two methods expect data in the form of a string. Thus, you must Base64 encode your .pfx and upload the resulting string as your secret by running 
 ```
@@ -73,10 +75,6 @@ $fileContentBytes = get-content '<Path-to-Pfx>' -Encoding Byte
 in PowerShell. Then upload the contents of `pfx-encoded-bytes.txt` as your secret.
 
 ### Accessing Certificate Data from Pipeline
-Here is documentation on how to use a Github Secret: [Github Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
-Here is documentation on how to use a an Azure Secure File: [Azure Secure Files](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/secure-files?view=azure-devops)
-Here is documentation for using Azure Key Vault Secrets in a Pipeline: [Using Azure Key Vault Secrets](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/azure-key-vault?view=azure-devops#:~:text=Search%20for%20vault%20and%20select%20the%20Azure%20Key,and%20retrieve%20secrets%20to%20use%20as%20pipeline%20variables.)
-
 See the [Xaml-Islands-Samples](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/.github/workflows/CPP-CI.yml) repository for an example of a pipeline which uses Github Secrets.
 See the [react-native-gallery](https://github.com/microsoft/react-native-gallery/blob/main/ci.yml) repository for an example of a pipeline which uses Azure DevOps Secure Files.
 See the react-native-windows repository for an example of a pipeline which uses Azure Key Vault:
