@@ -68,7 +68,7 @@ Here is documentation on how to set up an Azure Key Vault Secret: [Azure Key Vau
 For Azure Secure Files, you will upload the .pfx itself. The remaining two methods expect data in the form of a string. Thus, you must Base64 encode your .pfx and upload the resulting string as your secret by running 
 ```
 $fileContentBytes = get-content '<Path-to-Pfx>' -Encoding Byte
-[System.Convert]::ToBase64String($fileContentBytes) | Out-File ‘pfx-encoded-bytes.txt’
+[System.Convert]::ToBase64String($fileContentBytes) | Out-File pfx-encoded-bytes.txt
 ```
 in Powershell. Then upload the contents of pfx-encoded-bytes as your secret.
 
