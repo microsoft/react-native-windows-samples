@@ -70,7 +70,7 @@ For Azure Secure Files, you will upload the .pfx itself. The remaining two metho
 $fileContentBytes = get-content '<Path-to-Pfx>' -Encoding Byte
 [System.Convert]::ToBase64String($fileContentBytes) | Out-File pfx-encoded-bytes.txt
 ```
-in Powershell. Then upload the contents of pfx-encoded-bytes as your secret.
+in PowerShell. Then upload the contents of `pfx-encoded-bytes.txt` as your secret.
 
 ### Accessing Certificate Data from Pipeline
 Here is documentation on how to use a Github Secret: [Github Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
