@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'samples/CalculatorNuGet/**'
-      - '.github/workflows/samples-CalculatorNuGet-*.yml'
+      - '.github/workflows/samples-CalculatorNuGet-pr.yml'
 
 jobs:
   build:
@@ -26,5 +26,5 @@ jobs:
         working-directory: ..\..\src
 
       - name: Build x86 Debug
-        run: npx react-native run-windows --no-launch --no-packager --logging
+        run: npx react-native run-windows --no-launch --deploy-from-layout --no-packager --logging
         working-directory: ..\..\src

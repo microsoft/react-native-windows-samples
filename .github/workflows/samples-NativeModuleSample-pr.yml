@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'samples/NativeModuleSample/**'
-      - '.github/workflows/samples-NativeModuleSample-*.yml'
+      - '.github/workflows/samples-NativeModuleSample-pr.yml'
 
 jobs:
   build:
@@ -29,5 +29,5 @@ jobs:
         working-directory: ..\..\src
 
       - name: Build x86 Debug
-        run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging
+        run: npx react-native run-windows --no-deploy --no-launch --deploy-from-layout --no-packager --no-autolink --logging
         working-directory: ..\..\src
