@@ -49,7 +49,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
 ```
 Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/master/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
 
-Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
+Save the YAML file to `.github\workflows\` and then commit. To learn more about YAML syntax, see [Workflow syntax for GitHub Actions](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions).
 
 > GitHub Actions should be enabled by default, if it's not enabled for some reason you can go to Settings->Actions tab of the repo to enable it (requires owner access).
 
