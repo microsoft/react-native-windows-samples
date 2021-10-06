@@ -61,7 +61,7 @@ Certificates are used to sign RNW apps so that they can be installed locally or 
 ### Storing Certificates Securely
 There are a several options where you can securely store your certificate information:
 
-- [Github Secrets](https://docs.github.com/actions/reference/encrypted-secrets)
+- [GitHub Secrets](https://docs.github.com/actions/reference/encrypted-secrets)
 - [Azure Secure Files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)
 - [Azure Key Vault Secrets](https://docs.microsoft.com/azure/key-vault/secrets/about-secrets)
 
