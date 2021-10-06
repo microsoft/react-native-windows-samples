@@ -65,7 +65,7 @@ There are a several options where you can securely store your certificate inform
 - [Azure Secure Files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)
 - [Azure Key Vault Secrets](https://docs.microsoft.com/azure/key-vault/secrets/about-secrets)
 
-Github Secrets works well, when you are using Github Actions to run your pipeline. The latter two work well, if you are using Azure DevOps to run your pipeline.
+GitHub Secrets works well, when you are using GitHub Actions to run your pipeline. The latter two work well, if you are using Azure DevOps to run your pipeline.
 
 For Azure Secure Files, you will upload the .pfx itself. The remaining two methods expect data in the form of a string. Thus, you must Base64 encode your .pfx and upload the resulting string as your secret by running 
 ```
