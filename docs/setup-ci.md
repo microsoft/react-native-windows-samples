@@ -75,7 +75,7 @@ $fileContentBytes = get-content '<Path-to-Pfx>' -Encoding Byte
 in PowerShell. Then upload the contents of `pfx-encoded-bytes.txt` as your secret.
 
 ### Accessing Certificate Data from Pipeline
-See the [Xaml-Islands-Samples](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/.github/workflows/CPP-CI.yml) repository for an example of a pipeline which uses Github Secrets.
+See the [Xaml-Islands-Samples](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/.github/workflows/CPP-CI.yml) repository for an example of a pipeline which uses GitHub Secrets.
 See the [react-native-gallery](https://github.com/microsoft/react-native-gallery/blob/main/ci.yml) repository for an example of a pipeline which uses Azure DevOps Secure Files.
 See the react-native-windows repository for an example of a pipeline which uses Azure Key Vault:
 [Setup of Pfx](https://github.com/microsoft/react-native-windows/blob/main/.ado/templates/setup-certificate.yml)
