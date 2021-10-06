@@ -93,7 +93,7 @@ You can tell MSBuild what PFX you want to use to sign your app using the `Packag
 ### I have a pipeline that runs on forks of my repository (i.e. when a PR is being made). Can I access my certificate data from this pipeline?
 No. When data is securely stored through GitHub Secrets, Azure DevOps Secure Files, or Azure Key Vault, it can only be run from pipelines that are executing on branches of the original repository. The data cannot be accessed from pipelines running code from repository forks, because if the data was able to be accessed, someone could manipulate the pipeline source code within their fork to retrieve the data, leaving it unsecured.
 
-### I want to build an installable copy of my app from a pipeline that doesn't have access to my certificate data. What can I do?
+### I want to build a deployable package for my app from a pipeline that doesn't have access to my certificate data. What can I do?
 This case may apply to you if you want to do some E2E testing within a PR pipeline to make sure incoming changes don't break main. You do have a couple of options here to make do without a certificate.
 
 If you are simply trying to build - but not deploy - your app, you can successfully build non-signed RNW apps by setting the msbuild argument `AppxPackageSigningEnabled` to false. See [here](https://github.com/microsoft/react-native-windows/blob/353321ee40391f6f302e7cc80f96285e12780cbe/.ado/jobs/playground.yml#L95) for an example of this using VSBuild. See [here](https://github.com/microsoft/react-native-windows/blob/353321ee40391f6f302e7cc80f96285e12780cbe/.ado/templates/run-windows-with-certificates.yml#L34) for an example of this using the RNW CLI.
