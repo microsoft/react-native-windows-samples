@@ -98,5 +98,5 @@ This case may apply to you if you want to do some E2E testing within a PR pipeli
 
 If you are simply trying to build - but not deploy - your app, you can successfully build non-signed RNW apps by setting the msbuild argument `AppxPackageSigningEnabled` to false. See [here](https://github.com/microsoft/react-native-windows/blob/353321ee40391f6f302e7cc80f96285e12780cbe/.ado/jobs/playground.yml#L95) for an example of this using VSBuild. See [here](https://github.com/microsoft/react-native-windows/blob/353321ee40391f6f302e7cc80f96285e12780cbe/.ado/templates/run-windows-with-certificates.yml#L34) for an example of this using the RNW CLI.
 
-If you are trying to build and deploy your app for E2E testing, you can successfully do this with a non-signed RNW app by using the `--deploy-from-layout` option from the RNW CLI along with setting the msbuild argument `AppxPackageSigningEnabled` to false.
+If you are trying to build and deploy your app for E2E testing, you can successfully do this with a non-signed RNW app by using the `--deploy-from-layout` option from the RNW CLI along with setting the MSBuild argument `AppxPackageSigningEnabled` to false.
 
