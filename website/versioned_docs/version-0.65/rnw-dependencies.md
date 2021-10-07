@@ -23,7 +23,9 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force;
 iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-deps.ps1')
 ```
 
-### Manual setup
+<h3 onClick="javascript:document.getElementsByClassName('expander')[0].style.display='block';document.getElementById('expanderArrow').textContent='&#x25bd;'">Manual setup <p id='expanderArrow' style="display:inline">&#x25b7;</p></h3>
+
+<div class='expander' style="display: none">
 
 > The recommended way is to use the script above as the information in this manual section is likely to get out of date
 
@@ -60,6 +62,8 @@ Optional steps that are _highly recommended_:
   - Using a package manager such as [Chocolatey](https://chocolatey.org/) or [Scoop](https://scoop.sh/)
   - Install [git for Windows](https://gitforwindows.org/)
   - Install [GitHub Desktop](https://desktop.github.com/)
+
+</div>
 
 ### Troubleshooting
 
