@@ -12,6 +12,9 @@ You can run React Native for Windows apps only on:
 To develop React-Native for Windows apps, you need to install several dependencies.
 
 ## Install the development dependencies
+
+### Recommended - Setup via script
+
 To check or install dependencies, run the script [`rnw-dependencies.ps1`](https://aka.ms/rnw-deps.ps1) in an elevated PowerShell window.
 
 **Run this command:**
