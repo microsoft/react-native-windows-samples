@@ -19,8 +19,8 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force;
 iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-deps.ps1')
 ```
 
-### Manual setup
-
+<details>
+<summary>Manual setup instructions</summary>
 > The recommended way is to use the script above as the information in this manual section is likely to get out of date
 
 Alternatively, you can setup your environment manually:
@@ -52,6 +52,8 @@ You will also need to ensure that certain settings are enabled:
 
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
+
+</details>
 
 ### Troubleshooting
 
