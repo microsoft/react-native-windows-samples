@@ -22,9 +22,8 @@ Set-ExecutionPolicy Unrestricted -Scope Process -Force;
 iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-deps.ps1')
 ```
 
-<h3 onClick="javascript:document.getElementsByClassName('expander')[0].style.display='block';document.getElementById('expanderArrow').textContent='&#x25bd;'">Manual setup <p id='expanderArrow' style="display:inline">&#x25b7;</p></h3>
-
-<div class='expander' style="display: none">
+<details>
+<summary>Manual setup instructions</summary>
 
 > The recommended way is to use the script above as the information in this manual section is likely to get out of date
 
@@ -62,7 +61,7 @@ Optional steps that are _highly recommended_:
   - Install [git for Windows](https://gitforwindows.org/)
   - Install [GitHub Desktop](https://desktop.github.com/)
 
-</div>
+</details>
 
 ### Troubleshooting
 
