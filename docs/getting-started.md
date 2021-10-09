@@ -14,7 +14,7 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```bat
-npx react-native init <projectName> --template react-native@^0.65.0
+npx react-native init <projectName> --template react-native@^0.66.0
 ```
 >To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
 
