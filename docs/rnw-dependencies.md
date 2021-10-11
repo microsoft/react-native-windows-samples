@@ -5,7 +5,7 @@ title: System Requirements
 
 You can run React Native for Windows apps only on:
 
-- all Windows 11 devices
+- All Windows 11 devices
 - Windows 10 devices with Windows version: 10.0.16299.0 (aka 1709, aka Redstone 3, aka Fall Creators Update) or higher
   Some features may not work on all versions. See [Windows 10 Compatibility](win10-compat.md) for version support details.
 
