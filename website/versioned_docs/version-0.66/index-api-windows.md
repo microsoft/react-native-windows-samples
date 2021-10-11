@@ -3,12 +3,14 @@ id: version-0.66-Native-API-Reference
 title: namespace Microsoft.ReactNative
 sidebar_label: Full reference
 original_id: Native-API-Reference
+
 ---
 
 ## Enums
 - [`AccessibilityRoles`](AccessibilityRoles)
 - [`AccessibilityStates`](AccessibilityStates)
 - [`AccessibilityValue`](AccessibilityValue)
+- [`BackNavigationHandlerKind`](BackNavigationHandlerKind)
 - [`CanvasComposite`](CanvasComposite)
 - [`CanvasEdgeBehavior`](CanvasEdgeBehavior)
 - [`EffectBorderMode`](EffectBorderMode)
@@ -17,6 +19,7 @@ original_id: Native-API-Reference
 - [`JSValueType`](JSValueType)
 - [`JsiErrorType`](JsiErrorType)
 - [`JsiValueKind`](JsiValueKind)
+- [`LogLevel`](LogLevel)
 - [`MethodReturnType`](MethodReturnType)
 - [`RedBoxErrorType`](RedBoxErrorType)
 - [`ViewManagerPropertyType`](ViewManagerPropertyType)
@@ -38,7 +41,10 @@ original_id: Native-API-Reference
 - [`IReactPropertyBag`](IReactPropertyBag)
 - [`IReactPropertyName`](IReactPropertyName)
 - [`IReactPropertyNamespace`](IReactPropertyNamespace)
+- [`IReactRootViewExperimental`](IReactRootViewExperimental)
 - [`IReactSettingsSnapshot`](IReactSettingsSnapshot)
+- [`IReactViewHost`](IReactViewHost)
+- [`IReactViewInstance`](IReactViewInstance)
 - [`IRedBoxErrorFrameInfo`](IRedBoxErrorFrameInfo)
 - [`IRedBoxErrorInfo`](IRedBoxErrorInfo)
 - [`IRedBoxHandler`](IRedBoxHandler)
@@ -78,12 +84,14 @@ original_id: Native-API-Reference
 - [`JsiRuntime`](JsiRuntime)
 - [`QuirkSettings`](QuirkSettings)
 - [`ReactApplication`](ReactApplication)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactDispatcherHelper`](ReactDispatcherHelper)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`ReactNotificationServiceHelper`](ReactNotificationServiceHelper)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
 - [`ReactRootView`](ReactRootView)
+- [`ReactViewOptions`](ReactViewOptions)
 - [`RedBoxHelper`](RedBoxHelper)
 - [`ViewControl`](ViewControl)
 - [`ViewPanel`](ViewPanel)
@@ -98,6 +106,7 @@ original_id: Native-API-Reference
 - [`JSValueArgWriter`](JSValueArgWriter)
 - [`JsiByteArrayUser`](JsiByteArrayUser)
 - [`JsiHostFunction`](JsiHostFunction)
+- [`LogHandler`](LogHandler)
 - [`MethodDelegate`](MethodDelegate)
 - [`MethodResultCallback`](MethodResultCallback)
 - [`ReactCreatePropertyValue`](ReactCreatePropertyValue)
@@ -106,3 +115,4 @@ original_id: Native-API-Reference
 - [`ReactNotificationHandler`](ReactNotificationHandler)
 - [`ReactViewManagerProvider`](ReactViewManagerProvider)
 - [`SyncMethodDelegate`](SyncMethodDelegate)
+- [`UIBatchCompleteCallback`](UIBatchCompleteCallback)

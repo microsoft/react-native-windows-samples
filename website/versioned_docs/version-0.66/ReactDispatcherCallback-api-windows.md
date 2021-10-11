@@ -17,3 +17,4 @@ void **`Invoke`**()
 
 ## Referenced by
 - [`IReactDispatcher`](IReactDispatcher)
+- [`ReactCoreInjection`](ReactCoreInjection)

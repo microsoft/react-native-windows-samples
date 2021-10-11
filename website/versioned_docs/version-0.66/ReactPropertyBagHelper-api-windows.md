@@ -14,9 +14,9 @@ Helper methods for the property bag implementation.
 ### GlobalNamespace
 `static`   `readonly`  [`IReactPropertyNamespace`](IReactPropertyNamespace) `GlobalNamespace`
 
-> **Deprecated**: Do not use. It will be removed in version 0.65.
+> **Deprecated**: Do not use. It will be removed in a future version.
 
-Deprecated. Do not use. It will be removed in version 0.65.
+Deprecated. Do not use. It will be removed in a future version.
 
 
 
@@ -32,7 +32,7 @@ Creates new instance of [`IReactPropertyBag`](IReactPropertyBag)
 `static` [`IReactPropertyName`](IReactPropertyName) **`GetName`**([`IReactPropertyNamespace`](IReactPropertyNamespace) ns, string localName)
 
 Gets atomic [`IReactPropertyName`](IReactPropertyName) for the namespace `ns` and the `localName`.
-**Note that passing `null` as `ns` is reserved for local values in version 0.65. In previous versions it was the same as passing [`GlobalNamespace`](#globalnamespace).**
+**Note that passing `null` as `ns` is reserved for local values since 0.65. In previous versions it was the same as passing [`GlobalNamespace`](#globalnamespace).**
 
 
 

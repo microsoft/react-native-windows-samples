@@ -27,16 +27,7 @@ Set this to a location the application has write access to in order for bytecode
 ### DebugBundlePath
  string `DebugBundlePath`
 
-When loading from a bundle server (such as metro), this is the path that will be requested from the server. If this is not provided the value of [`JavaScriptBundleFile`](#javascriptbundlefile) or [`JavaScriptMainModuleName`](#javascriptmainmodulename) is used.
-
-### DebugHost
- string `DebugHost`
-
-> **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in version 0.65.
-
-**Default value**: `localhost:8081`
-
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
+When loading from a bundle server (such as metro), this is the path that will be requested from the server. If this is not provided, the value of [`JavaScriptBundleFile`](#javascriptbundlefile) is used.
 
 ### DebuggerBreakOnNextLine
  bool `DebuggerBreakOnNextLine`
@@ -52,6 +43,12 @@ This can help debug issues hit early in the JavaScript bundle load.
 
 When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
 
+### DebuggerRuntimeName
+ string `DebuggerRuntimeName`
+
+Name to associate with the JavaScript runtime when debugging. 
+This name will show up in the list of JavaScript runtimes to attach to in edge://inspect or other debuggers
+
 ### EnableByteCodeCaching
  bool `EnableByteCodeCaching`
 
@@ -65,7 +62,7 @@ Subsequent runs of the application should be faster as the JavaScript will be lo
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
 
-> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing. It will be removed in version 0.65.
+> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing. It will be removed in a future version.
 
 This controls whether various developer experience features are available for this instance. In particular the developer menu, and the default `RedBox` experience.
 
@@ -91,12 +88,10 @@ In order the override to work the Microsoft.ReactNative must be compiled with su
 
 The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath). The `.bundle` extension will be appended to the end, when looking for the bundle file.
 
-### JavaScriptMainModuleName
- string `JavaScriptMainModuleName`
+### NativeLogger
+ [`LogHandler`](LogHandler) `NativeLogger`
 
-> **Deprecated**: Use [`JavaScriptBundleFile`](#javascriptbundlefile) instead. It will be removed in version 0.65.
-
-Name of the JavaScript bundle file. If [`JavaScriptBundleFile`](#javascriptbundlefile) is specified it is used instead.
+Function that will be hooked into the JavaScript instance as global.nativeLoggingHook. This allows native hooks for JavaScript's console implementation. If this is not set then logs will print output to the native debug output in debug builds, and no-op in release builds.
 
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
