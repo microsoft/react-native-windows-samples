@@ -4,7 +4,9 @@
       "header": "Xbox app on Windows",
       "category": "1st party",
       "description": [
-        "The Xbox app on Windows lets users explore the catalogue of games available through Xbox Game Pass, chat with friends, and more. Written in React Native, the Xbox app has a premium user experience including buttery smooth animations and video playback. "      ],
+        "The Xbox app on Windows lets users explore the catalogue of games available through Xbox Game Pass, chat with friends, and more.",
+        "Written in React Native, the Xbox app has a premium user experience including buttery smooth animations and video playback. "
+      ],
       "link": "https://www.microsoft.com/store/productId/9MV0B5HZVK9Z",
       "img": "img/XboxStoreApp.gif"
     },
@@ -12,7 +14,8 @@
       "header": "Microsoft Store on Xbox",
       "category": "1st party",
       "description": [
-        "The Microsoft Store app on Xbox consoles has been rewritten from the ground up to be faster, safer, and easier to use than ever before. The new Microsoft Store on Xbox is more than twice as fast as before because it uses the native capabilities of the platform via React Native." 
+        "The Microsoft Store app on Xbox consoles has been rewritten from the ground up to be faster, safer, and easier to use than ever before.",
+        "The new Microsoft Store on Xbox is more than twice as fast as before, because it uses the native capabilities of the platform via React Native."
       ],
       "link": "https://news.xbox.com/en-us/2020/08/03/new-microsoft-store-coming-to-xbox-insiders/",
       "logo": "img/XBox.png"
@@ -21,7 +24,8 @@
       "header": "Microsoft Office",
       "category": "1st party",
       "description": [
-        "Microsoft Office leverages React Native in several experiences across the suite of Office apps including Word, Excel, and Powerpoint. Some examples include the modern commenting experience, privacy dialog, and unity canvas. These experiences ship across both mobile and desktop, including on macOS and Windows."
+        "Microsoft Office leverages React Native in several experiences across the suite of Office apps including Word, Excel, and PowerPoint.",
+        "Some examples include the modern commenting experience, privacy dialog, and unity canvas. These experiences ship across both mobile and desktop, including on macOS and Windows."
       ],
       "link": "http://office.com",
       "logo": ["img/Office.png"]
@@ -29,36 +33,41 @@
     {
       "header": "React Native Gallery",
       "category": "1st party",
-      "description": ["The React Native Gallery app showcases the components and capabilities of React Native for Windows. You can find core components provided by the platform in addition to wrapped WinUI controls and common community modules. "],
+      "description": [
+        "The React Native Gallery app showcases the components and capabilities of React Native for Windows.",
+        "You can find core components provided by the platform in addition to wrapped WinUI controls and common community modules. "
+      ],
       "logo": "https://github.com/microsoft/react-native-gallery/blob/main/windows/rngallery/Assets/Square44x44Logo.altform-lightunplated_targetsize-256.png?raw=true",
       "link": "https://www.microsoft.com/store/productId/9NPG0B292H4R"
     },
     {
       "header": "Power Apps",
       "category":"1st party",
-      "description": ["Power Apps help you build professional-grade apps the easy way, and increase agility across your organization by enabling you to rapidly build low-code apps to modernize processes and solve tough challenges."
-      ],
+      "description": "Power Apps help you build professional-grade apps the easy way, and increase agility across your organization by enabling you to rapidly build low-code apps to modernize processes and solve tough challenges.",
       "link": "https://powerapps.microsoft.com/",
       "logo": "img/powerApps.png"
     },
     {
       "header": "Web Template Studio",
       "category": "1st party",
-      "description": [ "Microsoft Web Template Studio (aka WebTS) is a Visual Studio Code Extension that accelerates the creation of a new Web or React Native application using a wizard-based experience."],
+      "description": "Microsoft Web Template Studio (aka WebTS) is a Visual Studio Code Extension that accelerates the creation of a new Web or React Native application using a wizard-based experience.",
       "link": "https://github.com/microsoft/WebTemplateStudio",
       "logo": "https://wasteamaccount.gallerycdn.vsassets.io/extensions/wasteamaccount/webtemplatestudio-dev-nightly/0.7.2117301/1624436773361/Microsoft.VisualStudio.Services.Icons.Default"
     },
     {
       "header": "Fluent UI React Native",
       "category": "1st party",
-      "description": ["FluentUI React Native is a javascript component library that provides developers with controls that are part of the Fluent Design System. These controls are built on React Native and fully customizable."],
+      "description": "FluentUI React Native is a JavaScript component library that provides developers with controls that are part of the Fluent Design System. These controls are built on React Native and fully customizable.",
       "link": "https://github.com/microsoft/fluentui-react-native",
       "logo": "https://www.microsoft.com/design/fluent/assets/favicons/favicon-192.png"
     },
     {
       "header": "BabylonJS",
       "category": "3rd party",
-      "description": ["Babylon.JS is a powerful, beautiful, simple, and open game and rendering engine packed into a friendly JS framework. Babylon React Native brings the power of Babylon to React Native apps on Android, iOS, and Windows."],
+      "description": [
+        "Babylon.JS is a powerful, beautiful, simple, and open game and rendering engine packed into a friendly JS framework.",
+        "Babylon React Native brings the power of Babylon to React Native apps on Android, iOS, and Windows."
+      ],
       "link": "https://github.com/babylonjs/babylonreactnative",
       "logo": "https://github.com/BabylonJS/Brand-Toolkit/blob/a4a72b1b87a3ffd68657fd5cb82da24691f291b8/babylon_logo/fullColor/babylon_logo_color.png?raw=true"
     },
@@ -80,7 +89,10 @@
       "header": "Mashreq",
       "category":"3rd party",
       "logo": "https://www.mashreqbank.com/favicon.ico",
-      "description": "Mashreq bank developed an application Universal Banker App with React Native to empower frontline employees working at branches to serve customers across a broad range of inquiries and journeys. The application helped them to increase the proximity with the customer, improving the customer experience and reducing the service time.",
+      "description": [
+        "Mashreq bank developed an application Universal Banker App with React Native to empower frontline employees working at branches to serve customers across a broad range of inquiries and journeys.",
+        "The application helped them to increase the proximity with the customer, improving the customer experience and reducing the service time."
+      ],
       "link": "https://techcommunity.microsoft.com/t5/windows-dev-appconsult/how-mashreq-bank-is-using-react-native-for-windows-to-bring-new/ba-p/2421056#:~:text=Mashreq%20bank%20developed%20an%20application%20Universal%20Banker%20App,the%20customer%20experience%20and%20reducing%20the%20service%20time."
     }
   ]

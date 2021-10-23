@@ -26,22 +26,24 @@ function getBackgroundForCategory(category) {
   else return 'orange';
 }
 
-function renderImg(img, isSmall) {
+function renderImg(img, isSmall, key) {
   return <img src={img}
     style={{
       maxHeight: isSmall ? 80 : 500,
       minHeight: isSmall ? 80 : 220,
-
+      minWidth: isSmall ? 80 : 220,
       verticalAlign: 'end',
-    }} />;
+    }} key={key} />;
 }
-function renderImgs(imgs, isSmall) {
+function renderImgs(app) {
+  const isSmall = app.logo !== undefined;
+  let imgs = isSmall ? app.logo : app.img;
   if (!Array.isArray(imgs)) {
     imgs = [imgs];
   }
   const size = isSmall ? 40 : 220;
   return <td style={{ borderColor: 'transparent', padding: 0, height: size, width: size * imgs.length }} >
-    {imgs.map(i => renderImg(i, isSmall))}
+    {imgs.map(i => renderImg(i, isSmall, `${app}-img-${i}`))}
   </td>;
 }
 
@@ -86,7 +88,7 @@ function renderContent(app) {
     {app.category}
   </span> : '';
 
-  return <div style={{ minHeight: 24, minWidth: 140 }}>
+  return <div style={{ minHeight: 24, minWidth: 140 }} key={`${app.header}-content`}>
     <span style={{
       fontSize: 22,
       fontWeight: 500,
@@ -96,8 +98,8 @@ function renderContent(app) {
       {app.header}
     </span>
     {pill}
-    {renderDescription(app.description)}
-    <p>{app.link ? <a href={app.link}>See more</a> : ''}</p>
+    {renderDescription(app)}
+    <p key={`${app.header}-seemore`}>{app.link ? <a href={app.link}>See more</a> : ''}</p>
   </div>
     ;
 }
@@ -105,12 +107,12 @@ function renderShowcaseApp(app, i) {
 
   if (app.category === 'more') return renderMore(app);
 
-  const img = app.img ? renderImgs(app.img, false) : renderImgs(app.logo, true);
+  const img = renderImgs(app);
   const content = <td style={{ borderColor: 'transparent' }} width={400}>{renderContent(app)}</td>;
 
   // const parts = [img, content];
 
-  return <div>
+  return <div key={app.header}>
     <table style={{ borderColor: 'transparent', alignSelf: 'center' }}><tr>
       {img}
       {content}
@@ -182,10 +184,11 @@ class Resources extends React.Component {
 }
 
 module.exports = Resources;
-function renderDescription(desc) {
+function renderDescription(app) {
+  let desc = app.description;
   if (!Array.isArray(desc)) {
     desc = [desc];
   }
-  return desc.map(d => <p>{d}</p>);
+  return desc.map((d,i) => <p style={{textAlign: 'justify'}} key={`${app.header}-desc${i}`}>{d}</p>);
 }
 
