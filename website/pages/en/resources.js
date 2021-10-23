@@ -177,6 +177,9 @@ class Resources extends React.Component {
               <div className="resourcesPageSideNavOptions">
                 <a href="./resources-videos" className="resourcesSideNavLink" >Videos</a>
               </div>
+              <div className="resourcesPageSideNavOptions">
+                <a href="./resources-showcase" className="resourcesSideNavLink" >Showcase</a>
+              </div>
             </div>
           </Section>
         </div>

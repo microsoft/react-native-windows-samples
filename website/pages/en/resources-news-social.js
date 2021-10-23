@@ -99,7 +99,7 @@ class Resources extends React.Component {
       </Section>
     );
 
-    const VidoesList = () => (
+    const VideosList = () => (
       <Section background="light">
         <div className="content">
           Videos list coming soon!
@@ -121,6 +121,9 @@ class Resources extends React.Component {
               </div>
               <div className="resourcesPageSideNavOptions">
                 <a href="./resources-videos" className="resourcesSideNavLink" >Videos</a>
+              </div>
+              <div className="resourcesPageSideNavOptions">
+                <a href="./resources-showcase" className="resourcesSideNavLink" >Showcase</a>
               </div>
             </div>
           </Section>
