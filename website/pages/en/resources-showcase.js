@@ -29,8 +29,8 @@ function getBackgroundForCategory(category) {
 function renderImg(img, isSmall) {
   return <img src={img}
     style={{
-      maxHeight: isSmall ? 40 : 500,
-      minHeight: isSmall ? 40 : 220,
+      maxHeight: isSmall ? 80 : 500,
+      minHeight: isSmall ? 80 : 220,
 
       verticalAlign: 'end',
     }} />;
@@ -46,7 +46,7 @@ function renderImgs(imgs, isSmall) {
 }
 
 function renderMoreAppImg(a) {
-  return <td style={{ borderColor: 'transparent', margin: 10, width: 240 }}>
+  return <td style={{ borderColor: 'transparent', margin: 10, width: 440 }}>
     <div align='center'>{renderImg(a.img, true)}</div>
   </td>;
 }
@@ -108,12 +108,12 @@ function renderShowcaseApp(app, i) {
   const img = app.img ? renderImgs(app.img, false) : renderImgs(app.logo, true);
   const content = <td style={{ borderColor: 'transparent' }} width={400}>{renderContent(app)}</td>;
 
-  const parts = [img, content];
+  // const parts = [img, content];
 
   return <div>
     <table style={{ borderColor: 'transparent', alignSelf: 'center' }}><tr>
-      {parts[i % 2]}
-      {parts[1 - (i % 2)]}
+      {img}
+      {content}
     </tr>
     </table>
   </div>;
