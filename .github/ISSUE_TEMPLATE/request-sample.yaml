@@ -1,0 +1,34 @@
+name: Sample request
+description: Suggest a code sample that would enhance this 
+title: Your sample request
+labels: [enhancement, samples]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Your issue will be triaged according to [this process](https://github.com/microsoft/react-native-windows/wiki/Triage-Process).
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Suggestion
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: Platforms
+      description: |
+        For which platforms would this sample be relevent?
+
+        Note that this repo is not intended to cover generic React Native samples. It only includes desktop-specific scenarios that impact Windows and macOS. Please describe above why this sample is specific to these desktop platforms. 
+      multiple: true
+      options:
+        - "Android"
+        - "iOS"
+        - "macOS"
+        - "Web"
+        - "Windows"
+  - type: textarea
+    attributes:
+      label: Sample code
+      description: Include a snippet of the sample code you would expect to find, if relevant.

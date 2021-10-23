@@ -79,3 +79,5 @@ nvs
 packages.config
 ExperimentalFlags.props
 profiler
+dll
+PDBs

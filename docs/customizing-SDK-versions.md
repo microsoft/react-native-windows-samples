@@ -3,7 +3,7 @@ id: customizing-sdk-versions
 title: Customizing SDK versions
 ---
 
-Starting with React Native for Windows 0.64.3, it is easier for an app to customize which versions of the Windows SDK and WinUI 2.x to use.
+It is easy for an app to customize which versions of the Windows SDK and WinUI 2.x to use.
 
 ### Details
 

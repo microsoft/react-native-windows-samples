@@ -48,11 +48,10 @@ Of course all the other flags still work.
 1. Update the solution file `windows\<projectName>.sln`:
    1. Open the project in Visual Studio
    1. Remove all projects except your own app project
-1. Edit the project file `windows\<projectName>\<projectName.csproj>`
-   1. Add the the NuGet flag to the first property group
-      ```diff
-      +   <UseExperimentalNuGet>true</UseExperimentalNuGet>
-        </PropertyGroup>
+1. Edit the file `windows\ExperimentalFeatures.props`
+   1. Set the following to true
+      ```xml
+      <UseExperimentalNuGet>true</UseExperimentalNuGet>
       ```
    1. If you have a project that was created before 0.63, you should remove all references to `Microsoft.ReactNative.*` projects.
    1. Add a NuGet reference to `Microsoft.ReactNative.Managed`.
@@ -60,7 +59,7 @@ Of course all the other flags still work.
       ```xml
       <ItemGroup>
         <PackageReference Include="Microsoft.ReactNative.Managed">
-          <Version>0.64.0</Version>
+          <Version>0.65.0</Version>
         </PackageReference>
       </ItemGroup>
       ```
@@ -72,13 +71,10 @@ Of course all the other flags still work.
 1. Update the solution file `windows\<projectName>.sln`:
    1. Open the project in Visual Studio
    1. Remove all projects that are not your project
-1. Edit the project file `windows\<projectName>\<projectName.vcxproj>`
-   1. Add the the NuGet flag to the first property group
-      ```diff
-        <PropertyGroup Label="ReactNativeWindowsProps">
-          <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">...</ReactNativeWindowsDir>
-      +   <UseExperimentalNuGet>true</UseExperimentalNuGet>
-        </PropertyGroup>
+1. Edit the file `windows\ExperimentalFeatures.props`
+   1. Set the following to true
+      ```xml
+      <UseExperimentalNuGet>true</UseExperimentalNuGet>
       ```
    1. Add NuGet references to the following NuGet packages:
       * `Microsoft.ReactNative`

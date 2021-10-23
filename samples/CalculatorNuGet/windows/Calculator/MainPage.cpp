@@ -7,9 +7,9 @@
 #include "App.h"
 
 using namespace winrt;
-using namespace Windows::UI::Xaml;
+using namespace xaml;
 
-namespace winrt::Calculator::implementation
+namespace winrt::calculator::implementation
 {
     MainPage::MainPage()
     {
