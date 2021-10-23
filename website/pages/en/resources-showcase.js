@@ -76,7 +76,7 @@ function renderMore(a) {
 }
 
 function renderContent(app) {
-  const pill = app.category ? <span style={{
+  const pill = app.category ? <nobr><span style={{
     padding: 3,
     margin: 10,
     borderRadius: 2000,
@@ -86,7 +86,7 @@ function renderContent(app) {
     background: getBackgroundForCategory(app.category)
   }}>
     {app.category}
-  </span> : '';
+  </span></nobr> : '';
 
   return <div style={{ minHeight: 24, minWidth: 140 }} key={`${app.header}-content`}>
     <span style={{
