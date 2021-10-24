@@ -22,13 +22,13 @@ const textContent = {
 class Resources extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {selectedResource: 'repos'};
+    this.state = { selectedResource: 'repos' };
 
     // This binding is necessary to make `this` work in the callback
     this.SelectResource = this.SelectResource.bind(this);
   }
 
-  SelectResource (navItemName) {
+  SelectResource(navItemName) {
     if (typeof document !== 'undefined') {
       var i;
       var x = document.getElementsByClassName("resourcesSideNavLink");
@@ -53,34 +53,34 @@ class Resources extends React.Component {
     const { config: siteConfig, language = "" } = this.props;
     const { baseUrl } = siteConfig;
 
-    const ResourceCardItem = ({ videotitle, videotype, videodifficulty, speakername, imgurl, videodisc, cardlink}) => (
+    const ResourceCardItem = ({ videotitle, videotype, videodifficulty, speakername, imgurl, videodisc, cardlink }) => (
       <div className="CenterContent">
-      <a href={cardlink}>
-        <div className="videocard" style={{maxHeight: 380, marginBottom: 50}}>
-            <div style={{position: 'relative'}}>
-              <div style={{maxWidth: '100%', maxHeight: '50%'}}>
-                <img src={imgurl} alt="videoimg"/>
+        <a href={cardlink}>
+          <div className="videocard" style={{ maxHeight: 380, marginBottom: 50 }}>
+            <div style={{ position: 'relative' }}>
+              <div style={{ maxWidth: '100%', maxHeight: '50%' }}>
+                <img src={imgurl} alt="videoimg" />
               </div>
               <div className="videocardlengthtip">
                 <div>
-                    <div>
-                        <img style={{width: 14, height: 14}} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="timeicon"/>
-                    </div>
+                  <div>
+                    <img style={{ width: 14, height: 14 }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="timeicon" />
+                  </div>
                 </div>
               </div>
             </div>
             <div className="videocardcontent">
               <div className="videocardheader">
-                <p style={{fontsize: 46, fontWeight: 700}}>{videotitle}</p>
+                <p style={{ fontsize: 46, fontWeight: 700 }}>{videotitle}</p>
                 <div className="videocardinfo">
-                  <p style={{fontSize: 14}}>{videotype}</p>
+                  <p style={{ fontSize: 14 }}>{videotype}</p>
                 </div>
               </div>
-              <div style={{marginBottom: 15}}>
+              <div style={{ marginBottom: 15 }}>
                 <div >{videodisc}</div>
               </div>
             </div>
-        </div>
+          </div>
         </a>
       </div>
     );
@@ -103,13 +103,13 @@ class Resources extends React.Component {
       <div className="row">
         <div className="resourcesPageSideNav">
           <Section background="tint">
-            <div style={{float: "right", marginRight: 180}}>
+            <div style={{ float: "right", marginRight: 180 }}>
               <div className="resourcesPageSideNavTitle">Resources</div>
               <div className="resourcesPageSideNavOptions">
                 <a href="./resources" className={'resourcesSideNavLink '}>Repos</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a href="./resources-news-social"className="resourcesSideNavLink" >News & Social</a>
+                <a href="./resources-news-social" className="resourcesSideNavLink" >News & Social</a>
               </div>
               <div className="resourcesPageSideNavOptions">
                 <a className="resourcesSideNavLink selected" >Videos</a>
@@ -121,9 +121,9 @@ class Resources extends React.Component {
           </Section>
         </div>
         <div className="column">
-          <div className="homepage" style={{marginLeft: 50}}>
+          <div className="homepage" style={{ marginLeft: 50 }}>
             <div id="newssocial">
-              <VideosList/>
+              <VideosList />
             </div>
           </div>
         </div>

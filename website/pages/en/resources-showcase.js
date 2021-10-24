@@ -29,9 +29,9 @@ function getBackgroundForCategory(category) {
 function renderImg(img, isSmall, key) {
   return <img src={img}
     style={{
-      maxHeight: isSmall ? 80 : 500,
-      minHeight: isSmall ? 80 : 220,
-      minWidth: isSmall ? 80 : 220,
+      maxHeight: isSmall ? 40 : 500,
+      minHeight: isSmall ? 40 : 220,
+      minWidth: isSmall ? 40 : 220,
       verticalAlign: 'end',
     }} key={key} />;
 }
@@ -108,7 +108,7 @@ function renderShowcaseApp(app, i) {
   if (app.category === 'more') return renderMore(app);
 
   const img = renderImgs(app);
-  const content = <td style={{ borderColor: 'transparent' }} width={400}>{renderContent(app)}</td>;
+  const content = <td style={{ borderColor: 'transparent' }} minWidth={400}>{renderContent(app)}</td>;
 
   // const parts = [img, content];
 
@@ -165,8 +165,8 @@ class Resources extends React.Component {
 
     const Showcase = () => (
       <Section background="light">
-        <div className="content" style={{ width: 1900, maxWidth: '90%' }}>
-          <h1>Who's using React Native for Windows</h1>
+        <div className="content" style={{ width: 1900, maxWidth: '100%' }}>
+          <h1 style={{marginTop: 0}}>Who's using React Native for Windows</h1>
           <p>React Native for Desktop empowers developers to target a huge community of users beyond mobile.
             See how Microsoft uses React Native within strategically key experiences like Xbox, Office, and more.
             Then check out some key success stories from companies using React Native for Desktop to reach even more users.</p>
@@ -176,8 +176,33 @@ class Resources extends React.Component {
     );
 
     return (
-      <div className="homepage" style={{ marginLeft: 10 }}>
-        <Showcase />
+      <div className="row">
+        <div className="resourcesPageSideNav">
+          <Section background="tint">
+            <div style={{ float: "right", marginRight: 180 }}>
+              <div className="resourcesPageSideNavTitle">Resources</div>
+              <div className="resourcesPageSideNavOptions">
+                <a className='resourcesSideNavLink' href="./resources">Repos</a>
+              </div>
+              <div className="resourcesPageSideNavOptions">
+                <a href="./resources-news-social" className="resourcesSideNavLink">News & Social</a>
+              </div>
+              <div className="resourcesPageSideNavOptions">
+                <a href="./resources-videos" className="resourcesSideNavLink" >Videos</a>
+              </div>
+              <div className="resourcesPageSideNavOptions">
+                <a className="resourcesSideNavLink selected" >Showcase</a>
+              </div>
+            </div>
+          </Section>
+        </div>
+        <div className="column">
+          <div className="homepage" style={{ marginLeft: 50 }}>
+            <div id="showcase">
+              <Showcase />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -189,6 +214,6 @@ function renderDescription(app) {
   if (!Array.isArray(desc)) {
     desc = [desc];
   }
-  return desc.map((d,i) => <p style={{textAlign: 'justify'}} key={`${app.header}-desc${i}`}>{d}</p>);
+  return desc.map((d, i) => <p style={{ textAlign: 'justify', fontSize: 'normal' }} key={`${app.header}-desc${i}`}>{d}</p>);
 }
 
