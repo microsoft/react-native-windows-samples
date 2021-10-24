@@ -104,7 +104,7 @@ class Resources extends React.Component {
             <span style={{ verticalAlign: 'top', margin: 5 }}> Follow <b>@ReactNativeMSFT</b> on Twitter</span></a>
 
 
-          <a href="https://discord.gg/jdhZ4EbhHa">
+          <a href="https://discord.gg/KcxxrZVYSM">
             <span><img src="./img/discord.png" style={{ verticalAlign: 'top', width: 32, marginRight: 8 }} />
               Join the &nbsp;
               <span style={{ fontFamily: 'monospace', textDecorationLine: 'underline' }}>#react-native</span>
