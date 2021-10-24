@@ -104,12 +104,13 @@ class Resources extends React.Component {
             <span style={{ verticalAlign: 'top', margin: 5 }}> Follow <b>@ReactNativeMSFT</b> on Twitter</span></a>
 
 
-          <span><img src="./img/discord.png" style={{ verticalAlign: 'top', width: 32, marginRight: 8 }} />
-            <a href="https://discord.gg/jdhZ4EbhHa">Join the &nbsp;
-              <span style={{ fontFamily: 'monospace', textDecorationLine: 'underline'  }}>#react-native</span>
+          <a href="https://discord.gg/jdhZ4EbhHa">
+            <span><img src="./img/discord.png" style={{ verticalAlign: 'top', width: 32, marginRight: 8 }} />
+              Join the &nbsp;
+              <span style={{ fontFamily: 'monospace', textDecorationLine: 'underline' }}>#react-native</span>
               &nbsp; channel on the <b>UWP Community</b> Discord server
-            </a>
-          </span>
+            </span>
+          </a>
         </div>
       </Section>
     );
