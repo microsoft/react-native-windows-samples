@@ -91,10 +91,21 @@ class Resources extends React.Component {
       </section>
     );
 
+    const videoUrls = [
+      { yt: 'r7yKet5dga4', title: 'React Native EU 2021: Khalef Hosany - Unlocking the next generation of desktop app with React Native' },
+      { yt: 'gWOrCedNR9M', title: 'React Native EU 2020: Steven Moyes - Building For Desktops And Dual Screens' },
+      { yt: 'QMFbrHZnvvw', title: 'MS Build SK119 React Native: Build cross platform apps that target Windows, Mac, and more!' },
+      { yt: 'x6-5e3Lifyw', title: 'App Development Community Standup: React Native for Windows update' },
+      { yt: 'DAEnPV78rQc', title: 'RNEU 2021: Lorenzo Sciandra & Tommy Nguyen - Improve all the repos – exploring Microsoft’s DevExp' },
+      { yt: 'IUMWFExtDSg', title: 'React Native EU 2019: Micah Lewis & EJ Layne - React Native @ Microsoft' },
+    ];
+
     const VideosList = () => (
       <Section background="light">
         <div className="content">
-          <h1>Videos list coming soon!</h1>
+          {videoUrls.map(video => <iframe style={{ width: 560, height: 315, marginBottom: 16 }} src={`https://www.youtube.com/embed/${video.yt}`}
+            title={video.title} frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />)}
         </div>
       </Section>
     );
