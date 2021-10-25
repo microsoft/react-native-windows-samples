@@ -166,7 +166,7 @@ class Resources extends React.Component {
     const Showcase = () => (
       <Section background="light">
         <div className="content" style={{ width: 1900, maxWidth: '100%' }}>
-          <h1 style={{marginTop: 0}}>Who's using React Native for Windows</h1>
+          <h1 style={{marginTop: 0}}>Who's using React Native for Desktop</h1>
           <p>React Native for Desktop empowers developers to target a huge community of users beyond mobile.
             See how Microsoft uses React Native within strategically key experiences like Xbox, Office, and more.
             Then check out some key success stories from companies using React Native for Desktop to reach even more users.</p>
