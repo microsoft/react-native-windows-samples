@@ -1,5 +1,7 @@
-import { NativeModules } from 'react-native';
+import FancyMath from './NativeFancyMath';
+import DataMarshallingExamples from './NativeDataMarshallingExamples';
 
-const { NativeModuleSample } = NativeModules;
-
-export default NativeModuleSample;
+export {
+    DataMarshallingExamples,
+    FancyMath
+};
