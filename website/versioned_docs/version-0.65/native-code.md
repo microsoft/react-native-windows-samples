@@ -59,3 +59,18 @@ Any libraries you use should be built as WinRT components. In other words, you c
 
 ### Local testing and inner loop
 For internal development, you can deploy your app for test purposes by side-loading and deploying via [loose-file registration](https://docs.microsoft.com/windows/uwp/debug-test-perf/loose-file-registration). When building in **Debug** mode (which is the default), `npx react-native run-windows` performs loose-file registration of your app in order to install it locally. When running `npx react-native run-windows` with the `--release` switch, the CLI will install the real package onto your local machine. This requires the app to be signed and for the certificate it uses for signing to be trusted by the machine the app is going to be installed on. See [Create a certificate for package signing](https://docs.microsoft.com/windows/msix/package/create-certificate-package-signing) and [Intro to certificates](https://docs.microsoft.com/windows/uwp/security/certificates).
+
+### Debugging crashes and reporting issues
+If your app is "hard crashing" (the native code hits an error condition and your app closes), you will want to investigate the native side of the code. If the issue is in the `Microsoft.ReactNative` layer, please file a bug in the [React Native for Windows](https://github.com/microsoft/react-native-windows) repo, and provide a native stack trace, and ideally a crash dump with symbols.
+For your convenience, you can use a script to collect a native crash dump and stack traces. Here are the instructions:
+
+1. Download the script at https://aka.ms/RNW/analyze-crash.ps1, for example to C:\temp
+2. Open an admin PowerShell
+3. if you haven't enabled running unsigned scripts, do that: `Set-ExecutionPolicy Unrestricted`
+4. Run the script and pass it name of your app's exe (usually it will be your app's name): `C:\temp\analyze-crash.ps1 -ExeName MyApp`
+
+The script will set up automatic crash dump collection for your app, download the native debugging tools (including the command line debugger, cdb), and ask you to reproduce the crash.
+
+At this point you can launch the app (e.g. from start menu if you've already deployed it to the local device). When the app crashes, it will generate a crash dump. You can then press enter to resume execution of the script, and the script will use cdb to automatically analyze the crash dump, and output the results to a file `analyze.log`.
+
+The script will then copy the contents of the log to the clipboard, open the log file in notepad, and launch the browser to file an issue in the react-native-windows repo, where you can paste the stack trace into the bug template.
