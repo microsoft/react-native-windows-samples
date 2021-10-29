@@ -65,7 +65,7 @@ For your convenience, you can use a script to collect a native crash dump and st
 
 1. Download the script at https://aka.ms/RNW/analyze-crash.ps1, for example to C:\temp
 2. Open an admin PowerShell
-3. if you haven't enabled running unsigned scripts, do that: `Set-ExecutionPolicy Unrestricted`
+3. If you haven't enabled running unsigned scripts yet, do that by running: `Set-ExecutionPolicy Unrestricted`
 4. Run the script and pass it the name of your app's exe (usually it will be your app's name): `C:\temp\analyze-crash.ps1 -ExeName MyApp`
 
 The script will set up automatic crash dump collection for your app, download the native debugging tools (including the command line debugger cdb), and ask you to reproduce the crash.
