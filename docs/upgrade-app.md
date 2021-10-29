@@ -5,7 +5,7 @@ title: Upgrading App to Latest Version of React Native Windows
 
 ## Steps to Upgrade An App to New React Native Windows Version
 1. In the root of your project,  run `npx react-native-windows-init --version 0.XX.X --overwrite`.
-2. In the root of your project, run `npx react-native autolink-windows` to autolink any native modules used by your app.
+2. In the root of your project, run `npx react-native autolink-windows` to link any native modules used by your app.
 3. Step 1 will overwrite any changes you previously made to the native Windows code of your project. If you made changes to this code, you have two options:
 
     1. Re-add those updates manually.
