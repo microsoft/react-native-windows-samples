@@ -75,7 +75,7 @@ In a YAML file the basic steps to generate your certificate from an encoded stri
     $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path ProjectDirectoryPath -ChildPath EncodedKey.pfx) )
     [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
 ```
-where your encoded string is a GitHub secret named Base64_Encoded_Pfx.
+where your encoded string is a GitHub secret named `Base64_Encoded_Pfx`.
 
 In a YAML file the basic steps to use your certificate for a signed RNW app build are:
 ```yaml
@@ -106,7 +106,7 @@ See the react-native-windows repository for an example of a pipeline which uses 
 You can tell MSBuild what `.pfx` you want to use to sign your app using the `PackageCertificateKeyFile` MSBuild property. This property expects the file path to the `.pfx` you want to use. See [here](https://github.com/microsoft/react-native-windows/blob/353321ee40391f6f302e7cc80f96285e12780cbe/.ado/jobs/playground.yml#L114) for an example of this using `VSBuild`. See [here](https://github.com/microsoft/react-native-windows/blob/353321ee40391f6f302e7cc80f96285e12780cbe/.ado/templates/run-windows-with-certificates.yml#L48) for an example of this using the RNW CLI.
 
 ### I have a pipeline that runs on forks of my repository (i.e. when a PR is being made). Can I access my certificate data from this pipeline?
-No. When data is securely stored through GitHub Secrets, Azure DevOps Secure Files, or Azure Key Vault, it can only be run from pipelines that are executing on branches of the original repository. The data cannot be accessed from pipelines running code from repository forks, because if the data was able to be accessed, someone could manipulate the pipeline source code within their fork to retrieve the data, leaving it insecured.
+No. When data is securely stored through GitHub Secrets, Azure DevOps Secure Files, or Azure Key Vault, it can only be run from pipelines that are executing on branches of the original repository. The data cannot be accessed from pipelines running code from repository forks, because if the data was able to be accessed, someone could manipulate the pipeline source code within their fork to retrieve the data, leaving it unsecured.
 
 ### I want to build a deployable package for my app from a pipeline that doesn't have access to my certificate data. What can I do?
 This case may apply to you if you want to do some End To End testing within a PR pipeline to make sure incoming changes don't break your project. You do have a couple of options here to make do without a certificate. You can successfully build and deploy a non-signed RNW app via deploying from layout. The RNW CLI will by default deploys from layout as long as the MSBuild argument `AppxPackageSigningEnabled` or `PackageCertificateFile` is not set in the project file. If this is not the case for your app, you can force deploy from layout by using the `--deploy-from-layout` CLI option.
