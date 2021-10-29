@@ -17,7 +17,7 @@ Upgrading your app to new React Native Windows versions requires a small amount 
 
 ### Steps to Manually Upgrade An App to New React Native Windows Version via Upgrade Helper
 1. Open [Upgrade Helper](https://react-native-community.github.io/upgrade-helper/) in your preferred browser.
-2. Select the React Native Version your app is currently on and the  version you wish to upgrade to. By default, the latest major versions are selected.
+2. Select the React Native Windows version your app is currently on and the version you wish to upgrade to. By default, the latest major versions are selected.
 3. Select the "Show me how to upgrade" button.
 4. Manually edit your app source to match the changes displayed in Upgrade Helper.
 5. Run `yarn` at the root of your project to update your dependencies.
