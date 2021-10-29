@@ -67,10 +67,10 @@ For your convenience, you can use a script to collect a native crash dump and st
 1. Download the script at https://aka.ms/RNW/analyze-crash.ps1, for example to C:\temp
 2. Open an admin PowerShell
 3. if you haven't enabled running unsigned scripts, do that: `Set-ExecutionPolicy Unrestricted`
-4. Run the script and pass it name of your app's exe (usually it will be your app's name): `C:\temp\analyze-crash.ps1 -ExeName MyApp`
+4. Run the script and pass it the name of your app's exe (usually it will be your app's name): `C:\temp\analyze-crash.ps1 -ExeName MyApp`
 
-The script will set up automatic crash dump collection for your app, download the native debugging tools (including the command line debugger, cdb), and ask you to reproduce the crash.
+The script will set up automatic crash dump collection for your app, download the native debugging tools (including the command line debugger cdb), and ask you to reproduce the crash.
 
-At this point you can launch the app (e.g. from start menu if you've already deployed it to the local device). When the app crashes, it will generate a crash dump. You can then press enter to resume execution of the script, and the script will use cdb to automatically analyze the crash dump, and output the results to a file `analyze.log`.
+At this point you can launch the app (e.g. from Start menu if you've already deployed it to the local device). When the app crashes, it will generate a crash dump. You can then press enter to resume execution of the script, and the script will use cdb to automatically analyze the crash dump, and output the results to a file `analyze.log`.
 
 The script will then copy the contents of the log to the clipboard, open the log file in notepad, and launch the browser to file an issue in the react-native-windows repo, where you can paste the stack trace into the bug template.
