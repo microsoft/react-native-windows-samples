@@ -12,6 +12,11 @@
 # In each subsection folders are ordered first by depth, then alphabetically.
 # This should make it easy to add new rules without breaking existing ones.
 
+# This list of owners indicates who will be NOTIFIED when a PR changes a
+# matched file. Please keep these rules in sync with the rules in
+# .github/required-reviewers.yaml, which requires that ALL owners actually
+# approve a PR.
+
 # All entries should end in '@microsoft/react-native-windows-write' as it
 # encourages everyone with write access be notified of PRs.
 

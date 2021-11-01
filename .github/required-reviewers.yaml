@@ -1,0 +1,36 @@
+# Lines starting with '#' are comments.
+# Each entry contains one or more file patterns followed by one or more owners.
+
+# More details are here: https://github.com/Automattic/action-required-review
+
+# Order is not important. A PR can match multiple rules depending on the files
+# it changes.
+
+# This list of owners indicates who will be REQUIRED to sign-off when a PR
+# changes a matched file. Please keep these rules in sync with the rules in
+# CODEOWNERS, which NOTIFIES owners to review a PR.
+
+# All entries should end in 'react-native-windows-write' as it makes sure
+# someone with write access must sign-off on PRs.
+
+- name: Global Catch-All
+  paths: unmatched
+  teams:
+    - react-native-windows-write
+
+- name: Admins for GitHub Repo Features
+  paths:
+   - '.github/**'
+   - '!.github/workflows/**'
+  teams:
+    - all-of:
+      - react-native-windows-admin
+      - react-native-windows-write
+
+- name: DevOps for GitHub Actions
+  paths:
+   - '.github/workflows/**'
+  teams:
+    - all-of:
+      - react-native-windows-devops
+      - react-native-windows-write
