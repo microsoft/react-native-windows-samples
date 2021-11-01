@@ -9,12 +9,9 @@ jobs:
   check:
     name: Checking required reviews
     runs-on: ubuntu-latest
-
-    # GitHub should provide a "pull_request_review_target", but they don't and
-    # the action will fail if run on a forked PR.
     if: github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name
-
     steps:
       - uses: Automattic/action-required-review@v2
         with:
+          token: ${{ secrets.API_TOKEN_GITHUB }}
           requirements-file: .github/required-reviewers.yaml
