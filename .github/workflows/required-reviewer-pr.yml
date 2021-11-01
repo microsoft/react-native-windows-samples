@@ -9,6 +9,8 @@ jobs:
   check:
     name: Checking required reviews
     runs-on: ubuntu-latest
+    permissions: read-all
+
     steps:
       - uses: actions/checkout@v2
 
