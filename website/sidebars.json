@@ -8,7 +8,8 @@
       "windowsbrush-and-theme",
       "releases",
       "platform",
-      "setup-ci"
+      "setup-ci",
+      "app-publishing"
     ],
     "Native Modules (Windows)": [
       "native-modules",
