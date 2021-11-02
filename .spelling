@@ -81,3 +81,7 @@ ExperimentalFlags.props
 profiler
 dll
 PDBs
+roadmap
+WinAppSDK
+exe
+cdb
