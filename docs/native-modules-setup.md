@@ -162,53 +162,7 @@ We are using WebdriverIO + WinAppDriver for UI testing. More details [here](http
 
 ### Setup CI (continuous integration) pipeline for your module
 
-When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
-
-The VM images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirements.
-
-Next you need to create a YAML file for GitHub Actions, the basic steps are:
-- Checkout code and setup the environment
-```yaml
-    - uses: actions/checkout@v2
-      name: Checkout Code
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14'
-
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.2
-      with:
-        vs-version: 16.8
-
-    - name: Install node modules
-      run: yarn --frozen-lockfile
-
-    - name: yarn build
-      run:  yarn build
-```
-- Build and run the project
-```yaml
-    - name: Run Windows x64 release
-      run: npx react-native run-windows --arch x64 --release --no-packager --logging
-```
-- Run tests
-```yaml
-    - name: Start Appium server
-      shell: powershell
-      run: Start-Process PowerShell -ArgumentList "yarn appium"
-
-    - name: Run tests
-      run: yarn test:windows
-```
-Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/master/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
-
-Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
-
-> GitHub Actions should be enabled by default, if it's not enabled for some reason you can go to Settings->Actions tab of the repo to enable it (requires owner access).
-
-Now push your changes and the CI pipeline should be up and running.
+When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. See the [Setup Continuous Integration Pipeline for an RNW App](setup-ci.md) for more information.
 
 ### Documenting Your Module
 Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that its information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples] with your native module's information.
