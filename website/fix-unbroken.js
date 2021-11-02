@@ -15,14 +15,26 @@ var assetFiles = fs.readdirSync('../docs/assets');
 
 console.log('Scanning versioned docs...');
 var versionedDocs = {};
+
+const addFileToVersionedDocs = (file, version) => {
+  if (!versionedDocs.hasOwnProperty(version)) {
+      versionedDocs[version] = [];
+  }
+  const versionDir = `versioned_docs\\version-${version}`;
+  versionedDocs[version].push(file);
+};
+
 versions.forEach(version => {
-    var versionDir = `versioned_docs\\version-${version}`;
+    const versionDir = `versioned_docs\\version-${version}`;
     var files = fs.readdirSync(versionDir);
-    files.forEach(file => {
-        if (!versionedDocs.hasOwnProperty(version)) {
-            versionedDocs[version] = [];
-        }
-        versionedDocs[version].push(path.join(versionDir, file));
+    files.forEach(filePath => {
+      const fullPath = path.join(versionDir, filePath);
+      if (fs.statSync(fullPath).isFile()) {
+        addFileToVersionedDocs(fullPath, version);
+      } else {
+        console.log(`Directory: ${fullPath} - ${filePath}`);
+        fs.readdirSync(fullPath).forEach(addFileToVersionedDocs);
+      }
     });
 });
 
