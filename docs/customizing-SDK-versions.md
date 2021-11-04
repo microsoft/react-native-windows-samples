@@ -54,7 +54,7 @@ For C++ apps, in addition to setting the property value, you will also need to m
 ```xml title="ExperimentalFlags.props"
 <PropertyGroup>
   <!-- other properties -->
-  <WinUI2xPackageVersion>2.6.0</WinUI2xPackageVersion>
+  <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
 </PropertyGroup>
 ```
 
@@ -78,7 +78,7 @@ For C++ apps, in addition to setting the property value, you will also need to m
 ```xml
 <PropertyGroup>
   <!-- other properties -->
-  <WinUI2xPackageVersion>2.6.0</WinUI2xPackageVersion>
+  <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
 </PropertyGroup>
 ```
 
