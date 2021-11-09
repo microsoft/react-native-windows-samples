@@ -72,7 +72,7 @@ In a YAML file the basic steps to generate your certificate from an encoded stri
 - name: Decode the pfx
   run: |
     $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-    $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path ProjectDirectoryPath -ChildPath EncodedKey.pfx) )
+    $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path ProjectDirectoryPath -ChildPath GitHubActionsWorkflow.pfx))
     [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
 ```
 where your encoded string is a GitHub secret named `Base64_Encoded_Pfx`.
