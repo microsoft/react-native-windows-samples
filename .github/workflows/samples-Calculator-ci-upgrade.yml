@@ -22,23 +22,23 @@ jobs:
         reactNativeWindowsVersion: [latest, preview, canary]
     steps:
       - uses: actions/checkout@v2
-      
+    
       - name: Gather environment info
         run: npx envinfo
-      
+    
       - name: Relocate to reduce long paths
         run:  Copy-item -Force -Recurse -Verbose "samples\${{ matrix.sample }}" -Destination "..\..\src"
-      
+   
       - name: Yarn install
         run: yarn install
         working-directory: ..\..\src
-      
+  
       - name: Upgrade react-native-windows
         id: upgrade
         continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
-      
+ 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
         run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }}
@@ -49,12 +49,12 @@ jobs:
           $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
           $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path ProjectDirectoryPath -ChildPath GitHubActionsWorkflow.pfx) )
           [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
-      
+
       - name: Run react-native run-windows
         if: ${{ steps.upgrade.outcome == 'success' }}
         run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=ProjectDirectoryPath\GitHubActionsWorkflow.pfx
         working-directory: ..\..\src
-      
+
       - name: Remove the pfx
         run: |
           $certificatePath = Join-Path -Path ProjectDirectoryPath -ChildPath GitHubActionsWorkflow.pfx
