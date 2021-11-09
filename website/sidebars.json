@@ -9,7 +9,8 @@
       "releases",
       "platform",
       "upgrade-app",
-      "setup-ci"
+      "setup-ci",
+      "app-publishing"
     ],
     "Native Modules (Windows)": [
       "native-modules",
