@@ -45,7 +45,7 @@ jobs:
         working-directory: ..\..\src
 
       - name: Run react-native run-windows
-        run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=ProjectDirectoryPath\GitHubActionsWorkflow.pfx
+        run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=windows\${{ matrix.sample }}\GitHubActionsWorkflow.pfx
         working-directory: ..\..\src
 
       - name: Remove the pfx
