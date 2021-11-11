@@ -40,8 +40,9 @@ jobs:
       - name: Decode the pfx
         run: |
           $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
-          $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path "samples\${{ matrix.sample }}\windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx) )
+          $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path "windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx) )
           [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
+        working-directory: ..\..\src
 
       - name: Run react-native run-windows
         run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=ProjectDirectoryPath\GitHubActionsWorkflow.pfx
@@ -49,9 +50,10 @@ jobs:
 
       - name: Remove the pfx
         run: |
-          $certificatePath = Join-Path -Path "samples\${{ matrix.sample }}\windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx
+          $certificatePath = Join-Path -Path "windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx
           Write-Host $certificatePath
           Remove-Item -path $certificatePath
+        working-directory: ..\..\src
 
       - name: Get final folder size
         run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1

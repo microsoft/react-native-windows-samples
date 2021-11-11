@@ -47,8 +47,9 @@ jobs:
       - name: Decode the pfx
         run: |
           $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
-          $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path "samples\${{ matrix.sample }}\windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx) )
+          $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path "windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx) )
           [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
+        working-directory: ..\..\src
 
       - name: Run react-native run-windows
         if: ${{ steps.upgrade.outcome == 'success' }}
@@ -57,6 +58,8 @@ jobs:
 
       - name: Remove the pfx
         run: |
-          $certificatePath = Join-Path -Path "samples\${{ matrix.sample }}\windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx
+          $certificatePath = Join-Path -Path "windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx
           Write-Host $certificatePath
           Remove-Item -path $certificatePath
+        working-directory: ..\..\src
+
