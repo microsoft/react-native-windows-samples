@@ -48,6 +48,7 @@ jobs:
         run: |
           $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
           $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path "windows\${{ matrix.sample }}" -ChildPath GitHubActionsWorkflow.pfx) )
+          echo $PfxPath
           [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
         working-directory: ..\..\src
 
