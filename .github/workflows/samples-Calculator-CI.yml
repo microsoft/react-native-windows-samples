@@ -40,18 +40,18 @@ jobs:
       - name: Decode the pfx
         run: |
           $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
-          $PfxPath = [System.IO.Path]::GetFullPath(GitHubActionsWorkflow.pfx)
+          $PfxPath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
           Write-Host $PfxPath
           [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
         working-directory: ..\..\src
 
       - name: Run react-native run-windows
-        run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=GitHubActionsWorkflow.pfx
+        run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=${{github.workspace}}\GitHubActionsWorkflow.pfx
         working-directory: ..\..\src
 
       - name: Remove the pfx
         run: |
-          $certificatePath = GitHubActionsWorkflow.pfx
+          $certificatePath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
           Write-Host $certificatePath
           Remove-Item -path $certificatePath
         working-directory: ..\..\src
