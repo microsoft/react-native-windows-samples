@@ -2,7 +2,7 @@
 #include "MainPage.g.h"
 #include <winrt/Microsoft.ReactNative.h>
 
-namespace winrt::Calculator::implementation
+namespace winrt::calculator::implementation
 {
     struct MainPage : MainPageT<MainPage>
     {
@@ -10,7 +10,7 @@ namespace winrt::Calculator::implementation
     };
 }
 
-namespace winrt::Calculator::factory_implementation
+namespace winrt::calculator::factory_implementation
 {
     struct MainPage : MainPageT<MainPage, implementation::MainPage>
     {

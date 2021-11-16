@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'samples/rssreader/**'
-      - '.github/workflows/samples-RssReader-*.yml'
+      - '.github/workflows/samples-RssReader-pr.yml'
 
 jobs:
   build:

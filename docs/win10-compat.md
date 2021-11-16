@@ -11,7 +11,7 @@ _Note : There is an ongoing effort to decouple the Windows UI platform from the 
 | [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive) | React Native for Windows support |
 | :-----------------------------------------------------------------------------------: | ----- |
 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **All APIs, scenarios supported** |
-| **October 2018 update**<br> Version 1809 ; Build 10.0.17763.0 | Unsupported: <ul><li>`useNativeDriver` for animations</li><li>`View.transform` property</li><li>React Native for Windows in XAML islands for hosting inside WPF/Win32 scenarios</li> |
+| **October 2018 update**<br> Version 1809 ; Build 10.0.17763.0 | Unsupported: <ul><li>`useNativeDriver` for animations</li><li>`View.transform` property</li><li>React Native for Windows in XAML islands for hosting inside WPF/Win32 scenarios</li><li>When using Hermes engine, the default locale will always be `en_US` and the default time zone will always be `Etc/UTC`, irrespective of the system settings </li> |
 | **April 2018 Update**<br> Version 1803 ; Build 10.0.17134.12 | Unsupported : (Same as above plus): <ul><li>Flyout: edge alignments, `ShowAt` capability</li><li>`Picker.editable`, `Picker.text`</li> |
 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 | Unsupported : Same as above |
 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 | Unsupported : (Same as above plus): <ul><li>Keyboard events</li><li>`TextInput.placeholderTextColor`</li><li>`TextInput.secureTextEntry` may have some fast typing issues</li> |
@@ -22,5 +22,6 @@ The following table captures the versions of Windows 10 that a React Native for 
 
 | React Native Windows | Target OS Version | Minimum OS Version |
 | :--: | :-: | :-: |
+| 0.66+ | **May 2020 update**<br> Version 2004 ; Build 10.0.19041.0 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
 | 0.62 - 0.65 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
 | 0.60 - 0.61 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 |

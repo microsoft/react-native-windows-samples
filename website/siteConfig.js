@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const defaultVersionShown = '0.65';
+const defaultVersionShown = '0.66';
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
@@ -91,7 +91,10 @@ const siteConfig = {
 
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
-  docsSideNavCollapsible: true
+  docsSideNavCollapsible: true,
+
+  customFields: require('./showcaseApps.json'),
+
 };
 
 module.exports = siteConfig;

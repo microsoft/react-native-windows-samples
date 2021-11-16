@@ -1,0 +1,19 @@
+name: Documentation request
+description: Suggest an area of the documentation that seems missing or could be expanded
+title: Your documentation request
+labels: [enhancement, documentation]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Your issue will be triaged according to [this process](https://github.com/microsoft/react-native-windows/wiki/Triage-Process).
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Suggestion
+  - type: input
+    attributes:
+      label: Location
+      description: |
+        Where on the website would you expect to find this article?

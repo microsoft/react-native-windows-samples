@@ -41,10 +41,7 @@ Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file
 
 ### Known limitations
 
-- CPU Sampling profiler is not yet supported
-- Hermes is not yet compatible with other experimental features, like NuGet distribution or WinUI 3
-- The binary for Hermes is not yet signed by Microsoft
-- Debug builds of an app that uses Hermes are very slow
+- Hermes dll is not signed by Microsoft
 
 ## Hermes on macOS
 
