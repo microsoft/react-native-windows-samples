@@ -2,7 +2,7 @@
 #include "MainPage.g.h"
 #include <winrt/Microsoft.ReactNative.h>
 
-namespace winrt::CameraDemo::implementation
+namespace winrt::camerademo::implementation
 {
     struct MainPage : MainPageT<MainPage>
     {
@@ -10,7 +10,7 @@ namespace winrt::CameraDemo::implementation
     };
 }
 
-namespace winrt::CameraDemo::factory_implementation
+namespace winrt::camerademo::factory_implementation
 {
     struct MainPage : MainPageT<MainPage, implementation::MainPage>
     {

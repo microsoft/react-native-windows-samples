@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'samples/CameraDemo/**'
-      - '.github/workflows/samples-CameraDemo-*.yml'
+      - '.github/workflows/samples-CameraDemo-pr.yml'
 
 jobs:
   build:

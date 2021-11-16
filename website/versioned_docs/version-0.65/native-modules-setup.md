@@ -7,8 +7,8 @@ original_id: native-modules-setup
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/master/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
 
@@ -159,7 +159,7 @@ If you are working on an existing module that already has iOS and Android sample
 8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
-We are using WebdriverIO + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/master/docs/e2e-testing.md#appium). For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
+We are using WebdriverIO + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/main/docs/e2e-testing.md#appium). For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
 
 ### Setup CI (continuous integration) pipeline for your module
 
@@ -203,7 +203,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Run tests
       run: yarn test:windows
 ```
-Check out the full [`react-native-webview` example](https://github.com/react-native-community/react-native-webview/blob/master/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
+Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/master/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
 
 Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
 

@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'samples/CalculatorNuGet/**'
-      - '.github/workflows/samples-CalculatorNuGet-*.yml'
+      - '.github/workflows/samples-CalculatorNuGet-pr.yml'
 
 jobs:
   build:

@@ -7,9 +7,9 @@
 #include "App.h"
 
 using namespace winrt;
-using namespace Windows::UI::Xaml;
+using namespace xaml;
 
-namespace winrt::CameraDemo::implementation
+namespace winrt::camerademo::implementation
 {
     MainPage::MainPage()
     {

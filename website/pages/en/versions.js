@@ -52,16 +52,16 @@ class Versions extends React.Component {
       </section>
     );
 
-    const TableRow = ({background = "light", versionNumber, docLink, changeLogLink, changeLogText = "Changelog"}) => (
-      <div className={`TableRowItem ${background}`} style={{width: '487px'}}>
-        <div className={`TableRowItem ${"versiontext"}`} style={{fontSize: 14, padding: 10}}>{versionNumber}</div>
-        <div className={`TableRowItem ${"text"}`} style={{padding: 7}}>
-          <a href={docLink} style={{fontSize: 14, padding: 10}}>
+    const TableRow = ({ background = "light", versionNumber, docLink, changeLogLink, changeLogText = "Changelog" }) => (
+      <div className={`TableRowItem ${background}`} style={{ width: '487px' }}>
+        <div className={`TableRowItem ${"versiontext"}`} style={{ fontSize: 14, padding: 10 }}>{versionNumber}</div>
+        <div className={`TableRowItem ${"text"}`} style={{ padding: 7 }}>
+          <a href={docLink} style={{ fontSize: 14, padding: 10 }}>
             Documentation
           </a>
         </div>
-        <div className={`TableRowItem ${"text"}`} style={{padding: 7}}>
-          <a href={changeLogLink} style={{fontSize: 14}}>
+        <div className={`TableRowItem ${"text"}`} style={{ padding: 7 }}>
+          <a href={changeLogLink} style={{ fontSize: 14 }}>
             {changeLogText}
           </a>
         </div>
@@ -71,36 +71,36 @@ class Versions extends React.Component {
     const VersioningInformation = () => (
       <Section background="light">
         <div className="content">
-          <h1 style={{fontSize: '60px', marginTop: '-20px', fontWeight: 'bold'}}>Versions </h1>
+          <h1 style={{ fontSize: '60px', marginTop: '-20px', fontWeight: 'bold' }}>Versions </h1>
           <MarkdownBlock>{textContent.introtext}</MarkdownBlock>
-          <h1 style={{fontWeight: 'bold'}}>Latest version</h1>
+          <h1 style={{ fontWeight: 'bold' }}>Latest version</h1>
           <MarkdownBlock>{textContent.latestverison}</MarkdownBlock>
           <TableRow versionNumber="MAIN"
-          docLink={docsUrl + 'docs/next/getting-started'}
-          changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...main'}
-          changeLogText={'Commits since ' + currentVersion}/>
-          <h1 style={{fontWeight: 'bold'}}>Stable versions</h1>
+            docLink={docsUrl + 'docs/next/getting-started'}
+            changeLogLink={repoUrl + '/compare/' + currentVersion + '-stable...main'}
+            changeLogText={'Commits since ' + currentVersion} />
+          <h1 style={{ fontWeight: 'bold' }}>Stable versions</h1>
           <MarkdownBlock>{textContent.stablelegacyversions}</MarkdownBlock>
-          {stableVersions.map(function(version) {
-                return (
-                  <TableRow
-                    key={version}
-                    versionNumber={version}
-                    docLink={docsUrl + 'docs/' + (version == currentVersion ? 'getting-started' : version + '/getting-started')}
-                    changeLogLink={repoUrl + '/blob/' + version + '-stable/vnext/CHANGELOG.md'}
-                    background={ (parseInt(version.substr(2)) % 2 == 0) ? 'dark' : 'light' }
-                  />
-                );
-              })
+          {stableVersions.map(function (version) {
+            return (
+              <TableRow
+                key={version}
+                versionNumber={version}
+                docLink={docsUrl + 'docs/' + (version == currentVersion ? 'getting-started' : version + '/getting-started')}
+                changeLogLink={repoUrl + '/blob/' + version + '-stable/vnext/CHANGELOG.md'}
+                background={(parseInt(version.substr(2)) % 2 == 0) ? 'dark' : 'light'}
+              />
+            );
+          })
           /*
             Facebook docs point to GitHub releases (usually patch 0, ie. 0.XX.0) which have an human-written changelog. They don't update the links with new patch versions.
             Prior to vnext (<= 0.59), we had no changelogs at all, so we still link to the GitHub releases, even though they're empty.
             Starting with vnext (>= 0.59) we generate changelogs in-repo, so link to that instead.
           */}
-          <TableRow versionNumber="0.59" changeLogLink={repoUrl + '/blob/0.59-vnext-stable/vnext/CHANGELOG.md'}/>
-          <TableRow versionNumber="0.59 (Legacy)" changeLogLink={repoUrl + '/releases/tag/v0.59.0-legacy.2'} background="dark"/>
-          <TableRow versionNumber="0.58 (Legacy)" changeLogLink={repoUrl + '/releases/tag/vnext-0.58.0-vnext.176'}/>
-          <TableRow versionNumber="0.57 (Legacy)" changeLogLink={repoUrl + '/releases/tag/v0.57.2'} background="dark"/>
+          <TableRow versionNumber="0.59" changeLogLink={repoUrl + '/blob/0.59-vnext-stable/vnext/CHANGELOG.md'} />
+          <TableRow versionNumber="0.59 (Legacy)" changeLogLink={repoUrl + '/releases/tag/v0.59.0-legacy.2'} background="dark" />
+          <TableRow versionNumber="0.58 (Legacy)" changeLogLink={repoUrl + '/releases/tag/vnext-0.58.0-vnext.176'} />
+          <TableRow versionNumber="0.57 (Legacy)" changeLogLink={repoUrl + '/releases/tag/v0.57.2'} background="dark" />
         </div>
       </Section>
     );
