@@ -24,7 +24,7 @@ const textContent = {
   `,
   about: `
 **React Native for Windows + macOS brings React Native support for the
-[Windows SDK] as well as the [macOS 10.13 SDK]**. With this, you can use JavaScript to build native
+[Windows SDK] as well as the [macOS 10.14 SDK]**. With this, you can use JavaScript to build native
 Windows apps for [all devices supported by Windows 10 and higher] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
 
@@ -33,7 +33,7 @@ Some build-time tools will send telemetry to Microsoft by default. No telemetry 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows SDK]: https://developer.microsoft.com/en-us/windows/downloads
-[macOS 10.13 SDK]: https://www.apple.com/newsroom/2017/09/macos-high-sierra-now-available-as-a-free-update/
+[macOS 10.14 SDK]: https://developer.apple.com/documentation/macos-release-notes/macos-mojave-10_14-release-notes
 [all devices supported by Windows 10 and higher]: https://developer.microsoft.com/windows/get-started-windows-10
   `,
   roadmapwindows: `
