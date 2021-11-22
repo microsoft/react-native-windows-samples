@@ -60,3 +60,7 @@ A component that the `Popup` is attached to and will show from when [`isOpen`](f
 | type | required |
 |:--|:--|
 | `React.ReactNode` | Yes |
+
+# Examples
+
+Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/PopupExamplePage.tsx) avaliable in the [Microsoft Store](http://aka.ms/reactnativegalleryapp)
