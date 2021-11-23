@@ -95,4 +95,4 @@ Accepted placements value types are:
 
 ## Examples
 
-Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/FlyoutExamplePage.tsx) avaliable in the [Microsoft Store](http://aka.ms/reactnativegalleryapp)
+Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/FlyoutExamplePage.tsx) available in the [Microsoft Store](http://aka.ms/reactnativegalleryapp)
