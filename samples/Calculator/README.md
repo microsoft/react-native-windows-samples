@@ -9,14 +9,14 @@
   </a>
 </p>
 
-This sample showcases the usage of React Native for Windows to build a simple calculator.
+This sample showcases the usage of React Native for Windows to build a simple calculator in C# and C++/Winrt.
 
 It currently targets React Native Windows 0.65.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
-Then, within this folder, install the applications's dependencies. If you have `yarn` installed:
+Then, within the csharp or cppwinrt folder, install the applications's dependencies. If you have `yarn` installed:
 
 ```cmd
 yarn install
