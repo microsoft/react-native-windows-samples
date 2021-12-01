@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sample: [Calculator]
+        sample: [Calculator\cppwinrt, Calculator\csharp]
         architecture: [x86, x64, ARM64]
         configuration: [Debug, Release]
         reactNativeWindowsVersion: [latest, preview, canary]
