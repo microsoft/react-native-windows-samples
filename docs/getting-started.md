@@ -90,8 +90,6 @@ Here are the options that `react-native run-windows` takes:
 | `--buildLogDirectory` | string     | Optional directory where MSBuild log files should be stored |
 | `--info`              | boolean    | Dump environment information                     |
 | `--direct-debugging`  | number     | Enable direct debugging on specified port        |
-| `--useWinUI3`         | boolean    | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
-| `--useHermes`         | boolean    | Use Hermes instead of Chakra as the JS engine (supported on 0.64+) |
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 | `-h`, `--help`        | boolean    | output usage information                         |
 
