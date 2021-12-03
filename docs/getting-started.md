@@ -64,6 +64,7 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
   ```bat
   npx react-native run-windows
   ```
+
 Here are the options that `react-native run-windows` takes:
 | Option                | Input Type | Description                                      |
 |-----------------------|------------|--------------------------------------------------|
