@@ -95,13 +95,9 @@ Here are the options that `react-native run-windows` takes:
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 | `-h`, `--help`        | boolean    | output usage information                         |
 
-See the `@react-native-windows/cli` [README](https://github.com/microsoft/react-native-windows/edit/main/packages/@react-native-windows/cli/README.md) for more details.
-  
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
-  This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
-  
-  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/main/packages/@react-native-windows/cli/README.md#usage).
+  This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` [README](https://github.com/microsoft/react-native-windows/edit/main/packages/@react-native-windows/cli/README.md) for more details.
   
 - Using Visual Studio
 
