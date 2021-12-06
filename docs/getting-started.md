@@ -86,7 +86,7 @@ Here are the options that `react-native run-windows` takes:
 | `--deploy-from-layout`| boolean    | Force deploy from layout, even in release builds |
 | `--sln`               | string     | Override the app solution file determined by 'react-native config', e.g. `windows\myApp.sln` |
 | `--proj`              | string     | Override the app project file determined by 'react-native config', e.g. `windows\myApp\myApp.vcxproj` |
-| `--msbuildprops`      | string     | Comma separated props to pass to MSBuild, eg: `prop1=value1,prop2=value2` |
+| `--msbuildprops`      | string     | Comma separated props to pass to MSBuild, e.g. `prop1=value1,prop2=value2` |
 | `--buildLogDirectory` | string     | Optional directory where MSBuild log files should be stored |
 | `--info`              | boolean    | Dump environment information                     |
 | `--direct-debugging`  | number     | Enable direct debugging on specified port        |
