@@ -69,24 +69,24 @@ Here are the options that `react-native run-windows` takes:
 | Option                | Input Type | Description                                      |
 |-----------------------|------------|--------------------------------------------------|
 | `--release`           | boolean    | Specifies a Release build                        |
-| `--root`              | string     | Override the root directory for the windows build which contains the windows folder. (default: "E:\\test63") |
-| `--arch`              | string     | The build architecture (ARM64, x86, x64). defaults to system architecture |
+| `--root`              | string     | Override the root directory for the windows build which contains the windows folder. (default: `E:\\test63`) |
+| `--arch`              | string     | The build architecture (`ARM64`, `x86`, `x64`). defaults to system architecture |
 | `--singleproc`        | boolean    | Disables multi-proc build                        |
 | `--emulator`          | boolean    | Deploys the app to an emulator                   |
 | `--device`            | boolean    | Deploys the app to a connected device            |
-| `--target`            | string     | Deploys the app to the specified GUID for a device |
+| `--target`            | string     | Deploys the app to the specified `GUID` for a device |
 | `--remote-debugging`  | boolean    | Deploys the app in remote debugging mode.        |
 | `--logging`           | boolean    | Enables logging                                  |
 | `--no-packager`       | boolean    | Do not launch packager while building            |
-| `--bundle`            | boolean    | Enable Bundle configuration and it would be ReleaseBundle/DebugBundle other than Release/Debug |
+| `--bundle`            | boolean    | Enable Bundle configuration and it would be `ReleaseBundle`/`DebugBundle` other than `Release`/`Debug` |
 | `--no-launch`         | boolean    | Do not launch the app after deployment           |
 | `--no-autolink`       | boolean    | Do not run autolinking                           |
 | `--no-build`          | boolean    | Do not build the solution                        |
 | `--no-deploy`         | boolean    | Do not deploy the app                            |
 | `--deploy-from-layout`| boolean    | Force deploy from layout, even in release builds |
-| `--sln`               | string     | Override the app solution file determined by 'react-native config', e.g. windows\myApp.sln |
-| `--proj`              | string     | Override the app project file determined by 'react-native config', e.g. windows\myApp\myApp.vcxproj |
-| `--msbuildprops`      | string     | Comma separated props to pass to MSBuild, eg: prop1=value1,prop2=value2 |
+| `--sln`               | string     | Override the app solution file determined by 'react-native config', e.g. `windows\myApp.sln` |
+| `--proj`              | string     | Override the app project file determined by 'react-native config', e.g. `windows\myApp\myApp.vcxproj` |
+| `--msbuildprops`      | string     | Comma separated props to pass to MSBuild, eg: `prop1=value1,prop2=value2` |
 | `--buildLogDirectory` | string     | Optional directory where MSBuild log files should be stored |
 | `--info`              | boolean    | Dump environment information                     |
 | `--direct-debugging`  | number     | Enable direct debugging on specified port        |
