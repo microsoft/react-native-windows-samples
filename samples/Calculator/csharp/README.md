@@ -4,7 +4,7 @@ See [../README.md](../README.md) for details of this sample.
 
 See [../cppwinrt/](../cppwinrt/) for a C++/Winrt version of this sample.
 
-It currently targets React Native Windows 0.65.
+It currently targets React Native Windows 0.66.
 
 ### Setup
 See [../README.md#Setup](../README.md#Setup).
@@ -45,7 +45,6 @@ To upgrade this sample to the latest version of RNW:
     ```
 7. Verify the new app builds and runs:
     ```
-    cd csharp
     npx react-native run-windows
     ```
 8. Update this readme with the new major version at the top.
