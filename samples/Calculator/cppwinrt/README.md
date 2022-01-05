@@ -32,15 +32,16 @@ To upgrade this sample to the latest version of RNW:
     cd Calculator
     npx react-native-windows-init --version latest --overwrite
     ```
-5. Restore these original app files:
-    ```
-    git restore README.md
-    git restore App.tsx
-    ```
-6. Rename the folder to cppwinrt
+5. Rename the folder to cppwinrt
     ```
     cd ..
     ren Calculator cppwinrt
+    ```
+6. Restore these original app files:
+    ```
+    cd cppwinrt
+    git restore README.md
+    git restore App.tsx
     ```
 7. Verify the new app builds and runs:
     ```
