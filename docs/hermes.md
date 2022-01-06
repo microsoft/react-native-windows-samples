@@ -41,7 +41,7 @@ Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file
 
 ### Known limitations
 
-- Hermes dll is not signed by Microsoft
+- Hermes dll is not signed by Microsoft.
 
 ## Hermes on macOS
 
@@ -92,8 +92,10 @@ After the app has booted,
 
 In order to break on locations during boot, you can either
 
-- Add `debugger` statements into the boot sequence to pause the runtime waiting for debugger to connect
-
+- Add statements into the boot sequence to pause the runtime waiting for debugger to connect.
+```js
+debugger;
+```
 - Set a break point and refresh the bundle through the Dev Server. The runtime will wait for debugger to attach.
 
 
@@ -107,7 +109,11 @@ Follow steps 1-7 from above, and then
 
 We keep the inspector turned off on release builds by default. If you want to debug or profile release builds, set the MSBuild property `EnableHermesInspectorInReleaseFlavor` to `'true'` when building the platform.
 
+```bash
+npx react-native run-windows --msbuild EnableHermesInspectorInReleaseFlavor=true
+```
+
 ### Known Issues
 
-1. CPU Sampling profiler currently doesn't work
+1. CPU Sampling profiler currently doesn't work.
 
