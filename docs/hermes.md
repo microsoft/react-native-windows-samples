@@ -107,4 +107,5 @@ We keep the inspector turned off on release builds by default. If you want to de
 
 ### Known Issues
 
-1. CPU Sampling profiler current don't work
+1. CPU Sampling profiler currently doesn't work
+
