@@ -93,7 +93,8 @@ After the app has booted,
 In order to break on locations during boot, you can either
 
 - `debugger` statements during boot sequence will pause the runtime waiting for debugger to connect
-- Set break point and refresh the bundle through the Dev Server. The runtime will wait for debugger to attach.
+- Set a break point and refresh the bundle through the Dev Server. The runtime will wait for debugger to attach.
+
 
 ### Steps to enable heap profiling
 
