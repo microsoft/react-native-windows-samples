@@ -65,7 +65,7 @@ pod 'libevent', :podspec => '../node_modules/react-native-macos/third-party-pods
 
 ## Hermes Inspector
 
-*React Native for Windows* with *Hermes engine* now supports direct JavaScript runtime inspection using tools such as Chrome or Edge `devtools`, `VSCode` debugger, Flipper etc. by implementing an in-process Chrome Debug Protocol server. 
+*React Native for Windows* with *Hermes engine* supports direct JavaScript runtime inspection using tools such as Chrome or [Edge `devtools`](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/), [`VSCode` debugger](https://code.visualstudio.com/Docs/editor/debugging), [Flipper](https://fbflipper.com/) etc. by implementing an in-process Chrome Debug Protocol server. 
 Please note that it is fundamentally different from "Remote JS Debugging", which loads the JavaScript bundle into a remote Chrome browser session with duplex communication over IPC channels.
 
 We share the implementation (code and design) with other platforms wherever possible. All the external endpoints, APIs and protocols should be identical to *React Native* environments on other platforms. 
