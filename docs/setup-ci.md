@@ -47,7 +47,7 @@ Save the YAML file to `.github\workflows\` and then commit. To learn more about 
 Now push your changes and the CI pipeline should be up and running.
 
 ## Setting Up Pipeline for Signed Package Builds
-Certificates are used to sign RNW apps so that they can be installed locally or published to the Microsoft Store. This data should not be publicly published, so we need to do extra steps if we wish to build/run signed RNW app packages through GitHub Actions.
+[Certificates](https://docs.microsoft.com/windows/msix/package/create-certificate-package-signing) are used to sign RNW apps so that they can be installed locally or published to the Microsoft Store. This data should not be publicly published, so we need to do extra steps if we wish to build/run signed RNW app packages through GitHub Actions.
 
 ### Storing Certificates Securely
 There are a several options where you can securely store your certificate information:
