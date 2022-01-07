@@ -61,7 +61,7 @@ Coming soon!
   - [Get started] developing a React Native for Windows app
   - Learn the **basics of React Native** using the [React Native Tutorial]
   - Learn about the core [React Native Components and APIs]
-  - Check out the [API Parity status] doc for updates on what we support from core
+  - Check out the [React Native Windows Components and APIs] doc for updates on what we support from React Native core
   - For new **Windows specific APIs** [check out our list here]
   - Learn how to **extend React Native for Windows** through [Native modules] and [Native UI components]
 
@@ -82,7 +82,7 @@ If you're curious about the **sample apps** we have published for inspiration:
 [React Native for macOS]: https://github.com/microsoft/react-native-macos
 [React Native Tutorial]: https://reactnative.dev/docs/tutorial
 [React Native Components and APIs]: https://reactnative.dev/docs/components-and-apis
-[API Parity status]: docs/parity-status
+[React Native Windows Components and APIs]: docs/parity-status
 [Windows Brushes and Themes]: docs/windowsbrush-and-theme
 [check out our list here]: docs/flyout-component
 [Native modules]: docs/native-modules
