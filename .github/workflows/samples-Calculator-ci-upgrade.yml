@@ -41,7 +41,7 @@ jobs:
 
       - name: Run react-native-windows-init
         if: ${{ steps.upgrade.outcome == 'success' }}
-        run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }}
+        run: npx react-native-windows-init --overwrite --version ${{ matrix.reactNativeWindowsVersion }} --language ${{ endsWith(matrix.sample, 'cppwinrt') && 'cpp' || 'cs' }}
         working-directory: ..\..\src
 
       - name: Decode the pfx
