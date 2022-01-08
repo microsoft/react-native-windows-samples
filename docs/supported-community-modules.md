@@ -57,6 +57,7 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 | <ins>[`react-native-code-push`](https://github.com/Microsoft/react-native-code-push)</ins> | 0.63 | x |
 | <ins>[`react-native-tts`](https://github.com/ak1394/react-native-tts)</ins> | 0.62 | x |
 | <ins>[`react-native-sketch-canvas`](https://github.com/creambyemute/react-native-sketch-canvas)</ins> | 0.63 | x |
+| <ins>[`react-native-xaml`](https://github.com/microsoft/react-native-xaml)</ins> | 0.64+ | x |
 
 
 The React Native team at Microsoft is continually adding native implementations for community modules. Visit the [Community Module Requests project board](https://github.com/microsoft/react-native-windows/projects/23) to see which modules are on our radar.
