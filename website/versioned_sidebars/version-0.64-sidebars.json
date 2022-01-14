@@ -3,6 +3,7 @@
     "The Basics (Windows)": [
       "version-0.64-getting-started",
       "version-0.64-rnw-dependencies",
+      "version-0.64-cli",
       "version-0.64-parity-status",
       "version-0.64-config",
       "version-0.64-windowsbrush-and-theme",
