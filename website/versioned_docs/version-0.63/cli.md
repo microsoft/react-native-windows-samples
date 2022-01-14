@@ -5,12 +5,12 @@ title: React Native Windows CLI
 
 This guide will give you more information on the React Native Windows CLI.
 
-## react-native-windows-init
+## `react-native-windows-init`
 
-react-native-windows-init is a CLI used to bootstrap the addition of the Windows platform to `react-native` projects.
+`react-native-windows-init` is a CLI used to bootstrap the addition of the Windows platform to `react-native` projects.
 
 ### Usage
-Run this from an existing `react-native` project, to install `react-native-windows` and generate intial project files for Windows.
+Run this from an existing `react-native` project, to install `react-native-windows` and generate initial project files for Windows.
 
 ```bat
 npx react-native-windows-init --overwrite
@@ -33,9 +33,9 @@ Here are the options that `react-native-windows-init` takes:
 
 This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
 
-## @react-native-windows/cli
+## `@react-native-windows/cli`
 
-@react-native-windows/cli is a CLI used to build and run React Native for Windows apps. 
+`@react-native-windows/cli` is a CLI used to build and run React Native for Windows apps. 
 
 ### Usage
 Run this from an existing React Native for Windows app to build and deploy.
