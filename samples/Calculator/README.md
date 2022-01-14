@@ -9,14 +9,14 @@
   </a>
 </p>
 
-This sample showcases the usage of React Native for Windows to build a simple calculator.
+This sample showcases the usage of React Native for Windows to build a simple calculator. It includes implementations in C# and C++/WinRT.
 
-It currently targets React Native Windows 0.65.
+It currently targets React Native Windows 0.66.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
-Then, within this folder, install the applications's dependencies. If you have `yarn` installed:
+Then, within the csharp or cppwinrt folder, install the applications's dependencies. If you have `yarn` installed:
 
 ```cmd
 yarn install
@@ -42,32 +42,4 @@ The command will:
 * Launch the application
 
 ### Upgrade
-To upgrade this sample to the latest version of RNW:
-
-1. Open a command prompt and navigate to the `samples` folder:
-    ```cmd
-    cd ..
-    ```
-2. Delete this folder:
-    ```cmd
-    rd /s /q Calculator
-    ```
-3. Create a new React Native app:
-    ```cmd
-    npx react-native init Calculator --template react-native-template-typescript@latest
-    ```
-4. Add Windows support:
-    ```cmd
-    cd Calculator
-    npx react-native-windows-init --version latest --overwrite
-    ```
-5. Restore these original app files:
-    ```
-    git restore README.md
-    git restore App.tsx
-    ```
-6. Verify the new app builds and runs:
-    ```
-    npx react-native run-windows
-    ```
-7. Update this readme with the new major version at the top.
+To upgrade either sample to the latest version of RNW, see their individual readme file.
