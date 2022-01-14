@@ -8,7 +8,9 @@
       "config",
       "windowsbrush-and-theme",
       "releases",
-      "platform"
+      "platform",
+      "setup-ci",
+      "app-publishing"
     ],
     "Native Modules (Windows)": [
       "native-modules",
@@ -56,22 +58,22 @@
       "iviewwindowsprops-api"
     ],
     "Native API (Windows)": [
-      "IJSValueReader",
-      "IJSValueWriter",
-      "IReactContext",
-      "IReactDispatcher",
-      "IReactModuleBuilder",
-      "IReactNonAbiValue",
-      "IReactPackageBuilder",
-      "IReactPackageProvider",
-      "IReactPropertyBag",
-      "IRedBoxHandler",
-      "IViewManager",
-      "ReactApplication",
-      "ReactInstanceSettings",
-      "ReactNativeHost",
-      "XamlUIService",
-      "Native-API-Reference"
+      "native-api/IJSValueReader",
+      "native-api/IJSValueWriter",
+      "native-api/IReactContext",
+      "native-api/IReactDispatcher",
+      "native-api/IReactModuleBuilder",
+      "native-api/IReactNonAbiValue",
+      "native-api/IReactPackageBuilder",
+      "native-api/IReactPackageProvider",
+      "native-api/IReactPropertyBag",
+      "native-api/IRedBoxHandler",
+      "native-api/IViewManager",
+      "native-api/ReactApplication",
+      "native-api/ReactInstanceSettings",
+      "native-api/ReactNativeHost",
+      "native-api/XamlUIService",
+      "native-api/Native-API-Reference"
     ]
   }
 }
