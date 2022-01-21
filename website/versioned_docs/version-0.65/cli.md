@@ -75,5 +75,5 @@ Here are the options that `react-native run-windows` takes:
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
 | `-h`, `--help`        | boolean    | output usage information                         |
 
-This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` [README](https://github.com/microsoft/react-native-windows/edit/main/packages/@react-native-windows/cli/README.md) for more details.
+This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` [README](https://github.com/microsoft/react-native-windows/blob/main/packages/%40react-native-windows/cli/README.md) for more details.
   
