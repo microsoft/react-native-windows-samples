@@ -11,7 +11,7 @@ Applications with native code, either written on `C#` or `C++`, may add source d
 Meaning, such dependencies will be built as part of the application.
 
 Starting with version `0.68`, React Native for Windows apps use the [`PackageReference`](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) restore project style for native `C++` NuGet dependencies.\
-The main change consists in NuGet packages being directly loaded from the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [repositoryPath](https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file)).
+The main change consists in NuGet packages being directly loaded from the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [`repositoryPath`](https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file)).
 
 This may conflict with Node/Visual C++ dependencies that use the more common [`packages.config`](https://docs.microsoft.com/en-us/nuget/reference/packages-config) project style (i.e. [React Native Picker](https://github.com/react-native-picker/picker#react-native-pickerpicker)).
 
@@ -28,7 +28,7 @@ yarn add @react-native-picker/picker
 The React Native Windows build system will try to build the dependency from source.\
 Because it uses the `packages.config` restore style, it will most likely expect its own NuGet dependencies to be restored at `$(SolutionDir)packages\`.
 
-#### See [node_modules\@react-native-picker\picker\windows\ReactNativePicker\ReactNativePicker.vcxproj](https://github.com/react-native-picker/picker/blob/v2.2.1/windows/ReactNativePicker/ReactNativePicker.vcxproj#L156)
+#### See [`node_modules\@react-native-picker\picker\windows\ReactNativePicker\ReactNativePicker.vcxproj`](https://github.com/react-native-picker/picker/blob/v2.2.1/windows/ReactNativePicker/ReactNativePicker.vcxproj#L156)
 
 ```xml title="ReactNativePicker.vcxproj"
 <Import Project="$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.210312.4\build\native\Microsoft.Windows.CppWinRT.targets" Condition="Exists('$(SolutionDir)\packages\Microsoft.Windows.CppWinRT.2.0.210312.4\build\native\Microsoft.Windows.CppWinRT.targets')" />
