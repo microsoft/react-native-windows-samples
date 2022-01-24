@@ -1,6 +1,7 @@
 ---
-id: AccessibilityStates
+id: version-0.67-AccessibilityStates
 title: AccessibilityStates
+original_id: AccessibilityStates
 ---
 
 Kind: `enum`

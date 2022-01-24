@@ -1,6 +1,7 @@
 ---
-id: ReactApplication
+id: version-0.67-ReactApplication
 title: ReactApplication
+original_id: ReactApplication
 ---
 
 Kind: `class`

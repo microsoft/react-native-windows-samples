@@ -1,6 +1,7 @@
 ---
-id: JsiValueKind
+id: version-0.67-JsiValueKind
 title: JsiValueKind
+original_id: JsiValueKind
 ---
 
 Kind: `enum`

@@ -1,6 +1,7 @@
 ---
-id: ViewPanel
+id: version-0.67-ViewPanel
 title: ViewPanel
+original_id: ViewPanel
 ---
 
 Kind: `class`

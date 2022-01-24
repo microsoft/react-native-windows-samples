@@ -1,6 +1,7 @@
 ---
-id: BackNavigationHandlerKind
+id: version-0.67-BackNavigationHandlerKind
 title: BackNavigationHandlerKind
+original_id: BackNavigationHandlerKind
 ---
 
 Kind: `enum`

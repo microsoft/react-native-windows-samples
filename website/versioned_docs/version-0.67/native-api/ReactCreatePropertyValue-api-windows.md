@@ -1,6 +1,7 @@
 ---
-id: ReactCreatePropertyValue
+id: version-0.67-ReactCreatePropertyValue
 title: ReactCreatePropertyValue
+original_id: ReactCreatePropertyValue
 ---
 
 Kind: `delegate`

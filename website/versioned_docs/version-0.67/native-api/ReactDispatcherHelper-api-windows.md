@@ -1,6 +1,7 @@
 ---
-id: ReactDispatcherHelper
+id: version-0.67-ReactDispatcherHelper
 title: ReactDispatcherHelper
+original_id: ReactDispatcherHelper
 ---
 
 Kind: `class`

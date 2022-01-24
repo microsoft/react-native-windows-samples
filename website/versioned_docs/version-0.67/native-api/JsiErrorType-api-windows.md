@@ -1,6 +1,7 @@
 ---
-id: JsiErrorType
+id: version-0.67-JsiErrorType
 title: JsiErrorType
+original_id: JsiErrorType
 ---
 
 Kind: `enum`

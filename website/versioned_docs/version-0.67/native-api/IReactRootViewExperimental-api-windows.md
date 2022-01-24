@@ -1,6 +1,7 @@
 ---
-id: IReactRootViewExperimental
+id: version-0.67-IReactRootViewExperimental
 title: IReactRootViewExperimental
+original_id: IReactRootViewExperimental
 ---
 
 Kind: `interface`

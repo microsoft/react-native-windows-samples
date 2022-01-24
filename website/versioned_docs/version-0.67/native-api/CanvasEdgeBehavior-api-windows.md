@@ -1,6 +1,7 @@
 ---
-id: CanvasEdgeBehavior
+id: version-0.67-CanvasEdgeBehavior
 title: CanvasEdgeBehavior
+original_id: CanvasEdgeBehavior
 ---
 
 Kind: `enum`

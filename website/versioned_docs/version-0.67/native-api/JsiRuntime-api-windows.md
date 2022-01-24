@@ -1,6 +1,7 @@
 ---
-id: JsiRuntime
+id: version-0.67-JsiRuntime
 title: JsiRuntime
+original_id: JsiRuntime
 ---
 
 Kind: `class`

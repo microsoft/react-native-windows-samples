@@ -1,6 +1,7 @@
 ---
-id: JsiSymbolRef
+id: version-0.67-JsiSymbolRef
 title: JsiSymbolRef
+original_id: JsiSymbolRef
 ---
 
 Kind: `struct`

@@ -1,6 +1,7 @@
 ---
-id: ReactDispatcherCallback
+id: version-0.67-ReactDispatcherCallback
 title: ReactDispatcherCallback
+original_id: ReactDispatcherCallback
 ---
 
 Kind: `delegate`

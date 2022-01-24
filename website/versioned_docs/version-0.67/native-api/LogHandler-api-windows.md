@@ -1,6 +1,7 @@
 ---
-id: LogHandler
+id: version-0.67-LogHandler
 title: LogHandler
+original_id: LogHandler
 ---
 
 Kind: `delegate`

@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithPointerEvents
+id: version-0.67-IViewManagerWithPointerEvents
 title: IViewManagerWithPointerEvents
+original_id: IViewManagerWithPointerEvents
 ---
 
 Kind: `interface`

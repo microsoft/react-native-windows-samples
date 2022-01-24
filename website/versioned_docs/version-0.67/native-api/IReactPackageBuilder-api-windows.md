@@ -1,6 +1,7 @@
 ---
-id: IReactPackageBuilder
+id: version-0.67-IReactPackageBuilder
 title: IReactPackageBuilder
+original_id: IReactPackageBuilder
 ---
 
 Kind: `interface`

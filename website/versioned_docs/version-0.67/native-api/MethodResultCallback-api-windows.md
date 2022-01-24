@@ -1,6 +1,7 @@
 ---
-id: MethodResultCallback
+id: version-0.67-MethodResultCallback
 title: MethodResultCallback
+original_id: MethodResultCallback
 ---
 
 Kind: `delegate`

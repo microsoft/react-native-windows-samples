@@ -1,6 +1,7 @@
 ---
-id: EffectBorderMode
+id: version-0.67-EffectBorderMode
 title: EffectBorderMode
+original_id: EffectBorderMode
 ---
 
 Kind: `enum`

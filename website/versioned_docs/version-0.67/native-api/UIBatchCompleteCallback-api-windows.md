@@ -1,6 +1,7 @@
 ---
-id: UIBatchCompleteCallback
+id: version-0.67-UIBatchCompleteCallback
 title: UIBatchCompleteCallback
+original_id: UIBatchCompleteCallback
 ---
 
 Kind: `delegate`

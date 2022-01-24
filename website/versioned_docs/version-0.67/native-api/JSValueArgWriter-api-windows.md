@@ -1,6 +1,7 @@
 ---
-id: JSValueArgWriter
+id: version-0.67-JSValueArgWriter
 title: JSValueArgWriter
+original_id: JSValueArgWriter
 ---
 
 Kind: `delegate`

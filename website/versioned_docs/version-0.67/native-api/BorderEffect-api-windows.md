@@ -1,6 +1,7 @@
 ---
-id: BorderEffect
+id: version-0.67-BorderEffect
 title: BorderEffect
+original_id: BorderEffect
 ---
 
 Kind: `class`

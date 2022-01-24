@@ -1,6 +1,7 @@
 ---
-id: ReactNativeHost
+id: version-0.67-ReactNativeHost
 title: ReactNativeHost
+original_id: ReactNativeHost
 ---
 
 Kind: `class`

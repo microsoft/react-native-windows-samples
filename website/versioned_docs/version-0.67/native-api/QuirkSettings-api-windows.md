@@ -1,6 +1,7 @@
 ---
-id: QuirkSettings
+id: version-0.67-QuirkSettings
 title: QuirkSettings
+original_id: QuirkSettings
 ---
 
 Kind: `class`

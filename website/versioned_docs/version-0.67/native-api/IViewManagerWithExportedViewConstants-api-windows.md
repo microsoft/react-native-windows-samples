@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithExportedViewConstants
+id: version-0.67-IViewManagerWithExportedViewConstants
 title: IViewManagerWithExportedViewConstants
+original_id: IViewManagerWithExportedViewConstants
 ---
 
 Kind: `interface`

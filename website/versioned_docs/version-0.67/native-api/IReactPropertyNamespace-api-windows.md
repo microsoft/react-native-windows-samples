@@ -1,6 +1,7 @@
 ---
-id: IReactPropertyNamespace
+id: version-0.67-IReactPropertyNamespace
 title: IReactPropertyNamespace
+original_id: IReactPropertyNamespace
 ---
 
 Kind: `interface`

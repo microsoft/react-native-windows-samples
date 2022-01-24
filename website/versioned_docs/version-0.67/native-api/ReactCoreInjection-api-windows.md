@@ -1,6 +1,7 @@
 ---
-id: ReactCoreInjection
+id: version-0.67-ReactCoreInjection
 title: ReactCoreInjection
+original_id: ReactCoreInjection
 ---
 
 Kind: `class`

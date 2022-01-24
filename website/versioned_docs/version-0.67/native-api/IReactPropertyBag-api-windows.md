@@ -1,6 +1,7 @@
 ---
-id: IReactPropertyBag
+id: version-0.67-IReactPropertyBag
 title: IReactPropertyBag
+original_id: IReactPropertyBag
 ---
 
 Kind: `interface`

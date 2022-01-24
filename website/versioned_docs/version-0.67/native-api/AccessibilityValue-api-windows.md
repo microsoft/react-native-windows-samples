@@ -1,6 +1,7 @@
 ---
-id: AccessibilityValue
+id: version-0.67-AccessibilityValue
 title: AccessibilityValue
+original_id: AccessibilityValue
 ---
 
 Kind: `enum`

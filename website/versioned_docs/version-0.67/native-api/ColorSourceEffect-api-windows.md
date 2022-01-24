@@ -1,6 +1,7 @@
 ---
-id: ColorSourceEffect
+id: version-0.67-ColorSourceEffect
 title: ColorSourceEffect
+original_id: ColorSourceEffect
 ---
 
 Kind: `class`

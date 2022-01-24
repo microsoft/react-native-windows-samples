@@ -1,6 +1,7 @@
 ---
-id: InstanceCreatedEventArgs
+id: version-0.67-InstanceCreatedEventArgs
 title: InstanceCreatedEventArgs
+original_id: InstanceCreatedEventArgs
 ---
 
 Kind: `class`

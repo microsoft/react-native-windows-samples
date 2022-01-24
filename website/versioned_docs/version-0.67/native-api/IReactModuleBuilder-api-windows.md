@@ -1,6 +1,7 @@
 ---
-id: IReactModuleBuilder
+id: version-0.67-IReactModuleBuilder
 title: IReactModuleBuilder
+original_id: IReactModuleBuilder
 ---
 
 Kind: `interface`

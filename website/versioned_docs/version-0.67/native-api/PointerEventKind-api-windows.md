@@ -1,6 +1,7 @@
 ---
-id: PointerEventKind
+id: version-0.67-PointerEventKind
 title: PointerEventKind
+original_id: PointerEventKind
 ---
 
 Kind: `enum`

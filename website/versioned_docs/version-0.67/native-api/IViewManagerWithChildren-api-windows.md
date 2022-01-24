@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithChildren
+id: version-0.67-IViewManagerWithChildren
 title: IViewManagerWithChildren
+original_id: IViewManagerWithChildren
 ---
 
 Kind: `interface`

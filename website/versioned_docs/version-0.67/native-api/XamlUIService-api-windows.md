@@ -1,6 +1,7 @@
 ---
-id: XamlUIService
+id: version-0.67-XamlUIService
 title: XamlUIService
+original_id: XamlUIService
 ---
 
 Kind: `class`

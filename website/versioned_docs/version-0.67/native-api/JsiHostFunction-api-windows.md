@@ -1,6 +1,7 @@
 ---
-id: JsiHostFunction
+id: version-0.67-JsiHostFunction
 title: JsiHostFunction
+original_id: JsiHostFunction
 ---
 
 Kind: `delegate`

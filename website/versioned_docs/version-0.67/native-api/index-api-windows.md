@@ -1,7 +1,8 @@
 ---
-id: Native-API-Reference
+id: version-0.67-Native-API-Reference
 title: namespace Microsoft.ReactNative
 sidebar_label: Full reference
+original_id: Native-API-Reference
 
 ---
 

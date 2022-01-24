@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithCommands
+id: version-0.67-IViewManagerWithCommands
 title: IViewManagerWithCommands
+original_id: IViewManagerWithCommands
 ---
 
 Kind: `interface`

@@ -1,6 +1,7 @@
 ---
-id: JsiWeakObjectRef
+id: version-0.67-JsiWeakObjectRef
 title: JsiWeakObjectRef
+original_id: JsiWeakObjectRef
 ---
 
 Kind: `struct`

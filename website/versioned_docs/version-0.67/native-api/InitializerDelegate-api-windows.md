@@ -1,6 +1,7 @@
 ---
-id: InitializerDelegate
+id: version-0.67-InitializerDelegate
 title: InitializerDelegate
+original_id: InitializerDelegate
 ---
 
 Kind: `delegate`

@@ -1,6 +1,7 @@
 ---
-id: JSValueType
+id: version-0.67-JSValueType
 title: JSValueType
+original_id: JSValueType
 ---
 
 Kind: `enum`

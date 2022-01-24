@@ -1,6 +1,7 @@
 ---
-id: CompositeStepEffect
+id: version-0.67-CompositeStepEffect
 title: CompositeStepEffect
+original_id: CompositeStepEffect
 ---
 
 Kind: `class`

@@ -1,6 +1,7 @@
 ---
-id: IRedBoxHandler
+id: version-0.67-IRedBoxHandler
 title: IRedBoxHandler
+original_id: IRedBoxHandler
 ---
 
 Kind: `interface`

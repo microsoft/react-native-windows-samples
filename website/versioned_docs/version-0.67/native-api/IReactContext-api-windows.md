@@ -1,6 +1,7 @@
 ---
-id: IReactContext
+id: version-0.67-IReactContext
 title: IReactContext
+original_id: IReactContext
 ---
 
 Kind: `interface`

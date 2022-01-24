@@ -1,6 +1,7 @@
 ---
-id: IReactViewInstance
+id: version-0.67-IReactViewInstance
 title: IReactViewInstance
+original_id: IReactViewInstance
 ---
 
 Kind: `interface`

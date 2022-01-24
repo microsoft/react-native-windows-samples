@@ -1,6 +1,7 @@
 ---
-id: IReactNotificationSubscription
+id: version-0.67-IReactNotificationSubscription
 title: IReactNotificationSubscription
+original_id: IReactNotificationSubscription
 ---
 
 Kind: `interface`

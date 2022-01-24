@@ -1,6 +1,7 @@
 ---
-id: JsiPropertyIdRef
+id: version-0.67-JsiPropertyIdRef
 title: JsiPropertyIdRef
+original_id: JsiPropertyIdRef
 ---
 
 Kind: `struct`

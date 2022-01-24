@@ -1,6 +1,7 @@
 ---
-id: ReactPropertyBagHelper
+id: version-0.67-ReactPropertyBagHelper
 title: ReactPropertyBagHelper
+original_id: ReactPropertyBagHelper
 ---
 
 Kind: `class`

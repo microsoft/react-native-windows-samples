@@ -1,6 +1,7 @@
 ---
-id: JSIEngine
+id: version-0.67-JSIEngine
 title: JSIEngine
+original_id: JSIEngine
 ---
 
 Kind: `enum`

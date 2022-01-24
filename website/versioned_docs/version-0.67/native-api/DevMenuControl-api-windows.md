@@ -1,6 +1,7 @@
 ---
-id: DevMenuControl
+id: version-0.67-DevMenuControl
 title: DevMenuControl
+original_id: DevMenuControl
 ---
 
 Kind: `class`

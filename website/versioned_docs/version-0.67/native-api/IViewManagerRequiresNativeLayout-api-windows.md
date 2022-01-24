@@ -1,6 +1,7 @@
 ---
-id: IViewManagerRequiresNativeLayout
+id: version-0.67-IViewManagerRequiresNativeLayout
 title: IViewManagerRequiresNativeLayout
+original_id: IViewManagerRequiresNativeLayout
 ---
 
 Kind: `interface`

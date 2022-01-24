@@ -1,6 +1,7 @@
 ---
-id: LogLevel
+id: version-0.67-LogLevel
 title: LogLevel
+original_id: LogLevel
 ---
 
 Kind: `enum`

@@ -1,6 +1,7 @@
 ---
-id: IReactViewHost
+id: version-0.67-IReactViewHost
 title: IReactViewHost
+original_id: IReactViewHost
 ---
 
 Kind: `interface`

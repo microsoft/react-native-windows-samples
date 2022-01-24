@@ -1,6 +1,7 @@
 ---
-id: JsiPreparedJavaScript
+id: version-0.67-JsiPreparedJavaScript
 title: JsiPreparedJavaScript
+original_id: JsiPreparedJavaScript
 ---
 
 Kind: `class`

@@ -1,6 +1,7 @@
 ---
-id: JsiValueRef
+id: version-0.67-JsiValueRef
 title: JsiValueRef
+original_id: JsiValueRef
 ---
 
 Kind: `struct`

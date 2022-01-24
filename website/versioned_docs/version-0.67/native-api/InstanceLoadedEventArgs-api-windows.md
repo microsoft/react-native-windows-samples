@@ -1,6 +1,7 @@
 ---
-id: InstanceLoadedEventArgs
+id: version-0.67-InstanceLoadedEventArgs
 title: InstanceLoadedEventArgs
+original_id: InstanceLoadedEventArgs
 ---
 
 Kind: `class`

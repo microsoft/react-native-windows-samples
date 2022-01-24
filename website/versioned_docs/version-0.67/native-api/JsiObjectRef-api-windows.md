@@ -1,6 +1,7 @@
 ---
-id: JsiObjectRef
+id: version-0.67-JsiObjectRef
 title: JsiObjectRef
+original_id: JsiObjectRef
 ---
 
 Kind: `struct`

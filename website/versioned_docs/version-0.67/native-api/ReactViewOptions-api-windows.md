@@ -1,6 +1,7 @@
 ---
-id: ReactViewOptions
+id: version-0.67-ReactViewOptions
 title: ReactViewOptions
+original_id: ReactViewOptions
 ---
 
 Kind: `class`

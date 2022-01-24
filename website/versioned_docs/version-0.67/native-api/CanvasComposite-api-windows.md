@@ -1,6 +1,7 @@
 ---
-id: CanvasComposite
+id: version-0.67-CanvasComposite
 title: CanvasComposite
+original_id: CanvasComposite
 ---
 
 Kind: `enum`

@@ -1,6 +1,7 @@
 ---
-id: IJSValueReader
+id: version-0.67-IJSValueReader
 title: IJSValueReader
+original_id: IJSValueReader
 ---
 
 Kind: `interface`

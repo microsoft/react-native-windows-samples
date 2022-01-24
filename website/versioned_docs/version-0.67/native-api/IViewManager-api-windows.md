@@ -1,6 +1,7 @@
 ---
-id: IViewManager
+id: version-0.67-IViewManager
 title: IViewManager
+original_id: IViewManager
 ---
 
 Kind: `interface`

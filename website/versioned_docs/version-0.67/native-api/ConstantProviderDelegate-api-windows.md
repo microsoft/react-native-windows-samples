@@ -1,6 +1,7 @@
 ---
-id: ConstantProviderDelegate
+id: version-0.67-ConstantProviderDelegate
 title: ConstantProviderDelegate
+original_id: ConstantProviderDelegate
 ---
 
 Kind: `delegate`

@@ -1,6 +1,7 @@
 ---
-id: ReactInstanceSettings
+id: version-0.67-ReactInstanceSettings
 title: ReactInstanceSettings
+original_id: ReactInstanceSettings
 ---
 
 Kind: `class`
