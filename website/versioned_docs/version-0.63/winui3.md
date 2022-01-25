@@ -28,7 +28,7 @@ In order to create a **WinUI 3** enabled C++ or C# app, pass the `--useWinUI3` f
 
 Example:
 ```bat
-npx react-native-windows-init --useWinUI3 --version canary --overwrite --language cpp
+npx react-native-windows-init --useWinUI3 --overwrite --language cpp
 ```
 
 ## How it works
