@@ -214,8 +214,8 @@ Complete the documentation updates for both main and stable version 0.XX above.
 ## Cutting Documentation for a New React Native Windows Release
 1. Update necessary version references in [docs](../docs/).
     1. `getting-started.md`
-    2. `winui3.md`
-3. Snapshot the website for version 0.XX: 
+    1. `winui3.md`
+2. Snapshot the website for version 0.XX: 
     1. `cd website`
     1. `yarn run version 0.XX`
     1. `yarn run fix-unbroken`
