@@ -1,13 +1,14 @@
 ---
-id: native-modules-using
+id: version-0.63-native-modules-using
 title: Using Community Native Modules
+original_id: native-modules-using
 ---
 
 Community native modules are usually distributed as npm packages. To understand more about npm packages you may find [this guide](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) useful.
 
 Consuming native modules requires updating your app's native build files to depend on the module's native build files, called "linking". Many modules supporting "autolinking", where these updates are done automatically when running `npx react-native run-windows`.
 
-This document outlines the general steps to manually link a module (`react-native-foo`) to your project. 
+This document outlines the general steps to link a module (`react-native-foo`) to your project. 
 
 > Not all community modules have been updated to work with Windows. If you find a module that doesn't work with Windows, please file an [issue on GitHub](https://github.com/microsoft/react-native-windows/issues/new/choose). We're tracking the list of incompatible modules that we're working to add support for [on GitHub](https://github.com/microsoft/react-native-windows/projects/23). 
 
@@ -31,7 +32,7 @@ Add a reference to `ReactNativeFooCpp` to your main application project. From Vi
 2. Check `ReactNativeFooCpp` from Solution Projects
 
 
-## Step 3: Update the `pch.h` file
+## Step 3: Update the pch.h file
 
 Add `#include "winrt/ReactNativeFooCPP.h"`.
 
