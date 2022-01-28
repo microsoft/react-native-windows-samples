@@ -8,7 +8,7 @@ Community native modules are usually distributed as npm packages. To understand 
 
 Consuming native modules requires updating your app's native build files to depend on the module's native build files, called "linking". Many modules support "autolinking", where these updates are done automatically when running `npx react-native run-windows`. Others may require you to link the module manually.
 
-This document outlines the general steps to link a module (`react-native-foo`) to your project. 
+This document outlines the general steps to manually link a module (`react-native-foo`) to your project.
 
 > Not all community modules have been updated to work with Windows. If you find a module that doesn't work with Windows, please file an [issue on GitHub](https://github.com/microsoft/react-native-windows/issues/new/choose). We're tracking the list of incompatible modules that we're working to add support for [on GitHub](https://github.com/microsoft/react-native-windows/projects/23). 
 
