@@ -14,7 +14,7 @@ This document outlines the general steps to manually link a module (`react-nativ
 
 > Note that individual modules may have different or specific steps for linking to Windows. The steps outlined in this doc are useful if the module repo doesn't outline how to use the module on Windows.
 
-> For more information on how autolinking works, see [Autolinking Native Modules](native-modules-autolinking).
+> For more information on how autolinking works, see [Autolinking Native Modules](native-modules-autolinking.md).
 
 ## Step 1: Update the solution file
 
