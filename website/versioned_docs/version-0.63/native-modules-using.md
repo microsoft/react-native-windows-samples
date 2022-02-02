@@ -1,5 +1,5 @@
 ---
-id: version-0.64-native-modules-using
+id: version-0.63-native-modules-using
 title: Using Community Native Modules
 original_id: native-modules-using
 ---
@@ -32,7 +32,7 @@ Add a reference to `ReactNativeFooCpp` to your main application project. From Vi
 2. Check `ReactNativeFooCpp` from Solution Projects
 
 
-## Step 3: Update the `pch.h` file
+## Step 3: Update the pch.h file
 
 Add `#include "winrt/ReactNativeFooCPP.h"`.
 
