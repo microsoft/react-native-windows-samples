@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="e8caa2d4-dc5b-4113-8439-005e6de99c24"
+    Name="4ad26541-eb8e-45c0-a1a0-1129ed64b749"
     Publisher="CN=tatianakapos"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="e8caa2d4-dc5b-4113-8439-005e6de99c24" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="4ad26541-eb8e-45c0-a1a0-1129ed64b749" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>calculator</DisplayName>
