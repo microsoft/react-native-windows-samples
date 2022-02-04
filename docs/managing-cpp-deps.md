@@ -3,7 +3,7 @@ id: managing-cpp-deps
 title: Managing C++ dependencies
 ---
 
-Details to consider when consuming a Visual C++ project as a source dependency of your app.
+Details to consider when consuming community modules or other Visual C++ projects.
 
 ### Details
 
