@@ -31,7 +31,7 @@ In order to create a **WinUI 3** enabled C++ app, pass the `--useWinUI3` flag wh
 
 Example:
 ```powershell
-npx react-native-windows-init --useWinUI3 --version master --overwrite --language cpp
+npx react-native-windows-init --useWinUI3 --overwrite --language cpp
 ```
 
 Follow overall project status in the [Re-target onto OSS XAML](https://github.com/microsoft/react-native-windows/projects/30) project.
