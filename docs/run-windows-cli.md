@@ -1,7 +1,6 @@
 ---
-id: version-0.65-cli
+id: run-windows-cli
 title: React Native Windows CLI
-original_id: cli
 ---
 
 This guide will give you more information on the React Native Windows CLI.
