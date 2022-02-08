@@ -58,7 +58,7 @@ class InitCli extends React.Component {
             </tr>
             <tr>
                 <td><code>--verbose</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Enables logging. </td>
             </tr>
             <tr>
