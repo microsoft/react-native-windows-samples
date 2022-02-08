@@ -83,7 +83,7 @@ class InitCli extends React.Component {
             </tr>
             <tr>
                 <td><code>--useHermes</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>[Experimental] Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects).</td>
             </tr>
             <tr>
