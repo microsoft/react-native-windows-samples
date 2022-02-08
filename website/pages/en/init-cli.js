@@ -43,7 +43,7 @@ class InitCli extends React.Component {
             </tr>
             <tr>
                 <td><code>--help</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Show help.</td>
             </tr>
             <tr>
