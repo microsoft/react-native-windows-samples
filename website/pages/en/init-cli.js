@@ -64,7 +64,7 @@ class InitCli extends React.Component {
             <tr>
                 <td><code>--language</code></td>
                 <td>string ["cs","cpp"] [default: "cpp"]</td>
-                <td>Which language the app is written in.</td>
+                <td>The language the project is written in.</td>
             </tr>
             <tr>
                 <td><code>--projectType</code></td>
