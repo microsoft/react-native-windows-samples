@@ -87,6 +87,11 @@ class InitCli extends React.Component {
                 <td>[Experimental] Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects).</td>
             </tr>
             <tr>
+                <td><code>--experimentalNuGetDependency</code></td>
+                <td>boolean [default: false]</td>
+                <td>[Experimental] change to start consuming a NuGet containing a pre-built dll version of Microsoft.ReactNative.</td>
+            </tr>
+            <tr>
                 <td><code>--telemetry</code></td>
                 <td>boolean</td>
                 <td>Controls sending telemetry that allows analysis of usage and failures of the react-native-windows CLI.</td>
