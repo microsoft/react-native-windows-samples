@@ -87,7 +87,7 @@ class InitCli extends React.Component {
                 <td>[Experimental] Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects).</td>
             </tr>
             <tr>
-                <td><code>--no-telemetry</code></td>
+                <td><code>--telemetry</code></td>
                 <td>boolean</td>
                 <td>Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI</td>
             </tr>
