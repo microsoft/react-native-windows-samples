@@ -93,7 +93,7 @@ class InitCli extends React.Component {
             </tr>
             <tr>
                 <td><code>--telemetry</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Controls sending telemetry that allows analysis of usage and failures of the react-native-windows CLI.</td>
             </tr>
         </table>
