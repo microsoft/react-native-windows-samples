@@ -73,7 +73,7 @@ class InitCli extends React.Component {
             </tr>
             <tr>
                 <td><code>--overwrite</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Overwrite any existing files without prompting.</td>
             </tr>
             <tr>
