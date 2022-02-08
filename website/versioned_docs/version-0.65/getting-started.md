@@ -39,7 +39,7 @@ npx react-native-windows-init --overwrite
 
 > The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
 
-For information on the options that `react-native-windows-init` takes see [React Native Windows CLI](/init-cli.js).
+For information on the options that `react-native-windows-init` takes see [React Native Windows CLI](/react-native-windows/init-cli).
 
 ## Running a React Native Windows App
 
