@@ -79,7 +79,7 @@ class InitCli extends React.Component {
             <tr>
                 <td><code>--useWinUI3</code></td>
                 <td>boolean</td>
-                <td>Targets WinUI 3.0 (Preview) instead of UWP XAML.</td>
+                <td>[Experimental] Targets WinUI 3.0 (Preview) instead of UWP XAML.</td>
             </tr>
             <tr>
                 <td><code>--useHermes</code></td>
