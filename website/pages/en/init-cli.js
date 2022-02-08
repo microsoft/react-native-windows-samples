@@ -54,7 +54,7 @@ class InitCli extends React.Component {
             <tr>
                 <td><code>--namespace</code></td>
                 <td>string</td>
-                <td>The native project namespace.</td>
+                <td>The native project namespace. This should be expressed using dots as separators. i.e. 'Level1.Level2.Level3'. The generator will apply the correct syntax for the target language.</td>
             </tr>
             <tr>
                 <td><code>--verbose</code></td>
