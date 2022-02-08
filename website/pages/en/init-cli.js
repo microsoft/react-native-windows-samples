@@ -69,7 +69,7 @@ class InitCli extends React.Component {
             <tr>
                 <td><code>--projectType</code></td>
                 <td>string ["app","lib"] [default: "app"] </td>
-                <td>The type of project to initialize.</td>
+                <td>The type of project to initialize (supported on 0.64+).</td>
             </tr>
             <tr>
                 <td><code>--overwrite</code></td>
