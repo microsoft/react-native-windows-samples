@@ -5,6 +5,7 @@
 !versioned_docs/version-0.64/*-api-windows*.md
 !versioned_docs/version-0.65/*-api-windows*.md
 !versioned_docs/version-0.66/*-api-windows*.md
+!versioned_docs/version-0.67/native-api/*-api-windows*.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
@@ -15,6 +16,74 @@ File not found IViewManagerCreateWithProperties-api-windows.md while parsing ver
 File not found IViewManagerCreateWithProperties while parsing versioned_docs/version-0.65/view-managers.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
+File not found hermes.md while parsing versioned_docs/version-0.67/customizing-SDK-versions.md
+File not found hermes.md while parsing versioned_docs/version-0.67/customizing-SDK-versions.md
+File not found hermes.md while parsing versioned_docs/version-0.67/customizing-SDK-versions.md
+File not found hermes.md while parsing versioned_docs/version-0.67/customizing-SDK-versions.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/hermes.md
+File not found config.md while parsing versioned_docs/version-0.67/native-modules-autolinking.md
+File not found config.md while parsing versioned_docs/version-0.67/native-modules-autolinking.md
+File not found config.md while parsing versioned_docs/version-0.67/native-modules-autolinking.md
+File not found config.md while parsing versioned_docs/version-0.67/native-modules-autolinking.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules-autolinking.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules-using.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules-autolinking.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules-using.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found getting-started.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules-using.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found native-modules.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found testing.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found view-managers.md while parsing versioned_docs/version-0.67/native-modules-setup.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.67/popup-component-windows.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.67/popup-component-windows.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.67/popup-component-windows.md
 File not found native-modules.md while parsing versioned_docs/version-0.66/getting-started.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.66/getting-started.md
 File not found native-modules.md while parsing versioned_docs/version-0.66/getting-started.md
@@ -108,6 +177,7 @@ File not found rnw-dependencies.md while parsing versioned_docs/version-0.65/nat
 File not found view-managers.md while parsing versioned_docs/version-0.65/native-modules-setup.md
 File not found getting-started.md while parsing versioned_docs/version-0.65/native-modules-setup.md
 File not found native-modules-autolinking.md while parsing versioned_docs/version-0.65/native-modules-setup.md
+File not found native-modules-using.md while parsing versioned_docs/version-0.65/native-modules-setup.md
 File not found native-modules.md while parsing versioned_docs/version-0.65/native-modules-setup.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.65/native-modules-setup.md
 File not found view-managers.md while parsing versioned_docs/version-0.65/native-modules-setup.md
@@ -220,6 +290,7 @@ File not found native-modules-advanced.md while parsing versioned_docs/version-0
 File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-marshalling-data.md
 File not found getting-started.md while parsing versioned_docs/version-0.64/native-modules-setup.md
 File not found native-modules-autolinking.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules-using.md while parsing versioned_docs/version-0.64/native-modules-setup.md
 File not found native-modules.md while parsing versioned_docs/version-0.64/native-modules-setup.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/native-modules-setup.md
 File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules-setup.md
@@ -237,6 +308,7 @@ File not found native-modules.md while parsing versioned_docs/version-0.64/nativ
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.64/native-modules-setup.md
 File not found testing.md while parsing versioned_docs/version-0.64/native-modules-setup.md
 File not found view-managers.md while parsing versioned_docs/version-0.64/native-modules-setup.md
+File not found native-modules-autolinking.md while parsing versioned_docs/version-0.64/native-modules-using.md
 File not found native-modules-async.md while parsing versioned_docs/version-0.64/native-modules.md
 File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.64/native-modules.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.64/native-modules.md
