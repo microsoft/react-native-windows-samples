@@ -8,7 +8,7 @@
 
   <Identity
     Name="c74bf4e6-3d92-4d9b-a49e-8c9fc3233083"
-    Publisher="CN=tatianakapos"
+    Publisher="CN=React Native Windows Sample"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="c74bf4e6-3d92-4d9b-a49e-8c9fc3233083" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
