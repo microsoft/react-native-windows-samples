@@ -13,7 +13,7 @@ Meaning, such dependencies will be built as part of the application.
 Starting with version `0.68`, React Native for Windows apps use the [`PackageReference`](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) restore project style for native `C++` NuGet dependencies.\
 The main change consists in NuGet packages being directly loaded from the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [`repositoryPath`](https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file)).
 
-This may conflict with Node/Visual C++ dependencies that use the more common [`packages.config`](https://docs.microsoft.com/en-us/nuget/reference/packages-config) project style (i.e. [React Native Picker](https://github.com/react-native-picker/picker#react-native-pickerpicker)).
+This may conflict with Visual C++ dependencies that use the more common [`packages.config`](https://docs.microsoft.com/en-us/nuget/reference/packages-config) project style, including community modules generated targeting versions before 0.68.
 
 ## Updating your app
 
