@@ -62,6 +62,6 @@ MSBuild.exe /restore your_solution.sln
 
 The first command explicitly restores any `packages.config` dependencies found within your solution at the predefined destination (usually, the `packages` folder in your solution's path).
 
-The second command implicitly restores and builds the solution using the now default restore style, `PackageReference`, gathering all the remaining NuGet dendencies.
+The second command implicitly restores and builds the solution using the now default restore style, `PackageReference`, restoring the remaining NuGet dependencies.
 
 Note, these steps are done automatically when building inside Visual Studio or using the React Native Windows CLI.
