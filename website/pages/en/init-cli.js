@@ -43,7 +43,7 @@ class InitCli extends React.Component {
             </tr>
             <tr>
                 <td><code>--help</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Show help.</td>
             </tr>
             <tr>
@@ -54,48 +54,67 @@ class InitCli extends React.Component {
             <tr>
                 <td><code>--namespace</code></td>
                 <td>string</td>
-                <td>The native project namespace.</td>
+                <td>The native project namespace. This should be expressed using dots as separators. i.e. 'Level1.Level2.Level3'. The generator will apply the correct syntax for the target language.</td>
             </tr>
             <tr>
                 <td><code>--verbose</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Enables logging. </td>
             </tr>
             <tr>
                 <td><code>--language</code></td>
                 <td>string ["cs","cpp"] [default: "cpp"]</td>
                 <td>Which language the app is written in.</td>
+                <td>The language the project is written in.</td>
             </tr>
             <tr>
                 <td><code>--projectType</code></td>
                 <td>string ["app","lib"] [default: "app"] </td>
-                <td>The type of project to initialize.</td>
+                <td>The type of project to initialize (supported on 0.64+).</td>
             </tr>
             <tr>
                 <td><code>--overwrite</code></td>
-                <td>boolean</td>
+                <td>boolean [default: false]</td>
                 <td>Overwrite any existing files without prompting.</td>
             </tr>
             <tr>
                 <td><code>--useWinUI3</code></td>
-                <td>boolean</td>
-                <td>Targets WinUI 3.0 (Preview) instead of UWP XAML.</td>
+                <td>boolean [default: false]</td>
+                <td>[Experimental] Targets WinUI 3.0 (Preview) instead of UWP XAML.</td>
             </tr>
             <tr>
                 <td><code>--useHermes</code></td>
-                <td>boolean</td>
-                <td>Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects)</td>
+                <td>boolean [default: false]</td>
+                <td>[Experimental] Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects).</td>
             </tr>
             <tr>
-                <td><code>--no-telemetry</code></td>
-                <td>boolean</td>
-                <td>Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI</td>
+                <td><code>--experimentalNuGetDependency</code></td>
+                <td>boolean [default: false]</td>
+                <td>[Experimental] change to start consuming a NuGet containing a pre-built dll version of Microsoft.ReactNative.</td>
+            </tr>
+            <tr>
+                <td><code>--telemetry</code></td>
+                <td>boolean [default: false]</td>
+                <td>Controls sending telemetry that allows analysis of usage and failures of the react-native-windows CLI.</td>
             </tr>
         </table>
         <p>
           This sends telemetry to Microsoft by default. You can prevent the
           telemetry from being sent by using the <code>--no-telemetry</code> command line
-          option. See the <code>react-native-windows-init</code> README for more details.
+          option. See below for more details.
+        </p>
+        <p>
+        The software may collect information about you and your use of the software and send 
+        it to Microsoft. Microsoft may use this information to provide services and improve 
+        our products and services. You may turn off the telemetry as described in the repository. 
+        There are also some features in the software that may enable you and Microsoft to collect 
+        data from users of your applications. If you use these features, you must comply with 
+        applicable law, including providing appropriate notices to users of your applications 
+        together with a copy of Microsoft's privacy statement. Our privacy statement is located
+        at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data collection
+        and use in the help documentation and our privacy statement. Your use of the software operates
+        as your consent to these practices. This data collection notice only applies to the process 
+        of creating a new React Native for Windows app with the CLI.
         </p>
         </div>
       </Section>
