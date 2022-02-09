@@ -46,3 +46,22 @@ Because it uses the `packages.config` restore style, it will most likely expect 
 ```
 
 This way, your React Native Windows app will restore the external NuGet dependencies into the expected location.
+
+## Building with MSBuild.exe (Advanced)
+
+The introduction of `PackageReference` in React Native Windows projects overrides the `packages.config` NuGet restore style in the MSBuild engine.
+
+This means plain `MSBuild.exe` will assume `PackageReference` is being used for all projects and thus, any community projects using `packages.config` added to your app will not have their dependencies restored.
+
+To successfully restore and build your app using only the  MSBuild CLI, run the following commands:
+```PowerShell
+MSBuild.exe /t:Restore "/p:RestoreProjectStyle=PackagesConfig;RestorePackagesConfig=true" your_solution.sln
+
+MSBuild.exe /restore your_solution.sln
+```
+
+The first command explicitly restores any `packages.config` dependencies found within your solution at the predefined destination (usually, the `packages` folder in your solution's path).
+
+The second command implicitly restores and builds the solution using the now default restore style, `PackageReference`, gathering all the remaining NuGet dendencies.
+
+Note, these steps are done automatically when building inside Visual Studio or using the React Native Windows CLI.
