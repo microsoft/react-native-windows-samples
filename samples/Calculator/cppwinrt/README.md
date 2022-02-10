@@ -47,5 +47,5 @@ To upgrade this sample to the latest version of RNW:
     ```
     npx react-native run-windows
     ```
-8. Look at windows/camera/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
+8. Look at windows/Calculators/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
 9. Update this readme with the new major version at the top.
