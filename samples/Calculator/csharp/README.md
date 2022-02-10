@@ -30,7 +30,7 @@ To upgrade this sample to the latest version of RNW:
 4. Add Windows support:
     ```cmd
     cd Calculator
-    npx react-native-windows-init --version latest --overwrite
+    npx react-native-windows-init --version latest --overwrite --language cs
     ```
 5. Rename the folder to csharp
     ```
@@ -47,4 +47,5 @@ To upgrade this sample to the latest version of RNW:
     ```
     npx react-native run-windows
     ```
-8. Update this readme with the new major version at the top.
+8. Look at windows/camera/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
+9. Update this readme with the new major version at the top.
