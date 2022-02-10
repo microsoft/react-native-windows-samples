@@ -3,6 +3,7 @@
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
+      "run-windows-cli",
       "parity-status",
       "config",
       "windowsbrush-and-theme",
