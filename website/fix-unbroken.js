@@ -5,8 +5,22 @@
 
 const fs = require('fs');
 const path = require('path');
+const { URL } = require('url');
 
 const versions = require('./versions.json');
+
+const stringIsAValidUrl = (s, protocols = ['http', 'https']) => {
+    try {
+        url = new URL(s);
+        return protocols
+            ? url.protocol
+                ? protocols.map(x => `${x.toLowerCase()}:`).includes(url.protocol)
+                : false
+            : true;
+    } catch (err) {
+        return false;
+    }
+};
 
 const normalizePath = str => path.normalize(str).replace(/\\/g, '/');
 
@@ -90,7 +104,11 @@ for (let exclusion of existingExclusions) {
     }
     else
     {
-        exclusions.push(normalizePath(exclusion));
+        let clean = ''
+        for (const part of exclusion.split(' ')) {
+            clean += `${stringIsAValidUrl(part) ? part : normalizePath(part)} `;
+        }
+        exclusions.push(clean.trimEnd());
     }
 }
 
