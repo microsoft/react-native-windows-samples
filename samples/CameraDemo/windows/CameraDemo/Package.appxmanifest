@@ -15,7 +15,8 @@
 
   <Properties>
     <DisplayName>camerademo</DisplayName>
-    <PublisherDisplayName>tatianakapos</PublisherDisplayName>
+    <PublisherDisplayName>React Native Windows Sample</PublisherDisplayName>
+
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
