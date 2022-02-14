@@ -7,15 +7,16 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="59046119-efee-4e1c-a18d-2a91c18e31d9"
+    Name="c74bf4e6-3d92-4d9b-a49e-8c9fc3233083"
     Publisher="CN=React Native Windows Sample"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="59046119-efee-4e1c-a18d-2a91c18e31d9" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="c74bf4e6-3d92-4d9b-a49e-8c9fc3233083" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>camerademo</DisplayName>
     <PublisherDisplayName>React Native Windows Sample</PublisherDisplayName>
+
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -46,9 +47,9 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-      <uap:Capability Name="videosLibrary"/>
-      <uap:Capability Name="picturesLibrary"/>
-      <DeviceCapability Name="webcam"/>
-      <DeviceCapability Name="microphone"/>
+    <uap:Capability Name="videosLibrary"/>
+    <uap:Capability Name="picturesLibrary"/>
+    <DeviceCapability Name="webcam"/>
+    <DeviceCapability Name="microphone"/>
   </Capabilities>
 </Package>

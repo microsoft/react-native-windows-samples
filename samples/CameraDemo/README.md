@@ -11,7 +11,7 @@
 
 This sample showcases the usage of React Native for Windows to build an app which consumes an external community module, in this case, [react-native-camera](https://github.com/react-native-community/react-native-camera).
 
-It currently targets React Native Windows 0.64.
+It currently targets React Native Windows 0.67.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
@@ -86,4 +86,5 @@ To upgrade this sample to the latest version of RNW:
     ```
     npx react-native run-windows
     ```
-9. Update this readme with the new major version at the top.
+9. Look at windows/CameraDemo/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
+10. Update this readme with the new major version at the top.
