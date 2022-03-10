@@ -15,7 +15,7 @@ jobs:
   # versions will also be deployed to the build agent but not launched.
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: windows-2019
     strategy:
       fail-fast: false
       matrix:
