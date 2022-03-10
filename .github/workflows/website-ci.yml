@@ -12,6 +12,10 @@ on:
       - 'docs/**'
       - 'website/**'
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   website_ci:
     name: Website CI

@@ -10,6 +10,10 @@ on:
       - 'docs/**'
       - 'website/**'
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   website_pr:
     name: Website PR
