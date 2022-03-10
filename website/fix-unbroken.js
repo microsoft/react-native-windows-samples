@@ -34,12 +34,12 @@ const addFileToVersionedDocs = (file, version) => {
   if (!versionedDocs.hasOwnProperty(version)) {
       versionedDocs[version] = [];
   }
-  const versionDir = `versioned_docs\\version-${version}`;
+  const versionDir = `versioned_docs/version-${version}`;
   versionedDocs[version].push(file);
 };
 
 versions.forEach(version => {
-    const versionDir = `versioned_docs\\version-${version}`;
+    const versionDir = `versioned_docs/version-${version}`;
     var files = fs.readdirSync(versionDir);
     files.forEach(filePath => {
       const fullPath = path.join(versionDir, filePath);
