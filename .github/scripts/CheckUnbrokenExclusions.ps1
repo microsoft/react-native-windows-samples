@@ -13,7 +13,7 @@ $StartingLocation = Get-Location
 Set-Location -Path $WebsiteRoot
 
 Write-Host "Running fix-unbroken"
-$YarnOutput = yarn.cmd run fix-unbroken
+$YarnOutput = yarn run fix-unbroken
 
 Write-Host "Checking no files have changed"
 $GitOutput = git status --porcelain=v1
