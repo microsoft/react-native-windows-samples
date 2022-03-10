@@ -13,7 +13,7 @@ on:
 jobs:
   website_pr:
     name: Website PR
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Git Checkout
       uses: actions/checkout@v2
