@@ -10,19 +10,23 @@ on:
       - 'docs/**'
       - 'website/**'
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   website_pr:
     name: Website PR
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Git Checkout
       uses: actions/checkout@v2
 
     - name: Spell-check docs
-      run: npx markdown-spellcheck "docs\*.md" "!docs\*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report --color
+      run: npx markdown-spellcheck "docs/*.md" "!docs/*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report --color
 
     - name: Check unbroken exclusions file
-      run: ${{github.workspace}}\.github\scripts\CheckUnbrokenExclusions.ps1
+      run: ${{github.workspace}}/.github/scripts/CheckUnbrokenExclusions.ps1
 
     - name: Check for Broken Links (Docs)
       run: npx unbroken --parse-ids
