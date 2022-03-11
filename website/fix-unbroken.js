@@ -121,6 +121,6 @@ console.log('Updating .unbroken_exclusions...')
 let output = '';
 exclusions.forEach(function(v) {
     console.log('Excluding: ' + v);
-    output += v + '\r\n';
+    output += v + '\n';
 });
 fs.writeFileSync('.unbroken_exclusions', output);
