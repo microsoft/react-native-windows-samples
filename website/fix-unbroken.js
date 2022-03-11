@@ -118,10 +118,9 @@ redirectedFiles.forEach(redirectedFile => {
 });
 
 console.log('Updating .unbroken_exclusions...')
-var exclusions_file = fs.createWriteStream('.unbroken_exclusions');
-exclusions_file.on('error', function(err) { /* error handling */ });
+let output = '';
 exclusions.forEach(function(v) {
     console.log('Excluding: ' + v);
-    exclusions_file.write(v + '\r\n');
+    output += v + '\r\n';
 });
-exclusions_file.end();
+fs.writeFileSync('.unbroken_exclusions', output);
