@@ -114,7 +114,10 @@ for (let exclusion of existingExclusions) {
 
 // Redirected files exclusions
 redirectedFiles.forEach(redirectedFile => {
-    exclusions.push(`File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`);
+    const exclusion = `File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`;
+    if (!exclusions.includes(exclusion)) {
+        exclusions.push(`File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`);
+    }
 });
 
 console.log('Updating .unbroken_exclusions...')
