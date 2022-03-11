@@ -22,6 +22,7 @@ $ErrorCode = 0
 
 if ($GitOutput)
 {
+    Write-Error $GitOutput
     Write-Error "The website/.unbroken_exclusions file is out of sync. Please run 'yarn run fix-unbroken' in the website directory and commit the changes."
     $ErrorCode = 1
 }
