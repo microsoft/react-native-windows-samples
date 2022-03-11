@@ -7,7 +7,7 @@ param()
 
 Write-Host "CheckUnbrokenExclusions"
 
-[string] $WebsiteRoot = Resolve-Path "$PSScriptRoot\..\..\website"
+[string] $WebsiteRoot = Resolve-Path "$PSScriptRoot/../../website"
 
 $StartingLocation = Get-Location
 Set-Location -Path $WebsiteRoot
