@@ -1,14 +1,5 @@
 # CameraDemo - React Native for Windows
 
-<p align="center">
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI/badge.svg" alt="CameraDemo CI Status" />
-  </a>
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CameraDemo+CI+%28Upgrade%29%22">
-    <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CameraDemo%20CI%20(Upgrade)/badge.svg" alt="CameraDemo CI (Upgrade) Status" />
-  </a>
-</p>
-
 This sample showcases the usage of React Native for Windows to build an app which consumes an external community module, in this case, [react-native-camera](https://github.com/react-native-community/react-native-camera).
 
 It currently targets React Native Windows 0.67.
