@@ -28,7 +28,7 @@ Once your development environment has been correctly configured, you have severa
 
 If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
-1. You followed the [Getting Started](.\getting-started.md) guide, where
+1. You followed the [Getting Started](getting-started.md) guide, where
 1. You ran `npx react-native-windows-init` to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
