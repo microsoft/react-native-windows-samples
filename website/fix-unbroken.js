@@ -41,7 +41,7 @@ const addFileToVersionedDocs = (file, version) => {
 versions.forEach(version => {
     const versionDir = `versioned_docs/version-${version}`;
     var files = fs.readdirSync(versionDir);
-    files.forEach(filePath => {
+    files.sort().forEach(filePath => {
       const fullPath = path.join(versionDir, filePath);
       if (fs.statSync(fullPath).isFile()) {
         addFileToVersionedDocs(fullPath, version);
