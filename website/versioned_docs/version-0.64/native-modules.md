@@ -290,6 +290,8 @@ namespace NativeModuleSample
 
 The `REACT_MODULE` macro-attribute says that the class is a React Native native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
 
+> NOTE: Methods annotated with `REACT_METHOD` and friends must have the `noexcept` specifier, otherwise the program will not compile. Module authors should make sure all exceptions are handled inside the method.
+
 You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, L"math")`.
 
 You can specify a different event emitter like this: `REACT_MODULE(FancyMath, L"math", L"mathEmitter")`.
