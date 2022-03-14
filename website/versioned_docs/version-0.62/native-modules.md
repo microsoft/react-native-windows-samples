@@ -49,6 +49,8 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactConstant`         | Specifies a field or property that represents a constant. |
 | `ReactConstantProvider` | Specifies a method that provides a set of constants.      |
 | `ReactEvent`            | Specifies a field or property that represents an event.   |
+| `ReactInit`             | Specifies a class initialization module.                  |
+| `ReactFunction`         | Specifies a field that helps calling a JavaScript function. |
 
 ### 1. Authoring your Native Module
 
@@ -238,6 +240,8 @@ For events, you'll see that we created an instance of `NativeEventEmitter` passi
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
+| `REACT_INIT`             | Specifies a class initialization module.                  |
+| `ReactFunction`         | Specifies a JavaScript function that you want exposed to your native code. |
 
 ### 1. Authoring your Native Module
 
