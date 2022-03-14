@@ -7,7 +7,7 @@ original_id: native-modules
 > **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
 >
 > - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/master/packages/sample-apps)
+> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to re-implement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 
@@ -107,7 +107,7 @@ The `[ReactEvent]` attribute is how you define events. In FancyMath we have one 
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 
-Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
 _ReactPackageProvider.cs_
 
@@ -357,7 +357,7 @@ To add custom events, we attribute a `std::function<void(double)>` delegate with
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 
-Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/master/vnext/Microsoft.ReactNative/IReactPackageProvider.idl). It starts with defining an .idl file:
+Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl). It starts with defining an .idl file:
 
 _ReactPackageProvider.idl_
 
