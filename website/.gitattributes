@@ -1,0 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+.gitattributes text eol=lf
+.unbroken_exclusions text eol=lf
