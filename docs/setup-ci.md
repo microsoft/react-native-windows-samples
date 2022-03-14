@@ -38,7 +38,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Run Windows x64 release
       run: npx react-native run-windows --arch x64 --release --logging
 ```
-Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/master/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
+Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/v11.17.2/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
 
 Save the YAML file to `.github\workflows\` and then commit. To learn more about YAML syntax, see [Workflow syntax for GitHub Actions](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions).
 
@@ -47,7 +47,7 @@ Save the YAML file to `.github\workflows\` and then commit. To learn more about 
 Now push your changes and the CI pipeline should be up and running.
 
 ## Setting Up Pipeline for Signed Package Builds
-Certificates are used to sign RNW apps so that they can be installed locally or published to the Microsoft Store. This data should not be publicly published, so we need to do extra steps if we wish to build/run signed RNW app packages through GitHub Actions.
+[Certificates](https://docs.microsoft.com/windows/msix/package/create-certificate-package-signing) are used to sign RNW apps so that they can be installed locally or published to the Microsoft Store. This data should not be publicly published, so we need to do extra steps if we wish to build/run signed RNW app packages through GitHub Actions.
 
 ### Storing Certificates Securely
 There are a several options where you can securely store your certificate information:
@@ -72,7 +72,7 @@ In a YAML file the basic steps to generate your certificate from an encoded stri
 - name: Decode the pfx
   run: |
     $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-    $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path ProjectDirectoryPath -ChildPath EncodedKey.pfx) )
+    $PfxPath = [System.IO.Path]::GetFullPath( (Join-Path -Path ProjectDirectoryPath -ChildPath GitHubActionsWorkflow.pfx) )
     [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
 ```
 where your encoded string is a GitHub secret named `Base64_Encoded_Pfx`.

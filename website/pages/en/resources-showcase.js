@@ -27,13 +27,16 @@ function getBackgroundForCategory(category) {
 }
 
 function renderImg(img, isSmall, key) {
-  return <img src={img}
-    style={{
-      maxHeight: isSmall ? 40 : 500,
-      minHeight: isSmall ? 40 : 220,
-      minWidth: isSmall ? 40 : 220,
-      verticalAlign: 'end',
-    }} key={key} />;
+  return  <div
+  style={{
+    maxHeight: isSmall ? 40 : 600,
+    minHeight: isSmall ? 40 : 320,
+    minWidth: isSmall ? 40 : 320,
+    verticalAlign: 'baseline',
+  }}
+  ><img src={img}
+ key={key} />
+    </div>;
 }
 function renderImgs(app) {
   const isSmall = app.logo !== undefined;
@@ -110,8 +113,6 @@ function renderShowcaseApp(app, i) {
   const img = renderImgs(app);
   const content = <td style={{ borderColor: 'transparent' }} minWidth={400}>{renderContent(app)}</td>;
 
-  // const parts = [img, content];
-
   return <div key={app.header}>
     <table style={{ borderColor: 'transparent', alignSelf: 'center' }}><tr>
       {img}
@@ -165,7 +166,7 @@ class Resources extends React.Component {
 
     const Showcase = () => (
       <Section background="light">
-        <div className="content" style={{ width: 1900, maxWidth: '100%' }}>
+        <div className="content">
           <h1 style={{marginTop: 0}}>Who's using React Native for Desktop</h1>
           <p>React Native for Desktop empowers developers to target a huge community of users beyond mobile.
             See how Microsoft uses React Native within strategically key experiences like Xbox, Office, and more.
@@ -196,7 +197,7 @@ class Resources extends React.Component {
             </div>
           </Section>
         </div>
-        <div className="column">
+        <div className="column" style={{ width: '60%' }}>
           <div className="homepage" style={{ marginLeft: 50 }}>
             <div id="showcase">
               <Showcase />

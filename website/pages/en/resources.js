@@ -61,13 +61,6 @@ class Resources extends React.Component {
               <div style={{ maxWidth: '100%', maxHeight: '50%' }}>
                 <img src={imgurl} alt="videoimg" />
               </div>
-              <div className="videocardlengthtip">
-                <div>
-                  <div>
-                    <img style={{ width: 14, height: 14 }} src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="timeicon" />
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="videocardcontent">
               <div className="videocardheader">
