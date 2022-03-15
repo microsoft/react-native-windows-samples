@@ -12,10 +12,14 @@ on:
       - 'docs/**'
       - 'website/**'
 
+defaults:
+  run:
+    shell: pwsh
+
 jobs:
   website_ci:
     name: Website CI
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Git Checkout
       uses: actions/checkout@v2

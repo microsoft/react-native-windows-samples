@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'samples/NativeModuleSample/**'
-      - '.github/workflows/samples-NativeModuleSample-*.yml'
+      - '.github/workflows/samples-NativeModuleSample-pr.yml'
 
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: windows-2019
     strategy:
       matrix:
         language: [cppwinrt, csharp]

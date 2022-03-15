@@ -14,11 +14,9 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```bat
-npx react-native init <projectName> --template react-native@^0.65.0
+npx react-native init <projectName> --template react-native@^0.67.0
 ```
 >To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
-> If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try adding `--ignore-existing` to your `npx` command:<br>
-> `npx --ignore-existing react-native init <projectName> --template react-native@^0.65.0` instead.
 
 ### Navigate into this newly created directory
 
@@ -38,22 +36,7 @@ npx react-native-windows-init --overwrite
 
 > The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
 
-Here are the options that `react-native-windows-init` takes:
-| Option          | Input Type                                  | Description                                      |
-|-----------------|---------------------------------------------|--------------------------------------------------|
-| `--help`        | boolean                                     | Show help.                                       |
-| `--version`     | string                                      | The version of react-native-windows to use.      |
-| `--namespace`   | string                                      | The native project namespace.                    | 
-| `--verbose`     | boolean                                     | Enables logging.                                 |
-| `--language`    | string ["`cs`","`cpp`"] [default: "`cpp`"]  | Which language the app is written in.            |
-| `--projectType` | string ["`app`","`lib`"] [default: "`app`"] | The type of project to initialize.               |
-| `--overwrite`   | boolean                                     | Overwrite any existing files without prompting.  |
-| `--useWinUI3`   | boolean                                     | Targets WinUI 3.0 (Preview) instead of UWP XAML. |
-| `--useHermes`   | boolean                                     | Use Hermes instead of Chakra as the JS engine (supported on 0.64+ for C++ projects) |
-| `--no-telemetry`| boolean                                     | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-
-This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `react-native-windows-init` README for more details.
-
+For information on the options that `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
@@ -67,12 +50,10 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
   npx react-native run-windows
   ```
 
+  For information on the options that `@react-native-windows/cli` takes see [React Native Windows CLI](run-windows-cli.md).
+
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
-  This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
-  
-  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/main/packages/@react-native-windows/cli/README.md#usage).
-  
 - Using Visual Studio
 
   - From the root of the project directory, run the following script which will automatically link your app's dependencies:

@@ -4,7 +4,7 @@ title: Release Strategy (vnext)
 original_id: releases
 ---
 
-This document describes the release strategy for the [`vnext`](https://github.com/microsoft/react-native-windows/blob/master/README.md) effort for React Native for Windows.
+This document describes the release strategy for the [`vnext`](https://github.com/microsoft/react-native-windows/blob/main/README.md) effort for React Native for Windows.
 
 The `vnext` versioning will generally follow the same strategy as outlined in current [Releases](https://github.com/microsoft/react-native-windows/blob/0.60-stable/current/docs/Releases.md).
 

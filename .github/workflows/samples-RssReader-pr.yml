@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'samples/rssreader/**'
-      - '.github/workflows/samples-RssReader-*.yml'
+      - '.github/workflows/samples-RssReader-pr.yml'
 
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - uses: actions/checkout@v2
 

@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'samples/CalculatorNuGet/**'
-      - '.github/workflows/samples-CalculatorNuGet-*.yml'
+      - '.github/workflows/samples-CalculatorNuGet-pr.yml'
 
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - uses: actions/checkout@v2
 

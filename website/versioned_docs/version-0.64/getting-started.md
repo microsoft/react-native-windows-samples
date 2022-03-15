@@ -72,7 +72,7 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
 
   This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` README for more details.
   
-  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/master/packages/@react-native-windows/cli/README.md#usage).
+  For a description of the options that `run-windows` offers, see [run-windows usage](https://github.com/microsoft/react-native-windows/blob/main/packages/@react-native-windows/cli/README.md#usage).
   
 - Using Visual Studio
 

@@ -11,7 +11,10 @@ We are working on adding **WinUI 3** support for RNW and have made some good pro
 
 ## Current status
 
-As of November 19th 2020, we support the **WinUI 3.0 Preview 3** release for:
+For the most up-to-date information on RNW support for Windows App SDK, see [RNW + WinAppSDK Roadmap](https://aka.ms/rnw-roadmap)
+
+
+As of November 19th 2020, we support the **WinUI 3.0 Preview 4** release for:
 
 * Creating a new RNW app with either C++/WinRT or C#. 
 * The Playground app is able to build a `WinUI 3`-targeting version.
@@ -27,7 +30,7 @@ In order to create a **WinUI 3** enabled C++ or C# app, pass the `--useWinUI3` f
 
 Example:
 ```bat
-npx react-native-windows-init --useWinUI3 --version canary --overwrite --language cpp
+npx react-native-windows-init --useWinUI3 --overwrite --language cpp
 ```
 
 ## How it works
