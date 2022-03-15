@@ -1,6 +1,6 @@
 ---
 id: parity-status
-title: API Parity
+title: React Native Windows Components and APIs
 ---
 
 ## Core APIs and Components

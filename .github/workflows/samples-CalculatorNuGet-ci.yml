@@ -13,7 +13,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: windows-2019
     strategy:
       fail-fast: false
       matrix:
@@ -37,8 +37,23 @@ jobs:
         run: yarn install --frozen-lockfile
         working-directory: ..\..\src
 
+      - name: Decode the pfx
+        run: |
+          $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
+          $PfxPath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+          Write-Host $PfxPath
+          [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
+        working-directory: ..\..\src
+
       - name: Run react-native run-windows
-        run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }}
+        run: npx react-native run-windows --logging --no-packager --no-launch --arch ${{ matrix.architecture }} ${{ startsWith(matrix.architecture, 'ARM') && '--no-deploy' || '' }} ${{ matrix.configuration == 'Release' && '--release' || '' }} --msbuildprops PackageCertificateKeyFile=${{github.workspace}}\GitHubActionsWorkflow.pfx
+        working-directory: ..\..\src
+
+      - name: Remove the pfx
+        run: |
+          $certificatePath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+          Write-Host $certificatePath
+          Remove-Item -path $certificatePath
         working-directory: ..\..\src
 
       - name: Get final folder size

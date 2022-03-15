@@ -11,7 +11,10 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: windows-2019
+    strategy:
+      matrix:
+        language: [cppwinrt, csharp]
     steps:
       - uses: actions/checkout@v2
 
@@ -19,7 +22,7 @@ jobs:
         run: npx envinfo
 
       - name: Relocate to reduce long paths
-        run:  Copy-item -Force -Recurse -Verbose "samples\Calculator" -Destination "..\..\src"
+        run:  Copy-item -Force -Recurse -Verbose "samples\Calculator\${{ matrix.language }}" -Destination "..\..\src"
 
       - name: Yarn install
         run: yarn install --frozen-lockfile

@@ -59,6 +59,7 @@
   background-color: transparent;
   font-size: 14px;
   margin-top: 10px;
+  min-width: 100px;
 }
 
 .resourcesPageSideNav {
@@ -66,7 +67,7 @@
   margin-left: -10px;
   margin-right: -10px;
   float: left;
-  width: 34.8%;
+  width: 25%;
   border-right: 1px solid $divider;
   overflow: visible;
   flex: 0 0 280px;

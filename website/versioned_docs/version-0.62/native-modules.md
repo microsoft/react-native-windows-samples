@@ -49,6 +49,8 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactConstant`         | Specifies a field or property that represents a constant. |
 | `ReactConstantProvider` | Specifies a method that provides a set of constants.      |
 | `ReactEvent`            | Specifies a field or property that represents an event.   |
+| `ReactInit`             | Specifies a class initialization module.                  |
+| `ReactFunction`         | Specifies a field that helps calling a JavaScript function. |
 
 ### 1. Authoring your Native Module
 
@@ -238,6 +240,8 @@ For events, you'll see that we created an instance of `NativeEventEmitter` passi
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
+| `REACT_INIT`             | Specifies a class initialization module.                  |
+| `ReactFunction`         | Specifies a JavaScript function that you want exposed to your native code. |
 
 ### 1. Authoring your Native Module
 
@@ -282,6 +286,8 @@ namespace NativeModuleSample
 ```
 
 The `REACT_MODULE` macro-attribute says that the class is a ReactNative native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
+
+> NOTE: Methods annotated with `REACT_METHOD` and friends must have the `noexcept` specifier, otherwise the program will not compile. Module authors should make sure all exceptions are handled inside the method.
 
 You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, "math")`.
 

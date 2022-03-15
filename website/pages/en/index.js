@@ -24,7 +24,7 @@ const textContent = {
   `,
   about: `
 **React Native for Windows + macOS brings React Native support for the
-[Windows SDK] as well as the [macOS 10.13 SDK]**. With this, you can use JavaScript to build native
+[Windows SDK] as well as the [macOS 10.14 SDK]**. With this, you can use JavaScript to build native
 Windows apps for [all devices supported by Windows 10 and higher] including PCs,
 tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
 
@@ -33,7 +33,7 @@ Some build-time tools will send telemetry to Microsoft by default. No telemetry 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows SDK]: https://developer.microsoft.com/en-us/windows/downloads
-[macOS 10.13 SDK]: https://www.apple.com/newsroom/2017/09/macos-high-sierra-now-available-as-a-free-update/
+[macOS 10.14 SDK]: https://developer.apple.com/documentation/macos-release-notes/macos-mojave-10_14-release-notes
 [all devices supported by Windows 10 and higher]: https://developer.microsoft.com/windows/get-started-windows-10
   `,
   roadmapwindows: `
@@ -61,7 +61,7 @@ Coming soon!
   - [Get started] developing a React Native for Windows app
   - Learn the **basics of React Native** using the [React Native Tutorial]
   - Learn about the core [React Native Components and APIs]
-  - Check out the [API Parity status] doc for updates on what we support from core
+  - Check out the [React Native Windows Components and APIs] doc for updates on what we support from React Native core
   - For new **Windows specific APIs** [check out our list here]
   - Learn how to **extend React Native for Windows** through [Native modules] and [Native UI components]
 
@@ -82,7 +82,7 @@ If you're curious about the **sample apps** we have published for inspiration:
 [React Native for macOS]: https://github.com/microsoft/react-native-macos
 [React Native Tutorial]: https://reactnative.dev/docs/tutorial
 [React Native Components and APIs]: https://reactnative.dev/docs/components-and-apis
-[API Parity status]: docs/parity-status
+[React Native Windows Components and APIs]: docs/parity-status
 [Windows Brushes and Themes]: docs/windowsbrush-and-theme
 [check out our list here]: docs/flyout-component
 [Native modules]: docs/native-modules
