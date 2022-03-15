@@ -1,11 +1,11 @@
 using Microsoft.ReactNative;
-using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.AppService;
 using Windows.ApplicationModel.Background;
 #if USE_WINUI3
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 #else
+using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
@@ -36,7 +36,6 @@ namespace appservicedemo
 
             Microsoft.ReactNative.Managed.AutolinkedNativeModules.RegisterAutolinkedNativeModulePackages(PackageProviders); // Includes any autolinked modules
 
-            PackageProviders.Add(new Microsoft.ReactNative.Managed.ReactPackageProvider());
             PackageProviders.Add(new ReactNativeAppServiceModule.ReactPackageProvider());
             PackageProviders.Add(new ReactPackageProvider());
 
