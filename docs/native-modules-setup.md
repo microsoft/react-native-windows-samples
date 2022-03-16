@@ -20,7 +20,7 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
 - [Reference the APIs directly from within a React Native for Windows project](#referencing-windows-apis-within-a-react-native-for-windows-app-project)
-- [Create a new native module library that can be can be distributed separately from your app](#creating-a-new-native-module-library-project)
+- [Create a new native module library that can be distributed separately from your app](#creating-a-new-native-module-library-project)
 - [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
 ## Referencing Windows APIs within a React Native for Windows app project
@@ -165,4 +165,4 @@ We are using WebdriverIO + WinAppDriver for UI testing. More details [here](http
 When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. See the [Setup Continuous Integration Pipeline for an RNW App](setup-ci.md) for more information.
 
 ### Documenting Your Module
-Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that its information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples] with your native module's information.
+Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that its information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/main/docs/supported-community-modules.md) with your native module's information.
