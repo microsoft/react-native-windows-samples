@@ -51,7 +51,10 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 | `ReactConstant`         | Specifies a field or property that represents a constant. |
 | `ReactConstantProvider` | Specifies a method that provides a set of constants.      |
 | `ReactEvent`            | Specifies a field or property that represents an event.   |
-| `ReactStruct`           | Specifies a `struct` that can be used in native methods.    |
+| `ReactStruct`           | Specifies a `struct` that can be used in native methods.  |
+| `ReactInit`             | Specifies a class initialization module.                  |
+| `ReactFunction`         | Specifies a JavaScript function that you want exposed to your native code. |
+
 
 ### 1. Authoring your Native Module
 
@@ -173,6 +176,8 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
 | `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
+| `REACT_INIT`             | Specifies a class initialization module.                  |
+| `ReactFunction`         | Specifies a JavaScript function that you want exposed to your native code. |
 
 ### 1. Authoring your Native Module
 
@@ -217,6 +222,8 @@ namespace NativeModuleSample
 ```
 
 The `REACT_MODULE` macro-attribute says that the class is a React Native native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
+
+> NOTE: Methods annotated with `REACT_METHOD` and friends must have the `noexcept` specifier, otherwise the program will not compile. Module authors should make sure all exceptions are handled inside the method.
 
 You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, L"math")`.
 

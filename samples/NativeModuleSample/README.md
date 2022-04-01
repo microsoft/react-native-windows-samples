@@ -11,7 +11,7 @@
 
 These samples showcase building Native Modules for React Native for Windows. It includes implementations in [C#](./csharp/) and [C++/WinRT](./cppwinrt/).
 
-Both implementations target React Native Windows 0.65.
+Both implementations target React Native Windows 0.67.
 
 The official documentation can be found here:
 
@@ -20,7 +20,7 @@ The official documentation can be found here:
 * [Native Modules and React Native Windows (Advanced Topics)](https://microsoft.github.io/react-native-windows/docs/native-modules-advanced)
 * [Native UI Components](https://microsoft.github.io/react-native-windows/docs/view-managers)
 
->**Note: Don't build your own projects directly out of these samples. When you publish a native module (as source), you'll want to create a new project with the correct metadata. This will also make sure that you're using unique identifiers in your project files to avoid conflicts with other native modules.**
+>**Note: Don't build your own projects directly out of these samples. When you publish a native module (as source), you'll want to create a new project with the correct metadata. This will also make sure that you're using unique identifiers in your project files (\*.csproj/\*.vcxproj) to avoid conflicts with other native modules.**
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).

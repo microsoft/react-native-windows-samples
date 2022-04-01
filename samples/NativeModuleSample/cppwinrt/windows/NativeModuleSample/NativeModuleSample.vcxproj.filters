@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Midl Include="ReactPackageProvider.idl" />
   </ItemGroup>
@@ -10,10 +10,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="FancyMath.h" />
-    <ClInclude Include="DataMarshallingExamples.h" />
-    <ClInclude Include="AsyncMethodExamples.h" />
     <ClInclude Include="ReactPackageProvider.h" />
+    <ClInclude Include="ReactNativeModule.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />

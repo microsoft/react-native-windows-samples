@@ -8,7 +8,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{59D6F7C8-E336-426F-87B9-3EAB99E3631E}</ProjectGuid>
+    <ProjectGuid>{105292E4-1617-47F4-BD40-1F3701E01673}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>calculator</RootNamespace>
@@ -160,7 +160,7 @@
       <Version>6.2.9</Version>
     </PackageReference>
     <PackageReference Include="ReactNative.Hermes.Windows">
-      <Version>0.9.0-ms.4</Version>
+      <Version>0.10.0-ms.1</Version>
     </PackageReference>
   </ItemGroup>
   <ImportGroup Label="ReactNativeWindowsTargets">

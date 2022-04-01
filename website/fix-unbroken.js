@@ -5,8 +5,22 @@
 
 const fs = require('fs');
 const path = require('path');
+const { URL } = require('url');
 
 const versions = require('./versions.json');
+
+const stringIsAValidUrl = (s, protocols = ['http', 'https']) => {
+    try {
+        url = new URL(s);
+        return protocols
+            ? url.protocol
+                ? protocols.map(x => `${x.toLowerCase()}:`).includes(url.protocol)
+                : false
+            : true;
+    } catch (err) {
+        return false;
+    }
+};
 
 const normalizePath = str => path.normalize(str).replace(/\\/g, '/');
 
@@ -20,14 +34,14 @@ const addFileToVersionedDocs = (file, version) => {
   if (!versionedDocs.hasOwnProperty(version)) {
       versionedDocs[version] = [];
   }
-  const versionDir = `versioned_docs\\version-${version}`;
+  const versionDir = `versioned_docs/version-${version}`;
   versionedDocs[version].push(file);
 };
 
 versions.forEach(version => {
-    const versionDir = `versioned_docs\\version-${version}`;
+    const versionDir = `versioned_docs/version-${version}`;
     var files = fs.readdirSync(versionDir);
-    files.forEach(filePath => {
+    files.sort().forEach(filePath => {
       const fullPath = path.join(versionDir, filePath);
       if (fs.statSync(fullPath).isFile()) {
         addFileToVersionedDocs(fullPath, version);
@@ -90,20 +104,26 @@ for (let exclusion of existingExclusions) {
     }
     else
     {
-        exclusions.push(normalizePath(exclusion));
+        let clean = ''
+        for (const part of exclusion.split(' ')) {
+            clean += `${stringIsAValidUrl(part) ? part : normalizePath(part)} `;
+        }
+        exclusions.push(clean.trimEnd());
     }
 }
 
 // Redirected files exclusions
 redirectedFiles.forEach(redirectedFile => {
-    exclusions.push(`File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`);
+    const exclusion = `File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`;
+    if (!exclusions.includes(exclusion)) {
+        exclusions.push(`File not found ${normalizePath(redirectedFile.target)} while parsing ${normalizePath(redirectedFile.source)}`);
+    }
 });
 
 console.log('Updating .unbroken_exclusions...')
-var exclusions_file = fs.createWriteStream('.unbroken_exclusions');
-exclusions_file.on('error', function(err) { /* error handling */ });
+let output = '';
 exclusions.forEach(function(v) {
     console.log('Excluding: ' + v);
-    exclusions_file.write(v + '\r\n');
+    output += v + '\n';
 });
-exclusions_file.end();
+fs.writeFileSync('.unbroken_exclusions', output);

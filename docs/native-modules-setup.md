@@ -20,14 +20,14 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
 
 - [Reference the APIs directly from within a React Native for Windows project](#referencing-windows-apis-within-a-react-native-for-windows-app-project)
-- [Create a new native module library that can be can be distributed separately from your app](#creating-a-new-native-module-library-project)
+- [Create a new native module library that can be distributed separately from your app](#creating-a-new-native-module-library-project)
 - [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
 
 ## Referencing Windows APIs within a React Native for Windows app project
 
 If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
-1. You followed the [Getting Started](.\getting-started.md) guide, where
+1. You followed the [Getting Started](getting-started.md) guide, where
 1. You ran `npx react-native-windows-init` to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
@@ -148,14 +148,14 @@ If you are working on an existing module that already has iOS and Android sample
 
 1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app.
 2. Copy the `Windows` folder from the blank RNW app into the existing sample app's sample app's folder. (The RNW CLI helps create the correct project setup that you can then copy directly into the sample app.)
-3. Open `sln` and `vxcproj` files and check `node_module` reference paths. Fix the paths if necessary based on how the folders are structured in native module repo ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows.sln#L11-L42)).
+3. Open `sln` and `vxcproj` files and check `node_module` reference paths. Fix the paths if necessary based on how the folders are structured in native module repo ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/example/windows/WebViewWindows.sln#L11-L42)).
 4. Open the solution with Visual Studio and [link native module](native-modules-using.md).
 > The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
 
-5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/master/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)).
-6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/master/package.json#L18)).
-7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/master/react-native.config.js#L28-L33)).
-8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/master/example/windows/WebViewWindows/App.cpp#L25)).
+5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)).
+6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/package.json#L18)).
+7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/react-native.config.js#L28-L33)).
+8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
 We are using WebdriverIO + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/main/docs/e2e-testing.md#appium). For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
@@ -165,4 +165,4 @@ We are using WebdriverIO + WinAppDriver for UI testing. More details [here](http
 When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. See the [Setup Continuous Integration Pipeline for an RNW App](setup-ci.md) for more information.
 
 ### Documenting Your Module
-Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that its information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples] with your native module's information.
+Once your module is complete, update [react-native-community/directory](https://github.com/react-native-community/directory) so that its information on your native module is up to date. If you are building a native module which will be maintained by Microsoft, please update the Supported Community Modules documentation in [react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/main/docs/supported-community-modules.md) with your native module's information.

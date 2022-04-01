@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="ReactNativeWindowsProps">
@@ -15,7 +15,7 @@
     <AssemblyName>NativeModuleSample</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -96,10 +96,10 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AsyncMethodExamples.cs" />
     <Compile Include="DataMarshallingExamples.cs" />
     <Compile Include="FancyMath.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReactPackageProvider.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -107,7 +107,7 @@
       <Version>6.2.9</Version>
     </PackageReference>
     <PackageReference Include="ReactNative.Hermes.Windows">
-      <Version>0.8.0-ms.0</Version>
+      <Version>0.10.0-ms.1</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '16.0' ">

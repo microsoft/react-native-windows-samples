@@ -4,7 +4,7 @@ See [../README.md](../README.md) for details of this sample.
 
 See [../cppwinrt/](../cppwinrt/) for a C++/Winrt version of this sample.
 
-It currently targets React Native Windows 0.66.
+It currently targets React Native Windows 0.67.
 
 ### Setup
 See [../README.md#Setup](../README.md#Setup).
@@ -30,7 +30,7 @@ To upgrade this sample to the latest version of RNW:
 4. Add Windows support:
     ```cmd
     cd Calculator
-    npx react-native-windows-init --version latest --overwrite
+    npx react-native-windows-init --version latest --overwrite --language cs
     ```
 5. Rename the folder to csharp
     ```
@@ -47,4 +47,5 @@ To upgrade this sample to the latest version of RNW:
     ```
     npx react-native run-windows
     ```
-8. Update this readme with the new major version at the top.
+8. Look at windows/Calculator/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
+9. Update this readme with the new major version at the top.
