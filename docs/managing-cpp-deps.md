@@ -10,10 +10,10 @@ Details to consider when consuming community modules or other Visual C++ project
 Applications with native code, either written on `C#` or `C++`, may add source dependencies on native Visual C++ (`.vcxproj`) projects.\
 Meaning, such dependencies will be built as part of the application.
 
-Starting with version `0.68`, React Native for Windows apps use the [`PackageReference`](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) restore project style for native `C++` NuGet dependencies.\
-The main change consists in NuGet packages being directly loaded from the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [`repositoryPath`](https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file)).
+Starting with version `0.68`, React Native for Windows apps use the [`PackageReference`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) restore project style for native `C++` NuGet dependencies.\
+The main change consists of NuGet packages being placed directly in the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [`repositoryPath`](https://docs.microsoft.com/nuget/reference/nuget-config-file)).
 
-This may conflict with Visual C++ dependencies that use the more common [`packages.config`](https://docs.microsoft.com/en-us/nuget/reference/packages-config) project style, including community modules generated targeting versions before 0.68.
+This may conflict with C++ dependencies that use the more common [`packages.config`](https://docs.microsoft.com/nuget/reference/packages-config) project style, including community modules generated targeting versions older than 0.68.
 
 ## Updating your app
 
