@@ -1,0 +1,81 @@
+{
+  "version-0.68-docs": {
+    "The Basics (Windows)": [
+      "version-0.68-getting-started",
+      "version-0.68-rnw-dependencies",
+      "version-0.68-run-windows-cli",
+      "version-0.68-parity-status",
+      "version-0.68-config",
+      "version-0.68-windowsbrush-and-theme",
+      "version-0.68-releases",
+      "version-0.68-platform",
+      "version-0.68-upgrade-app",
+      "version-0.68-setup-ci",
+      "version-0.68-app-publishing"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.68-native-modules",
+      "version-0.68-view-managers",
+      "version-0.68-native-modules-setup",
+      "version-0.68-native-modules-using",
+      "version-0.68-native-modules-autolinking",
+      "version-0.68-native-modules-advanced",
+      "version-0.68-supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "version-0.68-native-code",
+      "version-0.68-native-code-language-choice",
+      "version-0.68-native-modules-marshalling-data",
+      "version-0.68-native-modules-async",
+      "version-0.68-native-modules-jsvalue",
+      "version-0.68-native-modules-csharp-codegen",
+      "version-0.68-win10-vm",
+      "version-0.68-customizing-sdk-versions",
+      "version-0.68-managing-cpp-deps"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.68-rnm-getting-started",
+      "version-0.68-rnm-dependencies"
+    ],
+    "Troubleshooting": [
+      "version-0.68-native-modules-troubleshooting",
+      "version-0.68-metro-config-out-tree-platforms"
+    ],
+    "Experimental": [
+      "version-0.68-hermes",
+      "version-0.68-NuGet",
+      "version-0.68-nuget-update",
+      "version-0.68-winui3"
+    ]
+  },
+  "version-0.68-apis": {
+    "Components (Windows)": [
+      "version-0.68-flyout-component",
+      "version-0.68-glyph-component",
+      "version-0.68-popup-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.68-apptheme-api",
+      "version-0.68-ikeyboardprops-api",
+      "version-0.68-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.68-native-api/IJSValueReader",
+      "version-0.68-native-api/IJSValueWriter",
+      "version-0.68-native-api/IReactContext",
+      "version-0.68-native-api/IReactDispatcher",
+      "version-0.68-native-api/IReactModuleBuilder",
+      "version-0.68-native-api/IReactNonAbiValue",
+      "version-0.68-native-api/IReactPackageBuilder",
+      "version-0.68-native-api/IReactPackageProvider",
+      "version-0.68-native-api/IReactPropertyBag",
+      "version-0.68-native-api/IRedBoxHandler",
+      "version-0.68-native-api/IViewManager",
+      "version-0.68-native-api/ReactApplication",
+      "version-0.68-native-api/ReactInstanceSettings",
+      "version-0.68-native-api/ReactNativeHost",
+      "version-0.68-native-api/XamlUIService",
+      "version-0.68-native-api/Native-API-Reference"
+    ]
+  }
+}

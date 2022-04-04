@@ -44,6 +44,8 @@ If the new value is null, then the property is removed.
 
 ## Referenced by
 - [`IReactContext`](IReactContext)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
+- [`UIBatchCompleteCallback`](UIBatchCompleteCallback)
 - [`XamlUIService`](XamlUIService)

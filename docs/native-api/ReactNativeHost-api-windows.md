@@ -71,5 +71,6 @@ The React instance destruction can be observed with the [`ReactInstanceSettings.
 
 ## Referenced by
 - [`ReactApplication`](ReactApplication)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactRootView`](ReactRootView)
 - [`RedBoxHelper`](RedBoxHelper)

@@ -2,12 +2,14 @@
 id: Native-API-Reference
 title: namespace Microsoft.ReactNative
 sidebar_label: Full reference
+
 ---
 
 ## Enums
 - [`AccessibilityRoles`](AccessibilityRoles)
 - [`AccessibilityStates`](AccessibilityStates)
 - [`AccessibilityValue`](AccessibilityValue)
+- [`BackNavigationHandlerKind`](BackNavigationHandlerKind)
 - [`CanvasComposite`](CanvasComposite)
 - [`CanvasEdgeBehavior`](CanvasEdgeBehavior)
 - [`EffectBorderMode`](EffectBorderMode)
@@ -16,7 +18,9 @@ sidebar_label: Full reference
 - [`JSValueType`](JSValueType)
 - [`JsiErrorType`](JsiErrorType)
 - [`JsiValueKind`](JsiValueKind)
+- [`LogLevel`](LogLevel)
 - [`MethodReturnType`](MethodReturnType)
+- [`PointerEventKind`](PointerEventKind)
 - [`RedBoxErrorType`](RedBoxErrorType)
 - [`ViewManagerPropertyType`](ViewManagerPropertyType)
 ## Interfaces
@@ -37,7 +41,10 @@ sidebar_label: Full reference
 - [`IReactPropertyBag`](IReactPropertyBag)
 - [`IReactPropertyName`](IReactPropertyName)
 - [`IReactPropertyNamespace`](IReactPropertyNamespace)
+- [`IReactRootViewExperimental`](IReactRootViewExperimental)
 - [`IReactSettingsSnapshot`](IReactSettingsSnapshot)
+- [`IReactViewHost`](IReactViewHost)
+- [`IReactViewInstance`](IReactViewInstance)
 - [`IRedBoxErrorFrameInfo`](IRedBoxErrorFrameInfo)
 - [`IRedBoxErrorInfo`](IRedBoxErrorInfo)
 - [`IRedBoxHandler`](IRedBoxHandler)
@@ -46,9 +53,11 @@ sidebar_label: Full reference
 - [`IViewManagerRequiresNativeLayout`](IViewManagerRequiresNativeLayout)
 - [`IViewManagerWithChildren`](IViewManagerWithChildren)
 - [`IViewManagerWithCommands`](IViewManagerWithCommands)
+- [`IViewManagerWithDropViewInstance`](IViewManagerWithDropViewInstance)
 - [`IViewManagerWithExportedEventTypeConstants`](IViewManagerWithExportedEventTypeConstants)
 - [`IViewManagerWithExportedViewConstants`](IViewManagerWithExportedViewConstants)
 - [`IViewManagerWithNativeProperties`](IViewManagerWithNativeProperties)
+- [`IViewManagerWithPointerEvents`](IViewManagerWithPointerEvents)
 - [`IViewManagerWithReactContext`](IViewManagerWithReactContext)
 ## Structs
 - [`AccessibilityAction`](AccessibilityAction)
@@ -77,12 +86,15 @@ sidebar_label: Full reference
 - [`JsiRuntime`](JsiRuntime)
 - [`QuirkSettings`](QuirkSettings)
 - [`ReactApplication`](ReactApplication)
+- [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactDispatcherHelper`](ReactDispatcherHelper)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`ReactNotificationServiceHelper`](ReactNotificationServiceHelper)
+- [`ReactPointerEventArgs`](ReactPointerEventArgs)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
 - [`ReactRootView`](ReactRootView)
+- [`ReactViewOptions`](ReactViewOptions)
 - [`RedBoxHelper`](RedBoxHelper)
 - [`ViewControl`](ViewControl)
 - [`ViewPanel`](ViewPanel)
@@ -97,6 +109,7 @@ sidebar_label: Full reference
 - [`JSValueArgWriter`](JSValueArgWriter)
 - [`JsiByteArrayUser`](JsiByteArrayUser)
 - [`JsiHostFunction`](JsiHostFunction)
+- [`LogHandler`](LogHandler)
 - [`MethodDelegate`](MethodDelegate)
 - [`MethodResultCallback`](MethodResultCallback)
 - [`ReactCreatePropertyValue`](ReactCreatePropertyValue)
@@ -105,3 +118,4 @@ sidebar_label: Full reference
 - [`ReactNotificationHandler`](ReactNotificationHandler)
 - [`ReactViewManagerProvider`](ReactViewManagerProvider)
 - [`SyncMethodDelegate`](SyncMethodDelegate)
+- [`UIBatchCompleteCallback`](UIBatchCompleteCallback)

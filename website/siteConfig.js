@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const defaultVersionShown = '0.67';
+const defaultVersionShown = "0.68";
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
@@ -53,13 +53,13 @@ const siteConfig = {
     backgroundColor: "white",
     // we don't use these any more but docusaurus complains if we don't
     primaryColor: "black",
-    secondaryColor: "gray"
+    secondaryColor: "gray",
   },
 
   usePrism: ["javascript", "typescript", "js", "jsx", "cpp", "csharp", "json"],
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: "solarized-dark"
+    theme: "solarized-dark",
   },
 
   // Add custom scripts here that would be placed in <script> tags.
@@ -67,13 +67,11 @@ const siteConfig = {
     "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js",
     "https://platform.twitter.com/widgets.js",
     "https://buttons.github.io/buttons.js",
-    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
-    '/react-native-windows/js/code-block-buttons.js',
+    "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
+    "/react-native-windows/js/code-block-buttons.js",
   ],
 
-  stylesheets: [
-    '/react-native-windows/css/code-block-buttons.css',
-  ],
+  stylesheets: ["/react-native-windows/css/code-block-buttons.css"],
 
   // On page navigation for the current documentation page.
   onPageNav: "separate",
@@ -86,15 +84,14 @@ const siteConfig = {
 
   scrollToTop: true,
   scrollToTopOptions: {
-    zIndex: 100
+    zIndex: 100,
   },
 
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
   docsSideNavCollapsible: true,
 
-  customFields: require('./showcaseApps.json'),
-
+  customFields: require("./showcaseApps.json"),
 };
 
 module.exports = siteConfig;

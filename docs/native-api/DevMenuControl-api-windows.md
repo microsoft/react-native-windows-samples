@@ -52,6 +52,18 @@ Extends: [`UserControl`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Cont
 ### RemoteDebugText
 `readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `RemoteDebugText`
 
+### SamplingProfiler
+`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `SamplingProfiler`
+
+### SamplingProfilerDescText
+`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `SamplingProfilerDescText`
+
+### SamplingProfilerIcon
+`readonly`  [`FontIcon`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon) `SamplingProfilerIcon`
+
+### SamplingProfilerText
+`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `SamplingProfilerText`
+
 
 ## Constructors
 ### DevMenuControl

@@ -1,0 +1,21 @@
+---
+id: PointerEventKind
+title: PointerEventKind
+---
+
+Kind: `enum`
+
+> **EXPERIMENTAL**
+
+| Name |  Value | Description |
+|--|--|--|
+|`None` | 0x0  |  Default pointer event kind that corresponding to events that should be ignored by the React root view pointer event handler.|
+|`Start` | 0x1  |  Pointer event kind corresponding to @Windows.UI.Xaml.UIElement.PointerPressedEvent on the React root view.|
+|`End` | 0x2  |  Pointer event kind corresponding to @Windows.UI.Xaml.UIElement.PointerReleasedEvent on the React root view.|
+|`Move` | 0x3  |  Pointer event kind corresponding to @Windows.UI.Xaml.UIElement.PointerMovedEvent on the React root view.|
+|`Cancel` | 0x4  |  Pointer event kind corresponding to @Windows.UI.Xaml.UIElement.PointerCanceledEvent on the React root view.|
+|`CaptureLost` | 0x5  |  Pointer event kind corresponding to @Windows.UI.Xaml.UIElement.PointerCaptureLostEvent on the React root view.|
+
+
+## Referenced by
+- [`ReactPointerEventArgs`](ReactPointerEventArgs)

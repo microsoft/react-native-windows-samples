@@ -26,16 +26,7 @@ Set this to a location the application has write access to in order for bytecode
 ### DebugBundlePath
  string `DebugBundlePath`
 
-When loading from a bundle server (such as metro), this is the path that will be requested from the server. If this is not provided the value of [`JavaScriptBundleFile`](#javascriptbundlefile) or [`JavaScriptMainModuleName`](#javascriptmainmodulename) is used.
-
-### DebugHost
- string `DebugHost`
-
-> **Deprecated**: This has been replaced with [`SourceBundleHost`](#sourcebundlehost) and [`SourceBundlePort`](#sourcebundleport) and will be removed in version 0.65.
-
-**Default value**: `localhost:8081`
-
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload) or [`UseWebDebugger`](#usewebdebugger) this is the server that will be used to load the bundle from.
+When loading from a bundle server (such as metro), this is the path that will be requested from the server. If this is not provided, the value of [`JavaScriptBundleFile`](#javascriptbundlefile) is used.
 
 ### DebuggerBreakOnNextLine
  bool `DebuggerBreakOnNextLine`
@@ -51,6 +42,12 @@ This can help debug issues hit early in the JavaScript bundle load.
 
 When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the port that the JavaScript engine debugger will run on.
 
+### DebuggerRuntimeName
+ string `DebuggerRuntimeName`
+
+Name to associate with the JavaScript runtime when debugging. 
+This name will show up in the list of JavaScript runtimes to attach to in edge://inspect or other debuggers
+
 ### EnableByteCodeCaching
  bool `EnableByteCodeCaching`
 
@@ -61,10 +58,17 @@ Subsequent runs of the application should be faster as the JavaScript will be lo
 [`ByteCodeFileUri`](#bytecodefileuri) must be set to a location the application has write access to in order for the bytecode to be successfully cached.
 **Note that currently the byte code generation is not implemented for UWP applications.**
 
+### EnableDefaultCrashHandler
+ bool `EnableDefaultCrashHandler`
+
+**Default value**: `false`
+
+Enables the default unhandled exception handler that logs additional information into a text file for [Windows Error Reporting](https://docs.microsoft.com/windows/win32/wer/windows-error-reporting).
+
 ### EnableDeveloperMenu
  bool `EnableDeveloperMenu`
 
-> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing. It will be removed in version 0.65.
+> **Deprecated**: This property has been replaced by [`UseDeveloperSupport`](#usedevelopersupport). In version 0.63 both properties will do the same thing. It will be removed in a future version.
 
 This controls whether various developer experience features are available for this instance. In particular the developer menu, and the default `RedBox` experience.
 
@@ -81,7 +85,7 @@ Flag controlling whether the JavaScript engine uses JIT compilation.
 **Default value**: `JSIEngine.Chakra`
 
 The [`JSIEngine`](JSIEngine) override to be used with the React instance.
-In order the override to work the Microsoft.ReactNative must be compiled with support of that engine.
+In order for the override to work, Microsoft.ReactNative must be compiled with support of that engine. This override will be ignored when [`UseWebDebugger`](#usewebdebugger) is set to true, since the browser must use its own engine to debug correctly.
 
 ### JavaScriptBundleFile
  string `JavaScriptBundleFile`
@@ -90,12 +94,10 @@ In order the override to work the Microsoft.ReactNative must be compiled with su
 
 The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath). The `.bundle` extension will be appended to the end, when looking for the bundle file.
 
-### JavaScriptMainModuleName
- string `JavaScriptMainModuleName`
+### NativeLogger
+ [`LogHandler`](LogHandler) `NativeLogger`
 
-> **Deprecated**: Use [`JavaScriptBundleFile`](#javascriptbundlefile) instead. It will be removed in version 0.65.
-
-Name of the JavaScript bundle file. If [`JavaScriptBundleFile`](#javascriptbundlefile) is specified it is used instead.
+Function that will be hooked into the JavaScript instance as global.nativeLoggingHook. This allows native hooks for JavaScript's console implementation. If this is not set then logs will print output to the native debug output in debug builds, and no-op in release builds.
 
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
@@ -121,19 +123,26 @@ Use [`IReactContext.Properties`](IReactContext#properties-1) to access this [`IR
 
 Provides an extension point to allow custom error handling within the react instance. See [`IRedBoxHandler`](IRedBoxHandler) for more information.
 
+### RequestInlineSourceMap
+ bool `RequestInlineSourceMap`
+
+**Default value**: `true`
+
+When using [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this controls whether the bundler should include inline source maps.If set, the bundler will include the source maps inline (this will improve debugging experience, but for very large bundles it could have a significant performance hit)
+
 ### SourceBundleHost
  string `SourceBundleHost`
 
 **Default value**: `localhost`
 
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
+When using [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this is the server hostname that will be used to load the bundle from.
 
 ### SourceBundlePort
  uint16_t `SourceBundlePort`
 
 **Default value**: `8081`
 
-When using a [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this is the server port that will be used to load the bundle from.
+When using [`UseFastRefresh`](#usefastrefresh), [`UseLiveReload`](#uselivereload), or [`UseWebDebugger`](#usewebdebugger) this is the server port that will be used to load the bundle from.
 
 ### UIDispatcher
  [`IReactDispatcher`](IReactDispatcher) `UIDispatcher`
