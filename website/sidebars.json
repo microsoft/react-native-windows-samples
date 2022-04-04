@@ -30,7 +30,8 @@
       "native-modules-jsvalue",
       "native-modules-csharp-codegen",
       "win10-vm",
-      "customizing-sdk-versions"
+      "customizing-sdk-versions",
+      "managing-cpp-deps"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",

@@ -46,8 +46,6 @@ When you create a C# or C++ React Native for Windows app, it is written in such 
 
 For C++ apps, in addition to setting the property value, you will also need to modify the `packages.config` file which can be found next to the app project `.vcxproj` file, to point to the updated package version.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--C# app-->
 
 #### `windows\ExperimentalFlags.props`
 
@@ -57,40 +55,3 @@ For C++ apps, in addition to setting the property value, you will also need to m
   <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
 </PropertyGroup>
 ```
-
-#### `node_modules\react-native-windows\Microsoft.ReactNative\packages.config`
-
-```diff
-<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="Microsoft.Windows.CppWinRT" version="2.0.200615.7" targetFramework="native" />
-  <!-- more packages -->
--  <package id="Microsoft.UI.Xaml" version="2.3.191129002" targetFramework="native" />
-+  <package id="Microsoft.UI.Xaml" version="2.6.0" targetFramework="native" />
-</packages>
-```
-
-
-<!--C++ app-->
-
-#### `windows\ExperimentalFlags.props`
-
-```xml
-<PropertyGroup>
-  <!-- other properties -->
-  <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
-</PropertyGroup>
-```
-
-#### `windows\MyApp\packages.config`
-
-```diff
-<?xml version="1.0" encoding="utf-8"?>
-<packages>
-  <package id="Microsoft.Windows.CppWinRT" version="2.0.200615.7" targetFramework="native" />
--  <package id="Microsoft.UI.Xaml" version="2.3.191129002" targetFramework="native" />
-+  <package id="Microsoft.UI.Xaml" version="2.6.0" targetFramework="native" />
-</packages>
-```
-
-<!--END_DOCUSAURUS_CODE_TABS-->
