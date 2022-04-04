@@ -42,6 +42,12 @@ When [`UseDirectDebugger`](#usedirectdebugger) is enabled, this controls the por
 A read-only snapshot of the [`ReactInstanceSettings.JavaScriptBundleFile`](ReactInstanceSettings#javascriptbundlefile) property value at the time when the React instance was created.
 The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath). The `.bundle` extension will be appended to the end, when looking for the bundle file.
 
+### RequestInlineSourceMap
+`readonly`  bool `RequestInlineSourceMap`
+
+A read-only snapshot of the [`ReactInstanceSettings.RequestInlineSourceMap`](ReactInstanceSettings#requestinlinesourcemap) property value at the time when the React instance was created.
+If set, the bundler will include the source maps inline (this will improve debugging experience, but for very large bundles it could have a significant performance hit)
+
 ### SourceBundleHost
 `readonly`  string `SourceBundleHost`
 

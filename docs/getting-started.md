@@ -14,9 +14,10 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```bat
-npx react-native init <projectName> --template react-native@^0.67.0
+npx react-native init <projectName> --template react-native@^0.68.0
 ```
->To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
+
+> To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
 
 ### Navigate into this newly created directory
 
@@ -37,6 +38,7 @@ npx react-native-windows-init --overwrite
 > The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
 
 For information on the options that `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
+
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
@@ -71,16 +73,16 @@ For information on the options that `react-native-windows-init` takes see [React
   - Create a new file in the applications root directory, `.vscode/launch.json` and paste the following configuration:
   ```json
   {
-      "version": "0.2.0",
-      "configurations": [
-          {
-              "name": "Debug Windows",
-              "cwd": "${workspaceFolder}",
-              "type": "reactnative",
-              "request": "launch",
-              "platform": "windows"
-          }
-      ]
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Windows",
+        "cwd": "${workspaceFolder}",
+        "type": "reactnative",
+        "request": "launch",
+        "platform": "windows"
+      }
+    ]
   }
   ```
   - Press `F5` or navigate to the debug menu (alternatively press `Ctrl+Shift+D`) and in the Debug drop-down select "Debug Windows" and press the green arrow to run the application.
@@ -102,5 +104,6 @@ Follow these steps to build a version of your app that you can install or publis
 > If you're getting different runtime behavior between the Release and Debug configurations, consider disabling the `UseWebDebugger` setting in [`App.cpp`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cpp-app/src/App.cpp#L30) or [`App.xaml.cs`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cs-app/src/App.xaml.cs#L20) to get the same behavior in the Debug configuration.
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
+
 </body>
 </html>

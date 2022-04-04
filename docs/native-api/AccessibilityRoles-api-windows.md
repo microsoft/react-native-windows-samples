@@ -33,11 +33,12 @@ Kind: `enum`
 |`Tab` | 0x17  |  |
 |`TabList` | 0x18  |  |
 |`Timer` | 0x19  |  |
-|`ToolBar` | 0x1a  |  |
-|`List` | 0x1b  |  |
-|`ListItem` | 0x1c  |  |
-|`Unknown` | 0x1d  |  |
-|`CountRoles` | 0x1e  |  |
+|`ToggleButton` | 0x1a  |  |
+|`ToolBar` | 0x1b  |  |
+|`List` | 0x1c  |  |
+|`ListItem` | 0x1d  |  |
+|`Unknown` | 0x1e  |  |
+|`CountRoles` | 0x1f  |  |
 
 
 ## Referenced by
