@@ -8,7 +8,7 @@ This guide will help you get started on setting up your very first continuous in
 
 ## Setting Up a Continuous Integration Pipeline using GitHub Actions
 
-When done developing your app, it's good practice to setup a CI pipeline with automated builds and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/actions/getting-started-with-github-actions/about-github-actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
+When done developing your app, it's good practice to setup a CI pipeline with automated builds and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
 
 The VM images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirements.
 
@@ -41,7 +41,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
 ```
 Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/v11.17.2/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
 
-Save the YAML file to `.github\workflows\` and then commit. To learn more about YAML syntax, see [Workflow syntax for GitHub Actions](https://docs.github.com/actions/reference/workflow-syntax-for-github-actions).
+Save the YAML file to `.github\workflows\` and then commit. To learn more about YAML syntax, see [Workflow syntax for GitHub Actions](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions).
 
 > GitHub Actions should be enabled by default, if it's not enabled for some reason you can go to Settings->Actions tab of the repo to enable it (requires owner access).
 
@@ -53,7 +53,7 @@ Now push your changes and the CI pipeline should be up and running.
 ### Storing Certificates Securely
 There are a several options where you can securely store your certificate information:
 
-- [GitHub Secrets](https://docs.github.com/actions/reference/encrypted-secrets)
+- [GitHub Secrets](https://docs.github.com/actions/security-guides/encrypted-secrets)
 - [Azure Secure Files](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)
 - [Azure Key Vault Secrets](https://docs.microsoft.com/azure/key-vault/secrets/about-secrets)
 

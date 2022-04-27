@@ -383,7 +383,7 @@ We are using Appium + WinAppDriver for UI testing. More details [here](https://g
 
 ### Setup CI (continuous integration) pipeline for your module
 
-When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
+When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
 
 The vm images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirments.
 
@@ -441,7 +441,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
 ```
 Check out the full [react-native-webview example](https://github.com/react-native-webview/react-native-webview/blob/v11.17.2/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
 
-Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
+Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions).
 
 > GitHub Actions should be enabled by default, if it's not enabled for some reason you can go to Settings->Actions tab of the repo to enable it (requires owner access).
 
