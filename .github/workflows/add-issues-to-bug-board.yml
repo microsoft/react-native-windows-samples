@@ -1,0 +1,16 @@
+name: Add issues to React Native Bug Board
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@main
+        with:
+          project-url: https://github.com/orgs/microsoft/projects/235
+          github-token: ${{ secrets.RNBOT_GH_TOKEN }}
