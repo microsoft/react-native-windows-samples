@@ -1,6 +1,7 @@
 ---
-id: NuGet
+id: version-0.68-NuGet
 title: Using react-native-windows NuGet packages
+original_id: NuGet
 ---
 
 >**This documentation and the underlying platform code is a work in progress.**

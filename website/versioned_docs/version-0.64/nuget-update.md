@@ -16,11 +16,11 @@ You can find the npm version by opening `package.json` at the root of your proje
   ...
   "dependencies": {
     ...
-    "react-native-windows": "0.63.0"
+    "react-native-windows": "0.64.0"
   },
   ...
 ```
-In this example the npm version for `react-native-windows` is `0.63.0`.  Note that if you use preview, Your version might include a preview marker like `0.64.0-preview.3`. 
+In this example the npm version for `react-native-windows` is `0.64.0`.  Note that if you use preview, Your version might include a preview marker like `0.65.0-preview.1`. 
 
 # Determine and update the NuGet version
 For Windows there are two project types: C++ and C#. If you don't know which one you can look in the `windows/MyProject` folder. 
@@ -43,7 +43,7 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
 1. Find the Package reference section:
    ```xml
     <PackageReference Include="Microsoft.ReactNative.Managed">
-      <Version>0.63.0</Version>
+      <Version>0.64.0</Version>
     </PackageReference>
     ```
 1. Change the version element.
@@ -70,8 +70,8 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
 1. Update the version attributes of both `Microsoft.ReactNative` and `Microsoft.ReactNative.Cxx` packages
 1. Open `windows/MyProject/MyProject.vcxproj` in a text editor.
 1. Perform a search and replace for: 
-   * `packages\Microsoft.ReactNative.0.63.0`
-   * `packages\Microsoft.ReactNative.Cxx.0.63.0`
+   * `packages\Microsoft.ReactNative.0.64.0`
+   * `packages\Microsoft.ReactNative.Cxx.0.64.0`
    and replace it with the the version number of the npm package.
    There should be multiple strings to replace.
 
