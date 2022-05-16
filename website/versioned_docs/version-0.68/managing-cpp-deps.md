@@ -8,11 +8,9 @@ Details to consider when consuming community modules or other Visual C++ project
 
 ### Details
 
-Applications with native code, either written on `C#` or `C++`, may add source dependencies on native Visual C++ (`.vcxproj`) projects.\
-Meaning, such dependencies will be built as part of the application.
+Applications with native code, either written on `C#` or `C++`, may add source dependencies on native Visual C++ (`.vcxproj`) projects. Meaning, such dependencies will be built as part of the application.
 
-Starting with version `0.68`, React Native for Windows apps use the [`PackageReference`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) restore project style for native `C++` NuGet dependencies.\
-The main change consists of NuGet packages being placed directly in the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [`repositoryPath`](https://docs.microsoft.com/nuget/reference/nuget-config-file)).
+Starting with version `0.68`, React Native for Windows apps use the [`PackageReference`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) restore project style for native `C++` NuGet dependencies. The main change consists of NuGet packages being placed directly in the user account's `globalPackagesFolder` cache instead of also copying them into a local folder relative to the Visual Studio Solution location (see [`repositoryPath`](https://docs.microsoft.com/nuget/reference/nuget-config-file)).
 
 This may conflict with C++ dependencies that use the more common [`packages.config`](https://docs.microsoft.com/nuget/reference/packages-config) project style, including community modules generated targeting versions older than 0.68.
 
@@ -26,8 +24,7 @@ yarn add @react-native-picker/picker
 
 ### Add a `packages.config` file to your app's project directory
 
-The React Native Windows build system will try to build the dependency from source.\
-Because it uses the `packages.config` restore style, it will most likely expect its own NuGet dependencies to be restored at `$(SolutionDir)packages\`.
+The React Native Windows build system will try to build the dependency from source. Because it uses the `packages.config` restore style, it will most likely expect its own NuGet dependencies to be restored at `$(SolutionDir)packages\`.
 
 #### See [`node_modules\@react-native-picker\picker\windows\ReactNativePicker\ReactNativePicker.vcxproj`](https://github.com/react-native-picker/picker/blob/v2.2.1/windows/ReactNativePicker/ReactNativePicker.vcxproj#L156)
 
