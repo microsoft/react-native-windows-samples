@@ -92,7 +92,7 @@ No matter what JavaScript framework you choose for native app testing, you have 
 
 ### [Locators WinAppDriver supports](https://github.com/microsoft/WinAppDriver/blob/master/Docs/AuthoringTestScripts.md#supported-locators-to-find-ui-elements)
 
-WinAppDriver provides rich API to help locate the UI element. If [testID](https://facebook.github.io/react-native/docs/picker-item#testid) is specified in React Native app for Windows, the locator strategy should choose `accessibility id`.
+WinAppDriver provides rich API to help locate the UI element. If [testID](https://reactnative.dev/docs/0.60/picker-item#testid) is specified in React Native app for Windows, the locator strategy should choose `accessibility id`.
 
 A unique `accessiblity id`/`testID` per Window is recommended for React Native Windows E2E testing when authoring the test app and test cases. To ease the maintain effort, all testIDs are defined in Consts.ts, then be imported by test app and test page objects or test cases.
 
