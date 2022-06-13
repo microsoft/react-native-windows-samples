@@ -133,7 +133,7 @@ class Resources extends React.Component {
                 <a href="./resources" className='resourcesSideNavLink'>Repos</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a className="resourcesSideNavLink selected" >News & Social</a>
+                <a className="resourcesSideNavLink selected" >News &amp; Social</a>
               </div>
               <div className="resourcesPageSideNavOptions">
                 <a href="./resources-videos" className="resourcesSideNavLink" >Videos</a>
@@ -155,5 +155,7 @@ class Resources extends React.Component {
     );
   }
 }
+
+Resources.title = "Resources - News & Social";
 
 module.exports = Resources;
