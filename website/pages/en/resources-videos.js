@@ -105,7 +105,7 @@ class Resources extends React.Component {
         <div className="content">
           {videoUrls.map(video => <iframe style={{ width: 560, height: 315, marginBottom: 16 }} src={`https://www.youtube.com/embed/${video.yt}`}
             title={video.title} frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />)}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />)}
         </div>
       </Section>
     );
@@ -120,7 +120,7 @@ class Resources extends React.Component {
                 <a href="./resources" className={'resourcesSideNavLink '}>Repos</a>
               </div>
               <div className="resourcesPageSideNavOptions">
-                <a href="./resources-news-social" className="resourcesSideNavLink" >News & Social</a>
+                <a href="./resources-news-social" className="resourcesSideNavLink" >News &amp; Social</a>
               </div>
               <div className="resourcesPageSideNavOptions">
                 <a className="resourcesSideNavLink selected" >Videos</a>
@@ -142,5 +142,7 @@ class Resources extends React.Component {
     );
   }
 }
+
+Resources.title = "Resources - Videos";
 
 module.exports = Resources;
