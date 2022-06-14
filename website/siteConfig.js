@@ -32,6 +32,7 @@ const siteConfig = {
     { blog: true, label: "Blog" },
     { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/main/samples", label: "Samples" },
+    { page: "support", label: "Support" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
   ],
 
