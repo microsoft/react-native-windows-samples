@@ -1,18 +1,24 @@
 /* Support Page */
 
-table.supportMatrix tr th, table.supportMatrix tr td {
+h1 {
+  font-size: 60px;
+  margin-top: -20px;
+  font-weight: bold;
+}
+
+table tr th, table tr td {
   text-align: center;
 }
 
-table.supportMatrix td a {
+table td a {
   text-decoration: underline;
 }
 
-table.supportMatrix td a:hover {
+table td a:hover {
   text-decoration: none;
 }
 
-.footnote {
+.footnote p {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.4);
 }
