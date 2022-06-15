@@ -53,14 +53,13 @@ See below for further details on each support phase. For further details on the 
 
 A stable version of RNW enters *Active Support* status as soon as the first official, non-preview, package of that stable version is published to NPM. This support continues with each patch release within that stable version.
 
-It is expected that the stable release branch is "stable" and will not take breaking API or template changes (relative to the first official release in that branch).
+It is expected that the stable release branch is "stable" and will not take breaking API or project template changes (relative to the first official release in that branch).
 
-The RNW Team commits to providing support for fixing issues that do not require breaking changes, including but not limited to:
+While in *Active Support*, the RNW Team commits to providing support for this stable version, fixing issues that do not require breaking changes, including but not limited to:
 
 - Security and/or legal issues
 - Build and/or tooling issues
-- Critical functional issues
-- Non-critical functional issues
+- Critical and/or important functional issues (as determined by the RNW Team)
 
 *Active Support* for a stable version ends one month after the release of the next stable version, at which point the previous stable version enters [Maintenance Support](#maintenance-support).
 
@@ -70,9 +69,9 @@ Customers are encouraged to use versions receiving *Active Support* as much as p
 
 A stable version of RNW enters *Maintenance Support* status one month after the next stable version is released. This support continues with each patch release within that stable version.
 
-It is expected that the stable release branch is "stable" and will not take breaking API or template changes (relative to the first official patch release in the branch).
+It is expected that the stable release branch is "stable" and will not take breaking API or project template changes (relative to the first official patch release in the branch).
 
-The RNW Team commits to providing support for fixing issues that do not require breaking changes, including but not limited to:
+While in *Maintenance Support*, the RNW Team commits to providing support for this stable version, fixing issues that do not require breaking changes, including but not limited to:
 
 - Security and/or legal issues
 - Build and/or tooling issues
@@ -97,7 +96,7 @@ A stable version of RNW enters *Preview Support* as soon as the first preview pa
 
 It is expected that the stable release branch in preview is "stabilizing," and it is the last chance to make large and/or breaking changes to that branch.
 
-The RNW Team commits to providing the same support as in [Active Support](#active-support), but breaking API and/or template changes may be allowed.
+While in *Preview Support*, the RNW Team commits to providing this stable version the equivalent of [Active Support](#active-support), but breaking API and/or template changes may be allowed.
 
 *Preview Support* for a stable version ends as soon as the first official, non-preview, package of the stable version is published to NPM, at which point it enters [Active Support](#active-support).
 
