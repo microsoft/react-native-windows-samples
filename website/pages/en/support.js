@@ -7,7 +7,7 @@ const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const SupportPolicyMD = `
 # Support Policy
 
-The React Native for Windows (RNW) Team commits to providing full support for the latest stable version of RNW, with progressively reduced support for older released versions.
+The React Native for Windows (RNW) Team strives to provide full support for the latest stable version of RNW, with progressively reduced support for older released versions.
 
 ## Support Matrix
 
@@ -55,7 +55,7 @@ A stable version of RNW enters *Active Support* status as soon as the first offi
 
 It is expected that the stable release branch is "stable" and will not take breaking API or project template changes (relative to the first official release in that branch).
 
-While in *Active Support*, the RNW Team commits to providing support for this stable version, fixing issues that do not require breaking changes, including but not limited to:
+While in *Active Support*, the RNW Team strives to provide support for this stable version by fixing issues that do not require breaking changes, such as:
 
 - Security and/or legal issues
 - Build and/or tooling issues
@@ -71,7 +71,7 @@ A stable version of RNW enters *Maintenance Support* status one month after the 
 
 It is expected that the stable release branch is "stable" and will not take breaking API or project template changes (relative to the first official patch release in the branch).
 
-While in *Maintenance Support*, the RNW Team commits to providing support for this stable version, fixing issues that do not require breaking changes, including but not limited to:
+While in *Maintenance Support*, the RNW Team strives to provide support for this stable version by fixing issues that do not require breaking changes, such as:
 
 - Security and/or legal issues
 - Build and/or tooling issues
@@ -96,7 +96,7 @@ A stable version of RNW enters *Preview Support* as soon as the first preview pa
 
 It is expected that the stable release branch in preview is "stabilizing," and it is the last chance to make large and/or breaking changes to that branch.
 
-While in *Preview Support*, the RNW Team commits to providing this stable version the equivalent of [Active Support](#active-support), but breaking API and/or template changes may be allowed.
+While in *Preview Support*, the RNW Team strives to provide this stable version the equivalent of [Active Support](#active-support), but breaking API and/or template changes may be allowed.
 
 *Preview Support* for a stable version ends as soon as the first official, non-preview, package of the stable version is published to NPM, at which point it enters [Active Support](#active-support).
 
