@@ -36,7 +36,7 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 
 ## Summary
 
-RNW stable versions are referred to by their major and minor version number, i.e. **0.64**, mapping to the same React Native stable version, and are sourced from an equivalently named \`*-stable\` branch in the RNW repo, i.e. [0.64-stable](https://github.com/Microsoft/react-native-windows/tree/0.64-stable).
+RNW stable versions are referred to by their major and minor version number, e.g. **0.64**, mapping to the same React Native stable version, and are sourced from an equivalently named \`*-stable\` branch in the RNW repo, e.g. [0.64-stable](https://github.com/Microsoft/react-native-windows/tree/0.64-stable).
 
 A new stable version's life begins when that stable branch is created and a package published to NPM under the [preview tag](https://www.npmjs.com/package/react-native-windows/v/preview). That version is said to be *in preview* and has entered [Preview Support](#preview-support). After the preview period ends, the stable version becomes the new "latest" release and its package is published to NPM under the [latest tag](https://www.npmjs.com/package/react-native-windows/v/latest). That version has now entered [Active Support](#active-support).
 
