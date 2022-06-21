@@ -21,4 +21,6 @@ table td a:hover {
 .footnote p {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.4);
+  margin-left: 20px;
+  margin-right: 20px;
 }

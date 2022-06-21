@@ -16,19 +16,21 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | [main](https://www.npmjs.com/package/react-native-windows/v/canary) | [Canary](#canary-support) | *N/A* | *N/A* | *N/A* | *N/A* |
 | [0.69](https://www.npmjs.com/package/react-native-windows/v/preview) | [Preview](#preview-support) | *TBD* | *TBD* | *TBD* | *TBD* |
 | [0.68](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 04/04/2022 | 04/04/2022 | *TBD* | *TBD* |
-| [0.67](https://www.npmjs.com/package/react-native-windows/v/v0.67-stable) | [Maintenance](#maintenance-support) | 01/24/2022 | *N/A*[¹](#1)</a> | *N/A*[¹](#1) | 09/30/2022[²](#2) |
-| [0.66](https://www.npmjs.com/package/react-native-windows/v/v0.66-stable) | [Maintenance](#maintenance-support) | 10/11/2021 | *N/A*[¹](#1) | *N/A*[¹](#1) | 08/31/2022[²](#2) |
-| [0.65](https://www.npmjs.com/package/react-native-windows/v/v0.65-stable) | [Maintenance](#maintenance-support) | 08/23/2021 | *N/A*[¹](#1) | *N/A*[¹](#1) | 07/31/2022[²](#2) |
-| [0.64](https://www.npmjs.com/package/react-native-windows/v/v0.64-stable) | [Maintenance](#maintenance-support) | 03/15/2021 | *N/A*[¹](#1)| *N/A*[¹](#1) | 06/30/2022[²](#2) |
-| [0.63](https://www.npmjs.com/package/react-native-windows/v/v0.63-stable) | [Unsupported](#unsupported) | 01/24/2022 | *N/A*[¹](#1) | *N/A*[¹](#1) | 10/11/2021 |
+| [0.67](https://www.npmjs.com/package/react-native-windows/v/v0.67-stable) | [Maintenance](#maintenance-support) | 01/24/2022 | *N/A*[¹](#support-matrix-1)</a> | *N/A*[¹](#support-matrix-1)  | 09/30/2022[²](#support-matrix-2) |
+| [0.66](https://www.npmjs.com/package/react-native-windows/v/v0.66-stable) | [Maintenance](#maintenance-support) | 10/11/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 08/31/2022[²](#support-matrix-2) |
+| [0.65](https://www.npmjs.com/package/react-native-windows/v/v0.65-stable) | [Maintenance](#maintenance-support) | 08/23/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 07/31/2022[²](#support-matrix-2) |
+| [0.64](https://www.npmjs.com/package/react-native-windows/v/v0.64-stable) | [Maintenance](#maintenance-support) | 03/15/2021 | *N/A*[¹](#support-matrix-1)| *N/A*[¹](#support-matrix-1) | 06/30/2022[²](#support-matrix-2) |
+| [0.63](https://www.npmjs.com/package/react-native-windows/v/v0.63-stable) | [Unsupported](#unsupported) | 01/24/2022 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 10/11/2021 |
 
 <div class="footnote">
 
 **Note:** All prior releases not listed are [Unsupported](#unsupported).
 
-<a name="1">¹</a>: These releases were made prior to the institution of this official support policy document.
+<a id="support-matrix-1"></a>
+¹: These releases were made prior to the institution of this official support policy document.
 
-<a name="1">²</a>: These releases were already receiving [Maintenance](#maintenance-support) equivalent support, and the new "End of Support" dates were set to give users some transition time before they become officially [Unsupported](#unsupported).
+<a id="support-matrix-2"></a>
+²: These releases were already receiving [Maintenance](#maintenance-support) equivalent support, and the new "End of Support" dates were set to give users some transition time before they become officially [Unsupported](#unsupported).
 
 </div>
 
@@ -55,15 +57,32 @@ A stable version of RNW enters *Active Support* status as soon as the first offi
 
 It is expected that the stable release branch is "stable" and will not take breaking API or project template changes (relative to the first official release in that branch).
 
-While in *Active Support*, the RNW Team strives to provide support for this stable version by fixing issues that do not require breaking changes, such as:
+While in *Active Support*, the RNW Team strives to provide support for this stable version by taking fixes[¹](#active-support-1) which resolve:
 
-- Security and/or legal issues
-- Build and/or tooling issues
-- Critical and/or important functional issues (as determined by the RNW Team)
+- Security and/or legal issues, e.g.:
+    - RNW, or one of its dependencies, has a known vulnerability
+    - RNW is consuming a dependency with an incompatible license
+- Build and/or tooling issues[²](#active-support-2), e.g.:
+    - RNW itself does not build
+    - A RNW app does not build with the \`npx react-native run-windows\` CLI command
+    - A new RNW app cannot be created with the \`npx react-native-windows-init\` CLI command
+- Critical and/or important functional issues, e.g.:
+    - Unexpected crashes in RNW code
+    - A core RN component does not load
 
 *Active Support* for a stable version ends one month after the release of the next stable version, at which point the previous stable version enters [Maintenance Support](#maintenance-support).
 
 Customers are encouraged to use versions receiving *Active Support* as much as possible.
+
+<div class="footnote">
+
+<a id="active-support-1"></a>
+¹: The RNW team reserves the right to triage reported issues and release fixes at their discretion.
+
+<a id="active-support-2"></a>
+²: Assuming the use of the supported development environment for that stable version at the time of its release.
+
+</div>
 
 ### Maintenance Support
 
@@ -71,14 +90,24 @@ A stable version of RNW enters *Maintenance Support* status one month after the 
 
 It is expected that the stable release branch is "stable" and will not take breaking API or project template changes (relative to the first official patch release in the branch).
 
-While in *Maintenance Support*, the RNW Team strives to provide support for this stable version by fixing issues that do not require breaking changes, such as:
+While in *Maintenance Support*, the RNW Team strives to provide support for this stable version by taking fixes[¹](#maintenance-support-1) which resolve:
 
-- Security and/or legal issues
-- Build and/or tooling issues
+- Security and/or legal issues (see examples above)
+- Build and/or tooling issues[²](#maintenance-support-2) (see examples above)
 
 *Maintenance Support* for a stable version lasts for two months after it leaves [Active Support](#active-support), after which the stable version will be considered [Unsupported](#unsupported).
 
 Customers are encouraged to upgrade away from versions receiving *Maintenance Support* as soon as possible.
+
+<div class="footnote">
+
+<a id="maintenance-support-1"></a>
+¹: The RNW team reserves the right to triage reported issues and release fixes at their discretion.
+
+<a id="maintenance-support-2"></a>
+²: Assuming the use of the supported development environment for that stable version at the time of its release.
+
+</div>
 
 ### Canary Support
 
