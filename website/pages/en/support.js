@@ -20,7 +20,7 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | [0.66](https://www.npmjs.com/package/react-native-windows/v/v0.66-stable) | [Maintenance](#maintenance-support) | 10/11/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 08/31/2022[²](#support-matrix-2) |
 | [0.65](https://www.npmjs.com/package/react-native-windows/v/v0.65-stable) | [Maintenance](#maintenance-support) | 08/23/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 07/31/2022[²](#support-matrix-2) |
 | [0.64](https://www.npmjs.com/package/react-native-windows/v/v0.64-stable) | [Maintenance](#maintenance-support) | 03/15/2021 | *N/A*[¹](#support-matrix-1)| *N/A*[¹](#support-matrix-1) | 06/30/2022[²](#support-matrix-2) |
-| [0.63](https://www.npmjs.com/package/react-native-windows/v/v0.63-stable) | [Unsupported](#unsupported) | 01/24/2022 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 10/11/2021 |
+| [0.63](https://www.npmjs.com/package/react-native-windows/v/v0.63-stable) | [Unsupported](#unsupported) | 08/31/2020 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 10/11/2021 |
 
 <div class="footnote">
 
