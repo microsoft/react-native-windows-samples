@@ -1,6 +1,7 @@
 ---
-id: IViewManagerWithDropViewInstance
+id: version-0.69-IViewManagerWithDropViewInstance
 title: IViewManagerWithDropViewInstance
+original_id: IViewManagerWithDropViewInstance
 ---
 
 Kind: `interface`

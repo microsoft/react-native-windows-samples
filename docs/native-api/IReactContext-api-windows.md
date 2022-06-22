@@ -29,6 +29,11 @@ Gets the JavaScript runtime for the running React instance.
 It can be null if Web debugging is used.
 **Note: do not use this property directly. It is an experimental property that may be removed or changed in a future version.
 
+### LoadingState
+`readonly`  [`LoadingState`](LoadingState) `LoadingState`
+
+Gets the state of the ReactNative instance.
+
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
 
