@@ -24,7 +24,7 @@ Gets the wrapped routed pointer event.
 
 > **EXPERIMENTAL**
 
-Gets or sets the pointer event kind. The only valid override is [`PointerEventKind.CaptureLost`](PointerEventKind#capturelost) to [`PointerEventKind.End`](PointerEventKind#end) to handle cases where PointerCaptureLost events on ReactRootView can be safely treated as PointerReleased events, e.g., for pointer events on selectable text.
+Gets or sets the pointer event kind. The only valid override is [`PointerEventKind.CaptureLost`](PointerEventKind) to [`PointerEventKind.End`](PointerEventKind) to handle cases where PointerCaptureLost events on ReactRootView can be safely treated as PointerReleased events, e.g., for pointer events on selectable text.
 
 ### Target
  Object `Target`
