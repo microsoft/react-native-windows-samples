@@ -20,7 +20,10 @@ Base path used for the location of the bundle.
 This can be an `ms-appx://` or `ms-appdata://` URI (if the app is UWP or packaged using MSIX), a filesystem path, or a URI pointing at an embedded resource.
 Examples:
 
-- `ms-appx:///Bundle` - locates the bundle in the MSIX package. See [URI schemes](https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes) for other UWP/MSIX valid URI formats.- `C:\\foo\\bar` - locates the bundle in the local filesystem. Note [UWP app file access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).- `resource://moduleName` - locates the bundle as an embedded RCDATA resource in moduleName. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).- `resource://` - locates the bundle as an embedded RCDATA resource in the running process's module. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
+- `ms-appx:///Bundle` - locates the bundle in the MSIX package. See [URI schemes](https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes) for other UWP/MSIX valid URI formats.
+- `C:\\foo\\bar` - locates the bundle in the local filesystem. Note [UWP app file access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
+- `resource://moduleName` - locates the bundle as an embedded RCDATA resource in moduleName. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
+- `resource://` - locates the bundle as an embedded RCDATA resource in the running process's module. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
 
 ### ByteCodeFileUri
  string `ByteCodeFileUri`

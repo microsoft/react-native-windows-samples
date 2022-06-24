@@ -7,7 +7,7 @@ Kind: `interface`
 
 
 
-Enables view managers to track when views areremoved from their shadow trees. 
+Enables view managers to track when views are removed from the shadow tree. 
 
 
 
