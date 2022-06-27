@@ -18,6 +18,7 @@ sidebar_label: Full reference
 - [`JSValueType`](JSValueType)
 - [`JsiErrorType`](JsiErrorType)
 - [`JsiValueKind`](JsiValueKind)
+- [`LoadingState`](LoadingState)
 - [`LogLevel`](LogLevel)
 - [`MethodReturnType`](MethodReturnType)
 - [`PointerEventKind`](PointerEventKind)

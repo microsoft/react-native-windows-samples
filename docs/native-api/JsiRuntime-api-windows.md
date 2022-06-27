@@ -123,6 +123,13 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 
 
+### CreatePropertyIdFromSymbol
+[`JsiPropertyIdRef`](JsiPropertyIdRef) **`CreatePropertyIdFromSymbol`**([`JsiSymbolRef`](JsiSymbolRef) sym)
+
+> **EXPERIMENTAL**
+
+
+
 ### CreatePropertyIdFromUtf8
 [`JsiPropertyIdRef`](JsiPropertyIdRef) **`CreatePropertyIdFromUtf8`**(uint8_t utf8)
 
