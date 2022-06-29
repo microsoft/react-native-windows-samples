@@ -1121,7 +1121,7 @@
           {
             "name": "addReply",
             "parameters": {
-              "comment": "This issue would beneefit from environment info. Please edit your issue report to add this information.\n\nIf you are using latest version:\n1. `npx react-native --version`:\n2. `npx react-native run-windows --info`:\n\nOtherwise if `--info` doesn't exist:\n1. `react-native -v`:\n2. `npm ls rnpm-plugin-windows`:\n3. `npm ls react-native-windows`:\n4. `node -v`:\n5. `npm -v`:\n6. `yarn --version`<!-- (if you use Yarn) -->:"
+              "comment": "This issue would benefit from environment info. Please edit your issue report to add this information.\n\nIf you are using latest version:\n1. `npx react-native --version`:\n2. `npx react-native run-windows --info`:\n\nOtherwise if `--info` doesn't exist:\n1. `react-native -v`:\n2. `npm ls rnpm-plugin-windows`:\n3. `npm ls react-native-windows`:\n4. `node -v`:\n5. `npm -v`:\n6. `yarn --version`<!-- (if you use Yarn) -->:"
             }
           },
           {
