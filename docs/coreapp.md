@@ -10,18 +10,18 @@ These APIs are declared in `CoreApp.h`.
 
 ## Functions
 ### `RNCoreAppStart`
-`void` **`RNCoreAppStart`**([`RNCoreAppCallback`](#rncoreappcallback) launched, `void *` data)
+`void` **`RNCoreAppStart`**([`RNCoreAppCallback`](#rncoreappcallback) launched, `void` * data)
 
-This API starts a `CoreApp`, and upon launch, it will call your app back and pass some optional custom data to it as a parameter. The `launched` callback enables you to customize a variety of parameters, like your bundle name, app name, etc. See [CoreApp Schema](#coreapp-schema) below for more info. 
+This API starts a `CoreApp`, and upon launch, it will call your app back and pass some optional custom data to it as a parameter. The `launched` callback enables you to customize a variety of parameters, like your bundle name, app name, etc. See [`CoreApp` Schema](#coreapp-schema) below for more info. 
 
 ### `RNCoreAppStartFromConfigJson`
-`void` **`RNCoreAppStartFromConfigJson`**(`wchar_t const *` configJson, 
+`void` **`RNCoreAppStartFromConfigJson`**(`wchar_t` `const` * configJson, 
       [`RNCoreAppCallback`](#rncoreappcallback) launched, 
-      `void *` data)
+      `void` * data)
 
 This API is similar to [`RNCoreAppStart`](#rncoreappstart), one but it takes a path to a JSON configuration file. The callback is optional in this case, since more often than not, the configuration file will have all the necessary information.
 
-The `launched` callback above gives you an output [`RNCoreApp`](#rncoreapp) structure, where you can set a number of parameters, as well as the `data` parameter that you passed in when you called the `CoreApp` API.
+The `launched` callback will receive an output [`RNCoreApp`](#rncoreapp) structure, where a number of parameters can be set, as well as the `data` parameter that was passed in when the `RNCoreAppStartFromConfigJson` API was called.
 
 ## Types
 ### `RNCoreApp`
@@ -73,9 +73,13 @@ struct RNCoreApp {
 The contents of the `RNCoreApp` structure can be set programmatically via the [`RNCoreAppCallback`](#rncoreappcallback) callback passed to [`RNCoreAppStart`](#rncoreappstart), or it can be controlled through a JSON configuration file passed to [`RNCoreAppStartFromConfigJson`](#rncoreappstartfromconfigjson).
 
 ### `RNCoreAppCallback`
-`typedef void(__cdecl *`**`RNCoreAppCallback`**)([`RNCoreApp`](#rncoreapp) *, `void` *)`
+`typedef` `void`(`__cdecl` * **`RNCoreAppCallback`**)([`RNCoreApp`](#rncoreapp) *, `void` *)
 
-This type represents a callback that takes a [`RNCoreApp`](#rncoreapp) and some application-defined data. The application-defined data is the value passed as the `data` parameter in the [`RNCoreAppStart`](#rncoreappstart) or [`RNCoreAppStartFromConfigJson`](#rncoreappstartfromconfigjson) functions.
+This type represents a callback that takes a [`RNCoreApp`](#rncoreapp) and some application-defined data. 
+
+The application-defined data is the value passed as the `data` parameter in the [`RNCoreAppStart`](#rncoreappstart) or [`RNCoreAppStartFromConfigJson`](#rncoreappstartfromconfigjson) functions.
+
+The callback function has follows the `__cdecl` calling convention.
 
 
 ## `CoreApp` schema
@@ -128,6 +132,7 @@ There are a couple of ways that a `CoreApp` can load native modules.
 
 The simplest way is using the [`RNCoreAppStartFromConfigJson`](#rncoreappstartfromconfigjson) API. This API allows us to pass an optional DLL name to load and a plain C function to call in that DLL, to produce the [`IReactPackageProvider`](native-api/IReactPackageProvider) for the module.
 Here's what this function would look like:
+
 ```cpp
 extern "C" __declspec(dllexport) void *__cdecl MySpecialPackageProvider() {
   auto provider = winrt::make<MyModulePackageProvider>();
