@@ -8,6 +8,7 @@
 !versioned_docs/version-0.67/native-api/*-api-windows*.md
 !versioned_docs/version-0.68/native-api/*-api-windows*.md
 !versioned_docs/version-0.69/native-api/*-api-windows*.md
+!docs/coreapp.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
