@@ -1,5 +1,6 @@
 !node_modules
 !blog
+!versioned_docs/version-0.60/e2e-test-more-about.md
 !versioned_docs/version-0.63/*-api-windows*.md
 !versioned_docs/version-0.64/*-api-windows*.md
 !versioned_docs/version-0.65/*-api-windows*.md
