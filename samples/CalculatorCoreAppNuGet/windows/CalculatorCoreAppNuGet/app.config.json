@@ -1,0 +1,4 @@
+{
+  "componentName": "Calculator",
+  "jsBundleFile": "index" // debug mode
+}
