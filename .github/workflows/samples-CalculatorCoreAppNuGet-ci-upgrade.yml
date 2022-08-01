@@ -39,10 +39,11 @@ jobs:
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
 
-      - name: Run react-native-windows-init
-        if: ${{ steps.upgrade.outcome == 'success' }}
-        run: npx react-native-windows-init --overwrite --experimentalNuGetDependency true --version ${{ matrix.reactNativeWindowsVersion }}
-        working-directory: ..\..\src
+#       Commenting this out until there's a CoreApp template
+#       - name: Run react-native-windows-init
+#         if: ${{ steps.upgrade.outcome == 'success' }}
+#         run: npx react-native-windows-init --overwrite --experimentalNuGetDependency true --version ${{ matrix.reactNativeWindowsVersion }}
+#         working-directory: ..\..\src
 
       - name: Decode the pfx
         run: |
