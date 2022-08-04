@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
-    <None Include="packages.config" />
     <None Include="app.config.json" />
+    <None Include="app.config.release.json" />
   </ItemGroup>
 </Project>
