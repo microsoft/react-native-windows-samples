@@ -28,7 +28,18 @@ Runtime setting allowing Networking (HTTP, WebSocket) connections to skip certif
 
 > **EXPERIMENTAL**
 
-By default `react-native-windows` will handle various back events and forward them to JavaScript. Setting this to [`BackNavigationHandlerKind.Native`](BackNavigationHandlerKind) prevents `react-native-windows` from handling these events, including forwarding to JavaScript.  This will allow applications to handle back navigation in native code, but will prevent the `BackHandler` native module from receiving events.
+By default `react-native-windows` will handle various back events and forward them to JavaScript. Setting this to [`BackNavigationHandlerKind.Native`](BackNavigationHandlerKind#native) prevents `react-native-windows` from handling these events, including forwarding to JavaScript.  This will allow applications to handle back navigation in native code, but will prevent the `BackHandler` native module from receiving events.
+
+
+
+### SetMapWindowDeactivatedToAppStateInactive
+`static` void **`SetMapWindowDeactivatedToAppStateInactive`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+**Default value**: `false`
+
+By default `react-native-windows` will only track `active` and `background` `AppState`. Setting this to true enables `react-native-windows` to also track `inactive` `AppState` which [maps closely to iOS.](https://reactnative.dev/docs/appstate)`inactive` tracks the [Window.Activated Event](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated) when the window is deactivated.
 
 
 

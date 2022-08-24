@@ -13,6 +13,13 @@ Properties are identified by an instance of [`IReactPropertyName`](IReactPropert
 
 
 ## Methods
+### CopyFrom
+void **`CopyFrom`**([`IReactPropertyBag`](IReactPropertyBag) other)
+
+Copies the properties from another property bag
+
+
+
 ### Get
 Object **`Get`**([`IReactPropertyName`](IReactPropertyName) name)
 

@@ -18,8 +18,9 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 |`Boolean` | 0x2  |  |
 |`Number` | 0x3  |  |
 |`Symbol` | 0x4  |  |
-|`String` | 0x5  |  |
-|`Object` | 0x6  |  |
+|`BigInt` | 0x5  |  |
+|`String` | 0x6  |  |
+|`Object` | 0x7  |  |
 
 
 ## Referenced by
