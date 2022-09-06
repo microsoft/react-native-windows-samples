@@ -16,7 +16,7 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | [main](https://www.npmjs.com/package/react-native-windows/v/canary) | [Canary](#canary-support) | *N/A* | *N/A* | *N/A* | *N/A* |
 | [0.70](https://www.npmjs.com/package/react-native-windows/v/preview) | [Preview](#preview-support) | *TBD* | *TBD* | *TBD* | *TBD* |
 | [0.69](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 06/27/2022 | 06/27/2022 | *TBD* | *TBD* |
-| [0.68](https://www.npmjs.com/package/react-native-windows/v/v0.68-stable) | [Maintenance](#maintenance-support) | 04/04/2022 | 04/04/2022 | 07/27/2022 | 09/27/2022 |
+| [0.68](https://www.npmjs.com/package/react-native-windows/v/v0.68-stable) | [Maintenance](#maintenance-support) | 04/04/2022 | 04/04/2022 | 07/31/2022 | 09/30/2022 |
 | [0.67](https://www.npmjs.com/package/react-native-windows/v/v0.67-stable) | [Maintenance](#maintenance-support) | 01/24/2022 | *N/A*[¹](#support-matrix-1)</a> | *N/A*[¹](#support-matrix-1)  | 09/30/2022[²](#support-matrix-2) |
 | [0.66](https://www.npmjs.com/package/react-native-windows/v/v0.66-stable) | [Unsupported](#unsupported) | 10/11/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 08/31/2022[²](#support-matrix-2) |
 | [0.65](https://www.npmjs.com/package/react-native-windows/v/v0.65-stable) | [Unsupported](#unsupported) | 08/23/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 07/31/2022[²](#support-matrix-2) |
