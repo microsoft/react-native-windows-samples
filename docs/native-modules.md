@@ -69,7 +69,7 @@ export default TurboModuleRegistry.get<Spec>(
 ) as Spec | null;
 ```
 
-> Note even through this file uses `TurboModuleRegistry`, NativeModules will still work with this JavaScript.  The code is forward looking and will support NativeModules or TurboModules.
+> Note even through this file uses `TurboModuleRegistry`, Native Modules will still work with this JavaScript.  The code is forward looking and will support Native Modules or TurboModules.
 
 <!--DOCUSAURUS_CODE_TABS-->
 
@@ -273,7 +273,7 @@ You can specify a different event emitter like this: `REACT_MODULE(FancyMath, L"
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
-Then we define constants, this is done using the `REACT_GET_CONSTANTS` macro-attribute.  In this case we are returning a struct which was defined using REACT_STUCT.  This generates code to automatically translate the struct into a JSObject.
+Then we define constants, this is done using the `REACT_GET_CONSTANTS` macro-attribute.  In this case we are returning a struct which was defined using `REACT_STRUCT`.  This generates code to automatically translate the struct into a `JSValueObject`.
 
 It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In `FancyMath` we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
 
@@ -396,7 +396,7 @@ namespace winrt::NativeModuleSample::implementation
 }
 ```
 
-Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use macros and templates to discover and bind native module, we call `AddAttributedModules` function to register all native modules in our DLL that have the `REACT_MODULE` macro-attribute. Specifying true here will register all the native modules as TurboModules rather than NativeModules.  This will avoid some additional serialization that happens with NativeModule calls.  If for some reason you need the modules to continue to run as NativeModules, you can specify false here.
+Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use macros and templates to discover and bind native module, we call `AddAttributedModules` function to register all native modules in our DLL that have the `REACT_MODULE` macro-attribute. Specifying true here will register all the native modules as TurboModules rather than Native Modules.  This will avoid some additional serialization that happens with Native Module calls.  If for some reason you need the modules to continue to run as Native Modules, you can specify false here.
 
 See [Native Modules vs Turbo Modules](native-modules-vs-turbo-modules.md) for more details on TurboModules.
 
