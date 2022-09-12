@@ -32,6 +32,13 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 
 ## Methods
+### BigIntStrictEquals
+bool **`BigIntStrictEquals`**([`JsiBigIntRef`](JsiBigIntRef) left, [`JsiBigIntRef`](JsiBigIntRef) right)
+
+> **EXPERIMENTAL**
+
+
+
 ### Call
 [`JsiValueRef`](JsiValueRef) **`Call`**([`JsiObjectRef`](JsiObjectRef) func, [`JsiValueRef`](JsiValueRef) thisArg, [`JsiValueRef`](JsiValueRef) args)
 
@@ -41,6 +48,13 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ### CallAsConstructor
 [`JsiValueRef`](JsiValueRef) **`CallAsConstructor`**([`JsiObjectRef`](JsiObjectRef) func, [`JsiValueRef`](JsiValueRef) args)
+
+> **EXPERIMENTAL**
+
+
+
+### CloneBigInt
+[`JsiBigIntRef`](JsiBigIntRef) **`CloneBigInt`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
 
 > **EXPERIMENTAL**
 
@@ -370,6 +384,13 @@ void **`PropertyIdToUtf8`**([`JsiPropertyIdRef`](JsiPropertyIdRef) propertyId, [
 
 ### PushScope
 [`JsiScopeState`](JsiScopeState) **`PushScope`**()
+
+> **EXPERIMENTAL**
+
+
+
+### ReleaseBigInt
+void **`ReleaseBigInt`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
 
 > **EXPERIMENTAL**
 

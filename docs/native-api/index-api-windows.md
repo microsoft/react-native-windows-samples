@@ -63,6 +63,7 @@ sidebar_label: Full reference
 ## Structs
 - [`AccessibilityAction`](AccessibilityAction)
 - [`DesktopWindowMessage`](DesktopWindowMessage)
+- [`JsiBigIntRef`](JsiBigIntRef)
 - [`JsiObjectRef`](JsiObjectRef)
 - [`JsiPropertyIdRef`](JsiPropertyIdRef)
 - [`JsiScopeState`](JsiScopeState)
@@ -74,6 +75,7 @@ sidebar_label: Full reference
 - [`BorderEffect`](BorderEffect)
 - [`ColorSourceEffect`](ColorSourceEffect)
 - [`CompositeStepEffect`](CompositeStepEffect)
+- [`CoreAppPage`](CoreAppPage)
 - [`DevMenuControl`](DevMenuControl)
 - [`DynamicAutomationPeer`](DynamicAutomationPeer)
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)

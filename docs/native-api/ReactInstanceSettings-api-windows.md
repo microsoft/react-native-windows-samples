@@ -24,6 +24,7 @@ Examples:
 - `resource://moduleName` - locates the bundle as an embedded RCDATA resource in moduleName. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
 - `resource://` - locates the bundle as an embedded RCDATA resource in the running process's module. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
 
+
 ### ByteCodeFileUri
  string `ByteCodeFileUri`
 

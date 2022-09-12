@@ -1,0 +1,82 @@
+{
+  "version-0.70-docs": {
+    "The Basics (Windows)": [
+      "version-0.70-getting-started",
+      "version-0.70-rnw-dependencies",
+      "version-0.70-run-windows-cli",
+      "version-0.70-parity-status",
+      "version-0.70-config",
+      "version-0.70-windowsbrush-and-theme",
+      "version-0.70-releases",
+      "version-0.70-platform",
+      "version-0.70-upgrade-app",
+      "version-0.70-setup-ci",
+      "version-0.70-app-publishing"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.70-native-modules",
+      "version-0.70-view-managers",
+      "version-0.70-native-modules-setup",
+      "version-0.70-native-modules-using",
+      "version-0.70-native-modules-autolinking",
+      "version-0.70-native-modules-advanced",
+      "version-0.70-supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "version-0.70-native-code",
+      "version-0.70-native-code-language-choice",
+      "version-0.70-native-modules-marshalling-data",
+      "version-0.70-native-modules-async",
+      "version-0.70-native-modules-jsvalue",
+      "version-0.70-native-modules-csharp-codegen",
+      "version-0.70-win10-vm",
+      "version-0.70-customizing-sdk-versions",
+      "version-0.70-managing-cpp-deps"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.70-rnm-getting-started",
+      "version-0.70-rnm-dependencies"
+    ],
+    "Troubleshooting": [
+      "version-0.70-native-modules-troubleshooting",
+      "version-0.70-metro-config-out-tree-platforms"
+    ],
+    "Experimental": [
+      "version-0.70-hermes",
+      "version-0.70-NuGet",
+      "version-0.70-nuget-update",
+      "version-0.70-winui3"
+    ]
+  },
+  "version-0.70-apis": {
+    "Components (Windows)": [
+      "version-0.70-flyout-component",
+      "version-0.70-glyph-component",
+      "version-0.70-popup-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.70-apptheme-api",
+      "version-0.70-ikeyboardprops-api",
+      "version-0.70-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.70-native-api/IJSValueReader",
+      "version-0.70-native-api/IJSValueWriter",
+      "version-0.70-native-api/IReactContext",
+      "version-0.70-native-api/IReactDispatcher",
+      "version-0.70-native-api/IReactModuleBuilder",
+      "version-0.70-native-api/IReactNonAbiValue",
+      "version-0.70-native-api/IReactPackageBuilder",
+      "version-0.70-native-api/IReactPackageProvider",
+      "version-0.70-native-api/IReactPropertyBag",
+      "version-0.70-native-api/IRedBoxHandler",
+      "version-0.70-native-api/IViewManager",
+      "version-0.70-native-api/ReactApplication",
+      "version-0.70-native-api/ReactInstanceSettings",
+      "version-0.70-native-api/ReactNativeHost",
+      "version-0.70-native-api/XamlUIService",
+      "version-0.70-native-api/Native-API-Reference",
+      "version-0.70-coreapp"
+    ]
+  }
+}

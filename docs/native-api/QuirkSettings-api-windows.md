@@ -32,6 +32,17 @@ By default `react-native-windows` will handle various back events and forward th
 
 
 
+### SetMapWindowDeactivatedToAppStateInactive
+`static` void **`SetMapWindowDeactivatedToAppStateInactive`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+**Default value**: `false`
+
+By default `react-native-windows` will only track `active` and `background` `AppState`. Setting this to true enables `react-native-windows` to also track `inactive` `AppState` which [maps closely to iOS.](https://reactnative.dev/docs/appstate)`inactive` tracks the [Window.Activated Event](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.activated) when the window is deactivated.
+
+
+
 ### SetMatchAndroidAndIOSStretchBehavior
 `static` void **`SetMatchAndroidAndIOSStretchBehavior`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
 
