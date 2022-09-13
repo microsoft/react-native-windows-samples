@@ -5107,7 +5107,7 @@ metro-cache@0.72.2:
     metro-core "0.72.2"
     rimraf "^2.5.4"
 
-metro-config@0.72.2, metro-config@^0.72.1:
+metro-config@0.72.2, metro-config@^0.72.1, metro-config@^0.72.2:
   version "0.72.2"
   resolved "https://registry.yarnpkg.com/metro-config/-/metro-config-0.72.2.tgz#dfd4df2a320eb5d995c4a5369da07f9c901eec64"
   integrity sha512-rvX4fBctPYEIPtTEcgun7Q+3IwuR5+gMPQrwDhE8hHDHPmFkfrW9UsEqD7VArJFRr0AwXSd7GD+eapFPjXr43Q==
