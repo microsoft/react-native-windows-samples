@@ -2,12 +2,12 @@
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
   <Identity
     Name="1d56179a-1638-40ab-82ad-1b7af368902a"
-    Publisher="CN=asklar"
+    Publisher="CN=React Native Windows Samples"
     Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="1d56179a-1638-40ab-82ad-1b7af368902a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>
     <DisplayName>Calculator (CoreApp)</DisplayName>
-    <PublisherDisplayName>asklar</PublisherDisplayName>
+    <PublisherDisplayName>React Native Windows Samples</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

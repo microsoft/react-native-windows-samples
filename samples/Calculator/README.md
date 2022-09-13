@@ -11,7 +11,7 @@
 
 This sample showcases the usage of React Native for Windows to build a simple calculator. It includes implementations in C# and C++/WinRT.
 
-It currently targets React Native Windows 0.69.
+It currently targets React Native Windows 0.70.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
