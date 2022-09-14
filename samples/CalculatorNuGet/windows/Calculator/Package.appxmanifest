@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="c870d943-1d5c-48dc-b67b-bda65e65918c"
+    Name="3e0c9ab4-6da8-4395-a857-b75913694453"
     Publisher="CN=React Native Windows Sample"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="c870d943-1d5c-48dc-b67b-bda65e65918c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="3e0c9ab4-6da8-4395-a857-b75913694453" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>calculator</DisplayName>
