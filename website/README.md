@@ -222,7 +222,9 @@ Complete the documentation updates for both main and stable version 0.XX above.
 
     This will create a new directory of versioned docs, `version-0.XX`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.XX. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
 4. Edit `website/.unbroken_exclusions` and add the line `!versioned_docs/version-0.XX/native-api/*-api-windows*.md` underneath the other versioned doc exclusions listed at the top of the file.
-5. Update `support.js` and add a new entry for the new version of React Native Windows. Then make sure to edit the previous version's Maintenance and End of Support dates.
+5. Update `support.js` and add/update the entry for the new version of React Native Windows with the correct release and Active Support Start Date _X_ (ex: 6/27/22). Then make sure to edit the previous version's:
+    1. Maintenance Start Date (set to the last day of the month that's 1 month out from _X_, ex: 7/31/22)
+    2. End of Support Date (set to the last day of the month that's 3 months out from _X_, ex: 9/30/22)
 6. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.XX for its `defaultVersionShown` constant.
 
 # FAQ
