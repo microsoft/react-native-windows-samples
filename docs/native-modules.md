@@ -54,7 +54,7 @@ Add the following object to your package's `package.json` file:
   },
 ```
 
-The values for `name`, `type`, `jsSrcsDir` are shared with react-native as documented [here](https://reactnative.dev/docs/next/the-new-architecture/pillars-turbomodules).  The `windows` object will cause the windows-codegen task to generate windows specific codegen for any turbomodule spec files defined within your project.  The `windows.namespace` property will control which C++ namespace these generated files will use.
+The values for `name`, `type`, `jsSrcsDir` are shared with react-native as documented [here](https://reactnative.dev/docs/next/the-new-architecture/pillars-turbomodules).  The `windows` object will cause the windows-codegen task to generate windows specific codegen for any TurboModule spec files defined within your project.  The `windows.namespace` property will control which C++ namespace these generated files will use.
 
 
 ### 2. Create JavaScript Specification
