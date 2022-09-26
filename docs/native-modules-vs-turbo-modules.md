@@ -13,7 +13,7 @@ Modules running as TurboModules will be available in the JS from `TurboModuleReg
 
 >Note: `TurboModuleRegistry` will fallback to returning a native module instead of a turbo module if there is a native module registered from the native code. So you can update your JavaScript before updating your native code.
 
-Starting in version 0.71, JS/TS spec files can codegen C++ spec files that can verify that the native implemention matches the definition in JS.  In addition modules can now be run as TurboModules instead of as a Native Module simply by using adding an additional parameter to your call to `AddAttributedModules`:
+Starting in version 0.71, JS/TS spec files can codegen C++ spec files that can verify that the native implementation matches the definition in JS.  In addition modules can now be run as TurboModules instead of as a Native Module simply by using adding an additional parameter to your call to `AddAttributedModules`:
 
 ```cpp
 AddAttributedModules(packageBuilder, true);
