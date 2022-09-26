@@ -251,7 +251,7 @@ Here is a sample native module written in C++ called `FancyMath`. It is a simple
 namespace NativeModuleSample
 {
   // The namespace here will align with the codegenConfig.windows.namespace property in your package.json
-  using ModuleSpec = YourAppCodegenNamespace::MyModuleSpec; 
+  using ModuleSpec = YourAppCodegenNamespace::FancyMathSpec; 
 
   REACT_MODULE(FancyMath);
   struct FancyMath
