@@ -17,6 +17,7 @@
       "native-modules",
       "view-managers",
       "native-modules-setup",
+      "native-modules-vs-turbo-modules",
       "native-modules-using",
       "native-modules-autolinking",
       "native-modules-advanced",
