@@ -16,22 +16,10 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | [main](https://www.npmjs.com/package/react-native-windows/v/canary) | [Canary](#canary-support) | *N/A* | *N/A* | *N/A* | *N/A* |
 | [0.70](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 09/12/2022 | 09/12/2022 | *TBD* | *TBD* |
 | [0.69](https://www.npmjs.com/package/react-native-windows/v/v0.69-stable) | [Active](#active-support) | 06/27/2022 | 06/27/2022 | 10/31/2022 | 12/31/2022 |
-| [0.68](https://www.npmjs.com/package/react-native-windows/v/v0.68-stable) | [Maintenance](#maintenance-support) | 04/04/2022 | 04/04/2022 | 07/31/2022 | 09/30/2022 |
-| [0.67](https://www.npmjs.com/package/react-native-windows/v/v0.67-stable) | [Maintenance](#maintenance-support) | 01/24/2022 | *N/A*[¹](#support-matrix-1)</a> | *N/A*[¹](#support-matrix-1)  | 09/30/2022[²](#support-matrix-2) |
-| [0.66](https://www.npmjs.com/package/react-native-windows/v/v0.66-stable) | [Unsupported](#unsupported) | 10/11/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 08/31/2022[²](#support-matrix-2) |
-| [0.65](https://www.npmjs.com/package/react-native-windows/v/v0.65-stable) | [Unsupported](#unsupported) | 08/23/2021 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 07/31/2022[²](#support-matrix-2) |
-| [0.64](https://www.npmjs.com/package/react-native-windows/v/v0.64-stable) | [Unsupported](#unsupported) | 03/15/2021 | *N/A*[¹](#support-matrix-1)| *N/A*[¹](#support-matrix-1) | 06/30/2022[²](#support-matrix-2) |
-| [0.63](https://www.npmjs.com/package/react-native-windows/v/v0.63-stable) | [Unsupported](#unsupported) | 08/31/2020 | *N/A*[¹](#support-matrix-1) | *N/A*[¹](#support-matrix-1) | 10/11/2021 |
 
 <div class="footnote">
 
-**Note:** All prior releases not listed above are [Unsupported](#unsupported).
-
-<a id="support-matrix-1"></a>
-¹: These releases were made prior to the institution of this official support policy document.
-
-<a id="support-matrix-2"></a>
-²: These releases were receiving [Maintenance](#maintenance-support) equivalent support at the institution of this document. The "End of Support" dates were set to give users some transition time before the releases transition to [Unsupported](#unsupported).
+**Note:** All releases not listed above are [Unsupported](#unsupported).
 
 </div>
 
