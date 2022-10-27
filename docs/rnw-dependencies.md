@@ -12,14 +12,14 @@ You can run React Native for Windows apps only on:
 To develop React-Native for Windows apps, you need to install several dependencies.
 
 ## Install the development dependencies
-To check or install dependencies, run the script [`rnw-dependencies.ps1`](https://aka.ms/rnw-deps.ps1) in an elevated PowerShell window.
+To check or install dependencies, run the script [`rnw-dependencies.ps1`](https://aka.ms/rnw-vs2022-deps.ps1) in an elevated PowerShell window.
 
 **Run this command:**
 Start an **elevated** PowerShell window and run:
 
 ```powershell
 Set-ExecutionPolicy Unrestricted -Scope Process -Force;
-iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-deps.ps1')
+iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-vs2022-deps.ps1')
 ```
 
 <details>
@@ -30,7 +30,7 @@ iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-deps.ps
 Alternatively, you can setup your environment manually:
 - Ensure Developer Mode is turned ON in Windows Settings App.
 - It is _highly_ recommended to update the Windows system.
-- Install a recent version of [Visual Studio 2019](https://www.visualstudio.com/downloads) **with the following options checked**:
+- Install a recent version of [Visual Studio 2022](https://www.visualstudio.com/downloads) **with the following options checked**:
   - **Workloads**
     - Node.js development, or one of the following alternatives:
       - Install from **Individual Components**:
@@ -40,7 +40,7 @@ Alternatively, you can setup your environment manually:
     - .NET Desktop development
     - Desktop development with C++
     - Universal Windows Platform development
-      - Include `C++ (v142) Universal Windows Platform tools` (under 'Optional')
+      - Include `C++ (v143) Universal Windows Platform tools` (under 'Optional')
       - Older Windows 10 SDK version may be needed at this point.
 - Ensure that long path support is enabled.
 
