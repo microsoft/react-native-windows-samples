@@ -125,6 +125,11 @@ An *Unsupported* stable version of RNW should not expect any further updates, ch
 The RNW Team does not commit to any support for these releases.
 
 Customers are encouraged to upgrade away from *Unsupported* versions as soon as possible.
+
+### React Native Support Policy
+
+Linked is the new official React Native [Support Policy](https://github.com/reactwg/react-native-releases).
+
 `;
 
 class Support extends React.Component {
