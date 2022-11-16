@@ -126,9 +126,9 @@ The RNW Team does not commit to any support for these releases.
 
 Customers are encouraged to upgrade away from *Unsupported* versions as soon as possible.
 
-### React Native Support Policy
+## React Native Support Policy
 
-Linked is the new official React Native [Support Policy](https://github.com/reactwg/react-native-releases).
+See the official React Native [Support Policy](https://github.com/reactwg/react-native-releases).
 
 `;
 
