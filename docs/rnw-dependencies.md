@@ -28,9 +28,9 @@ iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-vs2022-
 > The recommended way is to use the script above as the information in this manual section is likely to get out of date
 
 Alternatively, you can setup your environment manually:
-- Ensure Developer Mode is turned ON in Windows Settings App.
+- Ensure [Developer Mode](https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development) is turned ON in Windows Settings App.
 - It is _highly_ recommended to update the Windows system.
-- Install a recent version of [Visual Studio 2022](https://www.visualstudio.com/downloads) **with the following options checked**:
+- Install the latest version of [Visual Studio 2022](https://www.visualstudio.com/downloads) **with the following options checked**:
   - **Workloads**
     - `Node.js development`, or one of the following alternatives:
       - Install from **Individual Components**:
@@ -45,7 +45,8 @@ Alternatively, you can setup your environment manually:
   - **Individual Components**
     - Include `Windows 10 SDK (10.0.19041.0)` (target OS version from [this table](win10-compat.md#react-native-app-supported-os-versions))
     - Include `MSVC v143 - VS 2022 C++ ARM64 build tools (Latest)` (to target ARM64 devices)
-- [Enable Long Paths in Windows 10, Version 1607, and Later](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#enable-long-paths-in-windows-10-version-1607-and-later)
+- [Enable Long Paths in Windows 10, Version 1607, and Later](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry#enable-long-paths-in-windows-10-version-1607-and-later).
+- Install the latest version of the [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
 
 Options to install [Node.js](https://nodejs.org) separately:
   - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
