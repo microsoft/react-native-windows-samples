@@ -70,7 +70,7 @@ For more information about docs, click [here](https://v1.docusaurus.io/docs/en/n
 
 ## Editing an existing blog post
 
-Refer to the dedicated [react-native-devblog](https://github.com/microsoft/react-native-devblog) repository for it - Microsoft internal only.
+Refer to the dedicated react-native-devblog (`microsoft/react-native-devblog`) repository for it - Microsoft internal only.
 
 # Adding Content
 
@@ -107,7 +107,7 @@ For more information about adding new docs, click [here](https://v1.docusaurus.i
 
 ## Adding a new blog post
 
-Refer to the dedicated [react-native-devblog](https://github.com/microsoft/react-native-devblog) repository for it - Microsoft internal only.
+Refer to the dedicated react-native-devblog (`microsoft/react-native-devblog`) repository for it - Microsoft internal only.
 
 ## Adding items to your site's top navigation bar
 
