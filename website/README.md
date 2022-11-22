@@ -25,7 +25,7 @@ $ yarn install
 $ yarn start
 ```
 
-Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started 
+Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started
 
 ## Directory Structure
 
@@ -174,7 +174,7 @@ Complete the documentation updates for both main and stable version 0.XX above.
 1. Update necessary version references in [docs](../docs/).
     1. `getting-started.md`
 2. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation.
-3. Snapshot the website for version 0.XX: 
+3. Snapshot the website for version 0.XX:
     1. `cd website`
     1. `yarn run version 0.XX`
     1. `yarn run fix-unbroken`
