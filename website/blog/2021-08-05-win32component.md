@@ -7,6 +7,10 @@ is_blog: true
 published_date: August 30, 2021
 ---
 
+<head>
+  <meta http-equiv="Refresh" content="0; URL=https://devblogs.microsoft.com/react-native/win32component/" />
+</head>
+
 If you have adopted React Native to build your Windows applications, you'll know that the final output is a [Universal Windows Platform application](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide). This development platform gives you access to all the latest enhancements in the Windows ecosystem (modern UI platform, notifications, integration with features like inking and Windows Hello, etc.), plus greater security and reliability thanks to the sandbox the application runs in.
 However, there might be scenarios where UWP isn't enough and you need to perform one or more tasks which are supported only by the Win32 ecosystem: working with any file on the disk without user intervention, reading a key from the registry, integrating a SDK which doesn't support the Windows Runtime.
 
