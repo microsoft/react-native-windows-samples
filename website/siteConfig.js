@@ -29,7 +29,7 @@ const siteConfig = {
   headerLinks: [
     { doc: "getting-started", label: "Docs" },
     { doc: "flyout-component", label: "APIs" },
-    { blog: true, label: "Blog" },
+    { href:"https://devblogs.microsoft.com/react-native/" , label: "Blog" },
     { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/main/samples", label: "Samples" },
     { page: "support", label: "Support" },

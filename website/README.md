@@ -25,7 +25,7 @@ $ yarn install
 $ yarn start
 ```
 
-Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started 
+Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started
 
 ## Directory Structure
 
@@ -38,9 +38,6 @@ my-docusaurus/
     doc-2.md
     doc-3.md
   website/
-    blog/
-      2016-3-11-oldest-post.md
-      2017-10-24-newest-post.md
     core/
     node_modules/
     pages/
@@ -73,19 +70,7 @@ For more information about docs, click [here](https://v1.docusaurus.io/docs/en/n
 
 ## Editing an existing blog post
 
-Edit blog posts by navigating to `website/blog` and editing the corresponding post:
-
-`website/blog/post-to-be-edited.md`
-```markdown
----
-id: post-needs-edit
-title: This Blog Post Needs To Be Edited
----
-
-Edit me...
-```
-
-For more information about blog posts, click [here](https://v1.docusaurus.io/docs/en/adding-blog)
+Refer to the dedicated react-native-devblog (`microsoft/react-native-devblog`) repository for it - Microsoft internal only.
 
 # Adding Content
 
@@ -122,33 +107,7 @@ For more information about adding new docs, click [here](https://v1.docusaurus.i
 
 ## Adding a new blog post
 
-1. Make sure there is a header link to your blog in `website/siteConfig.js`:
-
-`website/siteConfig.js`
-```javascript
-headerLinks: [
-    ...
-    { blog: true, label: 'Blog' },
-    ...
-]
-```
-
-2. Create the blog post with the format `YYYY-MM-DD-My-Blog-Post-Title.md` in `website/blog`:
-
-`website/blog/2018-05-21-New-Blog-Post.md`
-
-```markdown
----
-author: Frank Li
-authorURL: https://twitter.com/foobarbaz
-authorFBID: 503283835
-title: New Blog Post
----
-
-Lorem Ipsum...
-```
-
-For more information about blog posts, click [here](https://v1.docusaurus.io/docs/en/adding-blog)
+Refer to the dedicated react-native-devblog (`microsoft/react-native-devblog`) repository for it - Microsoft internal only.
 
 ## Adding items to your site's top navigation bar
 
@@ -215,7 +174,7 @@ Complete the documentation updates for both main and stable version 0.XX above.
 1. Update necessary version references in [docs](../docs/).
     1. `getting-started.md`
 2. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation.
-3. Snapshot the website for version 0.XX: 
+3. Snapshot the website for version 0.XX:
     1. `cd website`
     1. `yarn run version 0.XX`
     1. `yarn run fix-unbroken`

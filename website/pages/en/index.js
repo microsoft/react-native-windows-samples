@@ -36,23 +36,6 @@ Some build-time tools will send telemetry to Microsoft by default. No telemetry 
 [macOS 10.14 SDK]: https://developer.apple.com/documentation/macos-release-notes/macos-mojave-10_14-release-notes
 [all devices supported by Windows 10 and higher]: https://docs.microsoft.com/windows/apps/get-started/?tabs=rnw
   `,
-  roadmapwindows: `
-We are actively developing React Native for Windows in alignment with
-react-native core as it evolves. Please see the [Roadmap 2019] blog for
-details on this effort and investment roadmap for the upcoming months.
-
-**React Native for Windows now supports React Native version 0.61.**
-Download the latest [npm package] to get the updates.
-
-[Roadmap 2019]: blog/2019/07/22/roadmap
-[npm package]: https://www.npmjs.com/package/react-native-windows
-  `,
-  roadmapmac: `
-Coming soon!
-
-[Roadmap 2019]: blog/2019/07/22/roadmap
-[npm package]: https://www.npmjs.com/package/react-native-windows
-  `,
   resources: `
   Don't forget we are fully **open source**! Head over to our **[React Native for Windows]** or **[React Native for macOS]** GitHubs to learn more, file issues, contribute, or ask questions.
 
@@ -281,18 +264,6 @@ class Index extends React.Component {
               <img style={{maxWidth: '200%', marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_mac_cropped.png" alt="rnw_cropped"/>
             </div>
           </div>
-        </div>
-      </Section>
-    );
-
-    const Roadmap = () => (
-      <Section background="light">
-        <div className="content">
-          <Heading text="Status and Roadmap" />
-          <h2>Windows</h2>
-          <MarkdownBlock>{textContent.roadmapwindows}</MarkdownBlock>
-          <h2>macOS</h2>
-          <MarkdownBlock>{textContent.roadmapmac}</MarkdownBlock>
         </div>
       </Section>
     );
