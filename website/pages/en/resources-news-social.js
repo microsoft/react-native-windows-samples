@@ -23,21 +23,6 @@ class Resources extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedResource: 'repos' };
-
-    // This binding is necessary to make `this` work in the callback
-    this.SelectResource = this.SelectResource.bind(this);
-  }
-
-  SelectResource(navItemName) {
-    if (typeof document !== 'undefined') {
-      var i;
-      var x = document.getElementsByClassName("resourcesSideNavLink");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      document.getElementById(navItemName).style.display = "block";
-    }
-    console.log('poop');
   }
 
   render() {
