@@ -70,6 +70,7 @@ const siteConfig = {
     "https://buttons.github.io/buttons.js",
     "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
     "/react-native-windows/js/code-block-buttons.js",
+    "/react-native-windows/js/nav-buttons.js"
   ],
 
   stylesheets: ["/react-native-windows/css/code-block-buttons.css"],

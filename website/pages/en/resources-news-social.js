@@ -125,12 +125,12 @@ class Resources extends React.Component {
 
     return (
       <div className="docMainWrapper wrapper">
-        <div className="docsNavContainer">
+        <div className="docsNavContainer" id="navButtons_clickTarget">
           <nav className="toc">
             <div className="toggleNav">
               <section className="navWrapper wrapper">
                 <div className="navBreadcrumb wrapper">
-                  <div className="navToggle" id="navToggler">
+                  <div className="navToggle" id="navButtons_clickSource">
                     <div className="hamburger-menu">
                       <div className="line1"></div>
                       <div className="line2"></div>
