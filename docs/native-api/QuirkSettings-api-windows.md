@@ -28,7 +28,7 @@ Runtime setting allowing Networking (HTTP, WebSocket) connections to skip certif
 
 > **EXPERIMENTAL**
 
-By default `react-native-windows` will handle various back events and forward them to JavaScript. Setting this to [`BackNavigationHandlerKind.Native`](BackNavigationHandlerKind) prevents `react-native-windows` from handling these events, including forwarding to JavaScript.  This will allow applications to handle back navigation in native code, but will prevent the `BackHandler` native module from receiving events.
+By default `react-native-windows` will handle various back events and forward them to JavaScript. Setting this to [`BackNavigationHandlerKind.Native`](BackNavigationHandlerKind#native) prevents `react-native-windows` from handling these events, including forwarding to JavaScript.  This will allow applications to handle back navigation in native code, but will prevent the `BackHandler` native module from receiving events.
 
 
 
@@ -52,6 +52,17 @@ By default `react-native-windows` will only track `active` and `background` `App
 
 Older versions of react-native-windows did not use [Yoga](https://github.com/facebook/yoga)'s legacy stretch behavior. This meant that react-native-windows would layout views slightly differently that in iOS and Android.
 Set this setting to false to maintain the behavior from react-native-windows <= 0.62.
+
+
+
+### SetUseWebFlexBasisBehavior
+`static` void **`SetUseWebFlexBasisBehavior`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+**Default value**: `false`
+
+There is a chance that cached flex basis values can cause text truncation in some re-layout scenarios. Enabling [Yoga](https://github.com/facebook/yoga)'s experimental web flex basis behavior fixes this issue, however using it may result in perfomance regressions due to additional layout passes.
 
 
 

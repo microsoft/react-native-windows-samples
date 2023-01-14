@@ -47,10 +47,17 @@ Gets the window handle HWND (as an UInt64) used as the XAML Island window for th
 
 
 
+### GetReactRootView
+[`ReactRootView`](ReactRootView) **`GetReactRootView`**([`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) view)
+
+Gets the [`ReactRootView`](ReactRootView) view for a given element.
+
+
+
 ### GetXamlRoot
 `static` [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) **`GetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties)
 
-Retrieves the default [`Xaml.XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) for the app.
+Retrieves the default [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) for the app.
 
 
 
@@ -73,7 +80,7 @@ Pass the value returned by IDesktopWindowXamlSourceNative get_WindowHandle.
 ### SetXamlRoot
 `static` void **`SetXamlRoot`**([`IReactPropertyBag`](IReactPropertyBag) properties, [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) xamlRoot)
 
-Sets the [`Xaml.XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) element for the app. This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) object when using XAML Islands so that certain APIs work correctly.
+Sets the [`XamlRoot`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) element for the app. This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) object when using XAML Islands so that certain APIs work correctly.
 For more information, see [Host WinRT XAML Controls in desktop apps (XAML Islands)](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
 
 

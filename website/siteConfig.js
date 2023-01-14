@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const defaultVersionShown = "0.70";
+const defaultVersionShown = "0.71";
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {

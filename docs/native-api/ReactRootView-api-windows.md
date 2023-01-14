@@ -7,7 +7,7 @@ Kind: `class`
 
 Extends: [`Grid`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
-Implements: [`IReactRootViewExperimental`](IReactRootViewExperimental)
+
 
 A XAML component that hosts React Native UI elements.
 
@@ -16,13 +16,6 @@ A XAML component that hosts React Native UI elements.
  string `ComponentName`
 
 The name of the root UI component registered in JavaScript with help of the [`AppRegistry.registerComponent`](https://reactnative.dev/docs/appregistry#registercomponent) method.
-
-### ExperimentalUseFabric
- bool `ExperimentalUseFabric`
-
-> **EXPERIMENTAL**
-
-Use Fabric for this ReactRootView
 
 ### InitialProps
  [`JSValueArgWriter`](JSValueArgWriter) `InitialProps`
@@ -58,3 +51,7 @@ Reloads the current [`ReactRootView`](ReactRootView) UI components.
 
 
 
+
+
+## Referenced by
+- [`XamlUIService`](XamlUIService)

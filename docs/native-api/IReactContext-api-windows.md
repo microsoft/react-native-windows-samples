@@ -98,6 +98,7 @@ The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that 
 - [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
 - [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
 - [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
+- [`LayoutService`](LayoutService)
 - [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`XamlUIService`](XamlUIService)

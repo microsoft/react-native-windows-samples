@@ -9,6 +9,7 @@
 !versioned_docs/version-0.68/native-api/*-api-windows*.md
 !versioned_docs/version-0.69/native-api/*-api-windows*.md
 !versioned_docs/version-0.70/native-api/*-api-windows*.md
+!versioned_docs/version-0.71/native-api/*-api-windows*.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
@@ -19,6 +20,19 @@ File not found IViewManagerCreateWithProperties-api-windows.md while parsing ver
 File not found IViewManagerCreateWithProperties while parsing versioned_docs/version-0.65/view-managers.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
+File not found native-modules.md while parsing versioned_docs/version-0.71/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.71/getting-started.md
+File not found run-windows-cli.md while parsing versioned_docs/version-0.71/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.71/native-modules-advanced.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.71/native-modules.md
+File not found native-modules-advanced.md while parsing versioned_docs/version-0.71/native-modules.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.71/native-modules.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.71/native-modules.md
+File not found view-managers.md while parsing versioned_docs/version-0.71/native-modules.md
+File not found native-code-language-choice.md while parsing versioned_docs/version-0.71/native-modules.md
+File not found win10-compat.md while parsing versioned_docs/version-0.71/rnw-dependencies.md
+File not found assets/powershell-start-menu.png while parsing versioned_docs/version-0.71/win10-vm.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.71/win10-vm.md
 File not found IReactPackageProvider-api-windows.md while parsing versioned_docs/version-0.70/coreapp.md
 File not found ReactInstanceSettings-api-windows.md while parsing versioned_docs/version-0.70/coreapp.md
 File not found native-modules.md while parsing versioned_docs/version-0.70/getting-started.md
