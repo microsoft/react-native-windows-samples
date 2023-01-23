@@ -101,7 +101,3 @@ void **`RemoveAt`**(uint32_t index)
 
 
 
-
-
-## Referenced by
-- [`ViewControl`](ViewControl)

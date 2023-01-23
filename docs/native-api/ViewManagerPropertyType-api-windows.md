@@ -14,3 +14,4 @@ Kind: `enum`
 |`Map` | 0x4  |  |
 |`Color` | 0x5  |  |
 |`Function` | 0x6  |  |
+|`ImageSource` | 0x7  |  |

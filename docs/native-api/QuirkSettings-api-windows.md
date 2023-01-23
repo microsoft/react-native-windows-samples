@@ -55,4 +55,15 @@ Set this setting to false to maintain the behavior from react-native-windows <= 
 
 
 
+### SetUseWebFlexBasisBehavior
+`static` void **`SetUseWebFlexBasisBehavior`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+**Default value**: `false`
+
+There is a chance that cached flex basis values can cause text truncation in some re-layout scenarios. Enabling [Yoga](https://github.com/facebook/yoga)'s experimental web flex basis behavior fixes this issue, however using it may result in perfomance regressions due to additional layout passes.
+
+
+
 

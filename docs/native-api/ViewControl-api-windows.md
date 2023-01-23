@@ -19,7 +19,7 @@ Extends: [`ContentControl`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.C
 
 ## Methods
 ### GetPanel
-[`ViewPanel`](ViewPanel) **`GetPanel`**()
+[`Panel`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) **`GetPanel`**()
 
 
 

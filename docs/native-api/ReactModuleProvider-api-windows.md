@@ -16,4 +16,3 @@ Object **`Invoke`**([`IReactModuleBuilder`](IReactModuleBuilder) moduleBuilder)
 
 ## Referenced by
 - [`IReactPackageBuilder`](IReactPackageBuilder)
-- [`IReactPackageBuilderExperimental`](IReactPackageBuilderExperimental)
