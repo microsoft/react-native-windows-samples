@@ -121,6 +121,6 @@ To upgrade this sample to the latest version of RNW:
             ```
 8. Verify the updated sample builds:
     ```cmd
-    npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink
+    npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --proj "NativeModuleSample\NativeModuleSample.vcxproj"
     ```
 9. Update the main readme with the new major version at the top.
