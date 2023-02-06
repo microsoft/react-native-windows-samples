@@ -20,7 +20,8 @@ Start an **elevated** PowerShell window and run:
 
 ```powershell
 Set-ExecutionPolicy Unrestricted -Scope Process -Force;
-iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-vs2019-deps.ps1')
+iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-vs2019-deps.ps1');
+
 ```
 
 <details>
