@@ -28,6 +28,10 @@ jobs:
         run: yarn install --frozen-lockfile
         working-directory: ..\..\src
 
+      - name: Codegen check
+        run: npx react-native codegen-windows --check --no-telemery
+        working-directory: ..\..\src
+
       - name: Build x86 Debug
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging
         working-directory: ..\..\src

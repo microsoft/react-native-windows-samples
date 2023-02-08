@@ -39,6 +39,10 @@ jobs:
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
         working-directory: ..\..\src
 
+      - name: Codegen
+        run: npx react-native codegen-windows --no-telemery
+        working-directory: ..\..\src
+
       - name: Run react-native run-windows
         if: ${{ steps.upgrade.outcome == 'success' }}
         run: npx react-native run-windows --logging --no-autolink --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}

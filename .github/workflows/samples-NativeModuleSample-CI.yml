@@ -37,6 +37,10 @@ jobs:
         run: yarn install --frozen-lockfile
         working-directory: ..\..\src
       
+      - name: Codegen
+        run: npx react-native codegen-windows --check --no-telemery
+        working-directory: ..\..\src
+
       - name: Run react-native run-windows
         run: npx react-native run-windows --logging --no-autolink --no-packager --no-deploy --no-launch --arch ${{ matrix.architecture }} ${{ matrix.configuration == 'Release' && '--release' || '' }}
         working-directory: ..\..\src

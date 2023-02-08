@@ -10,17 +10,23 @@
 #include <math.h>
 
 #include "NativeModules.h"
+#include "../../codegen/NativeFancyMathSpec.g.h"
 
 namespace NativeModuleSample
 {
     REACT_MODULE(FancyMath);
     struct FancyMath
     {
-        REACT_CONSTANT(E);
-        const double E = M_E;
+        using ModuleSpec = FancyMathSpec;
 
-        REACT_CONSTANT(PI, L"Pi");
-        const double PI = M_PI;
+        REACT_GET_CONSTANTS(GetConstants)
+        FancyMathSpec_Constants GetConstants() noexcept
+        {
+            FancyMathSpec_Constants constants;
+            constants.E = M_E;
+            constants.Pi = M_PI;
+            return constants;
+        }
 
         REACT_METHOD(Add, L"add");
         double Add(double a, double b) noexcept

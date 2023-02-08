@@ -1,5 +1,6 @@
-import FancyMath from './NativeFancyMath';
-import DataMarshallingExamples from './NativeDataMarshallingExamples';
+import FancyMath from './src/NativeFancyMath';
+import DataMarshallingExamples from './src/NativeDataMarshallingExamples';
+import AsyncMethodExamples from './src/NativeAsyncMethodExamples';
 
 export {
     DataMarshallingExamples,
