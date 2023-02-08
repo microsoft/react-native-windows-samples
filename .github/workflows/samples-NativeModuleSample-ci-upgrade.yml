@@ -40,7 +40,7 @@ jobs:
         working-directory: ..\..\src
 
       - name: Codegen
-        run: npx react-native codegen-windows --no-telemery
+        run: npx react-native codegen-windows --no-telemetry
         working-directory: ..\..\src
 
       - name: Run react-native run-windows

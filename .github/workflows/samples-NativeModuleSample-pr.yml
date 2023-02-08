@@ -29,7 +29,7 @@ jobs:
         working-directory: ..\..\src
 
       - name: Codegen check
-        run: npx react-native codegen-windows --check --no-telemery
+        run: npx react-native codegen-windows --check --no-telemetry
         working-directory: ..\..\src
 
       - name: Build x86 Debug
