@@ -21,13 +21,13 @@
  |};
 
  export interface Spec extends TurboModule {
-   +ExplicitPrimtiveArgs(b: boolean, i: number, d: number, s: string) => void;
+   +ExplicitPrimtiveArgs(b: boolean, i: Int32, d: number, s: string) => void;
 
    +ReturnExplicitBoolean(callback: (value: boolean) => void) => void;
    +ReturnExplicitBooleanSync() => boolean;
 
-   +ReturnExplicitInteger(callback: (value: number) => void) => void;
-   +ReturnExplicitIntegerSync() => number;
+   +ReturnExplicitInteger(callback: (value: Int32) => void) => void;
+   +ReturnExplicitIntegerSync() => Int32;
 
    +ReturnExplicitDouble(callback: (value: number) => void) => void;
    +ReturnExplicitDoubleSync() => number;

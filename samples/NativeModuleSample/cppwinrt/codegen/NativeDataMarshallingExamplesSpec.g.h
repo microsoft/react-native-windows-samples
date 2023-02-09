@@ -31,11 +31,11 @@ struct DataMarshallingExamplesSpec_Line {
 
 struct DataMarshallingExamplesSpec : winrt::Microsoft::ReactNative::TurboModuleSpec {
   static constexpr auto methods = std::tuple{
-      Method<void(bool, double, double, std::string) noexcept>{0, L"ExplicitPrimtiveArgs"},
+      Method<void(bool, int, double, std::string) noexcept>{0, L"ExplicitPrimtiveArgs"},
       Method<void(Callback<bool>) noexcept>{1, L"ReturnExplicitBoolean"},
       SyncMethod<bool() noexcept>{2, L"ReturnExplicitBooleanSync"},
-      Method<void(Callback<double>) noexcept>{3, L"ReturnExplicitInteger"},
-      SyncMethod<double() noexcept>{4, L"ReturnExplicitIntegerSync"},
+      Method<void(Callback<int>) noexcept>{3, L"ReturnExplicitInteger"},
+      SyncMethod<int() noexcept>{4, L"ReturnExplicitIntegerSync"},
       Method<void(Callback<double>) noexcept>{5, L"ReturnExplicitDouble"},
       SyncMethod<double() noexcept>{6, L"ReturnExplicitDoubleSync"},
       Method<void(Callback<std::string>) noexcept>{7, L"ReturnExplicitString"},
@@ -62,8 +62,8 @@ struct DataMarshallingExamplesSpec : winrt::Microsoft::ReactNative::TurboModuleS
     REACT_SHOW_METHOD_SPEC_ERRORS(
           0,
           "ExplicitPrimtiveArgs",
-          "    REACT_METHOD(ExplicitPrimtiveArgs) void ExplicitPrimtiveArgs(bool b, double i, double d, std::string s) noexcept { /* implementation */ }\n"
-          "    REACT_METHOD(ExplicitPrimtiveArgs) static void ExplicitPrimtiveArgs(bool b, double i, double d, std::string s) noexcept { /* implementation */ }\n");
+          "    REACT_METHOD(ExplicitPrimtiveArgs) void ExplicitPrimtiveArgs(bool b, int i, double d, std::string s) noexcept { /* implementation */ }\n"
+          "    REACT_METHOD(ExplicitPrimtiveArgs) static void ExplicitPrimtiveArgs(bool b, int i, double d, std::string s) noexcept { /* implementation */ }\n");
     REACT_SHOW_METHOD_SPEC_ERRORS(
           1,
           "ReturnExplicitBoolean",
@@ -77,13 +77,13 @@ struct DataMarshallingExamplesSpec : winrt::Microsoft::ReactNative::TurboModuleS
     REACT_SHOW_METHOD_SPEC_ERRORS(
           3,
           "ReturnExplicitInteger",
-          "    REACT_METHOD(ReturnExplicitInteger) void ReturnExplicitInteger(std::function<void(double)> const & callback) noexcept { /* implementation */ }\n"
-          "    REACT_METHOD(ReturnExplicitInteger) static void ReturnExplicitInteger(std::function<void(double)> const & callback) noexcept { /* implementation */ }\n");
+          "    REACT_METHOD(ReturnExplicitInteger) void ReturnExplicitInteger(std::function<void(int)> const & callback) noexcept { /* implementation */ }\n"
+          "    REACT_METHOD(ReturnExplicitInteger) static void ReturnExplicitInteger(std::function<void(int)> const & callback) noexcept { /* implementation */ }\n");
     REACT_SHOW_METHOD_SPEC_ERRORS(
           4,
           "ReturnExplicitIntegerSync",
-          "    REACT_SYNC_METHOD(ReturnExplicitIntegerSync) double ReturnExplicitIntegerSync() noexcept { /* implementation */ }\n"
-          "    REACT_SYNC_METHOD(ReturnExplicitIntegerSync) static double ReturnExplicitIntegerSync() noexcept { /* implementation */ }\n");
+          "    REACT_SYNC_METHOD(ReturnExplicitIntegerSync) int ReturnExplicitIntegerSync() noexcept { /* implementation */ }\n"
+          "    REACT_SYNC_METHOD(ReturnExplicitIntegerSync) static int ReturnExplicitIntegerSync() noexcept { /* implementation */ }\n");
     REACT_SHOW_METHOD_SPEC_ERRORS(
           5,
           "ReturnExplicitDouble",

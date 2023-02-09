@@ -39,6 +39,9 @@ namespace NativeModuleSample
     {
         using ModuleSpec = DataMarshallingExamplesSpec;
 
+        using Line = DataMarshallingExamplesSpec_Line;
+        using Point = DataMarshallingExamplesSpec_Point;
+
         #pragma region Primitive Types
 
         // In these examples, we specify native methods with primitive
@@ -53,7 +56,7 @@ namespace NativeModuleSample
         //
         // NativeModules.DataMarshallingExamples.ExplicitPrimtiveArgs(true, 1, 3.14, 'Hello World');
         REACT_METHOD(ExplicitPrimtiveArgs);
-        void ExplicitPrimtiveArgs(bool b, double i, double d, std::string s) noexcept
+        void ExplicitPrimtiveArgs(bool b, int i, double d, std::string s) noexcept
         {
             DebugWriteLine("bool b: " + b ? "true" : "false");
             DebugWriteLine("int i: " + std::to_string(i));
@@ -88,7 +91,7 @@ namespace NativeModuleSample
         // console.log(syncResult);
         REACT_METHOD(ReturnExplicitInteger);
         REACT_SYNC_METHOD(ReturnExplicitInteger, L"ReturnExplicitIntegerSync");
-        double ReturnExplicitInteger() noexcept
+        int ReturnExplicitInteger() noexcept
         {
             auto result = 1;
             DebugWriteLine("returning: " + std::to_string(result));
@@ -154,7 +157,7 @@ namespace NativeModuleSample
         // console.log(syncResult);
         REACT_METHOD(GetMidpoint);
         REACT_SYNC_METHOD(GetMidpoint, L"GetMidpointSync");
-        DataMarshallingExamplesSpec_Point GetMidpoint(DataMarshallingExamplesSpec_Point && p1, DataMarshallingExamplesSpec_Point && p2) noexcept
+        Point GetMidpoint(Point && p1, Point && p2) noexcept
         {
             DebugWriteLine("Point p1: " + to_string(p1));
             DebugWriteLine("Point p2: " + to_string(p2));
@@ -162,7 +165,7 @@ namespace NativeModuleSample
             double midX = 0.5 * (p1.X + p2.X);
             double midY = 0.5 * (p1.Y + p2.Y);
 
-            DataMarshallingExamplesSpec_Point midpoint{ midX, midY };
+            Point midpoint{ midX, midY };
 
             DebugWriteLine("returning: " + to_string(midpoint));
             return midpoint;
@@ -180,7 +183,7 @@ namespace NativeModuleSample
         // console.log(syncResult);
         REACT_METHOD(GetLength);
         REACT_SYNC_METHOD(GetLength, L"GetLengthSync");
-        double GetLength(DataMarshallingExamplesSpec_Line && line) noexcept
+        double GetLength(Line && line) noexcept
         {
             DebugWriteLine("Line line: " + to_string(line));
 
