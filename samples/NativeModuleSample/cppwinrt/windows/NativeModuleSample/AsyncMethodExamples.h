@@ -9,16 +9,19 @@
 
 #include "JSValue.h"
 #include "NativeModules.h"
+#include "../../codegen/NativeAsyncMethodExamplesSpec.g.h"
 
 namespace NativeModuleSample
 {
     REACT_MODULE(SimpleHttpModule);
     struct SimpleHttpModule
     {
+        using ModuleSpec = AsyncMethodExamplesSpec;
+
         // An example asynchronous method which uses asynchronous Windows APIs to make a
         // http request to the given url and resolve the given promise with the result
-        static winrt::Windows::Foundation::IAsyncAction GetHttpResponseAsync(std::wstring uri,
-            winrt::Microsoft::ReactNative::ReactPromise<winrt::Microsoft::ReactNative::JSValueObject> promise) noexcept
+        static winrt::Windows::Foundation::IAsyncAction GetHttpResponseAsync(std::string uri,
+            winrt::Microsoft::ReactNative::ReactPromise<winrt::Microsoft::ReactNative::JSValue> promise) noexcept
         {
             // Capture the promise to make sure it doesn't get cleaned up
             // during the asynchronous calls below
@@ -28,7 +31,7 @@ namespace NativeModuleSample
             auto httpClient = winrt::Windows::Web::Http::HttpClient();
 
             // Send the GET request asynchronously
-            auto httpResponseMessage = co_await httpClient.GetAsync(winrt::Windows::Foundation::Uri(uri));
+            auto httpResponseMessage = co_await httpClient.GetAsync(winrt::Windows::Foundation::Uri(winrt::to_hstring(uri)));
 
             // Parse response
             auto statusCode = httpResponseMessage.StatusCode();
@@ -40,7 +43,7 @@ namespace NativeModuleSample
             resultObject["statusCode"] = static_cast<int>(statusCode);
             resultObject["content"] = winrt::to_string(content);
 
-            capturedPromise.Resolve(resultObject);
+            capturedPromise.Resolve(std::move(resultObject));
         }
 
         // An example method which provides a promise-based JS method on one side
@@ -52,8 +55,8 @@ namespace NativeModuleSample
         //  .then(result => console.log(result))
         //  .catch(error => console.log(error));
         REACT_METHOD(GetHttpResponse);
-        void GetHttpResponse(std::wstring uri,
-            winrt::Microsoft::ReactNative::ReactPromise<winrt::Microsoft::ReactNative::JSValueObject> promise) noexcept
+        void GetHttpResponse(std::string uri,
+            winrt::Microsoft::ReactNative::ReactPromise<winrt::Microsoft::ReactNative::JSValue> promise) noexcept
         {
             // Here we're simply starting our asynchronous method
             // and returning back to the caller

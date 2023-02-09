@@ -10,7 +10,6 @@
  import type {TurboModule} from 'react-native/Libraries/TurboModule/RCTExport';
  import * as TurboModuleRegistry from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
  
-
  export type Point = {|
    X: number,
    Y: number,
@@ -22,13 +21,13 @@
  |};
 
  export interface Spec extends TurboModule {
-   +ExplicitPrimtiveArgs(b: boolean, i: number, d: number, s: string) => void;
+   +ExplicitPrimtiveArgs(b: boolean, i: Int32, d: number, s: string) => void;
 
    +ReturnExplicitBoolean(callback: (value: boolean) => void) => void;
    +ReturnExplicitBooleanSync() => boolean;
 
-   +ReturnExplicitInteger(callback: (value: number) => void) => void;
-   +ReturnExplicitIntegerSync() => number;
+   +ReturnExplicitInteger(callback: (value: Int32) => void) => void;
+   +ReturnExplicitIntegerSync() => Int32;
 
    +ReturnExplicitDouble(callback: (value: number) => void) => void;
    +ReturnExplicitDoubleSync() => number;
@@ -52,7 +51,7 @@
    +Split(s: string, separators: string, callback: (value: Array<string>) => void) => void;
    +SplitSync(s: string, separators: string) => Array<string>;
 
-   +JSValueArgs(b: boolean, i: number, d: number, s: string) => void;
+   +JSValueArgs(b: Object, i: Object, d: Object, s: Object) => void;
 
    +GetMidpointByJSValue(p1: Object, p2: Object, callback: (value: Object) => void) => void;
    +GetMidpointByJSValueSync(p1: Object, p2: Object) => Object;
