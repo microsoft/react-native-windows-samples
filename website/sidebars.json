@@ -39,6 +39,7 @@
       "rnm-dependencies"
     ],
     "Troubleshooting": [
+      "debugging-javascript",
       "native-modules-troubleshooting",
       "metro-config-out-tree-platforms"
     ],
