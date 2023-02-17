@@ -100,7 +100,7 @@ You should now be able to debug your RNW application. To set breakpoints you'll 
 
 You can web debug within [VS Code](http://code.visualstudio.com/) by using the [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native) extension.
 
-> **Important**: You will not be able to connect VS Code to Metro if the Edge Developer Tools (or another debugger) is already connected. So make sure you don't have any previous *React Native Debugger* browser tabs open.
+> **Important**: You will not be able to connect VS Code to Metro if the Edge Developer Tools (or another debugger) is already connected. So double check you don't have any previous *React Native Debugger* browser tabs open before running these steps.
 
 1. Make sure you have VS Code and the React Native Tools extension installed
 2. Open your project's root folder in VS Code
