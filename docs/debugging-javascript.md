@@ -122,7 +122,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     ```
     3. Ensure that Metro, your native app, and/or any browser Developer Tools are **not** already running
     4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
-    5. Click on the ▶️ button or press *F5* in VS Code
+    5. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
 6. **Option B:** Attach VS Code to Metro that's already running
     1. Click on the ⚙️ to the right of *Attach to packager*
@@ -138,7 +138,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     ```
     3. Ensure sure that only Metro is already running (i.e. `npx react-native start`)
     4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
-    5. Click on the ▶️ button or press *F5* in VS Code
+    5. Click on the ▶️ button or press `F5` in VS Code
     6. Confirm the address of the Metro server (default: `localhost`)
     7. Confirm the port of the Metro server (default: `8081`)
     > Watch VS Code's *Debug Console* output for a successful debugger connection.
@@ -283,7 +283,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     ```
     3. Ensure that Metro is already running (i.e. `npx react-native start`)
     4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
-    5. Click on the ▶️ button or press *F5* in VS Code
+    5. Click on the ▶️ button or press `F5` in VS Code
     6. Confirm the address of the Metro server (default: `localhost`)
     7. Confirm the port of the Metro server (default: `8081`)
     > Watch VS Code's *Debug Console* output for a successful debugger connection.
@@ -320,7 +320,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     ```
     3. Ensure that Metro and your native app are **not** already running
     4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
-    5. Click on the ▶️ button or press *F5* in VS Code
+    5. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
 6. **Option B:** Attach VS Code to Metro that's already running
     1. Click on the ⚙️ to the right of *Attach to Hermes application - Experimental*
@@ -336,7 +336,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     ```
     3. Ensure that Metro is already running (i.e. `npx react-native start`)
     4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
-    5. Click on the ▶️ button or press *F5* in VS Code
+    5. Click on the ▶️ button or press `F5` in VS Code
     6. Confirm the address of the Metro server (default: `localhost`)
     7. Confirm the port of the Metro server (default: `8081`)
     > Watch VS Code's *Debug Console* output for a successful debugger connection.
