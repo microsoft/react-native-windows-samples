@@ -102,7 +102,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
 
 > **Important**: You will not be able to connect VS Code to Metro if the Edge Developer Tools (or another debugger) is already connected. So make sure you don't have any previous *React Native Debugger* browser tabs open.
 
-1. Ensure you have VS Code and the React Native Tools extension installed
+1. Make sure you have VS Code and the React Native Tools extension installed
 2. Open your project's root folder in VS Code
 3. Click on the *Run and Debug* button in the sidebar or press `Ctrl+Shift+D`
 4. Click on the drop-down at the top of the sidebar and select *React Native...*
@@ -120,8 +120,8 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
         "isDynamic": true
     }
     ```
-    3. Ensure that Metro, your native app, and/or any browser Developer Tools are **not** already running
-    4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
+    3. Make sure that Metro, your native app, and/or any browser Developer Tools are **not** already running
+    4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
 6. **Option B:** Attach VS Code to Metro that's already running
@@ -136,8 +136,8 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
         "isDynamic": true
     }
     ```
-    3. Ensure sure that only Metro is already running (i.e. `npx react-native start`)
-    4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
+    3. Make sure that only Metro is already running (i.e. `npx react-native start`)
+    4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
     6. Confirm the address of the Metro server (default: `localhost`)
     7. Confirm the port of the Metro server (default: `8081`)
@@ -149,7 +149,7 @@ Once everything is running, you should be able to debug your RNW application. To
 
 > Remember to save `launch.json` so you can reuse this debugging configuration in the future.
 
-> *Important:* If you're having difficulty getting VS Code to connect with Web Debugging, make extra sure you're not running any part of RNW (watch out for rogue `node.exe` processes) before starting the steps above.
+> *Important:* If you're having difficulty getting VS Code to connect with Web Debugging, double check you're not running any part of RNW (watch out for rogue `node.exe` processes) before starting the steps above.
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
@@ -229,20 +229,20 @@ The next step is to connect with your chosen debugger.
 
 You can direct debug RNW apps using the (default) Chakra JS engine with [Visual Studio](https://visualstudio.microsoft.com/)'s built-in Script debugger.
 
-1. Ensure you have Visual Studio installed
+1. Make sure you have Visual Studio installed
 2. Open your project's Visual Studio solution file (i.e. `MyApp.sln`)
 3. **Option A:** Let Visual Studio launch the app and start debugging
-    1. Ensure that Metro is already running (i.e. `npx react-native start`)
-    2. Ensure the desired *Configuration* (i.e. `Debug`) and *Platform* (i.e. `x64`) of your native app by setting the drop-downs in Visual Studio's top command bar
+    1. Make sure that Metro is already running (i.e. `npx react-native start`)
+    2. Make sure the desired *Configuration* (i.e. `Debug`) and *Platform* (i.e. `x64`) of your native app by setting the drop-downs in Visual Studio's top command bar
     3. In *Solution Explorer* right-click on your native app's project (i.e. `MyApp (Universal Windows)`) and select *Properties*
         1. For C++ RNW apps, open the *Configuration Properties > Debugging* page, set the *Debugger Type* to *Script Only*, then click *OK*
         2. For C# RNW apps, open the *Debug* tab, set the *Debugger type > Application process* to *Script*, then close the properties
     4. Click on *Debug* in the menu bar and select *Start Debugging*
 4. **Option B:** Attach Visual Studio to the app that's already running
-    1. Ensure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
+    1. Make sure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
     2. Click on *Debug* in Visual Studio's menu bar and select *Attach to Process...*
     3. Find and select the native process for your app (not Metro)
-    4. Ensure *Attach to:* is set to *Automatic: Script code* or *Script code*
+    4. Make sure *Attach to:* is set to *Automatic: Script code* or *Script code*
     > If *Attach to:* is set to something else, double check that *Script* is present in the *Type* column for your app's process. If it isn't, make sure you've enabled Direct Debugging in your app, and click the *Refresh* button. If *Script* is present under *Type* but not in *Attach to:*, click on the *Select...* button and try manually checking *Debug these code types: > Script*.
 
     5. Click on the *Attach* button
@@ -260,7 +260,7 @@ To see your app's JS source in Visual Studio, you can either:
 
 You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://code.visualstudio.com/)'s built-in Node.js debugger.
 
-1. Ensure you have VS Code installed
+1. Make sure you have VS Code installed
 2. Open your project's root folder in VS Code
 3. Click on the *Run and Debug* button in the sidebar or press `Ctrl+Shift+D`
 4. Click on the drop-down at the top of the sidebar and select *Add Configuration...*
@@ -281,8 +281,8 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
         "type": "node"
     }
     ```
-    3. Ensure that Metro is already running (i.e. `npx react-native start`)
-    4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
+    3. Make sure that Metro is already running (i.e. `npx react-native start`)
+    4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
     6. Confirm the address of the Metro server (default: `localhost`)
     7. Confirm the port of the Metro server (default: `8081`)
@@ -300,7 +300,7 @@ Once everything is running, you should be able to debug your RNW application. To
 
 You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://code.visualstudio.com/) using the [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native) extension.
 
-1. Ensure you have VS Code and the React Native Tools extension installed
+1. Make sure you have VS Code and the React Native Tools extension installed
 2. Open your project's root folder in VS Code
 3. Click on the *Run and Debug* button in the sidebar or press `Ctrl+Shift+D`
 4. Click on the drop-down at the top of the sidebar and select *React Native...*
@@ -318,8 +318,8 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
         "isDynamic": true
     }
     ```
-    3. Ensure that Metro and your native app are **not** already running
-    4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
+    3. Make sure that Metro and your native app are **not** already running
+    4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
 6. **Option B:** Attach VS Code to Metro that's already running
@@ -334,8 +334,8 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
         "isDynamic": true
     }
     ```
-    3. Ensure that Metro is already running (i.e. `npx react-native start`)
-    4. Ensure the new config is selected at the top of the *Run and Debug* sidebar
+    3. Make sure that Metro is already running (i.e. `npx react-native start`)
+    4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
     6. Confirm the address of the Metro server (default: `localhost`)
     7. Confirm the port of the Metro server (default: `8081`)
@@ -357,7 +357,7 @@ Web Debugging is the older, more well-established of the two debugging solutions
 
 However, Web Debugging is not without its limitations. The primary problem is that JS can behave slightly differently when running in different JS engines. As such, by developing (and testing) your app while using a browser to run the JS, you might miss bugs or other issues that only manifest when running your app normally with the embedded JS engine.
 
-This puts extra onus on developers to test all of their app's functionality in their release build, or otherwise risks situations where customers find bugs in production that aren't reproducible when using Web Debugging.
+This requires developers to double check all of their app's functionality in the release build, or risk situations where customers find bugs in production that aren't reproducible when using Web Debugging.
 
 Furthermore, some parts of RN, such as synchronous calls to native module methods, only work when running on the embedded JS engine. Such native methods won't work when using Web Debugging.
 
