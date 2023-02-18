@@ -39,6 +39,7 @@
       "version-0.71-rnm-dependencies"
     ],
     "Troubleshooting": [
+      "version-0.71-debugging-javascript",
       "version-0.71-native-modules-troubleshooting",
       "version-0.71-metro-config-out-tree-platforms"
     ],
