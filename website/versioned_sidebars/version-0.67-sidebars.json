@@ -37,6 +37,7 @@
       "version-0.67-rnm-dependencies"
     ],
     "Troubleshooting": [
+      "version-0.67-debugging-javascript",
       "version-0.67-native-modules-troubleshooting",
       "version-0.67-metro-config-out-tree-platforms"
     ],

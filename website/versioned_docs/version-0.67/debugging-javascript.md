@@ -1,5 +1,5 @@
 ---
-id: version-0.71-debugging-javascript
+id: version-0.67-debugging-javascript
 title: JavaScript Debugging
 original_id: debugging-javascript
 ---
