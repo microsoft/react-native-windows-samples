@@ -201,17 +201,22 @@ using Microsoft.ReactNative.Managed;
 
 namespace ViewManagerSample
 {
-  public sealed class ReactPackageProvider : IReactPackageProvider
-  {
-    public void CreatePackage(IReactPackageBuilder packageBuilder)
+    public partial class ReactPackageProvider : IReactPackageProvider
     {
-      packageBuilder.AddViewManagers();
+        public void CreatePackage(IReactPackageBuilder packageBuilder)
+        {
+            CreatePackageImplementation(packageBuilder);
+        }
+
+        /// <summary>
+        /// This method is implemented by the C# code generator
+        /// </summary>
+        partial void CreatePackageImplementation(IReactPackageBuilder packageBuilder);
     }
-  }
 }
 ```
 
-Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use reflection to discover and bind native module, we call `AddViewManagers` extension method to register all the view managers in our assembly.
+Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package.
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
