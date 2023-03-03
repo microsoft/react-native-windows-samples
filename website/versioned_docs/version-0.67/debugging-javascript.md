@@ -164,10 +164,10 @@ Rather than running your app's JS code on an external JS engine (as with Web Deb
 
 ### Direct Debugging Tool Support
 
-| JavaScript Engine | Visual Studio | Visual Studio Code | Visual Studio Code<br/> w/ React Native Tools |
-|:------------------|:-:|:-:|:-:|
-| Chakra (Default)  | ✅ | 🟥 | 🟥 |
-| Hermes            | 🟥 | ✅ | ✅ |
+| JavaScript Engine | Edge Developer Tools | Visual Studio | Visual Studio Code | Visual Studio Code<br/> w/ React Native Tools |
+|:------------------|:-:|:-:|:-:|:-:|
+| Chakra (Default)  | 🟥 | ✅ | 🟥 | 🟥 |
+| Hermes            | ✅ | 🟥 | ✅ | ✅ |
 
 > **Important:** Direct Debugging is relatively new and may still have some rough edges, depending on your choice of engine and debugger. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
 
@@ -223,6 +223,37 @@ The app then should automatically refresh with Direct Debugging enabled.
 The next step is to connect with your chosen debugger.
 
 <!--DOCUSAURUS_CODE_TABS-->
+
+<!--Edge DevTools-->
+
+#### Using the Edge Developer Tools
+
+You can direct debug within Edge by using the [Edge Developer Tools](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/).
+
+> If you use Chrome, the process is similar for using the [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/).
+
+1. Launch your RNW app (with Direct Debugging enabled and Metro running)
+2. In Edge, open the URL `edge://inspect`
+3. Make sure the box for *Discover network targets* is checked
+4. Click the *Configure...* button next to *Discover network targets*
+5. Under *Target discovery settings* add an entry for `localhost:8081` and click *Done*
+6. Refresh the `edge://inspect` page
+    > Watch for a *Hermes React Native* entry to appear in the *Remote Target* section at the bottom of the page. Note that the *Remote Target* section itself may be hidden until a valid target is detected.
+
+7. Click on the *inspect* link under the *Hermes React Native* entry
+
+You should now be able to debug your RNW application. To set breakpoints you'll first need to find your app's JS source files via Metro's source map.
+
+1. Click on the *Sources* tab
+2. Press `Ctrl+P` to invoke the *Open* pop-up
+3. Find your target source file (manually or by typing its name) and open it
+    > Make sure that the file you open is being sourced from the source map from Metro, i.e. the file entry is tagged with `localhost:8081` under the file name
+
+You should now be able to set breakpoints in your app's JS source files. 
+
+> **Important:** The *Filesystem* tab in the left sidebar normally lets you add you app's source folders to the "workspace" for easy browsing. However, files opened from the workspace will not allow you to set breakpoints correctly. You **must** open your app's source via the `Ctrl+P` method above for breakpoints to work.
+> 
+> If you're trying to set a breakpoint and it's not working, double-check that the open file was opened via the source map. The tab's title should appear as an absolute file name, and its tool-tip should show the real path prefixed with `http://localhost:8081/`.
 
 <!--Visual Studio-->
 
