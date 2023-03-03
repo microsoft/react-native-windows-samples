@@ -17,6 +17,7 @@
       "native-modules",
       "view-managers",
       "native-modules-setup",
+      "native-modules-vs-turbo-modules",
       "native-modules-using",
       "native-modules-autolinking",
       "native-modules-advanced",
@@ -38,6 +39,7 @@
       "rnm-dependencies"
     ],
     "Troubleshooting": [
+      "debugging-javascript",
       "native-modules-troubleshooting",
       "metro-config-out-tree-platforms"
     ],
@@ -75,7 +77,8 @@
       "native-api/ReactInstanceSettings",
       "native-api/ReactNativeHost",
       "native-api/XamlUIService",
-      "native-api/Native-API-Reference"
+      "native-api/Native-API-Reference",
+      "coreapp"
     ]
   }
 }

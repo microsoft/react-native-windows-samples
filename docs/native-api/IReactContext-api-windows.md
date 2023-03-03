@@ -29,10 +29,15 @@ Gets the JavaScript runtime for the running React instance.
 It can be null if Web debugging is used.
 **Note: do not use this property directly. It is an experimental property that may be removed or changed in a future version.
 
+### LoadingState
+`readonly`  [`LoadingState`](LoadingState) `LoadingState`
+
+Gets the state of the ReactNative instance.
+
 ### Notifications
 `readonly`  [`IReactNotificationService`](IReactNotificationService) `Notifications`
 
-Gets [`IReactNotificationService`](IReactNotificationService) shared with the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications).
+Gets the [`IReactNotificationService`](IReactNotificationService) shared with the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications).
 It can be used to send notifications events between components and the application.
 All notification subscriptions added to the [`IReactContext.Notifications`](IReactContext#notifications) are automatically removed after the [`IReactContext`](IReactContext) is destroyed.
 The notification subscriptions added to the [`ReactInstanceSettings.Notifications`](ReactInstanceSettings#notifications) are kept as long as the [`ReactInstanceSettings`](ReactInstanceSettings) is alive.
@@ -40,7 +45,7 @@ The notification subscriptions added to the [`ReactInstanceSettings.Notification
 ### Properties
 `readonly`  [`IReactPropertyBag`](IReactPropertyBag) `Properties`
 
-Gets [`IReactPropertyBag`](IReactPropertyBag) shared with the [`ReactInstanceSettings.Properties`](ReactInstanceSettings#properties-1).
+Gets the [`IReactPropertyBag`](IReactPropertyBag) shared with the [`ReactInstanceSettings.Properties`](ReactInstanceSettings#properties-1).
 It can be used to share values and state between components and the applications.
 
 ### SettingsSnapshot
@@ -93,6 +98,7 @@ The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that 
 - [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
 - [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
 - [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
+- [`LayoutService`](LayoutService)
 - [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`XamlUIService`](XamlUIService)

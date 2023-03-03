@@ -10,6 +10,7 @@
 
 #include "JSValue.h"
 #include "NativeModules.h"
+#include "../../codegen/NativeDataMarshallingExamplesSpec.g.h"
 
 namespace NativeModuleSample
 {
@@ -21,50 +22,26 @@ namespace NativeModuleSample
 
     #pragma region Native Objects
 
-    // These native objects are used below under "Object Types".
-
-    // By adding REACT_STRUCT, instances of this struct can be used in
-    // the signatures of native methods, and will be automatically
-    // marshalled to / from JS object types with the keys mapping
-    // to the annotated field and/or property names.
-    REACT_STRUCT(Point);
-    struct Point
+    std::string to_string(const DataMarshallingExamplesSpec_Point& pt)
     {
-        REACT_FIELD(X);
-        double X;
+        return "(" + std::to_string(pt.X) + "," + std::to_string(pt.Y) + ")";
+    }
 
-        REACT_FIELD(Y);
-        double Y;
-
-        std::string to_string() noexcept
-        {
-            return "(" + std::to_string(X) + "," + std::to_string(Y) + ")";
-        }
-    };
-
-    // This example shows that native objects can even nest native
-    // objects as fields and / or properties, and still rely on
-    // the automatic data marshalling provided.
-    REACT_STRUCT(Line);
-    struct Line
+    std::string to_string(const DataMarshallingExamplesSpec_Line& line)
     {
-        REACT_FIELD(Start);
-        Point Start;
-
-        REACT_FIELD(End);
-        Point End;
-
-        std::string to_string() noexcept
-        {
-            return Start.to_string() + " -> " + End.to_string();
-        }
-    };
+        return "(" + to_string(line.Start) + "," + to_string(line.End) + ")";
+    }
 
     #pragma endregion
 
     REACT_MODULE(DataMarshallingExamples);
     struct DataMarshallingExamples
     {
+        using ModuleSpec = DataMarshallingExamplesSpec;
+
+        using Line = DataMarshallingExamplesSpec_Line;
+        using Point = DataMarshallingExamplesSpec_Point;
+
         #pragma region Primitive Types
 
         // In these examples, we specify native methods with primitive
@@ -182,15 +159,15 @@ namespace NativeModuleSample
         REACT_SYNC_METHOD(GetMidpoint, L"GetMidpointSync");
         Point GetMidpoint(Point && p1, Point && p2) noexcept
         {
-            DebugWriteLine("Point p1: " + p1.to_string());
-            DebugWriteLine("Point p2: " + p2.to_string());
+            DebugWriteLine("Point p1: " + to_string(p1));
+            DebugWriteLine("Point p2: " + to_string(p2));
 
             double midX = 0.5 * (p1.X + p2.X);
             double midY = 0.5 * (p1.Y + p2.Y);
 
-            Point midpoint = Point{ midX, midY };
+            Point midpoint{ midX, midY };
 
-            DebugWriteLine("returning: " + midpoint.to_string());
+            DebugWriteLine("returning: " + to_string(midpoint));
             return midpoint;
         }
 
@@ -208,7 +185,7 @@ namespace NativeModuleSample
         REACT_SYNC_METHOD(GetLength, L"GetLengthSync");
         double GetLength(Line && line) noexcept
         {
-            DebugWriteLine("Line line: " + line.to_string());
+            DebugWriteLine("Line line: " + to_string(line));
 
             double length = sqrt(pow(line.End.X - line.Start.X, 2) + pow(line.End.Y - line.Start.Y, 2));
 

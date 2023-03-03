@@ -15,7 +15,15 @@ Provides settings to create a React instance.
 
 **Default value**: `ms-appx:///Bundle/`
 
-Base path used for the location of the bundle.
+Base path used for the location of the bundle. 
+This can be an `ms-appx://` or `ms-appdata://` URI (if the app is UWP or packaged using MSIX), a filesystem path, or a URI pointing at an embedded resource.
+Examples:
+
+- `ms-appx:///Bundle` - locates the bundle in the MSIX package. See [URI schemes](https://docs.microsoft.com/windows/uwp/app-resources/uri-schemes) for other UWP/MSIX valid URI formats.
+- `C:\\foo\\bar` - locates the bundle in the local filesystem. Note [UWP app file access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
+- `resource://moduleName` - locates the bundle as an embedded RCDATA resource in moduleName. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
+- `resource://` - locates the bundle as an embedded RCDATA resource in the running process's module. Specify the resource ID in [`JavaScriptBundleFile`](#javascriptbundlefile).
+
 
 ### ByteCodeFileUri
  string `ByteCodeFileUri`
@@ -93,6 +101,7 @@ In order for the override to work, Microsoft.ReactNative must be compiled with s
 **Default value**: `index.windows`
 
 The name of the JavaScript bundle file to load. This should be a relative path from [`BundleRootPath`](#bundlerootpath). The `.bundle` extension will be appended to the end, when looking for the bundle file.
+If using an embedded RCDATA resource, this identifies the resource ID that stores the bundle. See [`BundleRootPath`](#bundlerootpath).
 
 ### NativeLogger
  [`LogHandler`](LogHandler) `NativeLogger`

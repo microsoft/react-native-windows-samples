@@ -70,6 +70,7 @@ The React instance destruction can be observed with the [`ReactInstanceSettings.
 
 
 ## Referenced by
+- [`IReactViewHost`](IReactViewHost)
 - [`ReactApplication`](ReactApplication)
 - [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactRootView`](ReactRootView)

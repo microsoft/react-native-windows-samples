@@ -32,6 +32,34 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 
 ## Methods
+### BigIntStrictEquals
+bool **`BigIntStrictEquals`**([`JsiBigIntRef`](JsiBigIntRef) left, [`JsiBigIntRef`](JsiBigIntRef) right)
+
+> **EXPERIMENTAL**
+
+
+
+### BigintIsInt64
+bool **`BigintIsInt64`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
+
+> **EXPERIMENTAL**
+
+
+
+### BigintIsUint64
+bool **`BigintIsUint64`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
+
+> **EXPERIMENTAL**
+
+
+
+### BigintToString
+[`JsiStringRef`](JsiStringRef) **`BigintToString`**([`JsiBigIntRef`](JsiBigIntRef) bigInt, int val)
+
+> **EXPERIMENTAL**
+
+
+
 ### Call
 [`JsiValueRef`](JsiValueRef) **`Call`**([`JsiObjectRef`](JsiObjectRef) func, [`JsiValueRef`](JsiValueRef) thisArg, [`JsiValueRef`](JsiValueRef) args)
 
@@ -41,6 +69,13 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ### CallAsConstructor
 [`JsiValueRef`](JsiValueRef) **`CallAsConstructor`**([`JsiObjectRef`](JsiObjectRef) func, [`JsiValueRef`](JsiValueRef) args)
+
+> **EXPERIMENTAL**
+
+
+
+### CloneBigInt
+[`JsiBigIntRef`](JsiBigIntRef) **`CloneBigInt`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
 
 > **EXPERIMENTAL**
 
@@ -76,6 +111,27 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ### CreateArray
 [`JsiObjectRef`](JsiObjectRef) **`CreateArray`**(uint32_t size)
+
+> **EXPERIMENTAL**
+
+
+
+### CreateArrayBuffer
+[`JsiObjectRef`](JsiObjectRef) **`CreateArrayBuffer`**([`JsiObjectRef`](JsiObjectRef) buffer)
+
+> **EXPERIMENTAL**
+
+
+
+### CreateBigIntFromInt64
+[`JsiBigIntRef`](JsiBigIntRef) **`CreateBigIntFromInt64`**(int64_t val)
+
+> **EXPERIMENTAL**
+
+
+
+### CreateBigIntFromUint64
+[`JsiBigIntRef`](JsiBigIntRef) **`CreateBigIntFromUint64`**(uint64_t val)
 
 > **EXPERIMENTAL**
 
@@ -118,6 +174,13 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ### CreatePropertyIdFromString
 [`JsiPropertyIdRef`](JsiPropertyIdRef) **`CreatePropertyIdFromString`**([`JsiStringRef`](JsiStringRef) str)
+
+> **EXPERIMENTAL**
+
+
+
+### CreatePropertyIdFromSymbol
+[`JsiPropertyIdRef`](JsiPropertyIdRef) **`CreatePropertyIdFromSymbol`**([`JsiSymbolRef`](JsiSymbolRef) sym)
 
 > **EXPERIMENTAL**
 
@@ -235,6 +298,13 @@ uint32_t **`GetArraySize`**([`JsiObjectRef`](JsiObjectRef) arr)
 
 
 
+### GetNativeState
+[`JsiObjectRef`](JsiObjectRef) **`GetNativeState`**([`JsiObjectRef`](JsiObjectRef) obj)
+
+> **EXPERIMENTAL**
+
+
+
 ### GetProperty
 [`JsiValueRef`](JsiValueRef) **`GetProperty`**([`JsiObjectRef`](JsiObjectRef) obj, [`JsiPropertyIdRef`](JsiPropertyIdRef) propertyId)
 
@@ -251,6 +321,13 @@ uint32_t **`GetArraySize`**([`JsiObjectRef`](JsiObjectRef) arr)
 
 ### GetValueAtIndex
 [`JsiValueRef`](JsiValueRef) **`GetValueAtIndex`**([`JsiObjectRef`](JsiObjectRef) arr, uint32_t index)
+
+> **EXPERIMENTAL**
+
+
+
+### HasNativeState
+bool **`HasNativeState`**([`JsiObjectRef`](JsiObjectRef) obj)
 
 > **EXPERIMENTAL**
 
@@ -368,6 +445,13 @@ void **`PropertyIdToUtf8`**([`JsiPropertyIdRef`](JsiPropertyIdRef) propertyId, [
 
 
 
+### ReleaseBigInt
+void **`ReleaseBigInt`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
+
+> **EXPERIMENTAL**
+
+
+
 ### ReleaseObject
 void **`ReleaseObject`**([`JsiObjectRef`](JsiObjectRef) obj)
 
@@ -398,6 +482,13 @@ void **`ReleaseSymbol`**([`JsiSymbolRef`](JsiSymbolRef) symbol)
 
 ### SetError
 void **`SetError`**([`JsiErrorType`](JsiErrorType) errorType, string errorDetails, [`JsiValueRef`](JsiValueRef) value)
+
+> **EXPERIMENTAL**
+
+
+
+### SetNativeState
+void **`SetNativeState`**([`JsiObjectRef`](JsiObjectRef) obj, [`JsiObjectRef`](JsiObjectRef) state)
 
 > **EXPERIMENTAL**
 
@@ -454,6 +545,13 @@ string **`SymbolToString`**([`JsiSymbolRef`](JsiSymbolRef) symbol)
 
 ### SymbolToUtf8
 void **`SymbolToUtf8`**([`JsiSymbolRef`](JsiSymbolRef) symbol, [`JsiByteArrayUser`](JsiByteArrayUser) useUtf8String)
+
+> **EXPERIMENTAL**
+
+
+
+### Truncate
+uint64_t **`Truncate`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
 
 > **EXPERIMENTAL**
 

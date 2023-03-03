@@ -23,21 +23,6 @@ class Resources extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedResource: 'repos' };
-
-    // This binding is necessary to make `this` work in the callback
-    this.SelectResource = this.SelectResource.bind(this);
-  }
-
-  SelectResource(navItemName) {
-    if (typeof document !== 'undefined') {
-      var i;
-      var x = document.getElementsByClassName("resourcesSideNavLink");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      document.getElementById(navItemName).style.display = "block";
-    }
-    console.log('poop');
   }
 
   render() {
@@ -124,28 +109,47 @@ class Resources extends React.Component {
     );
 
     return (
-      <div className="row">
-        <div className="resourcesPageSideNav">
-          <Section background="tint">
-            <div style={{ float: "right", marginRight: 180 }}>
-              <div className="resourcesPageSideNavTitle">Resources</div>
-              <div className="resourcesPageSideNavOptions">
-                <a href="./resources" className='resourcesSideNavLink'>Repos</a>
-              </div>
-              <div className="resourcesPageSideNavOptions">
-                <a className="resourcesSideNavLink selected" >News & Social</a>
-              </div>
-              <div className="resourcesPageSideNavOptions">
-                <a href="./resources-videos" className="resourcesSideNavLink" >Videos</a>
-              </div>
-              <div className="resourcesPageSideNavOptions">
-                <a href="./resources-showcase" className="resourcesSideNavLink" >Showcase</a>
-              </div>
+      <div className="docMainWrapper wrapper">
+        <div className="docsNavContainer" id="navButtons_clickTarget">
+          <nav className="toc">
+            <div className="toggleNav">
+              <section className="navWrapper wrapper">
+                <div className="navBreadcrumb wrapper">
+                  <div className="navToggle" id="navButtons_clickSource">
+                    <div className="hamburger-menu">
+                      <div className="line1"></div>
+                      <div className="line2"></div>
+                      <div className="line3"></div>
+                    </div>
+                  </div>
+                  <h2>Resources</h2>
+                  <div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div>
+                </div>
+                <div className="navGroups">
+                  <div className="navGroup">
+                    <h3 className="navGroupCategoryTitle">Resources</h3>
+                    <ul>
+                      <li className="navListItem">
+                        <a href="./resources" className="navItem">Repos</a>
+                      </li>
+                      <li className="navListItem navListItemActive">
+                        <a className="navItem" >News &amp; Social</a>
+                      </li>
+                      <li className="navListItem">
+                        <a href="./resources-videos" className="navItem" >Videos</a>
+                      </li>
+                      <li className="navListItem">
+                        <a href="./resources-showcase" className="navItem" >Showcase</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
             </div>
-          </Section>
+          </nav>
         </div>
-        <div className="column">
-          <div className="homepage" style={{ marginLeft: 50 }}>
+        <div className="container mainContainer docsContainer">
+          <div className="wrapper">
             <div id="newssocial">
               <NewsAndSocialList />
             </div>
@@ -155,5 +159,7 @@ class Resources extends React.Component {
     );
   }
 }
+
+Resources.title = "Resources - News & Social";
 
 module.exports = Resources;

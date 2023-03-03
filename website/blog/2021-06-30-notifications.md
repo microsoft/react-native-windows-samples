@@ -7,6 +7,10 @@ is_blog: true
 published_date: June 30, 2021
 ---
 
+<head>
+  <meta http-equiv="Refresh" content="0; URL=https://devblogs.microsoft.com/react-native/react-native-windows-notifications/" />
+</head>
+
 In this article, we will discuss how to enable your app to show toast notifications, which you can use to notify the user that something needs their attention, or to notify them that a long running operation has completed.
 
 <!--truncate-->

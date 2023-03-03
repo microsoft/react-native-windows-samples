@@ -11,7 +11,7 @@
 
 These samples showcase building Native Modules for React Native for Windows. It includes implementations in [C#](./csharp/) and [C++/WinRT](./cppwinrt/).
 
-Both implementations target React Native Windows 0.68.
+Both implementations target React Native Windows 0.71.
 
 The official documentation can be found here:
 
@@ -41,7 +41,7 @@ npm install
 Once you have all of the dependencies installed, you can build either module with following command (again, run within either the `cppwinrt` or `csharp` folder):
 
 ```cmd
-npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink
+npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --proj "NativeModuleSample\NativeModuleSample.vsproj"
 ```
 
 ### Upgrade

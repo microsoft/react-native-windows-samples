@@ -142,7 +142,7 @@ namespace ViewManagerSample
     internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl>
     {
         [ViewManagerProperty("label")]
-        public void SetLabel(CustomUserControl view, view, string value)
+        public void SetLabel(CustomUserControl view, string value)
         {
             if (null != value)
             {
@@ -181,7 +181,7 @@ namespace ViewManagerSample
         }
 
         [ViewManagerCommand]
-        public void CustomCommand(CustomUserControl view, IReadonlyList<object> commandArgs)
+        public void CustomCommand(CustomUserControl view, IReadOnlyList<object> commandArgs)
         {
             // Execute command
         }

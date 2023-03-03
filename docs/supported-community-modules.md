@@ -5,7 +5,7 @@ title: Supported Community Modules
 
 ## `ReactNative.Directory`
 
-The [React Native Directory](https://reactnative.directory/) lists libraries and native modules that are available across all of the React Native platforms including iOS, Android, Windows, macOS, and more. 
+The [React Native Directory](https://reactnative.directory/) lists libraries and native modules that are available across all of the React Native platforms including iOS, Android, Windows, macOS, and more.
 
 To view which modules are available for a specific platform, you can use the Filters function on the website, or visit these pre-filtered URLs:
 
@@ -18,7 +18,7 @@ The React Native team at Microsoft has worked together with community maintainer
 
 ### Ejected Modules
 
-The React Native [Lean Core](https://github.com/facebook/react-native/issues/23313) effort slims down the core functionality of React Native by ejecting specific modules into their own repos. 
+The React Native [Lean Core](https://github.com/facebook/react-native/issues/23313) effort slims down the core functionality of React Native by ejecting specific modules into their own repos.
 
 The following modules have either been ejected from core, or are on path to be ejected as part of this effort:
 
@@ -56,7 +56,7 @@ In addition to the ejected modules above, Microsoft has also added implementatio
 | <ins>[`rn-fetch-blob`](https://github.com/joltup/rn-fetch-blob)</ins> | [0.62](https://github.com/joltup/rn-fetch-blob/pull/701) | x |
 | <ins>[`react-native-code-push`](https://github.com/Microsoft/react-native-code-push)</ins> | 0.63 | x |
 | <ins>[`react-native-tts`](https://github.com/ak1394/react-native-tts)</ins> | 0.62 | x |
-| <ins>[`react-native-sketch-canvas`](https://github.com/creambyemute/react-native-sketch-canvas)</ins> | 0.63 | x |
+| <ins>[`react-native-sketch-canvas`](https://github.com/wwimmo/react-native-sketch-canvas)</ins> | 0.63 | x |
 | <ins>[`react-native-xaml`](https://github.com/microsoft/react-native-xaml)</ins> | 0.64+ | x |
 
 

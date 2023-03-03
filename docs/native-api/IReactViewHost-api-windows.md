@@ -11,6 +11,12 @@ Kind: `interface`
 
 Used to implement a non-XAML platform ReactRootView.
 
+## Properties
+### ReactNativeHost
+`readonly`  [`ReactNativeHost`](ReactNativeHost) `ReactNativeHost`
+
+The ReactNativeHost associated with this ReactViewHost.
+
 
 
 ## Methods

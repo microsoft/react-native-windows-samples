@@ -10,11 +10,29 @@ Kind: `class`
 Helper methods for the [`IReactDispatcher`](IReactDispatcher) implementation.
 
 ## Properties
+### JSDispatcherIdleWaitCompletedEventName
+`static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `JSDispatcherIdleWaitCompletedEventName`
+
+Gets the name of the `JSDispatcherIdleWaitCompletedEventName` property for the [`IReactNotificationService`](IReactNotificationService).
+This notification name is to be used with IReactNotificationService.
+
+### JSDispatcherIdleWaitStartingEventName
+`static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `JSDispatcherIdleWaitStartingEventName`
+
+Gets the name of the `JSDispatcherIdleWaitStartingEventName` property for the [`IReactNotificationService`](IReactNotificationService).
+This notification name is to be used with IReactNotificationService.
+
 ### JSDispatcherProperty
 `static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `JSDispatcherProperty`
 
 Gets name of the `JSDispatcher` property for the [`IReactPropertyBag`](IReactPropertyBag).
 Generally you can use [`IReactContext.JSDispatcher`](IReactContext#jsdispatcher) to get the value of this property for a specific React instance.
+
+### JSDispatcherTaskStartingEventName
+`static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `JSDispatcherTaskStartingEventName`
+
+Gets the name of the `JSDispatcherTaskStartingEventName` property for the [`IReactNotificationService`](IReactNotificationService).
+This notification name is to be used with IReactNotificationService.
 
 ### UIDispatcherProperty
 `static`   `readonly`  [`IReactPropertyName`](IReactPropertyName) `UIDispatcherProperty`

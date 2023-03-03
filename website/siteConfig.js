@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const defaultVersionShown = "0.68";
+const defaultVersionShown = "0.71";
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
@@ -29,9 +29,10 @@ const siteConfig = {
   headerLinks: [
     { doc: "getting-started", label: "Docs" },
     { doc: "flyout-component", label: "APIs" },
-    { blog: true, label: "Blog" },
+    { href:"https://devblogs.microsoft.com/react-native/" , label: "Blog" },
     { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/main/samples", label: "Samples" },
+    { page: "support", label: "Support" },
     // { search: true }, https://community.algolia.com/docsearch/what-is-docsearch.html
   ],
 
@@ -69,6 +70,7 @@ const siteConfig = {
     "https://buttons.github.io/buttons.js",
     "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
     "/react-native-windows/js/code-block-buttons.js",
+    "/react-native-windows/js/nav-buttons.js"
   ],
 
   stylesheets: ["/react-native-windows/css/code-block-buttons.css"],

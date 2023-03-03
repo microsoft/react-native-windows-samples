@@ -61,6 +61,14 @@ A component that the `Popup` is attached to and will show from when [`isOpen`](f
 |:--|:--|
 | `React.ReactNode` | Yes |
 
+### `autoFocus`
+
+Specifies and sets whether the `Popup` will get focus automatically when the page loads or not.
+
+| type | required |
+|:--|:--|
+| bool | No |
+
 ## Examples
 
 Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/PopupExamplePage.tsx) available in the [Microsoft Store](http://aka.ms/reactnativegalleryapp)

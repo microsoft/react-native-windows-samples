@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: windows-2019
+    runs-on: windows-2022
     strategy:
       matrix:
         language: [cppwinrt, csharp]
@@ -27,6 +27,11 @@ jobs:
       - name: Yarn install
         run: yarn install --frozen-lockfile
         working-directory: ..\..\src
+
+      # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187  (Maybe 0.72?)
+      # - name: Codegen check
+      #   run: npx react-native codegen-windows --check --no-telemetry
+      #   working-directory: ..\..\src
 
       - name: Build x86 Debug
         run: npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --logging

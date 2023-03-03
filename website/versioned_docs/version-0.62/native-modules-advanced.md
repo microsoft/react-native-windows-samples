@@ -62,7 +62,6 @@ namespace NativeModuleSample
     {
       packageBuilder.AddModule("FancyMath", (IReactModuleBuilder moduleBuilder) => {
         var module = new FancyMath();
-        moduleBuilder.SetName("FancyMath");
         moduleBuilder.AddConstantProvider((IJSValueWriter writer) => {
           writer.WritePropertyName("E");
           writer.WriteDouble(module.E);
@@ -77,8 +76,10 @@ namespace NativeModuleSample
             double a = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
             double b = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
             double result = module.Add(a, b);
+            outputWriter.WriteArrayBegin();
             outputWriter.WriteDouble(result);
-          resolve(outputWriter);
+            outputWriter.WriteArrayEnd();
+            resolve(outputWriter);
           });
         return module;
       });
@@ -100,7 +101,6 @@ namespace NativeModuleSample
     {
       packageBuilder.AddModule("FancyMath", (IReactModuleBuilder moduleBuilder) => {
         var module = new FancyMath();
-        moduleBuilder.SetName("FancyMath");
         moduleBuilder.AddConstantProvider((IJSValueWriter writer) => {
           writer.WriteProperty("E", module.E);
           writer.WriteProperty("Pi", module.PI);
@@ -110,11 +110,11 @@ namespace NativeModuleSample
           IJSValueWriter outputWriter,
           MethodResultCallback resolve,
           MethodResultCallback reject) => {
-           double[] args;
-           inputReader.ReadArgs(out args[0], out args[1]);
-           double result = module.Add(args[0], args[1]);
-           outputWriter.WriteDouble(result);
-           resolve(outputWriter);
+            double[] args;
+            inputReader.ReadArgs(out args[0], out args[1]);
+            double result = module.Add(args[0], args[1]);
+            outputWriter.WriteArgs(result);
+            resolve(outputWriter);
           });
         return module;
       });
@@ -136,7 +136,6 @@ namespace NativeModuleSample
     {
       packageBuilder.AddModule("FancyMath", (IReactModuleBuilder moduleBuilder) => {
         var module = new FancyMath();
-        moduleBuilder.SetName("FancyMath");
         moduleBuilder.AddConstantProvider(() => new Dictionary<string, object> {
           ["E"] = module.E,
           ["Pi"] = module.PI

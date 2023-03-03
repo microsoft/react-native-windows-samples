@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "codegen-windows": "react-native codegen-windows",
     "windows": "react-native run-windows"
   },
   "peerDependencies": {
@@ -13,8 +14,16 @@
   },
   "devDependencies": {
     "metro-config": "^0.66.2",
-    "react": "17.0.2",
-    "react-native": "0.68.0",
-    "react-native-windows": "0.68.0"
+    "react": "18.2.0",
+    "react-native": "0.71.0",
+    "react-native-windows": "0.71.0"
+  },
+  "codegenConfig": {
+    "name": "NativeModuleSample",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "windows": {
+      "namespace": "NativeModuleSample"
+    }
   }
 }

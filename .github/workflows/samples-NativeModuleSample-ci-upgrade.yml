@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: windows-2019
+    runs-on: windows-2022
     strategy:
       fail-fast: false
       matrix:
@@ -37,6 +37,10 @@ jobs:
         id: upgrade
         continue-on-error: true
         run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ matrix.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(matrix.reactNativeWindowsVersion, 'canary')) }}
+        working-directory: ..\..\src
+
+      - name: Codegen
+        run: npx react-native codegen-windows --no-telemetry
         working-directory: ..\..\src
 
       - name: Run react-native run-windows

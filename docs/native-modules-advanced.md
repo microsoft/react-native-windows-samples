@@ -61,7 +61,6 @@ namespace NativeModuleSample
     {
       packageBuilder.AddModule("FancyMath", (IReactModuleBuilder moduleBuilder) => {
         var module = new FancyMath();
-        moduleBuilder.SetName("FancyMath");
         moduleBuilder.AddConstantProvider((IJSValueWriter writer) => {
           writer.WritePropertyName("E");
           writer.WriteDouble(module.E);
@@ -76,8 +75,10 @@ namespace NativeModuleSample
             double a = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
             double b = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
             double result = module.Add(a, b);
+            outputWriter.WriteArrayBegin();
             outputWriter.WriteDouble(result);
-          resolve(outputWriter);
+            outputWriter.WriteArrayEnd();
+            resolve(outputWriter);
           });
         return module;
       });
@@ -99,7 +100,6 @@ namespace NativeModuleSample
     {
       packageBuilder.AddModule("FancyMath", (IReactModuleBuilder moduleBuilder) => {
         var module = new FancyMath();
-        moduleBuilder.SetName("FancyMath");
         moduleBuilder.AddConstantProvider((IJSValueWriter writer) => {
           writer.WriteProperty("E", module.E);
           writer.WriteProperty("Pi", module.PI);
@@ -109,11 +109,11 @@ namespace NativeModuleSample
           IJSValueWriter outputWriter,
           MethodResultCallback resolve,
           MethodResultCallback reject) => {
-           double[] args;
-           inputReader.ReadArgs(out args[0], out args[1]);
-           double result = module.Add(args[0], args[1]);
-           outputWriter.WriteDouble(result);
-           resolve(outputWriter);
+            double[] args;
+            inputReader.ReadArgs(out args[0], out args[1]);
+            double result = module.Add(args[0], args[1]);
+            outputWriter.WriteArgs(result);
+            resolve(outputWriter);
           });
         return module;
       });
@@ -135,7 +135,6 @@ namespace NativeModuleSample
     {
       packageBuilder.AddModule("FancyMath", (IReactModuleBuilder moduleBuilder) => {
         var module = new FancyMath();
-        moduleBuilder.SetName("FancyMath");
         moduleBuilder.AddConstantProvider(() => new Dictionary<string, object> {
           ["E"] = module.E,
           ["Pi"] = module.PI
@@ -160,27 +159,49 @@ And as for the rest of the code, once we have the `IReactPackageProvider`, regis
 
 Using your native module in JS is the exact same as if the native module was defined using attributes.
 
-`NativeModuleSample.js`:
+
+`NativeFancyMath.ts`:
+
+```ts
+import type { TurboModule } from 'react-native/Libraries/TurboModule/RCTExport';
+import { TurboModuleRegistry } from 'react-native';
+
+export interface Spec extends TurboModule {
+
+  getConstants: () => {
+    E: number,
+    PI: number,
+  |};
+
+  add(a: number, b: number): Promise<number>;
+}
+
+export default TurboModuleRegistry.get<Spec>(
+  'FancyMath'
+) as Spec | null;
+```
+
+`Sample.js`:
 
 ```js
 import React, { Component } from 'react';
 import {
   AppRegistry,
   Alert,
-  NativeModules,
   Text,
   View,
 } from 'react-native';
+import FancyMath from './NativeFancyMath';
 
 class NativeModuleSample extends Component {
   _onPressHandler() {
-    NativeModules.FancyMath.add(
-      /* arg a */ NativeModules.FancyMath.Pi,
-      /* arg b */ NativeModules.FancyMath.E,
+    FancyMath.add(
+      /* arg a */ FancyMath.Pi,
+      /* arg b */ FancyMath.E,
       /* callback */ function (result) {
         Alert.alert(
           'FancyMath',
-          `FancyMath says ${NativeModules.FancyMath.Pi} + ${NativeModules.FancyMath.E} = ${result}`,
+          `FancyMath says ${FancyMath.Pi} + ${FancyMath.E} = ${result}`,
           [{ text: 'OK' }],
           {cancelable: false});
       });
@@ -189,8 +210,8 @@ class NativeModuleSample extends Component {
   render() {
     return (
       <View>
-         <Text>FancyMath says PI = {NativeModules.FancyMath.Pi}</Text>
-         <Text>FancyMath says E = {NativeModules.FancyMath.E}</Text>
+         <Text>FancyMath says PI = {FancyMath.Pi}</Text>
+         <Text>FancyMath says E = {FancyMath.E}</Text>
          <Button onPress={this._onPressHandler} title="Click me!"/>
       </View>);
   }

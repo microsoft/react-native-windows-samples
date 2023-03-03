@@ -25,7 +25,7 @@ $ yarn install
 $ yarn start
 ```
 
-Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started 
+Any changes you make to the markdown files under `docs` will be visible in the `next` version of the docs, i.e. http://localhost:3000/react-native-windows/docs/next/getting-started
 
 ## Directory Structure
 
@@ -38,9 +38,6 @@ my-docusaurus/
     doc-2.md
     doc-3.md
   website/
-    blog/
-      2016-3-11-oldest-post.md
-      2017-10-24-newest-post.md
     core/
     node_modules/
     pages/
@@ -73,19 +70,7 @@ For more information about docs, click [here](https://v1.docusaurus.io/docs/en/n
 
 ## Editing an existing blog post
 
-Edit blog posts by navigating to `website/blog` and editing the corresponding post:
-
-`website/blog/post-to-be-edited.md`
-```markdown
----
-id: post-needs-edit
-title: This Blog Post Needs To Be Edited
----
-
-Edit me...
-```
-
-For more information about blog posts, click [here](https://v1.docusaurus.io/docs/en/adding-blog)
+Refer to the dedicated react-native-devblog (`microsoft/react-native-devblog`) repository for it - Microsoft internal only.
 
 # Adding Content
 
@@ -122,33 +107,7 @@ For more information about adding new docs, click [here](https://v1.docusaurus.i
 
 ## Adding a new blog post
 
-1. Make sure there is a header link to your blog in `website/siteConfig.js`:
-
-`website/siteConfig.js`
-```javascript
-headerLinks: [
-    ...
-    { blog: true, label: 'Blog' },
-    ...
-]
-```
-
-2. Create the blog post with the format `YYYY-MM-DD-My-Blog-Post-Title.md` in `website/blog`:
-
-`website/blog/2018-05-21-New-Blog-Post.md`
-
-```markdown
----
-author: Frank Li
-authorURL: https://twitter.com/foobarbaz
-authorFBID: 503283835
-title: New Blog Post
----
-
-Lorem Ipsum...
-```
-
-For more information about blog posts, click [here](https://v1.docusaurus.io/docs/en/adding-blog)
+Refer to the dedicated react-native-devblog (`microsoft/react-native-devblog`) repository for it - Microsoft internal only.
 
 ## Adding items to your site's top navigation bar
 
@@ -214,16 +173,18 @@ Complete the documentation updates for both main and stable version 0.XX above.
 ## Cutting Documentation for a New React Native Windows Release
 1. Update necessary version references in [docs](../docs/).
     1. `getting-started.md`
-    1. `winui3.md`
 2. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation.
-3. Snapshot the website for version 0.XX: 
+3. Snapshot the website for version 0.XX:
     1. `cd website`
     1. `yarn run version 0.XX`
     1. `yarn run fix-unbroken`
 
     This will create a new directory of versioned docs, `version-0.XX`, in `website/versioned_docs`. This will preserve all documents currently in the `docs` directory and make them available as documentation for version 0.XX. For more information on versioning, click [here](https://v1.docusaurus.io/docs/en/versioning).
 4. Edit `website/.unbroken_exclusions` and add the line `!versioned_docs/version-0.XX/native-api/*-api-windows*.md` underneath the other versioned doc exclusions listed at the top of the file.
-5. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.XX for its `defaultVersionShown` constant.
+5. Update `support.js` and add/update the entry for the new version of React Native Windows with the correct release and Active Support Start Date _X_ (ex: 6/27/22). Then make sure to edit the previous version's:
+    1. Maintenance Start Date (set to the last day of the month that's 1 month out from _X_, ex: 7/31/22)
+    2. End of Support Date (set to the last day of the month that's 3 months out from _X_, ex: 9/30/22)
+6. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.XX for its `defaultVersionShown` constant.
 
 # FAQ
 ## How do the versioned snapshots work?

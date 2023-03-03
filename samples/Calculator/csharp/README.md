@@ -4,7 +4,7 @@ See [../README.md](../README.md) for details of this sample.
 
 See [../cppwinrt/](../cppwinrt/) for a C++/Winrt version of this sample.
 
-It currently targets React Native Windows 0.68.
+It currently targets React Native Windows 0.71.
 
 ### Setup
 See [../README.md#Setup](../README.md#Setup).

@@ -7,6 +7,10 @@ is_blog: true
 published_date: May 19, 2020
 ---
 
+<head>
+  <meta http-equiv="Refresh" content="0; URL=https://devblogs.microsoft.com/react-native/2020-05-19-rn4m-updates/" />
+</head>
+
 We're excited to announce our first preview release aligning with [React Native 0.62](https://reactnative.dev/blog/2020/03/26/version-0.62)!
 
 <!--truncate-->
