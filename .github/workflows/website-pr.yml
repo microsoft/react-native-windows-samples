@@ -45,3 +45,10 @@ jobs:
     - name: Yarn Build (Website)
       run: yarn build
       working-directory: ./website
+  
+  prcheck:
+    name: Successful PR Check
+    runs-on: ubuntu-latest
+    needs: [website_pr]
+    steps:
+     - uses: actions/checkout@v3
