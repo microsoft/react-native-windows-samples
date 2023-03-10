@@ -17,8 +17,6 @@ Remember to call `react-native init` from the place you want your project direct
 npx react-native init <projectName> --template react-native@^0.71.0
 ```
 
-> To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
-
 ### Navigate into this newly created directory
 
 Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
