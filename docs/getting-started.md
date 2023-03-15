@@ -18,7 +18,7 @@ npx react-native init <projectName> --template react-native@^0.71.0
 ```
 
 > To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript`.<br><br>
-> Starting from React Native v0.71 TypeScript is used by default
+> Starting from React Native version 0.71 TypeScript is used by default
 
 ### Navigate into this newly created directory
 
