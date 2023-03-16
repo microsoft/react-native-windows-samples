@@ -2,13 +2,15 @@
 // Licensed under the MIT License.
 
 #include "pch.h"
+
 #include "ReactPackageProvider.h"
-#include "FancyMath.h"
-#include "DataMarshallingExamples.h"
-#include "AsyncMethodExamples.h"
 #if __has_include("ReactPackageProvider.g.cpp")
 #include "ReactPackageProvider.g.cpp"
 #endif
+
+// NOTE: You must include the headers of your native modules here in
+// order for the AddAttributedModules call below to find them.
+#include "FancyMath.h"
 
 using namespace winrt::Microsoft::ReactNative;
 
