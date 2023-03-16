@@ -22,6 +22,10 @@ AddAttributedModules(packageBuilder, true);
 Alternatively if you are registering modules more manually by calling `IReactPackageBuilder.AddModule`, you can call `IReactPackageBuilder.AddTurboModule` instead.
 
 
+### Additional differences running as NativeModule vs TurboModule
+
+After creating a spec in JS, you should see JS type errors showing that constants should be accessed using `MyModule.getConstants().myconst` instead of `MyModule.myconst`.  If you fail to update you accesses of `myconst` the field will continue to work when the module is running as a NativeModule, since NativeModules promote all the constants to fields on the module.  This behavior does not happen with TurboModules, so the myconst field will be undefined.  Calls using `getConstants().myconst` will work both for NativeModules and TurboModules.
+
 ### Web Debugging Behavior
 
 TurboModules cannot run when using Remote Debugging / Web Debugging.  React-Native-Windows will attempt to run a TurboModule as a native module when running in that mode, but if the module is using JSI directly, that fallback may not work.

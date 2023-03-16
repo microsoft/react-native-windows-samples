@@ -76,10 +76,10 @@ export interface Spec extends TurboModule {
 
   getConstants: () => {
     E: number,
-    PI: number,
+    Pi: number,
   };
 
-  add(a: number, b: number): Promise<number>;
+  add: (a: number, b: number, callback: (value: number) => void) => void;
 }
 
 export default TurboModuleRegistry.get<Spec>(
@@ -152,7 +152,7 @@ You can specify a different event emitter like this: `[ReactModule(EventEmitter 
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
-The `[ReactConstant]` attribute is how you can define constants. Here `FancyMath` has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override the name like this: `[ReactConstant("Pi")]`.
+The `[ReactConstant]` attribute is how you can define constants. Here `FancyMath` has defined two constants: `E` and `Pi`. When accessing these constants you should use `FancyMath.getConstants().E`.  If you want to use another name in JS you could override the JS name like this: `[ReactConstant("e")]`.  
 
 The `[ReactMethod]` attribute is how you define methods. In `FancyMath` we have one method, `add`, which takes two doubles and returns their sum. As before, you can optionally customize the name like this: `[ReactMethod("add")]`.
 
@@ -221,7 +221,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 | `REACT_MODULE`           | Specifies the class is a native module.                   |
 | `REACT_METHOD`           | Specifies an asynchronous method.                         |
 | `REACT_SYNC_METHOD`      | Specifies a synchronous method.                           |
-| `REACT_GET_CONSTANT`         | Specifies a method that provides a set of constants. (Preferred) |
+| `REACT_GET_CONSTANTS`    | Specifies a method that provides a set of constants. (Preferred) |
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
@@ -260,7 +260,7 @@ namespace NativeModuleSample
     SampleLibraryCodegen::FancyMathSpec_Constants GetConstants() noexcept {
       SampleLibraryCodegen::FancyMathSpec_Constants constants;
       constants.E = M_E;
-      constants.PI = M_PI;
+      constants.Pi = M_PI;
       return constants;
     }
 
@@ -494,12 +494,12 @@ class NativeModuleSample extends Component {
   _onPressHandler() {
     // Calling FancyMath.add method
     FancyMath.add(
-      /* arg a */ FancyMath.Pi,
+      /* arg a */ FancyMath.getConstants().Pi,
       /* arg b */ FancyMath.E,
       /* callback */ function (result) {
         Alert.alert(
           'FancyMath',
-          `FancyMath says ${FancyMath.Pi} + ${FancyMath.E} = ${result}`,
+          `FancyMath says ${FancyMath.getConstants().Pi} + ${FancyMath.getConstants().E} = ${result}`,
           [{ text: 'OK' }],
           {cancelable: false});
       });
@@ -508,8 +508,8 @@ class NativeModuleSample extends Component {
   render() {
     return (
       <View>
-         <Text>FancyMath says PI = {FancyMath.Pi}</Text>
-         <Text>FancyMath says E = {FancyMath.E}</Text>
+         <Text>FancyMath says PI = {FancyMath.getConstants().Pi}</Text>
+         <Text>FancyMath says E = {FancyMath.getConstants().E}</Text>
          <Button onPress={this._onPressHandler} title="Click me!"/>
       </View>);
   }
@@ -520,7 +520,7 @@ AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 
 To access your native modules, you need to import from your spec file, in this case `NativeFancyMath`. Since our modules fires events, we're also bringing in `NativeEventEmitter`.
 
-To access our `FancyMath` constants, we can simply call `FancyMath.E` and `FancyMath.Pi`.
+To access our `FancyMath` constants, we can simply call `FancyMath.getConstants().E` and `FancyMath.getConstants().Pi`.
 
 Calls to methods are a little different due to the asynchronous nature of the JS engine. If the native method returns nothing, we can simply call the method. However, in this case `FancyMath.add()` returns a value, so in addition to the two necessary parameters we also include a callback function which will be called with the result of `FancyMath.add()`. In the example above, we can see that the callback raises an Alert dialog with the result value.
 
