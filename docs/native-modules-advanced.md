@@ -196,12 +196,12 @@ import FancyMath from './NativeFancyMath';
 class NativeModuleSample extends Component {
   _onPressHandler() {
     FancyMath.add(
-      /* arg a */ FancyMath.Pi,
-      /* arg b */ FancyMath.E,
+      /* arg a */ FancyMath.getConstants().Pi,
+      /* arg b */ FancyMath.getConstants().E,
       /* callback */ function (result) {
         Alert.alert(
           'FancyMath',
-          `FancyMath says ${FancyMath.Pi} + ${FancyMath.E} = ${result}`,
+          `FancyMath says ${FancyMath.getConstants().Pi} + ${FancyMath.getConstants().E} = ${result}`,
           [{ text: 'OK' }],
           {cancelable: false});
       });
@@ -210,8 +210,8 @@ class NativeModuleSample extends Component {
   render() {
     return (
       <View>
-         <Text>FancyMath says PI = {FancyMath.Pi}</Text>
-         <Text>FancyMath says E = {FancyMath.E}</Text>
+         <Text>FancyMath says PI = {FancyMath.getConstants().Pi}</Text>
+         <Text>FancyMath says E = {FancyMath.getConstants().E}</Text>
          <Button onPress={this._onPressHandler} title="Click me!"/>
       </View>);
   }
