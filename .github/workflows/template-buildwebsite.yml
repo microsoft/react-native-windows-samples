@@ -1,0 +1,56 @@
+name: Build Website
+
+on:
+  workflow_call:
+    inputs:
+      skipBuild:
+        required: false
+        default: false
+        type: boolean
+      vmImage:
+        required: false
+        default: 'ubuntu-latest'
+        type: string
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  check: # This job ensures the template reports success even when we don't want it to build
+    name: "Check if build is required: ${{ !inputs.skipBuild }}"
+    runs-on: 'ubuntu-latest'
+    steps:
+    - uses: actions/checkout@v3
+
+  build_website:
+    name: Build Website
+    needs: check
+    if: ${{ !inputs.skipBuild }}
+    runs-on: ${{ inputs.vmImage }}
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Spell-check docs
+      run: npx markdown-spellcheck "docs/*.md" "!docs/*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report --color
+
+    - name: Check unbroken exclusions file
+      run: ${{github.workspace}}/.github/scripts/CheckUnbrokenExclusions.ps1
+
+    - name: Check for Broken Links (Docs)
+      run: npx unbroken --parse-ids
+      working-directory: ./docs
+
+    - name: Check for Broken Links (Website)
+      if: success() || failure()
+      run: npx unbroken --parse-ids
+      working-directory: ./website
+
+    - name: Yarn Install (Website)
+      if: success() || failure()
+      run: yarn install --frozen-lockfile
+      working-directory: ./website
+
+    - name: Yarn Build (Website)
+      run: yarn build
+      working-directory: ./website
