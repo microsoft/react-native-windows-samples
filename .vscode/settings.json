@@ -3,5 +3,16 @@
       "**/node_modules": true,
       "/website/versioned_docs": true,
       "/website/versioned_sidebars": true
-    }
+    },
+    "cSpell.customDictionaries": {
+      "project-words": {
+        "name": "project-words",
+        "path": "${workspaceRoot}/.spelling",
+        "description": "The custom dictionary file used in PR checks.",
+        "addWords": true
+      }
+    },
+    "cSpell.ignoreRegExpList": [
+      "/\\b[A-Z]{3,5}\\b/g"
+    ]
 }
