@@ -3,8 +3,6 @@ name: CI
 on:
   schedule:
     - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
-  push:
-    branches: [ main ]
   workflow_dispatch:
 
 defaults:
