@@ -9,7 +9,6 @@
 | [CalculatorNuGet](./CalculatorNuGet) | The Calculator sample, but consuming RNW through the NuGet packages. |
 | [ContinuousIntegration](./ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. |
 | [NativeModuleSample](./NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. |
-| [RssReader](./rssreader) | A sample RNW and RNM app implementing a RSS reader. |
 
 </div>
 

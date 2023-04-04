@@ -24,7 +24,6 @@ The content here features React Native sample apps, components, and templates fo
 | [ContinuousIntegration](./samples/ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. |
 | [NativeModuleSample](./samples/NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. |
 | [ReactNativeWinRT](https://github.com/microsoft/react-native-winrt/tree/main/samples/RNWinRTTestApp) | A sample RNW app that uses [React Native WinRT](aka.ms/reactnativewinrt) to consume native WinRT APIs. |
-| [RssReader](./samples/rssreader) | A sample RNW and RNM app implementing a RSS reader. |
 
 </div>
 
