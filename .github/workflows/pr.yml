@@ -1,0 +1,131 @@
+name: PR
+
+on:
+  pull_request:
+    branches: [ main ]
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  setupcheck:
+    name: Setup Check
+    runs-on: ubuntu-latest
+    outputs:
+      # These outputs must be set otherwise the dependent jobs won't have access to them
+      calculator: ${{ steps.filter.outputs.calculator == 'true' }}
+      calculator-nuget: ${{ steps.filter.outputs.calculator-nuget == 'true' }}
+      calculator-coreapp-nuget: ${{ steps.filter.outputs.calculator-coreapp-nuget == 'true' }}
+      native-module-sample: ${{ steps.filter.outputs.native-module-sample == 'true' }}
+      website: ${{ steps.filter.outputs.website == 'true' }}
+      workflows: ${{ steps.filter.outputs.workflows == 'true' }}
+    steps:
+    - uses: actions/checkout@v3
+
+    # This task is to calculate which projects/paths had file changes
+    # Project builds can be skipped in PR if no files changed
+    # Changes to the "workflow" files should make projects build
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          calculator:
+            - '.github/workflows/template-buildsample.yml'
+            - 'samples/Calculator/**'
+          calculator-nuget:
+            - '.github/workflows/template-buildsample.yml'
+            - 'samples/CalculatorNuGet/**'
+          calculator-coreapp-nuget:
+            - '.github/workflows/template-buildsample.yml'
+            - 'samples/CalculatorCoreAppNuGet/**'
+          native-module-sample:
+            - '.github/workflows/template-buildsample.yml'
+            - 'samples/NativeModuleSample/**'
+          website:
+            - '.github/workflows/template-buildwebsite.yml'
+            - 'docs/**'
+            - 'website/**'
+          workflows:
+            - '.github/workflows/ci.yml'
+            - '.github/workflows/pr.yml'
+
+  call-buildsample-calculator:
+    name: Build Calculator
+    needs: setupcheck
+    strategy:
+      fail-fast: true
+      matrix:
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
+        configuration: ['Debug']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      skipBuild: ${{ !needs.setupcheck.outputs.workflows && !needs.setupcheck.outputs.calculator }} # Skip if files haven't changed
+
+  call-buildsample-calculator-nuget:
+    name: Build Calculator NuGet
+    needs: setupcheck
+    strategy:
+      fail-fast: true
+      matrix:
+        sampleName: ['CalculatorNuGet']
+        configuration: ['Debug']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      skipBuild: ${{ !needs.setupcheck.outputs.workflows && !needs.setupcheck.outputs.calculator-nuget }} # Skip if files haven't changed
+
+  call-buildsample-calculator-coreapp-nuget:
+    name: Build Calculator CoreApp NuGet
+    needs: setupcheck
+    strategy:
+      fail-fast: true
+      matrix:
+        sampleName: ['CalculatorCoreAppNuGet']
+        configuration: ['Debug']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      skipBuild: ${{ !needs.setupcheck.outputs.workflows && !needs.setupcheck.outputs.calculator-coreapp-nuget }} # Skip if files haven't changed
+
+  call-buildsample-native-module-sample:
+    name: Build Native Module Sample
+    needs: setupcheck
+    strategy:
+      fail-fast: true
+      matrix:
+        sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
+        configuration: ['Debug']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
+      extraRunWindowsArgs: --no-autolink --no-deploy
+      skipBuild: ${{ !needs.setupcheck.outputs.native-module-sample && !needs.setupcheck.outputs.native-module-sample }} # Skip if files haven't changed
+
+  call-buildwebsite:
+    name: Build Website
+    needs: setupcheck
+    uses: ./.github/workflows/template-buildwebsite.yml
+    with:
+      skipBuild: ${{ !needs.setupcheck.outputs.workflows && !needs.setupcheck.outputs.website }} # Skip if files haven't changed
+
+  prcheck:
+    name: Successful PR Check
+    runs-on: ubuntu-latest
+    needs: [setupcheck, call-buildsample-calculator, call-buildsample-calculator-nuget, call-buildsample-calculator-coreapp-nuget, call-buildsample-native-module-sample, call-buildwebsite]
+    steps:
+     - uses: actions/checkout@v3

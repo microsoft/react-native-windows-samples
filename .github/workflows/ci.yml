@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  schedule:
+    - cron: '0 15 * * 2' # Tuesday 3PM UTC (8AM PST)
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  setupcheck:
+    name: Setup Check
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+  call-buildsample-calculator:
+    name: Build Calculator
+    needs: setupcheck
+    strategy:
+      fail-fast: false
+      matrix:
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
+        configuration: ['Debug', 'Release']
+        platform: ['x86', 'x64', 'ARM64']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+
+  call-buildsample-calculator-nuget:
+    name: Build Calculator NuGet
+    needs: setupcheck
+    strategy:
+      fail-fast: false
+      matrix:
+        sampleName: ['CalculatorNuGet']
+        configuration: ['Debug', 'Release']
+        platform: ['x86', 'x64', 'ARM64']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+
+  call-buildsample-calculator-coreapp-nuget:
+    name: Build Calculator CoreApp NuGet
+    needs: setupcheck
+    strategy:
+      fail-fast: false
+      matrix:
+        sampleName: ['CalculatorCoreAppNuGet']
+        configuration: ['Debug']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+
+  call-buildsample-native-module-sample:
+    name: Build Native Module Sample
+    needs: setupcheck
+    strategy:
+      fail-fast: false
+      matrix:
+        sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
+        configuration: ['Debug', 'Release']
+        platform: ['x86', 'x64', 'ARM64']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      extraRunWindowsArgs: --no-autolink --no-deploy
+      # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
+
+  call-buildwebsite:
+    name: Build Website
+    needs: setupcheck
+    uses: ./.github/workflows/template-buildwebsite.yml

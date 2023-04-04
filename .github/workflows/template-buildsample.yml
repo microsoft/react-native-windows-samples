@@ -1,0 +1,99 @@
+name: Build Sample
+
+on:
+  workflow_call:
+    inputs:
+      skipBuild:
+        required: false
+        default: false
+        type: boolean
+      vmImage:
+        required: false
+        default: 'windows-latest'
+        type: string
+      sampleName:
+        required: true
+        type: string
+      configuration:
+        required: false
+        default: 'Debug'
+        type: string
+      platform:
+        required: false
+        default: 'x64'
+        type: string
+      useBuildCertificate:
+        required: false
+        default: false
+        type: boolean
+      runCodeGenCheck:
+        required: false
+        default: false
+        type: boolean
+      extraRunWindowsArgs:
+        required: false
+        default: ''
+        type: string
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  check: # This job ensures the template reports success even when we don't want it to build
+    name: "Check if build is required: ${{ !inputs.skipBuild }}"
+    runs-on: 'ubuntu-latest'
+    steps:
+    - uses: actions/checkout@v3
+
+  build-sample:
+    name: Build ${{ inputs.sampleName }} ${{ inputs.configuration }} ${{ inputs.platform }}
+    needs: check
+    if: ${{ !inputs.skipBuild }}
+    runs-on: ${{ inputs.vmImage }}
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Gather environment info
+      run: npx envinfo
+
+    - name: Relocate to reduce long paths
+      run:  Copy-item -Force -Recurse -Verbose "samples\${{ inputs.sampleName }}" -Destination "..\..\src"
+
+    - name: Get starting folder size
+      run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+      working-directory: ..\..\src
+
+    - name: Yarn install
+      run: yarn install --frozen-lockfile
+      working-directory: ..\..\src
+
+    - name: Codegen check
+      if: ${{ inputs.runCodeGenCheck }}
+      run: npx react-native codegen-windows --check --no-telemetry
+      working-directory: ..\..\src
+
+    - name: Decode the pfx
+      if: ${{ inputs.useBuildCertificate }}
+      run: |
+        $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
+        $PfxPath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+        Write-Host $PfxPath
+        [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
+      working-directory: ..\..\src
+
+    - name: Run react-native run-windows
+      run: npx react-native run-windows --logging --no-packager --no-launch ${{ inputs.extraRunWindowsArgs }} --arch ${{ inputs.platform }} ${{ startsWith(inputs.platform, 'ARM') && '--no-deploy' || '' }} ${{ inputs.configuration == 'Release' && '--release' || '' }} ${{ inputs.useBuildCertificate && '--msbuildprops PackageCertificateKeyFile=${{github.workspace}}\GitHubActionsWorkflow.pfx' || '' }}
+      working-directory: ..\..\src
+
+    - name: Remove the pfx
+      if: ${{ inputs.useBuildCertificate }}
+      run: |
+        $certificatePath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+        Write-Host $certificatePath
+        Remove-Item -path $certificatePath
+      working-directory: ..\..\src
+
+    - name: Get final folder size
+      run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+      working-directory: ..\..\src

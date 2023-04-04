@@ -2,14 +2,14 @@
 
 <div align="center">
 
-| Sample | Description | CI Status |
-|:-------|:------------|:---|
-| [AppServiceDemo](./AppServiceDemo) | A sample RNW app which interacts with the Win32 ecosystem using App Services. | N/A |
-| [Calculator](./Calculator) | A sample RNW app implementing a simple calculator. | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI/badge.svg" alt="Calculator CI Status" /></a><br /><a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22Calculator+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/Calculator%20CI%20(Upgrade)/badge.svg" alt="Calculator CI (Upgrade) Status" /></a> |
-| [CalculatorNuGet](./CalculatorNuGet) | The Calculator sample, but consuming RNW through the NuGet packages. | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI/badge.svg" alt="CalculatorNuGet CI Status" /></a><br /><a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CalculatorNuGet+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/CalculatorNuGet%20CI%20(Upgrade)/badge.svg" alt="CalculatorNuGet CI (Upgrade) Status" /></a> |
-| [ContinuousIntegration](./ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. | N/A |
-| [NativeModuleSample](./NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI/badge.svg" alt="NativeModuleSample CI Status" /></a><br /><a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22NativeModuleSample+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/NativeModuleSample%20CI%20(Upgrade)/badge.svg" alt="NativeModuleSample CI (Upgrade) Status" /></a> |
-| [RssReader](./rssreader) | A sample RNW and RNM app implementing a RSS reader. | <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RssReader+CI%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/RssReader%20CI/badge.svg" alt="RssReader CI Status" /></a><br /><a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RssReader+CI+%28Upgrade%29%22"><img src="https://github.com/microsoft/react-native-windows-samples/workflows/RssReader%20CI%20(Upgrade)/badge.svg" alt="RssReader CI (Upgrade) Status" /></a> |
+| Sample | Description |
+|:-------|:------------|
+| [AppServiceDemo](./AppServiceDemo) | A sample RNW app which interacts with the Win32 ecosystem using App Services. |
+| [Calculator](./Calculator) | A sample RNW app implementing a simple calculator. |
+| [CalculatorNuGet](./CalculatorNuGet) | The Calculator sample, but consuming RNW through the NuGet packages. |
+| [ContinuousIntegration](./ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. |
+| [NativeModuleSample](./NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. |
+| [RssReader](./rssreader) | A sample RNW and RNM app implementing a RSS reader. |
 
 </div>
 
