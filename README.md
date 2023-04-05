@@ -1,10 +1,10 @@
 # React Native Samples and Templates
 
 <p align="center">
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22CI%22">
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions/workflows/ci.yml?query=workflow%3ACI">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/CI/badge.svg" alt="Repo CI Status" />
   </a>
-  <a href="https://github.com/microsoft/react-native-windows-samples/actions?query=workflow%3A%22RNW+Website+Publish%22">
+  <a href="https://github.com/microsoft/react-native-windows-samples/actions/workflows/website-publish.yml?query=workflow%3ACI">
     <img src="https://github.com/microsoft/react-native-windows-samples/workflows/RNW%20Website%20Publish/badge.svg" alt="Website Publish Status" />
   </a>
 </p>
