@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       # These outputs must be set otherwise the dependent jobs won't have access to them
+      app-service-demo: ${{ steps.filter.outputs.app-service-demo }}
       calculator: ${{ steps.filter.outputs.calculator }}
       calculator-nuget: ${{ steps.filter.outputs.calculator-nuget }}
       calculator-coreapp-nuget: ${{ steps.filter.outputs.calculator-coreapp-nuget }}
@@ -30,6 +31,9 @@ jobs:
       id: filter
       with:
         filters: |
+          app-service-demo:
+            - '.github/workflows/template-buildsample.yml'
+            - 'samples/AppServiceDemo/**'
           calculator:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/Calculator/**'
@@ -49,6 +53,24 @@ jobs:
           workflows:
             - '.github/workflows/ci.yml'
             - '.github/workflows/pr.yml'
+
+  call-buildsample-app-service-demo:
+    name: Build App Service Demo
+    needs: setupcheck
+    strategy:
+      fail-fast: true
+      matrix:
+        sampleName: ['AppServiceDemo']
+        configuration: ['Debug']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      vmImage: windows-2019
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      extraRunWindowsArgs: --no-deploy
+      skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.app-service-demo != 'true' }} # Skip if files haven't changed
 
   call-buildsample-calculator:
     name: Build Calculator
