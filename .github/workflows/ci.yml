@@ -30,7 +30,7 @@ jobs:
       vmImage: windows-2019
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
-      extraRunWindowsArgs: --no-deploy --msbuildprops BundlerExtraArgs=--openssl-legacy-provider # Needed to resolve error:0308010C:digital envelope routines::unsupported
+      extraRunWindowsArgs: --no-deploy
       platform: ${{ matrix.platform }}
 
   call-buildsample-calculator:

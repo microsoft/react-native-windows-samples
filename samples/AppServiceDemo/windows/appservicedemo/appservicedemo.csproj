@@ -173,6 +173,10 @@
   <ImportGroup Label="ReactNativeWindowsTargets">
     <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpApp.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpApp.targets')" />
   </ImportGroup>
+  <Target Name="FixNode18Bundling" BeforeTargets="MakeBundle" 
+    Condition="'$(UseBundle)' == 'true' And ('$(BuildingInsideVisualStudio)'!='true' Or '$(BuildingProject)'=='true')">
+    <SetEnv Name="NODE_OPTIONS" Value="--openssl-legacy-provider" Prefix="False" />
+  </Target>
   <Target Name="EnsureReactNativeWindowsTargets" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references targets in your node_modules\react-native-windows folder that are missing. The missing file is {0}.</ErrorText>

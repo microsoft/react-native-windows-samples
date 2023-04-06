@@ -69,7 +69,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
-      extraRunWindowsArgs: --no-deploy --msbuildprops BundlerExtraArgs=--openssl-legacy-provider # Needed to resolve error:0308010C:digital envelope routines::unsupported
+      extraRunWindowsArgs: --no-deploy
       skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.app-service-demo != 'true' }} # Skip if files haven't changed
 
   call-buildsample-calculator:
