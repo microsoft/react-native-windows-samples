@@ -69,7 +69,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
-      extraRunWindowsArgs: --no-deploy
+      extraRunWindowsArgs: --no-deploy --msbuildprops BundlerExtraArgs=--openssl-legacy-provider # Needed to resolve error:0308010C:digital envelope routines::unsupported
       skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.app-service-demo != 'true' }} # Skip if files haven't changed
 
   call-buildsample-calculator:
@@ -79,7 +79,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
@@ -95,7 +95,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['CalculatorNuGet']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
@@ -111,7 +111,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['CalculatorCoreAppNuGet']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
@@ -127,7 +127,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
