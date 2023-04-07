@@ -76,7 +76,11 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.19041.8" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\appservicedemo\appservicedemo.csproj" />
-    <ProjectReference Include="..\RegistryApp\RegistryApp.csproj" />
+    <ProjectReference Include="..\appservicedemo\appservicedemo.csproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\RegistryApp\RegistryApp.csproj" >
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 </Project>
