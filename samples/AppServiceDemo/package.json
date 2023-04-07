@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.71.4",
-    "react-native-windows": "^0.71.4"
+    "react-native-windows": "0.71.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
