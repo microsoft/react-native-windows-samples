@@ -77,9 +77,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\appservicedemo\appservicedemo.csproj">
+      <!-- Prevents NuGet restore error, see: https://github.com/NuGet/Home/issues/4992  -->
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="..\RegistryApp\RegistryApp.csproj" >
+      <!-- Prevents NuGet restore error, see: https://github.com/NuGet/Home/issues/4992  -->
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
