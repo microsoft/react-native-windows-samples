@@ -2,7 +2,7 @@
 
 This sample showcases the usage of React Native for Windows to interact with the Win32 ecosystem using App Services. This sample is documented [in the following article](https://microsoft.github.io/react-native-windows/blog/2021/08/05/win32component).
 
-It currently targets React Native Windows 0.67.
+It currently targets React Native Windows 0.71.
 
 ## Setup
 
