@@ -1,6 +1,7 @@
 ---
-id: rnm-getting-started
+id: version-0.71-rnm-getting-started
 title: Get Started with macOS
+original_id: rnm-getting-started
 ---
 
 This guide will help you get started on setting up your very first React Native for macOS app.
