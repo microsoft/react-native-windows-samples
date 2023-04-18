@@ -61,11 +61,10 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['AppServiceDemo']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
-      vmImage: windows-2019
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
@@ -79,7 +78,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
@@ -95,7 +94,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['CalculatorNuGet']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
@@ -111,7 +110,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['CalculatorCoreAppNuGet']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:
@@ -127,7 +126,7 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
-        configuration: ['Debug']
+        configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
     with:

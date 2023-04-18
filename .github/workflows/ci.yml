@@ -27,7 +27,6 @@ jobs:
         platform: ['x86', 'x64', 'ARM64']
     uses: ./.github/workflows/template-buildsample.yml
     with:
-      vmImage: windows-2019
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       extraRunWindowsArgs: --no-deploy
