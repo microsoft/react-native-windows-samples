@@ -6,8 +6,8 @@ original_id: native-modules-advanced
 
 >**This documentation and the underlying platform code is a work in progress.**
 >**Examples (C# and C++/WinRT):**
-> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 ## Writing Native Modules without using Attributes (C#)
 
@@ -25,7 +25,7 @@ However, your app will be responsible for handling the code that the attributes 
 
 Here is the same `FancyMath` native module, but we do not use custom attributes and we're instead going to implement registration of its members ourselves without using reflection.
 
-_FancyMath.cs_
+`FancyMath.cs`
 
 ```csharp
 using System;
@@ -51,7 +51,7 @@ namespace NativeModuleSample
 
 Here's our `FancyMathPackageProvider` where we manually register our native module's members.
 
-_FancyMathPackageProvider.cs_
+`FancyMathPackageProvider.cs`
 
 ```csharp
 namespace NativeModuleSample
@@ -88,9 +88,9 @@ namespace NativeModuleSample
 }
 ```
 
-As you can see, it is possible to use the API directly, but the code looks a little bit more complicated. You are responsible for creating your own constant provider, serializing each constant into the `IJSValueWriter`. For methods, you are also responsible for deserializing args, calling your code, and then serializing any return values. There are some (de)serialization helper methods to make that a little bit simpler:
+As you can see, it is possible to use the API directly, but the code looks a little bit more complicated. You are responsible for creating your own constant provider, serializing each constant into the `IJSValueWriter`. For methods, you are also responsible for de-serializing arguments, calling your code, and then serializing any return values. There are some (de)serialization helper methods to make that a little bit simpler:
 
-_FancyMathPackageProvider.cs_
+`FancyMathPackageProvider.cs`
 
 ```csharp
 namespace NativeModuleSample
@@ -125,7 +125,7 @@ namespace NativeModuleSample
 
 It is possible to simplify the code even more by hiding the use of the value reader and writer interfaces:
 
-_FancyMathPackageProvider.cs_
+`FancyMathPackageProvider.cs`
 
 ```csharp
 namespace NativeModuleSample
@@ -160,7 +160,7 @@ And as for the rest of the code, once we have the `IReactPackageProvider`, regis
 
 Using your native module in JS is the exact same as if the native module was defined using attributes.
 
-_NativeModuleSample.js_
+`NativeModuleSample.js`
 
 ```js
 import React, { Component } from 'react';
@@ -203,9 +203,9 @@ AppRegistry.registerComponent('NativeModuleSample', () => NativeModuleSample);
 
 By default, native modules share a common `RCTDeviceEventEmitter` which emits the actual events into JavaScript. However, that comes with the limitation that all of the native modules must have globally unique event names. If you wanted to ensure that your event names didn't collide with other events from other native modules, you could create your own `EventEmitter`.
 
-So say we have our FancyMath module, where we've specified `"MathEmitter"` as the name of the `EventEmitter`:
+So say we have our `FancyMath` module, where we've specified `"MathEmitter"` as the name of the `EventEmitter`:
 
-_FancyMath.cs_
+`FancyMath.cs`
 
 ```csharp
 using System;
@@ -240,7 +240,7 @@ Now, when the native code calls `AddEvent`, that will be essentially translated 
 
 So in order for this to work, you will need to create and register a `MathEmitter` module. You can create the module by and you can use the existing `EventEmitter` class.
 
-_MathEmitter.js_
+`MathEmitter.js`
 
 ```js
 const EventEmitter = require("EventEmitter");

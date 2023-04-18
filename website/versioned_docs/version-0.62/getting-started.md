@@ -20,7 +20,7 @@ Remember to call `react-native init` from the place you want your project direct
 npx react-native init <projectName> --template react-native@^0.62.2
 ```
 >To create TypeScript template, run `npx react-native init <projectName> --template react-native-template-typescript@6.4.*`.<br><br>
-> If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try adding `--ignore-existing` to your npx command:<br>
+> If you've installed react native globally in the past, via `npm install -g react-native`, and are having issues with the new instructions, try adding `--ignore-existing` to your `npx` command:<br>
 > `npx --ignore-existing react-native init <projectName> --template react-native@^0.62.2` instead.
 
 ### Navigate into this newly created directory
@@ -39,7 +39,7 @@ Lastly, install the React Native for Windows packages.
 npx react-native-windows-init --overwrite
 ```
 
-> The --overwrite flag is a temporary measure that ensures the correct files are copied to metro.config.js for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the metro.config.js file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows-samples/issues/277).
+> The --overwrite flag is a temporary measure that ensures the correct files are copied to `metro.config.js` for the metro bundler to work with Windows. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect. We are tracking [this issue here](https://github.com/microsoft/react-native-windows-samples/issues/277).
 
 Here are the options that `react-native-windows-init` takes:
 ```none
@@ -96,7 +96,7 @@ Options:
       ]
   }
   ```
-  - Press `F5` or navigate to the debug menu (alternatively press `Ctrl+Shift+D`) and in the Debug dropdown select "Debug Windows" and press the green arrow to run the application.
+  - Press `F5` or navigate to the debug menu (alternatively press `Ctrl+Shift+D`) and in the Debug drop-down select "Debug Windows" and press the green arrow to run the application.
 
 ## Authoring Native Modules
 
@@ -104,12 +104,12 @@ See [Native Modules and React Native Windows](native-modules.md).
 
 ## Building a standalone React Native Windows App
 
-Follow these steps to build a version of your app that you can install or publish to the store. This version will package your bundle and assets into the appx package so you don't need to run Metro.
+Follow these steps to build a version of your app that you can install or publish to the store. This version will package your bundle and assets into the APPX package so you don't need to run Metro.
 
 - Open the solution in Visual Studio
-- Select the Release configuration from the Configuration Manager dropdown.
+- Select the Release configuration from the Configuration Manager drop-down.
 - Build the solution. You can now launch without first launching Metro.
-- If you want to build an appx package to share or publish, use the Project => Publish => Create App Packages... option.
+- If you want to build an APPX package to share or publish, use the Project => Publish => Create App Packages... option.
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
 </body>

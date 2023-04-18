@@ -12,16 +12,16 @@ Starting with version 0.63 the team offers experimental NuGet packages that can 
 
 > Disclaimer: There are known compatibility issues with [community modules](supported-community-modules.md), as they still rely on building the shared code from source. So the solution still needs to have all the source projects which puts all the build performance problems back.
 
-> Disclaimer: NuGet packages are not compatible with experimental feature [WinUI3](winui3.md).
+> Disclaimer: NuGet packages are not compatible with experimental feature [WinUI 3](winui3.md).
 
 The benefit of using NuGet packages is that you get improved compilation times for your Windows project and can develop on a less powerful computer.
 
 The other benefit will be that it will be easier to update your projects to future versions or react-native-windows.
 
-We are working on getting the packages on [NuGet.org](https://nuget.org). Until that time the packages will be available on the [react-native-public feed](https://dev.azure.com/ms/react-native/_packaging?_a=feed&feed=react-native-public) on Azure DevOps.
+We are working on getting the packages on [NuGet Gallery](https://nuget.org). Until that time the packages will be available on the [react-native-public feed](https://dev.azure.com/ms/react-native/_packaging?_a=feed&feed=react-native-public) on Azure DevOps.
 
 # How to enable on new projects
-When you eanble react-native-windows on your new project, you can pass `--experimentalNuGetDependency true`:
+When you enable react-native-windows on your new project, you can pass `--experimentalNuGetDependency true`:
 
 1. `npx react-native init <projectName>`
 1. `pushd <projectName>`
@@ -30,8 +30,8 @@ When you eanble react-native-windows on your new project, you can pass `--experi
 Of course all the other flags still work.
 
 # How to update a previously created project
-## CSharp projects
-1. Add a nuget configuration file `nuget.config` in the `windows` folder next to the .sln file
+## C# projects
+1. Add a NuGet configuration file `nuget.config` in the `windows` folder next to the `.sln` file
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
     <configuration>
@@ -54,7 +54,7 @@ Of course all the other flags still work.
         </PropertyGroup>
       ```
    1. If you have a project that was created before 0.63, you should remove all references to `Microsoft.ReactNative.*` projects.
-   1. Add a nuget reference to "Microsoft.ReactNative.Managed".
+   1. Add a NuGet reference to `Microsoft.ReactNative.Managed`.
       You can do this either through Visual Studio's UI or by adding:
       ```xml
       <ItemGroup>
@@ -63,7 +63,7 @@ Of course all the other flags still work.
         </PackageReference>
       </ItemGroup>
       ```
-      > Note: You'll need to match the nuget version with the npm version
+      > Note: You'll need to match the NuGet version with the npm version
 
 1. Update the C# logic for the new [compile-time C# codeGen](native-modules-csharp-codegen.md)
 
@@ -72,19 +72,19 @@ Of course all the other flags still work.
    1. Open the project in Visual Studio
    1. Remove all projects that are not your project
 1. Edit the project file `windows\<projectName>\<projectName.vcxproj>`
-   1. Add the the nuget flag to the first property group
+   1. Add the the NuGet flag to the first property group
       ```diff
         <PropertyGroup Label="ReactNativeWindowsProps">
           <ReactNativeWindowsDir Condition="'$(ReactNativeWindowsDir)' == ''">...</ReactNativeWindowsDir>
       +   <UseExperimentalNuget>true</UseExperimentalNuget>
         </PropertyGroup>
       ```
-   1. Add a nuget references to both:
-      * Microsoft.ReactNative
-      * Microsoft.ReactNative.Cxx
+   1. Add a NuGet references to both:
+      * `Microsoft.ReactNative`
+      * `Microsoft.ReactNative.Cxx`
 
-      nuget packages. C++ packages do not support `PackageReference` so it is not recommended to manually add these dependencies to the project file, instead add the dependencies via the Visual Studio IDE.
-      > Note: You'll need to match the nuget version with the npm version
+      NuGet packages. C++ packages do not support `PackageReference` so it is not recommended to manually add these dependencies to the project file, instead add the dependencies via the Visual Studio IDE.
+      > Note: You'll need to match the NuGet version with the npm version
 
 # Version match
-The versions of the nuget package in your project must match the npm package version. If you need to update the nuget packages there is a separate page on [Updating NuGet packages](nuget-update.md)
+The versions of the NuGet package in your project must match the npm package version. If you need to update the NuGet packages there is a separate page on [Updating NuGet packages](nuget-update.md)

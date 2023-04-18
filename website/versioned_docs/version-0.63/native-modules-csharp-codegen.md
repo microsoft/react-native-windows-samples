@@ -88,7 +88,7 @@ First it needs to have a partial class called `ReactPackageProvider` in the defa
 partial void CreatePackageImplementation(IReactPackageBuilder packageBuilder);
 ``` 
 which the generated file implements. This class should implement `IReactPackageProvider` and call the partial method from the `CreatePackage` function. 
-You then need to register this class in your App's xaml startup code by adding the following call to the constructor:
+You then need to register this class in your App's XAML startup code by adding the following call to the constructor:
 ```c#
 PackageProviders.Add(new ReactPackageProvider());
 ```

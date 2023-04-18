@@ -11,7 +11,7 @@ The development dependencies for React Native for macOS are identical to the dev
 ### macOS Development Dependencies
 - A Mac device is required to build projects with native code for macOS.
 - Install [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) version 11.3.1 or newer.
-- Ensure to install Xcode Command Line Tools. Open Xcode, then choose "Preferences..." from the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools dropdown.
+- Ensure to install Xcode Command Line Tools. Open Xcode, then choose "Preferences..." from the Xcode menu. Go to the Locations panel and install the tools by selecting the most recent version in the Command Line Tools drop-down.
 - Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
    ```bash
    sudo gem install cocoapods

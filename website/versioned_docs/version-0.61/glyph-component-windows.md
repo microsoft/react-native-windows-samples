@@ -10,7 +10,7 @@ original_id: glyph-component
 
 Inherits [View Props](https://reactnative.dev/docs/view#props).
 
-### emSize
+### `emSize`
 
 Set the EM font size of the glyph.
 
@@ -18,7 +18,7 @@ Set the EM font size of the glyph.
 |:--|:--|
 | number | No |
 
-### fontUri
+### `fontUri`
 
 | type | required |
 |:--|:--|
@@ -32,7 +32,7 @@ Unicode string of the glyph.
 |:--|:--|
 | string | No |
 
-### colorEnabled
+### `colorEnabled`
 
 | type | required |
 |:--|:--|
@@ -40,4 +40,4 @@ Unicode string of the glyph.
 
 ### style
 
-The [StyleSheet](https://reactnative.dev/docs/stylesheet) specified for the glyph. Extends [ViewStyle](https://reactnative.dev/docs/view-style-props) and adds color.
+The [`StyleSheet`](https://reactnative.dev/docs/stylesheet) specified for the glyph. Extends [`ViewStyle`](https://reactnative.dev/docs/view-style-props) and adds color.

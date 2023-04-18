@@ -7,8 +7,8 @@ original_id: native-modules-setup
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
 
@@ -35,7 +35,7 @@ Now you'll have a new native module project under `react-native-my-library`. Be 
 
 > **The plan is to automate this process as part of a CLI new library project template, see issues [3201](https://github.com/microsoft/react-native-windows/issues/3201) and [3203](https://github.com/microsoft/react-native-windows/issues/3203). However we are also documenting the manual process here for developers who are unable to use the CLI.**
 
-### Updating your package.json
+ ### Updating your `package.json`
 
 In the directory for your native module project, you first need to update to `react-native` 0.60 and get the latest `react-native-windows`:
 
@@ -68,8 +68,8 @@ You should now have a new `NativeModuleSample` solution file at `.\NativeModuleS
 
 For C++/WinRT project:
 
-1. Right click on the project and choose `Manage Nuget Packages...`
-    1. Select version 2.0.190730.2 for Microsoft.Windows.CppWinRT package.
+1. Right click on the project and choose `Manage NuGet Packages...`
+    1. Select version 2.0.190730.2 for `Microsoft.Windows.CppWinRT` package.
 1. Right-click on the project and choose `Properties`
     1. Under `Linker > Windows Metadata` set `Generate Windows Metadata` to `Yes`.
 
@@ -94,20 +94,20 @@ Now we're going to add all of the following React Native Windows projects to tha
 
 > _For more details about what these projects do, see [Project Structure](project-structure.md)._
 
-| VS Project                          | Project File                                                                     |
-| :---------------------------------- | :------------------------------------------------------------------------------- |
-| Chakra                              | `Chakra\Chakra.vcxitems`                                                         |
-| Common                              | `Common\Common.vcxproj`                                                          |
-| Folly                               | `Folly\Folly.vcxproj`                                                            |
-| JSI.Shared                          | `JSI\Shared\JSI.Shared.vcxitems`                                                 |
-| JSI.Universal                       | `JSI\Universal\JSI.Universal.vcxproj`                                            |
-| Microsoft.ReactNative               | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                            |
-| Microsoft.ReactNative.Cxx           | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                   |
-| Microsoft.ReactNative.SharedManaged | `Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.shproj` |
-| Mso                                 | `Mso\Mso.vcxitems`                                                               |
-| ReactCommon                         | `ReactCommon\ReactCommon.vcxproj`                                                |
-| ReactWindowsCore                    | `ReactWindowsCore\ReactWindowsCore.vcxproj`                                      |
-| Shared                              | `Shared\Shared.vcxitems`                                                         |
+| VS Project                            | Project File                                                                     |
+| :------------------------------------ | :------------------------------------------------------------------------------- |
+| `Chakra`                              | `Chakra\Chakra.vcxitems`                                                         |
+| `Common`                              | `Common\Common.vcxproj`                                                          |
+| `Folly`                               | `Folly\Folly.vcxproj`                                                            |
+| `JSI.Shared`                          | `JSI\Shared\JSI.Shared.vcxitems`                                                 |
+| `JSI.Universal`                       | `JSI\Universal\JSI.Universal.vcxproj`                                            |
+| `Microsoft.ReactNative`               | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                            |
+| `Microsoft.ReactNative.Cxx`           | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                   |
+| `Microsoft.ReactNative.SharedManaged` | `Microsoft.ReactNative.SharedManaged\Microsoft.ReactNative.SharedManaged.shproj` |
+| `Mso`                                 | `Mso\Mso.vcxitems`                                                               |
+| `ReactCommon`                         | `ReactCommon\ReactCommon.vcxproj`                                                |
+| `ReactWindowsCore`                    | `ReactWindowsCore\ReactWindowsCore.vcxproj`                                      |
+| `Shared`                              | `Shared\Shared.vcxitems`                                                         |
 
 For each project, you'll do the following:
 

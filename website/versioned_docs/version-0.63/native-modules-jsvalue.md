@@ -6,11 +6,11 @@ original_id: native-modules-jsvalue
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-JSValue is a native, immutable invariant value type, and is meant to hold any of the commonly used JS types: `bool`s, `int`s, `double`s, `string`s, arrays, and objects. It is provided for native developers (writing native modules or view managers) who want an equivalent to the `folly::dynamic` type that is compatible with the WinRT ABI surface provided by `Microsoft.ReactNative`.
+`JSValue` is a native, immutable invariant value type, and is meant to hold any of the commonly used JS types: `bool`s, `int`s, `double`s, `string`s, arrays, and objects. It is provided for native developers (writing native modules or view managers) who want an equivalent to the `folly::dynamic` type that is compatible with the WinRT ABI surface provided by `Microsoft.ReactNative`.
 
-Two JSValue implementations are provided: one for C++ developers in the `Microsoft.ReactNative.Cxx` shared project, and one for C# developers in the `Microsoft.ReactNative.SharedManaged` project.
+Two `JSValue` implementations are provided: one for C++ developers in the `Microsoft.ReactNative.Cxx` shared project, and one for C# developers in the `Microsoft.ReactNative.SharedManaged` project.
 
-> This purpose of this document is to provide equivalency to the scenarios supported by [folly/dynamic.h](https://github.com/facebook/folly/blob/master/folly/docs/Dynamic.md).
+> This purpose of this document is to provide equivalency to the scenarios supported by [`folly/dynamic.h`](https://github.com/facebook/folly/blob/master/folly/docs/Dynamic.md).
 
 ## Overview
 
@@ -116,7 +116,7 @@ assert(map4.AsObject().size() == 2);
 
 ## Runtime Type Checking and Conversions
 
-While most unsupported operations will cause compilation errors, some operations on JSValues require checking at runtime that the stored type is compatible with the operation. Some operations may throw runtime exceptions or produce unexpected behavior as type conversions fail and default values are returned.
+While most unsupported operations will cause compilation errors, some operations on `JSValue`s require checking at runtime that the stored type is compatible with the operation. Some operations may throw runtime exceptions or produce unexpected behavior as type conversions fail and default values are returned.
 
 More examples should hopefully clarify this:
 
@@ -169,7 +169,7 @@ JSValue hugeDoub = hugeInt.AsDouble();
 
 ### C#
 
-You can iterate over JSValueArrays as you would over any C# enumerable.
+You can iterate over `JSValueArray`s as you would over any C# enumerable.
 
 ```csharp
 JSValueArray array = new JSValueArray() { 2, 3, "foo" };
@@ -180,7 +180,7 @@ foreach (var val in array)
 }
 ```
 
-You can iterate over JSValueObjects just like any other `IDictionary<string, JSValue>`.
+You can iterate over `JSValueObject`s just like any other `IDictionary<string, JSValue>`.
 
 ```csharp
 JSValueObject obj = new JSValueObject() { { "2", 3}, { "hello", "world" }, { "x", 4 } };
@@ -203,7 +203,7 @@ foreach (var value in obj.Values)
 }
 ```
 
-You can find an element by key in a JSValueObject using the `TryGetValue()` method,
+You can find an element by key in a `JSValueObject` using the `TryGetValue()` method,
 which takes the key and returns `true` if a key is present and provides the value as an out variable. If the key is not preset, it returns `false` and the out variable will be null.
 
 ```csharp
@@ -223,7 +223,7 @@ if (obj.TryGetValue("no_such_key", out JSValue value2))
 
 ### C++/WinRT
 
-You can iterate over JSValueArrays as you would over any C++ sequence container.
+You can iterate over `JSValueArray`s as you would over any C++ sequence container.
 
 ```c++
 JSValueArray array = JSValueArray{ 2, 3, "foo" };
@@ -234,7 +234,7 @@ for (auto& val : array)
 }
 ```
 
-You can iterate over JSValueObjects just like any other C++ `std::map`.
+You can iterate over `JSValueObject`s just like any other C++ `std::map`.
 
 ```c++
 JSValueObject obj = JSValueObject{ { "2", 3}, { "hello", "world" }, { "x", 4 } };
@@ -263,12 +263,12 @@ auto pos = obj.find("no_such_key");
 
 ## Use for JSON
 
-Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creating JSON strings directly from JValues.
+Unlike `folly::dynamic`, there are no built-in mechanisms for parsing or creating JSON strings directly from `JSValue`s.
 
 ## Performance
 
-JSValues can be useful for manipulating large and complex JS objects in your native code, giving you random access to just the values you need. However, note that there is a performance penalty to doing this, as the entirety of the JS object will be parsed into the JSValue before it is passed to your code.
+`JSValue`s can be useful for manipulating large and complex JS objects in your native code, giving you random access to just the values you need. However, note that there is a performance penalty to doing this, as the entirety of the JS object will be parsed into the `JSValue` before it is passed to your code.
 
-The performance hit of using JSValue in your external native code is in addition to the performance hit of Microsoft.ReactNative's own internal use of `folly::dynamic`. Data is marshalled out of Microsoft.ReactNative through a high-performance serialization interface, however reading that data back into a JSValue means taking the time and memory to completely re-construct the original object structure.
+The performance hit of using `JSValue` in your external native code is in addition to the performance hit of `Microsoft.ReactNative`'s own internal use of `folly::dynamic`. Data is marshaled out of `Microsoft.ReactNative` through a high-performance serialization interface, however reading that data back into a `JSValue` means taking the time and memory to completely re-construct the original object structure.
 
-For more information, see [Marshalling Data](native-modules-marshalling-data.md).
+For more information, see [Marshaling Data](native-modules-marshalling-data.md).

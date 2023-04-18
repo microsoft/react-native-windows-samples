@@ -51,4 +51,4 @@ npx react-native-macos-init
 A new Command Prompt window will open with the React packager as well as a `react-native-macos` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! 🎉
 
 ### `ProjectName` has not been registered
-There is an existing bug where the casing of the project name affects it's ability to register properly. If you see this error, you can workaround it by navigating to your `app.json` and lowercasing the `name` field.
+There is an existing bug where the casing of the project name affects it's ability to register properly. If you see this error, you can workaround it by navigating to your `app.json` and lower-casing the `name` field.

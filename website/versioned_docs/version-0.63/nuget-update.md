@@ -59,9 +59,9 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
    ![Visual Studio Manage NuGet dialog showing the installed tab selected](assets/nuget-update-packages-manager-installed-tab.png)
 1. If the npm version has a hyphen with a preview marker, you must check the "Include Prerelease" per the image above.
 1. Select the package `Microsoft.ReactNative.Managed`
-1. Select the version of your npm package in the version dropdown on the right side.
+1. Select the version of your npm package in the version drop-down on the right side.
 
-   ![Visual Studio Managed NuGet dialog with the version dropdown selected.](assets/nuget-update-select-package.png)
+   ![Visual Studio Managed NuGet dialog with the version drop-down selected.](assets/nuget-update-select-package.png)
 1. Click `install`
 1. Close the dialog and save your project
 
@@ -86,8 +86,8 @@ If you use [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), 
    ![Visual Studio Manage NuGet dialog showing the installed tab selected](assets/nuget-update-packages-manager-installed-tab.png)
 1. If the npm version has a hyphen with a preview marker, you must check the "Include Prerelease" per the image above.
 1. Perform the next two steps for both `Microsoft.ReactNative` and `Microsoft.ReactNative.Cxx` packages:
-   1. On the right side, from the version dropdown select the version of your npm package
+   1. On the right side, from the version drop-down select the version of your npm package
 
-      ![Visual Studio Managed NuGet dialog with the version dropdown selected.](assets/nuget-update-select-package.png)
+      ![Visual Studio Managed NuGet dialog with the version drop-down selected.](assets/nuget-update-select-package.png)
    1. Click `install`
 1. Close dialog and save your project

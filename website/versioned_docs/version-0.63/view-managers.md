@@ -7,25 +7,25 @@ original_id: view-managers
 > **This documentation and the underlying platform code is a work in progress.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
-There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like ScrollView and TextInput, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, we can wrap up these existing components for seamless integration with your React Native application.
+There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like `ScrollView` and `TextInput`, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, we can wrap up these existing components for seamless integration with your React Native application.
 
-Like the [native module guide](native-modules.md), this too is a more advanced guide that assumes you are somewhat familiar with UWP programming. This guide will show you how to build a native UI component, walking you through the implementation of a subset of the existing ImageView component available in the core React Native library.
+Like the [native module guide](native-modules.md), this too is a more advanced guide that assumes you are somewhat familiar with UWP programming. This guide will show you how to build a native UI component, walking you through the implementation of a subset of the existing `ImageView` component available in the core React Native library.
 
 ## Overview
 
 Similarly to authoring native modules, at a high level you must:
 
-1. Author a ViewManager which defines a new Component type and understands how to create and interact with the native UI widget.
-2. Register your new ViewManager within the native code of your React Native host application.
+1. Author a View Manager which defines a new Component type and understands how to create and interact with the native UI widget.
+2. Register your new View Manager within the native code of your React Native host application.
 3. Reference the new Component within your React Native JSX code.
 
 ### Note about UWP XAML controls
 Some UWP XAML controls do not support being hosted in environments where 3D transforms are involved (i.e. the [`Transform3D`](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement.transform3d) property is set on the control or on any of the control's ancestors in the XAML tree). 
 
-Currently, React Native for Windows uses a global PerspectiveTransform to provide a 3D look to objects being rotated along the `x` or `y` axes, which means these non-3D-aware controls will not work out of the box (e.g. [InkCanvas](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)). However, a React Native for Windows app can opt out of the 3D perspective (and in so doing, enable these non-3D-aware controls) by setting the [`IsPerspectiveEnabled`](https://github.com/microsoft/react-native-windows/blob/4e775b9a59c55996d7598aadaeb82c93c40cbb6f/vnext/Microsoft.ReactNative/ReactRootView.idl#L18) property on the `ReactRootView`.
+Currently, React Native for Windows uses a global `PerspectiveTransform` to provide a 3D look to objects being rotated along the `x` or `y` axes, which means these 3D unaware controls will not work out of the box (e.g. [`InkCanvas`](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)). However, a React Native for Windows app can opt out of the 3D perspective (and in so doing, enable these 3D unaware controls) by setting the [`IsPerspectiveEnabled`](https://github.com/microsoft/react-native-windows/blob/4e775b9a59c55996d7598aadaeb82c93c40cbb6f/vnext/Microsoft.ReactNative/ReactRootView.idl#L18) property on the `ReactRootView`.
 
 __Important__: The `IsPerspectiveEnabled` property is experimental and support for it may be removed in the future.
 
@@ -35,7 +35,7 @@ Prerequisite: Follow the [Native Modules Setup Guide](native-modules-setup.md) t
 
 Once you have set up your development environment and project structure, you are ready to write code. 
 
-If you are only planning on adding a native module to your existing React Native Windows app, ie:
+If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed [Getting Started](getting-started.md), where
 1. You ran `npx react-native-windows-init --overwrite` to add Windows to your project, and
@@ -45,7 +45,7 @@ Then you can simply open the Visual Studio solution in the `windows` folder and 
 
 If you are instead creating a standalone native module, or adding Windows support to an existing native module, check out the [Native Modules Setup](native-modules-setup.md) guide first.
 
-## Sample ViewManager (C#)
+## Sample View Manager (C#)
 
 ### Attributes
 
@@ -57,7 +57,7 @@ If you are instead creating a standalone native module, or adding Windows suppor
 
 For this sample, assume we have the following `CustomUserControl` that we want to use in React Native.
 
-_CustomUserControl.cs_
+`CustomUserControl.cs`
 
 ```csharp
 using Windows.UI.Xaml;
@@ -126,7 +126,7 @@ namespace ViewManagerSample
 
 Here is a sample view manager written in C# called `CustomUserControlViewManager`.
 
-_CustomUserControlViewManager.cs_
+`CustomUserControlViewManager.cs`
 
 ```csharp
 using Windows.UI.Xaml.Media;
@@ -189,9 +189,9 @@ namespace ViewManagerSample
 
 ### 2. Registering your View Manager
 
-As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
-_ReactPackageProvider.cs_
+`ReactPackageProvider.cs`
 
 ```csharp
 using Microsoft.ReactNative.Managed;
@@ -212,7 +212,7 @@ Here we've implemented the `CreatePackage` method, which receives `packageBuilde
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
-_App.xaml.cs_
+`App.xaml.cs`
 
 ```csharp
 using Microsoft.ReactNative;
@@ -240,7 +240,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 
 ### 3. Using your View Manager in JSX
 
-_ViewManagerSample.js_
+`ViewManagerSample.js`
 
 ```js
 import React, { Component } from 'react';
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('ViewManagerSample', () => ViewManagerSample);
 ```
 
-## Sample ViewManager (C++)
+## Sample View Manager (C++)
 
 For this sample, assume we already have the `CustomUserControl` defined in the C# example.
 
@@ -299,7 +299,7 @@ For this sample, assume we already have the `CustomUserControl` defined in the C
 
 Here is a sample view manager written in C++ called `CustomUserControlViewManager`.
 
-_CustomUserControlViewManager.h_
+`CustomUserControlViewManager.h`
 
 ```cpp
 #pragma once
@@ -344,7 +344,7 @@ struct CustomUserControlViewManager : winrt::implements<
 }
 ```
 
-_CustomUserControlViewManager.cpp_
+`CustomUserControlViewManager.cpp`
 
 ```cpp
 #include "pch.h"
@@ -443,9 +443,9 @@ void CustomUserControlViewManager::DispatchCommand(
 
 ### 2. Registering your View Manager
 
-As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+As with native modules, we want to register our new `CustomUserControlViewManager` with React Native so we can actually use it. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
-_ReactPackageProvider.idl_
+`ReactPackageProvider.idl`
 
 ```cpp
 namespace ViewManagerSample
@@ -459,9 +459,9 @@ namespace ViewManagerSample
 }
 ```
 
-After that we add the .h and.cpp files:
+After that we add the .h and .cpp files:
 
-_ReactPackageProvider.h_
+`ReactPackageProvider.h`
 
 ```cpp
 #pragma once
@@ -486,7 +486,7 @@ namespace winrt::ViewManagerSample::factory_implementation
 }
 ```
 
-_ReactPackageProvider.cpp_
+`ReactPackageProvider.cpp`
 
 ```cpp
 #include "pch.h"
@@ -516,7 +516,7 @@ Here we've implemented the `CreatePackage` method, which receives `packageBuilde
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
-_App.cpp_
+`App.cpp`
 
 ```cpp
 #include "pch.h"
@@ -546,7 +546,7 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 ### 3. Using your View Manager in JSX
 
-_ViewManagerSample.js_
+`ViewManagerSample.js`
 
 ```js
 import React, { Component } from 'react';

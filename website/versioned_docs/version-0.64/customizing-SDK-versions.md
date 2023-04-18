@@ -39,7 +39,7 @@ Using a dependency involves the following two tasks:
 - Importing the package's build properties and targets
 
 For C# apps, the two steps are combined thanks to the built-in  [`<PackageReference>`](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) support.
-However, C# apps restore NuGet packages to a location under your user profile, whereas C++ projects expect NuGet packages to be in the solution directory. The `Microsoft.ReactNative project` which implements the RNW framework is a C++ project so it needs to be able to find the WinUI package under the solution `packages` directory. A workaround for this, is to edit the file `node_modules\react-native-windows\Microsoft.ReactNative\packages.config` to update the WinUI version and have it restore to the solution directory correctly.
+However, C# apps restore NuGet packages to a location under your user profile, whereas C++ projects expect NuGet packages to be in the solution directory. The `Microsoft.ReactNative` project which implements the RNW framework is a C++ project so it needs to be able to find the WinUI package under the solution `packages` directory. A workaround for this, is to edit the file `node_modules\react-native-windows\Microsoft.ReactNative\packages.config` to update the WinUI version and have it restore to the solution directory correctly.
 
 C++ apps use `packages.config` to specify the set of NuGet packages, and then manually import the right `.props` and `.targets` files from the package.
 

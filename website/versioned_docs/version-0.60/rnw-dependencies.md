@@ -18,8 +18,8 @@ To develop React-Native for Windows apps, you will need the following:
     - Desktop development with C++
   - Individual Components
     - Compilers, build tools and runtimes
-      - MSVC v141 - VS 2017 C++ x64/x86 build tools (v14.16)
-      - MSVC v141 - VS 2017 C++ ARM build tools (v14.16)
+      `MSVC v141 - VS 2017 C++ x64/x86 build tools (v14.16)`
+      `MSVC v141 - VS 2017 C++ ARM build tools (v14.16)`
     - Development activities
       - Node.js development support (optional)
 
@@ -27,11 +27,11 @@ To develop React-Native for Windows apps, you will need the following:
 
 - Install the [standard React Native dependencies](http://facebook.github.io/react-native/docs/getting-started.html#node-python2-jdk)
 - Install [Node.js](https://nodejs.org) via one of the following methods:
-  - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolately, from an elevated Command Prompt, run:
+  - Using [Chocolatey](https://chocolatey.org/) (_React Native recommended_). To use chocolatey, from an elevated Command Prompt, run:
   ```
   choco install nodejs.install --version=12.9.1
   ```
-  - Directly from [NodeJs](https://nodejs.org/en/download/)
+  - Directly from [Node.js](https://nodejs.org/en/download/)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
 - Install [Yarn](https://yarnpkg.com/en/docs/install) (_optional_ if only consuming react-native-windows, but **required** to contribute to react-native-windows)
