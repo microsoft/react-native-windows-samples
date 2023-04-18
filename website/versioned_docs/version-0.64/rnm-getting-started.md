@@ -46,7 +46,7 @@ npx react-native-macos-init
   ```
 
 - **Using Xcode**:
-  Open macos\test.xcworkspace in Xcode or run `xed -b macos`; `yarn start:macos`. Hit the Run button.
+  Open `macos\test.xcworkspace` in Xcode or run `xed -b macos`; `yarn start:macos`. Hit the Run button.
 
 A new Command Prompt window will open with the React packager as well as a `react-native-macos` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! 🎉
 
