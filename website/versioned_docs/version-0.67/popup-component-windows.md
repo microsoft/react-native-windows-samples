@@ -28,7 +28,7 @@ Set to false if you want your `Popup` to be modal.
 |:--|:--|
 | bool | No |
 
-### `horizonalOffset`
+### `horizontalOffset`
 
 Specifies horizontal offset from spawn point.
 

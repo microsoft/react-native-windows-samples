@@ -49,7 +49,7 @@ class MyAppClass extends Component {
 
 #### Switching styles based on the app's theme
 
-If the app author wants to switch the style of their component manually based on the system's theme (Dark or Light), they can do so with CSS-like style conditionals.
+If the app author wants to switch the style of their component manually based on the system's theme (Dark or Light), they can do so with style conditionals.
 
 ```JSX
  <Button title='click me' color={this.state.currentTheme === 'dark' ? 'grey' : 'orange'}/>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 
 #### Applying a system accent color variant
 
-In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the windowsbrush object.
+In Windows, there are algorithmically generated accent colors - dubbed Light or Dark 1, 2, and 3. This example covers what it would look like to apply that using the `windowsbrush` object.
 
 ```JSX
 const styles = StyleSheet.create({
@@ -87,13 +87,13 @@ const styles = StyleSheet.create({
 
 **Note:** That the system accent colors are `Color` objects at the native layer, whereas the other examples showed the use of theme brushes are `SolidColorBrush` objects. This means that the `SolidColoBrushes` will adapt automatically based on the Theme (Light, Dark or High Contrast), while the `Colors` will remain static.
 
-### Using windowsbrush to access Reveal and Acrylic
+### Using `windowsbrush` to access Reveal and Acrylic
 
-Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `windowsbrush` API we provide on the Javascript layer for other brushes.
+Two awesome features about the native XAML platform are Reveal and Acrylic. These two Fluent Design visuals are only found in Windows 10 apps, but can easily be accessed through the same `windowsbrush` API we provide on the JavaScript layer for other brushes.
 
 #### Using System Acrylic
 
-The `windowsbrush` api gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
+The `windowsbrush` API gives you access to all of the system acrylic brushes which can be accessed by resource name. Simply provide the resource brush name string in the component's style and it will be applied accordingly.
 
 <img src="assets/rnw-acrylic-surface.png" width="277" height="227"/>
 

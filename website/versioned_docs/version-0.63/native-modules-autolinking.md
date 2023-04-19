@@ -42,7 +42,7 @@ Autolinking is performed automatically as a part of the `run-windows` command:
 
 ### Manually run autolinking
 
-If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, ie:
+If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, i.e.:
 
 ```bat
 npx react-native autolink-windows
@@ -50,11 +50,11 @@ npx react-native autolink-windows
 
 | Options |  |
 |:--------|:-|
-| --logging | Verbose output logging |
-| --check | Only check whether any autolinked files need to change |
-| --sln [string] | Override the app solution file determined by `react-native config`, e.g. *windows\myApp.sln* |
-| --proj [string] | Override the app project file determined by `react-native config`, e.g. *windows\myApp\myApp.vcxproj* |
-| -h, --help | output usage information |
+| `--logging` | Verbose output logging |
+| `--check` | Only check whether any autolinked files need to change |
+| `--sln` [string] | Override the app solution file determined by `react-native config`, e.g. *`windows\myApp.sln`* |
+| `--proj` [string] | Override the app project file determined by `react-native config`, e.g. *`windows\myApp\myApp.vcxproj`* |
+| `-h`, `--help` | output usage information |
 
 ### Skipping autolinking
 

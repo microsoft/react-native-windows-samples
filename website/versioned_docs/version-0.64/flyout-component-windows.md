@@ -10,7 +10,7 @@ original_id: flyout-component
 
 Inherits [View Props](https://reactnative.dev/docs/view#props).
 
-### `horizonalOffset`
+### `horizontalOffset`
 
 Specifies horizontal offset from spawn point.
 

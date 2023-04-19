@@ -21,12 +21,12 @@ The following were completed recently:
 
 | Name | Status | Implemented |
 |:-|:-|-:|
-| <ins>[react-native-webview](https://www.github.com/react-native-community/react-native-webview)</ins> | **Completed** |Mar 17, 2020 |
-| <ins>[react-native-camera](https://www.github.com/react-native-community/react-native-camera)</ins> | **Completed** |Mar 10, 2020 |
-| <ins>[react-native-netinfo](https://www.github.com/react-native-community/react-native-netinfo)</ins> | **Completed** |Dec 29, 2019 |
-| <ins>[react-native-device-info](https://www.github.com/react-native-community/react-native-device-info)</ins> | **Completed** |Nov 1, 2019 |
-| <ins>[react-native-video](https://www.github.com/react-native-community/react-native-video)</ins> | **Completed** |Feb 25, 2020 |
-| <ins>[react-native-linear-gradient](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | **Completed** |Sep 18, 2019 |
+| <ins>[`react-native-webview`](https://www.github.com/react-native-community/react-native-webview)</ins> | **Completed** |Mar 17, 2020 |
+| <ins>[`react-native-camera`](https://www.github.com/react-native-community/react-native-camera)</ins> | **Completed** |Mar 10, 2020 |
+| <ins>[`react-native-netinfo`](https://www.github.com/react-native-community/react-native-netinfo)</ins> | **Completed** |Dec 29, 2019 |
+| <ins>[`react-native-device-info`](https://www.github.com/react-native-community/react-native-device-info)</ins> | **Completed** |Nov 1, 2019 |
+| <ins>[`react-native-video`](https://www.github.com/react-native-community/react-native-video)</ins> | **Completed** |Feb 25, 2020 |
+| <ins>[`react-native-linear-gradient`](https://www.github.com/react-native-community/react-native-linear-gradient)</ins> | **Completed** |Sep 18, 2019 |
 
 In addition, we are working on adding Windows support to popular and highly requested community modules. You can keep track on the progress of both these efforts through the [Community Modules support project board](https://github.com/microsoft/react-native-windows/projects/23).
 

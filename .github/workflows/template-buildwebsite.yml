@@ -34,6 +34,9 @@ jobs:
     - name: Spell-check docs
       run: npx markdown-spellcheck "docs/*.md" "!docs/*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report --color
 
+    - name: Spell-check versioned_docs
+      run: npx markdown-spellcheck "website/versioned_docs/**/*.md" "!website/versioned_docs/**/*-api-windows*.md" --en-us --ignore-acronyms --ignore-numbers --report --color
+
     - name: Check unbroken exclusions file
       run: ${{github.workspace}}/.github/scripts/CheckUnbrokenExclusions.ps1
 

@@ -9,13 +9,14 @@ When contributing to this project, unit and integration tests should be run to h
 ## Windows Desktop
 
 Tests should be run with a VSTest-compatible client
-(i.e. [VSTest.Console.exe](https://docs.microsoft.com/en-us/visualstudio/test/vstest-console-options?view=vs-2019),
+(i.e. [`VSTest.Console.exe`](https://docs.microsoft.com/en-us/visualstudio/test/vstest-console-options?view=vs-2019),
 [Visual Studio Test task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/test/vstest?view=azure-devops)).
 This project includes convenience scripts to set up and run the test artifacts.
 
 ### Unit Tests
 
-_Implemented in the React.Windows.Desktop.UnitTests project._
+_Implemented in the `React.Windows.Desktop.UnitTests` project:_
+
 Isolated, self-contained tests covering concrete implementations against mock dependencies and data.
 
 ```powershell
@@ -24,7 +25,8 @@ Isolated, self-contained tests covering concrete implementations against mock de
 
 ### Integration Tests
 
-_Implemented in the React.Windows.Desktop.IntegrationTests project._
+_Implemented in the `React.Windows.Desktop.IntegrationTests` project:_
+
 Higher-level workflows interacting with real external dependencies (i.e. file system, networking servers).
 These tests can run on the local development host.
 
@@ -35,5 +37,6 @@ These tests can run on the local development host.
 
 ### E2E Tests
 
-_Implemented in packages/E2ETest_
-<BR/>Please follow [Author and Run E2E Test for React Native Windows](e2e-test.md) for E2E Tests
+_Implemented in `packages/E2ETest`:_
+
+Please follow [Author and Run E2E Test for React Native Windows](e2e-test.md) for E2E Tests

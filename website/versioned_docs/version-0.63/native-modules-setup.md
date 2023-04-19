@@ -7,8 +7,8 @@ original_id: native-modules-setup
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
 
@@ -60,13 +60,13 @@ At this point, follow the steps below to add Windows support to the newly create
 
 > The steps below are written as if you're working with the `NativeModuleSample` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
 
-### Updating your package.json
+ ### Updating your `package.json`
 
 Many native module libraries (including the default library template) target older versions of `react` and `react-native` than Windows supports, so you'll need to upgrade to newer versions in order to add support for `react-native-windows`.
 
 > Properly defining your NPM dependencies is an essential part of creating and maintaining a React Native library, especially one that supports multiple platforms. The instructions here represent the minimum steps required to start targeting `react-native-windows`. If you're adding Windows support to a library you don't own, you'll need to work with the library owners to make sure any changes made to `package.json` are appropriate.
 > 
-> For more information on how NPM dependencies work, see [Specifying dependencies and devDependencies in a package.json file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
+> For more information on how NPM dependencies work, see [Specifying `dependencies` and `devDependencies` in a `package.json` file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
 You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the `v0.63-stable` version of `react-native-windows`.
 
@@ -137,7 +137,7 @@ You should now have a new `NativeModuleSample` solution file at `.\NativeModuleS
 Additionally, for C++/WinRT projects, you'll need to change the following:
 
 1. Right click on the project and choose `Manage NuGet Packages...`
-    1. Select version 2.0.200615.7 for Microsoft.Windows.CppWinRT package.
+    1. Select version 2.0.200615.7 for `Microsoft.Windows.CppWinRT` package.
 1. Right-click on the project and choose `Properties`
     1. Under `Linker > Windows Metadata` set `Generate Windows Metadata` to `Yes`.
 
@@ -147,8 +147,8 @@ Now, before we go any further we'll want to rename the root directory of the Win
 1. Rename that top `NativeModuleSample` directory `windows`.
 1. Re-open the solution file at `windows\NativeModuleSample.sln`.
 
-> *Optional*: Whether you're creating a new native module from scratch, or adding windows support to an existing ios/android module, if you're using git, you'll want to add Visual Studio-specific entries in your project's `.gitignore`.
-> The simplest way to do this is to get [VisualStudio.gitignore](https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore) and save it as `windows\.gitignore`.
+> *Optional*: Whether you're creating a new native module from scratch, or adding windows support to an existing iOS/android module, if you're using git, you'll want to add Visual Studio-specific entries in your project's `.gitignore`.
+> The simplest way to do this is to get [`VisualStudio.gitignore`](https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore) and save it as `windows\.gitignore`.
 
 Now it's time to add React Native Windows into the solution.
 
@@ -167,19 +167,19 @@ Now we're going to add all of the following React Native Windows projects to tha
 
 | VS Project                            | Project File                                                                         |
 | :------------------------------------ | :----------------------------------------------------------------------------------- |
-| Common                                | `Common\Common.vcxproj`                                                              |
-| Folly                                 | `Folly\Folly.vcxproj`                                                                |
-| JSI.Universal                         | `JSI\Universal\JSI.Universal.vcxproj`                                                |
-| Microsoft.ReactNative                 | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                                |
-| Microsoft.ReactNative.Managed         | `Microsoft.ReactNative.Managed\Microsoft.ReactNative.Managed.csproj`                 |
-| Microsoft.ReactNative.Managed.CodeGen | `Microsoft.ReactNative.Managed.CodeGen\Microsoft.ReactNative.Managed.CodeGen.csproj` |
-| ReactCommon                           | `ReactCommon\ReactCommon.vcxproj`                                                    |
-| Chakra                                | `Chakra\Chakra.vcxitems`                                                             |
-| Include                               | `include\Include.vcxitems`                                                           |
-| JSI.Shared                            | `JSI\Shared\JSI.Shared.vcxitems`                                                     |
-| Microsoft.ReactNative.Cxx             | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                       |
-| Microsoft.ReactNative.Shared          | `Shared\Shared.vcxitems`                                                             |
-| Mso                                   | `Mso\Mso.vcxitems`                                                                   |
+| `Common`                                | `Common\Common.vcxproj`                                                              |
+| `Folly`                                 | `Folly\Folly.vcxproj`                                                                |
+| `JSI.Universal`                         | `JSI\Universal\JSI.Universal.vcxproj`                                                |
+| `Microsoft.ReactNative`                 | `Microsoft.ReactNative\Microsoft.ReactNative.vcxproj`                                |
+| `Microsoft.ReactNative.Managed`         | `Microsoft.ReactNative.Managed\Microsoft.ReactNative.Managed.csproj`                 |
+| `Microsoft.ReactNative.Managed.CodeGen` | `Microsoft.ReactNative.Managed.CodeGen\Microsoft.ReactNative.Managed.CodeGen.csproj` |
+| `ReactCommon`                           | `ReactCommon\ReactCommon.vcxproj`                                                    |
+| `Chakra`                                | `Chakra\Chakra.vcxitems`                                                             |
+| `Include`                               | `include\Include.vcxitems`                                                           |
+| `JSI.Shared`                            | `JSI\Shared\JSI.Shared.vcxitems`                                                     |
+| `Microsoft.ReactNative.Cxx`             | `Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems`                       |
+| `Microsoft.ReactNative.Shared`          | `Shared\Shared.vcxitems`                                                             |
+| `Mso`                                   | `Mso\Mso.vcxitems`                                                                   |
 
 For each project, you'll do the following:
 
@@ -268,7 +268,7 @@ here:
 +</Target>
 ```
 
-Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under NativeModuleSample > References.
+Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under `NativeModuleSample > References`.
 
 #### C#
 
@@ -326,7 +326,7 @@ here:
 +</Target>
 ```
 
-Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under NativeModuleSample > References.
+Save your changes and reload the project in Visual Studio. You should now see `Microsoft.ReactNative` in the Solution Explorer under `NativeModuleSample > References`.
 
 ### Testing your Build
 
@@ -345,7 +345,7 @@ If you've followed the steps above, your module should be ready for consumption 
 
 However, there are some things you may need to check:
 
-#### 1. Fixing relative Nuget paths
+#### 1. Fixing relative NuGet paths
 
 If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
 
@@ -376,16 +376,16 @@ If you are working on an existing module that already has iOS and Android sample
 5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/metro.config.windows.js)).
 6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/package.json#L18)).
 7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/react-native.config.js#L28-L33)).
-8. Update JS main module path (relative path to metro projectRoot) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/example/windows/WebViewWindows/App.cpp#L25)).
+8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
-We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/main/docs/e2e-testing.md#appium), there's also a comprehensive [course on PluralSight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [react-native-webview](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
+We are using Appium + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/main/docs/e2e-testing.md#appium), there's also a comprehensive [course on PluralSight](https://app.pluralsight.com/library/courses/getting-started-ui-testing-appium/table-of-contents) about Appium. For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
 
 ### Setup CI (continuous integration) pipeline for your module
 
 When done developing your module, it's good practice to setup a CI pipeline with automated build and tests to avoid any future regressions. There are many services available for setting up a CI pipeline. We'll use [GitHub Actions](https://docs.github.com/actions) as an example here since it doesn't require any extra account setup if you are already hosting your code on GitHub, also the default VM image has all the tools we needed pre-installed.
 
-The vm images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirments.
+The VM images supported by GitHub Actions CI/CD can be found [here](https://github.com/actions/virtual-environments#github-actions-virtual-environments), check the pre-installed tools and compare them with [React Native Windows development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies), find the image that meets the requirements.
 
 Next you need to create a YAML file for GitHub Actions, the basic steps are:
 - Checkout code and setup the environment
@@ -439,7 +439,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
     - name: Run tests
       run: yarn test:windows
 ```
-Check out the full [react-native-webview example](https://github.com/react-native-webview/react-native-webview/blob/v11.17.2/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
+Check out the full [`react-native-webview` example](https://github.com/react-native-webview/react-native-webview/blob/v11.17.2/.github/workflows/windows-ci.yml) as well as their [official example](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/) for more info.
 
 Add the YAML file to `.github\workflows\` and then commit. To know more about the YAML syntax, check out [Workflow syntax for GitHub Actions](https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions).
 

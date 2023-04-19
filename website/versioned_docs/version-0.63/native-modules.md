@@ -6,8 +6,8 @@ original_id: native-modules
 
 > **This documentation and the underlying platform code is a work in progress.** >**Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
+> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
 Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to re-implement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 
@@ -56,7 +56,7 @@ Open the Visual Studio solution in the `windows` folder and add the new files di
 
 Here is a sample native module written in C# called `FancyMath`. It is a simple class that defines two numerical constants and a method 'add'.
 
-_FancyMath.cs_
+`FancyMath.cs`
 
 ```csharp
 using System;
@@ -89,7 +89,7 @@ namespace NativeModuleSample
 
 First off, you see that we're making use of the `Microsoft.ReactNative.Managed` shared library, which provides the easiest (and recommended) experience for authoring native modules. `Microsoft.ReactNative.Managed` provides the mechanism that discovers the native module annotations to build bindings at runtime.
 
-The `[ReactModule]` attribute says that the class is a ReactNative native module. It has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
+The `[ReactModule]` attribute says that the class is a React Native native module. It has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
 
 You can overwrite the JavaScript module name like this: `[ReactModule("math")]`.
 
@@ -97,19 +97,19 @@ You can specify a different event emitter like this: `[ReactModule(EventEmitter 
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
-The `[ReactConstant]` attribute is how you can define constants. Here FancyMath has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override the name like this: `[ReactConstant("Pi")]`.
+The `[ReactConstant]` attribute is how you can define constants. Here `FancyMath` has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override the name like this: `[ReactConstant("Pi")]`.
 
-The `[ReactMethod]` attribute is how you define methods. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. As before, you can optionally customize the name like this: `[ReactMethod("add")]`.
+The `[ReactMethod]` attribute is how you define methods. In `FancyMath` we have one method, `add`, which takes two doubles and returns their sum. As before, you can optionally customize the name like this: `[ReactMethod("add")]`.
 
-The `[ReactEvent]` attribute is how you define events. In FancyMath we have one event, `AddEvent`, which uses the `ReactEvent<double>` delegate, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `[ReactEvent("addEvent")]`.
+The `[ReactEvent]` attribute is how you define events. In `FancyMath` we have one event, `AddEvent`, which uses the `ReactEvent<double>` delegate, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `[ReactEvent("addEvent")]`.
 
 ### 2. Registering your Native Module
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 
-Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
+Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl).
 
-_ReactPackageProvider.cs_
+`ReactPackageProvider.cs`
 
 ```csharp
 using Microsoft.ReactNative.Managed;
@@ -130,7 +130,7 @@ Here we've implemented the `CreatePackage` method, which receives `packageBuilde
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
-_App.xaml.cs_
+`App.xaml.cs`
 
 ```csharp
 using Microsoft.ReactNative;
@@ -160,7 +160,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
 
-_NativeModuleSample.js_
+`NativeModuleSample.js`
 
 ```js
 import React, { Component } from 'react';
@@ -247,7 +247,7 @@ For events, you'll see that we created an instance of `NativeEventEmitter` passi
 
 Here is a sample native module written in C++ called `FancyMath`. It is a simple class that defines two numerical constants and a method 'add'.
 
-_FancyMath.h_
+`FancyMath.h`
 
 ```cpp
 #pragma once
@@ -285,7 +285,7 @@ namespace NativeModuleSample
 }
 ```
 
-The `REACT_MODULE` macro-attribute says that the class is a ReactNative native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
+The `REACT_MODULE` macro-attribute says that the class is a React Native native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
 
 > NOTE: Methods annotated with `REACT_METHOD` and friends must have the `noexcept` specifier, otherwise the program will not compile. Module authors should make sure all exceptions are handled inside the method.
 
@@ -295,11 +295,11 @@ You can specify a different event emitter like this: `REACT_MODULE(FancyMath, L"
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
-Then we define constants, and it's as easy as creating a public field and giving it a `REACT_CONSTANT` macro-attribute. Here FancyMath has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override this by specifying an argument in the `REACT_CONSTANT` attribute (hence `Pi` instead of `PI`).
+Then we define constants, and it's as easy as creating a public field and giving it a `REACT_CONSTANT` macro-attribute. Here `FancyMath` has defined two constants: `E` and `Pi`. By default, the name exposed to JS will be the same name as the field (`E` for `E`), but you can override this by specifying an argument in the `REACT_CONSTANT` attribute (hence `Pi` instead of `PI`).
 
-It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In FancyMath we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
+It's just as easy to add custom methods, by attributing a public method with `REACT_METHOD`. In `FancyMath` we have one method, `add`, which takes two doubles and returns their sum. Again, we've specified the optional `name` argument in the `REACT_METHOD` macro-attribute so in JS we call `add` instead of `Add`.
 
-Native modules do not have the ability to check that the parameter types and the number of parameters match between what's called from JavaScript and what the native code accepts. However, the framework will validate that the number of promises-like parameters match: if the JavaScript API is async, it will expect that there is one "promise-like" parameter in the native method implementation signature.
+Native modules do not have the ability to check that the parameter types and the number of parameters match between what's called from JavaScript and what the native code accepts. However, the framework will validate that the number of promises-like parameters match: if the JavaScript API is asynchronous, it will expect that there is one "promise-like" parameter in the native method implementation signature.
 
 A "promise-like" parameter is either:
 - `React::ReactPromise<T>`
@@ -307,7 +307,7 @@ A "promise-like" parameter is either:
 
 See [Using Asynchronous Windows APIs](native-modules-async.md).
 
-Here is an example of an async method that returns a string. 
+Here is an example of an asynchronous method that returns a string. 
 
 ```cpp
     REACT_METHOD(GetString, L"getString");
@@ -351,7 +351,7 @@ The [`JSValue`](native-modules-jsvalue.md) type can be used when the API returns
 
 Native modules will want to use `REACT_METHOD` instead of `REACT_SYNC_METHOD` since the latter precludes web debugging and has performance implications. When using web debugging you will see an exception that reads:
 `Calling synchronous methods on native modules is not supported in Chrome. Consider providing alternative to expose this method in debug mode, e.g. by exposing constants ahead-of-time`
-See: [MessageQueue.js](https://github.com/facebook/react-native/blob/e27d656ef370958c864b052123ec05579ac9fc01/Libraries/BatchedBridge/MessageQueue.js#L175).
+See: [`MessageQueue.js`](https://github.com/facebook/react-native/blob/e27d656ef370958c864b052123ec05579ac9fc01/Libraries/BatchedBridge/MessageQueue.js#L175).
 
 To add custom events, we attribute a `std::function<void(double)>` delegate with `REACT_EVENT`, where the double represents the type of the event data. Now whenever we invoke the `AddEvent` delegate in our native code (as we do above), an event named `"AddEvent"` will be raised in JavaScript. As before, you could have optionally customized the name in JS like this: `REACT_EVENT(AddEvent, "addEvent")`.
 
@@ -359,9 +359,9 @@ To add custom events, we attribute a `std::function<void(double)>` delegate with
 
 > IMPORTANT NOTE: When you create a new project via the CLI, the generated `ReactApplication` class will automatically register all native modules defined within the app. **You will not need to manually register native modules that are defined within your app's scope, as they will be registered automatically.**
 
-Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [Microsoft.ReactNative.IReactPackageProvider](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl). It starts with defining an .idl file:
+Now, we want to register our new `FancyMath` module with React Native so we can use it from JavaScript code. To do this, first we're going to create a `ReactPackageProvider` which implements [`Microsoft.ReactNative.IReactPackageProvider`](https://github.com/microsoft/react-native-windows/blob/main/vnext/Microsoft.ReactNative/IReactPackageProvider.idl). It starts with defining an `.idl` file:
 
-_ReactPackageProvider.idl_
+`ReactPackageProvider.idl`
 
 ```c++
 namespace NativeModuleSample
@@ -375,9 +375,9 @@ namespace NativeModuleSample
 }
 ```
 
-After that we add the .h and.cpp files:
+After that we add the .h and .cpp files:
 
-_ReactPackageProvider.h_
+`ReactPackageProvider.h`
 
 ```cpp
 #pragma once
@@ -402,7 +402,7 @@ namespace winrt::NativeModuleSample::factory_implementation
 }
 ```
 
-_ReactPackageProvider.cpp_
+`ReactPackageProvider.cpp`
 
 ```cpp
 #include "pch.h"
@@ -428,7 +428,7 @@ Here we've implemented the `CreatePackage` method, which receives `packageBuilde
 
 Now that we have the `ReactPackageProvider`, it's time to register it within our `ReactApplication`. We do that by simply adding the provider to the `PackageProviders` property.
 
-_App.cpp_
+`App.cpp`
 
 ```c++
 #include "pch.h"
@@ -460,7 +460,7 @@ The `SampleApp::ReactPackageProvider` is a convenience that makes sure that all 
 
 Now we have a Native Module which is registered with React Native Windows. How do we access it in JS? Here's a simple RN app:
 
-_NativeModuleSample.js_
+`NativeModuleSample.js`
 
 ```js
 import React, { Component } from 'react';
@@ -532,7 +532,7 @@ So you added a new native module or a new method to a module but it isn't workin
 
 If your method isn't being hit in the VS debugger, something is blocking the call due to a mismatch, likely between the expected and actual types that your method takes/returns.
 
-To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
+To debug into what is rejecting the call, set a breakpoint in `CxxNativeModule::invoke` (See [`ReactCommon\react-native-patched\ReactCommon\cxxreact\CxxNativeModule.cpp`](https://github.com/facebook/react-native/blob/0b8a82a6eeeb3508b80ee137d313f64fe323db06/ReactCommon/cxxreact/CxxNativeModule.cpp#L97)). This breakpoint is bound to be hit a lot (every time a call to a native method is made), so we want to make sure we only break when *our* method of interest is involved.
 
 Right-click on the breakpoint to add a Condition. Suppose the method you are interested in catching is called `getString`. 
 The conditional breakpoint condition to enter should compare the name of the method to that string: `strcmp(method.name._Mypair._Myval2._Bx._Ptr, "getString")==0`
@@ -555,7 +555,7 @@ The symptoms are that building the app will work fine but the C++ app will crash
 A write-up of the problem can be found [here](https://devblogs.microsoft.com/oldnewthing/20200615-00/?p=103868/). 
 To work around this problem there are three options:
 1. Set your C# component's target Windows version to Windows 10 version 1703 (Build 15063) or lower.
-1. Reference the .net Native nuget packages in your C++ app:
+1. Reference the .net Native NuGet packages in your C++ app:
    - Right click on the app's .vcxproj file → **Manage NuGet Packages**.
    - Search for `Microsoft.Net.Native.Compiler`, and install it.
    - Then add the following properties to the .vcxproj file:
