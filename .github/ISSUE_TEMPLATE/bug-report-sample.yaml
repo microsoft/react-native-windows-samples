@@ -52,8 +52,8 @@ body:
     attributes:
       label: CLI version
       description: |
-        Run the command `npx react-native --version` in your terminal and copy the results here
-      value: "npx react-native --version"
+        Run the command `npx react-native -v` in your terminal and copy the results here
+      value: "npx react-native -v"
   - type: textarea
     validations:
       required: true
