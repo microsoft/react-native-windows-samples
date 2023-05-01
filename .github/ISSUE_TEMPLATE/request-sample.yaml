@@ -1,6 +1,5 @@
 name: Sample request
 description: Suggest a code sample that would enhance this 
-title: Your sample request
 labels: [enhancement, samples]
 body:
   - type: markdown

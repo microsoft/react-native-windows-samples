@@ -1,6 +1,5 @@
 name: Bug report for a sample
 description: File a bug report for one of the samples
-title: Describe the problem
 labels: [bug, samples]
 body:
   - type: markdown
