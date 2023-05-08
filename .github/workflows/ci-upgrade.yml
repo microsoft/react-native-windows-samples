@@ -51,7 +51,7 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       runInitWindows: true
-      extraInitWindowsArgs: --language ${{ endsWith(matrix.sample, 'cppwinrt') && 'cpp' || 'cs' }}
+      extraInitWindowsArgs: --language ${{ endsWith(matrix.sampleName, 'cppwinrt') && 'cpp' || 'cs' }}
 
   call-upgradesample-calculator-nuget:
     name: Upgrade Calculator NuGet
