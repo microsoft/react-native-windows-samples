@@ -1,0 +1,122 @@
+name: Upgrade Sample
+
+on:
+  workflow_call:
+    inputs:
+      skipUpgrade:
+        required: false
+        default: false
+        type: boolean
+      vmImage:
+        required: false
+        default: 'windows-latest'
+        type: string
+      sampleName:
+        required: true
+        type: string
+      reactNativeWindowsVersion:
+        required: true
+        type: string
+      configuration:
+        required: false
+        default: 'Debug'
+        type: string
+      platform:
+        required: false
+        default: 'x64'
+        type: string
+      useBuildCertificate:
+        required: false
+        default: false
+        type: boolean
+      runInitWindows:
+        required: false
+        default: false
+        type: boolean
+      runCodeGenCheck:
+        required: false
+        default: false
+        type: boolean
+      extraRunWindowsArgs:
+        required: false
+        default: ''
+        type: string
+      extraInitWindowsArgs:
+        required: false
+        default: ''
+        type: string
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  check: # This job ensures the template reports success even when we don't want it to upgrade
+    name: "Check if upgrade is required: ${{ !inputs.skipUpgrade }}"
+    runs-on: 'ubuntu-latest'
+    steps:
+    - uses: actions/checkout@v3
+
+  upgrade-sample:
+    name: Upgrade ${{ inputs.sampleName }} ${{ inputs.configuration }} ${{ inputs.platform }} to ${{ inputs.reactNativeWindowsVersion }}
+    needs: check
+    if: ${{ !inputs.skipUpgrade }}
+    runs-on: ${{ inputs.vmImage }}
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Gather environment info
+      run: npx envinfo
+
+    - name: Relocate to reduce long paths
+      run:  Copy-item -Force -Recurse -Verbose "samples\${{ inputs.sampleName }}" -Destination "..\..\src"
+
+    - name: Get starting folder size
+      run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+      working-directory: ..\..\src
+
+    - name: Yarn install
+      run: yarn install --frozen-lockfile
+      working-directory: ..\..\src
+
+    - name: Upgrade react-native-windows
+      id: upgrade
+      continue-on-error: true
+      run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ inputs.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(inputs.reactNativeWindowsVersion, 'canary')) }}
+      working-directory: ..\..\src
+
+    - if: ${{ steps.upgrade.outcome == 'success' }}
+      - name: Run react-native-windows-init
+        if: ${{ inputs.runInitWindows }}
+        run: npx react-native-windows-init --overwrite ${{ inputs.extraInitWindowsArgs }} --version ${{ inputs.reactNativeWindowsVersion }}
+        working-directory: ..\..\src
+
+      - name: Codegen check
+        if: ${{ inputs.runCodeGenCheck }}
+        run: npx react-native codegen-windows --check --no-telemetry
+        working-directory: ..\..\src
+
+      - name: Decode the pfx
+        if: ${{ inputs.useBuildCertificate }}
+        run: |
+          $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
+          $PfxPath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+          Write-Host $PfxPath
+          [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
+        working-directory: ..\..\src
+
+      - name: Run react-native run-windows
+        run: npx react-native run-windows --logging --no-packager --no-launch ${{ inputs.extraRunWindowsArgs }} --arch ${{ inputs.platform }} ${{ startsWith(inputs.platform, 'ARM') && '--no-deploy' || '' }} ${{ inputs.configuration == 'Release' && '--release' || '' }} ${{ inputs.useBuildCertificate && '--msbuildprops PackageCertificateKeyFile=${{github.workspace}}\GitHubActionsWorkflow.pfx' || '' }}
+        working-directory: ..\..\src
+
+      - name: Remove the pfx
+        if: ${{ inputs.useBuildCertificate }}
+        run: |
+          $certificatePath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+          Write-Host $certificatePath
+          Remove-Item -path $certificatePath
+        working-directory: ..\..\src
+
+      - name: Get final folder size
+        run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+        working-directory: ..\..\src
