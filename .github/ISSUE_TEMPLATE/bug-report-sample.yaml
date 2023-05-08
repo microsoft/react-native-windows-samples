@@ -1,6 +1,5 @@
 name: Bug report for a sample
 description: File a bug report for one of the samples
-title: Describe the problem
 labels: [bug, samples]
 body:
   - type: markdown
@@ -50,8 +49,8 @@ body:
     attributes:
       label: CLI version
       description: |
-        Run the command `npx react-native --version` in your terminal and copy the results here
-      value: "npx react-native --version"
+        Run the command `npx react-native -v` in your terminal and copy the results here
+      value: "npx react-native -v"
   - type: textarea
     validations:
       required: true
@@ -69,6 +68,9 @@ body:
         - "10.0.15063"
         - "10.0.16299"
         - "10.0.19041"
+        - "10.0.20348"
+        - "10.0.22000"
+        - "10.0.22621"
   - type: dropdown
     attributes:
       label: Target Device(s)
@@ -83,7 +85,6 @@ body:
       label: Visual Studio Version
       description: Which version of Visual Studio are you using?
       options:
-        - "Visual Studio 2017"
         - "Visual Studio 2019"
         - "Visual Studio 2022"
   - type: dropdown

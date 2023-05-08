@@ -1,6 +1,5 @@
 name: Bug report for the documentation
 description: File a bug report for the documentation website
-title: Describe the problem
 labels: [bug, documentation]
 body:
   - type: markdown
