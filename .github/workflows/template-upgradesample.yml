@@ -85,38 +85,38 @@ jobs:
       run: ${{github.workspace}}\.github\scripts\UpgradeSmokeTest.ps1 ${{ inputs.reactNativeWindowsVersion }} -Force ${{ format('${0}', contains(inputs.reactNativeWindowsVersion, 'canary')) }}
       working-directory: ..\..\src
 
-    - if: ${{ steps.upgrade.outcome == 'success' }}
-      - name: Run react-native-windows-init
-        if: ${{ inputs.runInitWindows }}
-        run: npx react-native-windows-init --overwrite ${{ inputs.extraInitWindowsArgs }} --version ${{ inputs.reactNativeWindowsVersion }}
-        working-directory: ..\..\src
+    - name: Run react-native-windows-init
+      if: ${{ steps.upgrade.outcome == 'success' && inputs.runInitWindows }}
+      run: npx react-native-windows-init --overwrite ${{ inputs.extraInitWindowsArgs }} --version ${{ inputs.reactNativeWindowsVersion }}
+      working-directory: ..\..\src
 
-      - name: Codegen check
-        if: ${{ inputs.runCodeGenCheck }}
-        run: npx react-native codegen-windows --check --no-telemetry
-        working-directory: ..\..\src
+    - name: Codegen check
+      if: ${{ steps.upgrade.outcome == 'success' && inputs.runCodeGenCheck }}
+      run: npx react-native codegen-windows --check --no-telemetry
+      working-directory: ..\..\src
 
-      - name: Decode the pfx
-        if: ${{ inputs.useBuildCertificate }}
-        run: |
-          $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
-          $PfxPath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
-          Write-Host $PfxPath
-          [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
-        working-directory: ..\..\src
+    - name: Decode the pfx
+      if: ${{ steps.upgrade.outcome == 'success' && inputs.useBuildCertificate }}
+      run: |
+        $PfxBytes = [System.Convert]::FromBase64String("${{ secrets.SAMPLES_BASE64_ENCODED_PFX }}")
+        $PfxPath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+        Write-Host $PfxPath
+        [System.IO.File]::WriteAllBytes("$PfxPath", $PfxBytes)
+      working-directory: ..\..\src
 
-      - name: Run react-native run-windows
-        run: npx react-native run-windows --logging --no-packager --no-launch ${{ inputs.extraRunWindowsArgs }} --arch ${{ inputs.platform }} ${{ startsWith(inputs.platform, 'ARM') && '--no-deploy' || '' }} ${{ inputs.configuration == 'Release' && '--release' || '' }} ${{ inputs.useBuildCertificate && '--msbuildprops PackageCertificateKeyFile=${{github.workspace}}\GitHubActionsWorkflow.pfx' || '' }}
-        working-directory: ..\..\src
+    - name: Run react-native run-windows
+      if: ${{ steps.upgrade.outcome == 'success' }}
+      run: npx react-native run-windows --logging --no-packager --no-launch ${{ inputs.extraRunWindowsArgs }} --arch ${{ inputs.platform }} ${{ startsWith(inputs.platform, 'ARM') && '--no-deploy' || '' }} ${{ inputs.configuration == 'Release' && '--release' || '' }} ${{ inputs.useBuildCertificate && '--msbuildprops PackageCertificateKeyFile=${{github.workspace}}\GitHubActionsWorkflow.pfx' || '' }}
+      working-directory: ..\..\src
 
-      - name: Remove the pfx
-        if: ${{ inputs.useBuildCertificate }}
-        run: |
-          $certificatePath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
-          Write-Host $certificatePath
-          Remove-Item -path $certificatePath
-        working-directory: ..\..\src
+    - name: Remove the pfx
+      if: ${{ steps.upgrade.outcome == 'success' && inputs.useBuildCertificate }}
+      run: |
+        $certificatePath = [System.IO.Path]::GetFullPath("${{github.workspace}}\GitHubActionsWorkflow.pfx")
+        Write-Host $certificatePath
+        Remove-Item -path $certificatePath
+      working-directory: ..\..\src
 
-      - name: Get final folder size
-        run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
-        working-directory: ..\..\src
+    - name: Get final folder size
+      run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+      working-directory: ..\..\src
