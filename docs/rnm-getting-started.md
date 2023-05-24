@@ -16,7 +16,7 @@ For information around how to set up:
 Remember to call `react-native init` from the place you want your project directory to live. Be sure to use the same minor version between React Native and React Native macOS. We'll use `^0.71.0`
 
 ```
-npx react-native init <projectName> --template react-native@^0.71.0
+npx react-native@latest init <projectName> --template "react-native@^0.71.0"
 ```
 
 ### Navigate into this newly created directory
