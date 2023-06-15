@@ -1,0 +1,263 @@
+id: 
+name: GitOps.PullRequestIssueManagement
+description: GitOps.PullRequestIssueManagement primitive
+owner: 
+resource: repository
+disabled: false
+where: 
+configuration:
+  resourceManagementConfiguration:
+    scheduledSearches:
+    - description: 
+      frequencies:
+      - hourly:
+          hour: 6
+      filters:
+      - isIssue
+      - isOpen
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      - hasLabel:
+          label: 'Status: no recent activity'
+      - noActivitySince:
+          days: 7
+      actions:
+      - closeIssue
+    - description: 
+      frequencies:
+      - hourly:
+          hour: 6
+      filters:
+      - isIssue
+      - isOpen
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      - noActivitySince:
+          days: 7
+      - isNotLabeledWith:
+          label: 'Status: no recent activity'
+      actions:
+      - addLabel:
+          label: 'Status: no recent activity'
+      - addReply:
+          reply: This issue has been automatically marked as stale because it has been marked as requiring author feedback but has not had any activity for **7 days**. It will be closed if no further activity occurs **within 7 days of this comment**.
+    - description: 
+      frequencies:
+      - hourly:
+          hour: 6
+      filters:
+      - isIssue
+      - isOpen
+      - hasLabel:
+          label: duplicate
+      - noActivitySince:
+          days: 1
+      actions:
+      - addReply:
+          reply: This issue has been marked as duplicate and has not had any activity for **1 day**. It will be closed for housekeeping purposes.
+      - closeIssue
+    - description: 
+      frequencies:
+      - hourly:
+          hour: 6
+      filters:
+      - isPullRequest
+      - isOpen
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      - hasLabel:
+          label: 'Status: no recent activity'
+      - noActivitySince:
+          days: 7
+      actions:
+      - closeIssue
+    - description: 
+      frequencies:
+      - hourly:
+          hour: 6
+      filters:
+      - isPullRequest
+      - isOpen
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      - noActivitySince:
+          days: 7
+      - isNotLabeledWith:
+          label: 'Status: no recent activity'
+      actions:
+      - addLabel:
+          label: 'Status: no recent activity'
+      - addReply:
+          reply: This pull request has been automatically marked as stale because it has been marked as requiring author feedback but has not had any activity for **7 days**. It will be closed if no further activity occurs **within 7 days of this comment**.
+    eventResponderTasks:
+    - if:
+      - payloadType: Issues
+      - isAction:
+          action: Opened
+      then:
+      - addLabel:
+          label: 'Needs: Triage :mag:'
+      description: 
+    - if:
+      - payloadType: Issue_Comment
+      - isAction:
+          action: Created
+      - isActivitySender:
+          issueAuthor: True
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      - isOpen
+      then:
+      - addLabel:
+          label: 'Needs: Attention :wave:'
+      - removeLabel:
+          label: 'Needs: Author Feedback'
+      description: 
+    - if:
+      - payloadType: Issues
+      - not:
+          isAction:
+            action: Closed
+      - hasLabel:
+          label: 'Status: no recent activity'
+      then:
+      - removeLabel:
+          label: 'Status: no recent activity'
+      description: 
+    - if:
+      - payloadType: Issue_Comment
+      - hasLabel:
+          label: 'Status: no recent activity'
+      then:
+      - removeLabel:
+          label: 'Status: no recent activity'
+      description: 
+    - if:
+      - payloadType: Pull_Request
+      - hasLabel:
+          label: AutoMerge
+      then:
+      - enableAutoMerge:
+          mergeMethod: Squash
+      description: 
+    - if:
+      - payloadType: Pull_Request
+      - labelRemoved:
+          label: AutoMerge
+      then:
+      - disableAutoMerge
+      description: 
+    - if:
+      - payloadType: Pull_Request
+      - isAction:
+          action: Opened
+      then:
+      - addCodeFlowLink
+      description: 
+    - if:
+      - payloadType: Pull_Request_Review
+      - isAction:
+          action: Submitted
+      - isReviewState:
+          reviewState: Changes_requested
+      then:
+      - addLabel:
+          label: 'Needs: author feedback'
+      description: 
+    - if:
+      - payloadType: Pull_Request
+      - isActivitySender:
+          issueAuthor: True
+      - not:
+          isAction:
+            action: Closed
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      then:
+      - removeLabel:
+          label: 'Needs: Author Feedback'
+      description: 
+    - if:
+      - payloadType: Issue_Comment
+      - isActivitySender:
+          issueAuthor: True
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      then:
+      - removeLabel:
+          label: 'Needs: author feedback'
+      description: 
+    - if:
+      - payloadType: Pull_Request_Review
+      - isActivitySender:
+          issueAuthor: True
+      - hasLabel:
+          label: 'Needs: Author Feedback'
+      then:
+      - removeLabel:
+          label: 'Needs: Author Feedback'
+      description: 
+    - if:
+      - payloadType: Pull_Request
+      - not:
+          isAction:
+            action: Closed
+      - hasLabel:
+          label: 'Status: no recent activity'
+      then:
+      - removeLabel:
+          label: 'Status: no recent activity'
+      description: 
+    - if:
+      - payloadType: Issue_Comment
+      - hasLabel:
+          label: 'Status: no recent activity'
+      then:
+      - removeLabel:
+          label: 'Status: no recent activity'
+      description: 
+    - if:
+      - payloadType: Pull_Request_Review
+      - hasLabel:
+          label: 'Status: no recent activity'
+      then:
+      - removeLabel:
+          label: 'Status: no recent activity'
+      description: 
+    - if:
+      - payloadType: Issues
+      - labelAdded:
+          label: 'Needs: Environment Info'
+      then:
+      - addReply:
+          reply: >-
+            This issue would benefit from environment info. Please edit your issue report to add this information.
+
+
+            If you are using latest version:
+
+            1. `npx react-native --version`:
+
+            2. `npx react-native run-windows --info`:
+
+
+            Otherwise if `--info` doesn't exist:
+
+            1. `react-native -v`:
+
+            2. `npm ls rnpm-plugin-windows`:
+
+            3. `npm ls react-native-windows`:
+
+            4. `node -v`:
+
+            5. `npm -v`:
+
+            6. `yarn --version`<!-- (if you use Yarn) -->:
+      - addLabel:
+          label: 'Needs: Author Feedback'
+      - removeLabel:
+          label: 'Needs: triage :mag:'
+      description: 
+onFailure: 
+onSuccess: 
