@@ -6,7 +6,7 @@ original_id: winui3
 
 # WinUI 3 Support in RNW
 
-[WinUI](https://microsoft.github.io/microsoft-ui-xaml/) is the modern native UI platform of Windows. As of this writing, **WinUI 3** has published [Preview 1](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
+[WinUI](http://aka.ms/winui/) is the modern native UI platform of Windows. As of this writing, **WinUI 3** has published [Preview 1](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
 
 We are working on adding **WinUI 3** support for RNW and have made some good progress towards an alpha.
 
