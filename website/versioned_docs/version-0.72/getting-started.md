@@ -15,7 +15,7 @@ For information around how to set up React Native, see the [React Native Getting
 Remember to call `react-native init` from the place you want your project directory to live.
 
 ```bat
-npx react-native init <projectName> --template "react-native@^0.71.0"
+npx react-native init <projectName> --template "react-native@^0.72.0"
 ```
 
 ### Navigate into this newly created directory
