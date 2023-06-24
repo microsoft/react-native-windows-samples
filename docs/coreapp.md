@@ -85,7 +85,7 @@ The callback function has follows the `__cdecl` calling convention.
 ## `CoreApp` schema
 
 Below are the properties you can set in your `app.config.json`, with their default values.
-These properties correspond to properties on the [`RNCoreApp`](#rncoreapp) structure, and these properties are applied to the instance's [`ReactInstanceSettings`](native-api/ReactInstanceSettings).
+These properties correspond to properties on the [`RNCoreApp`](#rncoreapp) structure, and these properties are applied to the instance's [`ReactInstanceSettings`](native-api/ReactInstanceSettings-api-windows.md).
 
 ```json
 {
@@ -130,7 +130,7 @@ For building in Debug mode, your app will usually only need to set a few propert
 ## Using native modules
 There are a couple of ways that a `CoreApp` can load native modules.
 
-The simplest way is using the [`RNCoreAppStartFromConfigJson`](#rncoreappstartfromconfigjson) API. This API allows us to pass an optional DLL name to load and a plain C function to call in that DLL, to produce the [`IReactPackageProvider`](native-api/IReactPackageProvider) for the module.
+The simplest way is using the [`RNCoreAppStartFromConfigJson`](#rncoreappstartfromconfigjson) API. This API allows us to pass an optional DLL name to load and a plain C function to call in that DLL, to produce the [`IReactPackageProvider`](native-api/IReactPackageProvider-api-windows.md) for the module.
 Here's what this function would look like:
 
 ```cpp

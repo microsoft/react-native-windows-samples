@@ -10,6 +10,11 @@ Kind: `class`
 Provides settings to create a React instance.
 
 ## Properties
+### BundleAppId
+ string `BundleAppId`
+
+The name of the app passed to the packager server via the 'app' query parameter. This is useful when bundling multiple applications from the same packager instance. If no value is set, the parameter will not be passed.
+
 ### BundleRootPath
  string `BundleRootPath`
 
@@ -131,6 +136,11 @@ Use [`IReactContext.Properties`](IReactContext#properties-1) to access this [`IR
  [`IRedBoxHandler`](IRedBoxHandler) `RedBoxHandler`
 
 Provides an extension point to allow custom error handling within the react instance. See [`IRedBoxHandler`](IRedBoxHandler) for more information.
+
+### RequestDevBundle
+ bool `RequestDevBundle`
+
+When querying the bundle server for a bundle, should it request the dev bundle or release bundle.
 
 ### RequestInlineSourceMap
  bool `RequestInlineSourceMap`

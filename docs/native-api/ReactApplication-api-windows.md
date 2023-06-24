@@ -12,6 +12,11 @@ Extends: [`Application`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Appl
 The `ReactApplication` is a base application class for use in applications that are entirely written in React Native. When the app launches, the `ReactApplication` will load the React instance. Use [`ReactInstanceSettings`](ReactInstanceSettings) and [`ReactNativeHost`](ReactNativeHost) properties to customize React instance in your application's constructor.
 
 ## Properties
+### BundleAppId
+ string `BundleAppId`
+
+See [`ReactInstanceSettings.BundleAppId`](ReactInstanceSettings#bundleappid).
+
 ### Host
 `readonly`  [`ReactNativeHost`](ReactNativeHost) `Host`
 

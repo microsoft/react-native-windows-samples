@@ -32,6 +32,7 @@ By default `react-native-windows` will handle various back events and forward th
 
 
 
+
 ### SetMapWindowDeactivatedToAppStateInactive
 `static` void **`SetMapWindowDeactivatedToAppStateInactive`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
 
@@ -52,6 +53,15 @@ By default `react-native-windows` will only track `active` and `background` `App
 
 Older versions of react-native-windows did not use [Yoga](https://github.com/facebook/yoga)'s legacy stretch behavior. This meant that react-native-windows would layout views slightly differently that in iOS and Android.
 Set this setting to false to maintain the behavior from react-native-windows <= 0.62.
+
+
+
+### SetSuppressWindowFocusOnViewFocus
+`static` void **`SetSuppressWindowFocusOnViewFocus`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+When running multiple windows from a single UI thread, focusing a native view causes the parent window of that view to get focus as well. Set this setting to true to prevent focus of a blurred window when a view in that window is programmatically focused.
 
 
 
