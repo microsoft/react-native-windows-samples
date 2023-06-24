@@ -74,7 +74,7 @@ for (let i = 0; i < versions.length; i++) {
         for (let j = i + 1; j < versions.length; j++) {
             const earlierDocs = versionedDocs[versions[j]];
             earlierDocs.forEach(earlierDoc => {
-                const edFile = path.basename(earlierDoc);
+                let edFile = path.basename(earlierDoc);
                 if (contents.search(`(${edFile})`) >= 0) {
                     redirectedFiles.push({ source: doc, target: edFile });
                 }
