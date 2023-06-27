@@ -4,7 +4,7 @@ See [../README.md](../README.md) for details of this sample.
 
 See [../cppwinrt/](../cppwinrt/) for a C++/Winrt version of this sample.
 
-It currently targets React Native Windows 0.71.
+It currently targets React Native Windows 0.72.
 
 ### Setup
 See [../README.md#Setup](../README.md#Setup).
@@ -23,9 +23,9 @@ To upgrade this sample to the latest version of RNW:
     ```cmd
     rd /s /q csharp
     ```
-3. Create a new React Native app:
+3. Create a new React Native app and change version to version you want to upgrade to:
     ```cmd
-    npx react-native init Calculator --template react-native-template-typescript@latest
+    npx react-native init Calculator --template "react-native@^0.72.0"
     ```
 4. Add Windows support:
     ```cmd

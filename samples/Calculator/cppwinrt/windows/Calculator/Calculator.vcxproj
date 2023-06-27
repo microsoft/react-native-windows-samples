@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This project was created with react-native-windows 0.71.0 -->
+<!-- This project was created with react-native-windows 0.72.0 -->
 <Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{aad45b54-a2d6-4f4a-924d-acf5f4bad0cb}</ProjectGuid>
+    <ProjectGuid>{ed5f966e-08b1-44e1-9d86-78a583c0ccd0}</ProjectGuid>
     <ProjectName>calculator</ProjectName>
     <RootNamespace>calculator</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
