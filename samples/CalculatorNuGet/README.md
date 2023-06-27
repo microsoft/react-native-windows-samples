@@ -2,7 +2,7 @@
 
 This sample showcases the usage of React Native for Windows to build a simple Calculator, using the Microsoft.ReactNative NuGet.
 
-It currently targets React Native Windows 0.71.
+It currently targets React Native Windows 0.72.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
@@ -43,9 +43,9 @@ To upgrade this sample to the latest version of RNW:
     ```cmd
     rd /s /q CalculatorNuGet
     ```
-3. Create a new React Native app:
+3. Create a new React Native app and change version to version you want to upgrade to:
     ```cmd
-    npx react-native init Calculator --template react-native-template-typescript@latest --directory CalculatorNuGet
+    npx react-native init Calculator --template "react-native@^0.72.0"
     ```
 4. Add Windows support:
     ```cmd
