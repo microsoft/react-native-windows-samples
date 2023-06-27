@@ -45,7 +45,7 @@ To upgrade this sample to the latest version of RNW:
     ```
 3. Create a new React Native app and change version to version you want to upgrade to:
     ```cmd
-    npx react-native init Calculator --template "react-native@^0.72.0"
+    npx react-native init CalculatorNuGet --template "react-native@^0.72.0"
     ```
 4. Add Windows support:
     ```cmd
