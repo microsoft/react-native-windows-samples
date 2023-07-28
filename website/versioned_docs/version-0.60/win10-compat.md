@@ -23,6 +23,7 @@ The following table captures the versions of Windows 10 that a React Native for 
 | React Native Windows | Target OS Version | Minimum OS Version |
 | :--: | :-: | :-: |
 | 0.72+ | **May 2020 update**<br> Version 2004 ; Build 10.0.19041.0 | **October 2018 update**<br> Version 1809 ; Build 10.0.17763.0 |
-| 0.66 - 0.71 | **May 2020 update**<br> Version 2004 ; Build 10.0.19041.0 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
+| 0.68 - 0.71 | **May 2020 update**<br> Version 2004 ; Build 10.0.19041.0 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
+| 0.66 - 0.67 | **May 2020 update**<br> Version 2004 ; Build 10.0.19041.0 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 |
 | 0.62 - 0.65 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Fall Creators Update**<br> Version 1709 ; Build 10.0.16299.91 |
 | 0.60 - 0.61 | **May 2019 update**<br> Version 1903 ; Build 10.0.18362.1 | **Creators Update**<br> Version 1703 ; Build 10.0.15063.468 |
