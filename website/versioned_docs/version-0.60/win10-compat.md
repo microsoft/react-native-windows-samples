@@ -18,7 +18,7 @@ React Native for Windows layers cleanly on top of the [native Windows UI platfor
 
 ## React Native App Supported OS Versions
 
-The following table captures the versions of Windows 10 that a React Native for Windows app supports. The "Target" is the version of the SDK that the app is compiled against, and the "Minimum" is the lowest version that the app will run on.
+The following table captures the default versions of Windows 10 that a React Native for Windows app supports. The "Target" is the version of the SDK that the app is compiled against, and the "Minimum" is the lowest version that the app will run on. Note that as of RNW 0.66, developers can easily override these default values to suit their own needs.
 
 | React Native Windows | Target OS Version | Minimum OS Version |
 | :--: | :-: | :-: |
