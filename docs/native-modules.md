@@ -49,13 +49,26 @@ Add the following object to your package's `package.json` file:
     "type": "modules",
     "jsSrcsDir": "src",
     "windows": {
-      "namespace": "YourAppCodegenNamespace"
+      "namespace": "YourAppCodegenNamespace",
+      "cppStringType": "std::string", /* optional */
+      "separateDataTypes": false, /* optional */
+      "outputDirectory": "codegen" /* optional */
     }
   },
 ```
 
-The values for `name`, `type`, `jsSrcsDir` are shared with react-native as documented [here](https://reactnative.dev/docs/next/the-new-architecture/pillars-turbomodules).  The `windows` object will cause the windows-codegen task to generate windows specific codegen for any TurboModule spec files defined within your project.  The `windows.namespace` property will control which C++ namespace these generated files will use.
+The values for `name`, `type`, `jsSrcsDir` are shared with react-native as documented [here](https://reactnative.dev/docs/next/the-new-architecture/pillars-turbomodules).  The `windows` object will cause the windows-codegen task to generate windows specific codegen for any TurboModule spec files defined within your project.
 
+- `windows.namespace`: Required. This property controls which C++ namespace these generated files are using.
+- `windows.cppStringType`: Optional. This property controls which C++ string type is used in generated files. The default value is `std::string`. You could choose between `std::string` and `std::wstring`.
+- `windows.separateDataTypes`: Optional.
+  - The default value is `false`, in which case `NativeAbcSpec.g.h` is generated from `NativeAbc.ts`.
+  - When it is `true`:
+    - `NativeAbcDataTypes.h` and `NativeAbcSpec.g.h` are generated. `NativeAbcDataTypes.h` contains all custom types defined in `NativeAbc.ts`.
+    - `NativeAbcSpec.g.h` contains all the remaining code.
+    - `NativeAbcSpec.g.h` does not include `NativeAbcDataTypes.h`.
+    - If there is no custom types, `NativeAbcDataTypes.h` will not be generated even when `windows.separateDataTypes` is `true`.
+- `windows.outputDirectory`: Optional. This property controls where generated files are located. The default value is `codegen`, which put files in the `codegen` folder under the working directory. If such folder does not exist at the moment, it will be created.
 
 ### 2. Create JavaScript Specification
 
