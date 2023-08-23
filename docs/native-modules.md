@@ -62,7 +62,7 @@ The values for `name`, `type`, `jsSrcsDir` are shared with react-native as docum
 - `windows.namespace`: Required. This property controls which C++ namespace these generated files are using.
 - `windows.cppStringType`: Optional. This property controls which C++ string type is used in generated files. The default value is `std::string`. You could choose between `std::string` and `std::wstring`.
 - `windows.separateDataTypes`: Optional.
-  - The default value is `false`, in which case `NativeAbcSpec.g.h` is generated from `NativeAbc.ts`.
+  - The default value is `false`, in which case `NativeAbcSpec.g.h` is generated from `NativeAbc.ts`, or with other recognized file extension.
   - When it is `true`:
     - `NativeAbcDataTypes.h` and `NativeAbcSpec.g.h` are generated. `NativeAbcDataTypes.h` contains all custom types defined in `NativeAbc.ts`.
     - `NativeAbcSpec.g.h` contains all the remaining code.
@@ -86,13 +86,12 @@ import type { TurboModule } from 'react-native/Libraries/TurboModule/RCTExport';
 import { TurboModuleRegistry } from 'react-native';
 
 export interface Spec extends TurboModule {
-
-  getConstants: () => {
+  getConstants() : {
     E: number,
     Pi: number,
   };
 
-  add: (a: number, b: number, callback: (value: number) => void) => void;
+  add(a: number, b: number, callback: (value: number) => void) : void;
 }
 
 export default TurboModuleRegistry.get<Spec>(
@@ -231,7 +230,8 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 
 | Attribute                | Use                                                       |
 | ------------------------ | --------------------------------------------------------- |
-| `REACT_MODULE`           | Specifies the class is a native module.                   |
+| `REACT_MODULE`           | Specifies the class is a native module, making this module recognizable by `AddAttributedModules` function.   |
+| `REACT_MODULE_NOREG`     | Specifies the class is a native module.                   |
 | `REACT_METHOD`           | Specifies an asynchronous method.                         |
 | `REACT_SYNC_METHOD`      | Specifies a synchronous method.                           |
 | `REACT_GET_CONSTANTS`    | Specifies a method that provides a set of constants. (Preferred) |
@@ -240,7 +240,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
 | `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
 | `REACT_INIT`             | Specifies a class initialization module.                  |
-| `ReactFunction`         | Specifies a JavaScript function that you want exposed to your native code. |
+| `ReactFunction`          | Specifies a JavaScript function that you want exposed to your native code. |
 
 ### 3. Authoring your Native Module
 
@@ -424,6 +424,11 @@ namespace winrt::NativeModuleSample::implementation
         AddAttributedModules(packageBuilder, true);
     }
 }
+```
+
+If `REACT_MODULE_NOREG` is used instead of `REACT_MODULE`, `AddAttributedModules` will not register this module for you. Such module should be registered manually:
+```cpp
+packageBuilder.AddTurboModule(L"FancyMath", MakeModuleProvider<NativeModuleSample::FancyMath>());
 ```
 
 Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use macros and templates to discover and bind native module, we call `AddAttributedModules` function to register all native modules in our DLL that have the `REACT_MODULE` macro-attribute. Specifying true here will register all the native modules as TurboModules rather than Native Modules.  This will avoid some additional serialization that happens with Native Module calls.  If for some reason you need the modules to continue to run as Native Modules, you can specify false here.
