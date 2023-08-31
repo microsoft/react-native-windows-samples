@@ -299,6 +299,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
 5. **Option B:** Attach VS Code to Metro that's already running
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will let you select *Node.js: Attach* (if it's available) or just *Node.js*
     > If you don't see *Node.js*, try again without a code file opened in the editor.
+    
     2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
     ```json
     {
