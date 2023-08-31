@@ -104,20 +104,20 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
 
 1. Make sure you have VS Code and the React Native Tools extension installed
 2. Open your project's root folder in VS Code
-3. Click on the *Run and Debug* button in the sidebar or press `Ctrl+Shift+D`
-4. Click on the drop-down at the top of the sidebar and select *React Native...*
-> If there's no drop-down, click on *Show all automatic debug configurations* then select *React Native...* from the drop-down that appears.
-5. **Option A:** Let VS Code launch everything and start debugging
-    1. Click on the ⚙️ to the right of *Debug Windows*
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like:
+3. Click on *Run* in VS Code's menu bar and select *Add Configuration...* then *React Native*
+> If you don't see *React Native*, try again without a code file opened in the editor.
+4. **Option A:** Let VS Code launch everything and start debugging
+    1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
+        1. Provide a list of debug configurations. Check the box for *Debug Windows* and click *OK*. OR
+        2. Guide you through a series of prompts. Select *Debug application*, *Windows*, *Classic application*.
+    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
     ```json
     {
         "name": "Debug Windows",
         "cwd": "${workspaceFolder}",
         "type": "reactnative",
         "request": "launch",
-        "platform": "windows",
-        "isDynamic": true
+        "platform": "windows"
     }
     ```
     3. Make sure that Metro, your native app, and/or any browser Developer Tools are **not** already running
@@ -125,25 +125,24 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     5. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
 6. **Option B:** Attach VS Code to Metro that's already running
-    1. Click on the ⚙️ to the right of *Attach to packager*
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like:
+    1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
+        1. Provide a list of debug configurations. Check the box for *Attach to packager* and click *OK*. OR
+        2. Guide you through a series of prompts. Select *Attach to application*, *Classic application*, `localhost`, `8081`.
+    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
     ```json
     {
         "name": "Attach to packager",
         "cwd": "${workspaceFolder}",
         "type": "reactnative",
-        "request": "attach",
-        "isDynamic": true
+        "request": "attach"
     }
     ```
     3. Make sure that only Metro is already running (i.e. `npx react-native start`)
     4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
-    6. Confirm the address of the Metro server (default: `localhost`)
-    7. Confirm the port of the Metro server (default: `8081`)
     > Watch VS Code's *Debug Console* output for a successful debugger connection.
 
-    8. Manually launch your native app
+    6. Manually launch your native app
 
 Once everything is running, you should be able to debug your RNW application. To set breakpoints, simply do so in your app's JS source files directly in VS Code.
 
@@ -298,6 +297,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     > **Important:** This scenario isn't supported with the built-in automatic debug configurations in VS Code. If you want VS Code to launch everything for you, you'll need to install the React Native Tools extension.
 5. **Option B:** Attach VS Code to Metro that's already running
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will let you select *Node.js: Attach* (if it's available) or just *Node.js*
+    > If you don't see *Node.js*, try again without a code file opened in the editor.
     2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
     ```json
     {
@@ -332,6 +332,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
 1. Make sure you have VS Code and the React Native Tools extension installed
 2. Open your project's root folder in VS Code
 3. Click on *Run* in VS Code's menu bar and select *Add Configuration...* then *React Native*
+> If you don't see *React Native*, try again without a code file opened in the editor.
 4. **Option A:** Let VS Code launch everything and start debugging
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows Hermes -Experimental* and click *OK*. OR
