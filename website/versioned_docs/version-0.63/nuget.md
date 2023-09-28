@@ -23,9 +23,8 @@ We are working on getting the packages on [NuGet Gallery](https://nuget.org). Un
 # How to enable on new projects
 When you enable react-native-windows on your new project, you can pass `--experimentalNuGetDependency true`:
 
-1. `npx react-native init <projectName>`
-1. `pushd <projectName>`
-1. `npx react-native-windows-init --overwrite --experimentalNuGetDependency true`
+1. Follow the instructions to create a new project in [Getting Started](getting-started.md) except use:
+1. `npx react-native-windows-init --overwrite --experimentalNuGetDependency true` instead when adding windows support to your project
 
 Of course all the other flags still work.
 
