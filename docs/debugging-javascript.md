@@ -89,7 +89,8 @@ You can web debug within Edge by using the [Edge Developer Tools](https://learn.
 
 1. Launch your RNW app (with Web Debugging enabled and Metro running)
 2. In Edge, open the URL http://localhost:8081/debugger-ui/
-    > Metro may have already opened it, look for a *React Native Debugger* tab.
+> Metro may have already opened it, look for a *React Native Debugger* tab.
+
 3. Press `Ctrl+Shift+J` on the page to launch the Developer Tools
 
 You should now be able to debug your RNW application. To set breakpoints you'll find your app's JS source files in the *Sources* tab under *`debuggerWorker.js` > `localhost:8081` > `src/ui`*.
@@ -106,6 +107,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
 2. Open your project's root folder in VS Code
 3. Click on *Run* in VS Code's menu bar and select *Add Configuration...* then *React Native*
 > If you don't see *React Native*, try again without a code file opened in the editor.
+
 4. **Option A:** Let VS Code launch everything and start debugging
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows* and click *OK*. OR
@@ -124,7 +126,8 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     4. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     5. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
-6. **Option B:** Attach VS Code to Metro that's already running
+
+5. **Option B:** Attach VS Code to Metro that's already running
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Attach to packager* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Attach to application*, *Classic application*, `localhost`, `8081`.
@@ -165,7 +168,7 @@ Rather than running your app's JS code on an external JS engine (as with Web Deb
 | JavaScript Engine | Edge Developer Tools | Visual Studio | Visual Studio Code | Visual Studio Code<br/> w/ React Native Tools |
 |:------------------|:-:|:-:|:-:|:-:|
 | Chakra (Default)  | 🟥 | ✅ | 🟥 | 🟥 |
-| Hermes            | ✅ | 🟥 | ✅ | ✅ |
+| Hermes            | ✅ | ✅ | ✅ | ✅ |
 
 > **Important:** Direct Debugging is relatively new and may still have some rough edges, depending on your choice of engine and debugger. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
 
@@ -226,7 +229,7 @@ The next step is to connect with your chosen debugger.
 
 #### Using the Edge Developer Tools
 
-You can direct debug within Edge by using the [Edge Developer Tools](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/).
+You can direct debug RNW apps using the Hermes JS engine with Edge by using the [Edge Developer Tools](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/).
 
 > If you use Chrome, the process is similar for using the [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/).
 
@@ -236,7 +239,7 @@ You can direct debug within Edge by using the [Edge Developer Tools](https://lea
 4. Click the *Configure...* button next to *Discover network targets*
 5. Under *Target discovery settings* add an entry for `localhost:8081` and click *Done*
 6. Refresh the `edge://inspect` page
-    > Watch for a *Hermes React Native* entry to appear in the *Remote Target* section at the bottom of the page. Note that the *Remote Target* section itself may be hidden until a valid target is detected.
+> Watch for a *Hermes React Native* entry to appear in the *Remote Target* section at the bottom of the page. Note that the *Remote Target* section itself may be hidden until a valid target is detected.
 
 7. Click on the *inspect* link under the *Hermes React Native* entry
 
@@ -245,7 +248,7 @@ You should now be able to debug your RNW application. To set breakpoints you'll 
 1. Click on the *Sources* tab
 2. Press `Ctrl+P` to invoke the *Open* pop-up
 3. Find your target source file (manually or by typing its name) and open it
-    > Make sure that the file you open is being sourced from the source map from Metro, i.e. the file entry is tagged with `localhost:8081` under the file name
+> Make sure that the file you open is being sourced from the source map from Metro, i.e. the file entry is tagged with `localhost:8081` under the file name
 
 You should now be able to set breakpoints in your app's JS source files. 
 
@@ -255,7 +258,7 @@ You should now be able to set breakpoints in your app's JS source files.
 
 <!--Visual Studio-->
 
-#### Using Visual Studio
+#### Using Visual Studio (Chakra)
 
 You can direct debug RNW apps using the (default) Chakra JS engine with [Visual Studio](https://visualstudio.microsoft.com/)'s built-in Script debugger.
 
@@ -284,6 +287,35 @@ To see your app's JS source in Visual Studio, you can either:
 1. Open the files directly (via *Open > File...* in the *File* menu or by pressing `Ctrl+O`) OR
 2. Looking for the files in the *Solution Explorer* sidebar under *`Solution 'MyApp'` > `Script Documents` > `file://...` > `script block` > `http://localhost:8081/...`*
 
+#### Using Visual Studio (Hermes)
+
+You can direct debug RNW apps using the Hermes JS engine with [Visual Studio](https://visualstudio.microsoft.com/) with the debugger from the *Node.js development* workload.
+
+1. Make sure you have Visual Studio installed with the *Node.js development* workload
+2. Open your project's Visual Studio solution file (i.e. `MyApp.sln`)
+3. **Option A:** Let Visual Studio launch the app and start debugging
+> **Important:** Launching the app and starting direct debug with Hermes isn't supported in Visual Studio.
+
+4. **Option B:** Attach Visual Studio to the app that's already running
+    1. Make sure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
+    2. Click on *Debug* in Visual Studio's menu bar and select *Attach to Process...*
+    3. Make sure *Connection type:* is set to *JavaScript and TypeScript (Chrome DevTools/V8 Inspector)*
+    > If you don't see *JavaScript and TypeScript (Chrome DevTools/V8 Inspector)*, make sure you've installed the *Node.js development* workload for your version of Visual Studio.
+
+    4. Make sure *Connection target:* is set to `http://localhost:8081`
+    5. Make sure *Attach to:* is set to *JavaScript and TypeScript*
+    6. Find and select the *Hermes* from the process list
+    > If you don't see *Hermes* in the list, open a browser and navigate to `http://localhost:8081/json`. Copy the value of `webSocketDebuggerUrl` (i.e. something like `ws://[::1]:8081/inspector/debug?device=0&page=1`) and use that as the *Connection target* instead.
+
+    7. Click on the *Attach* button
+
+Once everything is running, you should be able to debug your RNW application. To set breakpoints, simply do so in your app's JS source files directly in Visual Studio. 
+
+To see your app's JS source in Visual Studio, you can either:
+
+1. Open the files directly (via *Open > File...* in the *File* menu or by pressing `Ctrl+O`) OR
+2. Looking for the files in the *Solution Explorer* sidebar under *`Solution 'MyApp'` > `Script Documents`*
+
 <!--VS Code-->
 
 #### Using Visual Studio Code
@@ -294,7 +326,8 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
 2. Open your project's root folder in VS Code
 3. Click on *Run* in VS Code's menu bar and select *Add Configuration...*
 4. **Option A:** Let VS Code launch everything and start debugging
-    > **Important:** This scenario isn't supported with the built-in automatic debug configurations in VS Code. If you want VS Code to launch everything for you, you'll need to install the React Native Tools extension.
+> **Important:** Launching everything and starting debugging isn't supported with VS Code's built-in Node.js debugger.
+
 5. **Option B:** Attach VS Code to Metro that's already running
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will let you select *Node.js: Attach* (if it's available) or just *Node.js*
     > If you don't see *Node.js*, try again without a code file opened in the editor.
@@ -334,6 +367,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
 2. Open your project's root folder in VS Code
 3. Click on *Run* in VS Code's menu bar and select *Add Configuration...* then *React Native*
 > If you don't see *React Native*, try again without a code file opened in the editor.
+
 4. **Option A:** Let VS Code launch everything and start debugging
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows Hermes -Experimental* and click *OK*. OR
@@ -353,6 +387,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     5. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     6. Click on the ▶️ button or press `F5` in VS Code
     > Watch VS Code's *Debug Console* output for a successful debugger connection. This can be very slow, but VS Code should automatically launch Metro, establish the debugger connection, then launch your native app to download the bundle.
+    
 5. **Option B:** Attach VS Code to Metro that's already running
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Attach to Hermes application* and click *OK*. OR
