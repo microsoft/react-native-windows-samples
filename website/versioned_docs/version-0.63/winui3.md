@@ -1,10 +1,10 @@
 ---
 id: version-0.63-winui3
-title: WinUI 3
+title: WinUI 3 Support in RNW
 original_id: winui3
 ---
 
-# WinUI 3 Support in RNW
+> **Warning:** This documentation presents an experimental method for enabling RNW apps to use WinUI 3 instead of WinUI 2. The app template and information provided below are deprecated in RNW > 0.72 and should not be used. See the [RNW + WinAppSDK Roadmap](https://aka.ms/rnw-roadmap) for the most up-to-date information on how RNW will integrate with the Windows App SDK.
 
 [WinUI](http://aka.ms/winui/) is the modern native UI platform of Windows. As of this writing, **WinUI 3** has published [Preview 2](https://docs.microsoft.com/en-us/windows/apps/winui/winui3/). 
 

@@ -46,8 +46,7 @@
     "Experimental" : [
       "hermes",
       "NuGet",
-      "nuget-update",
-      "winui3"
+      "nuget-update"
     ]
   },
   "apis": {
