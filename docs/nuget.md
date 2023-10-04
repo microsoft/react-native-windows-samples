@@ -11,8 +11,6 @@ Starting with version 0.64 the team offers experimental NuGet packages that can 
 
 > Disclaimer: There are known compatibility issues with [community modules](supported-community-modules.md), as they still rely on building the shared code from source. So the solution still needs to have all the source projects which puts all the build performance problems back.
 
-> Disclaimer: NuGet packages are not compatible with experimental feature [WinUI 3](winui3.md).
-
 The benefit of using NuGet packages is that you get improved compilation times for your Windows project and can develop on a less powerful computer.
 
 The other benefit will be that it will be easier to update your projects to future versions or react-native-windows.
