@@ -133,7 +133,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
-      # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
+      runCodeGenCheck: true
       extraRunWindowsArgs: --no-autolink --no-deploy
       skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.native-module-sample != 'true' }} # Skip if files haven't changed
 

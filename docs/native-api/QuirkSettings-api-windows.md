@@ -28,8 +28,7 @@ Runtime setting allowing Networking (HTTP, WebSocket) connections to skip certif
 
 > **EXPERIMENTAL**
 
-By default `react-native-windows` will handle various back events and forward them to JavaScript. Setting this to [`BackNavigationHandlerKind.Native`](BackNavigationHandlerKind) prevents `react-native-windows` from handling these events, including forwarding to JavaScript.  This will allow applications to handle back navigation in native code, but will prevent the `BackHandler` native module from receiving events.
-
+By default `react-native-windows` will handle various back events and forward them to JavaScript. Setting this to [`BackNavigationHandlerKind.Native`](BackNavigationHandlerKind#native) prevents `react-native-windows` from handling these events, including forwarding to JavaScript.  This will allow applications to handle back navigation in native code, but will prevent the `BackHandler` native module from receiving events.
 
 
 
@@ -65,6 +64,15 @@ When running multiple windows from a single UI thread, focusing a native view ca
 
 
 
+### SetUseRuntimeScheduler
+`static` void **`SetUseRuntimeScheduler`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+By default `react-native-windows` will use the new RuntimeScheduler.Setting this to false will revert the behavior to previous scheduling logic.
+
+
+
 ### SetUseWebFlexBasisBehavior
 `static` void **`SetUseWebFlexBasisBehavior`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
 
@@ -72,7 +80,7 @@ When running multiple windows from a single UI thread, focusing a native view ca
 
 **Default value**: `false`
 
-There is a chance that cached flex basis values can cause text truncation in some re-layout scenarios. Enabling [Yoga](https://github.com/facebook/yoga)'s experimental web flex basis behavior fixes this issue, however using it may result in perfomance regressions due to additional layout passes.
+There is a chance that cached flex basis values can cause text truncation in some re-layout scenarios. Enabling [Yoga](https://github.com/facebook/yoga)'s experimental web flex basis behavior fixes this issue, however using it may result in performance regressions due to additional layout passes.
 
 
 
