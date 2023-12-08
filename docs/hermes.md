@@ -30,7 +30,7 @@ Set the `UseHermes` property to `true` in the `ExperimentalFeatures.props` file 
 
 ### Disabling Hermes
 
-Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
+To revert back to using Chakra, set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
 
 ```xml
 <PropertyGroup Label="Microsoft.ReactNative Experimental Features">
