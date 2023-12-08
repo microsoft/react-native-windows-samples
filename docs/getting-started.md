@@ -17,7 +17,7 @@ Remember to call `react-native init` from the place you want your project direct
 
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "nightly" -->
 <!-- 2. For the latest stable version in versioned_docs use "latest" -->
-<!-- 3. For older stable versions use the stable tag name, i.e. "0.72-stable" -->
+<!-- 3. For older stable versions use the stable tag name, i.e. "0.73-stable" -->
 
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 

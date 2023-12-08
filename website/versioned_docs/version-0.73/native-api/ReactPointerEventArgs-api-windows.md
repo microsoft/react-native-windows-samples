@@ -1,6 +1,7 @@
 ---
-id: ReactPointerEventArgs
+id: version-0.73-ReactPointerEventArgs
 title: ReactPointerEventArgs
+original_id: ReactPointerEventArgs
 ---
 
 Kind: `class`

@@ -5,31 +5,16 @@ title: ViewPanel
 
 Kind: `class`
 
-Extends: [`Panel`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel)
+Extends: [`Grid`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
 
 
 ## Properties
-### BorderBrush
- [`Brush`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) `BorderBrush`
-
 ### BorderBrushProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `BorderBrushProperty`
 
-### BorderThickness
- [`Thickness`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Thickness) `BorderThickness`
-
 ### BorderThicknessProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `BorderThicknessProperty`
-
-### ClipChildren
- bool `ClipChildren`
-
-### ClipChildrenProperty
-`static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `ClipChildrenProperty`
-
-### CornerRadius
- [`CornerRadius`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.CornerRadius) `CornerRadius`
 
 ### CornerRadiusProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `CornerRadiusProperty`
@@ -60,18 +45,8 @@ void **`Clear`**()
 
 
 
-### FinalizeProperties
-void **`FinalizeProperties`**()
-
-
-
 ### GetLeft
 `static` double **`GetLeft`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
-
-
-
-### GetOuterBorder
-[`Border`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) **`GetOuterBorder`**()
 
 
 

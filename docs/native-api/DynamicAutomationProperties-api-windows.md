@@ -26,9 +26,6 @@ Kind: `class`
 ### AccessibilityStateCheckedProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityStateCheckedProperty`
 
-### AccessibilityStateCollapsedProperty
-`static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityStateCollapsedProperty`
-
 ### AccessibilityStateDisabledProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityStateDisabledProperty`
 
@@ -37,9 +34,6 @@ Kind: `class`
 
 ### AccessibilityStateSelectedProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityStateSelectedProperty`
-
-### AccessibilityStateUncheckedProperty
-`static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityStateUncheckedProperty`
 
 ### AccessibilityValueMaxProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityValueMaxProperty`
@@ -82,12 +76,7 @@ Kind: `class`
 
 
 ### GetAccessibilityStateChecked
-`static` bool **`GetAccessibilityStateChecked`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
-
-
-
-### GetAccessibilityStateCollapsed
-`static` bool **`GetAccessibilityStateCollapsed`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
+`static` [`AccessibilityStateCheckedValue`](AccessibilityStateCheckedValue) **`GetAccessibilityStateChecked`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
 
 
 
@@ -103,11 +92,6 @@ Kind: `class`
 
 ### GetAccessibilityStateSelected
 `static` bool **`GetAccessibilityStateSelected`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
-
-
-
-### GetAccessibilityStateUnchecked
-`static` bool **`GetAccessibilityStateUnchecked`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
 
 
 
@@ -157,12 +141,7 @@ Kind: `class`
 
 
 ### SetAccessibilityStateChecked
-`static` void **`SetAccessibilityStateChecked`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, bool value)
-
-
-
-### SetAccessibilityStateCollapsed
-`static` void **`SetAccessibilityStateCollapsed`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, bool value)
+`static` void **`SetAccessibilityStateChecked`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, [`AccessibilityStateCheckedValue`](AccessibilityStateCheckedValue) value)
 
 
 
@@ -178,11 +157,6 @@ Kind: `class`
 
 ### SetAccessibilityStateSelected
 `static` void **`SetAccessibilityStateSelected`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, bool value)
-
-
-
-### SetAccessibilityStateUnchecked
-`static` void **`SetAccessibilityStateUnchecked`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, bool value)
 
 
 
