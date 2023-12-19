@@ -1,29 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
   <Identity
-    Name="1d56179a-1638-40ab-82ad-1b7af368902a"
-    Publisher="CN=React Native Windows Samples"
+    Name="bad11433-f221-408a-ad00-e0488e1c2d50"
+    Publisher="CN=React Native Windows Sample"
     Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="1d56179a-1638-40ab-82ad-1b7af368902a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <mp:PhoneIdentity PhoneProductId="bad11433-f221-408a-ad00-e0488e1c2d50" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
   <Properties>
-    <DisplayName>Calculator (CoreApp)</DisplayName>
-    <PublisherDisplayName>React Native Windows Samples</PublisherDisplayName>
+    <DisplayName>CalculatorCoreAppNuGet</DisplayName>
+    <PublisherDisplayName>yajurgrover</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
+
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
   </Dependencies>
+
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="x-generate"/>
   </Resources>
+
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="CalculatorCoreAppNuGet.App">
-      <uap:VisualElements DisplayName="Calculator" Description="Calculator - CoreApp"
-        Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="transparent">
+    <Application
+      Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="CalculatorCoreAppNuGet.App">
+      <uap:VisualElements
+        DisplayName="CalculatorCoreAppNuGet"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
+        Description="CalculatorCoreAppNuGet"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
   </Applications>
+
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
