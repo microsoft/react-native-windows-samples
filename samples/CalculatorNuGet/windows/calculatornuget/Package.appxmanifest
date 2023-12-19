@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="6afdde3d-ab67-4c49-a985-1a37f068a2a0"
-    Publisher="CN=ReactNativeWindowsSamples"
+    Name="b36753c3-2e37-4dd8-8d3d-66953d899343"
+    Publisher="CN=React Native Windows Sample"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="6afdde3d-ab67-4c49-a985-1a37f068a2a0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="b36753c3-2e37-4dd8-8d3d-66953d899343" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>calculatornuget</DisplayName>
-    <PublisherDisplayName>ReactNativeWindowsSamples</PublisherDisplayName>
+    <DisplayName>CalculatorNuGet</DisplayName>
+    <PublisherDisplayName>yajurgrover</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,12 +31,12 @@
     <Application
       Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="calculatornuget.App">
+      EntryPoint="CalculatorNuGet.App">
       <uap:VisualElements
-        DisplayName="calculatornuget"
+        DisplayName="CalculatorNuGet"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="calculatornuget"
+        Description="CalculatorNuGet"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
