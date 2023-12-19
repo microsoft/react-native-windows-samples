@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="92bb0b19-70da-4e55-90c7-32fb5194a26a"
+    Name="f35c6620-552d-4b0c-a662-bb037cb4c5ea"
     Publisher="CN=React Native Windows Sample"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="92bb0b19-70da-4e55-90c7-32fb5194a26a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="f35c6620-552d-4b0c-a662-bb037cb4c5ea" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>calculator</DisplayName>
-    <PublisherDisplayName>CN=React Native Windows Sample</PublisherDisplayName>
+    <DisplayName>Calculator</DisplayName>
+    <PublisherDisplayName>yajurgrover</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,12 +31,12 @@
     <Application
       Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="calculator.App">
+      EntryPoint="Calculator.App">
       <uap:VisualElements
-        DisplayName="calculator"
+        DisplayName="Calculator"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="calculator"
+        Description="Calculator"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
