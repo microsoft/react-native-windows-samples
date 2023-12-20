@@ -15,7 +15,7 @@
 
   <Properties>
     <DisplayName>CalculatorNuGet</DisplayName>
-    <PublisherDisplayName>yajurgrover</PublisherDisplayName>
+    <PublisherDisplayName>CN=React Native Windows Sample</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
