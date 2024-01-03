@@ -35,6 +35,10 @@ Install the React Native for macOS packages.
 npx react-native-macos-init
 ```
 
+> [!NOTE]
+> If the above command fails on ```Invalid `Podfile` file: cannot load such file -- .../ios/node_modules/react-native-macos/scripts/react_native_pods```, then it can help to open the `.xcworkspace`-file in your `ios`-folder with Xcode and straighten out any issues found there, e.g. Signing-issues
+
+
 ## Running a React Native macOS App
 
 - **Without using Xcode**:
