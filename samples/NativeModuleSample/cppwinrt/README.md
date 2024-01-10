@@ -21,9 +21,9 @@ To upgrade this sample to the latest version of RNW:
     rd /s /q windows
     ```
 3. Upgrade dev dependencies to the versions of `react` and `react-native` needed by `react-native-windows@latest`:
-    1. Option A: Use the `UpgradeSmokeTest.ps1` helper script (Recommended):
+    1. Option A: Use the `UpgradeSmokeTest.ps1` helper script (Recommended on Windows Powershell):
         ```cmd
-        pwsh.exe ..\..\..\.github\scripts\UpgradeSmokeTest.ps1 latest
+        ..\..\..\.github\scripts\UpgradeSmokeTest.ps1 latest
         ```
     2. Option B: Update the package.json by hand:
         1. Look up the version of `react` required by `react-native-windows@latest`:
