@@ -1,6 +1,6 @@
 #include "NamespaceRedirect.h"
 
-namespace calculatornuget
+namespace CalculatorNuGet
 {
     [default_interface]
     runtimeclass MainPage : XAML_NAMESPACE.Controls.Page

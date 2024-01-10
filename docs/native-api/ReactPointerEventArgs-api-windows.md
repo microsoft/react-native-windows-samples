@@ -12,6 +12,13 @@ Kind: `class`
 Event arguments wrapper for [`IViewManagerWithPointerEvents`](IViewManagerWithPointerEvents).
 
 ## Properties
+### AllowUncaptured
+ bool `AllowUncaptured`
+
+> **EXPERIMENTAL**
+
+Gets or sets a flag that allows the ReactRootView to handle pointer events even when it does not capture the pointer. This is particularly useful for view managers that seek to capture the pointer to handle move events for a gesture (e.g., dragging), but conditionally may allow the ReactRootView to emit events (e.g., if the [`PointerEventKind.End`](PointerEventKind) event is received before a drag threshold is hit.
+
 ### Args
 `readonly`  [`PointerRoutedEventArgs`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) `Args`
 
