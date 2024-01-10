@@ -9,7 +9,7 @@
 using namespace winrt;
 using namespace xaml;
 
-namespace winrt::calculator::implementation
+namespace winrt::Calculator::implementation
 {
     MainPage::MainPage()
     {

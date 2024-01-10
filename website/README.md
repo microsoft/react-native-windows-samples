@@ -186,7 +186,7 @@ Complete the documentation updates for both main and stable version 0.XX above.
 1. Edit `website/.unbroken_exclusions` and add the line `!versioned_docs/version-0.XX/native-api/*-api-windows*.md` underneath the other versioned doc exclusions listed at the top of the file.
 1. Update `support.js` and add/update the entry for the new version of React Native Windows with the correct release and Active Support Start Date _X_ (ex: 6/27/22). Then make sure to edit the previous version's:
     1. Maintenance Start Date (set to the last day of the month that's 1 month out from _X_, ex: 7/31/22)
-    2. End of Support Date (set to the last day of the month that's 3 months out from _X_, ex: 9/30/22)
+    2. End of Support Date (set to the last day of the month that's 2 months out from _X_, ex: 9/30/22)
 1. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.XX for its `defaultVersionShown` constant.
 
 # FAQ
