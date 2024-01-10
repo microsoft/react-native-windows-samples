@@ -2,7 +2,7 @@
 
 This sample showcases the usage of React Native for Windows to build a simple Calculator, using the CoreApp APIs and the Microsoft.ReactNative NuGet package.
 
-It currently targets React Native Windows 0.72
+It currently targets React Native Windows 0.73
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).

@@ -2,12 +2,12 @@
 
 #include "winrt/Microsoft.ReactNative.h"
 
-namespace winrt::calculatornuget::implementation
+namespace winrt::CalculatorNuGet::implementation
 {
     struct ReactPackageProvider : winrt::implements<ReactPackageProvider, winrt::Microsoft::ReactNative::IReactPackageProvider>
     {
     public: // IReactPackageProvider
         void CreatePackage(winrt::Microsoft::ReactNative::IReactPackageBuilder const &packageBuilder) noexcept;
     };
-} // namespace winrt::calculatornuget::implementation
+} // namespace winrt::CalculatorNuGet::implementation
 

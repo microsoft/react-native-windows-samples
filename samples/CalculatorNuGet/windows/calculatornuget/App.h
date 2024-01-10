@@ -6,7 +6,7 @@
 
 namespace activation = winrt::Windows::ApplicationModel::Activation;
 
-namespace winrt::calculatornuget::implementation
+namespace winrt::CalculatorNuGet::implementation
 {
     struct App : AppT<App>
     {
@@ -18,4 +18,4 @@ namespace winrt::calculatornuget::implementation
       private:
         using super = AppT<App>;
     };
-} // namespace winrt::calculatornuget::implementation
+} // namespace winrt::CalculatorNuGet::implementation

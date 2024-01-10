@@ -7,6 +7,7 @@ sidebar_label: Full reference
 
 ## Enums
 - [`AccessibilityRoles`](AccessibilityRoles)
+- [`AccessibilityStateCheckedValue`](AccessibilityStateCheckedValue)
 - [`AccessibilityStates`](AccessibilityStates)
 - [`AccessibilityValue`](AccessibilityValue)
 - [`BackNavigationHandlerKind`](BackNavigationHandlerKind)
