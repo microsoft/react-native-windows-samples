@@ -1,6 +1,6 @@
 using Microsoft.ReactNative;
 
-namespace calculator
+namespace Calculator
 {
     public partial class ReactPackageProvider : IReactPackageProvider
     {
