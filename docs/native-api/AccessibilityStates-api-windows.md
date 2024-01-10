@@ -10,8 +10,6 @@ Kind: `enum`
 |`Selected` | 0x0  |  |
 |`Disabled` | 0x1  |  |
 |`Checked` | 0x2  |  |
-|`Unchecked` | 0x3  |  |
-|`Busy` | 0x4  |  |
-|`Expanded` | 0x5  |  |
-|`Collapsed` | 0x6  |  |
-|`CountStates` | 0x7  |  |
+|`Busy` | 0x3  |  |
+|`Expanded` | 0x4  |  |
+|`CountStates` | 0x5  |  |
