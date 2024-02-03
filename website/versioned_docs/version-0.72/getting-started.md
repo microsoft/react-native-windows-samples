@@ -23,7 +23,7 @@ Remember to call `react-native init` from the place you want your project direct
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx react-native@latest init <projectName> --version "latest"
+npx react-native@0.72-stable init <projectName> --version "0.72-stable"
 ```
 
 ### Navigate into this newly created directory
