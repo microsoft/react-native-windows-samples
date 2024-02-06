@@ -47,11 +47,11 @@ When you create a C# or C++ React Native for Windows app, it is written in such 
 For C++ apps, in addition to setting the property value, you will also need to modify the `packages.config` file which can be found next to the app project `.vcxproj` file, to point to the updated package version.
 
 
-#### `windows\ExperimentalFlags.props`
+#### `windows\ExperimentalFeatures.props`
 
-```xml title="ExperimentalFlags.props"
+```xml title="ExperimentalFeatures.props"
 <PropertyGroup>
   <!-- other properties -->
-  <WinUI2xVersion>2.6.0</WinUI2xPackageVersion>
+  <WinUI2xVersion>2.6.0</WinUI2xVersion>
 </PropertyGroup>
 ```
