@@ -28,7 +28,7 @@ encodings
 enum
 exclusionList
 exe
-ExperimentalFlags.props
+ExperimentalFeatures.props
 filesystem
 flyout
 functor
