@@ -46,6 +46,8 @@ npx react-native-windows-init --overwrite
 
 For information on the options that `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
 
+> RNW 0.72 depends on Node >= 16.0, but some transitive dependencies may require newer versions of Node. If you're using using Node 16 and see dependencies errors about needing a newer version of Node, you can either upgrade your version of Node, or supress the errors with `yarn config set ignore-engines true`. See [microsoft/react-native-windows#12711](https://github.com/microsoft/react-native-windows/issues/12711).
+
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
