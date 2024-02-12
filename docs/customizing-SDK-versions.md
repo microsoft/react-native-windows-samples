@@ -42,7 +42,7 @@ However, C# apps restore NuGet packages to a location under your user profile, w
 
 C++ apps use `packages.config` to specify the set of NuGet packages, and then manually import the right `.props` and `.targets` files from the package.
 
-When you create a C# or C++ React Native for Windows app, it is written in such a way that the WinUI version it uses is parametrized (i.e. it depends on the value of the `WinUI2xPackageVersion` property).
+When you create a C# or C++ React Native for Windows app, it is written in such a way that the WinUI version it uses is parametrized (i.e. it depends on the value of the `WinUI2xVersion` property).
 
 For C++ apps, in addition to setting the property value, you will also need to modify the `packages.config` file which can be found next to the app project `.vcxproj` file, to point to the updated package version.
 
