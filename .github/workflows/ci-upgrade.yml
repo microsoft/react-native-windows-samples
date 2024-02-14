@@ -72,23 +72,6 @@ jobs:
       runInitWindows: true
       extraInitWindowsArgs: --experimentalNuGetDependency true
 
-  call-upgradesample-calculator-coreapp-nuget:
-    name: Upgrade Calculator CoreApp NuGet
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['CalculatorCoreAppNuGet']
-        configuration: ['Debug']
-        platform: ['x86']
-        reactNativeWindowsVersion: [latest, preview, canary]
-    uses: ./.github/workflows/template-upgradesample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      reactNativeWindowsVersion: ${{ matrix.reactNativeWindowsVersion }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-
   call-upgradesample-native-module-sample:
     name: Upgrade Native Module Sample
     needs: setupcheck
