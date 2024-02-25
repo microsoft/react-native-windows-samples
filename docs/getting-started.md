@@ -25,12 +25,14 @@ Remember to call `react-native init` from the place you want your project direct
 npx react-native@nightly init <projectName> --version "nightly"
 ```
 
-### Navigate into this newly created directory
+### Navigate into this newly created directory and use npm to install react-native
 
 Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
+Use NPM to install react-native.
 
 ```bat
 cd projectName
+npm install react-native
 ```
 
 ### Install the Windows extension
