@@ -114,7 +114,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Debug application*, *Windows*, *Classic application*.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Debug Windows",
@@ -133,7 +133,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Attach to packager* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Attach to application*, *Classic application*, `localhost`, `8081`.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Attach to packager",
@@ -334,7 +334,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will let you select *Node.js: Attach* (if it's available) or just *Node.js*
     > If you don't see *Node.js*, try again without a code file opened in the editor.
     
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Attach",
@@ -374,7 +374,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows Hermes -Experimental* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Debug application*, *Windows*, *Application in direct mode(Hermes)*.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Debug Windows Hermes - Experimental",
@@ -394,7 +394,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Attach to Hermes application* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Attach to application*, *Application in direct mode(Hermes)*, *Hermes engine*, `localhost`, `8081`.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Attach to Hermes application - Experimental",
