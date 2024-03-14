@@ -22,7 +22,7 @@ Remember to call `react-native init` from the place you want your project direct
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx react-native@nightly init <projectName> --version "nightly"
+npx --yes react-native@nightly init <projectName> --version "nightly"
 ```
 
 ### Navigate into this newly created directory
@@ -38,7 +38,7 @@ cd projectName
 Lastly, install the React Native for Windows packages.
 
 ```bat
-npx react-native-windows-init --overwrite
+npx --yes react-native-windows-init --overwrite
 ```
 
 > The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
