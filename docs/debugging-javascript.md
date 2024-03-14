@@ -9,20 +9,22 @@ This page details how to debug the JavaScript code in your RNW applications, inc
 
 ## Web Debugging
 
-*Web Debugging* (also referred to as *Remote JS Debugging*) is the original JS debugging solution for RN.
+*Web Debugging* (also referred to as *Remote JS Debugging*) is the original JS debugging solution for RN and the default solution enabled in new RNW projects.
 
 It works by running your app's JS code within the JS engine of an external process, usually a web browser such as Edge (or Chrome). You're then able to debug your app using the development tools of that external process, i.e. the browser's web development tools.
 
 > Web Debugging requires the Metro Packager, as Metro proxies the connection between your native Windows app and the remote JS engine.
 
+> **Important:**: Web Debugging was officially marked as deprecated in RN 0.73 and will be removed in a later release.
+
 ### Web Debugging Tool Support
 
 | JavaScript Engine | Edge Developer Tools | Visual Studio Code<br/> w/ React Native Tools |
 |:------------------|:-:|:-:|
-| Chakra (Default)  | ✅ | ✅ |
-| Hermes            | ✅ | ✅ |
+| Hermes (Default)  | ✅ | ✅ |
+| Chakra            | ✅ | ✅ |
 
-> **Important:** As your code is run in the remote JS engine, the app's embedded engine is not used. This can cause your released app to behave differently when it *is* using the embedded engine. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
+> **Important:** As your code is run in the remote JS engine, the app's embedded engine is not used. This can cause your released app to behave differently when it *is* using the embedded engine. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details\.
 
 ### Step 1: Enable Web Debugging
 
@@ -112,7 +114,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Debug application*, *Windows*, *Classic application*.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Debug Windows",
@@ -131,7 +133,7 @@ You can web debug within [VS Code](http://code.visualstudio.com/) by using the [
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Attach to packager* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Attach to application*, *Classic application*, `localhost`, `8081`.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Attach to packager",
@@ -167,8 +169,8 @@ Rather than running your app's JS code on an external JS engine (as with Web Deb
 
 | JavaScript Engine | Edge Developer Tools | Visual Studio | Visual Studio Code | Visual Studio Code<br/> w/ React Native Tools |
 |:------------------|:-:|:-:|:-:|:-:|
-| Chakra (Default)  | 🟥 | ✅ | 🟥 | 🟥 |
-| Hermes            | ✅ | ✅ | ✅ | ✅ |
+| Hermes (Default)  | ✅ | ✅ | ✅ | ✅ |
+| Chakra            | 🟥 | ✅ | 🟥 | 🟥 |
 
 > **Important:** Direct Debugging is relatively new and may still have some rough edges, depending on your choice of engine and debugger. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
 
@@ -332,7 +334,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will let you select *Node.js: Attach* (if it's available) or just *Node.js*
     > If you don't see *Node.js*, try again without a code file opened in the editor.
     
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Attach",
@@ -372,7 +374,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Debug Windows Hermes -Experimental* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Debug application*, *Windows*, *Application in direct mode(Hermes)*.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Debug Windows Hermes - Experimental",
@@ -392,7 +394,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
     1. Depending on whether or not you already have a `launch.json` file, the drop-down will either:
         1. Provide a list of debug configurations. Check the box for *Attach to Hermes application* and click *OK*. OR
         2. Guide you through a series of prompts. Select *Attach to application*, *Application in direct mode(Hermes)*, *Hermes engine*, `localhost`, `8081`.
-    2. A new configuration should appear in your `launch.json` file. Rename it if you want but it should look like this:
+    2. A new (possibly incorrect) entry should appear in your `launch.json` file. The config will need to look like this (the `name` doesn't matter) to debug properly:
     ```json
     {
         "name": "Attach to Hermes application - Experimental",

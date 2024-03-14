@@ -1,5 +1,5 @@
 ---
-id: version-0.67-debugging-javascript
+id: version-0.73-debugging-javascript
 title: JavaScript Debugging
 original_id: debugging-javascript
 ---
@@ -10,20 +10,22 @@ This page details how to debug the JavaScript code in your RNW applications, inc
 
 ## Web Debugging
 
-*Web Debugging* (also referred to as *Remote JS Debugging*) is the original JS debugging solution for RN.
+*Web Debugging* (also referred to as *Remote JS Debugging*) is the original JS debugging solution for RN and the default solution enabled in new RNW projects.
 
 It works by running your app's JS code within the JS engine of an external process, usually a web browser such as Edge (or Chrome). You're then able to debug your app using the development tools of that external process, i.e. the browser's web development tools.
 
 > Web Debugging requires the Metro Packager, as Metro proxies the connection between your native Windows app and the remote JS engine.
 
+> **Important:**: Web Debugging was officially marked as deprecated in RN 0.73 and will be removed in a later release.
+
 ### Web Debugging Tool Support
 
 | JavaScript Engine | Edge Developer Tools | Visual Studio Code<br/> w/ React Native Tools |
 |:------------------|:-:|:-:|
-| Chakra (Default)  | ✅ | ✅ |
-| Hermes            | ✅ | ✅ |
+| Hermes (Default)  | ✅ | ✅ |
+| Chakra            | ✅ | ✅ |
 
-> **Important:** As your code is run in the remote JS engine, the app's embedded engine is not used. This can cause your released app to behave differently when it *is* using the embedded engine. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
+> **Important:** As your code is run in the remote JS engine, the app's embedded engine is not used. This can cause your released app to behave differently when it *is* using the embedded engine. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details\.
 
 ### Step 1: Enable Web Debugging
 
@@ -168,8 +170,8 @@ Rather than running your app's JS code on an external JS engine (as with Web Deb
 
 | JavaScript Engine | Edge Developer Tools | Visual Studio | Visual Studio Code | Visual Studio Code<br/> w/ React Native Tools |
 |:------------------|:-:|:-:|:-:|:-:|
-| Chakra (Default)  | 🟥 | ✅ | 🟥 | 🟥 |
-| Hermes            | ✅ | ✅ | ✅ | ✅ |
+| Hermes (Default)  | ✅ | ✅ | ✅ | ✅ |
+| Chakra            | 🟥 | ✅ | 🟥 | 🟥 |
 
 > **Important:** Direct Debugging is relatively new and may still have some rough edges, depending on your choice of engine and debugger. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
 

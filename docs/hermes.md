@@ -15,7 +15,7 @@ Hermes is supported on Windows, generally providing better performance character
 
 ### Enabling Hermes for new projects
 
-Hermes is enabled by default for React Native Windows project.
+Hermes is enabled by default for React Native Windows projects.
 
 ### Using Hermes in an existing project
 
