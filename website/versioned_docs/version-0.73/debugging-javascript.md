@@ -25,7 +25,7 @@ It works by running your app's JS code within the JS engine of an external proce
 | Hermes (Default)  | ✅ | ✅ |
 | Chakra            | ✅ | ✅ |
 
-> **Important:** As your code is run in the remote JS engine, the app's embedded engine is not used. This can cause your released app to behave differently when it *is* using the embedded engine. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details. 
+> **Important:** As your code is run in the remote JS engine, the app's embedded engine is not used. This can cause your released app to behave differently when it *is* using the embedded engine. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details\.
 
 ### Step 1: Enable Web Debugging
 
