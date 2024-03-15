@@ -173,6 +173,8 @@ Rather than running your app's JS code on an external JS engine (as with Web Deb
 
 > **Important:** Direct Debugging is relatively new and may still have some rough edges, depending on your choice of engine and debugger. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
 
+> **Important:** Some versions of Hermes have a [known issue with direct debugging not showing variable evaluations or breakpoints correctly](https://github.com/microsoft/react-native-windows/issues/12654) that may be fixed, at which point this warning can be removed.
+
 ### Step 1: Enable Direct Debugging
 
 You have two options to enable Direct Debugging: at compile-time in your app's native code or at runtime via the in-app Developer Menu.
@@ -293,7 +295,9 @@ To see your app's JS source in Visual Studio, you can either:
 You can direct debug RNW apps using the Hermes JS engine with [Visual Studio](https://visualstudio.microsoft.com/) with the debugger from the *Node.js development* workload.
 
 1. Make sure you have Visual Studio installed with the *Node.js development* workload
-2. Open your project's Visual Studio solution file (i.e. `MyApp.sln`)
+2. Start Visual Studio without a solution file (*Continue without code*)
+> **Important:** You should not have a solution file opened. There's a [known issue with trying to debug JS with your project's solution opened](https://github.com/microsoft/react-native-windows/issues/12842) that may be fixed, at which point this warning can be removed.
+
 3. **Option A:** Let Visual Studio launch the app and start debugging
 > **Important:** Launching the app and starting direct debug with Hermes isn't supported in Visual Studio.
 
