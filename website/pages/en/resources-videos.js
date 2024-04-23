@@ -77,6 +77,11 @@ class Resources extends React.Component {
     );
 
     const videoUrls = [
+      { yt: 'PYMMxfttOug', title: 'React Native EU 2023: Tommy Nguyen & Lorenzo Sciandra - Raising the Bar'},
+      { yt: 'ChDQZpWQbwk', title: 'Chain React 2023: Christoph Purrer - From Electron to React Native'},
+      { yt: '1vMic8ixfVI', title: `Chain React 2023: Lorenzo Sciandra - The work that you don't see`},
+      { yt: 'kMJNEFHj8b8', title: 'Chain React 2023: Chiara Mooney & Shiven Mian - Building for Microsoft'},
+      { yt: 'uSr9KXu707s', title: 'React Native Radio Ep267: React Native Windows with Chiara Mooney'},
       { yt: 'r7yKet5dga4', title: 'React Native EU 2021: Khalef Hosany - Unlocking the next generation of desktop app with React Native' },
       { yt: 'gWOrCedNR9M', title: 'React Native EU 2020: Steven Moyes - Building For Desktops And Dual Screens' },
       { yt: 'QMFbrHZnvvw', title: 'MS Build SK119 React Native: Build cross platform apps that target Windows, Mac, and more!' },
