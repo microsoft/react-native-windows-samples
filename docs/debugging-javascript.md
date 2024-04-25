@@ -3,7 +3,7 @@ id: debugging-javascript
 title: JavaScript Debugging
 ---
 
-This page details how to debug the JavaScript code in your RNW applications, including which tools are supported in which scenarios. You have two different options: *Web Debugging* and *Direct Debugging*.
+This page details how to debug the JavaScript code in your RNW applications, including which tools are supported in which scenarios. You have two different options: *Direct Debugging* and *Web Debugging*.
 
 > Unless stated otherwise, each of the debugging scenarios detailed below assume you're loading your JS bundle from the Metro Packager, not loading a prebuilt bundle file.
 
