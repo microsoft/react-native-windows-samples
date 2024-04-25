@@ -17,7 +17,7 @@ npx react-native run-windows
 ```
 ### Options
 
-> **Note:** Remote Debugging was officially marked as deprecated in RN 0.73 and will be removed in a later release.
+> **Note:** Remote Debugging was officially marked as [deprecated](https://github.com/react-native-community/discussions-and-proposals/discussions/734) in RN 0.73 and will be removed in a later release.
 
 Here are the options that `react-native run-windows` takes:
 | Option                | Input Type | Description                                      |
