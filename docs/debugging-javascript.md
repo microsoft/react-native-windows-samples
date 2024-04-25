@@ -9,7 +9,8 @@ This page details how to debug the JavaScript code in your RNW applications, inc
 
 ## Direct Debugging
 
-*Direct Debugging* is the newer JS debugging solution for RN.
+*Direct Debugging* is the new JS debugging solution for RN and is the default solution enabled in new RNW projects.
+
 
 Rather than running your app's JS code on an external JS engine (as with Web Debugging), with Direct Debugging you run your app's code on its embedded engine (as normal). You are then able to attach your debugger directly to the embedded engine.
 
