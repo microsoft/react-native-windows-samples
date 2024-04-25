@@ -22,7 +22,7 @@ Rather than running your app's JS code on an external JS engine (as with Web Deb
 | Hermes (Default)  | ✅ | ✅ | ✅ | ✅ |
 | Chakra            | 🟥 | ✅ | 🟥 | 🟥 |
 
-> **Important:** Some versions of Hermes have a [known issue with direct debugging not showing variable evaluations or breakpoints correctly](https://github.com/microsoft/react-native-windows/issues/12654) that may be fixed, at which point this warning can be removed. In the meantime, **we recommend to using Web Debugging with Hermes**.
+> **Important:** Some versions of Hermes have [known issues with direct debugging](https://github.com/microsoft/react-native-windows/issues/12982) that may be fixed, at which point this warning can be removed. In the meantime, **we recommend using Web Debugging**.
 
 > **Important:** Direct Debugging is relatively new and may still have some rough edges, depending on your choice of engine and debugger. See [Web vs. Direct Debugging](#web-vs-direct-debugging) for details.
 
@@ -271,7 +271,8 @@ Once everything is running, you should be able to debug your RNW application. To
 
 ## Web Debugging
 
-*Web Debugging* (also referred to as *Remote JS Debugging*) is the original JS debugging solution for RN and the default solution enabled in new RNW projects.
+*Web Debugging* (also referred to as *Remote JS Debugging*) was the original JS debugging solution for RN and RNW projects.
+
 
 It works by running your app's JS code within the JS engine of an external process, usually a web browser such as Edge (or Chrome). You're then able to debug your app using the development tools of that external process, i.e. the browser's web development tools.
 
@@ -290,9 +291,7 @@ It works by running your app's JS code within the JS engine of an external proce
 
 ### Step 1: Enable Web Debugging
 
-You have two options to enable Web Debugging: at compile-time in your app's native code or at runtime via the in-app Developer Menu.
 
-#### Option 1: Setting `UseWebDebugger` in your native code
 
 Web Debugging can be enabled by setting `UseWebDebugger` property of your app's `InstanceSettings` during startup.
 
@@ -300,7 +299,8 @@ Web Debugging can be enabled by setting `UseWebDebugger` property of your app's 
 
 <!--C#-->
 
-##### Modifying your C# RNW app
+#### Modifying your C# RNW app
+
 
 1. You'll want to edit your `App`'s constructor in `App.xaml.cs` with:
 
@@ -311,7 +311,8 @@ InstanceSettings.UseDirectDebugger = false;
 
 <!--C++-->
 
-##### Modifying your C++ RNW app
+#### Modifying your C++ RNW app
+
 
 1. You'll want to edit your `App`'s constructor in `App.cpp` with:
 
