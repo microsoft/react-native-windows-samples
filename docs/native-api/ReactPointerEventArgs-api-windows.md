@@ -17,7 +17,7 @@ Event arguments wrapper for [`IViewManagerWithPointerEvents`](IViewManagerWithPo
 
 > **EXPERIMENTAL**
 
-Gets or sets a flag that allows the ReactRootView to handle pointer events even when it does not capture the pointer. This is particularly useful for view managers that seek to capture the pointer to handle move events for a gesture (e.g., dragging), but conditionally may allow the ReactRootView to emit events (e.g., if the [`PointerEventKind.End`](PointerEventKind#end) event is received before a drag threshold is hit.
+Gets or sets a flag that allows the ReactRootView to handle pointer events even when it does not capture the pointer. This is particularly useful for view managers that seek to capture the pointer to handle move events for a gesture (e.g., dragging), but conditionally may allow the ReactRootView to emit events (e.g., if the [`PointerEventKind.End`](PointerEventKind) event is received before a drag threshold is hit.
 
 ### Args
 `readonly`  [`PointerRoutedEventArgs`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) `Args`
@@ -31,7 +31,7 @@ Gets the wrapped routed pointer event.
 
 > **EXPERIMENTAL**
 
-Gets or sets the pointer event kind. The only valid override is [`PointerEventKind.CaptureLost`](PointerEventKind#capturelost) to [`PointerEventKind.End`](PointerEventKind#end) to handle cases where PointerCaptureLost events on ReactRootView can be safely treated as PointerReleased events, e.g., for pointer events on selectable text.
+Gets or sets the pointer event kind. The only valid override is [`PointerEventKind.CaptureLost`](PointerEventKind) to [`PointerEventKind.End`](PointerEventKind) to handle cases where PointerCaptureLost events on ReactRootView can be safely treated as PointerReleased events, e.g., for pointer events on selectable text.
 
 ### Target
  Object `Target`
