@@ -12,6 +12,7 @@
 !versioned_docs/version-0.71/native-api/*-api-windows*.md
 !versioned_docs/version-0.72/native-api/*-api-windows*.md
 !versioned_docs/version-0.73/native-api/*-api-windows*.md
+!versioned_docs/version-0.74/native-api/*-api-windows*.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
@@ -25,6 +26,12 @@ File not found native-api/IReactContext-api-windows.md while parsing versioned_d
 File not found native-api/ReactNativeHost-api-windows.md while parsing versioned_docs/version-0.72/native-modules-advanced.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
+File not found getting-started.md while parsing versioned_docs/version-0.74/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.74/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.74/getting-started.md
+File not found run-windows-cli.md while parsing versioned_docs/version-0.74/getting-started.md
+File not found getting-started.md while parsing versioned_docs/version-0.74/hermes.md
+File not found rnm-getting-started.md while parsing versioned_docs/version-0.74/hermes.md
 File not found getting-started.md while parsing versioned_docs/version-0.73/getting-started.md
 File not found native-modules.md while parsing versioned_docs/version-0.73/getting-started.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.73/getting-started.md

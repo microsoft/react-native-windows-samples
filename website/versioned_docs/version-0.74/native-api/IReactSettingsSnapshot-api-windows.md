@@ -1,6 +1,7 @@
 ---
-id: IReactSettingsSnapshot
+id: version-0.74-IReactSettingsSnapshot
 title: IReactSettingsSnapshot
+original_id: IReactSettingsSnapshot
 ---
 
 Kind: `interface`

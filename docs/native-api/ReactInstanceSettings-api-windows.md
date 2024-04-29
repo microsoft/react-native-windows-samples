@@ -199,6 +199,8 @@ When the file is saved, the packager will trigger reloading.
 ### UseWebDebugger
  bool `UseWebDebugger`
 
+> **Deprecated**: Debugging should be done using DirectDebugging rather than WebDebugger.  Web debugging changes the app behavior and will be removed in a future version.
+
 Controls whether the instance JavaScript runs in a remote environment such as within a browser.
 By default, this is using a browser navigated to http://localhost:8081/debugger-ui served by Metro/Haul.
 Debugging will start as soon as the react native instance is loaded.

@@ -299,7 +299,7 @@ uint32_t **`GetArraySize`**([`JsiObjectRef`](JsiObjectRef) arr)
 
 
 ### GetNativeState
-[`JsiObjectRef`](JsiObjectRef) **`GetNativeState`**([`JsiObjectRef`](JsiObjectRef) obj)
+[`IReactNonAbiValue`](IReactNonAbiValue) **`GetNativeState`**([`JsiObjectRef`](JsiObjectRef) obj)
 
 > **EXPERIMENTAL**
 
@@ -488,7 +488,7 @@ void **`SetError`**([`JsiErrorType`](JsiErrorType) errorType, string errorDetail
 
 
 ### SetNativeState
-void **`SetNativeState`**([`JsiObjectRef`](JsiObjectRef) obj, [`JsiObjectRef`](JsiObjectRef) state)
+void **`SetNativeState`**([`JsiObjectRef`](JsiObjectRef) obj, [`IReactNonAbiValue`](IReactNonAbiValue) state)
 
 > **EXPERIMENTAL**
 
