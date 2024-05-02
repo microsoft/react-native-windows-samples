@@ -6,7 +6,7 @@
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{f4665967-1a9e-44c7-bf49-11105a29dc29}</ProjectGuid>
+    <ProjectGuid>{d860176d-808a-4119-8bef-7fa74976a51f}</ProjectGuid>
     <ProjectName>Calculator</ProjectName>
     <RootNamespace>Calculator</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
