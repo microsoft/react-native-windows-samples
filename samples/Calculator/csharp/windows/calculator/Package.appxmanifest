@@ -15,7 +15,7 @@
 
   <Properties>
     <DisplayName>Calculator</DisplayName>
-    <PublisherDisplayName>"CN=React Native Windows Sample"</PublisherDisplayName>
+    <PublisherDisplayName>CN=React Native Windows Sample</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
