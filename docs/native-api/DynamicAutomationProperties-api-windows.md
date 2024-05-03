@@ -47,6 +47,9 @@ Kind: `class`
 ### AccessibilityValueTextProperty
 `static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AccessibilityValueTextProperty`
 
+### AriaRoleProperty
+`static`   `readonly`  [`DependencyProperty`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyProperty) `AriaRoleProperty`
+
 
 
 ## Methods
@@ -115,6 +118,11 @@ Kind: `class`
 
 
 
+### GetAriaRole
+`static` [`AriaRole`](AriaRole) **`GetAriaRole`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element)
+
+
+
 ### SetAccessibilityActionEventHandler
 `static` void **`SetAccessibilityActionEventHandler`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, [`AccessibilityActionEventHandler`](AccessibilityActionEventHandler) value)
 
@@ -177,6 +185,11 @@ Kind: `class`
 
 ### SetAccessibilityValueText
 `static` void **`SetAccessibilityValueText`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, string value)
+
+
+
+### SetAriaRole
+`static` void **`SetAriaRole`**([`UIElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, [`AriaRole`](AriaRole) value)
 
 
 
