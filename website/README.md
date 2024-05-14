@@ -172,7 +172,7 @@ Complete the documentation updates for both main and stable version 0.XX above.
 
 ## Cutting Documentation for a New React Native Windows Release
 1. Update necessary version references in [docs](../docs/).
-    1. `getting-started.md`
+    1. [`getting-started.md`](https://github.com/microsoft/react-native-windows-samples/blob/main/docs/getting-started.md) - make sure to update from "nightly" to "latest" and change the previous stable version from "latest" to "0.XX-stable" in react-native init.
 1. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation.
 1. If `win10-compat.md` has changed since the last version cut, copy contents of `docs/win10-compat.md`:
     1. The oldest version of `win10-compat.md` in versioned_docs should be replaced with the one from `docs`. Make sure to adjust the page id to match the older version.
