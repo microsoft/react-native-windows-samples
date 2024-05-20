@@ -73,7 +73,7 @@ If you're curious about the **sample apps** we have published for inspiration:
 [Calculator app]: https://github.com/microsoft/react-native-windows-samples/tree/main/samples/Calculator
 [ToDos Feed app]: https://github.com/microsoft/react-native-windows-samples/tree/main/samples/TodosFeed
 [Windows AppConsult blog]: https://techcommunity.microsoft.com/t5/Windows-Dev-AppConsult/Getting-started-with-React-Native-for-Windows/ba-p/912093
-  `
+  `,
 };
 
 class Index extends React.Component {
@@ -83,54 +83,83 @@ class Index extends React.Component {
 
     const Heading = ({ text }) => <h2 className="Heading">{text}</h2>;
 
-    const GetStartedButton = ({ pageName, platformName}) => (
+    const GetStartedButton = ({ pageName, platformName }) => (
       <a
         className="ActionButton primary"
         href={`${baseUrl}docs/${pageName}`}
         target="_self"
       >
-        <b style={{fontSize: 24}}>Get started with {platformName}</b>
+        <b style={{ fontSize: 24 }}>Get started with {platformName}</b>
       </a>
     );
 
-    const VideoCardItem = ({ videolength, videotitle, videotype, videodifficulty, speakername, imgurl}) => (
+    const VideoCardItem = ({
+      videolength,
+      videotitle,
+      videotype,
+      videodifficulty,
+      speakername,
+      imgurl,
+    }) => (
       <div className="CenterContent">
-        <div className="videocard" style={{maxHeight: 380}}>
-            <div style={{position: 'relative'}}>
-              <div style={{maxWidth: '100%', maxHeight: '100%'}}>
-                <img src={imgurl} alt="videoimg"/>
-              </div>
-              <div className="videocardlengthtip">
-                <div>
-                  <div className="videocardtipbackground">
-                    <div>
-                        <img src="./img/homepage/timeicon.png" alt="timeicon"/>
-                    </div>
-                    <div>
-                      <p style={{color: '#fff', marginLeft: 8, marginTop: 4, fontSize: 14}}>{videolength}</p>
-                    </div>
+        <div className="videocard" style={{ maxHeight: 380 }}>
+          <div style={{ position: "relative" }}>
+            <div style={{ maxWidth: "100%", maxHeight: "100%" }}>
+              <img src={imgurl} alt="videoimg" />
+            </div>
+            <div className="videocardlengthtip">
+              <div>
+                <div className="videocardtipbackground">
+                  <div>
+                    <img src="./img/homepage/timeicon.png" alt="timeicon" />
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        color: "#fff",
+                        marginLeft: 8,
+                        marginTop: 4,
+                        fontSize: 14,
+                      }}
+                    >
+                      {videolength}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="videocardcontent">
-              <div className="videocardheader">
-                <p style={{fontsize: 46, fontWeight: 700}}>{videotitle}</p>
-                <div className="videocardinfo">
-                  <p style={{fontSize: 14}}>{videotype}</p>
-                  <div className="subtitledot"/>
-                  <p style={{fontSize: 14}}>{videodifficulty}</p>
-                </div>
-              </div>
-              <div className="videocarddriverinfo" style={{color: '#0e53bd'}}>
-                <a href={"https://twitter.com/" + speakername}>
-                  <div className="column" style={{marginRight: -130, marginLeft: -15}}>
-                    <img style={{borderRadius: '50%', width: '32px', height: '32px'}} src={"https://avatars.io/twitter/" + speakername} alt="speakericon"/>
-                  </div>
-                  <div className="column" style={{marginTop: 5}}>@{speakername}</div>
-                </a>
+          </div>
+          <div className="videocardcontent">
+            <div className="videocardheader">
+              <p style={{ fontsize: 46, fontWeight: 700 }}>{videotitle}</p>
+              <div className="videocardinfo">
+                <p style={{ fontSize: 14 }}>{videotype}</p>
+                <div className="subtitledot" />
+                <p style={{ fontSize: 14 }}>{videodifficulty}</p>
               </div>
             </div>
+            <div className="videocarddriverinfo" style={{ color: "#0e53bd" }}>
+              <a href={"https://twitter.com/" + speakername}>
+                <div
+                  className="column"
+                  style={{ marginRight: -130, marginLeft: -15 }}
+                >
+                  <img
+                    style={{
+                      borderRadius: "50%",
+                      width: "32px",
+                      height: "32px",
+                    }}
+                    src={"https://avatars.io/twitter/" + speakername}
+                    alt="speakericon"
+                  />
+                </div>
+                <div className="column" style={{ marginTop: 5 }}>
+                  @{speakername}
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -222,9 +251,9 @@ class Index extends React.Component {
 
     const Intro = () => (
       <div background="light" className="SmallSection">
-          <div className="CenterContent" style={{paddingTop: -150}}>
-            <MarkdownBlock>{textContent.intro}</MarkdownBlock>
-          </div>
+        <div className="CenterContent" style={{ paddingTop: -150 }}>
+          <MarkdownBlock>{textContent.intro}</MarkdownBlock>
+        </div>
       </div>
     );
 
@@ -233,15 +262,27 @@ class Index extends React.Component {
         <div className="content">
           <div className="row">
             <div className="column">
-              <img style={{maxWidth: '200%', marginLeft: -300, marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_windows_cropped.png" alt="rnw_cropped"/>
+              <img
+                style={{
+                  maxWidth: "200%",
+                  marginLeft: -300,
+                  marginTop: -70,
+                  marginBottom: -70,
+                }}
+                src="./img/homepage/native_and_js_windows_cropped.png"
+                alt="rnw_cropped"
+              />
             </div>
             <div className="column">
               <Heading text="Build for Windows" />
-              <GitHubButton/>
-              <div style={{marginBottom: 35}}>
+              <GitHubButton />
+              <div style={{ marginBottom: 35 }}>
                 <MarkdownBlock>{textContent.windowsintro}</MarkdownBlock>
               </div>
-              <GetStartedButton pageName="getting-started" platformName="Windows" />
+              <GetStartedButton
+                pageName="getting-started"
+                platformName="Windows"
+              />
             </div>
           </div>
         </div>
@@ -254,14 +295,21 @@ class Index extends React.Component {
           <div className="row">
             <div className="column">
               <Heading text="Build for macOS" />
-              <GitHubButtonmacOS/>
-              <div style={{marginBottom: 35}}>
+              <GitHubButtonmacOS />
+              <div style={{ marginBottom: 35 }}>
                 <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
               </div>
-              <GetStartedButton pageName="rnm-getting-started" platformName="macOS" />
+              <GetStartedButton
+                pageName="rnm-getting-started"
+                platformName="macOS"
+              />
             </div>
             <div className="column">
-              <img style={{maxWidth: '200%', marginTop: -70, marginBottom: -70}} src="./img/homepage/native_and_js_mac_cropped.png" alt="rnw_cropped"/>
+              <img
+                style={{ maxWidth: "200%", marginTop: -70, marginBottom: -70 }}
+                src="./img/homepage/native_and_js_mac_cropped.png"
+                alt="rnw_cropped"
+              />
             </div>
           </div>
         </div>
@@ -279,10 +327,17 @@ class Index extends React.Component {
 
     const Tutorials = () => (
       <Section background="tint">
-        <div className="CenterContent" style={{marginTop: -50}}>
+        <div className="CenterContent" style={{ marginTop: -50 }}>
           <div>
-            <a href="videos"><h1 style={{textAlign: 'center', color: '#0e53bd'}}>Take Your App Further</h1></a>
-            <p style={{textAlign: 'center', marginTop: -10}}>Speed up development with videos on how to build React Native apps for Windows and macOS.</p>
+            <a href="videos">
+              <h1 style={{ textAlign: "center", color: "#0e53bd" }}>
+                Take Your App Further
+              </h1>
+            </a>
+            <p style={{ textAlign: "center", marginTop: -10 }}>
+              Speed up development with videos on how to build React Native apps
+              for Windows and macOS.
+            </p>
 
             <div className="row">
               <div className="column">
@@ -293,8 +348,9 @@ class Index extends React.Component {
                     videotype="Walkthrough"
                     videodifficulty="Beginner"
                     speakername="alloy"
-                    imgurl="./img/homepage/eloy_rn4m_preview_full.png"/>
-                  </a>
+                    imgurl="./img/homepage/eloy_rn4m_preview_full.png"
+                  />
+                </a>
               </div>
               <div className="column">
                 <a href={baseUrl + "videos"}>
@@ -304,8 +360,9 @@ class Index extends React.Component {
                     videotype="Type of Video"
                     videodifficulty="Difficulty"
                     speakername="reactwindows"
-                    imgurl="./img/homepage/video_learning_image-small.png"/>
-                  </a>
+                    imgurl="./img/homepage/video_learning_image-small.png"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -316,9 +373,9 @@ class Index extends React.Component {
     return (
       <div className="homepage">
         <HeaderHero />
-        <Intro/>
-        <WindowsIntro/>
-        <MacIntro/>
+        <Intro />
+        <WindowsIntro />
+        <MacIntro />
         {/*<Tutorials/>*/}
         <About />
       </div>
