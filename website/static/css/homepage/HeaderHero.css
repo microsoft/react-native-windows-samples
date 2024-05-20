@@ -109,6 +109,14 @@
   padding: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
 /* Create two equal columns that floats next to each other */
 .resourcesSideNavLinkColumn {
   float: left;

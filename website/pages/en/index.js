@@ -263,6 +263,7 @@ class Index extends React.Component {
           <div className="row">
             <div className="column">
               <img
+                className="HomePageImage"
                 style={{
                   maxWidth: "200%",
                   marginLeft: -300,
@@ -306,6 +307,7 @@ class Index extends React.Component {
             </div>
             <div className="column">
               <img
+                className="HomePageImage"
                 style={{ maxWidth: "200%", marginTop: -70, marginBottom: -70 }}
                 src="./img/homepage/native_and_js_mac_cropped.png"
                 alt="rnw_cropped"
