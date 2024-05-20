@@ -29,7 +29,7 @@
 
 .videocard {
   border-radius: 6px;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,.4);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
   background-color: #fff;
   overflow: hidden;
   display: -ms-flexbox;
@@ -92,8 +92,8 @@
 .videocardtipbackground {
   display: flex;
   align-items: center;
-  box-shadow: 0 5px 10px 0 rgba(1,1,1,.2);
-  background-color: rgba(1,1,1,.75);
+  box-shadow: 0 5px 10px 0 rgba(1, 1, 1, 0.2);
+  background-color: rgba(1, 1, 1, 0.75);
   border-radius: 4px;
   padding: 15px 7px 5px 10px;
   color: #fff;
@@ -126,9 +126,9 @@
 }
 
 @media screen and (max-width: 800px) {
-    .discriptionadjust {
-        white-space: nowrap !important;
-    }
+  .discriptionadjust {
+    white-space: nowrap !important;
+  }
 }
 
 .HeaderHero .title {
