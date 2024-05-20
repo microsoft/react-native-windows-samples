@@ -172,7 +172,7 @@ Complete the documentation updates for both main and stable version 0.XX above.
 
 ## Cutting Documentation for a New React Native Windows Release
 1. Update necessary version references in [docs](../docs/).
-    1. `getting-started.md`
+    1. [`getting-started.md`](https://github.com/microsoft/react-native-windows-samples/blob/main/docs/getting-started.md) - make sure to update from "nightly" to "latest" and change the previous stable version from "latest" to "0.XX-stable" in react-native init.
 1. Follow the [Integration into the react-native-windows-samples-repo](https://github.com/microsoft/react-native-windows/wiki/API-documentation#integration-into-the-react-native-windows-samples-repo) steps to add the latest API documentation.
 1. If `win10-compat.md` has changed since the last version cut, copy contents of `docs/win10-compat.md`:
     1. The oldest version of `win10-compat.md` in versioned_docs should be replaced with the one from `docs`. Make sure to adjust the page id to match the older version.
@@ -186,7 +186,7 @@ Complete the documentation updates for both main and stable version 0.XX above.
 1. Edit `website/.unbroken_exclusions` and add the line `!versioned_docs/version-0.XX/native-api/*-api-windows*.md` underneath the other versioned doc exclusions listed at the top of the file.
 1. Update `support.js` and add/update the entry for the new version of React Native Windows with the correct release and Active Support Start Date _X_ (ex: 6/27/22). Then make sure to edit the previous version's:
     1. Maintenance Start Date (set to the last day of the month that's 1 month out from _X_, ex: 7/31/22)
-    2. End of Support Date (set to the last day of the month that's 3 months out from _X_, ex: 9/30/22)
+    2. End of Support Date (set to the last day of the month that's 2 months out from _X_, ex: 9/30/22)
 1. When you are ready for your new docs to be the default documentation on the website, edit `website/siteConfig.js` to point to 0.XX for its `defaultVersionShown` constant.
 
 # FAQ

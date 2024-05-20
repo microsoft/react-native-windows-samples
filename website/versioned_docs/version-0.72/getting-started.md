@@ -23,7 +23,7 @@ Remember to call `react-native init` from the place you want your project direct
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx react-native@latest init <projectName> --version "latest"
+npx react-native@0.72-stable init <projectName> --version "0.72-stable"
 ```
 
 ### Navigate into this newly created directory
@@ -45,6 +45,8 @@ npx react-native-windows-init --overwrite
 > The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
 
 For information on the options that `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
+
+> RNW 0.72 depends on Node >= 16.0, but some transitive dependencies may require newer versions of Node. If you're using using Node 16 and see dependencies errors about needing a newer version of Node, you can either upgrade your version of Node, or suppress the errors with `yarn config set ignore-engines true`. See [RNW issue #12711](https://github.com/microsoft/react-native-windows/issues/12711).
 
 ## Running a React Native Windows App
 

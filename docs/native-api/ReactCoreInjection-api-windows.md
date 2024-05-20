@@ -50,6 +50,15 @@ Override platform name. This will change the platform used when requesting bundl
 
 
 
+### SetTimerFactory
+`static` void **`SetTimerFactory`**([`IReactPropertyBag`](IReactPropertyBag) properties, [`TimerFactory`](TimerFactory) timerFactory)
+
+> **EXPERIMENTAL**
+
+Sets a factory method for creating custom timers, in environments where system dispatch timers should not be used.
+
+
+
 ### SetTopLevelWindowId
 `static` void **`SetTopLevelWindowId`**([`IReactPropertyBag`](IReactPropertyBag) properties, uint64_t windowId)
 

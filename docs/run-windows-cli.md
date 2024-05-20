@@ -16,6 +16,9 @@ Run this from an existing React Native for Windows app to build and deploy.
 npx react-native run-windows
 ```
 ### Options
+
+> **Note:** Remote Debugging was officially marked as [deprecated](https://github.com/react-native-community/discussions-and-proposals/discussions/734) in RN 0.73 and will be removed in a later release.
+
 Here are the options that `react-native run-windows` takes:
 | Option                | Input Type | Description                                      |
 |-----------------------|------------|--------------------------------------------------|
@@ -26,7 +29,7 @@ Here are the options that `react-native run-windows` takes:
 | `--emulator`          | boolean    | Deploys the app to an emulator                   |
 | `--device`            | boolean    | Deploys the app to a connected device            |
 | `--target`            | string     | Deploys the app to the specified `GUID` for a device |
-| `--remote-debugging`  | boolean    | Deploys the app in remote debugging mode.        |
+| `--remote-debugging`  | boolean    | **(Deprecated)** Deploys the app in remote debugging mode.        |
 | `--logging`           | boolean    | Enables logging                                  |
 | `--no-packager`       | boolean    | Do not launch packager while building            |
 | `--bundle`            | boolean    | Enable Bundle configuration and it would be `ReleaseBundle`/`DebugBundle` other than `Release`/`Debug` |

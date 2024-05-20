@@ -53,7 +53,8 @@
     "Components (Windows)": [
       "flyout-component",
       "glyph-component",
-      "popup-component"
+      "popup-component",
+      "textinput-component"
     ],
     "JavaScript API (Windows)": [
       "apptheme-api",

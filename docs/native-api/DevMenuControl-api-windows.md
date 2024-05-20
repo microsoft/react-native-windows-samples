@@ -43,15 +43,6 @@ Extends: [`UserControl`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Cont
 ### Reload
 `readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Reload`
 
-### RemoteDebug
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `RemoteDebug`
-
-### RemoteDebugDesc
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `RemoteDebugDesc`
-
-### RemoteDebugText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `RemoteDebugText`
-
 ### SamplingProfiler
 `readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `SamplingProfiler`
 

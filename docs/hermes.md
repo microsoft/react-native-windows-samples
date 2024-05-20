@@ -11,11 +11,11 @@ To learn more about what it is and how to use it, check out the [React Native](h
 
 ## Hermes on Windows:
 
-Hermes is experimentally supported on Windows, generally providing better performance characteristics than the default Chakra engine.
+Hermes is supported on Windows, generally providing better performance characteristics than the default Chakra engine.
 
 ### Enabling Hermes for new projects
 
-Pass the `--useHermes` flag to `react-native-windows-init` when creating a new project. This will set up your project to use the Hermes engine and to generate bundles as Hermes bytecode instead of JavaScript.
+Hermes is enabled by default for React Native Windows projects.
 
 ### Using Hermes in an existing project
 
@@ -30,7 +30,7 @@ Set the `UseHermes` property to `true` in the `ExperimentalFeatures.props` file 
 
 ### Disabling Hermes
 
-Set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
+To revert back to using Chakra, set the `UseHermes` property to `false` in the `ExperimentalFeatures.props` file in your project's `windows` directory:
 
 ```xml
 <PropertyGroup Label="Microsoft.ReactNative Experimental Features">

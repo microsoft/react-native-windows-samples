@@ -91,6 +91,8 @@ See [Fast Refresh](https://reactnative.dev/docs/fast-refresh) for more informati
 ### UseWebDebugger
 `readonly`  bool `UseWebDebugger`
 
+> **Deprecated**: Debugging should be done using DirectDebugging rather than WebDebugger.  Web debugging changes the app behavior and will be removed in a future version.
+
 A read-only snapshot of the [`ReactInstanceSettings.UseWebDebugger`](ReactInstanceSettings#usewebdebugger) property value at the time when the React instance was created.
 Controls whether the instance JavaScript runs in a remote environment such as within a browser.
 By default, this is using a browser navigated to http://localhost:8081/debugger-ui served by Metro/Haul.

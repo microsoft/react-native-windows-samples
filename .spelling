@@ -28,7 +28,7 @@ encodings
 enum
 exclusionList
 exe
-ExperimentalFlags.props
+ExperimentalFeatures.props
 filesystem
 flyout
 functor
@@ -38,6 +38,7 @@ i.e.
 initializer
 interop
 iOS
+KeyEvents
 ItemGroup
 lifecycle
 macOS
@@ -45,6 +46,7 @@ middleware
 monorepos
 MSBuild
 MSBuild.exe
+multiline
 namespace
 namespaces
 native-ized
@@ -73,11 +75,13 @@ roadmap
 runtime
 runtimes
 schemas
+shiftKey
 Sourcetree
 struct
 symlink
 symlinks
 tada
+TextInput
 theming
 toolchain
 TurboModule
