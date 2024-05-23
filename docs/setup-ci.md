@@ -14,24 +14,28 @@ The VM images supported by GitHub Actions CI/CD can be found [here](https://gith
 Next you need to create a YAML file for GitHub Actions, the basic steps are:
 - Checkout code and setup the environment
 ```yaml
-    - uses: actions/checkout@v2
-      name: Checkout Code
+    name: Windows CI
+    on: [pull_request]
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14'
+    jobs:
+      run-windows-tests:
+        name: Build & run tests
+        runs-on: windows-2022
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1.0.2
-      with:
-        vs-version: 16.8
+        steps:
+          - uses: actions/checkout@v2
+            name: Checkout Code
 
-    - name: Install node modules
-      run: yarn --frozen-lockfile
+          - name: Setup Node.js
+            uses: actions/setup-node@v1
+            with:
+              node-version: '^18'
 
-    - name: yarn build
-      run:  yarn build
+          - name: Setup MSBuild
+            uses: microsoft/setup-msbuild@v2
+
+          - name: Install node modules
+            run: yarn --frozen-lockfile
 ```
 - Build and run the project
 ```yaml
