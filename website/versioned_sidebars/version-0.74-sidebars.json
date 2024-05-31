@@ -1,0 +1,84 @@
+{
+  "version-0.74-docs": {
+    "The Basics (Windows)": [
+      "version-0.74-getting-started",
+      "version-0.74-rnw-dependencies",
+      "version-0.74-run-windows-cli",
+      "version-0.74-parity-status",
+      "version-0.74-config",
+      "version-0.74-windowsbrush-and-theme",
+      "version-0.74-releases",
+      "version-0.74-platform",
+      "version-0.74-upgrade-app",
+      "version-0.74-setup-ci",
+      "version-0.74-app-publishing"
+    ],
+    "Native Modules (Windows)": [
+      "version-0.74-native-modules",
+      "version-0.74-view-managers",
+      "version-0.74-native-modules-setup",
+      "version-0.74-native-modules-vs-turbo-modules",
+      "version-0.74-native-modules-using",
+      "version-0.74-native-modules-autolinking",
+      "version-0.74-native-modules-advanced",
+      "version-0.74-supported-community-modules"
+    ],
+    "Native Development (Windows)": [
+      "version-0.74-native-code",
+      "version-0.74-native-code-language-choice",
+      "version-0.74-native-modules-marshalling-data",
+      "version-0.74-native-modules-async",
+      "version-0.74-native-modules-jsvalue",
+      "version-0.74-native-modules-csharp-codegen",
+      "version-0.74-win10-vm",
+      "version-0.74-customizing-sdk-versions",
+      "version-0.74-managing-cpp-deps"
+    ],
+    "The Basics (MacOS)": [
+      "version-0.74-rnm-getting-started",
+      "version-0.74-rnm-dependencies"
+    ],
+    "Troubleshooting": [
+      "version-0.74-debugging-javascript",
+      "version-0.74-native-modules-troubleshooting",
+      "version-0.74-metro-config-out-tree-platforms"
+    ],
+    "Experimental": [
+      "version-0.74-hermes",
+      "version-0.74-NuGet",
+      "version-0.74-nuget-update"
+    ]
+  },
+  "version-0.74-apis": {
+    "Components (Windows)": [
+      "version-0.74-flyout-component",
+      "version-0.74-glyph-component",
+      "version-0.74-popup-component",
+      "version-0.74-textinput-component"
+    ],
+    "JavaScript API (Windows)": [
+      "version-0.74-apptheme-api",
+      "version-0.74-ikeyboardprops-api",
+      "version-0.74-iviewwindowsprops-api"
+    ],
+    "Native API (Windows)": [
+      "version-0.74-native-api/IJSValueReader",
+      "version-0.74-native-api/IJSValueWriter",
+      "version-0.74-native-api/IReactContext",
+      "version-0.74-native-api/IReactDispatcher",
+      "version-0.74-native-api/IReactModuleBuilder",
+      "version-0.74-native-api/IReactNonAbiValue",
+      "version-0.74-native-api/IReactPackageBuilder",
+      "version-0.74-native-api/IReactPackageProvider",
+      "version-0.74-native-api/IReactPropertyBag",
+      "version-0.74-native-api/IRedBoxHandler",
+      "version-0.74-native-api/IViewManager",
+      "version-0.74-native-api/ReactApplication",
+      "version-0.74-native-api/ReactInstanceSettings",
+      "version-0.74-native-api/ReactNativeHost",
+      "version-0.74-native-api/XamlUIService",
+      "version-0.74-native-api/Native-API-Reference",
+      "version-0.74-coreapp"
+    ]
+  }
+}

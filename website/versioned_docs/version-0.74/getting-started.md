@@ -1,5 +1,5 @@
 ---
-id: version-0.73-getting-started
+id: version-0.74-getting-started
 title: Get Started with Windows
 original_id: getting-started
 ---
@@ -23,7 +23,7 @@ Remember to call `react-native init` from the place you want your project direct
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes react-native@0.73-stable init <projectName> --version "0.73-stable"
+npx --yes react-native@latest init <projectName> --version "latest"
 ```
 
 ### Navigate into this newly created directory

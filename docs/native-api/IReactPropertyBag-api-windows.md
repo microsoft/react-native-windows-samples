@@ -54,5 +54,6 @@ If the new value is null, then the property is removed.
 - [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
+- [`Timer`](Timer)
 - [`UIBatchCompleteCallback`](UIBatchCompleteCallback)
 - [`XamlUIService`](XamlUIService)
