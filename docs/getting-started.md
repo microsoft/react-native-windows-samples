@@ -27,13 +27,13 @@ npx --yes react-native@nightly init <projectName> --version "nightly"
 
 ### Navigate into this newly created directory
 
-Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
+React Native will have created your project in a new sub-directory, which you must enter before continuing.
 
 ```bat
-cd projectName
+cd <projectName>
 ```
 
-### Add React Native for Windows to your project's dependencies
+### Add React Native Windows to your project's dependencies
 
 <!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
 
@@ -57,7 +57,7 @@ npm install --save react-native-windows@canary
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-### Initialize the React Native for Windows native code and projects
+### Initialize the React Native Windows native code and projects
 
 Lastly, initialize the React Native for Windows application with the [React Native Windows CLI (init-windows)](init-windows-cli.md) command:
 
@@ -69,7 +69,7 @@ npx react-native init-windows --overwrite
 
 > **Note:** Previous versions of RNW recommended use of the `react-native-windows-init` command, which is being deprecated. For more information on the `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
 
-## Running a React Native for Windows App
+## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
 > Also ensure your system meets all the [requirements](rnw-dependencies.md) to build a Windows app as well.
