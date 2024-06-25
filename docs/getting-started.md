@@ -59,7 +59,7 @@ npm install --save react-native-windows@canary
 
 ### Initialize the React Native Windows native code and projects
 
-Lastly, initialize the React Native for Windows application with the [React Native Windows CLI (init-windows)](init-windows-cli.md) command:
+Lastly, initialize the React Native for Windows application with the [init-windows command](init-windows-cli.md):
 
 ```bat
 npx react-native init-windows --overwrite
@@ -76,19 +76,17 @@ npx react-native init-windows --overwrite
 
 - Without Using Visual Studio
 
-  In your React Native Windows project directory, run:
+  In your React Native Windows project directory, run the [run-windows command](run-windows-cli.md):
 
   ```bat
   npx react-native run-windows
   ```
 
-  For information on the options that `react-native run-windows` takes, see [React Native Windows CLI (run-windows)](run-windows-cli.md).
-
-  A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
+  A new Command Prompt window will open with the React packager as well as your React Native for Windows app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
 - Using Visual Studio
 
-  - From the root of the project directory, run the [React Native Windows CLI (autolink-windows)](autolink-windows-cli.md) command which will automatically link your app's dependencies:
+  - From the root of the project directory, run the [autolink-windows command](autolink-windows-cli.md), which will automatically link your app's dependencies:
     ```bat
     npx react-native autolink-windows
     ```

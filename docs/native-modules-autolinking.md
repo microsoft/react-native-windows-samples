@@ -26,7 +26,7 @@ The information provided by `config` is described in [React Native Config Schema
 
 ## Autolinking process
 
-Autolinking is performed automatically as a part of the [React Native Windows CLI (run-windows)](run-windows-cli.md) command:
+Autolinking is performed automatically as a part of the [run-windows command](run-windows-cli.md):
 
 1. At build time, autolinking is performed first, before `msbuild.exe` is invoked and the build actually started. It uses the information provided by `config` to both generate and modify certain native files consumed by your app project.
     1. The `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
@@ -41,7 +41,7 @@ Autolinking is performed automatically as a part of the [React Native Windows CL
 
 ### Manually run autolinking
 
-If you would like to run the autolinking process outside of the build, you can run the [React Native Windows CLI (autolink-windows)](autolink-windows-cli.md) command manually at any time.
+If you would like to run the autolinking process outside of the build, you can run the [autolink-windows command](autolink-windows-cli.md) manually at any time.
 
 ### Skipping autolinking
 
