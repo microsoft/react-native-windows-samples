@@ -5,7 +5,7 @@ title: React Native Windows CLI
 
 When React Native for Windows is added to a React Native project, a variety of Windows-specific developer commands are added to the `react-native` CLI.
 
-> The following commands are provided by the the `@react-native-windows/cli` NPM package:
+> The following commands are provided by the the `@react-native-windows/cli` NPM package.
 
 ## `react-native autolink-windows`
 
