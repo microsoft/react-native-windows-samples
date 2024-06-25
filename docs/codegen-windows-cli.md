@@ -1,13 +1,13 @@
 ---
 id: codegen-windows-cli
-title: React Native Windows CLI (codegen-windows)
+title: react-native codegen-windows
 ---
 
 This guide will give you more information on the `codegen-windows` command of the React Native Windows CLI.
 
 ## `codegen-windows`
 
-`codegen-windows` is the CLI command provided by `@react-native-windows/cli` which is used to generate some necessary Windows-specific native code for native modules.
+The `codegen-windows` CLI command is used to generate some necessary Windows-specific native code for native modules.
 
 ### Usage
 Runs Windows-specific codegen for native modules.

@@ -1,13 +1,13 @@
 ---
 id: run-windows-cli
-title: React Native Windows CLI (run-windows)
+title: react-native run-windows
 ---
 
 This guide will give you more information on the `run-windows` command of the React Native Windows CLI.
 
 ## `run-windows`
 
-`run-windows` is the CLI command provided by `@react-native-windows/cli` which is used to build and run React Native for Windows apps. 
+The `run-windows` CLI command is used to build and run React Native for Windows apps. 
 
 ### Usage
 Builds your RNW app and starts it on a connected Windows desktop, emulator or device.

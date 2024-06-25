@@ -1,13 +1,13 @@
 ---
 id: init-windows-cli
-title: React Native Windows CLI (init-windows)
+title: react-native init-windows
 ---
 
 This guide will give you more information on the `init-windows` command of the React Native Windows CLI.
 
 ## `init-windows`
 
-`init-windows` is the CLI command provided by `@react-native-windows/cli` which is used to initialize a new React Native for Windows project inside an existing React Native project. 
+The `init-windows` CLI command is used to initialize a new React Native for Windows project inside an existing React Native project. 
 
 ### Usage
 Initializes a new RNW project from a given template.

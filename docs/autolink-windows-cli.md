@@ -1,13 +1,13 @@
 ---
 id: autolink-windows-cli
-title: React Native Windows CLI (autolink-windows)
+title: react-native autolink-windows
 ---
 
 This guide will give you more information on the `autolink-windows` command of the React Native Windows CLI.
 
 ## `autolink-windows`
 
-`autolink-windows` is the CLI command provided by `@react-native-windows/cli` which is used to link the native code and build systems for a React Native for Windows app with any native community modules it uses.
+The `autolink-windows` CLI command is used to link the native code and build systems for a React Native for Windows app with any native community modules it uses.
 
 **Note:** Autolinking runs automatically as part of running the `run-windows` CLI command, unless the `--no-autolink` argument is used.
 

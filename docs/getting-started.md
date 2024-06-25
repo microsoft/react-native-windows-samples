@@ -65,9 +65,9 @@ Lastly, initialize the React Native for Windows application with the [init-windo
 npx react-native init-windows --overwrite
 ```
 
-> **Note:** The `--overwrite` flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
+> **Note:** RNW templates contain a customized `metro.config.js` file, which is meant to merge cleanly into the default config provided by the standard React Native project template. If you are starting a new app, overwriting `metro.config.js` should have no impact. However, if you are adding Windows to an existing app with an already modified `metro.config.js` file, please make sure to back up and re-apply your modifications after adding RNW.
 
-> **Note:** Previous versions of RNW recommended use of the `react-native-windows-init` command, which is being deprecated. For more information on the `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
+> **Note:** Previous versions of the RNW Getting Started steps recommend the use of the `react-native-windows-init` command, which is being deprecated. While it's still available, information on the `react-native-windows-init` command is here: [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
 
 ## Running a React Native Windows App
 
