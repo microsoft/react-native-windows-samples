@@ -7,7 +7,7 @@ This guide will give you more information on the `autolink-windows` command of t
 
 ## `autolink-windows`
 
-`autolink-windows` is the CLI command provided by `@react-native-windows/cli` which is used to "autolink" the native code and build systems for a React Native for Windows app with any native community modules it uses.
+`autolink-windows` is the CLI command provided by `@react-native-windows/cli` which is used to link the native code and build systems for a React Native for Windows app with any native community modules it uses.
 
 **Note:** Autolinking runs automatically as part of running the `run-windows` CLI command, unless the `--no-autolink` argument is used.
 
@@ -33,5 +33,5 @@ This sends telemetry to Microsoft by default. You can prevent the telemetry from
 
 The software may collect information about you and your use of the software and send it to Microsoft. Microsoft may use this information to provide services and improve our products and services. You may turn off the telemetry as described in the repository. There are also some features in the software that may enable you and Microsoft to collect data from users of your applications. If you use these features, you must comply with applicable law, including providing appropriate notices to users of your applications together with a copy of Microsoft's privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data collection and use in the help documentation and our privacy statement. Your use of the software operates as your consent to these practices.
 
-This data collection notice only applies to the process of running the react-native-windows CLI (autolink-windows and related tools).
+This data collection notice only applies to the process of running the react-native-windows CLI commands.
   
