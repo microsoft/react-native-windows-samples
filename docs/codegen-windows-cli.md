@@ -23,7 +23,7 @@ Here are the options that `react-native codegen-windows` takes:
 | `--logging`           | boolean    | Verbose output logging                           |
 | `--check`             | boolean    | Only check whether any codegen files need to change |
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-| `-h`, `--help`        | boolean    | display help for command                         |
+| `-h`, `--help`        | boolean    | Display help for command                         |
 
 This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the below for more details.
 

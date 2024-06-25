@@ -24,9 +24,9 @@ Here are the options that `react-native init-windows` takes:
 | `--template`          | string     | Specify the template to use                      |
 | `--name`              | string     | The native project name. Defaults to the name property in `app.json` or `package.json` |
 | `--namespace`         | string     | The native project namespace, expressed using dots as separators, i.e. `Level1.Level2.Level3`. Defaults to the same as name |
-| `--overwrite`         | boolean    | Overwrite and existing files without prompting  |
+| `--overwrite`         | boolean    | Overwrite any existing files without prompting  |
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-| `-h`, `--help`        | boolean    | display help for command                         |
+| `-h`, `--help`        | boolean    | Display help for command                         |
 
 ### Templates
 

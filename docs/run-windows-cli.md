@@ -23,7 +23,7 @@ Here are the options that `react-native run-windows` takes:
 | Option                | Input Type | Description                                      |
 |-----------------------|------------|--------------------------------------------------|
 | `--release`           | boolean    | Specifies a Release build                        |
-| `--root`              | string     | Override the root directory for the windows build which contains the windows folder (default: `E:\\test63`) |
+| `--root`              | string     | Override the root directory for the project which contains the `windows` folder |
 | `--arch`              | string     | The build architecture, i.e. `ARM64`, `x86`, `x64`. Defaults to system architecture |
 | `--singleproc`        | boolean    | Disables multi-proc build                        |
 | `--emulator`          | boolean    | Deploys the app to an emulator                   |
@@ -37,7 +37,7 @@ Here are the options that `react-native run-windows` takes:
 | `--no-autolink`       | boolean    | Do not run autolinking                           |
 | `--no-build`          | boolean    | Do not build the solution                        |
 | `--no-deploy`         | boolean    | Do not deploy the app                            |
-| `--deploy-from-layout`| boolean    | Force deploy from layout, even in release builds |
+| `--deploy-from-layout`| boolean    | Force deploy from layout even in Release builds |
 | `--sln`               | string     | Override the app solution file determined by 'react-native config', i.e. `windows\myApp.sln` |
 | `--proj`              | string     | Override the app project file determined by 'react-native config', i.e. `windows\myApp\myApp.vcxproj` |
 | `--msbuildprops`      | string     | Comma separated props to pass to MSBuild, i.e. `prop1=value1,prop2=value2` |
@@ -45,7 +45,7 @@ Here are the options that `react-native run-windows` takes:
 | `--info`              | boolean    | Dump environment information                     |
 | `--direct-debugging`  | number     | Enable direct debugging on specified port        |
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-| `-h`, `--help`        | boolean    | display help for command                         |
+| `-h`, `--help`        | boolean    | Display help for command                         |
 
 This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the below for more details.
 

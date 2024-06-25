@@ -27,7 +27,7 @@ Here are the options that `react-native autolink-windows` takes:
 | `--sln`               | string     | Override the app solution file determined by 'react-native config', i.e. `windows\myApp.sln` |
 | `--proj`              | string     | Override the app project file determined by 'react-native config', i.e. `windows\myApp\myApp.vcxproj` |
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-| `-h`, `--help`        | boolean    | display help for command                         |
+| `-h`, `--help`        | boolean    | Display help for command                         |
 
 This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the below for more details.
 

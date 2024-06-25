@@ -9,7 +9,7 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
-## Install React Native for Windows
+## Create a new React Native project
 
 Remember to call `react-native init` from the place you want your project directory to live.
 
@@ -33,19 +33,43 @@ Once your project has been initialized, React Native will have created a new sub
 cd projectName
 ```
 
-### Install the Windows extension
+### Add React Native for Windows to your project's dependencies
 
-Lastly, install the React Native for Windows packages.
+<!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
+
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
+<!-- 2. For the latest stable version in versioned_docs use "latest" -->
+<!-- 3. For older stable versions use the stable tag name, i.e. "0.73-stable" -->
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Using Yarn (Recommended)-->
 
 ```bat
-npx --yes react-native-windows-init --overwrite
+yarn add react-native-windows@canary
 ```
 
-> The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
+<!--Using NPM-->
 
-For information on the options that `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
+```bat
+npm install --save react-native-windows@canary
+```
 
-## Running a React Native Windows App
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Initialize the React Native for Windows native code and projects
+
+Lastly, initialize the React Native for Windows application with the [React Native Windows CLI (init-windows)](init-windows-cli.md) command:
+
+```bat
+npx react-native init-windows --overwrite
+```
+
+> **Note:** The `--overwrite` flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
+
+> **Note:** Previous versions of RNW recommended use of the `react-native-windows-init` command, which is being deprecated. For more information on the `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
+
+## Running a React Native for Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
 > Also ensure your system meets all the [requirements](rnw-dependencies.md) to build a Windows app as well.
@@ -58,13 +82,13 @@ For information on the options that `react-native-windows-init` takes see [React
   npx react-native run-windows
   ```
 
-  For information on the options that `@react-native-windows/cli` takes see [React Native Windows CLI](run-windows-cli.md).
+  For information on the options that `react-native run-windows` takes, see [React Native Windows CLI (run-windows)](run-windows-cli.md).
 
   A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
 - Using Visual Studio
 
-  - From the root of the project directory, run the following script which will automatically link your app's dependencies:
+  - From the root of the project directory, run the [React Native Windows CLI (autolink-windows)](autolink-windows-cli.md) command which will automatically link your app's dependencies:
     ```bat
     npx react-native autolink-windows
     ```
