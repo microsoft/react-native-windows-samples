@@ -27,6 +27,6 @@ See the [react-native init-windows docs](init-windows-cli.md) for detailed usage
 
 ## `react-native run-windows`
 
-Builds your RNW app and starts it on a connected Windows desktop, emulator or device.
+Builds your RNW app and starts it on a connected Windows desktop, emulator, or device.
 
 See the [react-native run-windows docs](run-windows-cli.md) for detailed usage information.
