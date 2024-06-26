@@ -18,6 +18,7 @@ const siteConfig = {
   baseUrl: "/react-native-windows/",
   repoUrl,
   defaultVersionShown,
+  editCurrentVersion: true,
   // Used for publishing and more
   projectName: "react-native-windows",
   organizationName: "microsoft",

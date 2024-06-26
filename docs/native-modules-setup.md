@@ -28,7 +28,7 @@ Once your development environment has been correctly configured, you have severa
 If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
 
 1. You followed the [Getting Started](getting-started.md) guide, where
-1. You ran `npx react-native-windows-init` to add Windows to your project, and
+1. You used the [init-windows command](init-windows-cli.md) to add Windows to your project, and
 1. You are just adding your native code to the app project under the `windows` folder.
 
 Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
@@ -93,16 +93,23 @@ Again, take the result of that command (let's say it's `0.x.y`) and use it to up
 yarn upgrade react-native@0.x.y --dev
 ```
 
-Now you should be ready to add Windows support with `react-native-windows-init`. The process is similar to adding Windows support to an app project, but you'll need to specify `--projectType lib`:
+Next add `react-native-windows` to your dependencies:
 
 ```bat
-npx react-native-windows-init --version latest --projectType lib --overwrite
+yarn add react-native-windows@latest
+yarn install
+```
+
+Now you should be ready to add Windows support with the [init-windows command](init-windows-cli.md). The process is similar to adding Windows support to an app project, but you'll need to specify a library template:
+
+```bat
+npx react-native init-windows --template old/uwp-cpp-lib --overwrite
 ```
 
 This defaults to a C++/WinRT project. If you want to create a C# based native module project, use:
 
 ```bat
-npx react-native-windows-init --version latest --projectType lib --language cs --overwrite
+npx react-native init-windows --template old/uwp-cs-lib --overwrite
 ```
 
 That's it, you should be able to open `windows\NativeModuleSample.sln` and start working on your project.

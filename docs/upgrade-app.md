@@ -3,11 +3,11 @@ id: upgrade-app
 title: Upgrading App to Latest Version of React Native Windows
 ---
 ## Upgrading A React Native Windows App
-Upgrading your app to new React Native Windows versions requires a small amount of effort, but we will try to streamline this process for you as much as possible in this guide. You have two main options for how to upgrade your React Native Windows app. You can use the [React Native Windows CLI](https://github.com/microsoft/react-native-windows/blob/7b3510aebdbc79189278206a53e26213897d6ff8/packages/react-native-windows-init/README.md) or manually upgrade using [Upgrade Helper](https://reactnative.dev/docs/upgrading#upgrade-helper). 
+Upgrading your app to new React Native Windows versions requires a small amount of effort, but we will try to streamline this process for you as much as possible in this guide. You have two main options for how to upgrade your React Native Windows app. You can use the [init-windows command](init-windows-cli.md) or manually upgrade using [Upgrade Helper](https://reactnative.dev/docs/upgrading#upgrade-helper). 
 
 ### Steps to Upgrade An App to New React Native Windows Version via CLI
-1. In the root of your project,  run `npx react-native-windows-init --version 0.XX.X --overwrite`.
-2. In the root of your project, run `npx react-native autolink-windows` to link any native modules used by your app.
+1. In the root of your project, run the [init-windows command](init-windows-cli.md) (make sure you're using the correct template).
+2. In the root of your project, run the [autolink-windows command](autolink-windows-cli.md) to link any native modules used by your app.
 3. Step 1 will overwrite any changes you previously made to the native Windows code of your project and generate a new GUID. If you made changes to this code or wish to keep your previous GUID, you have two options:
 
     1. Add those changes manually.

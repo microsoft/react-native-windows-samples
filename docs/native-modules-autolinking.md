@@ -45,7 +45,7 @@ If you would like to run the autolinking process outside of the build, you can r
 
 ### Skipping autolinking
 
-If you would like to skip the autolinking process during `run-windows` you can pass `--no-autolink` option:
+If you would like to skip the autolinking process during [run-windows command](run-windows-cli.md) you can pass `--no-autolink` option:
 
 ```bat
 npx react-native run-windows --no-autolink

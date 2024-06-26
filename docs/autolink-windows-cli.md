@@ -9,7 +9,7 @@ This guide will give you more information on the `autolink-windows` command of t
 
 The `autolink-windows` CLI command is used to link the native code and build systems for a React Native for Windows app with any native community modules it uses.
 
-**Note:** Autolinking runs automatically as part of running the `run-windows` CLI command, unless the `--no-autolink` argument is used.
+**Note:** Autolinking runs automatically as part of running the [run-windows command](run-windows-cli.md), unless the `--no-autolink` argument is used.
 
 ### Usage
 Runs Windows-specific autolinking for your RNW project.
