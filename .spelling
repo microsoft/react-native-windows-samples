@@ -2,6 +2,8 @@
 accessors
 APIs
 Appium
+autolink
+autolink-windows
 autolinked
 autolinking
 bool
@@ -14,6 +16,7 @@ Chakra
 changelog
 CocoaPods
 codegen
+codegen-windows
 comboboxes
 config
 configJson
@@ -35,11 +38,12 @@ functor
 HomeBrew
 hostname
 i.e.
+init-windows
 initializer
 interop
 iOS
-KeyEvents
 ItemGroup
+KeyEvents
 lifecycle
 macOS
 middleware
@@ -72,6 +76,7 @@ repo
 repos
 RNW-on-WinUI
 roadmap
+run-windows
 runtime
 runtimes
 schemas

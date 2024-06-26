@@ -5,7 +5,7 @@ title: Updating NuGet packages
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-The versions of the [NuGet](nuget.md) packages used in your project must match the version of the react-native-windows npm package.
+The versions of the [NuGet](nuget.md) packages used in your project must match the version of the `react-native-windows` npm package. For React Native for Windows versions >= 0.68, the default app template takes care of this for you automatically. However if you're not using the supported template, the steps below may help you consume the NuGet packages manually.
 
 # Determine npm version
 You can find the npm version by opening `package.json` at the root of your project and looking in the dependencies section:
