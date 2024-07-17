@@ -12,7 +12,7 @@ For information around how to set up React Native, see the [React Native Getting
 
 ## Install React Native for Windows
 
-Remember to call `react-native init` from the place you want your project directory to live.
+Remember to call `@react-native-community/cli init` from the place you want your project directory to live.
 
 <!-- Note, make sure both `@react-native-community/cli@ABC` and `--version "XYZ"` are pointing to the correct NPM tags in the command below. -->
 
