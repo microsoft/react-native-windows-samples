@@ -42,9 +42,13 @@ To upgrade this sample to the latest version of RNW:
             ```cmd
             yarn upgrade react-native@VERSIONFROMLASTSTEP
             ```
+        5. Upgrade `react-native-windows` to the latest version:
+            ```cmd
+            yarn upgrade react-native-windows@latest
+            ```
 4. Re-run the RNW CLI:
     ```cmd
-    npx react-native-windows-init --version latest --language cs --projectType lib --overwrite
+    npx @react-native-community/cli@latest init-windows --template old/uwp-cs-lib --overwrite
     ```
 5. Restore these original native files (representing the native module samples):
     ```
@@ -80,6 +84,6 @@ To upgrade this sample to the latest version of RNW:
             ```
 8. Verify the updated sample builds:
     ```cmd
-    npx react-native run-windows --no-deploy --no-launch --no-packager --no-autolink --proj "NativeModuleSample\NativeModuleSample.csproj"
+    npx @react-native-coummunity/cli@latest run-windows --no-deploy --no-launch --no-packager --no-autolink --proj "NativeModuleSample\NativeModuleSample.csproj"
     ```
 9. Update the main readme with the new major version at the top.

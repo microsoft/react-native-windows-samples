@@ -23,7 +23,7 @@ npm install
 Once you have all of the dependencies installed, you can run the application with the following command:
 
 ```cmd
-npx react-native run-windows
+npx @react-native-coummunity/cli@latest run-windows
 ```
 
 The command will:
