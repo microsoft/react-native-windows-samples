@@ -16,7 +16,6 @@ jobs:
       # These outputs must be set otherwise the dependent jobs won't have access to them
       app-service-demo: ${{ steps.filter.outputs.app-service-demo }}
       calculator: ${{ steps.filter.outputs.calculator }}
-      calculator-nuget: ${{ steps.filter.outputs.calculator-nuget }}
       native-module-sample: ${{ steps.filter.outputs.native-module-sample }}
       website: ${{ steps.filter.outputs.website }}
       workflows: ${{ steps.filter.outputs.workflows }}
@@ -36,9 +35,6 @@ jobs:
           calculator:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/Calculator/**'
-          calculator-nuget:
-            - '.github/workflows/template-buildsample.yml'
-            - 'samples/CalculatorNuGet/**'
           native-module-sample:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/NativeModuleSample/**'
@@ -82,22 +78,6 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.calculator != 'true' }} # Skip if files haven't changed
-
-  call-buildsample-calculator-nuget:
-    name: Build Calculator NuGet
-    needs: setupcheck
-    strategy:
-      fail-fast: true
-      matrix:
-        sampleName: ['CalculatorNuGet']
-        configuration: ['Debug', 'Release']
-        platform: ['x86']
-    uses: ./.github/workflows/template-buildsample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-      skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.calculator-nuget != 'true' }} # Skip if files haven't changed
 
   call-buildsample-native-module-sample:
     name: Build Native Module Sample
