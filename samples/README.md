@@ -18,7 +18,7 @@ When new major versions of RNW are released (out of preview), the sample apps in
 
 1. Delete the existing sample app folder.
 2. Run the React Native CLI to create a new sample app with the same name.
-3. Run the React Native Windows CLI to add Windows support.
+3. Add RNW and run the RNW CLI to add Windows support.
 4. Restore the original app code to override the "new project" app code.
 5. Verify that the app still builds and runs.
 

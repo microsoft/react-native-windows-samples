@@ -25,12 +25,13 @@ To upgrade this sample to the latest version of RNW:
     ```
 3. Create a new React Native app and change version to version you want to upgrade to:
     ```cmd
-    npx react-native init Calculator --template "react-native@^0.72.0"
+    npx @react-native-community/cli@latest init Calculator --template @react-native-community/template@latest
     ```
 4. Add Windows support:
     ```cmd
     cd Calculator
-    npx react-native-windows-init --version latest --overwrite
+    yarn add react-native-windows@latest
+    npx @react-native-community/cli@latest init-windows --template old/uwp-cpp-app --overwrite
     ```
 5. Rename the folder to cppwinrt
     ```
@@ -45,7 +46,7 @@ To upgrade this sample to the latest version of RNW:
     ```
 7. Verify the new app builds and runs:
     ```
-    npx react-native run-windows
+    npx @react-native-community/cli@latest run-windows
     ```
 8. Look at windows/Calculators/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
 9. Update this readme with the new major version at the top.
