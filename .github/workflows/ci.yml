@@ -47,21 +47,6 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
 
-  call-buildsample-calculator-nuget:
-    name: Build Calculator NuGet
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['CalculatorNuGet']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-    uses: ./.github/workflows/template-buildsample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-
   call-buildsample-native-module-sample:
     name: Build Native Module Sample
     needs: setupcheck

@@ -1,11 +1,11 @@
 ---
 id: NuGet
-title: Using react-native-windows NuGet packages
+title: Using Microsoft.ReactNative NuGet packages
 ---
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-The default for react-native-windows has been to build all code from source. This includes building all the code shipped by the react-native-windows team in the npm package from source. This code can be quite large and take a long time to build as well as require a high-performance computer. Some configurations have problems building this code with only 8 GB of memory. Especially if you are used to working only with managed code, this can be a big surprise.
+The default for React Native Windows has been to build all code from source. This includes building all the code shipped by the team in the npm package from source. This code can be quite large and take a long time to build as well as require a high-performance computer. Some configurations have problems building this code with only 8 GB of memory. Especially if you are used to working only with managed code, this can be a big surprise.
 
 Starting with version 0.64 the team offers experimental NuGet packages that can be used as a replacement of compiling the sources.
 
@@ -13,19 +13,17 @@ Starting with version 0.64 the team offers experimental NuGet packages that can 
 
 The benefit of using NuGet packages is that you get improved compilation times for your Windows project and can develop on a less powerful computer.
 
-The other benefit will be that it will be easier to update your projects to future versions or react-native-windows.
+The other benefit will be that it will be easier to update your projects to future versions of `react-native-windows`.
 
 # How to enable on new projects
-When you enable react-native-windows on your new project, you can pass `--experimentalNuGetDependency true`:
+ When creating a new project in [Get Started with Windows](getting-started.md), the templates used by the [init-windows command](init-windows-cli.md) default to building against source. Follow the instructions below if you wish to try using the NuGet packages.
 
-1. Follow the instructions to create a new project in [Getting Started](getting-started.md) except use:
-1. `npx react-native-windows-init --overwrite --experimentalNuGetDependency true` instead when adding windows support to your project
-
-Of course all the other flags still work.
+> Note: The formerly recommended [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli) still supports an `--experimentalNuGetDependency true` flag to set up a new project which uses the NuGet packages, but as that command is planned for deprecation, it's not recommended.
 
 # How to update a previously created project
+The steps below will help you modify your RNW project so you can consume the RNW NuGet packages.
 
-> Note: It may be easier to attempt upgrading your app with `react-native-windows-init` as if it were a new project (described above), to get the correct changes applied to your project. See [Upgrading App to Latest Version of React Native Windows](upgrade-app.md). Otherwise, you can try applying the manual steps below.
+> Note: If you're in the process of upgrading your app to a new version of RNW (See [Upgrading App to Latest Version of React Native Windows](upgrade-app.md)), and you've already set the `<UseExperimentalNuGet>true</UseExperimentalNuGet>` flag (as per below), the [init-windows command](init-windows-cli.md) will try to respect that setting so you shouldn't have to re-apply the manual steps below after the upgrade.
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--C# projects-->

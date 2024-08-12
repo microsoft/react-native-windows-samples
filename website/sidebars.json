@@ -3,7 +3,7 @@
     "The Basics (Windows)": [
       "getting-started",
       "rnw-dependencies",
-      "run-windows-cli",
+      "react-native-windows-cli",
       "parity-status",
       "config",
       "windowsbrush-and-theme",
@@ -12,6 +12,12 @@
       "upgrade-app",
       "setup-ci",
       "app-publishing"
+    ],
+    "CLI Commands (Windows)": [
+      "autolink-windows-cli",
+      "codegen-windows-cli",
+      "init-windows-cli",
+      "run-windows-cli"
     ],
     "Native Modules (Windows)": [
       "native-modules",

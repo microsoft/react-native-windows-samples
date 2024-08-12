@@ -63,7 +63,7 @@ InstanceSettings.UseDirectDebugger = true;
 
 2. Then simply re-build and launch your RNW app as usual.
 
-> For a new RNW app created using `react-native-windows-init`, `UseDirectDebugger` defaults to `false`.
+> For a new RNW app `UseDirectDebugger` defaults to `true` for Debug builds, and `false` for Release builds.
 
 #### Option 2: Using the Developer Menu
 
@@ -127,7 +127,7 @@ You can direct debug RNW apps using the (default) Chakra JS engine with [Visual 
         2. For C# RNW apps, open the *Debug* tab, set the *Debugger type > Application process* to *Script*, then close the properties
     4. Click on *Debug* in the menu bar and select *Start Debugging*
 4. **Option B:** Attach Visual Studio to the app that's already running
-    1. Make sure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
+    1. Make sure that your native app and Metro is already running (i.e. using the [run-windows command](run-windows-cli.md))
     2. Click on *Debug* in Visual Studio's menu bar and select *Attach to Process...*
     3. Find and select the native process for your app (not Metro)
     4. Make sure *Attach to:* is set to *Automatic: Script code* or *Script code*
@@ -154,7 +154,7 @@ You can direct debug RNW apps using the Hermes JS engine with [Visual Studio](ht
 > **Important:** Launching the app and starting direct debug with Hermes isn't supported in Visual Studio.
 
 4. **Option B:** Attach Visual Studio to the app that's already running
-    1. Make sure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
+    1. Make sure that your native app and Metro is already running (i.e. using the [run-windows command](run-windows-cli.md))
     2. Click on *Debug* in Visual Studio's menu bar and select *Attach to Process...*
     3. Make sure *Connection type:* is set to *JavaScript and TypeScript (Chrome DevTools/V8 Inspector)*
     > If you don't see *JavaScript and TypeScript (Chrome DevTools/V8 Inspector)*, make sure you've installed the *Node.js development* workload for your version of Visual Studio.
@@ -204,7 +204,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
         "type": "node"
     }
     ```
-    3. Make sure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
+    3. Make sure that your native app and Metro is already running (i.e. using the [run-windows command](run-windows-cli.md))
     4. Open the *Run and Debug* sidebar by clicking on the button in the sidebar or by pressing `Ctrl+Shift+D`
     5. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     6. Click on the ▶️ button or press `F5` in VS Code
@@ -258,7 +258,7 @@ You can direct debug RNW apps using the Hermes JS engine with [VS Code](http://c
         "request": "attach"
     }
     ```
-    3. Make sure that your native app and Metro is already running (i.e. `npx react-native run-windows`)
+    3. Make sure that your native app and Metro is already running (i.e. using the [run-windows command](run-windows-cli.md))
     4. Open the *Run and Debug* sidebar by clicking on the button in the sidebar or by pressing `Ctrl+Shift+D`
     5. Make sure the new config is selected at the top of the *Run and Debug* sidebar
     6. Click on the ▶️ button or press `F5` in VS Code
@@ -326,7 +326,7 @@ InstanceSettings().UseDirectDebugger(false);
 
 2. Then simply re-build and launch your RNW app as usual.
 
-> For a new RNW app created using `react-native-windows-init`, `UseWebDebugger` defaults to `true` for Debug builds, and `false` for Release builds.
+> Unless otherwise specified, for a new RNW app, `UseWebDebugger` defaults to `false`.
 
 ### Step 2: Connect a debugger
 

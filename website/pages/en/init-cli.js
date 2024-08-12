@@ -20,8 +20,7 @@ class InitCli extends React.Component {
               React Native Windows Init CLI
             </h1>
             <p>
-              This guide will give you more information on the React Native Windows
-              CLI.
+              This guide will give you more information on the React Native Windows Init CLI.
             </p>
             <h2><code>react-native-windows-init</code></h2>
             <p>

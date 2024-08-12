@@ -107,10 +107,10 @@ Follow steps 1-7 from above, and then
 
 ### Enable debugging/profiling on release builds
 
-We keep the inspector turned off on release builds by default. If you want to debug or profile release builds, set the MSBuild property `EnableHermesInspectorInReleaseFlavor` to `'true'` when building the platform.
+We keep the inspector turned off on release builds by default. If you want to debug or profile release builds, set the MSBuild property `EnableHermesInspectorInReleaseFlavor` to `'true'` when building the platform with the [run-windows command](run-windows-cli.md), i.e.:
 
 ```bash
-npx react-native run-windows --msbuild EnableHermesInspectorInReleaseFlavor=true
+npx react-native run-windows --msbuildprops EnableHermesInspectorInReleaseFlavor=true
 ```
 
 ### Known Issues

@@ -5,7 +5,7 @@ title: Using Community Native Modules
 
 Community native modules are usually distributed as npm packages. To understand more about npm packages you may find [this guide](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) useful.
 
-Consuming native modules requires updating your app's native build files to depend on the module's native build files, called "linking". Many modules support "autolinking", where these updates are done automatically when running `npx react-native run-windows`. Others may require you to link the module manually.
+Consuming native modules requires updating your app's native build files to depend on the module's native build files, called "linking". Many modules support "autolinking", where these updates are done automatically when running the [run-windows command](run-windows-cli.md). Others may require you to link the module manually.
 
 This document outlines the general steps to manually link a module (`react-native-foo`) to your project.
 

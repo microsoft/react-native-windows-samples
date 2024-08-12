@@ -26,7 +26,7 @@ The information provided by `config` is described in [React Native Config Schema
 
 ## Autolinking process
 
-Autolinking is performed automatically as a part of the `run-windows` command:
+Autolinking is performed automatically as a part of the [run-windows command](run-windows-cli.md):
 
 1. At build time, autolinking is performed first, before `msbuild.exe` is invoked and the build actually started. It uses the information provided by `config` to both generate and modify certain native files consumed by your app project.
     1. The `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
@@ -41,26 +41,11 @@ Autolinking is performed automatically as a part of the `run-windows` command:
 
 ### Manually run autolinking
 
-If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, i.e.:
-
-```bat
-npx react-native autolink-windows
-```
-
-| Options |  |
-|:--------|:-|
-| `--logging` | Verbose output logging |
-| `--check` | Only check whether any autolinked files need to change |
-| `--sln` [string] | Override the app solution file determined by `react-native config`, e.g. *`windows\myApp.sln`* |
-| `--proj` [string] | Override the app project file determined by `react-native config`, e.g. *`windows\myApp\myApp.vcxproj`* |
-| `--no-telemetry` [boolean] | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-| `-h`, `--help` | output usage information |
-
-This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` [README](https://github.com/microsoft/react-native-windows/tree/main/packages/%40react-native-windows/cli#data-collection) for more details.
+If you would like to run the autolinking process outside of the build, you can run the [autolink-windows command](autolink-windows-cli.md) manually at any time.
 
 ### Skipping autolinking
 
-If you would like to skip the autolinking process during `run-windows` you can pass `--no-autolink` option:
+If you would like to skip the autolinking process during [run-windows command](run-windows-cli.md) you can pass `--no-autolink` option:
 
 ```bat
 npx react-native run-windows --no-autolink
