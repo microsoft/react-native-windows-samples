@@ -224,6 +224,7 @@ Type: [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
 
 
 ## Referenced by
+- [`HttpSettings`](HttpSettings)
 - [`QuirkSettings`](QuirkSettings)
 - [`ReactApplication`](ReactApplication)
 - [`ReactNativeHost`](ReactNativeHost)
