@@ -24,7 +24,6 @@ Remember to call `@react-native-community/cli init` from the place you want your
 
 ```bat
 npx --yes @react-native-community/cli@next init <projectName> --version "nightly"
-
 ```
 
 ### Navigate into this newly created directory
@@ -49,14 +48,12 @@ cd <projectName>
 
 ```bat
 yarn add react-native-windows@canary
-
 ```
 
 <!--Using NPM-->
 
 ```bat
 npm install --save react-native-windows@canary
-
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
