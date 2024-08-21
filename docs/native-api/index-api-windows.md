@@ -82,6 +82,7 @@ sidebar_label: Full reference
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)
 - [`DynamicValueProvider`](DynamicValueProvider)
 - [`GaussianBlurEffect`](GaussianBlurEffect)
+- [`HttpSettings`](HttpSettings)
 - [`InstanceCreatedEventArgs`](InstanceCreatedEventArgs)
 - [`InstanceDestroyedEventArgs`](InstanceDestroyedEventArgs)
 - [`InstanceLoadedEventArgs`](InstanceLoadedEventArgs)
