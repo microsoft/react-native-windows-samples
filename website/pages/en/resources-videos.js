@@ -77,6 +77,8 @@ class Resources extends React.Component {
     );
 
     const videoUrls = [
+      { yt: 'Ar1RbykL_As', title: 'Chain React 2024: Shiven Mian & Nikolai Aristo - React Native for Desktop in Microsoft Word'},
+      { yt: 'IGaQL0WRqWI', title: 'Chain React 2024: Chiara Mooney - How To Make a React Native Windows App With a macOS Machine'},
       { yt: 'PYMMxfttOug', title: 'React Native EU 2023: Tommy Nguyen & Lorenzo Sciandra - Raising the Bar'},
       { yt: 'ChDQZpWQbwk', title: 'Chain React 2023: Christoph Purrer - From Electron to React Native'},
       { yt: '1vMic8ixfVI', title: `Chain React 2023: Lorenzo Sciandra - The work that you don't see`},
