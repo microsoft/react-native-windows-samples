@@ -94,6 +94,24 @@ const siteConfig = {
   docsSideNavCollapsible: true,
 
   customFields: require("./showcaseApps.json"),
+
+  deletedDocs: {
+    "0.75": [
+      "nuget-update",
+    ],
+    "0.74": [
+      "coreapp",
+      "CoreAppPage",
+    ],
+    "0.73": [
+      "winui3",
+    ],
+    "0.72": [
+      "IReactPackageBuilderExperimental",
+      "IReactRootViewExperimental",
+      "apptheme",
+    ]
+  }
 };
 
 module.exports = siteConfig;
