@@ -51,8 +51,7 @@
     ],
     "Experimental" : [
       "hermes",
-      "NuGet",
-      "nuget-update"
+      "NuGet"
     ]
   },
   "apis": {
