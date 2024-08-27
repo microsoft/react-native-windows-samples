@@ -56,7 +56,7 @@ jobs:
 
     - name: Install Visual Studio 17.11.0 or later
       run: |
-        vs_installer.exe --add Microsoft.VisualStudio.Workload.ManagedDesktop --version 17.11.0
+        choco install visualstudio2022buildtools --version=17.11.0 --package-parameters "--add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools --includeRecommended --includeOptional"
       shell: powershell
 
     - name: Gather environment info
