@@ -16,6 +16,7 @@ jobs:
       # These outputs must be set otherwise the dependent jobs won't have access to them
       app-service-demo: ${{ steps.filter.outputs.app-service-demo }}
       calculator: ${{ steps.filter.outputs.calculator }}
+      calculator-experimental: ${{ steps.filter.outputs.calculator-experimental }}
       native-module-sample: ${{ steps.filter.outputs.native-module-sample }}
       website: ${{ steps.filter.outputs.website }}
       workflows: ${{ steps.filter.outputs.workflows }}
@@ -32,6 +33,9 @@ jobs:
           app-service-demo:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/AppServiceDemo/**'
+          calculator-experimental:
+            - '.github/workflows/template-buildsample.yml'
+            - 'samples/CalculatorExperimental/**'
           calculator:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/Calculator/**'
@@ -70,6 +74,22 @@ jobs:
       fail-fast: true
       matrix:
         sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
+        configuration: ['Debug', 'Release']
+        platform: ['x86']
+    uses: ./.github/workflows/template-buildsample.yml
+    with:
+      sampleName:  ${{ matrix.sampleName }}
+      configuration: ${{ matrix.configuration }}
+      platform: ${{ matrix.platform }}
+      skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.calculator != 'true' }} # Skip if files haven't changed
+
+  call-buildsample-calculator-experimental:
+    name: Build CalculatorExperimental
+    needs: setupcheck
+    strategy:
+      fail-fast: true
+      matrix:
+        sampleName: ['CalculatorExperimental']
         configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml

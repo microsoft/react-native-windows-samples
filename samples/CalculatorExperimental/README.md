@@ -2,6 +2,8 @@
 
 This sample showcases the usage of React Native for Windows to build a simple calculator that is hosted on the experimental [Fabric rendering system](https://github.com/microsoft/react-native-windows/issues/12042).
 
+Currently this samples targets RNW 0.75.0
+
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
@@ -60,3 +62,4 @@ To upgrade this sample to the latest version of RNW:
    ```cmd
    npx @react-native-community/cli@latest run-windows
    ```
+7. Update this file to the current version of the App
