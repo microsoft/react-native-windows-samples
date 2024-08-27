@@ -54,6 +54,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install Visual Studio 17.11.0 or later
+      run: |
+        vs_installer.exe --add Microsoft.VisualStudio.Workload.ManagedDesktop --version 17.11.0
+      shell: powershell
+
     - name: Gather environment info
       run: npx envinfo
 
