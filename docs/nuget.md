@@ -5,13 +5,13 @@ title: Using Microsoft.ReactNative NuGet packages
 
 >**This documentation and the underlying platform code is a work in progress.**
 
-When creating a new project in [Get Started with Windows](getting-started.md), the type of template selected for the [init-windows command](init-windows-cli.md) will determine whether or not the project will built against the `react-native-windows` source or the pre-built NuGet packages.
-
 Traditionally, the default for React Native Windows has been to build all code from source. This includes building all the code shipped by the team in the npm package from source. The amount of code is quite large and takes both a long time to build as well as requiring a high-performance computer. Some configurations have problems building this code with only 8 GB of memory. Especially if you are used to working only with managed code, this can be a big surprise.
 
 Starting with the (currently experimental) New Architecture (i.e. Fabric) app and module projects, React Native Windows will default to consuming pre-built binary NuGet packages instead of requiring you to compile everything yourself.
 
 The benefit of using NuGet packages is that you get improved compilation times for your Windows project and can develop on a less powerful computer. This will also translate into a smoother update experience for newer versions of `react-native-windows`.
+
+When creating a new project in [Get Started with Windows](getting-started.md), the type of template selected for the [init-windows command](init-windows-cli.md) will determine whether or not the project will built against the `react-native-windows` source or the pre-built NuGet packages.
 
 > **Note on new projects:** Building from source will remain the default for new Old Architecture projects. This is because there are known compatibility issues with [community modules](supported-community-modules.md), as they often still rely on building the shared code from source, making the parallel use of NuGets problematic.
 
