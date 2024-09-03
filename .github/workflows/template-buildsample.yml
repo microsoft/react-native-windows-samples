@@ -54,11 +54,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Visual Studio 17.11.0 or later
-      run: |
-        choco install visualstudio2022buildtools -y
-      shell: powershell
-
     - name: Gather environment info
       run: npx envinfo
 
