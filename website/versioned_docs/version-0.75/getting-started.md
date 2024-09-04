@@ -40,21 +40,20 @@ cd <projectName>
 <!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
 
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
-<!-- 2. For the latest stable version in versioned_docs use "latest" -->
-<!-- 3. For older stable versions use the stable tag name, i.e. "0.73-stable" -->
+<!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
 
 <!--DOCUSAURUS_CODE_TABS-->
 
 <!--Using Yarn (Recommended)-->
 
 ```bat
-yarn add react-native-windows@latest
+yarn add react-native-windows@^0.75.0
 ```
 
 <!--Using NPM-->
 
 ```bat
-npm install --save react-native-windows@latest
+npm install --save react-native-windows@^0.75.0
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->

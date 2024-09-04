@@ -39,8 +39,7 @@ cd <projectName>
 <!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
 
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
-<!-- 2. For the latest stable version in versioned_docs use "latest" -->
-<!-- 3. For older stable versions use the stable tag name, i.e. "0.73-stable" -->
+<!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
 
 <!--DOCUSAURUS_CODE_TABS-->
 

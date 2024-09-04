@@ -51,8 +51,7 @@
     ],
     "Experimental": [
       "version-0.75-hermes",
-      "version-0.75-NuGet",
-      "version-0.75-nuget-update"
+      "version-0.75-NuGet"
     ]
   },
   "version-0.75-apis": {
