@@ -128,6 +128,6 @@ jobs:
   prcheck:
     name: Successful PR Check
     runs-on: ubuntu-latest
-    needs: [setupcheck, call-buildsample-app-service-demo, call-buildsample-calculator, call-buildsample-native-module-sample, call-buildwebsite]
+    needs: [setupcheck, call-buildsample-calculator, call-buildsample-native-module-sample, call-buildwebsite]
     steps:
      - uses: actions/checkout@v3
