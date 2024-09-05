@@ -40,26 +40,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-        reactNativeWindowsVersion: [latest, preview, canary]
-    uses: ./.github/workflows/template-upgradesample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      reactNativeWindowsVersion: ${{ matrix.reactNativeWindowsVersion }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-      runInitWindows: true
-      extraInitWindowsArgs: --language ${{ endsWith(matrix.sampleName, 'cppwinrt') && 'cpp' || 'cs' }}
-
-  call-upgradesample-calculator-experimental:
-    name: Upgrade CalculatorExperimental
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['CalculatorExperimental', 'CalculatorExperimental']
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
         reactNativeWindowsVersion: [latest, preview, canary]

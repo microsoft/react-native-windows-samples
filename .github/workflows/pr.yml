@@ -74,23 +74,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
-        configuration: ['Debug', 'Release']
-        platform: ['x86']
-    uses: ./.github/workflows/template-buildsample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-      skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.calculator != 'true' }} # Skip if files haven't changed
-
-  call-buildsample-calculator-experimental:
-    name: Build CalculatorExperimental
-    needs: setupcheck
-    strategy:
-      fail-fast: true
-      matrix:
-        sampleName: ['CalculatorExperimental']
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
         configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
