@@ -50,22 +50,23 @@ jobs:
             - '.github/workflows/ci.yml'
             - '.github/workflows/pr.yml'
 
-  call-buildsample-app-service-demo:
-    name: Build App Service Demo
-    needs: setupcheck
-    strategy:
-      fail-fast: true
-      matrix:
-        sampleName: ['AppServiceDemo']
-        configuration: ['Debug', 'Release']
-        platform: ['x86']
-    uses: ./.github/workflows/template-buildsample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-      extraRunWindowsArgs: --no-deploy
-      skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.app-service-demo != 'true' }} # Skip if files haven't changed
+  # [Windows Issue #968]
+  # call-buildsample-app-service-demo:
+  #  name: Build App Service Demo
+  #  needs: setupcheck
+  #  strategy:
+  #    fail-fast: true
+  #    matrix:
+  #      sampleName: ['AppServiceDemo']
+  #      configuration: ['Debug', 'Release']
+  #      platform: ['x86']
+  #  uses: ./.github/workflows/template-buildsample.yml
+  #  with:
+  #    sampleName:  ${{ matrix.sampleName }}
+  #    configuration: ${{ matrix.configuration }}
+  #    platform: ${{ matrix.platform }}
+  #    extraRunWindowsArgs: --no-deploy
+  #    skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.app-service-demo != 'true' }} # Skip if files haven't changed
 
   call-buildsample-calculator:
     name: Build Calculator
