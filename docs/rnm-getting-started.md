@@ -5,7 +5,7 @@ title: Get Started with macOS
 
 This guide will help you get started on setting up your very first React Native for macOS app.
 
->** Latest stable version available for React Native for macOS is 0.71**
+>** Latest stable version available for React Native for macOS is 0.75**
 
 For information around how to set up:
 - React Native for iOS and Android: See [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started)
@@ -16,7 +16,7 @@ For information around how to set up:
 Remember to call `react-native init` from the place you want your project directory to live. Be sure to use the same minor version between React Native and React Native macOS. We'll use `^0.71.0`
 
 ```
-npx react-native@latest init <projectName> --version 0.71.0
+npx react-native@latest init <projectName> --version 0.75.0
 ```
 
 ### Navigate into this newly created directory
