@@ -33,9 +33,6 @@ jobs:
           app-service-demo:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/AppServiceDemo/**'
-          calculator-experimental:
-            - '.github/workflows/template-buildsample.yml'
-            - 'samples/CalculatorExperimental/**'
           calculator:
             - '.github/workflows/template-buildsample.yml'
             - 'samples/Calculator/**'

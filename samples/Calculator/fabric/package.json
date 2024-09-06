@@ -1,5 +1,5 @@
 {
-  "name": "CalculatorExperimental",
+  "name": "CalculatorFabric",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "react": "18.3.1",
     "react-native": "0.75.2",
-    "react-native-windows": "^0.75.0"
+    "react-native-windows": "^0.75.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

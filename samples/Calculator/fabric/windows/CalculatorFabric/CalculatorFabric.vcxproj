@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This project was created with react-native-windows 0.75.0 -->
+<!-- This project was created with react-native-windows 0.75.1 -->
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{8E875C44-E61D-4E26-9A6C-473CB69E0A41}</ProjectGuid>
-    <ProjectName>CalculatorExperimental</ProjectName>
+    <ProjectGuid>{1EE64A59-709D-44C9-AD25-589DFF90ECCA}</ProjectGuid>
+    <ProjectName>CalculatorFabric</ProjectName>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CalculatorExperimental</RootNamespace>
+    <RootNamespace>CalculatorFabric</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
@@ -99,14 +99,14 @@
   </ItemDefinitionGroup>
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClInclude Include="CalculatorExperimental.h" />
+    <ClInclude Include="CalculatorFabric.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="AutolinkedNativeModules.g.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CalculatorExperimental.cpp" />
+    <ClCompile Include="CalculatorFabric.cpp" />
     <ClCompile Include="AutolinkedNativeModules.g.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -118,10 +118,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CalculatorExperimental.rc" />
+    <ResourceCompile Include="CalculatorFabric.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="CalculatorExperimental.ico" />
+    <Image Include="CalculatorFabric.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

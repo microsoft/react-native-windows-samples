@@ -2,9 +2,9 @@
 <Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup>
-    <ProjectGuid>{4649dab9-972a-4a33-a49f-8b7e45c31f10}</ProjectGuid>
+    <ProjectGuid>{e5e661ab-57ca-431f-9c71-8cd37e1e88fa}</ProjectGuid>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <EntryPointProjectUniqueName>..\CalculatorExperimental\CalculatorExperimental.vcxproj</EntryPointProjectUniqueName>
+    <EntryPointProjectUniqueName>..\CalculatorFabric\CalculatorFabric.vcxproj</EntryPointProjectUniqueName>
     <DebuggerType>NativeOnly</DebuggerType>
     <BackgroundTaskDebugEngines>NativeOnly</BackgroundTaskDebugEngines>
   </PropertyGroup>
@@ -60,7 +60,7 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalculatorExperimental\CalculatorExperimental.vcxproj">
+    <ProjectReference Include="..\CalculatorFabric\CalculatorFabric.vcxproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
     </ProjectReference>
   </ItemGroup>

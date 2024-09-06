@@ -21,7 +21,7 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CalculatorExperimental.h">
+    <ClInclude Include="CalculatorFabric.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AutolinkedNativeModules.g.h">
@@ -32,7 +32,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CalculatorExperimental.cpp">
+    <ClCompile Include="CalculatorFabric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AutolinkedNativeModules.g.cpp">
@@ -43,7 +43,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CalculatorExperimental.rc">
+    <ResourceCompile Include="CalculatorFabric.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -51,7 +51,7 @@
     <Image Include="small.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="CalculatorExperimental.ico">
+    <Image Include="CalculatorFabric.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

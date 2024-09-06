@@ -1,8 +1,8 @@
-// CalculatorExperimental.cpp : Defines the entry point for the application.
+// CalculatorFabric.cpp : Defines the entry point for the application.
 //
 
 #include "pch.h"
-#include "CalculatorExperimental.h"
+#include "CalculatorFabric.h"
 
 #include "AutolinkedNativeModules.g.h"
 
@@ -17,8 +17,8 @@ struct CompReactPackageProvider
 };
 
 // Global Variables:
-constexpr PCWSTR windowTitle = L"CalculatorExperimental";
-constexpr PCWSTR mainComponentName = L"CalculatorExperimental";
+constexpr PCWSTR windowTitle = L"CalculatorFabric";
+constexpr PCWSTR mainComponentName = L"CalculatorFabric";
 
 float ScaleFactor(HWND hwnd) noexcept {
   return GetDpiForWindow(hwnd) / static_cast<float>(USER_DEFAULT_SCREEN_DPI);
