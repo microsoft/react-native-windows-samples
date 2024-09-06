@@ -41,11 +41,11 @@ To upgrade this sample to the latest version of RNW:
     ```
 2. Delete this folder:
     ```cmd
-    rd /s /q CalculatorExperimental
+    rd /s /q fabric
     ```
 3. Create a new React Native app and change version to version you want to upgrade to:
     ```cmd
-    npx --yes @react-native-community/cli@latest init CalculatorExperimental --template @react-native-community/template@latest --skipGitInit
+    npx --yes @react-native-community/cli@latest init CalculatorFabric--template @react-native-community/template@latest --skipGitInit
     ```
 4. Add Windows support:
     ```cmd
