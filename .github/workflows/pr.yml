@@ -16,6 +16,7 @@ jobs:
       # These outputs must be set otherwise the dependent jobs won't have access to them
       app-service-demo: ${{ steps.filter.outputs.app-service-demo }}
       calculator: ${{ steps.filter.outputs.calculator }}
+      calculator-experimental: ${{ steps.filter.outputs.calculator-experimental }}
       native-module-sample: ${{ steps.filter.outputs.native-module-sample }}
       website: ${{ steps.filter.outputs.website }}
       workflows: ${{ steps.filter.outputs.workflows }}
@@ -49,7 +50,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
         configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
