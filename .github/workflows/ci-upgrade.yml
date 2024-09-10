@@ -16,24 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-  call-upgradesample-app-service-demo:
-    name: Upgrade App Service Demo
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['AppServiceDemo']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-        reactNativeWindowsVersion: [latest, preview, canary]
-    uses: ./.github/workflows/template-upgradesample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      reactNativeWindowsVersion: ${{ matrix.reactNativeWindowsVersion }}
-      configuration: ${{ matrix.configuration }}
-      extraRunWindowsArgs: --no-deploy
-      platform: ${{ matrix.platform }}
-
   call-upgradesample-calculator:
     name: Upgrade Calculator
     needs: setupcheck
