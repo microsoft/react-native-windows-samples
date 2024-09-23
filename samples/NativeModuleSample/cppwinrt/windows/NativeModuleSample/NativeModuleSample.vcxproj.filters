@@ -11,9 +11,7 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReactPackageProvider.h" />
-    <ClInclude Include="AsyncMethodExamples.h" />
-    <ClInclude Include="DataMarshallingExamples.h" />
-    <ClInclude Include="FancyMath.h" />
+    <ClInclude Include="ReactNativeModule.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
