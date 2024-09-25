@@ -4,9 +4,7 @@
 
 | Sample | Description |
 |:-------|:------------|
-| [AppServiceDemo](./AppServiceDemo) | A sample RNW app which interacts with the Win32 ecosystem using App Services. |
 | [Calculator](./Calculator) | A sample RNW app implementing a simple calculator. |
-| [CalculatorNuGet](./CalculatorNuGet) | The Calculator sample, but consuming RNW through the NuGet packages. |
 | [ContinuousIntegration](./ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. |
 | [NativeModuleSample](./NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. |
 
