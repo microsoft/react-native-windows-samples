@@ -3,11 +3,11 @@ id: new-arch
 title: New vs. Old Architecture
 ---
 
-The [New Architecture](https://reactnative.dev/docs/0.75/the-new-architecture/landing-page) is React Native's advanced rendering system which became the default in React Native 0.76. While React Native for Windows isn't yet making the New Architecture the default, we're excited to offer a sneak peek of the hard work that’s gone into supporting it, allowing developers to create applications using the new architecture.
+React Native's [new architecture](https://reactnative.dev/docs/0.75/the-new-architecture/landing-page) has become the default with [version 0.76](https://reactnative.dev/blog/2024/10/23/the-new-architecture-is-here), bringing many framework improvements including the advanced rendering system [Fabric](https://reactnative.dev/architecture/fabric-renderer). While React Native for Windows isn't quite yet ready to make the new architecture the default on Windows, we're excited to offer a sneak peek of the hard work that’s gone into supporting it and allow developers to create applications using the new architecture.
 
-With Fabric, RNW shifts from the previous "Paper" model, which relied heavily on XAML, to a Composition-first approach that can also host XAML islands as needed. This evolution aims to unify rendering logic cross-platform in C++, aligning more closely with the new WinAppSDK and WinUI3 that favor Win32 applications. This means that apps built with the new architecture will default to Win32 rather than UWP, a change made to enhance compatibility with Windows’ latest frameworks.
+On Windows, the implementation of the previous "Paper" rendering architecture was based on UWP and WinUI/XAML. To meet the requirements of the new "Fabric" rendering architecture the Windows implementation now uses a direct WinAppSDK Scene Graph approach that can also host WinUI/XAML islands as needed. This evolution aims to unify rendering logic cross-platform in C++, aligning more closely with WinAppSDK and WinUI3 that favor Win32 applications. This means that apps built with the new architecture will default to Win32 rather than UWP, a change made to enhance compatibility with Windows’ latest frameworks.
 
-For those using UWP with RNW, rest assured: we’ll provide clear migration guidance once Fabric support is fully established. At this stage, Fabric on Windows is best suited for early adopters comfortable with a work-in-progress experience, and the documentation may not yet be as comprehensive. For those willing to dive in, the new architecture brings a glimpse into the future of React Native Windows development.
+For developers using UWP with RNW, **UWP Paper applications remain fully supported**—there are no immediate plans to remove support. However, **UWP and Fabric together are currently not supported**. We will provide clear migration guidance for UWP Paper apps once Fabric support is fully established. At this stage, Fabric on Windows is best suited for early adopters comfortable with a work-in-progress experience, and the documentation may not yet be as comprehensive. For those willing to dive in, the new architecture offers a glimpse into the future of React Native Windows development.
 
 ## Creating a new Architecture Application
 
@@ -35,18 +35,11 @@ yarn react-native init-windows --template cpp-app --overwrite --logging
 yarn react-native run-windows --logging
 ```
 
-## Milestones
+## Development Progress
 
-Our development progress is organized into milestones, each with clear goals to guide our work. We are currently focused on achieving full API parity and enhancing accessibility. Note that **community modules are not yet supported** in this soft launch phase, so most (if not all) won’t work in new architecture applications at this stage.
+Our work on React Native Windows' new architecture follows a series of milestones designed to guide our development priorities. Currently, our focus is on achieving full API parity and improving accessibility features. **Community modules are not yet fully supported in this soft launch phase**, so most, if not all, modules will not be compatible with new architecture applications at this stage.
 
-| Milestone | Milestone Nickname | Milestone Description | 
-| -- | -- | -- | 
-| ☑️ M0 | Proof of Concept | <li>Internal contributors can manually create a Win32 app that renders JSX using Composition</li> | 
-| ☑️ M1  | Experimental | <li>User can successfully initialize, build, and run a React Native Windows app on the new architecture. </li><li>User can use the _most common_ props/API’s.</li><li>User can use the _most common_ accessibility props/API’s. </li><li>User can observe _basic_ accessibility support within their app.</li><li>User will _not_ have access to full API parity with Paper.</li><li>User can use community modules within their app.</li><li>User _cannot_ use community modules with native UI within their app.</li> | 
-| 🔜 M2 | Parity and Accessibility | <ul><li>User can use all props/API’s that were supported on Paper. </li><li>User can use all accessibility props/API’s that were supported on Paper. </li><li>User can observe compliant/delightful accessibility support within their app.</li></ul> | 
-| ⬜ M3 | Ready for Modules | <li>User can use the _subset_ of community modules with native UI which have support for Fabric on Windows. </li> | 
-| ⬜ M4 | Production Ready **_(Fabric now officially in support)_** | <li>User can use most community modules with native UI which had been supported on Paper.</li><li>User can view documentation for the new architecture on the React Native Windows website. </li><li>Platform will be validated against _most common_ app scenarios. </li> | 
-| ⬜ M5 | New Default | <li>Platform will be validated against all app scenarios.</li><li>Paper architecture will be _deprecated_; Fabric will be the new default.</li> | 
+To track real-time progress and specific milestones, visit our [Fabric for React Native for Windows Issue](https://github.com/microsoft/react-native-windows/issues/12042). This page is regularly updated with our latest development goals, roadmap items, and areas we’re actively working on. We encourage developers to check there for the latest on what’s available, what’s in progress, and what’s coming next.
 
 ## Work in Progress
 
@@ -58,17 +51,19 @@ The new architecture introduces significant updates. By moving away from XAML, w
 
 ### Supported Components
 
-<li>View</li>
-<li>Text</li>
-<li>Image</li>
-<li>TextInput</li>
-<li>ScrollView</li>
-<li>Modal</li>
-<li>ActivityIndicator</li>
-<li>Switch</li>
-<li>RefreshControl</li>
+Each component below links to the corresponding issue label in our GitHub repo that tracks the progress of its parity with the new architecture
+
+- [View](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20View%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [Text](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20Text%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [Image](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20Image%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [TextInput](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20TextInput%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [ScrollView](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20ScrollView%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [Modal](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20Modal%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22&page=1)
+- [ActivityIndicator](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20ActivityIndicator%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [Switch](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20Switch%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
+- [RefreshControl](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20RefreshControl%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
 
 ### Deprecated Components
 
-<li>Flyout</li>
-<li>Popup</li>
+- [Flyout](https://github.com/microsoft/react-native-windows/issues/11921)
+- [Popup](https://github.com/microsoft/react-native-windows/issues/11921)
