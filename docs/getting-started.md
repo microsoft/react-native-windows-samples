@@ -9,6 +9,8 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
+> **Interested in exploring the new architecture?** We are "soft-launching" our implementation of the new architecture. If you’d like to be an early adopter, check out the instructions in the [New Architecture Guide](NewArch.md) and discover new templates available in [init-windows-cli](init-windows-cli.md#templates). 
+
 ## Create a new React Native project
 
 Remember to call `@react-native-community/cli init` from the place you want your project directory to live.
