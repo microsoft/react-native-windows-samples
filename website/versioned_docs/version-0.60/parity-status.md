@@ -34,7 +34,7 @@ Also tracked are Native Modules, as they are essential, even if not part of the 
 
 |Module| `vnext` version Status | `vnext` Issues remaining | `current` version Status|
 |:-|:-|:-|:-|
-|`Accessibility`|Partial|[Accessibility project board](https://github.com/microsoft/react-native-windows/projects/21)|Partial|
+|`Accessibility`|Partial|[Accessibility project board](https://github.com/microsoft/react-native-windows/projects)|Partial|
 |`LayoutProps`|**Completed**|-|Partial|
 |`Alert`|**Completed**|-|**Complete**|
 |`AppState`|Partial|[2144](https://github.com/microsoft/react-native-windows/issues/2144)|**Complete**|
