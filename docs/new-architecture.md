@@ -19,43 +19,33 @@ However, understand that while there are no immediate plans to deprecate support
 
 > **Important:** There are no plans to support New Architecture on UWP nor Old Architecture on WinAppSDK. Previous experimental features that enabled either scenario are not officially supported.
 
-For more information about the reasoning behind the change from UWP to WinAppSDK, see the (FAQ)(#faq) below.
+For more information about the reasoning behind the change from UWP to WinAppSDK, see the [FAQ](#faq) below.
 
 ## Creating a new Architecture Application
 
-1. Create a new React Native Application.
+Starting a React Native Windows project with the new architecture is simple! Follow the steps outlined in our [Getting Started](getting-started.md) guide, but make sure to use the [new architecture template](init-windows-cli.md#templates) when initializing your project with init-windows.
+
+For example, if you previously set up a project using the old architecture, you might have used a command like this:
 
 ```bat
-npx --yes @react-native-community/cli@latest init MyApp --version "latest"
+yarn react-native init-windows --overwrite
 ```
 
-2. Add React Native Windows as a dependency.
+To create a project with the new architecture, use the same command but ensure you're specifying the template for the new architecture:
 
 ```bat
-yarn add react-native-windows@latest
-```
-
-3. Add the New Architecture Template to your project. (Other templates can be found in [init-windows-cli](init-windows-cli.md#templates))
-
-```bat
-yarn react-native init-windows --template cpp-app --overwrite --logging
-```
-
-4. Run your App.
-
-```bat
-yarn react-native run-windows --logging
+yarn react-native init-windows --template cpp-app --overwrite
 ```
 
 ## Development Progress
 
-Our work on React Native Windows' new architecture follows a series of milestones designed to guide our development priorities. Currently, our focus is on achieving full API parity and improving accessibility features. **Community modules are not yet fully supported in this soft launch phase**, so most, if not all, modules will not be compatible with new architecture applications at this stage.
+Our work on React Native Windows' new architecture follows a series of milestones designed to guide our development priorities. Currently, our focus is on achieving full API parity and improving accessibility features. **Community modules are not yet fully supported in this preview phase**, so most, if not all, modules will not be compatible with new architecture applications at this stage.
 
 To track real-time progress and specific milestones, visit our [Fabric for React Native for Windows Issue](https://github.com/microsoft/react-native-windows/issues/12042). This page is regularly updated with our latest development goals, roadmap items, and areas we’re actively working on. We encourage developers to check there for the latest on what’s available, what’s in progress, and what’s coming next.
 
 ## Work in Progress
 
-As this is a soft launch of our new architecture, you may encounter some bumps and challenges along the way. We've already logged many issues tracking properties and features that are on our to-do list, but if you come across significant concerns that aren’t yet covered, please [open an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) in the react-native-windows repo. You can also leave comments on [existing issues](https://github.com/microsoft/react-native-windows/issues) to help us prioritize what to tackle first!
+As this is a preview of our new architecture, you may encounter some bumps and challenges along the way. We've already logged many issues tracking properties and features that are on our to-do list, but if you come across significant concerns that aren’t yet covered, please [open an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) in the react-native-windows repo. You can also leave comments on [existing issues](https://github.com/microsoft/react-native-windows/issues) to help us prioritize what to tackle first!
 
 ## Components
 
