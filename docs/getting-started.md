@@ -9,7 +9,7 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
-> **Interested in exploring the new architecture?** We are "soft-launching" our implementation of the new architecture. If you’d like to be an early adopter, check out the instructions in the [New Architecture Guide](NewArch.md) and discover new templates available in [init-windows-cli](init-windows-cli.md#templates). 
+> **Interested in migrating to [React Native's New Architecture](https://reactnative.dev/architecture/landing-page)?** New Architecture support in React Native for Windows is now available to preview in 0.76. Note there are several key changes, so if you’d like to be an early adopter, check out the information in the [New Architecture Guide](new-architecture.md). 
 
 ## Create a new React Native project
 
