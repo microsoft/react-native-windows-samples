@@ -67,3 +67,4 @@ Each component below links to the corresponding issue label in our GitHub repo t
 
 - [Flyout](https://github.com/microsoft/react-native-windows/issues/11921)
 - [Popup](https://github.com/microsoft/react-native-windows/issues/11921)
+- [Glyph](https://github.com/microsoft/react-native-windows/issues/11961)
