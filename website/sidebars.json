@@ -50,6 +50,7 @@
       "metro-config-out-tree-platforms"
     ],
     "Experimental" : [
+      "new-architecture",
       "hermes",
       "NuGet"
     ]

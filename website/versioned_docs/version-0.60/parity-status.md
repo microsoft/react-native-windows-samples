@@ -8,7 +8,7 @@ This doc reports the status progress of core components modules/APIs integration
 
 If there is a discrepancy here, or features are not being tracked that should be, please [submit an issue under vNext](https://github.com/microsoft/react-native-windows/issues/new?labels=vnext&template=vnext.md) to let us know.
 
-You can keep track of our component and module API parity more closely on our [GitHub project board](https://github.com/microsoft/react-native-windows/projects/7).
+You can keep track of our component and module API parity more closely on our [GitHub project board](https://github.com/microsoft/react-native-windows/projects).
 
 ### Components
 Below are a list of components and their status towards parity between the lean core components you'd find on iOS and Android and the functionality we have today.
@@ -18,13 +18,13 @@ Below are a list of components and their status towards parity between the lean 
 |`ActivityIndicator`|**Complete**|-|**Complete**|
 |`Button`|**Complete**|-|**Complete**|
 |`FlatList`|**Complete**|-|**Complete**|
-|`Image`|Partial|[`Image` project board](https://github.com/microsoft/react-native-windows/projects/18)|Partial|
-|`ScrollView`|Partial|[`ScrollView` project board](https://github.com/microsoft/react-native-windows/projects/17)|Partial|
+|`Image`|Partial|[`Image` project board](https://github.com/microsoft/react-native-windows/projects)|Partial|
+|`ScrollView`|Partial|[`ScrollView` project board](https://github.com/microsoft/react-native-windows/projects)|Partial|
 |`Switch`|**Complete**|-|**Complete**|
 |`Text`|**Complete** *(Some properties not supported due to device platform differences, docs coming soon)*|**Complete**|**Complete**|
-|`TextInput`|Partial|[`TextInput` project board](https://github.com/microsoft/react-native-windows/projects/20)|Partial|
+|`TextInput`|Partial|[`TextInput` project board](https://github.com/microsoft/react-native-windows/projects)|Partial|
 |`KeyboardAvoidingView`|**Complete**|-|Not supported|
-|`View`|Partial (some Style props left)|[`ViewStyle` props project board](https://github.com/microsoft/react-native-windows/projects/19)|**Complete**|
+|`View`|Partial (some Style props left)|[`ViewStyle` props project board](https://github.com/microsoft/react-native-windows/projects)|**Complete**|
 |`VirtualizedList`|Partial|No Issues Logged|**Complete**|
 
 ### Modules
@@ -34,7 +34,7 @@ Also tracked are Native Modules, as they are essential, even if not part of the 
 
 |Module| `vnext` version Status | `vnext` Issues remaining | `current` version Status|
 |:-|:-|:-|:-|
-|`Accessibility`|Partial|[Accessibility project board](https://github.com/microsoft/react-native-windows/projects/21)|Partial|
+|`Accessibility`|Partial|[Accessibility project board](https://github.com/microsoft/react-native-windows/projects)|Partial|
 |`LayoutProps`|**Completed**|-|Partial|
 |`Alert`|**Completed**|-|**Complete**|
 |`AppState`|Partial|[2144](https://github.com/microsoft/react-native-windows/issues/2144)|**Complete**|

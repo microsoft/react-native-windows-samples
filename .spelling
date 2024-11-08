@@ -1,5 +1,6 @@
 2.x
 accessors
+ActivityIndicator
 APIs
 Appium
 autolink
@@ -39,6 +40,7 @@ HomeBrew
 hostname
 i.e.
 init-windows
+init-windows-cli
 initializer
 interop
 iOS
@@ -64,6 +66,7 @@ packages.config
 PDBs
 PluralSight
 PowerShell
+Popup
 pre-built
 pre-filtered
 pre-installed
@@ -76,6 +79,7 @@ react-native-macos
 react-native-windows
 repo
 repos
+RefreshControl
 RNW-on-WinUI
 roadmap
 run-windows
@@ -84,6 +88,7 @@ runtimes
 schemas
 shiftKey
 Sourcetree
+ScrollView
 struct
 symlink
 symlinks
@@ -109,4 +114,5 @@ WinAppDriver
 WinAppSDK
 WinRT
 WinUI
+WinUI3
 Xcode
