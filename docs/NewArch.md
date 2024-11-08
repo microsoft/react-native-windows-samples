@@ -47,7 +47,7 @@ As this is a soft launch of our new architecture, you may encounter some bumps a
 
 ## Components
 
-The new architecture introduces significant updates. By moving away from XAML, we gain the flexibility to incorporate components that weren’t previously available and reduce technical debt from legacy XAML components. Below is a list of components we plan to support in the new architecture, as well as those we are looking to deprecate. For developers currently using Flyout or Popup, we hope they’ll find Modal a suitable alternative.
+The new architecture introduces significant updates. By moving from UWP to the Windows App SDK Scene Graph we gain the flexibility to incorporate components that weren’t previously available and reduce technical debt from legacy UWP Paper components. Below is a list of components we plan to support in the new architecture, as well as those we are looking to deprecate. For developers currently using [`Flyout`](https://microsoft.github.io/react-native-windows/docs/flyout-component) or [`Popup`](https://microsoft.github.io/react-native-windows/docs/popup-component), we hope they’ll find [`Modal`](https://reactnative.dev/docs/modal) a suitable alternative.
 
 ### Supported Components
 
