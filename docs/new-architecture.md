@@ -9,11 +9,11 @@ React Native's [New Architecture](https://reactnative.dev/architecture/landing-p
 
 ## From UWP to WinAppSDK
 
-On Windows, the implementation of the (Old Architecture) Paper render used the [Universal Windows Platform](https://learn.microsoft.com/en-us/windows/uwp/). To meet the requirements of the new Fabric renderer, the Windows implementation now uses the modern [Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/). This evolution aims to unify rendering logic cross-platform in C++
+On Windows, the implementation of the (Old Architecture) Paper render used the [Universal Windows Platform](https://learn.microsoft.com/en-us/windows/uwp/). To meet the requirements of the new Fabric renderer, the Windows implementation now uses the modern [Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/). This evolution allows us to utilize the upstream React Native cross-platform rendering logic while also enabling us to better implement the Windows-specific platform code.
 
 This also means that all React Native for Windows New Architecture apps will now be Win32, WinAppSDK-based applications. This aligns with the current recommendations for Windows app development, providing React Native for Windows developers with greater access to the latest Windows' frameworks.
 
-All React Native for Windows Old Architecture apps will remain UWP applications. It is still possible and supported to create and maintain apps that target the Old Architecture and UWP.
+All React Native for Windows Old Architecture apps will remain UWP applications. It is still possible and supported to create and maintain apps that target the Old Architecture and UWP (see the list of ["old" templates](init-windows-cli.md#templates) still available).
 
 However, understand that while there are no immediate plans to deprecate support for Old Architecture applications, almost all future investments are focused on the New Architecture, and as React Native eventually deprecates Old Architecture support, so too will React Native for Windows. We will provide clear migration guidance for apps once New Architecture support is better established. 
 
@@ -21,39 +21,57 @@ However, understand that while there are no immediate plans to deprecate support
 
 For more information about the reasoning behind the change from UWP to WinAppSDK, see the [FAQ](#faq) below.
 
-## Creating a new Architecture Application
+## Creating a New Architecture application
 
-Starting a React Native Windows project with the new architecture is simple! Follow the steps outlined in our [Getting Started](getting-started.md) guide, but make sure to use the [new architecture template](init-windows-cli.md#templates) when initializing your project with init-windows.
+Starting a React Native Windows project with the new architecture is simple! Follow the steps outlined in our [Getting Started](getting-started.md) guide, but make sure to use a [New Architecture template](init-windows-cli.md#templates) when initializing your project with init-windows.
 
-For example, if you previously set up a project using the old architecture, you might have used a command like this:
+For example, if you previously set up a project using the Old Architecture, you might have used a command like this:
 
 ```bat
 yarn react-native init-windows --overwrite
 ```
 
-To create a project with the new architecture, use the same command but ensure you're specifying the template for the new architecture:
+To create a project with the New Architecture, use the same command but ensure you're specifying a New Architecture template, such as `cpp-app`:
 
 ```bat
 yarn react-native init-windows --template cpp-app --overwrite
 ```
 
-## Development Progress
+> **Note:** There are only two supported New Architecture templates available at this time: `cpp-app` and `cpp-lib`.
 
-Our work on React Native Windows' new architecture follows a series of milestones designed to guide our development priorities. Currently, our focus is on achieving full API parity and improving accessibility features. **Community modules are not yet fully supported in this preview phase**, so most, if not all, modules will not be compatible with new architecture applications at this stage.
+## Development Status
 
-To track real-time progress and specific milestones, visit our [Fabric for React Native for Windows Issue](https://github.com/microsoft/react-native-windows/issues/12042). This page is regularly updated with our latest development goals, roadmap items, and areas we’re actively working on. We encourage developers to check there for the latest on what’s available, what’s in progress, and what’s coming next.
+### The Good Stuff
 
-## Work in Progress
+Starting with this New Architecture Preview, it is now possible to create a New Architecture application by following the steps above and using the new `cpp-app` template. Developers should expect that the vast majority of core components, APIs, and functionality in React Native (i.e. from the `react-native` package) are already available in React Native for Windows.
 
-As this is a preview of our new architecture, you may encounter some bumps and challenges along the way. We've already logged many issues tracking properties and features that are on our to-do list, but if you come across significant concerns that aren’t yet covered, please [open an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) in the react-native-windows repo. You can also leave comments on [existing issues](https://github.com/microsoft/react-native-windows/issues) to help us prioritize what to tackle first!
+In terms of build developer experience, be sure to look out for drastically improved build speeds and reduced dev machine requirements as we default to using pre-built binaries for New Architecture projects.
 
-## Components
+### The Not-So-Good Stuff
 
-The new architecture introduces significant updates. By moving from UWP to the Windows App SDK Scene Graph we gain the flexibility to incorporate components that weren’t previously available and reduce technical debt from legacy UWP Paper components. Below is a list of components we plan to support in the new architecture, as well as those we are looking to deprecate. For developers currently using [`Flyout`](https://microsoft.github.io/react-native-windows/docs/flyout-component) or [`Popup`](https://microsoft.github.io/react-native-windows/docs/popup-component), we hope they’ll find [`Modal`](https://reactnative.dev/docs/modal) a suitable alternative.
+However there are still some important gaps, especially with respect to community module support. First off, community modules that provide UI components by implementing new UI (i.e. via the Paper `IViewManager` interfaces) will not work with New Architecture apps. Those modules will need to implement new Fabric `ComponentView`s, and while technically possible, the experience is not quite ready for wide adoption.
+
+The story is better for non-UI community modules. Some purely non-UI community modules, built to target the existing Old Architecture apps, may still work "out-of-the-box" with your New Architecture apps. But due to the varied state of Windows support in community modules, you may find that even some of those non-UI modules will need updating.
+
+> **Note:** We do have a new library template, `cpp-lib`, which can be used to build non-UI community modules targeting the New Architecture. There are even accommodations within that template to continue to support Old Architecture apps simultaneously with one codebase. However, the template does not yet contain any examples for implementing custom UI for either architecture. The goal will be a single library template that supports both Old and New, UI and non-UI, with examples, but it isn't ready yet.
+
+### Remaining Work
+
+Our work on React Native Windows' New Architecture follows a series of milestones designed to guide our development priorities. Currently, our focus is on enabling community modules alongside full API parity and improving accessibility features.
+
+To track real-time progress and specific milestones, visit our [New Architecture for React Native for Windows Issue](https://github.com/microsoft/react-native-windows/issues/12042). This page is regularly updated with our latest development goals, roadmap items, and areas we’re actively working on. We encourage developers to check there for the latest on what’s available, what’s in progress, and what’s coming next.
+
+## React Native Component Parity
+
+The New Architecture introduces the most significant updates in how UI is rendered. By moving from UWP to the WinAppSDK, we gain the flexibility to implement components that weren't previously available while also reducing the parity gap for existing components.
+
+Perhaps the most notable change is we're finally implementing React Native's [`Modal`](https://reactnative.dev/docs/modal), thereby removing the necessity of using the Windows-only[`Flyout`](https://microsoft.github.io/react-native-windows/docs/flyout-component) or [`Popup`](https://microsoft.github.io/react-native-windows/docs/popup-component) components.
+
+Below you'll find a list of components we plan to support in the New Architecture.
 
 ### Supported Components
 
-Each component below links to the corresponding issue label in our GitHub repo that tracks the progress of its parity with the new architecture
+The plan is to support all React Native core host components in React Native for Windows. Each component below links to the corresponding issue label in our GitHub repo that tracks the progress of its parity with the New Architecture:
 
 - [View](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20View%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
 - [Text](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20Text%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
@@ -65,11 +83,17 @@ Each component below links to the corresponding issue label in our GitHub repo t
 - [Switch](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20Switch%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
 - [RefreshControl](https://github.com/microsoft/react-native-windows/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22Area%3A%20RefreshControl%22%20%20label%3A%22Workstream%3A%20Component%20Parity%22%20label%3A%22Area%3A%20Fabric%22%20)
 
-### Deprecated Components
+### Unsupported Components
+
+The following components were created and included in React Native for Windows Old Architecture in order to tackle the unique compatibility problems posed by using UWP XAML. There is no plan to include built-in support for these Windows-specific components within React Native for Windows (though they may possibly be supported by future community modules).
 
 - [Flyout](https://github.com/microsoft/react-native-windows/issues/11921)
 - [Popup](https://github.com/microsoft/react-native-windows/issues/11921)
 - [Glyph](https://github.com/microsoft/react-native-windows/issues/11961)
+
+## Send us your Feedback
+
+You're sure to encounter some bumps, challenges and rough edges with trying out the New Architecture. We've already logged many issues tracking properties and features that are on our to-do list, but if you come across significant concerns that aren't yet covered, please [open an issue](https://github.com/microsoft/react-native-windows/issues/new/choose) in the react-native-windows repo. You can also leave comments on [existing issues](https://github.com/microsoft/react-native-windows/issues) to help us prioritize what to tackle first!
 
 ## FAQ
 
