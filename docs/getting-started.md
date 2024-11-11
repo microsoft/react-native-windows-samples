@@ -69,8 +69,6 @@ npx react-native init-windows --overwrite
 
 > **Note:** RNW templates contain a customized `metro.config.js` file, which is meant to merge cleanly into the default config provided by the standard React Native project template. If you are starting a new app, overwriting `metro.config.js` should have no impact. However, if you are adding Windows to an existing app with an already modified `metro.config.js` file, please make sure to back up and re-apply your modifications after adding RNW.
 
-> **Note:** Previous versions of the RNW Getting Started steps recommend the use of the `react-native-windows-init` command, which is being phased out. For documentation of that command, see: [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
-
 ## Running a React Native Windows App
 
 > Make sure a browser is launched and running before running a React Native Windows app.
@@ -134,6 +132,3 @@ Follow these steps to build a version of your app that you can install or publis
 > If you're getting different runtime behavior between the Release and Debug configurations, consider disabling the `UseWebDebugger` setting in [`App.cpp`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cpp-app/src/App.cpp#L30) or [`App.xaml.cs`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cs-app/src/App.xaml.cs#L20) to get the same behavior in the Debug configuration.
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
-
-</body>
-</html>
