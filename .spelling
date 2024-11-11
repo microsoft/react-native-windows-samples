@@ -16,6 +16,7 @@ cdb
 Chakra
 changelog
 CocoaPods
+codebase
 codegen
 codegen-windows
 comboboxes
@@ -58,6 +59,7 @@ namespaces
 native-ized
 Node.js
 non-ABI-safe
+non-UI
 npm
 NuGet
 NuGets
