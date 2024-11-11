@@ -20,6 +20,13 @@ Adds a constant provider method to define constants for the native module. See [
 
 
 
+### AddEventEmitter
+void **`AddEventEmitter`**(string name, [`EventEmitterInitializerDelegate`](EventEmitterInitializerDelegate) emitter)
+
+Adds an EventEmitter to the turbo module. See [`EventEmitterInitializerDelegate`](EventEmitterInitializerDelegate).
+
+
+
 ### AddInitializer
 void **`AddInitializer`**([`InitializerDelegate`](InitializerDelegate) initializer)
 
