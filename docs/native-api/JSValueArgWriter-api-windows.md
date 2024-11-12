@@ -16,6 +16,7 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) writer)
 
 
 ## Referenced by
+- [`EmitEventSetterDelegate`](EmitEventSetterDelegate)
 - [`IReactContext`](IReactContext)
 - [`ReactRootView`](ReactRootView)
 - [`ReactViewOptions`](ReactViewOptions)

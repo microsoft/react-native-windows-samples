@@ -14,6 +14,7 @@
 !versioned_docs/version-0.73/native-api/*-api-windows*.md
 !versioned_docs/version-0.74/native-api/*-api-windows*.md
 !versioned_docs/version-0.75/native-api/*-api-windows*.md
+!versioned_docs/version-0.76/native-api/*-api-windows*.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
@@ -25,8 +26,24 @@ File not found IViewManagerCreateWithProperties while parsing versioned_docs/ver
 File not found native-api/IReactPackageProvider-api-windows.md while parsing versioned_docs/version-0.72/coreapp.md
 File not found native-api/IReactContext-api-windows.md while parsing versioned_docs/version-0.72/native-modules-advanced.md
 File not found native-api/ReactNativeHost-api-windows.md while parsing versioned_docs/version-0.72/native-modules-advanced.md
+File not found IViewManagerCreateWithProperties while parsing versioned_docs/version-0.76/view-managers.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
+File not found autolink-windows-cli.md while parsing versioned_docs/version-0.76/getting-started.md
+File not found getting-started.md while parsing versioned_docs/version-0.76/getting-started.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.76/getting-started.md
+File not found run-windows-cli.md while parsing versioned_docs/version-0.76/getting-started.md
+File not found native-modules.md while parsing versioned_docs/version-0.76/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.76/getting-started.md
+File not found getting-started.md while parsing versioned_docs/version-0.76/new-architecture.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.76/new-architecture.md
+File not found getting-started.md while parsing versioned_docs/version-0.76/nuget.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.76/nuget.md
+File not found supported-community-modules.md while parsing versioned_docs/version-0.76/nuget.md
+File not found getting-started.md while parsing versioned_docs/version-0.76/view-managers.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.76/view-managers.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.76/view-managers.md
+File not found native-modules.md while parsing versioned_docs/version-0.76/view-managers.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.75/autolink-windows-cli.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.75/debugging-javascript.md
 File not found getting-started.md while parsing versioned_docs/version-0.75/getting-started.md

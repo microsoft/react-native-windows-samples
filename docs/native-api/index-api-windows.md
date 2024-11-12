@@ -112,6 +112,8 @@ sidebar_label: Full reference
 - [`AccessibilityActionEventHandler`](AccessibilityActionEventHandler)
 - [`AccessibilityInvokeEventHandler`](AccessibilityInvokeEventHandler)
 - [`ConstantProviderDelegate`](ConstantProviderDelegate)
+- [`EmitEventSetterDelegate`](EmitEventSetterDelegate)
+- [`EventEmitterInitializerDelegate`](EventEmitterInitializerDelegate)
 - [`InitializerDelegate`](InitializerDelegate)
 - [`JSValueArgWriter`](JSValueArgWriter)
 - [`JsiByteArrayUser`](JsiByteArrayUser)

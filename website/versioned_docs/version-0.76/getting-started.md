@@ -1,5 +1,5 @@
 ---
-id: version-0.75-getting-started
+id: version-0.76-getting-started
 title: Get Started with Windows
 original_id: getting-started
 ---
@@ -9,6 +9,8 @@ This guide will help you get started on setting up your very first React Native 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
+
+> **Interested in migrating to [React Native's New Architecture](https://reactnative.dev/architecture/landing-page)?** New Architecture support in React Native for Windows is now available to preview in 0.76. Note there are several key changes, so if you’d like to be an early adopter, check out the information in the [New Architecture Guide](new-architecture.md). 
 
 ## Create a new React Native project
 
@@ -24,7 +26,7 @@ Remember to call `@react-native-community/cli init` from the place you want your
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@latest init <projectName> --version "0.75-stable"
+npx --yes @react-native-community/cli@latest init <projectName> --version "latest"
 ```
 
 ### Navigate into this newly created directory
@@ -47,13 +49,13 @@ cd <projectName>
 <!--Using Yarn (Recommended)-->
 
 ```bat
-yarn add react-native-windows@^0.75.0
+yarn add react-native-windows@^0.76.0
 ```
 
 <!--Using NPM-->
 
 ```bat
-npm install --save react-native-windows@^0.75.0
+npm install --save react-native-windows@^0.76.0
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -67,8 +69,6 @@ npx react-native init-windows --overwrite
 ```
 
 > **Note:** RNW templates contain a customized `metro.config.js` file, which is meant to merge cleanly into the default config provided by the standard React Native project template. If you are starting a new app, overwriting `metro.config.js` should have no impact. However, if you are adding Windows to an existing app with an already modified `metro.config.js` file, please make sure to back up and re-apply your modifications after adding RNW.
-
-> **Note:** Previous versions of the RNW Getting Started steps recommend the use of the `react-native-windows-init` command, which is being phased out. For documentation of that command, see: [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
 
 ## Running a React Native Windows App
 
@@ -134,5 +134,3 @@ Follow these steps to build a version of your app that you can install or publis
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
 
-</body>
-</html>
