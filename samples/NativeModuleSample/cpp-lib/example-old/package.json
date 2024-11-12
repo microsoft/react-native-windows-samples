@@ -22,7 +22,8 @@
     "@react-native/babel-preset": "0.76.0",
     "@react-native/metro-config": "0.76.0",
     "@react-native/typescript-config": "0.76.0",
-    "@rnx-kit/jest-preset": "^0.1.17"
+    "@rnx-kit/jest-preset": "^0.1.17",
+    "metro-config": "^0.81.0"
   },
   "engines": {
     "node": ">=18"
