@@ -29,6 +29,7 @@
   ],
   "scripts": {
     "example": "yarn workspace native-module-sample-example",
+    "example-old": "yarn workspace native-module-sample-example-old",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -77,13 +78,15 @@
     "react-native-windows": "*"
   },
   "workspaces": [
-    "example"
+    "example",
+    "example-old"
   ],
   "packageManager": "yarn@3.6.1",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
+      "<rootDir>/example-old/node_modules",
       "<rootDir>/lib/"
     ]
   },

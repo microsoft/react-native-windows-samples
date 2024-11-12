@@ -8038,6 +8038,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"native-module-sample-example-old@workspace:example-old":
+  version: 0.0.0-use.local
+  resolution: "native-module-sample-example-old@workspace:example-old"
+  dependencies:
+    "@babel/core": ^7.25.2
+    "@babel/preset-env": ^7.25.3
+    "@babel/runtime": ^7.25.0
+    "@react-native-community/cli": 15.0.0-alpha.2
+    "@react-native-community/cli-platform-android": 15.0.0-alpha.2
+    "@react-native-community/cli-platform-ios": 15.0.0-alpha.2
+    "@react-native/babel-preset": 0.76.0
+    "@react-native/metro-config": 0.76.0
+    "@react-native/typescript-config": 0.76.0
+    "@rnx-kit/jest-preset": ^0.1.17
+    react: 18.3.1
+    react-native: 0.76.0
+    react-native-windows: 0.76.0
+  languageName: unknown
+  linkType: soft
+
 "native-module-sample-example@workspace:example":
   version: 0.0.0-use.local
   resolution: "native-module-sample-example@workspace:example"
