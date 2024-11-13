@@ -28,3 +28,7 @@
 #include <tchar.h>
 
 // Reference additional headers your project requires here
+#include <winrt/Windows.System.Threading.h>
+#include <winrt/Windows.Web.Http.h>
+#include <winrt/Windows.Web.Http.Headers.h>
+using namespace winrt::Windows::Foundation;

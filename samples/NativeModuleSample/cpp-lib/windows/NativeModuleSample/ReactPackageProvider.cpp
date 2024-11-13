@@ -5,7 +5,9 @@
 #include "ReactPackageProvider.g.cpp"
 #endif
 
-#include "NativeModuleSample.h"
+#include "DataMarshallingExamples.h"
+#include "FancyMath.h"
+#include "SimpleHttpModule.h"
 
 using namespace winrt::Microsoft::ReactNative;
 
