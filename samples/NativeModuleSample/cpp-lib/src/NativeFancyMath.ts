@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import type { TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
 

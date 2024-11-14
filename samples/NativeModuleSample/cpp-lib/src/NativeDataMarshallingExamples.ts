@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import type { TurboModule } from 'react-native';
 import { TurboModuleRegistry } from 'react-native';
 import type { Int32 } from 'react-native/Libraries/Types/CodegenTypes';
@@ -13,6 +16,7 @@ export type Line = {
 };
 
 export interface Spec extends TurboModule {
+
   ExplicitPrimitiveArgs(b: boolean, i: Int32, d: number, s: string): void;
 
   ReturnExplicitBoolean(callback: (value: boolean) => void): void;
