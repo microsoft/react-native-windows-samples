@@ -37,7 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
+        sampleName: ['NativeModuleSample\cpp-lib', 'NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
     uses: ./.github/workflows/template-buildsample.yml

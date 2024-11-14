@@ -1,6 +1,7 @@
 /**
  * @type {import('@react-native-community/cli-types').UserDependencyConfig}
  */
+
 module.exports = {
   dependency: {
     platforms: {
@@ -13,6 +14,15 @@ module.exports = {
             directDependency: true,
           }
         ],
+      },
+    },
+  },
+  project: {
+    windows: {
+      sourceDir: 'example\\windows',
+      solutionFile: 'NativeModuleSampleExample.sln',
+      project: {
+        projectFile: 'NativeModuleSampleExample\\NativeModuleSampleExample.vcxproj',
       },
     },
   },
