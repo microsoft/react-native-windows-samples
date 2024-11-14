@@ -62,7 +62,7 @@ struct DataMarshallingExamples
 
     // Example JS:
     //
-    // NativeModules.DataMarshallingExamples.ExplicitPrimitiveArgs(true, 1, 3.14, 'Hello World');
+    // DataMarshallingExamples.ExplicitPrimitiveArgs(true, 1, 3.14, 'Hello World');
     REACT_METHOD(ExplicitPrimitiveArgs);
     void ExplicitPrimitiveArgs(bool b, int i, double d, std::string s) noexcept
     {
@@ -74,11 +74,11 @@ struct DataMarshallingExamples
 
     // Example JS:
     //
-    // NativeModules.DataMarshallingExamples.ReturnExplicitBoolean(result => {
+    // DataMarshallingExamples.ReturnExplicitBoolean(result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.ReturnExplicitBooleanSync();
+    // var syncResult = DataMarshallingExamples.ReturnExplicitBooleanSync();
     // console.log(syncResult);
     REACT_METHOD(ReturnExplicitBoolean);
     REACT_SYNC_METHOD(ReturnExplicitBoolean, L"ReturnExplicitBooleanSync");
@@ -91,11 +91,11 @@ struct DataMarshallingExamples
 
     // Example JS:
     //
-    // NativeModules.DataMarshallingExamples.ReturnExplicitInteger(result => {
+    // DataMarshallingExamples.ReturnExplicitInteger(result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.ReturnExplicitIntegerSync();
+    // var syncResult = DataMarshallingExamples.ReturnExplicitIntegerSync();
     // console.log(syncResult);
     REACT_METHOD(ReturnExplicitInteger);
     REACT_SYNC_METHOD(ReturnExplicitInteger, L"ReturnExplicitIntegerSync");
@@ -108,11 +108,11 @@ struct DataMarshallingExamples
 
     // Example JS:
     //
-    // NativeModules.DataMarshallingExamples.ReturnExplicitDouble(result => {
+    // DataMarshallingExamples.ReturnExplicitDouble(result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.ReturnExplicitDoubleSync();
+    // var syncResult = DataMarshallingExamples.ReturnExplicitDoubleSync();
     // console.log(syncResult);
     REACT_METHOD(ReturnExplicitDouble);
     REACT_SYNC_METHOD(ReturnExplicitDouble, L"ReturnExplicitDoubleSync");
@@ -125,11 +125,11 @@ struct DataMarshallingExamples
 
     // Example JS:
     //
-    // NativeModules.DataMarshallingExamples.ReturnExplicitString(result => {
+    // DataMarshallingExamples.ReturnExplicitString(result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.ReturnExplicitStringSync();
+    // var syncResult = DataMarshallingExamples.ReturnExplicitStringSync();
     // console.log(syncResult);
     REACT_METHOD(ReturnExplicitString);
     REACT_SYNC_METHOD(ReturnExplicitString, L"ReturnExplicitStringSync");
@@ -146,7 +146,7 @@ struct DataMarshallingExamples
 
     // In these examples, we specify native methods with native object
     // input arguments and / or return values, and rely on the code
-    // in Microsoft.ReactNative.Managed to handle all of the data
+    // in Microsoft.ReactNative to handle all of the data
     // marshalling to / from JS objects.
     //
     // Both synchronous and asynchronous methods are provided where
@@ -157,11 +157,11 @@ struct DataMarshallingExamples
     // var p1 = { X: 2, Y: 3 };
     // var p2 = { X: 4, Y: 5 };
     //
-    // NativeModules.DataMarshallingExamples.GetMidpoint(p1, p2, result => {
+    // DataMarshallingExamples.GetMidpoint(p1, p2, result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.GetMidpointSync(p1, p2);
+    // var syncResult = DataMarshallingExamples.GetMidpointSync(p1, p2);
     // console.log(syncResult);
     REACT_METHOD(GetMidpoint);
     REACT_SYNC_METHOD(GetMidpoint, L"GetMidpointSync");
@@ -183,11 +183,11 @@ struct DataMarshallingExamples
     //
     // var line = { Start: { X: 2, Y: 3 }, End: { X: 4, Y: 5 } };
     //
-    // NativeModules.DataMarshallingExamples.GetLength(line, result => {
+    // DataMarshallingExamples.GetLength(line, result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.GetLengthSync(line);
+    // var syncResult = DataMarshallingExamples.GetLengthSync(line);
     // console.log(syncResult);
     REACT_METHOD(GetLength);
     REACT_SYNC_METHOD(GetLength, L"GetLengthSync");
@@ -207,7 +207,7 @@ struct DataMarshallingExamples
 
     // In these examples, we specify native methods with native iterable
     // input arguments and / or return values, and rely on the code
-    // in Microsoft.ReactNative.Managed to handle all of the data
+    // in Microsoft.ReactNative to handle all of the data
     // marshalling to / from JS arrays.
     //
     // Both synchronous and asynchronous methods are provided where
@@ -217,11 +217,11 @@ struct DataMarshallingExamples
     //
     // var values = [ 2, 3, 4, 5];
     //
-    // NativeModules.DataMarshallingExamples.GetAverage(values, result => {
+    // DataMarshallingExamples.GetAverage(values, result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.GetAverageSync(values);
+    // var syncResult = DataMarshallingExamples.GetAverageSync(values);
     // console.log(syncResult);
     REACT_METHOD(GetAverage);
     REACT_SYNC_METHOD(GetAverage, L"GetAverageSync");
@@ -245,11 +245,11 @@ struct DataMarshallingExamples
     //
     // var values = [ 'Hello', 'World' ];
     //
-    // NativeModules.DataMarshallingExamples.Concatenate(values, result => {
+    // DataMarshallingExamples.Concatenate(values, result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.ConcatenateSync(values);
+    // var syncResult = DataMarshallingExamples.ConcatenateSync(values);
     // console.log(syncResult);
     REACT_METHOD(Concatenate);
     REACT_SYNC_METHOD(Concatenate, L"ConcatenateSync");
@@ -271,11 +271,11 @@ struct DataMarshallingExamples
     // var s = 'Hello World';
     // var separators = ' ';
     //
-    // NativeModules.DataMarshallingExamples.Split(s, separators, result => {
+    // DataMarshallingExamples.Split(s, separators, result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.SplitSync(s, separators);
+    // var syncResult = DataMarshallingExamples.SplitSync(s, separators);
     // console.log(syncResult);
     REACT_METHOD(Split);
     REACT_SYNC_METHOD(Split, L"SplitSync");
@@ -306,7 +306,7 @@ struct DataMarshallingExamples
 
     // In these examples, we specify native methods with JSValue
     // input arguments and / or return values, and rely on the code
-    // in Microsoft.ReactNative.Managed to handle all of the data
+    // in Microsoft.ReactNative to handle all of the data
     // marshalling to / from JS types.
     //
     // Both synchronous and asynchronous methods are provided where
@@ -336,7 +336,7 @@ struct DataMarshallingExamples
 
     // Example JS:
     //
-    // NativeModules.DataMarshallingExamples.JSValueArgs(true, 1, 3.14, 'Hello World');
+    // DataMarshallingExamples.JSValueArgs(true, 1, 3.14, 'Hello World');
     REACT_METHOD(JSValueArgs);
     void JSValueArgs(JSValue && b, JSValue && i, JSValue && d, JSValue && s) noexcept
     {
@@ -352,11 +352,11 @@ struct DataMarshallingExamples
     // var p1 = { x: 2, y: 3 };
     // var p2 = { x: 4, y: 5 };
     //
-    // NativeModules.DataMarshallingExamples.GetMidpointByJSValue(p1, p2, result => {
+    // DataMarshallingExamples.GetMidpointByJSValue(p1, p2, result => {
     //   console.log(result);
     // });
     //
-    // var syncResult = NativeModules.DataMarshallingExamples.GetMidpointByJSValue(p1, p2);
+    // var syncResult = DataMarshallingExamples.GetMidpointByJSValue(p1, p2);
     // console.log(syncResult);
     REACT_METHOD(GetMidpointByJSValue);
     REACT_SYNC_METHOD(GetMidpointByJSValue, L"GetMidpointByJSValueSync");
