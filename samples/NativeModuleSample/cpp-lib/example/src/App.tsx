@@ -5,7 +5,6 @@ import {
   type Response,
   SimpleHttpModule,
   type Point,
-  type Line,
   DataMarshallingExamples,
 } from 'native-module-sample';
 import type { Int32 } from 'react-native/Libraries/Types/CodegenTypes';
@@ -26,6 +25,15 @@ export default function App() {
   const [doubleResult, setDoubleResult] = useState<number | undefined>();
   const [stringResult, setStringResult] = useState<string | undefined>();
   const [midpointResult, setMidpointResult] = useState<Point | undefined>();
+  const [lengthResult, setLengthResult] = useState<number | undefined>();
+  const [averageResult, setAverageResult] = useState<number | undefined>();
+  const [concatenateResult, setConcatenateResult] = useState<
+    string | undefined
+  >();
+  const [splitResult, setSplitResult] = useState<Array<string> | undefined>();
+  const [midpointByJSValueResult, setMidpointByJSValueResult] = useState<
+    Object | undefined
+  >();
 
   useEffect(() => {
     FancyMath.add(3, 7, setFancyMathAddResult);
@@ -43,12 +51,30 @@ export default function App() {
       { X: 1, Y: 1 },
       setMidpointResult
     );
+    DataMarshallingExamples.GetLength(
+      {
+        Start: { X: 0, Y: 0 },
+        End: { X: 1, Y: 1 },
+      },
+      setLengthResult
+    );
+    DataMarshallingExamples.GetAverage([1, 2, 3, 4, 5, 6], setAverageResult);
+    DataMarshallingExamples.Concatenate(
+      ['hello', 'world'],
+      setConcatenateResult
+    );
+    DataMarshallingExamples.Split('hello world', ' ', setSplitResult);
+    DataMarshallingExamples.GetMidpointByJSValue(
+      { x: 0, y: 0 },
+      { x: 1, y: 1 },
+      setMidpointByJSValueResult
+    );
   }, []);
 
   return (
     <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
       <View style={styles.container}>
-      <Text />
+        <Text />
         <Text style={{ fontWeight: 'bold' }}>FancyMath:</Text>
         <Text>
           <Text style={{ fontStyle: 'italic' }}>E:</Text> {FancyMath.E}
@@ -146,6 +172,12 @@ export default function App() {
         <Text />
         <Text>
           <Text style={{ fontStyle: 'italic' }}>
+            GetLength({'{Start: { X: 0, Y: 0 }, End: { X: 1, Y: 1 }}'}):
+          </Text>{' '}
+          {lengthResult ?? '???'}
+        </Text>
+        <Text>
+          <Text style={{ fontStyle: 'italic' }}>
             GetLengthSync({'{Start: { X: 0, Y: 0 }, End: { X: 1, Y: 1 }}'}):
           </Text>{' '}
           {DataMarshallingExamples.GetLengthSync({
@@ -156,11 +188,23 @@ export default function App() {
         <Text />
         <Text>
           <Text style={{ fontStyle: 'italic' }}>
+            GetAverage([1,2,3,4,5,6]):
+          </Text>{' '}
+          {averageResult ?? '???'}
+        </Text>
+        <Text>
+          <Text style={{ fontStyle: 'italic' }}>
             GetAverageSync([1,2,3,4,5,6]):
           </Text>{' '}
           {DataMarshallingExamples.GetAverageSync([1, 2, 3, 4, 5, 6])}
         </Text>
         <Text />
+        <Text>
+          <Text style={{ fontStyle: 'italic' }}>
+            Concatenate(['hello', 'world']):
+          </Text>{' '}
+          {concatenateResult ?? '???'}
+        </Text>
         <Text>
           <Text style={{ fontStyle: 'italic' }}>
             ConcatenateSync(['hello', 'world']):
@@ -170,6 +214,12 @@ export default function App() {
         <Text />
         <Text>
           <Text style={{ fontStyle: 'italic' }}>
+            Split('hello world', ' '):
+          </Text>{' '}
+          {JSON.stringify(splitResult) ?? '???'}
+        </Text>
+        <Text>
+          <Text style={{ fontStyle: 'italic' }}>
             SplitSync('hello world', ' '):
           </Text>{' '}
           {JSON.stringify(
@@ -177,6 +227,19 @@ export default function App() {
           )}
         </Text>
         <Text />
+        <Button
+          title={"JSValueArgs(true, 1, 3.14, 'Hello World')"}
+          onPress={(_) => {
+            DataMarshallingExamples.JSValueArgs(true, 1, 3.14, 'Hello World');
+          }}
+        />
+        <Text />
+        <Text>
+          <Text style={{ fontStyle: 'italic' }}>
+            GetMidpointByJSValue({'{x: 0, y: 0}, {x: 1, y: 1}'}):
+          </Text>{' '}
+          {JSON.stringify(midpointByJSValueResult) ?? '???'}
+        </Text>
         <Text>
           <Text style={{ fontStyle: 'italic' }}>
             GetMidpointByJSValueSync({'{x: 0, y: 0}, {x: 1, y: 1}'}):
