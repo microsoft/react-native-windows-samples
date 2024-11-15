@@ -51,7 +51,7 @@ namespace NativeModuleSample
         //
         // Example JS:
         //
-        // SimpleHttpModule.GetHttpResponse('https://microsoft.github.io/react-native-windows/')
+        // NativeModules.SimpleHttpModule.GetHttpResponse('https://microsoft.github.io/react-native-windows/')
         //  .then(result => console.log(result))
         //  .catch(error => console.log(error));
         REACT_METHOD(GetHttpResponse);
