@@ -1,0 +1,38 @@
+{
+  "name": "native-module-sample-example-old",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "windows": "npx @react-native-community/cli run-windows",
+    "test:windows": "jest --config jest.config.windows.js"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-native": "0.76.0",
+    "react-native-windows": "0.76.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "15.0.0-alpha.2",
+    "@react-native-community/cli-platform-android": "15.0.0-alpha.2",
+    "@react-native-community/cli-platform-ios": "15.0.0-alpha.2",
+    "@react-native/babel-preset": "0.76.0",
+    "@react-native/metro-config": "0.76.0",
+    "@react-native/typescript-config": "0.76.0",
+    "@rnx-kit/jest-preset": "^0.1.17",
+    "metro-config": "^0.81.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "react-native-windows": {
+    "init-windows": {
+      "name": "NativeModuleSampleExampleOld",
+      "namespace": "NativeModuleSampleExampleOld",
+      "template": "old/uwp-cpp-app"
+    }
+  }
+}

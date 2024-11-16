@@ -1,0 +1,13 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+#include "NamespaceRedirect.h"
+
+namespace NativeModuleSampleExampleOld
+{
+    [default_interface]
+    runtimeclass MainPage : XAML_NAMESPACE.Controls.Page
+    {
+        MainPage();
+    }
+}
