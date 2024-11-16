@@ -11,16 +11,15 @@ TurboModules are the next iteration of Native Modules that provide a few extra b
 
 Modules running as TurboModules will be available in the JS from `TurboModuleRegistry.get('<modulename>')` instead of `NativeModules.<modulename>`.  So your JavaScript will have to be updated before switching.  Ideally while you are at it, you should switch your modules to use [Spec files](https://reactnative.dev/docs/the-new-architecture/pillars-turbomodules#2-javascript-specification). This will make your modules compatible with codegen.
 
->Note: `TurboModuleRegistry` will fallback to returning a native module instead of a turbo module if there is a native module registered from the native code. So you can update your JavaScript before updating your native code.
+>**Note:** `TurboModuleRegistry` will fallback to returning a native module instead of a turbo module if there is a native module registered from the native code. So you can update your JavaScript before updating your native code.
 
-Starting in version 0.71, JS/TS spec files can codegen C++ spec files that can verify that the native implementation matches the definition in JS.  In addition modules can now be run as TurboModules instead of as a Native Module simply by using adding an additional parameter to your call to `AddAttributedModules`:
+Starting in version 0.71, JS/TS spec files can codegen C++ spec files that can verify that the native implementation matches the definition in JS. In addition modules can now be run as TurboModules instead of as a Native Module simply by using adding an additional parameter to your call to `AddAttributedModules`:
 
 ```cpp
 AddAttributedModules(packageBuilder, true);
 ```
 
 Alternatively if you are registering modules more manually by calling `IReactPackageBuilder.AddModule`, you can call `IReactPackageBuilder.AddTurboModule` instead.
-
 
 ### Additional differences running as Native Module vs TurboModule
 
