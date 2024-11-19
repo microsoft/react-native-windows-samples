@@ -46,7 +46,7 @@ There are a variety of existing (community) native module libraries which expose
 
 First, you'll need to get the library's source. If the library is open source (many are), you can often find a link to its source repository in its npmjs.com listing.
 
-Once you have the source set up on your dev machine, you should be go to [Add Windows support to a native module library](add-windows-support-to-a-native-module-library).
+Once you have the source set up on your dev machine, you should be go to [Add Windows support to a native module library](#add-windows-support-to-a-native-module-library).
 
 > **Note:** Sometimes (community) libraries change owners, get abandoned, and/or are unwilling to add and maintain Windows support. There's currently no easy way to extend libraries you can't contribute to, other than by making and publishing your own fork of the code. So it's a good idea to figure out your plan and communicate with the library owner before you get too far in the implementation process.
 
