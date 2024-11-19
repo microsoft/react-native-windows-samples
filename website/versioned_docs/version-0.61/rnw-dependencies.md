@@ -31,7 +31,7 @@ To develop React-Native for Windows apps, you will need the following:
   ```
   choco install nodejs.install --version=12.9.1
   ```
-  - Directly from [Node.js](https://nodejs.org/en/download/)
+  - Directly from [Node.js](https://nodejs.org/en/download)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
   > For both of the non-chocolatey installations, ensure that you are installing version 12.9.1 as that is the recommended version when building React Native Windows apps.
   
