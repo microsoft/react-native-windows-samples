@@ -52,7 +52,7 @@ Options to install [Node.js](https://nodejs.org) separately:
   choco install nodejs-lts
   ```
   - Using [another package manager](https://nodejs.org/en/download/package-manager/) such as [Scoop](https://scoop.sh/) or [Node Version Switcher (nvs)](https://github.com/jasongin/nvs)
-  - Directly from [Node.js](https://nodejs.org/en/download/)
+  - Directly from [Node.js](https://nodejs.org/en/download)
 
 Optional steps that are _highly recommended_:
 

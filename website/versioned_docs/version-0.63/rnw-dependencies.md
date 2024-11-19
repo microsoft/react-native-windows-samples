@@ -49,7 +49,7 @@ You will also need to ensure that certain settings are enabled:
   ```bat
   choco install nodejs-lts
   ```
-  - Directly from [Node.js](https://nodejs.org/en/download/)
+  - Directly from [Node.js](https://nodejs.org/en/download)
   - By selecting the "Node.js development support" component in the Visual Studio 2019 installer (above)
 
 - Install [Chrome](https://www.google.com/chrome/) (_optional_, but needed for JS debugging)
