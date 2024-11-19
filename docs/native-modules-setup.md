@@ -141,7 +141,7 @@ So, the answer to *Where do I need to implement the native code so it's availabl
 
 You're going to implement the native code inside your native Windows library project. I.e. if your library is named `MyLib`, you'll be creating and modifying files in the `windows\MyLib\` folder of your project.
 
-That's it, you can continue on to [Next Steps](next-steps).
+That's it, you can continue on to [Next Steps](#next-steps).
 
 > **Note:** There are two older library templates, `old/uwp-cpp-lib` for creating C++/WinRT UWP projects and `old/uwp-cs-lib` for C# UWP projects. Both are planned for eventual deprecation and neither are recommended for initializing new projects. They should only be used by developers with specific legacy requirements.
 
