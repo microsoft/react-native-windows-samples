@@ -153,6 +153,10 @@
     "includesGeneratedCode": true,
     "windows": {
       "namespace": "NativeModuleSampleCodegen",
+      "generators": [
+        "modulesWindows",
+        "componentsWindows"
+      ],
       "outputDirectory": "windows/NativeModuleSample/codegen",
       "separateDataTypes": true
     }

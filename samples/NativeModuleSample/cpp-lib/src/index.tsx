@@ -17,3 +17,6 @@ export { type Response } from './NativeSimpleHttpModule';
 export const SimpleHttpModule = {
   GetHttpResponse: NativeSimpleHttpModule.GetHttpResponse,
 };
+
+export {default as CircleMask} from './CircleMaskNativeComponent';
+export * from './CircleMaskNativeComponent';

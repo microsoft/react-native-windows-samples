@@ -9,6 +9,7 @@ import {
   SimpleHttpModule,
   type Point,
   DataMarshallingExamples,
+  CircleMask,
 } from 'native-module-sample';
 import type { Int32 } from 'react-native/Libraries/Types/CodegenTypes';
 
@@ -254,6 +255,20 @@ export default function App() {
             )
           )}
         </Text>
+        <Text />
+        <CircleMask style={{ margin: 10 }}>
+          <View
+            style={{
+              backgroundColor: '#006666',
+              width: 100,
+              height: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Text style={{ fontSize: 20 }}>CircleMask</Text>
+          </View>
+        </CircleMask>
         <Text />
       </View>
     </ScrollView>
