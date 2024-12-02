@@ -12,7 +12,13 @@ void RegisterCircleMaskNativeComponent(
     winrt::Microsoft::ReactNative::IReactPackageBuilder const &packageBuilder) noexcept
 {
 #ifdef RNW_NEW_ARCH
-  NativeModuleSampleCodegen::RegisterCircleMaskNativeComponent<CircleMaskComponentView>(packageBuilder, {});
+  NativeModuleSampleCodegen::RegisterCircleMaskNativeComponent<CircleMaskComponentView>(packageBuilder, [](const winrt::Microsoft::ReactNative::Composition::IReactCompositionViewComponentBuilder& /*builder*/) {
+    // Once 0.76 includes SetViewFeatures - enable this code:
+    /*
+    // Turn off default border handling, as it overrides the Clip property of the visual
+    builder.SetViewFeatures(winrt::Microsoft::ReactNative::Composition::ComponentViewFeatures::Default & ~winrt::Microsoft::ReactNative::Composition::ComponentViewFeatures::NativeBorder);
+    */
+  });
 #else
   packageBuilder.AddViewManager(L"CircleMaskViewManager", []() { return winrt::make<CircleMaskViewManager>(); });
 #endif  
@@ -22,31 +28,42 @@ void RegisterCircleMaskNativeComponent(
 
 winrt::Microsoft::UI::Composition::Visual CircleMaskComponentView::CreateVisual(const winrt::Microsoft::ReactNative::ComponentView &view) noexcept
 {
-  // Adapting https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/SceneGraph/SampleGalleryApp/Samples/CompCapabilities/CompCapabilities.xaml.cs#L139
-
   auto compositor = view.as<winrt::Microsoft::ReactNative::Composition::ComponentView>().Compositor();
-  // auto compositionContext = view.as<winrt::Microsoft::ReactNative::Composition::ComponentView>().CompositionContext();
 
-  winrt::Windows::Foundation::Size size{100, 100};
+  m_visual = compositor.CreateSpriteVisual();
 
-  // // Create circle mask 
-  // auto circleMaskSurface = compositionContext.CreateDrawingSurfaceBrush(size)
+  auto ellipseGeometry = compositor.CreateEllipseGeometry();
+  auto clip = compositor.CreateGeometricClip();
+  clip.Geometry(ellipseGeometry);
+  m_visual.Clip(clip);
 
-  // Get child visual
-  auto circleVisual = compositor.CreateSpriteVisual();
+  return m_visual;
+}
 
-  // // Apply mask to Visual
-  // auto maskBrush = compositor.CreateMaskBrush();
-  // maskBrush.Source(???);
-  // maskBrush.Mask(circleMaskSurface);
+void CircleMaskComponentView::Initialize(const winrt::Microsoft::ReactNative::ComponentView &view) noexcept 
+{
+    m_layoutMetricChangedRevoker = view.LayoutMetricsChanged(
+        winrt::auto_revoke,
+        [wkThis = get_weak()](
+            const winrt::IInspectable &/*sender*/, const winrt::Microsoft::ReactNative::LayoutMetricsChangedArgs& args) {
+          if (auto strongThis = wkThis.get()) {
+            // Once 0.76 includes SetViewFeatures - remove this code, since the core border code will not override our clip:
+            {
+              auto compositor = strongThis->m_visual.Compositor();
+              auto ellipseGeometry = compositor.CreateEllipseGeometry();
+              auto clip = compositor.CreateGeometricClip();
+              clip.Geometry(ellipseGeometry);
+              strongThis->m_visual.Clip(clip);
+            }
+            // End of workaround for not being able to disable core clipping code
 
 
-  // circleVisual.Brush(maskBrush);
-
-  // // Insert visual
-  // InnerVisual().InsertAt(circleVisual, 0);
-
-  return circleVisual;
+            auto ellipseGeometry = strongThis->m_visual.Clip().as<winrt::Microsoft::UI::Composition::CompositionGeometricClip>().Geometry().as<winrt::Microsoft::UI::Composition::CompositionEllipseGeometry>();
+            winrt::Windows::Foundation::Numerics::float2 radius = {args.NewLayoutMetrics().Frame.Width * args.NewLayoutMetrics().PointScaleFactor / 2, args.NewLayoutMetrics().Frame.Height * args.NewLayoutMetrics().PointScaleFactor / 2};
+            ellipseGeometry.Center(radius);
+            ellipseGeometry.Radius(radius);
+          }
+        });
 }
 
 #else

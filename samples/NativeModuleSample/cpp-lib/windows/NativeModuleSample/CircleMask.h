@@ -29,7 +29,12 @@ void RegisterCircleMaskNativeComponent(
 struct CircleMaskComponentView : winrt::implements<CircleMaskComponentView, winrt::IInspectable>,
                                   NativeModuleSampleCodegen::BaseCircleMask<CircleMaskComponentView>
 {
-  winrt::Microsoft::UI::Composition::Visual CreateVisual(const winrt::Microsoft::ReactNative::ComponentView &view) noexcept;
+  winrt::Microsoft::UI::Composition::Visual CreateVisual(const winrt::Microsoft::ReactNative::ComponentView &view) noexcept override;
+  void Initialize(const winrt::Microsoft::ReactNative::ComponentView &/*view*/) noexcept override;
+
+private:
+  winrt::Microsoft::ReactNative::ComponentView::LayoutMetricsChanged_revoker m_layoutMetricChangedRevoker;
+  winrt::Microsoft::UI::Composition::SpriteVisual m_visual{nullptr};
 };
 
 #else
