@@ -29,7 +29,7 @@ The information provided by `config` is described in [React Native Config Schema
 Autolinking is performed automatically as a part of the [run-windows command](run-windows-cli.md):
 
 1. At build time, autolinking is performed first, before `msbuild.exe` is invoked and the build actually started. It uses the information provided by `config` to both generate and modify certain native files consumed by your app project.
-    1. The `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
+    1. The `AutolinkedNativeModules.g.props` and `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
         > Your app's solution file may also be modified to ensure the dependency projects will be built.
 
     1. The `AutolinkedNativeModules.g.(cpp|cs)` files contain a `RegisterAutolinkedNativeModulePackages` method which registers all of the specified `IReactPackageProvider`s from the dependencies.

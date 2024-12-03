@@ -4,165 +4,168 @@ title: Native Module Setup
 ---
 
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
-> **Examples (C# and C++/WinRT):**
->
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample)
-> - [Sample App in `microsoft/react-native-windows/packages/microsoft-reactnative-sampleapps`](https://github.com/microsoft/react-native-windows/tree/main/packages/sample-apps)
 
-This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
+This guide will set you up with our recommendations for authoring a native module for React Native for Windows. After completing this setup, you should be able to answer the question: *Where do I need to implement the native code so it's available at runtime?*
+
+With this question answered, you should be ready to start implementing the native module you wish to expose to your RNW app.
 
 ## Development Environment
 
-Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
+First, make sure you have installed all of the [React Native for Windows development dependencies](rnw-dependencies.md).
 
-## Choose your own adventure
+## Decide where to host your native module
 
-Once your development environment has been correctly configured, you have several options about how to access native APIs. You can either:
+Once your development environment has been correctly configured, next you need to choose *where* your native module will live. You have three main options:
 
-- [Reference the APIs directly from within a React Native for Windows project](#referencing-windows-apis-within-a-react-native-for-windows-app-project)
-- [Create a new native module library that can be distributed separately from your app](#creating-a-new-native-module-library-project)
-- [Add Windows support to an existing community library](#adding-windows-support-to-an-existing-library)
+1. [Create a native module within your React Native for Windows app project](#option-1-create-a-native-module-within-your-react-native-for-windows-app-project)
+2. [Add Windows support to an existing native module library](#option-2-add-windows-support-to-an-existing-native-module-library)
+3. [Create a new native module library](#option-3-create-a-new-native-module-library)
 
-## Referencing Windows APIs within a React Native for Windows app project
+### Option 1: Create a native module within your React Native for Windows app project
 
-If you are only planning on adding a native module to your existing React Native Windows app, i.e.:
+The quickest route to exposing native functionality to your React Native for Windows app is to just create a new native module within your existing app project. That is, assuming:
 
 1. You followed the [Getting Started](getting-started.md) guide, where
-1. You used the [init-windows command](init-windows-cli.md) to add Windows to your project, and
-1. You are just adding your native code to the app project under the `windows` folder.
+1. You used the [React Native Community CLI's `init` command](https://github.com/react-native-community/cli/blob/main/docs/init.md) to create a new React Native project, and
+1. You added `react-native-windows` as a dependency for the project, and
+1. You used the [React Native Windows CLI's `init-windows` command](init-windows-cli.md) to initialize the native Windows code for the project
 
-Then you can simply open the Visual Studio solution in the `windows` folder and add the new files directly to the app project.
+Then you should be able implement any RNW native modules directly within the native Windows app project, without the need of creating any separate projects, libraries or packages. This option is especially suitable if your native requirements are very small, such as you only need to expose native functionality to a single Windows app and don't intend to share it other apps nor implement the functionality for non-Windows platforms.
 
-## Creating a new native module library project
+So, the answer to *Where do I need to implement the native code so it's available at runtime?*:
 
-The steps to create a new native module library project are:
-1. Follow the official React Native instructions to create a blank native module project
-1. Add Windows support to the newly created library
+You're going to implement the native code inside your native Windows app project. I.e. if your app is named `MyApp`, you'll be creating and modifying files in the `windows\MyApp\` folder of your project.
 
-### Creating a blank native module project
+If you've chosen this option, you can skip straight to [Next Steps](#next-steps).
 
-Follow the official React Native instructions at https://reactnative.dev/docs/native-modules-setup,
+> **Note:** The RNW app templates already include a built-in `IReactPackageProvider` to take care of registering any such native modules with React Native at runtime. You just need to implement the native Windows and JS/TS code of the module itself.
 
-or execute the following commands:
+### Option 2: Add Windows support to an existing native module library
+
+There are a variety of existing (community) native module libraries which expose the native functionality of other platforms such as Android and iOS. If the library doesn't already support Windows, you can try to add Windows support yourself. This option is suitable if you already own (or are heavily invested in using) an existing library, and you're willing to work with the library owner(s) to add Windows support.
+
+First, you'll need to get the library's source. If the library is open source (many are), you can often find a link to its source repository in its npmjs.com listing.
+
+Once you have the source set up on your dev machine, you should be go to [Add Windows support to a native module library](#add-windows-support-to-a-native-module-library).
+
+> **Note:** Sometimes (community) libraries change owners, get abandoned, and/or are unwilling to add and maintain Windows support. There's currently no easy way to extend libraries you can't contribute to, other than by making and publishing your own fork of the code. So it's a good idea to figure out your plan and communicate with the library owner before you get too far in the implementation process.
+
+### Option 3: Create a new native module library
+
+If you want a library that can be used and re-used by multiple app projects, and an existing library doesn't already exist (or you don't have permission to modify it) the best option is to create a new library project to host the native module and its functionality.
+
+The basic steps to create a new native module library project are:
+
+1. Create a new, base React Native library project
+1. Add `react-native-windows` as a dependency for the project
+1. Use the [React Native Windows CLI's `init-windows` command](init-windows-cli.md) to initialize the native Windows code for the project
+
+Unfortunately, neither React Native nor the React Native Community CLI provide a method for creating new React Native library projects. However, there are many popular third-party CLI tools for doing so. Specifically, RNW tests its supported library templates against projects created by the [`create-react-native-library` CLI tool](https://callstack.github.io/react-native-builder-bob/create).
+
+To start creating a new library project named `my-library`, using `create-react-native-library`, run:
 
 ```bat
-npx create-react-native-module NativeModuleSample
-cd NativeModuleSample
+npx --yes create-react-native-library@latest my-library
+```
+
+You will be prompted to answer several questions about your new library. The tool supports a variety of different project types, but since our goal  here is to create a new project that we can add a Windows native module to, we recommend the following options:
+
+1. **Type:** The native code you expect to expose and the types of apps you want to support will dictate the option you select here:
+    1. If you're exposing non-UI functionality (i.e. new native functions), choose either:
+        1. `Turbo module` (i.e. `--template module-new`) if you only want to support New Architecture apps, or
+        1. `Turbo module with backward compat` (i.e. `--template module-mixed`) if you want to support both New and Old Architecture apps
+    1. If you're exposing UI functionality (i.e. new native views), choose either:
+        1. `Fabric view` (i.e. `--template view-new`) if you only want to support New Architecture apps, or
+        1. `Fabric view with backward compat` (i.e. `--template view-mixed`) if you want to support both New and Old Architecture apps
+    1. If you want to expose both UI and non-UI functionality, you have two options:
+        1. Create two separate libraries, one for UI, one for non-UI
+        1. Just pick one option to start and expect you'll need to do some more manual work to add the other later. A library can easily support both UI and non-UI, you just won't have any sample code for the option you don't choose first.
+1. **Languages:** This choice only impacts the language(s) you will use to implement Android and iOS native code.
+    > **Note:** If you pick `C++ for Android & iOS` with the intention of also sharing C++ code with Windows, there's some manual work you'll have to do to include and use that shared C++ code in your RNW library implementation.
+
+1. **Example:** Vanilla (i.e. `--example vanilla`)
+
+> **Note:** Your experience may vary if you choose different options than those recommended above. For more information on all of the options that `create-react-native-library` provides, see [`create-react-native-library` CLI documentation](https://callstack.github.io/react-native-builder-bob/create).
+
+After you've created your base React Native library, navigate to the folder you created and run: 
+
+```cmd
 yarn install
 ```
 
-Now you'll have a new native module project under `NativeModuleSample`. Be sure to look at the command output for further steps you'll want to do before publishing the project.
+Now you should be ready to continue on to [Add Windows support to a native module library](#add-windows-support-to-a-native-module-library).
 
-At this point, follow the steps below to add Windows support to the newly created library.
+## Add Windows support to a native module library
 
-## Adding Windows support to an existing library
+Once you have a base React Native library (whether one you created or you found) the next step is to add and initialize React Native for Windows support.
 
-> The steps below are written as if you're working with the `NativeModuleSample` example above, in the root folder of the project. Substitute the name of the library you're actually working on where appropriate, and ensure that you're working in the appropriate root folder of the library.
-
-### Updating your `package.json`
-
-Many native module libraries (including the default library template) target older versions of `react` and `react-native` than Windows supports, so you'll need to upgrade to newer versions in order to add support for `react-native-windows`.
+### Add `react-native-windows` as a dependency
 
 > Properly defining your NPM dependencies is an essential part of creating and maintaining a React Native library, especially one that supports multiple platforms. The instructions here represent the minimum steps required to start targeting `react-native-windows`. If you're adding Windows support to a library you don't own, you'll need to work with the library owners to make sure any changes made to `package.json` are appropriate.
 >
 > For more information on how NPM dependencies work, see [Specifying `dependencies` and `devDependencies` in a `package.json` file](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file).
 
-You can use the `npm info` command to find the correct versions to use. Let's assume you plan on building against the latest stable version of `react-native-windows`.
+With React Native for Windows app projects you usually add a direct dependency on a version of `react-native-windows` with the same major/minor version of `react-native` that the app is using. However, most library projects are expected to work for apps targeting a range of React Native versions - as such for library projects you'll typically add both *dev* and *peer* dependencies on `react-native-windows` instead.
 
-Use the following command to find the matching versions of `react`:
+The dev dependency specifies the version of a package that you want to use to develop the library itself. You'll typically want to add the latest major/minor version of `react-native-windows` that matches the same major/minor version of `react-native` that the library has as a dev dependency.
 
-```bat
-npm info react-native-windows@latest devDependencies.react
-```
-
-Take the result of that command (let's say it's `x.y.z`) and use it to upgrade the dev dependency:
+So, for example, if you check the library's `package.json`, and see a `devDependency` specifying RN 0.76, you'll want to add a dev dependency for RNW 0.76. You can do this with `yarn`:
 
 ```bat
-yarn upgrade react@x.y.z --dev
+yarn add react-native-windows@^0.76.0 --dev
 ```
 
-You'll need to repeat the steps for `react-native`, i.e.:
+The peer dependency specifies the versions of a package the library needs or supports. If you look at your library's `package.json`, the `react-native` peer dependency you'll most likely see is `*`, meaning any version, but sometimes you'll see a more specific version range. Whatever it is, a peer dependency essentially means "I need this package (and version range), but don't download it on my behalf, I'll try to use whichever version someone else (typically the app) specifies". For RNW, you'll most likely want to add a similar peer dependency for `react-native-windows` to the existing `react-native` peer dependency.
+
+So, for example, if you check the library's `package.json`, and see a `devDependency` specifying RN \*, you'll want to add a dev dependency for RNW \*. You can do this with `yarn`:
 
 ```bat
-npm info react-native-windows@latest devDependencies.react-native
+yarn add react-native-windows@* --peer
 ```
 
-Again, take the result of that command (let's say it's `0.x.y`) and use it to upgrade the dev dependency:
+That's it, you're ready to initialize the native Windows code for the project.
+
+> **Note:**: Many native module libraries often (claim to) support older versions of RN than RNW supports, so you may need to upgrade the library to newer versions first in order to properly support for `react-native-windows`. While it is possible to create, say, a more restrictive version range for the peer dependency (i.e. the library may claim support for `react-native@*` but you choose `react-native-windows@>=0.76.0`) you'll want to stick to the same major/minor pairing for the dev dependency to avoid unexpected behavior.
+
+### Initialize the native Windows code for a library project
+
+At this point you should be ready to add Windows support with the [init-windows command](init-windows-cli.md). The process is similar to adding Windows support to an app project, but you'll need to specify a library template:
 
 ```bat
-yarn upgrade react-native@0.x.y --dev
+npx @react-native-community/cli init-windows --template cpp-lib --overwrite
 ```
 
-Next add `react-native-windows` to your dependencies:
+This adds the native code for a C++/WinRT library project.
 
-```bat
-yarn add react-native-windows@latest
-yarn install
-```
+So, the answer to *Where do I need to implement the native code so it's available at runtime?*:
 
-Now you should be ready to add Windows support with the [init-windows command](init-windows-cli.md). The process is similar to adding Windows support to an app project, but you'll need to specify a library template:
+You're going to implement the native code inside your native Windows library project. I.e. if your library is named `MyLib`, you'll be creating and modifying files in the `windows\MyLib\` folder of your project.
 
-```bat
-npx react-native init-windows --template old/uwp-cpp-lib --overwrite
-```
+That's it, you can continue on to [Next Steps](#next-steps).
 
-This defaults to a C++/WinRT project. If you want to create a C# based native module project, use:
+> **Note:** There are two older library templates, `old/uwp-cpp-lib` for creating C++/WinRT UWP projects and `old/uwp-cs-lib` for C# UWP projects. Both are planned for eventual deprecation and neither are recommended for initializing new projects. They should only be used by developers with specific legacy requirements.
 
-```bat
-npx react-native init-windows --template old/uwp-cs-lib --overwrite
-```
-
-That's it, you should be able to open `windows\NativeModuleSample.sln` and start working on your project.
-
-### Testing your Build
-
-To make sure that everything is working, you'll want to try building `NativeModuleSample`. First you'll want to make sure you've chosen a supported platform:
-
-1. At the top, change the `Solution Platform` to `x86` or `x64`.
-1. In the `Build` menu, select `Build Solution`.
-
-### Next Steps
+## Next Steps
 
 You have now created the scaffolding to build a native module or view manager. Now it's time to add the business logic to the module - follow the steps described in the [Native Modules](native-modules.md) and [View Managers](view-managers.md) documents.
 
+## Other Tasks
+
+Here are some other common tasks you wish to do when authoring a native module.
+
+### Building an example app for testing
+
+If you're implementing your native module directly within your React Native for Windows app, then your app is right there ready to test it. Alternatively, if you're implementing your native module in a separate library, it may or may not already include a example app for testing the other React Native platforms.
+
+If such an app already exists, you can simply add Windows support to it like any other RN app by following the steps in the [Getting Started](getting-started.md) guide.
+
+> **Note:** If you (or the library author) used `create-react-native-library` to create the library, then there's usually an example app already in the project's `example` folder. When you ran `init-windows --template cpp-lib` to initialize Windows support for the library, the RNW CLI will detect that `example` folder and automatically attempt to set up and initialize Windows support using `init-windows --template cpp-app` for you.
+
 ### Making your module ready for consumption in an app
 
-If you've followed the steps above, your module should be ready for consumption thanks to [Autolinking](native-modules-autolinking.md).
-
-However, there are some things you may need to check:
-
-#### 1. Fixing relative NuGet paths
-
-If you are writing a C++/WinRT module and have added any NuGet package dependencies, you'll see references to those packages in your vcxproj file as relative references e.g. `..\packages\...`. We need these to use the solution directory instead, so replace all mentions of `..\packages\` with `$(SolutionDir)\`.
-
-**Example:**
-
-```diff
--<Import Project="..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('..\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
-+<Import Project="$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props" Condition="Exists('$(SolutionDir)\packages\NuGetPackage.1.0.0.0\build\native\NuGetPackage.props')" />
-```
+If you've followed the steps above, your module should already be ready for consumption by other apps thanks to [Autolinking](native-modules-autolinking.md).
 
 ### Testing the module before it gets published
-
-#### Option 1: Create a new test app
-1. Follow the [getting started guide](getting-started.md) to create a new React Native Windows app.
-2. Run `npm i <module-local-path> --save` (e.g. `npm i D:\NativeModuleSample --save`) to install the local module.
-3. [Link the native module](native-modules-using.md).
-
-#### Option 2: Adding Windows support to existing sample app
-
-If you are working on an existing module that already has iOS and Android samples, and want to add Windows support to the existing test app, follow these steps (example of WebView module test app can be found [here](https://github.com/react-native-community/react-native-webview/tree/master/example)).
-
-1. In a different directory, follow the [getting started guide](getting-started.md) and create a new React Native Windows app.
-2. Copy the `Windows` folder from the blank RNW app into the existing sample app's sample app's folder. (The RNW CLI helps create the correct project setup that you can then copy directly into the sample app.)
-3. Open `sln` and `vxcproj` files and check `node_module` reference paths. Fix the paths if necessary based on how the folders are structured in native module repo ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/example/windows/WebViewWindows.sln#L11-L42)).
-4. Open the solution with Visual Studio and [link native module](native-modules-using.md).
-> The project should build correctly at this point, but we still need to setup some special metro configurations for Windows in order to run the app without breaking iOS and Android bundling.
-
-5. Add `metro.config.windows` for Windows bundling ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/metro.config.windows.js)). Make sure the config file is at the root of the repo (see [Metro bug #588](https://github.com/facebook/metro/issues/588)).
-6. In `package.json`, add a separate start command for windows and attach a special argument to tell metro to use the windows config we just created ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/package.json#L18)).
-7. Add `react-native.config.js` to parse the special argument we added ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/react-native.config.js#L28-L33)).
-8. Update JS main module path (relative path to metro `projectRoot`) in `App.cpp` if necessary ([example](https://github.com/react-native-community/react-native-webview/blob/v11.17.2/example/windows/WebViewWindows/App.cpp#L25)).
 
 ### Adding tests for your module
 We are using WebdriverIO + WinAppDriver for UI testing. More details [here](https://github.com/microsoft/react-native-windows/blob/main/docs/e2e-testing.md#appium). For real world examples, check out [`react-native-webview`](https://github.com/react-native-community/react-native-webview) or [progress-view](https://github.com/react-native-community/progress-view).
