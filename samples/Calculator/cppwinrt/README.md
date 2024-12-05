@@ -54,5 +54,5 @@ To upgrade this sample to the latest version of RNW:
     ```
     npx @react-native-community/cli@latest run-windows
     ```
-9. Look at windows/Calculators/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
+9. Look at the Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample". Revert all changes made to GUID values in the project and solution files.
 10. Update this readme with the new major version at the top.
