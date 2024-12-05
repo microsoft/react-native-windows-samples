@@ -23,9 +23,9 @@ To upgrade this sample to the latest version of RNW:
     ```cmd
     rd /s /q csharp
     ```
-3. Create a new React Native app and change version to version you want to upgrade to:
+3. Create a new React Native app and change version to version you want to upgrade to (replace 'version' with desired version - for latest version, use 'latest'):
     ```cmd
-    npx @react-native-community/cli@latest init Calculator --template @react-native-community/template@latest
+    npx @react-native-community/cli@latest init Calculator --version {version}
     ```
 4. Add `yarn.lock` file to app directory (otherwise `yarn add react-native-windows@latest` will throw an error)
 
