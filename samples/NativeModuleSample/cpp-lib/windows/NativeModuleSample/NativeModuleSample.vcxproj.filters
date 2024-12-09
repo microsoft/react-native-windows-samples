@@ -30,11 +30,17 @@
     <ClInclude Include="SimpleHttpModule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CircleMask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CircleMask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

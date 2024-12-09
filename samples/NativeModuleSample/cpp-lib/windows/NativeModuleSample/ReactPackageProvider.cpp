@@ -12,6 +12,8 @@
 #include "FancyMath.h"
 #include "SimpleHttpModule.h"
 
+#include "CircleMask.h"
+
 using namespace winrt::Microsoft::ReactNative;
 
 namespace winrt::NativeModuleSample::implementation
@@ -20,6 +22,7 @@ namespace winrt::NativeModuleSample::implementation
 void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuilder) noexcept
 {
   AddAttributedModules(packageBuilder, true);
+  RegisterCircleMaskNativeComponent(packageBuilder);
 }
 
 } // namespace winrt::NativeModuleSample::implementation
