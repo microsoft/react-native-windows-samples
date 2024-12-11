@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "windows": "react-native run-windows"
+    "windows": "npx @react-native-community/cli run-windows"
   },
   "peerDependencies": {
     "react": "^16.13.1",
@@ -14,7 +14,14 @@
   "devDependencies": {
     "metro-config": "^0.66.2",
     "react": "18.3.1",
-    "react-native": "0.75.1",
-    "react-native-windows": "^0.75.0"
+    "react-native": "0.76.2",
+    "react-native-windows": "^0.76.2"
+  },
+  "react-native-windows": {
+    "init-windows": {
+      "name": "NativeModuleSample",
+      "namespace": "NativeModuleSample",
+      "template": "old/uwp-cs-lib"
+    }
   }
 }
