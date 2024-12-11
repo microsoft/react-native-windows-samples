@@ -4,7 +4,7 @@ See [../README.md](../README.md) for details of this sample.
 
 See [../csharp/](../csharp/) for a C# version of this sample.
 
-It currently targets React Native Windows 0.75.
+It currently targets React Native Windows 0.76.
 
 ### Setup
 See [../README.md#Setup](../README.md#Setup).
@@ -54,5 +54,5 @@ To upgrade this sample to the latest version of RNW:
     ```
     npx @react-native-community/cli@latest run-windows
     ```
-9. Look at windows/Calculators/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
+9. Look at the Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample". Revert all changes made to GUID values in the project and solution files.
 10. Update this readme with the new major version at the top.
