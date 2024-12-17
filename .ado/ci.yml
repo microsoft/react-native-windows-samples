@@ -10,9 +10,12 @@ variables:
     value: 120 # In hours, default to only run every 5 days
 
 pool:
-  name: Azure-Pipelines-1ESPT-ExDShared
-  image: windows-latest
-  os: windows
+  vmImage: 'ubuntu-latest'
+
+# pool:
+#   name: Azure-Pipelines-1ESPT-ExDShared
+#   image: windows-latest
+#   os: windows
 
 # pool:
 #   name: rnw-pool-4
