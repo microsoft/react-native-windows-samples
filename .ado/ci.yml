@@ -17,10 +17,10 @@ steps:
   - checkout: self
     clean: false
 
-    - script: yarn install --frozen-lockfile
-      displayName: Yarn Install (Website)
-      workingDirectory: ./website
-    
-    - script: yarn build
-      displayName: Yarn Build (Website)
-      workingDirectory: ./website
+  - script: yarn install --frozen-lockfile
+    displayName: Yarn Install (Website)
+    workingDirectory: ./website
+  
+  - script: yarn build
+    displayName: Yarn Build (Website)
+    workingDirectory: ./website
