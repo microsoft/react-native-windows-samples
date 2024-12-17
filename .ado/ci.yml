@@ -12,15 +12,6 @@ variables:
 pool:
   vmImage: 'ubuntu-latest'
 
-# pool:
-#   name: Azure-Pipelines-1ESPT-ExDShared
-#   image: windows-latest
-#   os: windows
-
-# pool:
-#   name: rnw-pool-4
-#   demands: ImageOverride -equals rnw-img-vs2022-node18
-
 steps:
   - checkout: self
     clean: false
