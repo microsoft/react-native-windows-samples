@@ -10,8 +10,13 @@ variables:
     value: 120 # In hours, default to only run every 5 days
 
 pool:
-  name: rnw-pool-4
-  demands: ImageOverride -equals rnw-img-vs2022-node18
+  name: Azure-Pipelines-1ESPT-ExDShared
+  image: windows-latest
+  os: windows
+
+# pool:
+#   name: rnw-pool-4
+#   demands: ImageOverride -equals rnw-img-vs2022-node18
 
 steps:
   - checkout: self
