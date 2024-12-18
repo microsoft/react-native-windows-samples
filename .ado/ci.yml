@@ -12,8 +12,8 @@ parameters:
 variables:
   - name: Codeql.Enabled
     value: true
-  - name: Codeql.ExcludePathPatterns
-    value: samples/,samples-old/
+  - name: Codeql.SourceRoot
+    value: ./website
   - ${{ if eq(parameters.forceCodeQL, true) }}:
     - name: Codeql.Cadence
       value: 0
