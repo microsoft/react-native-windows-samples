@@ -3,11 +3,23 @@ name: RNW Samples Production CI $(Date:yyyyMMdd).$(Rev:r)
 trigger: none
 pr: none
 
+parameters:
+  - name: forceCodeQL
+    displayName: Force CodeQL to rebuild databases
+    type: boolean
+    default: false
+
 variables:
   - name: Codeql.Enabled
     value: true
-  - name: Codeql.Cadence
-    value: 120 # In hours, default to only run every 5 days
+  - name: Codeql.ExcludePathPatterns
+    value: samples/,samples-old/
+  - ${{ if eq(parameters.forceCodeQL, true) }}:
+    - name: Codeql.Cadence
+      value: 0
+  - ${{ if eq(parameters.forceCodeQL, false) }}:
+    - name: Codeql.Cadence
+      value: 120 # In hours, default to only run every 5 days
 
 pool:
   vmImage: 'ubuntu-latest'
