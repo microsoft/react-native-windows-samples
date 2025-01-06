@@ -23,17 +23,30 @@ variables:
   - name: ComponentDetection.SourcePath
     value: $(Build.SourcesDirectory)/website
 
-pool:
-  vmImage: 'ubuntu-latest'
+resources:
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    stages:
+      stage: RNWSamplesCI
+      jobs:
+        - job: RNWWebsiteBuild
+          displayName: RNW Website Build
+          pool:
+            vmImage: ubuntu-latest
+          steps:
+            - checkout: self
+              clean: false
 
-steps:
-  - checkout: self
-    clean: false
-
-  - script: yarn install --frozen-lockfile
-    displayName: Yarn Install (Website)
-    workingDirectory: ./website
-  
-  - script: yarn build
-    displayName: Yarn Build (Website)
-    workingDirectory: ./website
+            - script: yarn install --frozen-lockfile
+              displayName: Yarn Install (Website)
+              workingDirectory: ./website
+            
+            - script: yarn build
+              displayName: Yarn Build (Website)
+              workingDirectory: ./website
