@@ -41,9 +41,6 @@ extends:
         jobs:
           - job: RNWWebsiteBuild
             displayName: RNW Website Build
-            pool:
-              image: ubuntu-latest
-              os: linux
             steps:
               - checkout: self
                 clean: false
