@@ -33,20 +33,20 @@ extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
     stages:
-      stage: RNWSamplesCI
-      jobs:
-        - job: RNWWebsiteBuild
-          displayName: RNW Website Build
-          pool:
-            vmImage: ubuntu-latest
-          steps:
-            - checkout: self
-              clean: false
-
-            - script: yarn install --frozen-lockfile
-              displayName: Yarn Install (Website)
-              workingDirectory: ./website
-            
-            - script: yarn build
-              displayName: Yarn Build (Website)
-              workingDirectory: ./website
+      - stage: RNWSamplesCI
+        jobs:
+          - job: RNWWebsiteBuild
+            displayName: RNW Website Build
+            pool:
+              vmImage: ubuntu-latest
+            steps:
+              - checkout: self
+                clean: false
+  
+              - script: yarn install --frozen-lockfile
+                displayName: Yarn Install (Website)
+                workingDirectory: ./website
+              
+              - script: yarn build
+                displayName: Yarn Build (Website)
+                workingDirectory: ./website
