@@ -32,13 +32,18 @@ resources:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
+    pool:
+      name: Azure-Pipelines-1ESPT-ExDShared
+      image: windows-latest
+      os: windows
     stages:
       - stage: RNWSamplesCI
         jobs:
           - job: RNWWebsiteBuild
             displayName: RNW Website Build
             pool:
-              vmImage: ubuntu-latest
+              image: ubuntu-latest
+              os: linux
             steps:
               - checkout: self
                 clean: false
