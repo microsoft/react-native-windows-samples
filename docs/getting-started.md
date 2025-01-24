@@ -25,7 +25,7 @@ Remember to call `@react-native-community/cli init` from the place you want your
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@next init <projectName> --version "nightly"
+npx --yes @react-native-community/cli@next init <projectName> --version "latest"
 ```
 
 ### Navigate into this newly created directory
@@ -48,13 +48,13 @@ cd <projectName>
 <!--Using Yarn (Recommended)-->
 
 ```bat
-yarn add react-native-windows@canary
+yarn add react-native-windows@^0.77.0
 ```
 
 <!--Using NPM-->
 
 ```bat
-npm install --save react-native-windows@canary
+npm install --save react-native-windows@^0.77.0
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
