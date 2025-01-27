@@ -1,5 +1,5 @@
 ---
-id: version-0.76-getting-started
+id: version-0.77-getting-started
 title: Get Started with Windows
 original_id: getting-started
 ---
@@ -26,7 +26,7 @@ Remember to call `@react-native-community/cli init` from the place you want your
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@latest init <projectName> --version "0.76-stable"
+npx --yes @react-native-community/cli@next init <projectName> --version "latest"
 ```
 
 ### Navigate into this newly created directory
@@ -49,13 +49,13 @@ cd <projectName>
 <!--Using Yarn (Recommended)-->
 
 ```bat
-yarn add react-native-windows@^0.76.0
+yarn add react-native-windows@^0.77.0
 ```
 
 <!--Using NPM-->
 
 ```bat
-npm install --save react-native-windows@^0.76.0
+npm install --save react-native-windows@^0.77.0
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
@@ -133,4 +133,3 @@ Follow these steps to build a version of your app that you can install or publis
 > If you're getting different runtime behavior between the Release and Debug configurations, consider disabling the `UseWebDebugger` setting in [`App.cpp`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cpp-app/src/App.cpp#L30) or [`App.xaml.cs`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cs-app/src/App.xaml.cs#L20) to get the same behavior in the Debug configuration.
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
-
