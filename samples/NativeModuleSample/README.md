@@ -2,7 +2,7 @@
 
 These samples showcase building Native Modules for React Native for Windows. It includes implementations in [C#](./csharp/) and [C++/WinRT](./cppwinrt/).
 
-Both implementations target React Native Windows 0.76.
+Both implementations target React Native Windows 0.77.
 
 The official documentation can be found here:
 
