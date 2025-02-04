@@ -33,7 +33,6 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       runInitWindows: true
-      extraInitWindowsArgs: --language ${{ endsWith(matrix.sampleName, 'cppwinrt') && 'cpp' || 'cs' }}
 
   call-upgradesample-native-module-sample:
     name: Upgrade Native Module Sample
