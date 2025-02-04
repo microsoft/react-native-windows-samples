@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', 'Calculator\fabric']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
         reactNativeWindowsVersion: [latest, preview, canary]
@@ -52,4 +52,4 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       extraRunWindowsArgs: --no-autolink --no-deploy
-      # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
+      runCodeGenCheck: true
