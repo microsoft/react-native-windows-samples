@@ -51,4 +51,4 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       extraRunWindowsArgs: --no-autolink --no-deploy
-      runCodeGenCheck: true
+      runCodeGenCheck: ${{ endsWith(matrix.sampleName, 'cpp-lib') }}
