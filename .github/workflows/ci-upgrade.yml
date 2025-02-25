@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', 'Calculator\fabric']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
         reactNativeWindowsVersion: [latest, preview, canary]
@@ -33,7 +33,6 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       runInitWindows: true
-      extraInitWindowsArgs: --language ${{ endsWith(matrix.sampleName, 'cppwinrt') && 'cpp' || 'cs' }}
 
   call-upgradesample-native-module-sample:
     name: Upgrade Native Module Sample
@@ -41,7 +40,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
+        sampleName: ['NativeModuleSample\cpp-lib', 'NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
         reactNativeWindowsVersion: [latest, preview, canary]
@@ -52,4 +51,4 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       extraRunWindowsArgs: --no-autolink --no-deploy
-      # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
+      # runCodeGenCheck: ${{ endsWith(matrix.sampleName, 'cpp-lib') }}

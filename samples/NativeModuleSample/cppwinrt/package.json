@@ -15,8 +15,8 @@
   "devDependencies": {
     "metro-config": "^0.66.2",
     "react": "18.3.1",
-    "react-native": "0.76.2",
-    "react-native-windows": "^0.76.2"
+    "react-native": "0.77.0",
+    "react-native-windows": "^0.77.0"
   },
   "codegenConfig": {
     "name": "NativeModuleSample",

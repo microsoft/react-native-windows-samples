@@ -25,7 +25,7 @@ To upgrade this sample to the latest version of RNW:
     ```
 3. Create a new React Native app and change version to version you want to upgrade to (replace 'version' with desired version - for latest version, use 'latest'):
     ```cmd
-    npx @react-native-community/cli@latest init Calculator --version {version}
+    npx @react-native-community/cli@latest init Calculator --template @react-native-community/template@latest --skip-git-init
     ```
 
 4. Add a lockfile to the calculator directory:
