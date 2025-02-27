@@ -19,14 +19,14 @@ Remember to call `@react-native-community/cli init` from the place you want your
 <!-- Note, make sure both `@react-native-community/cli@ABC` and `--version "XYZ"` are pointing to the correct NPM tags in the command below. -->
 
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "next" for the CLI and "nightly" for the RN version -->
-<!-- 2. For the latest stable version in versioned_docs use "latest" for both the CLI and RN version -->
+<!-- 2. For the latest stable version in versioned_docs use "^0.xx.0" for both the CLI and RN version -->
 <!-- 3. For older stable versions you'll have to look up the CLI version, but for the RN version use the stable tag name, i.e. "0.73-stable" -->
 
 <!-- See https://www.npmjs.com/package/@react-native-community/cli?activeTab=versions for the CLI version tags. -->
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@next init <projectName> --version "nightly"
+npx --yes @react-native-community/cli@next init <projectName> --version ^0.80.0
 ```
 
 ### Navigate into this newly created directory
@@ -49,13 +49,13 @@ cd <projectName>
 <!--Using Yarn (Recommended)-->
 
 ```bat
-yarn add react-native-windows@canary
+yarn add react-native-windows@^0.80.0
 ```
 
 <!--Using NPM-->
 
 ```bat
-npm install --save react-native-windows@canary
+npm install --save react-native-windows@^0.80.0
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
