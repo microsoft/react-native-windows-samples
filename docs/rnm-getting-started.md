@@ -13,7 +13,7 @@ For information around how to set up:
 
 ## Install React Native for macOS
 
-Remember to call `react-native init` from the place you want your project directory to live. Be sure to use the same minor version between React Native and React Native macOS. We'll use `^0.71.0`
+Remember to call `react-native init` from the place you want your project directory to live. Be sure to use the same minor version between React Native and React Native macOS. We'll use `^0.76.0`
 
 ```
 npx react-native@latest init <projectName> --version 0.76.0
