@@ -58,18 +58,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Enable Corepack
-      if: ${{ inputs.enableYarn3 }}
-      run: |
-        corepack enable
-        corepack prepare yarn@3.6.1 --activate
-        yarn set version 3.6.1
+    # - name: Enable Corepack (for Yarn 3)
+    #   if: ${{ inputs.enableYarn3 }}
+    #   run: |
+    #     corepack enable
+    #     corepack prepare yarn@3.6.1 --activate
+    #     yarn set version 3.6.1
 
-    - name: Use Node.js 18.x
-      if: ${{ inputs.enableYarn3 }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: "18.x"
+    # - name: Use Node.js 18.x (for Yarn 3)
+    #   if: ${{ inputs.enableYarn3 }}
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: "18.x"
 
     - name: Gather environment info
       run: npx envinfo
@@ -79,6 +79,14 @@ jobs:
 
     - name: Get starting folder size
       run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+      working-directory: ..\..\src
+
+    - name: Prepare Yarn 3 (for Yarn 3)
+      if: ${{ inputs.enableYarn3 }}
+      run: |
+        corepack enable
+        corepack prepare yarn@3.6.1 --activate
+        yarn set version 3.6.1
       working-directory: ..\..\src
 
     - name: Yarn install
