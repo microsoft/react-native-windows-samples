@@ -46,6 +46,7 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       extraRunWindowsArgs: --no-autolink --no-deploy
+      enableCorepack: ${{ matrix.sampleName == 'NativeModuleSample\cpp-lib' }}
       # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
 
   call-buildwebsite:

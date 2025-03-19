@@ -34,6 +34,10 @@ on:
         required: false
         default: ''
         type: string
+      enableCorepack:
+        required: false
+        default: false
+        type: boolean
 
 defaults:
   run:
@@ -62,6 +66,11 @@ jobs:
 
     - name: Get starting folder size
       run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
+      working-directory: ..\..\src
+
+    - name: Enable Corepack
+      if: ${{ inputs.enableCorepack }}
+      run: corepack enable
       working-directory: ..\..\src
 
     - name: Yarn install
