@@ -69,6 +69,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Enable Corepack
+      if: ${{ inputs.enableCorepack }}
+      run: corepack enable
+
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: "18.x"
+
     - name: Gather environment info
       run: npx envinfo
 
@@ -77,11 +86,6 @@ jobs:
 
     - name: Get starting folder size
       run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
-      working-directory: ..\..\src
-
-    - name: Enable Corepack
-      if: ${{ inputs.enableCorepack }}
-      run: corepack enable
       working-directory: ..\..\src
 
     - name: Yarn install
