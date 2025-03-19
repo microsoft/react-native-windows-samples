@@ -12,6 +12,9 @@ website/i18n/*
 
 *.binlog
 
+.yarn/
+
 # This is not a mono repo, ignore files from people accidentally running yarn in the wrong places
 /yarn.lock
 /samples/yarn.lock
+/samples-old/yarn.lock
