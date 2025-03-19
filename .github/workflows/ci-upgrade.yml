@@ -51,5 +51,5 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       extraRunWindowsArgs: --no-autolink --no-deploy
-      enableCorepack: ${{ matrix.sampleName == 'NativeModuleSample\cpp-lib' }}
+      enableYarn3: ${{ matrix.sampleName == 'NativeModuleSample\cpp-lib' }}
       # runCodeGenCheck: ${{ endsWith(matrix.sampleName, 'cpp-lib') }}
