@@ -58,10 +58,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Enable Corepack for Yarn 
+    - name: Enable Corepack for Yarn 3
       if: ${{ inputs.enableYarn3 }}
       run: |
         corepack enable
+        $YarnVersion = "3.6.1"
+        corepack prepare yarn@$YarnVersion --activate
 
     - name: Use Node.js 18.x for Yarn 3
       if: ${{ inputs.enableYarn3 }}
@@ -83,7 +85,6 @@ jobs:
       if: ${{ inputs.enableYarn3 }}
       run: |
         $YarnVersion = "3.6.1"
-        corepack prepare yarn@$YarnVersion --activate
         yarn set version $YarnVersion
       working-directory: ..\..\src
 
