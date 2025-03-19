@@ -70,7 +70,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: "18.x"
-        cache: 'yarn' 
 
     - name: Gather environment info
       run: npx envinfo
