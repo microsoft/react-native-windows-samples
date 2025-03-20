@@ -15,8 +15,6 @@ yarn install
 yarn prepare
 ```
 
->**Note:** If you get an error about needing to enable corepack, you'll need to run `corepack enable` (just once) from an elevated command prompt.
-
 ### Run
 
 To run the example app (targeting the New Architecture) and see that the module works:

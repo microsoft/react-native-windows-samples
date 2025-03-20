@@ -34,10 +34,6 @@ on:
         required: false
         default: ''
         type: string
-      enableYarn3:
-        required: false
-        default: false
-        type: boolean
 
 defaults:
   run:
@@ -58,18 +54,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Enable Corepack for Yarn 3
-      if: ${{ inputs.enableYarn3 }}
-      run: |
-        corepack enable
-        corepack install --global yarn@3.6.1
-
-    - name: Use Node.js 18.x for Yarn 3
-      if: ${{ inputs.enableYarn3 }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: "18.x"
-
     - name: Gather environment info
       run: npx envinfo
 
@@ -79,13 +63,6 @@ jobs:
     - name: Get starting folder size
       run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
       working-directory: ..\..\src
-
-    # - name: Prepare Yarn 3
-    #   if: ${{ inputs.enableYarn3 }}
-    #   run: |
-    #     $YarnVersion = "3.6.1"
-    #     yarn set version $YarnVersion
-    #   working-directory: ..\..\src
 
     - name: Yarn install
       run: yarn install --frozen-lockfile

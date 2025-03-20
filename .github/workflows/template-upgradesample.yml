@@ -45,10 +45,6 @@ on:
         required: false
         default: ''
         type: string
-      enableYarn3:
-        required: false
-        default: false
-        type: boolean
 
 defaults:
   run:
@@ -68,19 +64,6 @@ jobs:
     runs-on: ${{ inputs.vmImage }}
     steps:
     - uses: actions/checkout@v3
-
-    - name: Enable Corepack
-      if: ${{ inputs.enableYarn3 }}
-      run: |
-        corepack enable
-        corepack prepare yarn@3.6.1 --activate
-        yarn set version 3.6.1
-
-    - name: Use Node.js 18.x
-      if: ${{ inputs.enableYarn3 }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: "18.x"
 
     - name: Gather environment info
       run: npx envinfo
