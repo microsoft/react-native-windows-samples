@@ -62,8 +62,7 @@ jobs:
       if: ${{ inputs.enableYarn3 }}
       run: |
         corepack enable
-        $YarnVersion = "3.6.1"
-        corepack prepare yarn@$YarnVersion --activate
+        corepack install --global yarn@3.6.1
 
     - name: Use Node.js 18.x for Yarn 3
       if: ${{ inputs.enableYarn3 }}
@@ -81,12 +80,12 @@ jobs:
       run: ${{github.workspace}}\.github\scripts\GetFolderSize.ps1
       working-directory: ..\..\src
 
-    - name: Prepare Yarn 3
-      if: ${{ inputs.enableYarn3 }}
-      run: |
-        $YarnVersion = "3.6.1"
-        yarn set version $YarnVersion
-      working-directory: ..\..\src
+    # - name: Prepare Yarn 3
+    #   if: ${{ inputs.enableYarn3 }}
+    #   run: |
+    #     $YarnVersion = "3.6.1"
+    #     yarn set version $YarnVersion
+    #   working-directory: ..\..\src
 
     - name: Yarn install
       run: yarn install --frozen-lockfile
