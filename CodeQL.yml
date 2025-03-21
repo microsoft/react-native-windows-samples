@@ -5,3 +5,5 @@ path_classifiers:
   docs:
     - "**/docs"
     - "**/website/versioned_docs"
+  library:
+    - "**/.yarn"
