@@ -5450,7 +5450,7 @@ metro-cache@0.81.4:
     flow-enums-runtime "^0.0.6"
     metro-core "0.81.4"
 
-metro-config@0.81.4, metro-config@^0.81.0:
+metro-config@0.81.4, metro-config@^0.81.0, metro-config@^0.81.4:
   version "0.81.4"
   resolved "https://registry.yarnpkg.com/metro-config/-/metro-config-0.81.4.tgz#ddfcc9e129f79069856f3ed6432514ed2024a55b"
   integrity sha512-QnhMy3bRiuimCTy7oi5Ug60javrSa3lPh0gpMAspQZHY9h6y86jwHtZPLtlj8hdWQESIlrbeL8inMSF6qI/i9Q==
