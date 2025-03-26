@@ -5,6 +5,8 @@
 
 param(
     [string]$RnwVersion = "latest",
+    [bool]$UpgradeCli = $False,
+    [bool]$UpgradeRnOrg = $False,
     [bool]$Force = $False
 )
 
@@ -38,6 +40,48 @@ Function Compare-SemVer([string]$Left, [string]$Right) {
     }
 
     return $Result
+}
+
+Function Upgrade-Package([string]$DependencyName, [string]$DependencyVersion) {
+    $yarnUpgradeCmd = "upgrade"
+    if (Test-Path ".yarn") {
+        $yarnUpgradeCmd = "up"
+    }
+
+    Write-Host -NoNewline "Upgrading to $DependencyName@$DependencyVersion..."
+    yarn $yarnUpgradeCmd $DependencyName@$DependencyVersion | Out-Null
+
+    if ($LastExitCode -ne 0) {
+        Write-Host " failed."
+        Write-Error "Failed to upgrade to $DependencyName@$DependencyVersion"
+        exit $LastExitCode
+    }
+
+    Write-Host " success."
+}
+
+Function Get-DependencyVersion([string]$PackageName, [string]$PackageVersion, [string]$DependencyName) {
+    [string]$DependencyVersion = npm info $PackageName@$PackageVersion dependencies.$DependencyName
+    Write-Host "Package $PackageName@$PackageVersion depends on $DependencyName@$DependencyVersion"
+    return $DependencyVersion
+}
+
+Function Get-DevDependencyVersion([string]$PackageName, [string]$PackageVersion, [string]$DependencyName) {
+    [string]$DependencyVersion = npm info $PackageName@$PackageVersion devDependencies.$DependencyName
+    Write-Host "Package $PackageName@$PackageVersion dev depends on $DependencyName@$DependencyVersion"
+    return $DependencyVersion
+}
+
+Function Upgrade-RnwDependency([string]$RnwVersion, [string]$DependencyName) {
+    [string]$DependencyVersion = Get-DependencyVersion 'react-native-windows' $RnwVersion $DependencyName
+
+    Upgrade-Package $DependencyName $DependencyVersion
+}
+
+Function Upgrade-RnwDevDependency([string]$RnwVersion, [string]$DependencyName) {
+    [string]$DependencyVersion = Get-DevDependencyVersion 'react-native-windows' $RnwVersion $DependencyName
+
+    Upgrade-Package $DependencyName $DependencyVersion
 }
 
 Write-Host "UpgradeSmokeTest -RnwVersion $RnwVersion"
@@ -89,39 +133,29 @@ if ($Force) {
     Write-Host "Starting upgrade..."
 }
 
-[string]$ReactVersion = npm info react-native-windows@$TargetRnwVersion devDependencies.react
-Write-Host "RNW $TargetRnwVersion depends on react@$ReactVersion"
+# Upgrade based on RNW dev dependencies
+Upgrade-RnwDevDependency $TargetRnwVersion 'react'
+Upgrade-RnwDevDependency $TargetRnwVersion 'react-native'
+Upgrade-RnwDevDependency $TargetRnwVersion 'react'
+Upgrade-RnwDevDependency $TargetRnwVersion '@types/react'
 
-[string]$ReactNativeVersion = npm info react-native-windows@$TargetRnwVersion devDependencies.react-native
-Write-Host "RNW $TargetRnwVersion depends on react-native@$ReactNativeVersion"
-
-$yarnUpgradeCmd = "upgrade"
-if (Test-Path ".yarn") {
-    $yarnUpgradeCmd = "up"
+# Upgrade based on RNW dependencies
+if ($UpgradeCli) {
+    Upgrade-RnwDependency $TargetRnwVersion '@react-native-community/cli'
+    Upgrade-RnwDependency $TargetRnwVersion '@react-native-community/cli-platform-android'
+    Upgrade-RnwDependency $TargetRnwVersion '@react-native-community/cli-platform-ios'
 }
 
-Write-Host "Upgrading to react@$ReactVersion..."
-yarn $yarnUpgradeCmd react@$ReactVersion
-
-if ($LastExitCode -ne 0) {
-    Write-Error "Failed to upgrade to react @$ReactVersion"
-    exit $LastExitCode
+# Upgrade @react-native/* dependencies based on react-native
+if ($UpgradeRnOrg) {
+    [string]$RnVersion = Get-DevDependencyVersion 'react-native-windows' $RnwVersion 'react-native'
+    Upgrade-Package '@react-native/metro-config' "^$($RnVersion.Substring(0, 4)).0"
+    Upgrade-Package '@react-native/babel-preset' "^$($RnVersion.Substring(0, 4)).0"
+    Upgrade-Package '@react-native/eslint-config' "^$($RnVersion.Substring(0, 4)).0"
+    Upgrade-Package '@react-native/typescript-config' "^$($RnVersion.Substring(0, 4)).0"
 }
 
-Write-Host "Upgrading to react-native@$ReactNativeVersion..."
-yarn $yarnUpgradeCmd react-native@$ReactNativeVersion
-
-if ($LastExitCode -ne 0) {
-    Write-Error "Failed to upgrade to react-native@$ReactNativeVersion"
-    exit $LastExitCode
-}
-
-Write-Host "Upgrading to react-native-windows@$TargetRnwVersion..."
-yarn $yarnUpgradeCmd react-native-windows@$TargetRnwVersion
-
-if ($LastExitCode -ne 0) {
-    Write-Error "Failed to upgrade to react-native-windows@$TargetRnwVersion"
-    exit $LastExitCode
-}
+# Upgrade RNW itself
+Upgrade-Package 'react-native-windows' $TargetRnwVersion
 
 exit 0

@@ -31,4 +31,17 @@ yarn example-old windows
 
 ### Upgrade
 
-**TODO**
+First run the **Setup** steps above. Then run the `UpgradeSmokeTest.ps1` script with the target RNW version (usually `latest`):
+
+```ps1
+..\..\..\.github\scripts\UpgradeSmokeTest.ps1 latest $True $True $True
+```
+
+Then call the following to update the JS and codegen with:
+
+```cmd
+yarn prepare
+yarn codegen-windows
+```
+
+Finally, build and verify *both* example apps as per the **Run** steps above. If both apps work without issue, then go ahead and submit the PR with your changes.
