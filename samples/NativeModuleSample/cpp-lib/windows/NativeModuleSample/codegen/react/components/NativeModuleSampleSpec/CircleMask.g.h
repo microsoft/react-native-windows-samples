@@ -2,6 +2,7 @@
 /*
  * This file is auto-generated from CircleMaskNativeComponent spec file in flow / TypeScript.
  */
+// clang-format off
 #pragma once
 
 #include <NativeModules.h>
@@ -19,7 +20,14 @@ namespace NativeModuleSampleCodegen {
 
 REACT_STRUCT(CircleMaskProps)
 struct CircleMaskProps : winrt::implements<CircleMaskProps, winrt::Microsoft::ReactNative::IComponentProps> {
-  CircleMaskProps(winrt::Microsoft::ReactNative::ViewProps props) : ViewProps(props) {}
+  CircleMaskProps(winrt::Microsoft::ReactNative::ViewProps props, const winrt::Microsoft::ReactNative::IComponentProps& cloneFrom)
+    : ViewProps(props)
+  {
+     if (cloneFrom) {
+       auto cloneFromProps = cloneFrom.as<CircleMaskProps>();
+  
+     }
+  }
 
   void SetProp(uint32_t hash, winrt::hstring propName, winrt::Microsoft::ReactNative::IJSValueReader value) noexcept {
     winrt::Microsoft::ReactNative::ReadProp(hash, propName, value, *this);
@@ -44,6 +52,13 @@ struct BaseCircleMask {
     const winrt::com_ptr<CircleMaskProps> &newProps,
     const winrt::com_ptr<CircleMaskProps> &/*oldProps*/) noexcept {
     m_props = newProps;
+  }
+
+  // UpdateLayoutMetrics will only be called if this method is overridden
+  virtual void UpdateLayoutMetrics(
+    const winrt::Microsoft::ReactNative::ComponentView &/*view*/,
+    const winrt::Microsoft::ReactNative::LayoutMetrics &/*newLayoutMetrics*/,
+    const winrt::Microsoft::ReactNative::LayoutMetrics &/*oldLayoutMetrics*/) noexcept {
   }
 
   // UpdateState will only be called if this method is overridden
@@ -98,14 +113,23 @@ void RegisterCircleMaskNativeComponent(
       L"CircleMask", [builderCallback](winrt::Microsoft::ReactNative::IReactViewComponentBuilder const &builder) noexcept {
         auto compBuilder = builder.as<winrt::Microsoft::ReactNative::Composition::IReactCompositionViewComponentBuilder>();
 
-        builder.SetCreateProps(
-            [](winrt::Microsoft::ReactNative::ViewProps props) noexcept { return winrt::make<CircleMaskProps>(props); });
+        builder.SetCreateProps([](winrt::Microsoft::ReactNative::ViewProps props,
+                              const winrt::Microsoft::ReactNative::IComponentProps& cloneFrom) noexcept {
+            return winrt::make<CircleMaskProps>(props, cloneFrom); 
+        });
 
         builder.SetUpdatePropsHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,
                                      const winrt::Microsoft::ReactNative::IComponentProps &newProps,
                                      const winrt::Microsoft::ReactNative::IComponentProps &oldProps) noexcept {
             auto userData = view.UserData().as<TUserData>();
             userData->UpdateProps(view, newProps ? newProps.as<CircleMaskProps>() : nullptr, oldProps ? oldProps.as<CircleMaskProps>() : nullptr);
+        });
+
+        compBuilder.SetUpdateLayoutMetricsHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,
+                                      const winrt::Microsoft::ReactNative::LayoutMetrics &newLayoutMetrics,
+                                      const winrt::Microsoft::ReactNative::LayoutMetrics &oldLayoutMetrics) noexcept {
+            auto userData = view.UserData().as<TUserData>();
+            userData->UpdateLayoutMetrics(view, newLayoutMetrics, oldLayoutMetrics);
         });
 
         builder.SetUpdateEventEmitterHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,

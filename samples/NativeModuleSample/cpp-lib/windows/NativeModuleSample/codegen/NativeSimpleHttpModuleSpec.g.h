@@ -7,6 +7,7 @@
  * by the TurboModule JS spec.
  */
 #pragma once
+// clang-format off
 
 // #include "NativeSimpleHttpModuleDataTypes.g.h" before this file to use the generated type definition
 #include <NativeModules.h>
