@@ -57,6 +57,7 @@
   },
   "apis": {
     "Components (Windows)": [
+      "image-component",
       "flyout-component",
       "glyph-component",
       "popup-component",
