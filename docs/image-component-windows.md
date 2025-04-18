@@ -95,9 +95,9 @@ export default DisplayAnImageWithStyle;
 
 ## Props
 
-### [View Props](view.md#props)
+### View Props
 
-Inherits [View Props](view#props).
+Inherits [View Props](https://reactnative.dev/docs/view#props).
 
 ---
 
@@ -147,7 +147,7 @@ blurRadius: the blur radius of the blur filter added to the image.
 When the image is resized, the corners of the size specified by `capInsets` will stay a fixed size, but the center content and borders of the image will be stretched. This is useful for creating resizable rounded buttons, shadows, and other resizable assets. 
 | Type         |
 | ------------ |
-| [Rect](rect) |
+| [Rect]() |
 
 ---
 
@@ -170,7 +170,7 @@ A static image to display while loading the image source.
 
 | Type                             |
 | -------------------------------- |
-| [ImageSource](image-component#imagesource) |
+| [ImageSource](#imagesource) |
 
 
 ---
@@ -191,7 +191,7 @@ Similarly to `source`, this property represents the resource used to render the 
 
 | Type                                                  |
 | ----------------------------------------------------- |
-| [ImageSource](image-component#imagesource) (`uri` only), number |
+| [ImageSource](#imagesource) (`uri` only), number |
 
 ---
 
@@ -318,8 +318,7 @@ The image source (either a remote URL or a local file resource).
 
 | Type                             |
 | -------------------------------- |
-| [ImageSource](image-component#imagesource) |
-
+| [ImageSource](#imagesource) |
 ---
 
 ### `src`
@@ -354,7 +353,7 @@ This prop has precedence over both the `src` and `source` props.
 
 | Type                                                                                                                                                 |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Image Style Props](image-style-props#props), [Layout Props](layout-props#props), [Shadow Props](shadow-props#props), [Transforms](transforms#props) |
+| [Image Style Props](), [Layout Props](), [Shadow Props](), [Transforms]() |
 
 ---
 
@@ -374,7 +373,7 @@ Changes the color of all non-transparent pixels to the `tintColor`.
 
 | Type               |
 | ------------------ |
-| [color](colors.md) |
+| [color]() |
 
 ---
 
@@ -496,7 +495,7 @@ Resolves an asset reference into an object which has the properties `uri`, `scal
 
 | <div className="wideColumn">Name</div>                  | Type                                     | Description                                                                  |
 | ------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------- |
-| source <div class="label basic required">Required</div> | [ImageSource](image-component#imagesource), number | A number (opaque type returned by `require('./foo.png')`) or an ImageSource. |
+| source <div class="label basic required">Required</div> | [ImageSource](#imagesource), number | A number (opaque type returned by `require('./foo.png')`) or an ImageSource. |
 
 ## Type Definitions
 
@@ -512,7 +511,7 @@ Object returned in the `onLoad` callback.
 
 | Name   | Type   | Description                         |
 | ------ | ------ | ----------------------------------- |
-| source | object | The [source object](#source-object) |
+| source | object | The [source object](#imagesource) |
 
 #### Source Object
 
