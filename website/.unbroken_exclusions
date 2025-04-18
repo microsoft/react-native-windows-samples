@@ -17,6 +17,7 @@
 !versioned_docs/version-0.76/native-api/*-api-windows*.md
 !versioned_docs/version-0.77/native-api/*-api-windows*.md
 !versioned_docs/version-0.78/native-api/*-api-windows*.md
+!versioned_docs/version-0.79/native-api/*-api-windows*.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
