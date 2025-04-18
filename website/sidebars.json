@@ -56,8 +56,10 @@
     ]
   },
   "apis": {
-    "Components (Windows)": [
-      "image-component",
+   "Components (Windows - New) Fabric": [
+      "image-component"
+    ],
+    "Components (Windows) Paper": [
       "flyout-component",
       "glyph-component",
       "popup-component",

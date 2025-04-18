@@ -56,8 +56,10 @@
     ]
   },
   "version-0.79-apis": {
-    "Components (Windows)": [
-      "version-0.79-image-component",
+    "Components (Windows - New) Fabric": [
+      "version-0.79-image-component"
+    ],
+    "Components (Windows) Paper": [
       "version-0.79-flyout-component",
       "version-0.79-glyph-component",
       "version-0.79-popup-component",
