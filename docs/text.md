@@ -619,7 +619,7 @@ Lets the user select text, to use the native copy and paste functionality.
 
 | Type                                                                 |
 | -------------------------------------------------------------------- |
-| [Text Style](text-style-props), [View Style Props](view-style-props) |
+| [Text Style](), [View Style Props](view-style-props) |
 
 
 ---

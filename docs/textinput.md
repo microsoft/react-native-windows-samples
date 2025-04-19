@@ -527,7 +527,7 @@ The text color of the placeholder string.
 
 | Type               |
 | ------------------ |
-| [color](colors.md) |
+| [color]() |
 
 ---
 
