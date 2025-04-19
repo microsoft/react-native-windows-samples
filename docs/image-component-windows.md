@@ -1,5 +1,5 @@
 ---
-id: version-0.79-image-component
+id: image-component
 title: Image
 original_id: image-component
 sidebar_label: Image
