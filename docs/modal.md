@@ -132,7 +132,7 @@ The `backdropColor` of the modal (or background color of the modal's container.)
 
 | Type            | Default |
 | --------------- | ------- |
-| [color](colors) | white   |
+| [color]() | white   |
 
 ---
 

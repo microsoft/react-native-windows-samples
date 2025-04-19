@@ -472,7 +472,7 @@ This is a reserved performance property exposed by `RCTView` and is useful for s
 
 | Type                       |
 | -------------------------- |
-| [Role](accessibility#role) |
+| [Role]() |
 
 ---
 

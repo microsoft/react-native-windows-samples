@@ -64,7 +64,7 @@ The foreground color of the spinner.
 
 | Type            | Default                                                                                                                                                                                     |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [color](colors) | `null` (system accent default color) |
+| [color]() | `null` (system accent default color) |
 
 ---
 

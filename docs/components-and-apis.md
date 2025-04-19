@@ -75,7 +75,7 @@ These common user interface controls will render on any platform.
 
 ## List Views
 
-Unlike the more generic [`ScrollView`](./scrollview), the following list view components only render elements that are currently showing on the screen. This makes them a performant choice for displaying long lists of data.
+Unlike the more generic [`ScrollView`](), the following list view components only render elements that are currently showing on the screen. This makes them a performant choice for displaying long lists of data.
 
 <div className="component-grid component-grid-border">
   <div className="component">

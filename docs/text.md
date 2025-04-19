@@ -242,7 +242,7 @@ You can provide one state, no state, or multiple states. The states must be pass
 
 | Type                                                   |
 | ------------------------------------------------------ |
-| [AccessibilityState](accessibility#accessibilitystate) |
+| [AccessibilityState]() |
 
 ---
 
@@ -250,7 +250,7 @@ You can provide one state, no state, or multiple states. The states must be pass
 
 Accessibility actions allow an assistive technology to programmatically invoke the actions of a component. The `accessibilityActions` property should contain a list of action objects. Each action object should contain the field name and label.
 
-See the [Accessibility guide](accessibility.md#accessibility-actions) for more information.
+See the [Accessibility guide]() for more information.
 
 | Type  | Required |
 | ----- | -------- |
@@ -262,7 +262,7 @@ See the [Accessibility guide](accessibility.md#accessibility-actions) for more i
 
 Invoked when the user performs the accessibility actions. The only argument to this function is an event containing the name of the action to perform.
 
-See the [Accessibility guide](accessibility.md#accessibility-actions) for more information.
+See the [Accessibility guide]() for more information.
 
 | Type     | Required |
 | -------- | -------- |
@@ -591,17 +591,17 @@ When the scroll view is disabled, this defines how far your touch may move off o
 
 | Type                 |
 | -------------------- |
-| [Rect](rect), number |
+| [Rect](), number |
 
 ---
 
 ### `role`
 
-`role` communicates the purpose of a component to the user of an assistive technology. Has precedence over the [`accessibilityRole`](text#accessibilityrole) prop.
+`role` communicates the purpose of a component to the user of an assistive technology. Has precedence over the [`accessibilityRole`]() prop.
 
 | Type                       |
 | -------------------------- |
-| [Role](accessibility#role) |
+| [Role]() |
 
 ---
 
