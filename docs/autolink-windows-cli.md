@@ -3,6 +3,8 @@ id: autolink-windows-cli
 title: react-native autolink-windows
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 This guide will give you more information on the `autolink-windows` command of the React Native Windows CLI.
 
 ## `autolink-windows`

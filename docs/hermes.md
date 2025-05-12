@@ -3,6 +3,8 @@ id: hermes
 title: Hermes on Windows + macOS
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 # Hermes
 
 The [Hermes](https://hermesengine.dev/) engine is an open source JavaScript engine created by Facebook to optimize building and running React Native applications.

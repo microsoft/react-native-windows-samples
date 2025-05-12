@@ -2,6 +2,9 @@
 id: upgrade-app
 title: Upgrading App to Latest Version of React Native Windows
 ---
+
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 ## Upgrading A React Native Windows App
 Upgrading your app to new React Native Windows versions requires a small amount of effort, but we will try to streamline this process for you as much as possible in this guide. You have two main options for how to upgrade your React Native Windows app. You can use the [init-windows command](init-windows-cli.md) or manually upgrade using [Upgrade Helper](https://reactnative.dev/docs/upgrading#upgrade-helper). 
 

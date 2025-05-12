@@ -3,6 +3,8 @@ id: platform
 title: Platform Detection
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 When building cross-platform applications, you will sometimes need to dynamically detect the platform your code is running on. React Native for Windows supports the same [platform detection mechanisms](https://reactnative.dev/docs/platform-specific-code.html) as Android and iOS. React Native for Windows reports a `Platform.OS` of `windows`, and uses the `.windows` platform-specific extension.
 
 ```js

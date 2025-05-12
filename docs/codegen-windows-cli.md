@@ -3,6 +3,8 @@ id: codegen-windows-cli
 title: react-native codegen-windows
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 This guide will give you more information on the `codegen-windows` command of the React Native Windows CLI.
 
 ## `codegen-windows`

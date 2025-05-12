@@ -3,6 +3,8 @@ id: supported-community-modules
 title: Supported Community Modules
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 ## `ReactNative.Directory`
 
 The [React Native Directory](https://reactnative.directory/) lists libraries and native modules that are available across all of the React Native platforms including iOS, Android, Windows, macOS, and more.

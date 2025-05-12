@@ -3,6 +3,8 @@ id: native-code
 title: Working with native code on Windows
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
 > **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
 
 ## What is a React Native for Windows app?

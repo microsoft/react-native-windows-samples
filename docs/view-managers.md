@@ -3,7 +3,9 @@ id: view-managers
 title: Native UI Components
 ---
 
-> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
+> **Old Architecture Only:** This documentation describes a feature only supported by React Native's "Old" or "Legacy" Architecture. We are still in the progress of updating all of the documentation, but in the meantime, for information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
 
 > **This documentation and the underlying platform code is a work in progress.**
 > **Examples (C# and C++/WinRT):**

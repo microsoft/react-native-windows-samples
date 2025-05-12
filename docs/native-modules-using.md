@@ -3,6 +3,8 @@ id: native-modules-using
 title: Using Community Native Modules
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
 > **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
 
 Community native modules are usually distributed as npm packages. To understand more about npm packages you may find [this guide](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) useful.
