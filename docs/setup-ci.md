@@ -3,6 +3,8 @@ id: setup-ci
 title: Setup Continuous Integration Pipeline for an RNW App
 ---
 
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 This guide will help you get started on setting up your very first continuous integration pipeline for a React Native for Windows app.
 
 ## Setting Up a Continuous Integration Pipeline using GitHub Actions

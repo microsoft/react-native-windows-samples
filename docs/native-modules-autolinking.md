@@ -3,6 +3,8 @@ id: native-modules-autolinking
 title: Autolinking Native Modules
 ---
 
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 Autolinking is a mechanism that allows your React Native app project to discover and use native modules and view managers provided by React Native libraries.
 
 This document covers autolinking for the Windows platform. It is an extension to the [React Native CLI Autolinking doc](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md).
