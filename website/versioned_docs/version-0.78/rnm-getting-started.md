@@ -6,7 +6,7 @@ original_id: rnm-getting-started
 
 This guide will help you get started on setting up your very first React Native for macOS app.
 
->** Please check either [NPM](https://www.npmjs.com/package/react-native-macos) or our [Github releases](https://github.com/microsoft/react-native-macos/releases) to see our latest release**
+>** Please check either [NPM](https://www.npmjs.com/package/react-native-macos) or our [GitHub releases](https://github.com/microsoft/react-native-macos/releases) to see our latest release**
 
 For information around how to set up:
 - React Native for iOS and Android: See [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started)
