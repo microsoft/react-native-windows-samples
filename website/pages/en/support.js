@@ -4,8 +4,6 @@ const CompLibrary = require("../../core/CompLibrary.js");
 
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
-// We don't want the table to grow indefinitely, but keep the last 5 stable (non-main) versions visible in the support table below.
-
 const SupportPolicyMD = `
 # Support Policy
 
@@ -18,12 +16,24 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | [main](https://www.npmjs.com/package/react-native-windows/v/canary) | [Canary](#canary-support) | *N/A* | *N/A* | *N/A* | *N/A* |
 | [0.78](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 02/27/2025 | 02/27/2025 | *TBD* | *TBD* |
 | [0.77](https://www.npmjs.com/package/react-native-windows/v/v0.77-stable) | [Maintenance](#maintenance-support) | 01/24/2025 | 01/24/2025 | 03/27/2025 | 05/31/2025 |
-| [0.76](https://www.npmjs.com/package/react-native-windows/v/v0.76-stable) | [Maintenance](#maintenance-support) | 11/11/2024 | 11/11/2024 | 02/28/2025 | 04/30/2025 |
+| [0.76](https://www.npmjs.com/package/react-native-windows/v/v0.76-stable) | [Unsupported](#unsupported) | 11/11/2024 | 11/11/2024 | 02/28/2025 | 04/30/2025 |
 | [0.75](https://www.npmjs.com/package/react-native-windows/v/v0.75-stable) | [Unsupported](#unsupported) | 8/19/2024 | 8/19/2024 | 12/31/2024 | 02/28/2025 |
 | [0.74](https://www.npmjs.com/package/react-native-windows/v/v0.74-stable) | [Unsupported](#unsupported) | 4/29/2024 | 4/29/2024 | 9/30/2024 | 11/30/2024 |
+
+<!--
+// We don't want the table to grow indefinitely, so only keep the last 5 stable (non-main) versions visible above, keep the rest here for posterity.
 | [0.73](https://www.npmjs.com/package/react-native-windows/v/v0.73-stable) | [Unsupported](#unsupported) | 12/11/2023 | 12/11/2023 | 5/31/2024 | 7/31/2024 |
 | [0.72](https://www.npmjs.com/package/react-native-windows/v/v0.72-stable) | [Unsupported](#unsupported) | 06/23/2023 | 06/23/2023 | 01/31/2024 | 03/31/2024 |
 | [0.71](https://www.npmjs.com/package/react-native-windows/v/v0.71-stable) | [Unsupported](#unsupported) | 01/23/2023 | 01/23/2023 | 07/31/2023 | 09/30/2023 |
+| [0.70](https://www.npmjs.com/package/react-native-windows/v/v0.70-stable) | [Unsupported](#unsupported) | 09/12/2022 | 09/12/2022 | 02/28/2023 | 04/30/2023 |
+| [0.69](https://www.npmjs.com/package/react-native-windows/v/v0.69-stable) | [Unsupported](#unsupported) | 06/27/2022 | 06/27/2022 | 10/31/2022 | 12/31/2022 |
+| [0.68](https://www.npmjs.com/package/react-native-windows/v/v0.68-stable) | [Unsupported](#unsupported) | 04/04/2022 | 04/04/2022 | 07/31/2022 | 09/30/2022 |
+| [0.67](https://www.npmjs.com/package/react-native-windows/v/v0.67-stable) | [Unsupported](#unsupported) | 01/24/2022 | *N/A* | *N/A* | 09/30/2022 |
+| [0.66](https://www.npmjs.com/package/react-native-windows/v/v0.66-stable) | [Unsupported](#unsupported) | 10/11/2021 | *N/A* | *N/A* | 08/31/2022 |
+| [0.65](https://www.npmjs.com/package/react-native-windows/v/v0.65-stable) | [Unsupported](#unsupported) | 08/23/2021 | *N/A* | *N/A* | 07/31/2022 |
+| [0.64](https://www.npmjs.com/package/react-native-windows/v/v0.64-stable) | [Unsupported](#unsupported) | 03/15/2021 | *N/A* | *N/A* | 06/30/2022 |
+| [0.63](https://www.npmjs.com/package/react-native-windows/v/v0.63-stable) | [Unsupported](#unsupported) | 01/24/2022 | *N/A* | *N/A* | 10/11/2021 |
+-->
 
 <div class="footnote">
 
