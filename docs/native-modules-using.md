@@ -3,6 +3,10 @@ id: native-modules-using
 title: Using Community Native Modules
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 Community native modules are usually distributed as npm packages. To understand more about npm packages you may find [this guide](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) useful.
 
 Consuming native modules requires updating your app's native build files to depend on the module's native build files, called "linking". Many modules support "autolinking", where these updates are done automatically when running the [run-windows command](run-windows-cli.md). Others may require you to link the module manually.

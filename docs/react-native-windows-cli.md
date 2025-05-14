@@ -3,6 +3,8 @@ id: react-native-windows-cli
 title: React Native Windows CLI
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 When React Native for Windows is added to a React Native project, a variety of Windows-specific developer commands are added to the `react-native` CLI.
 
 > The following commands are provided by the the `@react-native-windows/cli` NPM package.

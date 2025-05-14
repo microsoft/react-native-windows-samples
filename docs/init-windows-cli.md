@@ -3,6 +3,8 @@ id: init-windows-cli
 title: react-native init-windows
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 This guide will give you more information on the `init-windows` command of the React Native Windows CLI.
 
 ## `init-windows`

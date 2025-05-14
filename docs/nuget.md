@@ -3,6 +3,10 @@ id: NuGet
 title: Using Microsoft.ReactNative NuGet packages
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 >**This documentation and the underlying platform code is a work in progress.**
 
 Traditionally, the default for React Native Windows has been to build all code from source. This includes building all the code shipped by the team in the npm package from source. The amount of code is quite large and takes both a long time to build as well as requiring a high-performance computer. Some configurations have problems building this code with only 8 GB of memory. Especially if you are used to working only with managed code, this can be a big surprise.

@@ -3,6 +3,8 @@ id: new-architecture
 title: New vs. Old Architecture
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 React Native's [New Architecture](https://reactnative.dev/architecture/landing-page) has become the default with [version 0.76](https://reactnative.dev/blog/2024/10/23/the-new-architecture-is-here), bringing many framework improvements including the advanced rendering system [Fabric](https://reactnative.dev/architecture/fabric-renderer). While React Native for Windows isn't quite yet ready to make the New Architecture the default, we've been hard at work and are excited to offer a sneak peek into adopting it on Windows.
 
 > **Important:** At this stage, React Native for Windows' New Architecture support comes with some important caveats, and is best suited for early adopters comfortable with a work-in-progress experience with incomplete documentation. For those willing to dive in, the New Architecture offers a glimpse into the exciting future of React Native Windows development.

@@ -3,6 +3,8 @@ id: releases
 title: Release Strategy
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 For every major version update of `react-native`, React Native for Windows releases a matching version. In addition, there are three release distributions with corresponding npm package distribution tags:
 1.	Canary (@canary)
 2.	Preview (@preview)

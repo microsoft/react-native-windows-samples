@@ -3,6 +3,8 @@ id: metro-config-out-tree-platforms
 title: Metro config for out of tree platforms
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 How to setup and diagnose issues with metro config for `react-native-macos` and `react-native-windows`.  Many of the instructions within this document may refer just to `react-native-windows`, but the steps apply to `react-native-macos` in the same way.
 
 # Version requirements

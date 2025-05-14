@@ -93,6 +93,8 @@ const siteConfig = {
   // Expand/collapse the links and subcategories under categories.
   docsSideNavCollapsible: true,
 
+  enableUpdateTime: true,
+
   customFields: require("./showcaseApps.json"),
 
   deletedDocs: {

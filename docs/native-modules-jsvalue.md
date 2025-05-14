@@ -3,6 +3,10 @@ id: native-modules-jsvalue
 title: Using JSValue
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 >**This documentation and the underlying platform code is a work in progress.**
 
 `JSValue` is a native, immutable invariant value type, and is meant to hold any of the commonly used JS types: `bool`s, `int`s, `double`s, `string`s, arrays, and objects. It is provided for native developers (writing native modules or view managers) who want an equivalent to the `folly::dynamic` type that is compatible with the WinRT ABI surface provided by `Microsoft.ReactNative`.

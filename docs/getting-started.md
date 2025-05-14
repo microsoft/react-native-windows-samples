@@ -3,6 +3,8 @@ id: getting-started
 title: Get Started with Windows
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 This guide will help you get started on setting up your very first React Native for Windows app.
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
