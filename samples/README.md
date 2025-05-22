@@ -6,7 +6,7 @@
 |:-------|:------------|
 | [Calculator](./Calculator) | A sample RNW app implementing a simple calculator. |
 | [ContinuousIntegration](./ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. |
-| [NativeModuleSample](./NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. |
+| [NativeModuleSample](./NativeModuleSample) | A sample RNW Native Module and Native Component. |
 
 </div>
 
