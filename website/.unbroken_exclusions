@@ -18,6 +18,9 @@
 !versioned_docs/version-0.77/native-api/*-api-windows*.md
 !versioned_docs/version-0.78/native-api/*-api-windows*.md
 
+URL not found https://github.com/microsoft/react-native-windows-samples/blob/main/samples-old/NativeModuleSample
+URL not found https://github.com/microsoft/react-native-windows-samples/tree/main/samples-old/NativeModuleSample
+
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
 File not found ReactNativeHost while parsing versioned_docs/version-0.64/native-modules-advanced.md
