@@ -10,7 +10,7 @@ A common scenario for [Native Modules](native-modules.md) is to call one or more
 
 This document proposes some best patterns to follow when bridging asynchronous methods from JS to native code for React Native Windows. It assumes you've already familiar with the basics of setting up and writing [Native Modules](native-modules.md).
 
-> The complete source for the examples below are provided within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample).
+> The complete source for the examples below are provided within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples-old/NativeModuleSample).
 
 ## Writing Native Modules that call Asynchronous Windows APIs
 
@@ -143,7 +143,7 @@ We've defined an `AsyncActionCompletedHandler` lambda and set it to be run when 
 
 > **Important:** This example shows the minimum case, where you don't handle any errors within `GetHttpResponseAsync`, but you're not limited to this. You're free to detect error conditions within your code and call `promise.Reject()` yourself with (more useful) error messages at any time. However you should *always* include this final handler, to catch any unexpected and unhandled exceptions that may occur, especially when calling Windows APIs. Just be sure that you only call `Reject()` once and that nothing executes afterwards.
 
-That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.cs`](https://github.com/microsoft/react-native-windows-samples/blob/main/samples/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
+That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.cs`](https://github.com/microsoft/react-native-windows-samples/blob/main/samples-old/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
 
 ### `SimpleHttpModule` in C++/WinRT
 
