@@ -46,6 +46,7 @@ initializer
 interop
 iOS
 ItemGroup
+JSValue
 KeyEvents
 lifecycle
 macOS
@@ -80,6 +81,7 @@ Quickstart
 react-native
 react-native-macos
 react-native-windows
+reactnative.dev
 RefreshControl
 repo
 repos
