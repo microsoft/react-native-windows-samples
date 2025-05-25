@@ -153,7 +153,7 @@ namespace NativeModuleSample
     }
 
     [ReactEvent]
-    public ReactEvent<double> AddEvent { get; set; }
+    public Action<double> AddEvent { get; set; }
   }
 }
 ```
@@ -501,12 +501,12 @@ class NativeModuleSample extends Component {
 
   componentDidMount() {
     // Subscribing to FancyMath.AddEvent
-    FancyMathEventEmitter.addListener('AddEvent', eventHandler, this);
+    FancyMathEventEmitter.addListener('AddEvent', this.eventHandler, this);
   }
 
   componentWillUnmount() {
     // Unsubscribing from FancyMath.AddEvent
-    FancyMathEventEmitter.removeListener('AddEvent', eventHandler, this);
+    FancyMathEventEmitter.removeListener('AddEvent', this.eventHandler, this);
   }
 
   eventHandler(result) {
