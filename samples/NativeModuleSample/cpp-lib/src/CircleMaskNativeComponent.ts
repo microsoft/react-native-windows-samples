@@ -4,6 +4,6 @@
 import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
 import type { ViewProps } from 'react-native';
 
-interface CircleMaskProps extends ViewProps {}
+export interface CircleMaskProps extends ViewProps {}
 
 export default codegenNativeComponent<CircleMaskProps>('CircleMask');
