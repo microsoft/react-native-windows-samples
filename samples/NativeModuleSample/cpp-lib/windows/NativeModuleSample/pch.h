@@ -20,9 +20,9 @@
 #include <unknwn.h>
 
 // WinRT Header Files
-#include <winrt/base.h>
 #include <CppWinRTIncludes.h>
 #include <winrt/Microsoft.ReactNative.h>
+#include <winrt/base.h>
 
 // C RunTime Header Files
 #include <malloc.h>
@@ -32,6 +32,6 @@
 
 // Reference additional headers your project requires here
 #include <winrt/Windows.System.Threading.h>
-#include <winrt/Windows.Web.Http.h>
 #include <winrt/Windows.Web.Http.Headers.h>
+#include <winrt/Windows.Web.Http.h>
 using namespace winrt::Windows::Foundation;

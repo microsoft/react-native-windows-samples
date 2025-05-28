@@ -16,7 +16,6 @@ export type Line = {
 };
 
 export interface Spec extends TurboModule {
-
   ExplicitPrimitiveArgs(b: boolean, i: Int32, d: number, s: string): void;
 
   ReturnExplicitBoolean(callback: (value: boolean) => void): void;
