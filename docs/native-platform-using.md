@@ -126,13 +126,13 @@ The `AutolinkedNativeModules.g.cpp` (and `AutolinkedNativeModules.g.h`) files de
 
 ### 3. Call the native library's API surface
 
-With the native library properly connected to the React Native for Windows app, the app's JavaScript should now be able to call the library's JavaScript APIs at runtime and expect the native functionality to be available. That is, each time the library's JavaScript needs to access its Native Modules (and/or Components), they will be already be ready and registered on the native side.
+With the native library properly connected to the React Native for Windows app, the app's JavaScript should now be able to call the library's JavaScript APIs at runtime and expect the native functionality to be available. That is, each time the library's JavaScript needs to access its Native Modules (and/or Components), they will already be ready and registered on the native side.
 
 #### 3.1 Use a Native Module's API
 
 If your library implements and exports any APIs which use Native Modules, you can import and call them from your JavaScript.
 
-For our `example` app, we can see library's `multiply` function being imported and used in `example\src\App.tsx`:
+For our `example` app, we can see the library's `multiply` function being imported and used in `example\src\App.tsx`:
 
 ```tsx
 import { Text, View, StyleSheet } from 'react-native';

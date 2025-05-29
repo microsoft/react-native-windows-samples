@@ -415,4 +415,4 @@ We can see then, that `testlib` JavaScript module simply exports our new Native 
 
 ## Next Steps
 
-After you've implemented your native library, the final step is consume it in your React Native for Windows app. Continue with [Native Platform: Using Native Libraries](native-platform-using.md).
+After you've implemented your native library, the final step is to consume it in your React Native for Windows app. Continue with [Native Platform: Using Native Libraries](native-platform-using.md).

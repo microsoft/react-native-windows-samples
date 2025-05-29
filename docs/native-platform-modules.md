@@ -31,7 +31,7 @@ You'll need a React Native library project initialized with Windows support.
 
 ### 1. Define the API surface in TypeScript
 
-The default template for a new library starts with a simple Turbo Native Module based on the name as the project, i.e. our `testlib` project contains with a `TestLib` module, whose API surface is defined in `src\NativeTestlib.ts`:
+The default template for a new library starts with a simple Turbo Native Module based on the name of the project, i.e. our `testlib` project contains a `TestLib` module, whose API surface is defined in `src\NativeTestlib.ts`:
 
 ```ts
 import type { TurboModule } from 'react-native';
@@ -335,4 +335,4 @@ We can see then, that the `testlib` JavaScript module exports a `multiply()` fun
 
 ## Next Steps
 
-After you've implemented your native library, the final step is consume it in your React Native for Windows app. Continue with [Native Platform: Using Native Libraries](native-platform-using.md).
+After you've implemented your native library, the final step is to consume it in your React Native for Windows app. Continue with [Native Platform: Using Native Libraries](native-platform-using.md).
