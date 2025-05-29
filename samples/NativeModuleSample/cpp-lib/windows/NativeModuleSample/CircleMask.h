@@ -18,8 +18,7 @@
 
 #endif
 
-namespace winrt::NativeModuleSample::implementation
-{
+namespace winrt::NativeModuleSample::implementation {
 
 void RegisterCircleMaskNativeComponent(
     winrt::Microsoft::ReactNative::IReactPackageBuilder const &packageBuilder) noexcept;
@@ -27,12 +26,12 @@ void RegisterCircleMaskNativeComponent(
 #ifdef RNW_NEW_ARCH
 
 struct CircleMaskComponentView : winrt::implements<CircleMaskComponentView, winrt::IInspectable>,
-                                  NativeModuleSampleCodegen::BaseCircleMask<CircleMaskComponentView>
-{
-  winrt::Microsoft::UI::Composition::Visual CreateVisual(const winrt::Microsoft::ReactNative::ComponentView &view) noexcept override;
-  void Initialize(const winrt::Microsoft::ReactNative::ComponentView &/*view*/) noexcept override;
+                                 NativeModuleSampleCodegen::BaseCircleMask<CircleMaskComponentView> {
+  winrt::Microsoft::UI::Composition::Visual CreateVisual(
+      const winrt::Microsoft::ReactNative::ComponentView &view) noexcept override;
+  void Initialize(const winrt::Microsoft::ReactNative::ComponentView & /*view*/) noexcept override;
 
-private:
+ private:
   winrt::Microsoft::ReactNative::ComponentView::LayoutMetricsChanged_revoker m_layoutMetricChangedRevoker;
   winrt::Microsoft::UI::Composition::SpriteVisual m_visual{nullptr};
 };
@@ -40,12 +39,11 @@ private:
 #else
 
 struct CircleMaskViewManager : winrt::implements<
-                                  CircleMaskViewManager,
-                                  winrt::Microsoft::ReactNative::IViewManager,
-                                  winrt::Microsoft::ReactNative::IViewManagerWithChildren>
-{
+                                   CircleMaskViewManager,
+                                   winrt::Microsoft::ReactNative::IViewManager,
+                                   winrt::Microsoft::ReactNative::IViewManagerWithChildren> {
  public:
-  CircleMaskViewManager(){}
+  CircleMaskViewManager() {}
 
   // IViewManager
   winrt::hstring Name() noexcept;
@@ -70,10 +68,9 @@ struct CircleMaskViewManager : winrt::implements<
 };
 
 struct HeightToCornerRadiusConverter
-    : winrt::implements<HeightToCornerRadiusConverter, winrt::Windows::UI::Xaml::Data::IValueConverter>
-{
+    : winrt::implements<HeightToCornerRadiusConverter, winrt::Windows::UI::Xaml::Data::IValueConverter> {
  public:
-  HeightToCornerRadiusConverter(){}
+  HeightToCornerRadiusConverter() {}
 
   winrt::Windows::Foundation::IInspectable Convert(
       winrt::Windows::Foundation::IInspectable const &value,

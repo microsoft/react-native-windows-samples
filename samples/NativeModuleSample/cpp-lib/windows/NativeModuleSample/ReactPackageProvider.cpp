@@ -16,11 +16,9 @@
 
 using namespace winrt::Microsoft::ReactNative;
 
-namespace winrt::NativeModuleSample::implementation
-{
+namespace winrt::NativeModuleSample::implementation {
 
-void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuilder) noexcept
-{
+void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuilder) noexcept {
   AddAttributedModules(packageBuilder, true);
   RegisterCircleMaskNativeComponent(packageBuilder);
 }
