@@ -24,10 +24,20 @@ Call the following from the place where you want your project directory to live:
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes create-react-native-library@0.48.9 --local false --type turbo-module --react-native-version "nightly" --example vanilla <projectName>
+npx --yes create-react-native-library@0.48.9 --react-native-version "nightly" <projectName>
 ```
 
-> **Note:** Replace `<projectName>` with the name of your library. The rest of this guide will assume you named your project `testlib`. You will also be prompted to supply several other options (slug, description, etc.) when creating your project. For more information on what these options mean, see [create-react-native-library's documentation](https://callstack.github.io/react-native-builder-bob).
+> **Note:** Replace `<projectName>` with the name of your library. The rest of this guide will assume you named your project `testlib`.
+
+You'll then be prompted for more information about the library you're trying to create (though you can also specify the answers at the command-line). Most are self-explanatory, but for this guide, you'll want to choose:
+
+| Option | Value | CLI Argument |
+|:-------|:-------|:-------------|
+| Package Name | testlib | `--slug testlib` |
+| Library Type | Turbo module | `--type turbo-module` |
+| Languages | Kotlin & Objective-C | `--languages kotlin-objc` |
+
+> **Note:** For more information on all of the available options, see [create-react-native-library's documentation](https://callstack.github.io/react-native-builder-bob).
 
 ### Navigate into this newly created directory
 
