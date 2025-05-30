@@ -3,6 +3,8 @@ id: InitializerDelegate
 title: InitializerDelegate
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `delegate`
 
 A delegate that sets `reactContext` for a module.
@@ -11,10 +13,6 @@ Experimental code uses it to initialize TurboModule `CallInvoker`.
 
 ## Invoke
 void **`Invoke`**([`IReactContext`](IReactContext) reactContext)
-
-
-
-
 
 ## Referenced by
 - [`IReactModuleBuilder`](IReactModuleBuilder)

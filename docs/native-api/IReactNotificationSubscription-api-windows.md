@@ -3,9 +3,9 @@ id: IReactNotificationSubscription
 title: IReactNotificationSubscription
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 A subscription to a [`IReactNotificationService`](IReactNotificationService) notification.
 The subscription is removed when this object is deleted or the [`Unsubscribe`](#unsubscribe) method is called.
@@ -35,19 +35,12 @@ Name of the notification.
 The notification service for the subscription.
 It can be null if [`IsSubscribed`](#issubscribed) is true and the notification service was already deleted.
 
-
-
 ## Methods
 ### Unsubscribe
 void **`Unsubscribe`**()
 
 Removes the subscription.
 Because of the multi-threaded nature of the notifications, the handler can be still called after the [`Unsubscribe`](#unsubscribe) method has been called if the [`IsSubscribed`](#issubscribed) property has already been checked. Consider calling the [`Unsubscribe`](#unsubscribe) method and the handler in the same [`IReactDispatcher`](IReactDispatcher) to ensure that no handler is invoked after the [`Unsubscribe`](#unsubscribe) method call.
-
-
-
-
-
 
 ## Referenced by
 - [`IReactNotificationArgs`](IReactNotificationArgs)

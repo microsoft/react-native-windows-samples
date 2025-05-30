@@ -3,9 +3,9 @@ id: JsiError
 title: JsiError
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `class`
-
-
 
 > **EXPERIMENTAL**
 
@@ -38,11 +38,6 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 `readonly`  [`JsiValueRef`](JsiValueRef) `Value`
 
 > **EXPERIMENTAL**
-
-
-
-
-
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)

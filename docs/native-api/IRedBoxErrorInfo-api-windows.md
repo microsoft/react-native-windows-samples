@@ -3,9 +3,9 @@ id: IRedBoxErrorInfo
 title: IRedBoxErrorInfo
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 This object provides information about the error. For JavaScript errors, a call stack is also provided.
 
@@ -44,11 +44,6 @@ An identifier for this error.
 `readonly`  string `OriginalMessage`
 
 If the message was adjusted for formatting, or otherwise processed, this contains the message before those modifications.
-
-
-
-
-
 
 ## Referenced by
 - [`IRedBoxHandler`](IRedBoxHandler)

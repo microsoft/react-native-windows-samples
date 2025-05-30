@@ -3,6 +3,8 @@ id: JsiWeakObjectRef
 title: JsiWeakObjectRef
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `struct`
 
 > **EXPERIMENTAL**
@@ -14,8 +16,6 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 ## Fields
 ### Data
 Type: `uint64_t`
-
-
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)

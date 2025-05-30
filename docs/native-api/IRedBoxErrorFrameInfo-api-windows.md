@@ -3,9 +3,9 @@ id: IRedBoxErrorFrameInfo
 title: IRedBoxErrorFrameInfo
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 This object represents a single frame within the call stack of an error.
 
@@ -34,7 +34,3 @@ The line number within the file.
 `readonly`  string `Method`
 
 The method name of this frame.
-
-
-
-

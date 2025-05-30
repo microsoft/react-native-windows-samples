@@ -1,0 +1,18 @@
+---
+id: ImageProps
+title: ImageProps
+---
+
+![Architecture](https://img.shields.io/badge/architecture-new_only-blue)
+
+Kind: `class`
+
+Extends: [`ViewProps`](ViewProps)
+
+> **EXPERIMENTAL**
+
+## Properties
+### Sources
+`readonly`  [`IVectorView`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVectorView-1)<[`ImageSource`](ImageSource)> `Sources`
+
+> **EXPERIMENTAL**

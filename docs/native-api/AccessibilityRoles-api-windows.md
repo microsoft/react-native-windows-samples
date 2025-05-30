@@ -3,6 +3,8 @@ id: AccessibilityRoles
 title: AccessibilityRoles
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `enum`
 
 | Name |  Value | Description |
@@ -39,7 +41,6 @@ Kind: `enum`
 |`ListItem` | 0x1d  |  |
 |`Unknown` | 0x1e  |  |
 |`CountRoles` | 0x1f  |  |
-
 
 ## Referenced by
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)

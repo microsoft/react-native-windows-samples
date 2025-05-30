@@ -3,6 +3,8 @@ id: CanvasComposite
 title: CanvasComposite
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `enum`
 
 | Name |  Value | Description |
@@ -20,7 +22,6 @@ Kind: `enum`
 |`Copy` | 0xa  |  |
 |`BoundedCopy` | 0xb  |  |
 |`MaskInvert` | 0xc  |  |
-
 
 ## Referenced by
 - [`CompositeStepEffect`](CompositeStepEffect)

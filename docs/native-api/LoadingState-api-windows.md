@@ -3,6 +3,8 @@ id: LoadingState
 title: LoadingState
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `enum`
 
 Used to represent the state of the React Native JavaScript instance
@@ -13,7 +15,6 @@ Used to represent the state of the React Native JavaScript instance
 |`Loaded` | 0x1  |  The instance is in a ready state.  Calls to run JavaScript functions will be run as soon as they are posted to the JavaScript instance.|
 |`HasError` | 0x2  |  The instance has hit an error.  Calls to run JavaScript functions will not be run.|
 |`Unloaded` | 0x3  |  The instance has successfully unloaded.  Calls to run JavaScript functions will not be run.|
-
 
 ## Referenced by
 - [`IReactContext`](IReactContext)

@@ -3,6 +3,8 @@ id: JSValueType
 title: JSValueType
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `enum`
 
 Type of value read by [`IJSValueReader`](IJSValueReader).
@@ -16,7 +18,6 @@ Type of value read by [`IJSValueReader`](IJSValueReader).
 |`Boolean` | 0x4  |  |
 |`Int64` | 0x5  |  |
 |`Double` | 0x6  |  |
-
 
 ## Referenced by
 - [`IJSValueReader`](IJSValueReader)

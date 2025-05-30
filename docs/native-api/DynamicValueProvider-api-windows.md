@@ -3,9 +3,11 @@ id: DynamicValueProvider
 title: DynamicValueProvider
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `class`
 
-Implements: [`IValueProvider`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider)
+Implements: [`IValueProvider`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider)
 
 ## Properties
 ### IsReadOnly
@@ -14,18 +16,10 @@ Implements: [`IValueProvider`](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 ### Value
 `readonly`  string `Value`
 
-
 ## Constructors
 ### DynamicValueProvider
- **`DynamicValueProvider`**([`FrameworkElementAutomationPeer`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer) peer)
-
-
-
+ **`DynamicValueProvider`**([`FrameworkElementAutomationPeer`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer) peer)
 
 ## Methods
 ### SetValue
 void **`SetValue`**(string value)
-
-
-
-

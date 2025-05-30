@@ -3,9 +3,9 @@ id: IJsiByteBuffer
 title: IJsiByteBuffer
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 > **EXPERIMENTAL**
 
@@ -17,16 +17,9 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 ### Size
 `readonly`  uint32_t `Size`
 
-
-
 ## Methods
 ### GetData
 void **`GetData`**([`JsiByteArrayUser`](JsiByteArrayUser) useBytes)
-
-
-
-
-
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)

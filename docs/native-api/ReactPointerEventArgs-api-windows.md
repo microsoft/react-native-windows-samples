@@ -3,9 +3,9 @@ id: ReactPointerEventArgs
 title: ReactPointerEventArgs
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `class`
-
-
 
 > **EXPERIMENTAL**
 
@@ -20,7 +20,7 @@ Event arguments wrapper for [`IViewManagerWithPointerEvents`](IViewManagerWithPo
 Gets or sets a flag that allows the ReactRootView to handle pointer events even when it does not capture the pointer. This is particularly useful for view managers that seek to capture the pointer to handle move events for a gesture (e.g., dragging), but conditionally may allow the ReactRootView to emit events (e.g., if the [`PointerEventKind.End`](PointerEventKind) event is received before a drag threshold is hit.
 
 ### Args
-`readonly`  [`PointerRoutedEventArgs`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) `Args`
+`readonly`  [`PointerRoutedEventArgs`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) `Args`
 
 > **EXPERIMENTAL**
 
@@ -39,11 +39,6 @@ Gets or sets the pointer event kind. The only valid override is [`PointerEventKi
 > **EXPERIMENTAL**
 
 Gets or sets the React target for the pointer event.
-
-
-
-
-
 
 ## Referenced by
 - [`IViewManagerWithPointerEvents`](IViewManagerWithPointerEvents)
