@@ -6,7 +6,7 @@ sidebar_label: Getting Started
 
 ![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
 
-Similar to how the [Getting Started for Windows](getting-started.md) guide takes you through the process of creating a base React Native app (which supports iOS and Android), and then *adding* Windows support, this guide will take you through the steps of creating a base React Native library and then *adding* Windows support.
+Similar to how the [Getting Started for Windows](getting-started.md) guide takes you through the process of creating a base React Native *app* (which supports iOS and Android), and then adding Windows support, this guide will take you through the steps of creating a base React Native *library*, and then adding Windows support.
 
 Before you get started, make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
@@ -41,10 +41,10 @@ You'll then be prompted for more information about the library you're trying to 
 
 ### Navigate into this newly created directory
 
-React Native will have created your project in a new sub-directory, which you must enter before continuing.
+The command will create your project in a new sub-directory, which you must enter before continuing:
 
 ```bat
-cd testlib
+cd <projectName>
 ```
 
 ### Add React Native for Windows to your project's node dependencies
@@ -53,6 +53,8 @@ cd testlib
 
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
 <!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
+
+Next you'll want to add `react-native-windows` as a dependency:
 
 ```bat
 yarn add react-native-windows@canary --dev
@@ -68,7 +70,7 @@ Lastly, initialize the React Native for Windows library with the [init-windows c
 npx react-native init-windows --template cpp-lib --overwrite
 ```
 
-> **Note:** The command will not only initialize the Windows code for the library project itself, but it will also add and initialize React Native for Windows for the example app created by `create-react-native-library` in the `example` folder.
+> **Note:** The command will not only initialize the Windows code for the library project itself, but it will also initialize the Windows code for the example app created by `create-react-native-library` in the `example` folder.
 
 ## Running the React Native for Windows example app
 
@@ -82,8 +84,8 @@ yarn react-native run-windows
 
 ## Next Steps
 
-After you've initialized a new project with Windows support, your next step is to implement the Windows support in native code.
+After you've initialized a new project to support Windows, your next step is to implement that Windows support in native code.
 
 If you're implementing a Native Module (i.e. exposing non-UI native code), continue with [Native Platform: Native Modules](native-platform-modules.md).
 
-If you're implementing a Native Component (i.e. native Windows views), continue with [Native Platform: Native Components](native-platform-components.md).
+If you're implementing a Native Component (i.e. exposing native Windows UI), continue with [Native Platform: Native Components](native-platform-components.md).

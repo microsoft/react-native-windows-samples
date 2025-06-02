@@ -6,7 +6,7 @@ sidebar_label: Native Components (Paper)
 
 ![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
 
-This guide covers exposing native UI views from Windows to React Native by implementing a *Native Component* for the Windows platform. For a higher-level overview of native development on Windows, see [Native Platform: Overview](native-platform.md) before reading this guide.
+This guide covers exposing native Windows UI to React Native by implementing a *Native Component* for the Windows platform. For a higher-level overview of native development on Windows, see [Native Platform: Overview](native-platform.md) before reading this guide.
 
 > **Note:** See the [reactnative.dev Native Components guide](https://reactnative.dev/docs/fabric-native-components-introduction) for steps for implementing new Native Components for both the Android and iOS platforms.
 
@@ -54,7 +54,7 @@ When making a Fabric Native Component, the React Native for Windows' Native Libr
 
 ### 3. Implement the Windows C++ code
 
-Now it's time to implement `CircleMaskViewManager` in Windows code. React Native for Windows View Managers are implemented in C++ and render UI using the APIs in the `Windows::UI::Xaml` namespace, also known as [UWP XAML](https://learn.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-overview).
+Now it's time to implement `CircleMaskViewManager` in Windows code. React Native for Windows Paper View Managers are implemented in C++ and render UI using the `Windows::UI::Xaml` APIs, also known as [UWP XAML](https://learn.microsoft.com/en-us/windows/uwp/xaml-platform/xaml-overview).
 
 #### 3.1 Implementing the Paper View Manager
 
@@ -249,7 +249,7 @@ As you can see, the `CircleMask.h` file defines three things:
 2. A `CircleMaskViewManager` struct containing the `CircleMask` Paper View Manager
 3. A `HeightToCornerRadiusConverter` struct with some helper functionality
 
-Then within `CircleMask.cpp` we have the implementation specifics for our new Native Component. Note the use of `#ifndef RNW_NEW_ARCH` to ensure the Paper View Manager code is on included when the library is used by Old Architecture apps.
+Then within `CircleMask.cpp` we have the implementation specifics for our new Native Component. Note the use of `#ifndef RNW_NEW_ARCH` to ensure the Paper View Manager code is only included when the library is used by Old Architecture apps.
 
 > **Note:** For a more complete example of how to implement a `CircleMask` component for both Fabric and Paper simultaneously, see the implementation in the [Native Module Sample](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample/cpp-lib) project.
 
@@ -322,7 +322,7 @@ Since we've created some new native files (`CircleMask.h` and `CircleMask.cpp` a
 
 #### 3.3 Registering the Paper View Manager with the React Package Provider
 
-Every React Native for Windows library contains an [`IReactPackageProvider`](native-api/IReactPackageProvider-api-windows.md) which contains all of the library's Native Modules and/or Components so React Native can use them at runtime. The final bit of native work we need is to update `ReactPackageProvider::CreatePackage` in `windows\testlib\ReactPackageProvider.cpp`:
+Every React Native for Windows library contains an [`IReactPackageProvider`](native-api/IReactPackageProvider-api-windows.md) which contains all of the library's Native Modules (and/or Components) so React Native can use them at runtime. The final bit of native work we need is to update `ReactPackageProvider::CreatePackage` in `windows\testlib\ReactPackageProvider.cpp`:
 
 ```cpp
 #include "pch.h"

@@ -6,7 +6,7 @@ sidebar_label: Native Modules
 
 ![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
 
-This guide covers exposing native non-UI functionality from Windows to React Native by implementing a *Native Module* for the Windows platform. For a higher-level overview of native development on Windows, see [Native Platform: Overview](native-platform.md) before reading this guide.
+This guide covers exposing non-UI native functionality from Windows to React Native by implementing a *Native Module* for the Windows platform. For a higher-level overview of native development on Windows, see [Native Platform: Overview](native-platform.md) before reading this guide.
 
 > **Note:** See the [reactnative.dev Native Modules guide](https://reactnative.dev/docs/turbo-native-modules-introduction) for steps for implementing new Native Modules for both the Android and iOS platforms.
 
@@ -211,7 +211,7 @@ The `using ModuleSpec = testlibCodegen::TestlibSpec;` line is what makes sure th
 
 The `Initialize()` function is attributed with `REACT_INIT`, indicating it should be run when the module is first created. Looking at the implementation in `testlib.cpp` we see it saves off a [`ReactContext`](native-api/IReactContext-api-windows.md), which your module can later use to interact back with the JavaScript side of your code (i.e. firing JavaScript events during a native operation).
 
-Finally, we also see the `multiply()` function is attributed with `REACT_SYNC_METHOD`, indicating that the function is part of the module's API surface, but also synchronous. Looking at the implementation in `testlib.cpp` we see it does what we'd expect, multiplying the input parameters and returning the result.
+Finally, we also see the `multiply()` function is attributed with `REACT_SYNC_METHOD`, indicating both that the function is part of the module's API surface,and that the function is synchronous. Looking at the implementation in `testlib.cpp` we see it does what we'd expect, multiplying the input parameters and returning the result.
 
 <!-- TODO: Add FancyMath. -->
 
@@ -286,9 +286,9 @@ By default the native Windows project (`windows\testlib\testlib.vcxproj` and `wi
 
 #### 3.3 Registering the Turbo Native Module with the React Package Provider
 
-Every React Native for Windows library contains an [`IReactPackageProvider`](native-api/IReactPackageProvider-api-windows.md) which contains all of the library's Native Modules and/or Components so React Native can use them at runtime.
+Every React Native for Windows library contains an [`IReactPackageProvider`](native-api/IReactPackageProvider-api-windows.md) which contains all of the library's Native Modules (and/or Components) so React Native can use them at runtime.
 
-The final bit of native work we need is to make sure `ReactPackageProvider::CreatePackage` adds all the attributed modules in `windows\testlib\ReactPackageProvider.cpp`:
+The final bit of native work we need is to make sure `ReactPackageProvider::CreatePackage` adds all of the attributed modules in `windows\testlib\ReactPackageProvider.cpp`:
 
 ```cpp
 #include "pch.h"
@@ -313,7 +313,7 @@ void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuil
 
 Conveniently our new project already includes the code to include our `Testlib` Turbo Native Module.
 
-The key bit here is the `#include "testlib.h"` include and the call to the `AddAttributedModules` function. This call makes sure that every Turbo Native Module (every struct attributed with `REACT_MODULE`), from every included header file, gets included in the library's package.
+The key bit here is the `#include "testlib.h"` include and the call to the `AddAttributedModules` function. This call makes sure that every Turbo Native Module (i.e. every struct attributed with `REACT_MODULE`), from every included header file, gets included in the library's package.
 
 ### 4. Use the Native Module in your JavaScript
 
@@ -329,9 +329,9 @@ export function multiply(a: number, b: number): number {
 }
 ```
 
-We can see then, that the `testlib` JavaScript module exports a `multiply()` function which internally simply calls the `Testlib.multiply()` function.
+We can see then, that the `testlib` JavaScript module exports a `multiply()` function which internally calls the `Testlib.multiply()` function.
 
-> **Note:** Libraries are not required to expose any of their Native Module functions directly to their consumers. This sample just illustrates the simplest case of a pass-through call to the Native Module function. Libraries can and often do have lots of functionality written in JavaScript, and may provide a wholly different API surface to their customers.
+> **Note:** Libraries are not required to expose any of their Native Module functions directly to their consumers. This sample just illustrates the simplest case of a pass-through call to the Native Module function. Libraries can and often do wrap their Native Modules within JavaScript ones, and therefore may provide a wholly different API surface to their customers.
 
 ## Next Steps
 

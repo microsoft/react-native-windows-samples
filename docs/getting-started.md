@@ -31,7 +31,7 @@ npx --yes @react-native-community/cli@next init <projectName> --version "nightly
 
 ### Navigate into this newly created directory
 
-React Native will have created your project in a new sub-directory, which you must enter before continuing.
+The command will create your project in a new sub-directory, which you must enter before continuing:
 
 ```bat
 cd <projectName>
@@ -43,6 +43,8 @@ cd <projectName>
 
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
 <!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
+
+Next you'll want to add `react-native-windows` as a dependency:
 
 <!--DOCUSAURUS_CODE_TABS-->
 
