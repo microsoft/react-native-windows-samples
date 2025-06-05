@@ -46,7 +46,9 @@ initializer
 interop
 iOS
 ItemGroup
+JSValue
 KeyEvents
+Kotlin
 lifecycle
 macOS
 middleware
@@ -80,6 +82,7 @@ Quickstart
 react-native
 react-native-macos
 react-native-windows
+reactnative.dev
 RefreshControl
 repo
 repos
@@ -96,6 +99,7 @@ struct
 symlink
 symlinks
 tada
+testlib
 TextInput
 theming
 toolchain
@@ -115,6 +119,7 @@ WebView
 Win32
 WinAppDriver
 WinAppSDK
+WinGet
 WinRT
 WinUI
 WinUI3

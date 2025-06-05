@@ -11,7 +11,8 @@
       "platform",
       "upgrade-app",
       "setup-ci",
-      "app-publishing"
+      "app-publishing",
+      "supported-community-modules"
     ],
     "CLI Commands (Windows)": [
       "autolink-windows-cli",
@@ -19,26 +20,18 @@
       "init-windows-cli",
       "run-windows-cli"
     ],
-    "Native Modules (Windows)": [
-      "native-modules",
-      "view-managers",
-      "native-modules-setup",
-      "native-modules-vs-turbo-modules",
-      "native-modules-using",
-      "native-modules-autolinking",
-      "native-modules-advanced",
-      "supported-community-modules"
-    ],
     "Native Development (Windows)": [
-      "native-code",
-      "native-code-language-choice",
-      "native-modules-marshalling-data",
-      "native-modules-async",
-      "native-modules-jsvalue",
-      "native-modules-csharp-codegen",
+      "native-platform",
+      "native-platform-getting-started",
+      "native-platform-modules",
+      "native-platform-components",
+      "native-platform-components-paper",
+      "native-platform-using"
+    ],
+    "Advanced Topics (Windows)": [
       "win10-vm",
-      "customizing-sdk-versions",
-      "managing-cpp-deps"
+      "hermes",
+      "NuGet"
     ],
     "The Basics (MacOS)": [
       "rnm-getting-started",
@@ -46,13 +39,37 @@
     ],
     "Troubleshooting": [
       "debugging-javascript",
-      "native-modules-troubleshooting",
       "metro-config-out-tree-platforms"
     ],
-    "Experimental": [
-      "new-architecture",
-      "hermes",
-      "NuGet"
+    "Legacy Docs": [
+      {
+        "type": "subcategory",
+        "label": "Native Modules (Windows)",
+        "ids": [
+          "native-modules",
+          "view-managers",
+          "native-modules-setup",
+          "native-modules-vs-turbo-modules",
+          "native-modules-using",
+          "native-modules-autolinking",
+          "native-modules-advanced",
+          "native-modules-troubleshooting"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Native Development (Windows)",
+        "ids": [
+          "native-code",
+          "native-code-language-choice",
+          "native-modules-marshalling-data",
+          "native-modules-async",
+          "native-modules-jsvalue",
+          "native-modules-csharp-codegen",
+          "customizing-sdk-versions",
+          "managing-cpp-deps"
+        ]
+      }
     ]
   },
   "apis": {
