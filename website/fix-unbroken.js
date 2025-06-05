@@ -34,7 +34,6 @@ const addFileToVersionedDocs = (file, version) => {
   if (!versionedDocs.hasOwnProperty(version)) {
       versionedDocs[version] = [];
   }
-  const versionDir = `versioned_docs/version-${version}`;
   versionedDocs[version].push(file);
 };
 

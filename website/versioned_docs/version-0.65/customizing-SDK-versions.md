@@ -1,7 +1,7 @@
 ---
-id: version-0.65-customizing-sdk-versions
+id: version-0.65-customizing-SDK-versions
 title: Customizing SDK versions
-original_id: customizing-sdk-versions
+original_id: customizing-SDK-versions
 ---
 
 It is easy for an app to customize which versions of the Windows SDK and WinUI 2.x to use.

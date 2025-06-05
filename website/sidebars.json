@@ -66,7 +66,7 @@
           "native-modules-async",
           "native-modules-jsvalue",
           "native-modules-csharp-codegen",
-          "customizing-sdk-versions",
+          "customizing-SDK-versions",
           "managing-cpp-deps"
         ]
       }
