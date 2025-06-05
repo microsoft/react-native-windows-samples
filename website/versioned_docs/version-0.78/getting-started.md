@@ -26,7 +26,7 @@ Remember to call `@react-native-community/cli init` from the place you want your
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@next init <projectName> --version ^0.78.0
+npx --yes @react-native-community/cli@latest init <projectName> --version ^0.78.0
 ```
 
 ### Navigate into this newly created directory

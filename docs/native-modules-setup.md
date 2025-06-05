@@ -7,6 +7,8 @@ title: Native Module Setup
 
 > **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
 
+> For the latest information on native development on Windows, see [Native Platform: Overview](native-platform.md).
+
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 
 This guide will set you up with our recommendations for authoring a native module for React Native for Windows. After completing this setup, you should be able to answer the question: *Where do I need to implement the native code so it's available at runtime?*

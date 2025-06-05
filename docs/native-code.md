@@ -7,6 +7,8 @@ title: Working with native code on Windows
 
 > **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
 
+> For the latest information on native development on Windows, see [Native Platform: Overview](native-platform.md).
+
 ## What is a React Native for Windows app?
 
 When you create a React Native for Windows app targeting React Native's old architecture, you will get a [Universal Windows Platform app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) (aka UWP app).
