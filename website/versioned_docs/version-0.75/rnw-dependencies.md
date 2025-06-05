@@ -1,14 +1,13 @@
 ---
-id: rnw-dependencies
+id: version-0.75-rnw-dependencies
 title: System Requirements
+original_id: rnw-dependencies
 ---
-
-![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
 
 You can only develop React Native for Windows app on Windows. You can run React Native for Windows apps only on:
 
 - All Windows 11 devices
-- Up-to-date Windows 10 devices (see [Windows OS Compatibility](win10-compat.md) for details)
+- Up-to-date Windows 10 devices (see [Windows OS Compatibility](win10-compat.md) for version support details)
 
 To develop React-Native for Windows apps, you need to install several dependencies.
 
