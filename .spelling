@@ -115,6 +115,7 @@ WebView
 Win32
 WinAppDriver
 WinAppSDK
+WinGet
 WinRT
 WinUI
 WinUI3
