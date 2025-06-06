@@ -3,6 +3,8 @@ id: AriaRole
 title: AriaRole
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `enum`
 
 | Name |  Value | Description |
@@ -74,7 +76,6 @@ Kind: `enum`
 |`TreeGrid` | 0x40  |  |
 |`TreeItem` | 0x41  |  |
 |`CountRoles` | 0x42  |  |
-
 
 ## Referenced by
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)

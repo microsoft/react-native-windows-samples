@@ -1,5 +1,5 @@
 ---
-id: customizing-sdk-versions
+id: customizing-SDK-versions
 title: Customizing SDK versions
 ---
 

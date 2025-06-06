@@ -3,9 +3,9 @@ id: IReactSettingsSnapshot
 title: IReactSettingsSnapshot
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 An immutable snapshot of the [`ReactInstanceSettings`](ReactInstanceSettings) used to create the current React instance.
 
@@ -97,11 +97,6 @@ A read-only snapshot of the [`ReactInstanceSettings.UseWebDebugger`](ReactInstan
 Controls whether the instance JavaScript runs in a remote environment such as within a browser.
 By default, this is using a browser navigated to http://localhost:8081/debugger-ui served by Metro/Haul.
 Debugging will start as soon as the react native instance is loaded.
-
-
-
-
-
 
 ## Referenced by
 - [`IReactContext`](IReactContext)

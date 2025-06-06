@@ -3,9 +3,9 @@ id: IReactNotificationArgs
 title: IReactNotificationArgs
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 Notification args provided to the notification handler.
 
@@ -19,11 +19,6 @@ The data sent with the notification. It can be any WinRT type. Consider using [`
 `readonly`  [`IReactNotificationSubscription`](IReactNotificationSubscription) `Subscription`
 
 The notification subscription that can be used to unsubscribe in the notification handler. It also has the name and dispatcher associated with the notification.
-
-
-
-
-
 
 ## Referenced by
 - [`ReactNotificationHandler`](ReactNotificationHandler)

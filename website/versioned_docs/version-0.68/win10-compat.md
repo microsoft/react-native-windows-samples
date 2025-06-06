@@ -15,7 +15,7 @@ The following table captures the default versions of Windows that a React Native
 | 0.68 - 0.71 | **Windows 10 May 2020 Update**<br>Version 2004 ; Build 10.0.19041.0 | **Windows 10 Fall Creators Update**<br>Version 1709 ; Build 10.0.16299.91 |
 | 0.66 - 0.67 | **Windows 10 May 2020 Update**<br>Version 2004 ; Build 10.0.19041.0 | **Windows 10 Creators Update**<br>Version 1703 ; Build 10.0.15063.468 |
 
-> **Note:** To override the default SDK versions, see [Customizing SDK versions](customizing-sdk-versions).
+> **Note:** To override the default SDK versions, see [Customizing SDK versions](customizing-SDK-versions.md).
 
 ## Backwards Compatibility
 

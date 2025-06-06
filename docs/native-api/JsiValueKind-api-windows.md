@@ -3,6 +3,8 @@ id: JsiValueKind
 title: JsiValueKind
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `enum`
 
 > **EXPERIMENTAL**
@@ -21,7 +23,6 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 |`BigInt` | 0x5  |  |
 |`String` | 0x6  |  |
 |`Object` | 0x7  |  |
-
 
 ## Referenced by
 - [`JsiValueRef`](JsiValueRef)

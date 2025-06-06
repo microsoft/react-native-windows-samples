@@ -37,7 +37,7 @@
       "version-0.78-native-modules-jsvalue",
       "version-0.78-native-modules-csharp-codegen",
       "version-0.78-win10-vm",
-      "version-0.78-customizing-sdk-versions",
+      "version-0.78-customizing-SDK-versions",
       "version-0.78-managing-cpp-deps"
     ],
     "The Basics (MacOS)": [

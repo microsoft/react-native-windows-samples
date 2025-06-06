@@ -3,6 +3,8 @@ id: JsiByteArrayUser
 title: JsiByteArrayUser
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `delegate`
 
 > **EXPERIMENTAL**
@@ -13,10 +15,6 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ## Invoke
 void **`Invoke`**(uint8_t bytes)
-
-
-
-
 
 ## Referenced by
 - [`IJsiByteBuffer`](IJsiByteBuffer)

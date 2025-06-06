@@ -3,9 +3,9 @@ id: IViewManager
 title: IViewManager
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `interface`
-
-
 
 See the documentation of [Native UI Components](view-managers) for information on how to author a view manager.
 >**This documentation and the underlying platform code is a work in progress.**
@@ -14,16 +14,9 @@ See the documentation of [Native UI Components](view-managers) for information o
 ### Name
 `readonly`  string `Name`
 
-
-
 ## Methods
 ### CreateView
-[`FrameworkElement`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) **`CreateView`**()
-
-
-
-
-
+[`FrameworkElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) **`CreateView`**()
 
 ## Referenced by
 - [`ReactViewManagerProvider`](ReactViewManagerProvider)

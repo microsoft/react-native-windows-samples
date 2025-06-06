@@ -3,9 +3,9 @@ id: IRedBoxHandler
 title: IRedBoxHandler
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 `IRedBoxHandler` provides an extension point to allow custom error handling within the React instance.
 This can be useful if you have an existing error reporting system that you want React errors to be reported to.
@@ -63,7 +63,6 @@ class MyRedBoxHandler : IRedBoxHandler
    private IRedBoxHandler innerHandler;
 }
 
-
 RegisterMyRedBoxHandler()
 {
     Host.InstanceSettings.RedBoxHandler = new MyRedBoxHandler(RedBoxHelper.CreateDefaultHandler(Host));
@@ -77,30 +76,19 @@ RegisterMyRedBoxHandler()
 
 This property will control if errors should be reported to the handler. If this returns false, [`ShowNewError`](#shownewerror) and [`UpdateError`](#updateerror) will not be called.
 
-
-
 ## Methods
 ### DismissRedBox
 void **`DismissRedBox`**()
-
-
 
 ### ShowNewError
 void **`ShowNewError`**([`IRedBoxErrorInfo`](IRedBoxErrorInfo) info, [`RedBoxErrorType`](RedBoxErrorType) type)
 
 This method is called when an error is initially hit.
 
-
-
 ### UpdateError
 void **`UpdateError`**([`IRedBoxErrorInfo`](IRedBoxErrorInfo) info)
 
 This method is called when updated information about an error has been resolved. For JavaScript errors, this is called if source map information was able to be resolved to provide a more useful call stack.
-
-
-
-
-
 
 ## Referenced by
 - [`ReactInstanceSettings`](ReactInstanceSettings)

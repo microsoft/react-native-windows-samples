@@ -3,6 +3,8 @@ id: JsiValueRef
 title: JsiValueRef
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `struct`
 
 > **EXPERIMENTAL**
@@ -17,8 +19,6 @@ Type: `uint64_t`
 
 ### Kind
 Type: [`JsiValueKind`](JsiValueKind)
-
-
 
 ## Referenced by
 - [`IJsiHostObject`](IJsiHostObject)

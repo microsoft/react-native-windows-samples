@@ -75,6 +75,7 @@ File not found getting-started.md while parsing versioned_docs/version-0.76/view
 File not found init-windows-cli.md while parsing versioned_docs/version-0.76/view-managers.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.76/view-managers.md
 File not found native-modules.md while parsing versioned_docs/version-0.76/view-managers.md
+File not found customizing-SDK-versions.md while parsing versioned_docs/version-0.76/win10-compat.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.75/autolink-windows-cli.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.75/debugging-javascript.md
 File not found getting-started.md while parsing versioned_docs/version-0.75/getting-started.md
@@ -110,6 +111,7 @@ File not found getting-started.md while parsing versioned_docs/version-0.75/view
 File not found native-modules.md while parsing versioned_docs/version-0.75/view-managers.md
 File not found native-modules-setup.md while parsing versioned_docs/version-0.75/view-managers.md
 File not found IViewManagerCreateWithProperties-api-windows.md while parsing versioned_docs/version-0.75/view-managers.md
+File not found customizing-SDK-versions.md while parsing versioned_docs/version-0.75/win10-compat.md
 File not found getting-started.md while parsing versioned_docs/version-0.74/getting-started.md
 File not found native-modules.md while parsing versioned_docs/version-0.74/getting-started.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.74/getting-started.md
@@ -153,6 +155,7 @@ File not found view-managers.md while parsing versioned_docs/version-0.72/native
 File not found native-code-language-choice.md while parsing versioned_docs/version-0.72/native-modules.md
 File not found flyout-component-windows.md while parsing versioned_docs/version-0.72/popup-component-windows.md
 File not found win10-compat.md while parsing versioned_docs/version-0.72/rnw-dependencies.md
+File not found customizing-SDK-versions.md while parsing versioned_docs/version-0.72/win10-compat.md
 File not found IReactPackageProvider-api-windows.md while parsing versioned_docs/version-0.71/coreapp.md
 File not found ReactInstanceSettings-api-windows.md while parsing versioned_docs/version-0.71/coreapp.md
 File not found native-modules.md while parsing versioned_docs/version-0.71/getting-started.md
@@ -208,6 +211,7 @@ File not found native-modules-csharp-codegen.md while parsing versioned_docs/ver
 File not found nuget-update.md while parsing versioned_docs/version-0.68/nuget.md
 File not found supported-community-modules.md while parsing versioned_docs/version-0.68/nuget.md
 File not found win10-compat.md while parsing versioned_docs/version-0.68/rnw-dependencies.md
+File not found customizing-SDK-versions.md while parsing versioned_docs/version-0.68/win10-compat.md
 File not found hermes.md while parsing versioned_docs/version-0.67/customizing-SDK-versions.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.67/getting-started.md
 File not found native-modules.md while parsing versioned_docs/version-0.67/getting-started.md

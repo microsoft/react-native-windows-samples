@@ -3,11 +3,11 @@ id: ReactApplication
 title: ReactApplication
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `class`
 
-Extends: [`Application`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)
-
-
+Extends: [`Application`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Application)
 
 The `ReactApplication` is a base application class for use in applications that are entirely written in React Native. When the app launches, the `ReactApplication` will load the React instance. Use [`ReactInstanceSettings`](ReactInstanceSettings) and [`ReactNativeHost`](ReactNativeHost) properties to customize React instance in your application's constructor.
 
@@ -44,14 +44,8 @@ Provides access to the list of `IReactPackageProvider`'s that the instance will 
 Controls whether the developer experience features such as the developer menu and `RedBox` are enabled.
 See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings#usedevelopersupport).
 
-
 ## Constructors
 ### ReactApplication
  **`ReactApplication`**()
 
 Creates a new instance of [`ReactApplication`](ReactApplication)
-
-
-
-
-

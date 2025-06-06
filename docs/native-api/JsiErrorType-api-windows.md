@@ -3,6 +3,8 @@ id: JsiErrorType
 title: JsiErrorType
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `enum`
 
 > **EXPERIMENTAL**
@@ -15,7 +17,6 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 |--|--|--|
 |`JSError` | 0x0  |  |
 |`NativeException` | 0x1  |  |
-
 
 ## Referenced by
 - [`JsiError`](JsiError)
