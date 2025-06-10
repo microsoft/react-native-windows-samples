@@ -138,7 +138,7 @@ void RegisterCircleMaskNativeComponent(
           userData->UpdateEventEmitter(std::make_shared<CircleMaskEventEmitter>(eventEmitter));
         });
 
-        if constexpr (&TUserData::FinalizeUpdate != &BaseCircleMask<TUserData>::FinalizeUpdate) {
+        if CONSTEXPR_SUPPORTED_ON_VIRTUAL_FN_ADDRESS (&TUserData::FinalizeUpdate != &BaseCircleMask<TUserData>::FinalizeUpdate) {
             builder.SetFinalizeUpdateHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,
                                      winrt::Microsoft::ReactNative::ComponentViewUpdateMask mask) noexcept {
             auto userData = view.UserData().as<TUserData>();
@@ -146,7 +146,7 @@ void RegisterCircleMaskNativeComponent(
           });
         } 
 
-        if constexpr (&TUserData::UpdateState != &BaseCircleMask<TUserData>::UpdateState) {
+        if CONSTEXPR_SUPPORTED_ON_VIRTUAL_FN_ADDRESS (&TUserData::UpdateState != &BaseCircleMask<TUserData>::UpdateState) {
           builder.SetUpdateStateHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,
                                      const winrt::Microsoft::ReactNative::IComponentState &newState) noexcept {
             auto userData = view.UserData().as<TUserData>();
@@ -154,7 +154,7 @@ void RegisterCircleMaskNativeComponent(
           });
         }
 
-        if constexpr (&TUserData::MountChildComponentView != &BaseCircleMask<TUserData>::MountChildComponentView) {
+        if CONSTEXPR_SUPPORTED_ON_VIRTUAL_FN_ADDRESS (&TUserData::MountChildComponentView != &BaseCircleMask<TUserData>::MountChildComponentView) {
           builder.SetMountChildComponentViewHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,
                                       const winrt::Microsoft::ReactNative::MountChildComponentViewArgs &args) noexcept {
             auto userData = view.UserData().as<TUserData>();
@@ -162,7 +162,7 @@ void RegisterCircleMaskNativeComponent(
           });
         }
 
-        if constexpr (&TUserData::UnmountChildComponentView != &BaseCircleMask<TUserData>::UnmountChildComponentView) {
+        if CONSTEXPR_SUPPORTED_ON_VIRTUAL_FN_ADDRESS (&TUserData::UnmountChildComponentView != &BaseCircleMask<TUserData>::UnmountChildComponentView) {
           builder.SetUnmountChildComponentViewHandler([](const winrt::Microsoft::ReactNative::ComponentView &view,
                                       const winrt::Microsoft::ReactNative::UnmountChildComponentViewArgs &args) noexcept {
             auto userData = view.UserData().as<TUserData>();
@@ -172,13 +172,13 @@ void RegisterCircleMaskNativeComponent(
 
         compBuilder.SetViewComponentViewInitializer([](const winrt::Microsoft::ReactNative::ComponentView &view) noexcept {
           auto userData = winrt::make_self<TUserData>();
-          if constexpr (&TUserData::Initialize != &BaseCircleMask<TUserData>::Initialize) {
+          if CONSTEXPR_SUPPORTED_ON_VIRTUAL_FN_ADDRESS (&TUserData::Initialize != &BaseCircleMask<TUserData>::Initialize) {
             userData->Initialize(view);
           }
           view.UserData(*userData);
         });
 
-        if constexpr (&TUserData::CreateVisual != &BaseCircleMask<TUserData>::CreateVisual) {
+        if CONSTEXPR_SUPPORTED_ON_VIRTUAL_FN_ADDRESS (&TUserData::CreateVisual != &BaseCircleMask<TUserData>::CreateVisual) {
           compBuilder.SetCreateVisualHandler([](const winrt::Microsoft::ReactNative::ComponentView &view) noexcept {
             auto userData = view.UserData().as<TUserData>();
             return userData->CreateVisual(view);

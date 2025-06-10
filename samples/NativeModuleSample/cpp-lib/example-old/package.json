@@ -9,19 +9,19 @@
   },
   "dependencies": {
     "react": "19.0.0",
-    "react-native": "0.78.0",
-    "react-native-windows": "0.78.4"
+    "react-native": "0.79.0-rc.4",
+    "react-native-windows": "0.79.0-preview.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
-    "@react-native-community/cli": "15.0.0",
-    "@react-native-community/cli-platform-android": "15.0.0",
-    "@react-native-community/cli-platform-ios": "15.0.0",
-    "@react-native/babel-preset": "0.78.0",
-    "@react-native/metro-config": "0.78.0",
-    "@react-native/typescript-config": "0.78.0",
+    "@react-native-community/cli": "15.0.0-alpha.2",
+    "@react-native-community/cli-platform-android": "15.0.0-alpha.2",
+    "@react-native-community/cli-platform-ios": "15.0.0-alpha.2",
+    "@react-native/babel-preset": "^0.79.0",
+    "@react-native/metro-config": "^0.79.0",
+    "@react-native/typescript-config": "^0.79.0",
     "@rnx-kit/jest-preset": "^0.1.17"
   },
   "engines": {
