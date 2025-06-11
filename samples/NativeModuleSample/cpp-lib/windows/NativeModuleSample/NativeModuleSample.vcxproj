@@ -70,10 +70,10 @@
   </ImportGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ReactNative">
-      <Version>0.79.0-preview.2</Version>
+      <Version>0.79.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.ReactNative.Cxx">
-      <Version>0.79.0-preview.2</Version>
+      <Version>0.79.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemDefinitionGroup>
