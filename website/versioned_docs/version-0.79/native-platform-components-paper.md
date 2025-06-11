@@ -51,7 +51,7 @@ This spec file declares that React Native expects every platform to implement a 
 
 ### 2. Use React Native for Windows' Native Library Codegen
 
-When making a Fabric Native Component, the React Native for Windows' Native Library Codegen is used to generate a bunch of C++ code to help you implement the Native Component. Unfortunately this generated code does not help with Paper Native Component implementations. See [Native Platform: Native Components (Fabric)](native-platform-components#2-use-react-native-for-windows-native-library-codegen) for more details.
+When making a Fabric Native Component, the React Native for Windows' Native Library Codegen is used to generate a bunch of C++ code to help you implement the Native Component. Unfortunately this generated code does not help with Paper Native Component implementations. See [Native Platform: Native Components (Fabric)](native-platform-components.md#2-use-react-native-for-windows-native-library-codegen) for more details.
 
 ### 3. Implement the Windows C++ code
 
