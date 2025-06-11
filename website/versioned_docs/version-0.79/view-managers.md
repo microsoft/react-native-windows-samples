@@ -253,7 +253,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties) interface. The `CreateViewWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
+This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface. The `CreateViewWithProperties` method can then access the properties set in JSX by inspecting the `propertyMapReader`.
 
 ```diff
 -internal class CustomUserControlViewManager : AttributedViewManager<CustomUserControl> {
@@ -478,7 +478,7 @@ void CustomUserControlViewManager::ReactContext(IReactContext reactContext) noex
 ### More extensibility points
 
 - In some scenarios, a view manager might need to have more context at view creation time in order to decide what kind of control to instantiate.
-This can be achieved by having the view manager implement the [`IViewManagerCreateWithProperties`](IViewManagerCreateWithProperties) interface:
+This can be achieved by having the view manager implement the `IViewManagerCreateWithProperties` interface:
 ```diff
 struct CustomUserControlViewManager : winrt::implements<
                                              CustomUserControlViewManager,
