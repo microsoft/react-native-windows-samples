@@ -5,7 +5,7 @@
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{8E63A342-B370-44F6-9280-AC309EB8E06C}</ProjectGuid>
+    <ProjectGuid>{68696957-43F4-4AB3-A5DF-E8EF5A2DE668}</ProjectGuid>
     <ProjectName>CalculatorFabric</ProjectName>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CalculatorFabric</RootNamespace>
