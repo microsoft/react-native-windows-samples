@@ -116,16 +116,16 @@ It is not always possible to adapt the XAML framework, let alone specific contro
 
 So now, instead of trying to implement React Native components with XAML controls (and perhaps fight their default behavior) we're now able to implement those components more directly in Composition, giving us the power to align with React Native's expectations rather than XAML's.
 
-## What if I still need/want XAML controls?
+### What if I still need/want XAML controls?
 
 We understand that customers may still want to use XAML controls (whether it's any of the rich controls included with Windows App SDK's WinUI 3, or any of their own existing custom controls) within their React Native for Windows app's UI.
 
 We are actively working on enabling this, but it's not quite production ready yet. We fully expect to support that developers, especially community module developers, will be able to implement New Architecture `ComponentView`s by loading XAML controls, rather than requiring them to implement the controls "from scratch" using the base Composition APIs.
 
-## What about C# support?
+### What about C# support?
 
 We are actively working on adding support for C# app and module developers. The transition from UWP C# to modern .NET C# requires some more extensive project changes than was required for supporting C++.
 
-## Will the Old Architecture ever support targeting Windows App SDK?
+### Will the Old Architecture ever support targeting Windows App SDK?
 
 No. Then plan is, Old Architecture targets UWP, New Architecture targets Windows App SDK.
