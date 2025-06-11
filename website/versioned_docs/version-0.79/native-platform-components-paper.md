@@ -1,6 +1,6 @@
 ---
 id: version-0.79-native-platform-components-paper
-title: Native Platform: Native Components (Paper)
+title: "Native Platform: Native Components (Paper)"
 sidebar_label: Native Components (Paper)
 original_id: native-platform-components-paper
 ---

@@ -1,6 +1,6 @@
 ---
 id: version-0.79-native-platform-modules
-title: Native Platform: Native Modules
+title: "Native Platform: Native Modules"
 sidebar_label: Native Modules
 original_id: native-platform-modules
 ---

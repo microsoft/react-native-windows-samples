@@ -1,6 +1,6 @@
 ---
 id: version-0.79-native-platform-components
-title: Native Platform: Native Components (Fabric)
+title: "Native Platform: Native Components (Fabric)"
 sidebar_label: Native Components (Fabric)
 original_id: native-platform-components
 ---

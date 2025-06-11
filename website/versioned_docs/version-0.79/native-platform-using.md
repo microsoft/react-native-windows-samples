@@ -1,6 +1,6 @@
 ---
 id: version-0.79-native-platform-using
-title: Native Platform: Using Native Libraries
+title: "Native Platform: Using Native Libraries"
 sidebar_label: Using Native Libraries
 original_id: native-platform-using
 ---

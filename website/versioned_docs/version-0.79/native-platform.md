@@ -1,6 +1,6 @@
 ---
 id: version-0.79-native-platform
-title: Native Platform: Overview
+title: "Native Platform: Overview"
 sidebar_label: Overview
 original_id: native-platform
 ---

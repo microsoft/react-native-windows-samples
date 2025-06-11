@@ -1,6 +1,6 @@
 ---
 id: version-0.79-native-platform-getting-started
-title: Native Platform: Getting Started
+title: "Native Platform: Getting Started"
 sidebar_label: Getting Started
 original_id: native-platform-getting-started
 ---
