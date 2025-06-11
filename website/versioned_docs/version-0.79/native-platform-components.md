@@ -11,7 +11,7 @@ This guide covers exposing native Windows UI to React Native by implementing a *
 
 > **Note:** See the [reactnative.dev Native Components guide](https://reactnative.dev/docs/fabric-native-components-introduction) for steps for implementing new Native Components for both the Android and iOS platforms.
 
-> **Architecture Note:** This guide follows the recommendation to create a *Fabric Native Component* to support React Native's New Architecture. It will *not* work with Old Architecture apps. To support React Native for Windows apps targeting the Old Architecture, see Native Platform: Native Components (Paper). For more information on React Native architectures in React Native for Windows, see [New vs. Old Architecture](new-architecture.md).
+> **Architecture Note:** This guide follows the recommendation to create a *Fabric Native Component* to support React Native's New Architecture. It will *not* work with Old Architecture apps. To support React Native for Windows apps targeting the Old Architecture, see [Native Platform: Native Components (Paper)](native-platform-components-paper.md). For more information on React Native architectures in React Native for Windows, see [New vs. Old Architecture](new-architecture.md).
 
 ## High-Level Overview
 
