@@ -11,7 +11,7 @@ This guide covers exposing native Windows UI to React Native by implementing a *
 
 > **Note:** See the [reactnative.dev Native Components guide](https://reactnative.dev/docs/fabric-native-components-introduction) for steps for implementing new Native Components for both the Android and iOS platforms.
 
-> **Architecture Note:** This guide shows how to create a *Paper Native Component* to support React Native's Old Architecture. It will *not* work with New Architecture apps. To support React Native for Windows apps targeting the New Architecture, see Native Platform: Native Components (Fabric). For more information on React Native architectures in React Native for Windows, see [New vs. Old Architecture](new-architecture.md).
+> **Architecture Note:** This guide shows how to create a *Paper Native Component* to support React Native's Old Architecture. It will *not* work with New Architecture apps. To support React Native for Windows apps targeting the New Architecture, see [Native Platform: Native Components (Fabric)](native-platform-components.md). For more information on React Native architectures in React Native for Windows, see [New vs. Old Architecture](new-architecture.md).
 
 ## High-Level Overview
 
@@ -51,7 +51,7 @@ This spec file declares that React Native expects every platform to implement a 
 
 ### 2. Use React Native for Windows' Native Library Codegen
 
-When making a Fabric Native Component, the React Native for Windows' Native Library Codegen is used to generate a bunch of C++ code to help you implement the Native Component. Unfortunately this generated code does not help with Paper Native Component implementations. See Native Platform: Native Components (Fabric) for more details.
+When making a Fabric Native Component, the React Native for Windows' Native Library Codegen is used to generate a bunch of C++ code to help you implement the Native Component. Unfortunately this generated code does not help with Paper Native Component implementations. See [Native Platform: Native Components (Fabric)](native-platform-components#2-use-react-native-for-windows-native-library-codegen) for more details.
 
 ### 3. Implement the Windows C++ code
 
