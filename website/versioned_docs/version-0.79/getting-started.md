@@ -52,7 +52,7 @@ Next you'll want to add `react-native-windows` as a dependency:
 <!--Using Yarn (Recommended)-->
 
 ```bat
-yarn add react-native-windows@canary
+yarn add react-native-windows@^0.79.0
 ```
 
 <!--Using NPM-->
