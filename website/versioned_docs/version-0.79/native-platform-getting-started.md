@@ -58,7 +58,7 @@ cd <projectName>
 Next you'll want to add `react-native-windows` as a dependency:
 
 ```bat
-yarn add react-native-windows@canary --dev
+yarn add react-native-windows@^0.79.0 --dev
 yarn add react-native-windows@* --peer
 yarn install
 ```
