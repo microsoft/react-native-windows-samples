@@ -58,7 +58,7 @@ yarn add react-native-windows@^0.79.0
 <!--Using NPM-->
 
 ```bat
-npm install --save react-native-windows@canary
+npm install --save react-native-windows@^0.79.0
 ```
 
 <!--END_DOCUSAURUS_CODE_TABS-->
