@@ -27,7 +27,7 @@ Call the following from the place where you want your project directory to live:
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@next init <projectName> --version "nightly"
+npx --yes @react-native-community/cli@latest init <projectName> --version "^0.79.0"
 ```
 
 ### Navigate into this newly created directory
