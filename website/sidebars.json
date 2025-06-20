@@ -73,7 +73,22 @@
     ]
   },
   "apis": {
-    "Components (Windows)": [
+    "Windows Components - New Architecture": [
+      "components-and-apis",
+      "activityindicator",
+      "button",
+      "flatlist",
+      "image-component",
+      "modal",
+      "refreshcontrol",
+      "scrollview",
+      "switch",
+      "text",
+      "textinput",
+      "touchablehighlight",
+      "view"
+    ],
+    "Windows Components - Old Architecture": [
       "flyout-component",
       "glyph-component",
       "popup-component",
