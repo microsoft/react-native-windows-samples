@@ -1,6 +1,6 @@
 ---
 id: hermes
-title: Hermes on Windows + macOS
+title: Hermes on Windows
 ---
 
 ![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
@@ -44,26 +44,6 @@ To revert back to using Chakra, set the `UseHermes` property to `false` in the `
 ### Known limitations
 
 - Hermes dll is not signed by Microsoft.
-
-## Hermes on macOS
-
-Hermes is available on React Native for macOS, provided you are using version 0.62 or higher.
-To learn how to upgrade to the latest version, check out the **Upgrading** section of the [macOS Getting Started guide](rnm-getting-started.md).
-
-After you have upgraded to the latest version of React Native for macOS, install and add the following:
-
-1. Install the npm package `yarn add 'hermes-engine-darwin@^0.4.3'`
-2. Add (or uncomment) the following pod dependencies to your macOS target in your `Podfile`:<br>
-
-```
-pod 'React-Core/Hermes', :path => '../node_modules/react-native-macos/'
-pod 'hermes', :path => '../node_modules/hermes-engine-darwin'
-pod 'libevent', :podspec => '../node_modules/react-native-macos/third-party-podspecs/libevent.podspec'
-```
-
-3. Run `pod install`
-
-> Be sure to set your target's deployment target to at least 10.14 before running `pod install`
 
 ## Hermes Inspector
 
