@@ -34,7 +34,7 @@ class Footer extends React.Component {
                 <a href={this.props.config.baseUrl + "docs/getting-started"}>Get Started with Windows</a>
               </div>
             <div style={{color: 'white', fontWeight: 500, fontSize: 16}}>
-              <a href={this.props.config.baseUrl + "docs/rnm-getting-started"}> Get Started with macOS</a>
+              <a href={"https://microsoft.github.io/react-native-macos"}> Get Started with macOS</a>
             </div>
             <a href={this.props.config.baseUrl + "docs/parity-status"}>
               React Native Windows Components and APIs
