@@ -3,11 +3,11 @@ id: ReactRootView
 title: ReactRootView
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `class`
 
-Extends: [`Grid`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
-
-
+Extends: [`Grid`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)
 
 A XAML component that hosts React Native UI elements.
 
@@ -34,24 +34,15 @@ XAML's default projection in 3D is orthographic (all lines are parallel) However
 
 The [`ReactNativeHost`](ReactNativeHost) associated with the [`ReactRootView`](ReactRootView). It must be set to show any React UI elements.
 
-
 ## Constructors
 ### ReactRootView
  **`ReactRootView`**()
-
-
-
 
 ## Methods
 ### ReloadView
 void **`ReloadView`**()
 
 Reloads the current [`ReactRootView`](ReactRootView) UI components.
-
-
-
-
-
 
 ## Referenced by
 - [`XamlUIService`](XamlUIService)

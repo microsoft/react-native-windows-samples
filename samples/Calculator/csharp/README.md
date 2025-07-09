@@ -4,7 +4,7 @@ See [../README.md](../README.md) for details of this sample.
 
 See [../cppwinrt/](../cppwinrt/) for a C++/Winrt version of this sample.
 
-It currently targets React Native Windows 0.73.
+It currently targets React Native Windows 0.79.
 
 ### Setup
 See [../README.md#Setup](../README.md#Setup).
@@ -23,29 +23,32 @@ To upgrade this sample to the latest version of RNW:
     ```cmd
     rd /s /q csharp
     ```
-3. Create a new React Native app and change version to version you want to upgrade to:
+3. Create a new React Native app and change version to version you want to upgrade to (replace 'version' with desired version - for latest version, use 'latest'):
     ```cmd
-    npx react-native init Calculator --template "react-native@^0.72.0"
+    npx @react-native-community/cli@latest init Calculator --template @react-native-community/template@latest --skip-git-init
     ```
-4. Add Windows support:
+4. Add `yarn.lock` file to app directory (otherwise `yarn add react-native-windows@latest` will throw an error)
+
+5. Add Windows support:
     ```cmd
     cd Calculator
-    npx react-native-windows-init --version latest --overwrite --language cs
+    yarn add react-native-windows@latest
+    npx @react-native-community/cli@latest init-windows --template old/uwp-cs-app --overwrite
     ```
-5. Rename the folder to csharp
+6. Rename the folder to csharp
     ```
     cd ..
     ren Calculator csharp
     ```
-6. Restore these original app files:
+7. Restore these original app files:
     ```
     cd csharp
     git restore README.md
     git restore App.tsx
     ```
-7. Verify the new app builds and runs:
+8. Verify the new app builds and runs:
     ```
-    npx react-native run-windows
+    npx @react-native-community/cli@latest run-windows
     ```
-8. Look at windows/Calculator/Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample".
-9. Update this readme with the new major version at the top.
+9. Look at the Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample". Revert all changes made to GUID values in the project and solution files.
+10. Update this readme with the new major version at the top.

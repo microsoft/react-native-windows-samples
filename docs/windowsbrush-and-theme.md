@@ -3,6 +3,10 @@ id: windowsbrush-and-theme
 title: Using PlatformColor and Responding to Themes
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 ## Overview
 
 Windows supports two unique native styling/theming behaviors: one being the dark and light theme changes and the other being adaptive brushes and system colors. This article will show you how to set up your app to listen to theme changes and use the Windows brushes when and where you want.

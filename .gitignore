@@ -7,7 +7,6 @@ lib/core/MetadataBlog.js
 
 website/translated_docs
 website/build/
-website/yarn.lock
 website/node_modules
 website/i18n/*
 
@@ -16,3 +15,4 @@ website/i18n/*
 # This is not a mono repo, ignore files from people accidentally running yarn in the wrong places
 /yarn.lock
 /samples/yarn.lock
+/samples-old/yarn.lock

@@ -156,3 +156,6 @@ table tr th {
   font-family: "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
 }
+table td li {
+  font-size: 100%;
+}

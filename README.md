@@ -21,11 +21,9 @@ The content here features React Native sample apps, components, and templates fo
 
 | Sample | Description |
 |:-------|:------------|
-| [AppServiceDemo](./samples/AppServiceDemo) | A sample RNW app which interacts with the Win32 ecosystem using App Services. |
 | [Calculator](./samples/Calculator) | A sample RNW app implementing a simple calculator with both C++ and C# implementations. |
-| [CalculatorNuGet](./samples/CalculatorNuGet) | The Calculator sample, but consuming RNW through the NuGet packages. |
 | [ContinuousIntegration](./samples/ContinuousIntegration) | Sample CI pipeline configurations for RNW projects. |
-| [NativeModuleSample](./samples/NativeModuleSample) | A sample RNW native module with both C++ and C# implementations. |
+| [NativeModuleSample](./samples/NativeModuleSample) | A sample RNW Native Module and Native Component. |
 | [ReactNativeWinRT](https://github.com/microsoft/react-native-winrt/tree/main/samples/RNWinRTTestApp) | A sample RNW app that uses [React Native WinRT](aka.ms/reactnativewinrt) to consume native WinRT APIs. |
 
 </div>

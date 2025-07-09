@@ -3,6 +3,10 @@ id: ikeyboardprops-api
 title: IKeyboardProps
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
 When developing for a Windows device, the likelihood of you needing to support a rich keyboarding experience in your app is very high - this API allows you to customize and control how keyboarding works on your custom or native components.
 
 ```

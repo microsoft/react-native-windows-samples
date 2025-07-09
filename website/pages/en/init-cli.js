@@ -20,8 +20,7 @@ class InitCli extends React.Component {
               React Native Windows Init CLI
             </h1>
             <p>
-              This guide will give you more information on the React Native Windows
-              CLI.
+              This guide will give you more information on the React Native Windows Init CLI. <b>Note:</b> This command will only work for RNW &lte; 0.75. If you are using RNW &gte; 0.76, you should use the <a href="/docs/init-windows"><code>init-windows</code> command</a> instead.
             </p>
             <h2><code>react-native-windows-init</code></h2>
             <p>

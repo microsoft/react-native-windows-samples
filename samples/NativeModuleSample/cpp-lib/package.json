@@ -1,0 +1,176 @@
+{
+  "name": "native-module-sample",
+  "version": "0.1.0",
+  "description": "native-module-sample",
+  "source": "./src/index.tsx",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/typescript/module/src/index.d.ts",
+        "default": "./lib/module/index.js"
+      },
+      "require": {
+        "types": "./lib/typescript/commonjs/src/index.d.ts",
+        "default": "./lib/commonjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "src",
+    "lib",
+    "windows",
+    "react-native.config.json",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "example": "yarn workspace native-module-sample-example",
+    "example-old": "yarn workspace native-module-sample-example-old",
+    "test": "jest",
+    "typecheck": "tsc",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepare": "bob build",
+    "codegen-windows": "react-native codegen-windows"
+  },
+  "keywords": [
+    "react-native",
+    "windows"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+http://example.com.git"
+  },
+  "author": "React-Native-Windows Bot <53619745+rnbot@users.noreply.github.com> (http://example.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://example.com/issues"
+  },
+  "homepage": "http://example.com#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "15.0.0-alpha.2",
+    "@react-native/eslint-config": "^0.79.0",
+    "@types/jest": "^29.5.5",
+    "@types/react": "^19.0.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "react": "19.0.0",
+    "react-native": "0.79.3",
+    "react-native-builder-bob": "^0.31.0",
+    "react-native-windows": "0.79.0",
+    "typescript": "^5.2.2"
+  },
+  "resolutions": {
+    "@types/react": "^18.2.44"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-windows": "*"
+  },
+  "workspaces": [
+    "example",
+    "example-old"
+  ],
+  "packageManager": "yarn@3.6.1",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/example-old/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native",
+      "prettier"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json",
+          "esm": true
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "NativeModuleSampleSpec",
+    "type": "all",
+    "jsSrcsDir": "src",
+    "includesGeneratedCode": true,
+    "windows": {
+      "namespace": "NativeModuleSampleCodegen",
+      "generators": [
+        "modulesWindows",
+        "componentsWindows"
+      ],
+      "outputDirectory": "windows/NativeModuleSample/codegen",
+      "separateDataTypes": true
+    }
+  },
+  "create-react-native-library": {
+    "languages": "kotlin-objc",
+    "type": "module-mixed",
+    "version": "0.43.0"
+  },
+  "react-native-windows": {
+    "init-windows": {
+      "name": "NativeModuleSample",
+      "namespace": "NativeModuleSample",
+      "template": "cpp-lib"
+    }
+  }
+}

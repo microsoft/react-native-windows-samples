@@ -16,31 +16,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-  call-upgradesample-app-service-demo:
-    name: Upgrade App Service Demo
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['AppServiceDemo']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-        reactNativeWindowsVersion: [latest, preview, canary]
-    uses: ./.github/workflows/template-upgradesample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      reactNativeWindowsVersion: ${{ matrix.reactNativeWindowsVersion }}
-      configuration: ${{ matrix.configuration }}
-      extraRunWindowsArgs: --no-deploy
-      platform: ${{ matrix.platform }}
-
   call-upgradesample-calculator:
     name: Upgrade Calculator
     needs: setupcheck
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', 'Calculator\fabric']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
         reactNativeWindowsVersion: [latest, preview, canary]
@@ -51,26 +33,6 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       runInitWindows: true
-      extraInitWindowsArgs: --language ${{ endsWith(matrix.sampleName, 'cppwinrt') && 'cpp' || 'cs' }}
-
-  call-upgradesample-calculator-nuget:
-    name: Upgrade Calculator NuGet
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['CalculatorNuGet']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-        reactNativeWindowsVersion: [latest, preview, canary]
-    uses: ./.github/workflows/template-upgradesample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      reactNativeWindowsVersion: ${{ matrix.reactNativeWindowsVersion }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-      runInitWindows: true
-      extraInitWindowsArgs: --experimentalNuGetDependency true
 
   call-upgradesample-native-module-sample:
     name: Upgrade Native Module Sample
@@ -78,7 +40,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
+        sampleName: ['NativeModuleSample\cpp-lib']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
         reactNativeWindowsVersion: [latest, preview, canary]
@@ -89,4 +51,4 @@ jobs:
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
       extraRunWindowsArgs: --no-autolink --no-deploy
-      # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
+      # runCodeGenCheck: ${{ endsWith(matrix.sampleName, 'cpp-lib') }}

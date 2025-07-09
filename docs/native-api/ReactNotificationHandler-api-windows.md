@@ -3,6 +3,8 @@ id: ReactNotificationHandler
 title: ReactNotificationHandler
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `delegate`
 
 Delegate to handle notifications.
@@ -11,10 +13,6 @@ Delegate to handle notifications.
 
 ## Invoke
 void **`Invoke`**(Object sender, [`IReactNotificationArgs`](IReactNotificationArgs) args)
-
-
-
-
 
 ## Referenced by
 - [`IReactNotificationService`](IReactNotificationService)

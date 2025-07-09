@@ -3,9 +3,9 @@ id: IReactPropertyName
 title: IReactPropertyName
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 A name for a [`IReactPropertyBag`](IReactPropertyBag) property.
 Use [`ReactPropertyBagHelper.GetName`](ReactPropertyBagHelper#getname) to get atomic property name for a string in a [`IReactPropertyNamespace`](IReactPropertyNamespace).
@@ -21,11 +21,6 @@ Gets String representation of the [`IReactPropertyName`](IReactPropertyName).
 `readonly`  [`IReactPropertyNamespace`](IReactPropertyNamespace) `Namespace`
 
 Gets the [`IReactPropertyNamespace`](IReactPropertyNamespace) where the property name is defined.
-
-
-
-
-
 
 ## Referenced by
 - [`IReactNotificationService`](IReactNotificationService)

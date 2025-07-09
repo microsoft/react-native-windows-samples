@@ -3,9 +3,15 @@ id: native-code-language-choice
 title: Choosing C++ or C# for native code
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
+> For the latest information on native development on Windows, see [Native Platform: Overview](native-platform.md).
+
 React Native for Windows supports writing native code in both C++ and C#, but there are trade-offs with each language. The choice of language can impact the compatibility, developer experience, and performance of your project. So whether you're building an app or native module, you should choose the native language that best meets your requirements.
 
-> **Note**: In this document, C++ refers specifically to C++/WinRT.
+> **Note:** In this document, C++ refers specifically to C++/WinRT.
 
 ## Common Considerations
 

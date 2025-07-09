@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const defaultVersionShown = "0.73";
+const defaultVersionShown = "0.79";
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
@@ -93,7 +93,27 @@ const siteConfig = {
   // Expand/collapse the links and subcategories under categories.
   docsSideNavCollapsible: true,
 
+  enableUpdateTime: true,
+
   customFields: require("./showcaseApps.json"),
+
+  deletedDocs: {
+    "0.75": [
+      "nuget-update",
+    ],
+    "0.74": [
+      "coreapp",
+      "CoreAppPage",
+    ],
+    "0.73": [
+      "winui3",
+    ],
+    "0.72": [
+      "IReactPackageBuilderExperimental",
+      "IReactRootViewExperimental",
+      "apptheme",
+    ]
+  }
 };
 
 module.exports = siteConfig;

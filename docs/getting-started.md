@@ -3,47 +3,74 @@ id: getting-started
 title: Get Started with Windows
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 This guide will help you get started on setting up your very first React Native for Windows app.
 
 Make sure you have installed all of the [development dependencies](rnw-dependencies.md).
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
-## Install React Native for Windows
+> **Interested in migrating to [React Native's New Architecture](https://reactnative.dev/architecture/landing-page)?** New Architecture support in React Native for Windows is now available to preview in 0.76. Note there are several key changes, so if you’d like to be an early adopter, check out the information in the [New Architecture Guide](new-architecture.md). 
 
-Remember to call `react-native init` from the place you want your project directory to live.
+## Create a new React Native project
 
-<!-- Note, make sure "version" is pointing to the correct react-native NPM tag in the command below. -->
+Call the following from the place where you want your project directory to live:
 
-<!-- 1. For the next version (i.e. in docs/getting-started.md) use "nightly" -->
-<!-- 2. For the latest stable version in versioned_docs use "latest" -->
-<!-- 3. For older stable versions use the stable tag name, i.e. "0.73-stable" -->
+<!-- Note, make sure both `@react-native-community/cli@ABC` and `--version "XYZ"` are pointing to the correct NPM tags in the command below. -->
 
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use "next" for the CLI and "nightly" for the RN version -->
+<!-- 2. For stable versions in versioned_docs use "latest" for the CLI and the semantic version, i.e. "^0.73.0" for the RN version -->
+
+<!-- See https://www.npmjs.com/package/@react-native-community/cli?activeTab=versions for the CLI version tags. -->
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx react-native@nightly init <projectName> --version "nightly"
+npx --yes @react-native-community/cli@next init <projectName> --version "nightly"
 ```
 
 ### Navigate into this newly created directory
 
-Once your project has been initialized, React Native will have created a new sub directory where all your generated files live.
+The command will create your project in a new sub-directory, which you must enter before continuing:
 
 ```bat
-cd projectName
+cd <projectName>
 ```
 
-### Install the Windows extension
+### Add React Native Windows to your project's dependencies
 
-Lastly, install the React Native for Windows packages.
+<!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
+
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
+<!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
+
+Next you'll want to add `react-native-windows` as a dependency:
+
+<!--DOCUSAURUS_CODE_TABS-->
+
+<!--Using Yarn (Recommended)-->
 
 ```bat
-npx react-native-windows-init --overwrite
+yarn add react-native-windows@canary
 ```
 
-> The --overwrite flag copies a custom `metro.config.js` file. If you are starting a new app, this should have no impact. If you are adding Windows to your existing app and you have modified the `metro.config.js` file, please back up your changes, run the command and copy over to take effect.
+<!--Using NPM-->
 
-For information on the options that `react-native-windows-init` takes see [React Native Windows Init CLI](https://microsoft.github.io/react-native-windows/init-cli).
+```bat
+npm install --save react-native-windows@canary
+```
+
+<!--END_DOCUSAURUS_CODE_TABS-->
+
+### Initialize the React Native Windows native code and projects
+
+Lastly, initialize the React Native for Windows application with the [init-windows command](init-windows-cli.md):
+
+```bat
+npx react-native init-windows --overwrite
+```
+
+> **Note:** RNW templates contain a customized `metro.config.js` file, which is meant to merge cleanly into the default config provided by the standard React Native project template. If you are starting a new app, overwriting `metro.config.js` should have no impact. However, if you are adding Windows to an existing app with an already modified `metro.config.js` file, please make sure to back up and re-apply your modifications after adding RNW.
 
 ## Running a React Native Windows App
 
@@ -52,19 +79,17 @@ For information on the options that `react-native-windows-init` takes see [React
 
 - Without Using Visual Studio
 
-  In your React Native Windows project directory, run:
+  In your React Native Windows project directory, run the [run-windows command](run-windows-cli.md):
 
   ```bat
   npx react-native run-windows
   ```
 
-  For information on the options that `@react-native-windows/cli` takes see [React Native Windows CLI](run-windows-cli.md).
-
-  A new Command Prompt window will open with the React packager as well as a `react-native-windows` app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
+  A new Command Prompt window will open with the React packager as well as your React Native for Windows app. This step may take a while during first run since it involves building the entire project and all dependencies. You can now start developing! :tada:
 
 - Using Visual Studio
 
-  - From the root of the project directory, run the following script which will automatically link your app's dependencies:
+  - From the root of the project directory, run the [autolink-windows command](autolink-windows-cli.md), which will automatically link your app's dependencies:
     ```bat
     npx react-native autolink-windows
     ```
@@ -95,7 +120,7 @@ For information on the options that `react-native-windows-init` takes see [React
 
 ## Authoring Native Modules
 
-See [Native Modules and React Native Windows](native-modules.md).
+See [Native Platform: Overview](native-platform.md).
 
 ## Building a standalone React Native Windows App
 
@@ -110,6 +135,3 @@ Follow these steps to build a version of your app that you can install or publis
 > If you're getting different runtime behavior between the Release and Debug configurations, consider disabling the `UseWebDebugger` setting in [`App.cpp`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cpp-app/src/App.cpp#L30) or [`App.xaml.cs`](https://github.com/microsoft/react-native-windows/blob/6b415659aa017dbc41e3f28e817fb768a8e80435/vnext/template/cs-app/src/App.xaml.cs#L20) to get the same behavior in the Debug configuration.
 
 See also this article for additional details: https://techcommunity.microsoft.com/t5/windows-dev-appconsult/getting-started-with-react-native-for-windows/ba-p/912093#
-
-</body>
-</html>

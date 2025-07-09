@@ -1,7 +1,7 @@
 ---
-id: version-0.64-customizing-sdk-versions
+id: version-0.64-customizing-SDK-versions
 title: Customizing SDK versions
-original_id: customizing-sdk-versions
+original_id: customizing-SDK-versions
 ---
 
 In React Native for Windows 0.64.3, we have made it easier for an app to customize which versions of the Windows SDK and WinUI 2.x to use.

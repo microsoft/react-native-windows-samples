@@ -3,73 +3,58 @@ id: DevMenuControl
 title: DevMenuControl
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `class`
 
-Extends: [`UserControl`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)
-
-
+Extends: [`UserControl`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)
 
 ## Properties
 ### BreakOnNextLine
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `BreakOnNextLine`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `BreakOnNextLine`
 
 ### BreakOnNextLineText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `BreakOnNextLineText`
+`readonly`  [`TextBlock`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `BreakOnNextLineText`
 
 ### Cancel
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Cancel`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Cancel`
 
 ### ConfigBundler
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `ConfigBundler`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `ConfigBundler`
 
 ### DirectDebug
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `DirectDebug`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `DirectDebug`
 
 ### DirectDebugDesc
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `DirectDebugDesc`
+`readonly`  [`TextBlock`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `DirectDebugDesc`
 
 ### DirectDebugText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `DirectDebugText`
+`readonly`  [`TextBlock`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `DirectDebugText`
 
 ### FastRefresh
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `FastRefresh`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `FastRefresh`
 
 ### FastRefreshText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `FastRefreshText`
+`readonly`  [`TextBlock`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `FastRefreshText`
 
 ### Inspector
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Inspector`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Inspector`
 
 ### Reload
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Reload`
-
-### RemoteDebug
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `RemoteDebug`
-
-### RemoteDebugDesc
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `RemoteDebugDesc`
-
-### RemoteDebugText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `RemoteDebugText`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `Reload`
 
 ### SamplingProfiler
-`readonly`  [`Button`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `SamplingProfiler`
+`readonly`  [`Button`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) `SamplingProfiler`
 
 ### SamplingProfilerDescText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `SamplingProfilerDescText`
+`readonly`  [`TextBlock`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `SamplingProfilerDescText`
 
 ### SamplingProfilerIcon
-`readonly`  [`FontIcon`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon) `SamplingProfilerIcon`
+`readonly`  [`FontIcon`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FontIcon) `SamplingProfilerIcon`
 
 ### SamplingProfilerText
-`readonly`  [`TextBlock`](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `SamplingProfilerText`
-
+`readonly`  [`TextBlock`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `SamplingProfilerText`
 
 ## Constructors
 ### DevMenuControl
  **`DevMenuControl`**()
-
-
-
-
-

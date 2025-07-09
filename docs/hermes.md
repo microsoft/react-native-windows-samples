@@ -3,6 +3,8 @@ id: hermes
 title: Hermes on Windows + macOS
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 # Hermes
 
 The [Hermes](https://hermesengine.dev/) engine is an open source JavaScript engine created by Facebook to optimize building and running React Native applications.
@@ -15,7 +17,7 @@ Hermes is supported on Windows, generally providing better performance character
 
 ### Enabling Hermes for new projects
 
-Hermes is enabled by default for React Native Windows project.
+Hermes is enabled by default for React Native Windows projects.
 
 ### Using Hermes in an existing project
 
@@ -107,10 +109,10 @@ Follow steps 1-7 from above, and then
 
 ### Enable debugging/profiling on release builds
 
-We keep the inspector turned off on release builds by default. If you want to debug or profile release builds, set the MSBuild property `EnableHermesInspectorInReleaseFlavor` to `'true'` when building the platform.
+We keep the inspector turned off on release builds by default. If you want to debug or profile release builds, set the MSBuild property `EnableHermesInspectorInReleaseFlavor` to `'true'` when building the platform with the [run-windows command](run-windows-cli.md), i.e.:
 
 ```bash
-npx react-native run-windows --msbuild EnableHermesInspectorInReleaseFlavor=true
+npx react-native run-windows --msbuildprops EnableHermesInspectorInReleaseFlavor=true
 ```
 
 ### Known Issues

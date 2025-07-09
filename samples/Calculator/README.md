@@ -2,7 +2,7 @@
 
 This sample showcases the usage of React Native for Windows to build a simple calculator. It includes implementations in C# and C++/WinRT.
 
-It currently targets React Native Windows 0.73.
+It currently targets React Native Windows 0.77.
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
@@ -23,7 +23,7 @@ npm install
 Once you have all of the dependencies installed, you can run the application with the following command:
 
 ```cmd
-npx react-native run-windows
+npx @react-native-community/cli@latest run-windows
 ```
 
 The command will:

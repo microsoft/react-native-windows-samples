@@ -3,6 +3,12 @@ id: native-modules-autolinking
 title: Autolinking Native Modules
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
+> For the latest information on native development on Windows, see [Native Platform: Overview](native-platform.md).
+
 Autolinking is a mechanism that allows your React Native app project to discover and use native modules and view managers provided by React Native libraries.
 
 This document covers autolinking for the Windows platform. It is an extension to the [React Native CLI Autolinking doc](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md).
@@ -26,10 +32,10 @@ The information provided by `config` is described in [React Native Config Schema
 
 ## Autolinking process
 
-Autolinking is performed automatically as a part of the `run-windows` command:
+Autolinking is performed automatically as a part of the [run-windows command](run-windows-cli.md):
 
 1. At build time, autolinking is performed first, before `msbuild.exe` is invoked and the build actually started. It uses the information provided by `config` to both generate and modify certain native files consumed by your app project.
-    1. The `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
+    1. The `AutolinkedNativeModules.g.props` and `AutolinkedNativeModules.g.targets` file contains the necessary references to the dependency projects that must be built.
         > Your app's solution file may also be modified to ensure the dependency projects will be built.
 
     1. The `AutolinkedNativeModules.g.(cpp|cs)` files contain a `RegisterAutolinkedNativeModulePackages` method which registers all of the specified `IReactPackageProvider`s from the dependencies.
@@ -41,26 +47,11 @@ Autolinking is performed automatically as a part of the `run-windows` command:
 
 ### Manually run autolinking
 
-If you would like to run the autolinking process outside of the build, you can use the `autolink-windows` CLI command, i.e.:
-
-```bat
-npx react-native autolink-windows
-```
-
-| Options |  |
-|:--------|:-|
-| `--logging` | Verbose output logging |
-| `--check` | Only check whether any autolinked files need to change |
-| `--sln` [string] | Override the app solution file determined by `react-native config`, e.g. *`windows\myApp.sln`* |
-| `--proj` [string] | Override the app project file determined by `react-native config`, e.g. *`windows\myApp\myApp.vcxproj`* |
-| `--no-telemetry` [boolean] | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
-| `-h`, `--help` | output usage information |
-
-This sends telemetry to Microsoft by default. You can prevent the telemetry from being sent by using the `--no-telemetry` command line option. See the `@react-native-windows/cli` [README](https://github.com/microsoft/react-native-windows/tree/main/packages/%40react-native-windows/cli#data-collection) for more details.
+If you would like to run the autolinking process outside of the build, you can run the [autolink-windows command](autolink-windows-cli.md) manually at any time.
 
 ### Skipping autolinking
 
-If you would like to skip the autolinking process during `run-windows` you can pass `--no-autolink` option:
+If you would like to skip the autolinking process during [run-windows command](run-windows-cli.md) you can pass `--no-autolink` option:
 
 ```bat
 npx react-native run-windows --no-autolink

@@ -3,14 +3,12 @@ id: IReactNotificationService
 title: IReactNotificationService
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `interface`
-
-
 
 The notification service that can be used to send notifications between different components in an app.
 Use the [`Subscribe`](#subscribe) method to subscribe to notifications and the [`SendNotification`](#sendnotification) method to send notifications.
-
-
 
 ## Methods
 ### SendNotification
@@ -22,8 +20,6 @@ Sends the notification with `notificationName`.
 - `data` is the data associated with the notification. It can be null.
 Consider using [`IReactPropertyBag`](IReactPropertyBag) for sending semi-structured data. It can be created using the [`ReactPropertyBagHelper.CreatePropertyBag`](ReactPropertyBagHelper#createpropertybag) method.
 
-
-
 ### Subscribe
 [`IReactNotificationSubscription`](IReactNotificationSubscription) **`Subscribe`**([`IReactPropertyName`](IReactPropertyName) notificationName, [`IReactDispatcher`](IReactDispatcher) dispatcher, [`ReactNotificationHandler`](ReactNotificationHandler) handler)
 
@@ -32,11 +28,6 @@ Subscribes to a notification.
 - `dispatcher` is used to call notification handlers. If it is null, then the handler is called synchronously.
 - `handler` is a delegate that can be implemented as a lambda to handle notifications.
 The method returns a [`IReactNotificationSubscription`](IReactNotificationSubscription) that must be kept alive while the subscription is active. The subscription is removed when the [`IReactNotificationSubscription`](IReactNotificationSubscription) is destroyed.
-
-
-
-
-
 
 ## Referenced by
 - [`IReactContext`](IReactContext)

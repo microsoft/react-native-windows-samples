@@ -16,44 +16,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-  call-buildsample-app-service-demo:
-    name: Build App Service Demo
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['AppServiceDemo']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-    uses: ./.github/workflows/template-buildsample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      configuration: ${{ matrix.configuration }}
-      extraRunWindowsArgs: --no-deploy
-      platform: ${{ matrix.platform }}
-
   call-buildsample-calculator:
     name: Build Calculator
     needs: setupcheck
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp']
-        configuration: ['Debug', 'Release']
-        platform: ['x86', 'x64', 'ARM64']
-    uses: ./.github/workflows/template-buildsample.yml
-    with:
-      sampleName:  ${{ matrix.sampleName }}
-      configuration: ${{ matrix.configuration }}
-      platform: ${{ matrix.platform }}
-
-  call-buildsample-calculator-nuget:
-    name: Build Calculator NuGet
-    needs: setupcheck
-    strategy:
-      fail-fast: false
-      matrix:
-        sampleName: ['CalculatorNuGet']
+        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
     uses: ./.github/workflows/template-buildsample.yml
@@ -68,7 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sampleName: ['NativeModuleSample\cppwinrt', 'NativeModuleSample\csharp']
+        sampleName: ['NativeModuleSample\cpp-lib']
         configuration: ['Debug', 'Release']
         platform: ['x86', 'x64', 'ARM64']
     uses: ./.github/workflows/template-buildsample.yml

@@ -3,13 +3,19 @@ id: native-modules-async
 title: Using Asynchronous Windows APIs
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-needs_review-red)
+
+> **Architecture Review Needed:** This documentation was written to support development against React Native's "Old" or "Legacy" Architecture. It *may or may not* be directly applicable to New Architecture development and needs to be reviewed and potentially updated. For information on React Native architectures in React Native Windows, see [New vs. Old Architecture](new-architecture.md).
+
+> For the latest information on native development on Windows, see [Native Platform: Overview](native-platform.md).
+
 >**This documentation and the underlying platform code is a work in progress.**
 
 A common scenario for [Native Modules](native-modules.md) is to call one or more native asynchronous methods from a JS asynchronous method. However it may not be immediately obvious how to properly bridge both asynchronous worlds, which can lead to unstable, difficult to debug code.
 
 This document proposes some best patterns to follow when bridging asynchronous methods from JS to native code for React Native Windows. It assumes you've already familiar with the basics of setting up and writing [Native Modules](native-modules.md).
 
-> The complete source for the examples below are provided within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples/NativeModuleSample).
+> The complete source for the examples below are provided within the [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples-old/NativeModuleSample).
 
 ## Writing Native Modules that call Asynchronous Windows APIs
 
@@ -115,7 +121,7 @@ as well as store the status code and update the return statement from `return co
 
 But wait, we've only discussed the success path, what happens if `GetHttpResponse` doesn't succeed? We don't handle any exceptions in this example. If an exception is thrown, how do we marshal an error back to JavaScript? That is actually taken care of for you by the framework: any exception in the task will be marshaled to the JavaScript side as a JavaScript exception.
 
-That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.cs`](https://github.com/microsoft/react-native-windows-samples/blob/main/samples/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
+That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.cs`](https://github.com/microsoft/react-native-windows-samples/blob/main/samples-old/NativeModuleSample/csharp/windows/NativeModuleSample/AsyncMethodExamples.cs).
 
 ### `SimpleHttpModule` in C++/WinRT
 
@@ -256,7 +262,7 @@ We've defined an `AsyncActionCompletedHandler` lambda and set it to be run when 
 
 > **Important:** This example shows the minimum case, where you don't handle any errors within `GetHttpResponseAsync`, but you're not limited to this. You're free to detect error conditions within your code and call `capturedPromise.Reject()` yourself with (more useful) error messages at any time. However you should *always* include this final handler, to catch any unexpected and unhandled exceptions that may occur, especially when calling Windows APIs. Just be sure that you only call `Reject()` once and that nothing executes afterwards.
 
-That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.h`](https://github.com/microsoft/react-native-windows-samples/blob/main/samples/NativeModuleSample/cppwinrt/windows/NativeModuleSample/AsyncMethodExamples.h).
+That's it! If you want to see the complete `SimpleHttpModule`, see [`AsyncMethodExamples.h`](https://github.com/microsoft/react-native-windows-samples/blob/main/samples-old/NativeModuleSample/cppwinrt/windows/NativeModuleSample/AsyncMethodExamples.h).
 
 ## Executing calls to API on the UI thread
 

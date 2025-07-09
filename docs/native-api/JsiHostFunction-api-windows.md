@@ -3,6 +3,8 @@ id: JsiHostFunction
 title: JsiHostFunction
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
+
 Kind: `delegate`
 
 > **EXPERIMENTAL**
@@ -13,10 +15,6 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ## Invoke
 [`JsiValueRef`](JsiValueRef) **`Invoke`**([`JsiRuntime`](JsiRuntime) runtime, [`JsiValueRef`](JsiValueRef) thisArg, [`JsiValueRef`](JsiValueRef) args)
-
-
-
-
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)

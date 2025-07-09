@@ -3,6 +3,8 @@ id: AccessibilityValue
 title: AccessibilityValue
 ---
 
+![Architecture](https://img.shields.io/badge/architecture-old_only-yellow)
+
 Kind: `enum`
 
 | Name |  Value | Description |
