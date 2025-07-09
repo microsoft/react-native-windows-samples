@@ -29,7 +29,6 @@ Some build-time tools will send telemetry to Microsoft by default. No telemetry 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows SDK]: https://developer.microsoft.com/windows/downloads/windows-sdk/
-[macOS SDK]: https://developer.apple.com/documentation/macos-release-notes/
 [all devices supported by Windows 10 and higher]: https://docs.microsoft.com/windows/apps/get-started/?tabs=rnw
   `,
   resources: `
