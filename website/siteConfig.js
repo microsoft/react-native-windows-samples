@@ -98,6 +98,10 @@ const siteConfig = {
   customFields: require("./showcaseApps.json"),
 
   deletedDocs: {
+    "0.80": [
+      "rnm-dependencies",
+      "rnm-getting-started"
+    ],
     "0.75": [
       "nuget-update",
     ],
