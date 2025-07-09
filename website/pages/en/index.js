@@ -238,7 +238,7 @@ class Index extends React.Component {
           columnTwo={
             <React.Fragment>
               <h1 className="title">React Native for</h1>
-              <p className="tagline">Windows + macOS</p>
+              <p className="tagline">Windows</p>
             </React.Fragment>
           }
         />
@@ -248,7 +248,7 @@ class Index extends React.Component {
     const About = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="About React Native for Windows + macOS" />
+          <Heading text="About React Native for Windows" />
           <MarkdownBlock>{textContent.about}</MarkdownBlock>
         </div>
       </Section>
