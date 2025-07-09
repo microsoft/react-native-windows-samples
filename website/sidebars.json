@@ -33,10 +33,6 @@
       "hermes",
       "NuGet"
     ],
-    "The Basics (MacOS)": [
-      "rnm-getting-started",
-      "rnm-dependencies"
-    ],
     "Troubleshooting": [
       "debugging-javascript",
       "metro-config-out-tree-platforms"

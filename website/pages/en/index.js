@@ -13,27 +13,22 @@ const textContent = {
   windowsintro: `
   Take your apps across PC, Xbox, Surface Tablets, and dual-screens with our robust Windows extension to React Native.
   `,
-  macintro: `
-  Extend your desktop experience to more than just Windows!<br>
-  Try out our fully supported macOS extension to React Native.
-  `,
   intro: `
 ## Bring your <u>[React Native]</u> apps to some of the most powerful devices out there
 
 [React Native]: https://reactnative.dev/
   `,
   about: `
-**React Native for Windows + macOS brings React Native support for the
-[Windows SDK] as well as the [macOS 10.14 SDK]**. With this, you can use JavaScript to build native
+**React Native for Windows brings React Native support for the
+[Windows SDK]**. With this, you can use JavaScript to build native
 Windows apps for [all devices supported by Windows 10 and higher] including PCs,
-tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
+tablets, 2-in-1s, Xbox, Mixed reality devices, etc.
 
 Some build-time tools will send telemetry to Microsoft by default. No telemetry is collected or transmitted in the final app. You can prevent the telemetry from being sent by using the --no-telemetry command line option. See the --help command or README file for more details.
 
 [React Native]: https://reactnative.dev/
 [React]: https://reactjs.org/
 [Windows SDK]: https://developer.microsoft.com/windows/downloads/windows-sdk/
-[macOS 10.14 SDK]: https://developer.apple.com/documentation/macos-release-notes/macos-mojave-10_14-release-notes
 [all devices supported by Windows 10 and higher]: https://docs.microsoft.com/windows/apps/get-started/?tabs=rnw
   `,
   resources: `
@@ -90,6 +85,16 @@ class Index extends React.Component {
         target="_self"
       >
         <b style={{ fontSize: 24 }}>Get started with {platformName}</b>
+      </a>
+    );
+
+    const LinkButton = ({ link, text, secondary = false }) => (
+      <a
+        className={`ActionButton ${secondary ? 'secondary' : 'primary'}`}
+        href={link}
+        target="_self"
+      >
+        <b style={{ fontSize: secondary ? 20 : 24 }}>{text}</b>
       </a>
     );
 
@@ -233,7 +238,7 @@ class Index extends React.Component {
           columnTwo={
             <React.Fragment>
               <h1 className="title">React Native for</h1>
-              <p className="tagline">Windows + macOS</p>
+              <p className="tagline">Windows</p>
             </React.Fragment>
           }
         />
@@ -243,7 +248,7 @@ class Index extends React.Component {
     const About = () => (
       <Section background="light">
         <div className="content">
-          <Heading text="About React Native for Windows + macOS" />
+          <Heading text="About React Native for Windows" />
           <MarkdownBlock>{textContent.about}</MarkdownBlock>
         </div>
       </Section>
@@ -290,33 +295,21 @@ class Index extends React.Component {
       </Section>
     );
 
-    const MacIntro = () => (
-      <Section background="light">
-        <div className="content">
-          <div className="row">
-            <div className="column">
-              <Heading text="Build for macOS" />
-              <GitHubButtonmacOS />
-              <div style={{ marginBottom: 35 }}>
-                <MarkdownBlock>{textContent.macintro}</MarkdownBlock>
-              </div>
-              <GetStartedButton
-                pageName="rnm-getting-started"
-                platformName="macOS"
-              />
-            </div>
-            <div className="column">
-              <img
-                className="HomePageImage"
-                style={{ maxWidth: "200%", marginTop: -70, marginBottom: -70 }}
-                src="./img/homepage/native_and_js_mac_cropped.png"
-                alt="rnw_cropped"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
+  const MacLink = () => {
+    return (
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '3rem 0'
+        }}>
+        <LinkButton
+          link="https://microsoft.github.io/react-native-macos"
+          text="Interested in macOS?"
+          secondary={true}
+        />
+      </div>
     );
+  }
 
     const Resources = () => (
       <Section background="tint">
@@ -377,9 +370,9 @@ class Index extends React.Component {
         <HeaderHero />
         <Intro />
         <WindowsIntro />
-        <MacIntro />
         {/*<Tutorials/>*/}
         <About />
+        <MacLink />
       </div>
     );
   }

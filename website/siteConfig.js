@@ -12,8 +12,8 @@ const defaultVersionShown = "0.79";
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
-  title: "React Native for Windows + macOS",
-  tagline: "Build native Windows & macOS apps with Javascript and React",
+  title: "React Native for Windows",
+  tagline: "Build native Windows apps with Javascript and React",
   url: "https://microsoft.github.io",
   baseUrl: "/react-native-windows/",
   repoUrl,
@@ -98,6 +98,10 @@ const siteConfig = {
   customFields: require("./showcaseApps.json"),
 
   deletedDocs: {
+    "0.80": [
+      "rnm-dependencies",
+      "rnm-getting-started"
+    ],
     "0.75": [
       "nuget-update",
     ],

@@ -29,13 +29,10 @@ class Footer extends React.Component {
             </a>
           </div>
           <div>
-            <h5>React Native for Windows + macOS Docs</h5>
+            <h5>React Native for Windows Docs</h5>
               <div style={{color: 'white', fontWeight: 500, fontSize: 16}}>
                 <a href={this.props.config.baseUrl + "docs/getting-started"}>Get Started with Windows</a>
               </div>
-            <div style={{color: 'white', fontWeight: 500, fontSize: 16}}>
-              <a href={this.props.config.baseUrl + "docs/rnm-getting-started"}> Get Started with macOS</a>
-            </div>
             <a href={this.props.config.baseUrl + "docs/parity-status"}>
               React Native Windows Components and APIs
             </a>
