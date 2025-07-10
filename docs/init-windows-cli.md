@@ -9,37 +9,60 @@ This guide will give you more information on the `init-windows` command of the R
 
 ## `init-windows`
 
-The `init-windows` CLI command is used to initialize a new React Native for Windows project inside an existing React Native project. 
+The `init-windows` CLI command is used to (re-)initialize a new React Native for Windows project inside an existing React Native project. 
 
 ### Usage
-Initializes a new RNW project from a given template.
+Initializes a new React Native for Windows project from a given template.
   
 ```bat
 npx react-native init-windows
 ```
+
 ### Options
 
 Here are the options that `react-native init-windows` takes:
+
 | Option                | Input Type | Description                                      |
 |-----------------------|------------|--------------------------------------------------|
 | `--logging`           | boolean    | Verbose output logging                           |
-| `--template`          | string     | Specify the template to use                      |
+| `--template`          | string     | Specify the template to use (default: `cpp-app`) |
 | `--name`              | string     | The native project name. Defaults to the name property in `app.json` or `package.json` |
 | `--namespace`         | string     | The native project namespace, expressed using dots as separators, i.e. `Level1.Level2.Level3`. Defaults to the same as name |
 | `--overwrite`         | boolean    | Overwrite any existing files without prompting  |
 | `--no-telemetry`      | boolean    | Disables sending telemetry that allows analysis of usage and failures of the react-native-windows CLI |
+| `--list`              |            | Shows a list with all available templates with their descriptions. |
 | `-h`, `--help`        | boolean    | Display help for command                         |
+
+### Default Options and Re-initializing Projects
+
+After running, the `init-windows` command will save the `name`, `namespace` and `template` configuration in the project's `package.json`:
+
+```json
+"react-native-windows": {
+    "init-windows": {
+      "name": "MyApp",
+      "namespace": "MyApp",
+      "template": "cpp-app"
+    }
+  }
+```
+
+If you later repeat the `init-windows` command to re-initialize a Windows project, without specifying any of those options, the command will default to any saved values. Among other things, this means you can safely re-run `init-windows` without it automatically changing your project to a different template (i.e. if your project is an Old Architecture app, `init-windows` won't force you to migrate to the New Architecture).
+
+If you *want* to change the value (say, you *do* want to migrate to a new template) just explicitly (re-)specify the option when running `init-windows`.
 
 ## Templates
 
-The following templates are available for use with `init-windows` by replacing `--template XYZ`, where `XYZ` can be:
+The following templates are available to `init-windows` and can by manually specified with the `--template` option (i.e. `--template cpp-lib`):
 
-| Template | Name |
-|:-:|:--|
-| `cpp-app` | React Native Windows Application (New Arch, WinAppSDK, C++) |
-| `cpp-lib` | React Native Windows Library (C++) |
-| `old/uwp-cpp-app` | React Native Windows Application (Old Arch, UWP, C++) |
-| `old/uwp-cs-app` | React Native Windows Application (Old Arch, UWP, C#)  |
+| Template | Name | Description |
+|:-:|:--|:--|
+| `cpp-app` | React Native Windows Application (New Arch, WinAppSDK, C++) | `[Default]` A RNW app using RN's New Architecture, built in C++ and targeting WinAppSDK |
+| `cpp-lib` | React Native Windows Library (C++) | A RNW (Turbo) Native Module supporting RN's New and Old Architectures built in C++ |
+| `old/uwp-cpp-app` | React Native Windows Application (Old Arch, UWP, C++) | `[Legacy]` A RNW app using RN's Old Architecture, built in C++ and targeting UWP |
+| `old/uwp-cs-app` | React Native Windows Application (Old Arch, UWP, C#)  | `[Legacy]` A RNW app using RN's Old Architecture, built in C# and targeting UWP |
+
+> **Architecture Note:** When initializing React Native for Windows for the first time, the `init-windows` CLI command defaults to the `cpp-app` template, which targets [React Native's New Architecture](https://reactnative.dev/architecture/landing-page). For more information, see [New vs. Old Architecture](new-architecture.md).
 
 ## Telemetry Notice
 
