@@ -16,3 +16,6 @@ website/i18n/*
 /yarn.lock
 /samples/yarn.lock
 /samples-old/yarn.lock
+
+ai-secrets.json
+upgrade-rnw-samples.ps1

@@ -1,73 +1,98 @@
-# CalculatorExperimental - React Native for Windows
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-This sample showcases the usage of React Native for Windows to build a simple calculator that is hosted on the experimental [Fabric rendering system](https://github.com/microsoft/react-native-windows/issues/12042).
+# Getting Started
 
-Currently this samples targets RNW 0.79
+> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-### Setup
-First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
+## Step 1: Start Metro
 
-Then, within this folder, install the applications's dependencies. If you have `yarn` installed:
+First, you will need to run **Metro**, the JavaScript build tool for React Native.
 
-```cmd
-yarn install
+To start the Metro dev server, run the following command from the root of your React Native project:
+
+```sh
+# Using npm
+npm start
+
+# OR using Yarn
+yarn start
 ```
 
-Otherwise, you can just use npm:
+## Step 2: Build and run your app
 
-```cmd
-npm install
+With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+
+### Android
+
+```sh
+# Using npm
+npm run android
+
+# OR using Yarn
+yarn android
 ```
 
-### Run
-Once you have all of the dependencies installed, you can run the application with the following command:
+### iOS
 
-```cmd
-npx @react-native-community/cli@latest run-windows
+For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+
+The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+
+```sh
+bundle install
 ```
 
-The command will:
-* Build the application and all dependencies
-* Deploy the application
-* Launch the React Native Server and Debugger
-* Launch the application
+Then, and every time you update your native dependencies, run:
 
-### Upgrade
-To upgrade this sample to the latest version of RNW:
+```sh
+bundle exec pod install
+```
 
-1. Open a command prompt and navigate to the `samples` folder:
-    ```cmd
-    cd ..
-    ```
-2. Delete this folder:
-    ```cmd
-    rd /s /q fabric
-    ```
-3. Create a new React Native app and change version to version you want to upgrade to:
-    ```cmd
-        npx --yes @react-native-community/cli@latest init CalculatorFabric --template @react-native-community/template@latest --skip-git-init
-    ```
-4. Add Windows support:
-    ```cmd
-    cd CalculatorFabric
-    yarn add react-native-windows@latest
-    npx @react-native-community/cli init-windows --template cpp-app --overwrite --logging
-    ```
-5. Rename the folder to fabric
-    ```cmd
-    cd ..
-    ren CalculatorFabric fabric
-    ```
+For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
-6. Restore README.md and App.tsx
-   ```cmd
-   cd fabric
-   git restore App.tsx
-   git restore README.md
-   ```
-7. Verify App runs
-   ```cmd
-   npx @react-native-community/cli@latest run-windows
-   ```
-8. Look at the Package.appxmanifast and change the publisher name to "CN=React Native Windows Sample". Revert all changes made to GUID values in the project and solution files.
-9. Update this file to the current version of the App
+```sh
+# Using npm
+npm run ios
+
+# OR using Yarn
+yarn ios
+```
+
+If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+
+This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+
+## Step 3: Modify your app
+
+Now that you have successfully run the app, let's make changes!
+
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+
+When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+
+- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
+- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
+
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
