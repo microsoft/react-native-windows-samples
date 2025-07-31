@@ -11,6 +11,8 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
+> **Interested in migrating to [React Native's New Architecture](https://reactnative.dev/architecture/landing-page)?** New Architecture support in React Native for Windows is now available to preview in 0.76. Note there are several key changes, so if you’d like to be an early adopter, check out the information in the [New Architecture Guide](new-architecture.md). 
+
 ## Create a new React Native project
 
 Call the following from the place where you want your project directory to live:
@@ -68,9 +70,7 @@ Lastly, initialize the React Native for Windows application with the [init-windo
 npx react-native init-windows --overwrite
 ```
 
-> **Architecture Note:** The default React Native for Windows template for *new* projects targets [React Native's New Architecture](https://reactnative.dev/architecture/landing-page). For more information, including options for continuing to use the Old Architecture, see [New vs. Old Architecture](new-architecture.md). 
-
-> **Metro Note:** React Native Windows overwrites the app project's `metro.config.js` file to enable Windows support. If you are starting a new project, overwriting React Native's default `metro.config.js` should have no impact. However, if you have previously modified your `metro.config.js` file, please make sure to back up and re-apply your modifications after adding React Native Windows.
+> **Note:** RNW templates contain a customized `metro.config.js` file, which is meant to merge cleanly into the default config provided by the standard React Native project template. If you are starting a new app, overwriting `metro.config.js` should have no impact. However, if you are adding Windows to an existing app with an already modified `metro.config.js` file, please make sure to back up and re-apply your modifications after adding RNW.
 
 ## Running a React Native Windows App
 
