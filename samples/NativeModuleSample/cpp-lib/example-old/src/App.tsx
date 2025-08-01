@@ -11,7 +11,8 @@ import {
   DataMarshallingExamples,
   CircleMask,
 } from 'native-module-sample';
-import type { Int32 } from 'react-native/Libraries/Types/CodegenTypes';
+
+type Int32 = number;
 
 /* eslint-disable react-native/no-inline-styles */
 
