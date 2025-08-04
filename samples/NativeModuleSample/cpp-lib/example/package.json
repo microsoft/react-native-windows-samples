@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "windows": "npx @react-native-community/cli run-windows",
-    "test:windows": "jest --config jest.config.windows.js"
+    "test:windows": "jest --config jest.config.windows.js --passWithNoTests"
   },
   "dependencies": {
     "react": "19.1.1",
