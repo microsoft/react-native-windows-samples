@@ -7,7 +7,7 @@ title: New vs. Old Architecture
 
 React Native's [New Architecture](https://reactnative.dev/architecture/landing-page) brings many framework improvements including the advanced [Fabric](https://reactnative.dev/architecture/fabric-renderer) rendering system. It greatly improves the speed and responsiveness of React Native apps over the previous *Legacy* or *Old Architecture* and its *Paper* renderer. The New Architecture was enabled by default for the *iOS* and *Android* platforms in [react-native@0.76.0](https://reactnative.dev/blog/2024/10/23/the-new-architecture-is-here).
 
-React Native for Windows also supports the New Architecture for the *Windows* platform. It was first available as an opt-in preview in [react-native-windows@0.76.0](https://devblogs.microsoft.com/react-native/2025-01-29-new-architecture-on-0-76-0-77/) and became the default for *new* app projects in `react-native-windows@0.80.0`. For more information on the differences between the architectures on Windows, see [New vs. Old Architecture Differences](#new-vs-old-architecture-differences).
+React Native for Windows also supports the New Architecture for the *Windows* platform. It was first available as an opt-in preview in [react-native-windows@0.76.0](https://devblogs.microsoft.com/react-native/2025-01-29-new-architecture-on-0-76-0-77/). For more information on the differences between the architectures on Windows, see [New vs. Old Architecture Differences](#new-vs-old-architecture-differences).
 
 > **Important:** Nearly all future investments to React Native (and React Native for Windows) will be toward the New Architecture, and we highly recommend that all projects migrate as soon as possible. React Native (and therefore React Native for Windows) will eventually deprecate, then delete, support for the Old Architecture.
 
@@ -51,7 +51,7 @@ This change makes it easier for React Native for Windows to implement expected b
 
 Developers choose the React Native Architecture (New or Old) for their Windows application when (re-)initializing Windows platform support for their project. This choice is determined by the `--template` argument when running the [init-windows command](init-windows-cli.md).
 
-Starting with `react-native-windows@0.80.0`, calling `init-windows` for the *first time* in an application project (as seen in the [Getting Started](getting-started.md) guide) will default to using the New Architecture template if none is specified. If you re-run `init-windows` on a project without specifying a template, the command will default to the previously used template. See [Default Options and Re-initializing Projects](init-windows-cli.md#default-options-and-re-initializing-projects) for more details.
+If you re-run `init-windows` on a project without specifying a template, the command will default to the previously used template. See [Default Options and Re-initializing Projects](init-windows-cli.md#default-options-and-re-initializing-projects) for more details.
 
 > **Note:** The choice described here only applies for your project's Windows build and is independent of the choice you make for other React Native platforms, i.e. your Android and iOS builds can target a different architecture than your Windows build.
 
