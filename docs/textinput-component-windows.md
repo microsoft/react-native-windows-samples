@@ -33,4 +33,4 @@ If `true`, the text field will clear when submitted. The default value is false.
 
 ## Examples
 
-Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/TextInputExamplePage.tsx) available in the [Microsoft Store](http://aka.ms/reactnativegalleryapp)
+Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/TextInputExamplePage.tsx) available in the [Microsoft Store](https://apps.microsoft.com/detail/9NPG0B292H4R)
