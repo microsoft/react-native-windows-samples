@@ -18,6 +18,7 @@
 !versioned_docs/version-0.77/native-api/*-api-windows*.md
 !versioned_docs/version-0.78/native-api/*-api-windows*.md
 !versioned_docs/version-0.79/native-api/*-api-windows*.md
+!versioned_docs/version-0.80/native-api/*-api-windows*.md
 
 # See Issue 410
 File not found IReactContext while parsing versioned_docs/version-0.64/native-modules-advanced.md
@@ -33,6 +34,31 @@ File not found IViewManagerCreateWithProperties while parsing versioned_docs/ver
 File not found IViewManagerCreateWithProperties while parsing versioned_docs/version-0.79/view-managers.md
 
 #fix-unbroken.js auto-generated do not edit this line or below
+File not found autolink-windows-cli.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found getting-started.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found native-platform.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found new-architecture.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found platform.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found run-windows-cli.md while parsing versioned_docs/version-0.80/getting-started.md
+File not found run-windows-cli.md while parsing versioned_docs/version-0.80/hermes.md
+File not found native-code-language-choice.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found native-modules-advanced.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found native-modules-async.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found native-modules-jsvalue.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found native-modules-setup.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found native-modules-vs-turbo-modules.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found native-platform.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found new-architecture.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found platform.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found view-managers.md while parsing versioned_docs/version-0.80/native-modules.md
+File not found getting-started.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
+File not found native-platform-components.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
+File not found native-platform-modules.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
+File not found rnw-dependencies.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
+File not found run-windows-cli.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
 File not found new-architecture.md while parsing versioned_docs/version-0.79/app-publishing.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.79/autolink-windows-cli.md
 File not found new-architecture.md while parsing versioned_docs/version-0.79/config.md
