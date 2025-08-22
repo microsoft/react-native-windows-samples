@@ -13,7 +13,7 @@
 
   <Properties>
     <DisplayName>CalculatorFabric</DisplayName>
-    <PublisherDisplayName>runner</PublisherDisplayName>
+    <PublisherDisplayName>React Native Windows Sample</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 

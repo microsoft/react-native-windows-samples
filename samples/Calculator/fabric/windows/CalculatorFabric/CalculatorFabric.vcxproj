@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This project was created with react-native-windows 0.79.4 -->
+<!-- This project was created with react-native-windows 0.80.0-preview.3 -->
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(SolutionDir)\ExperimentalFeatures.props" Condition="Exists('$(SolutionDir)\ExperimentalFeatures.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{A2481F0D-5A00-4865-88DD-0BB09DFDD590}</ProjectGuid>
+    <ProjectGuid>{219F8264-6728-4225-A470-1B0A910782A8}</ProjectGuid>
     <ProjectName>CalculatorFabric</ProjectName>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CalculatorFabric</RootNamespace>
@@ -75,6 +75,10 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>
+        $(MSBuildThisFileDirectory);
+        %(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shell32.lib;user32.lib;windowsapp.lib;%(AdditionalDependenices)</AdditionalDependencies>
