@@ -271,4 +271,4 @@ export default class App extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('Bootstrap', () => Bootstrap);
+AppRegistry.registerComponent('CalculatorFabric', () => App);
