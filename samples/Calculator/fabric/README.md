@@ -2,7 +2,7 @@
 
 This sample showcases the usage of React Native for Windows to build a simple calculator that is hosted on the experimental [Fabric rendering system](https://github.com/microsoft/react-native-windows/issues/12042).
 
-Currently this samples targets RNW 0.79
+Currently this samples targets RNW 0.80
 
 ### Setup
 First, make sure you've met the [React Native Windows System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
@@ -43,16 +43,22 @@ To upgrade this sample to the latest version of RNW:
     ```cmd
     rd /s /q fabric
     ```
-3. Create a new React Native app and change version to version you want to upgrade to:
-    ```cmd
-        npx --yes @react-native-community/cli@latest init CalculatorFabric --template @react-native-community/template@latest --skip-git-init
-    ```
-4. Add Windows support:
-    ```cmd
-    cd CalculatorFabric
-    yarn add react-native-windows@latest
-    npx @react-native-community/cli init-windows --template cpp-app --overwrite --logging
-    ```
+3. Create a new React Native app using the React Native version required by the latest React Native Windows preview:
+
+   ```cmd
+   npm info react-native-windows@preview version
+   npm info react-native-windows@preview peerDependencies
+
+   npx --yes @react-native-community/cli@latest init CalculatorFabric --template @react-native-community/template@latest --skip-git-init --version <matching RN version>
+   ```
+
+4. Add Windows support using the exact preview version from Step 3:
+
+   ```cmd
+   cd CalculatorFabric
+   yarn add react-native-windows@<preview version>
+   npx @react-native-community/cli init-windows --template cpp-app --overwrite --logging
+   ```
 5. Rename the folder to fabric
     ```cmd
     cd ..
