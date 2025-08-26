@@ -75,4 +75,4 @@ Specifies and sets whether the `Popup` will get focus automatically when the pag
 
 ## Examples
 
-Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/PopupExamplePage.tsx) available in the [Microsoft Store](https://apps.microsoft.com/detail/9NPG0B292H4R)
+Examples can be found in the [React Native Gallery App](https://github.com/microsoft/react-native-gallery/blob/main/src/examples/PopupExamplePage.tsx) available in the [Microsoft Store](http://aka.ms/reactnativegalleryapp)
