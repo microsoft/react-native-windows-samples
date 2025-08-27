@@ -25,7 +25,7 @@ Here are the options that `react-native init-windows` takes:
 | Option                | Input Type | Description                                      |
 |-----------------------|------------|--------------------------------------------------|
 | `--logging`           | boolean    | Verbose output logging                           |
-| `--template`          | string     | Specify the template to use (default: `old/uwp-cpp-app`) |
+| `--template`          | string     | Specify the template to use (default: `cpp-app`) |
 | `--name`              | string     | The native project name. Defaults to the name property in `app.json` or `package.json` |
 | `--namespace`         | string     | The native project namespace, expressed using dots as separators, i.e. `Level1.Level2.Level3`. Defaults to the same as name |
 | `--overwrite`         | boolean    | Overwrite any existing files without prompting  |
@@ -42,12 +42,12 @@ After running, the `init-windows` command will save the `name`, `namespace` and 
     "init-windows": {
       "name": "MyApp",
       "namespace": "MyApp",
-      "template": "old/uwp-cpp-app"
+      "template": "cpp-app"
     }
   }
 ```
 
-If you later repeat the `init-windows` command to re-initialize a Windows project, without specifying any of those options, the command will default to any saved values. Among other things, this means you can safely re-run `init-windows` without it automatically changing your project to a different template.
+If you later repeat the `init-windows` command to re-initialize a Windows project, without specifying any of those options, the command will default to any saved values. Among other things, this means you can safely re-run `init-windows` without it automatically changing your project to a different template (i.e. if your project is an Old Architecture app, `init-windows` won't force you to migrate to the New Architecture).
 
 If you *want* to change the value (say, you *do* want to migrate to a new template) just explicitly (re-)specify the option when running `init-windows`.
 
@@ -57,12 +57,12 @@ The following templates are available to `init-windows` and can by manually spec
 
 | Template | Name | Description |
 |:-:|:--|:--|
-| `cpp-app` | React Native Windows Application (New Arch, WinAppSDK, C++) | A RNW app using RN's New Architecture, built in C++ and targeting WinAppSDK |
+| `cpp-app` | React Native Windows Application (New Arch, WinAppSDK, C++) | `[Default]` A RNW app using RN's New Architecture, built in C++ and targeting WinAppSDK |
 | `cpp-lib` | React Native Windows Library (C++) | A RNW (Turbo) Native Module supporting RN's New and Old Architectures built in C++ |
-| `old/uwp-cpp-app` | React Native Windows Application (Old Arch, UWP, C++) | A RNW app using RN's Old Architecture, built in C++ and targeting UWP |
-| `old/uwp-cs-app` | React Native Windows Application (Old Arch, UWP, C#)  | A RNW app using RN's Old Architecture, built in C# and targeting UWP |
+| `old/uwp-cpp-app` | React Native Windows Application (Old Arch, UWP, C++) | `[Legacy]` A RNW app using RN's Old Architecture, built in C++ and targeting UWP |
+| `old/uwp-cs-app` | React Native Windows Application (Old Arch, UWP, C#)  | `[Legacy]` A RNW app using RN's Old Architecture, built in C# and targeting UWP |
 
-> **Architecture Note:** When initializing React Native for Windows for the first time, the `init-windows` CLI command defaults to the `old/uwp-cpp-app` template, which targets React Native's Old Architecture. For more information, see [New vs. Old Architecture](new-architecture.md).
+> **Architecture Note:** When initializing React Native for Windows for the first time, the `init-windows` CLI command defaults to the `cpp-app` template, which targets [React Native's New Architecture](https://reactnative.dev/architecture/landing-page). For more information, see [New vs. Old Architecture](new-architecture.md).
 
 ## Telemetry Notice
 
