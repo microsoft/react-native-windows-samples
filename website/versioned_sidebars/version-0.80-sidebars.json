@@ -31,7 +31,17 @@
     "Advanced Topics (Windows)": [
       "version-0.80-win10-vm",
       "version-0.80-hermes",
-      "version-0.80-NuGet"
+      "version-0.80-NuGet",
+      "version-0.80-new-architecture"
+    ],
+    "New Architecture Property Support": [
+      {
+        "type": "subcategory",
+        "label": "Missing Properties",
+        "ids": [
+          "version-0.80-new-arch-props-missingProps"
+        ]
+      }
     ],
     "Troubleshooting": [
       "version-0.80-debugging-javascript",
