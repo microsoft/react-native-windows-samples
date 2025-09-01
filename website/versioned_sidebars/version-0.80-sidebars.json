@@ -1,6 +1,6 @@
 {
   "version-0.80-docs": {
-    "The Basics (Windows)": [
+    "The Basics": [
       "version-0.80-getting-started",
       "version-0.80-rnw-dependencies",
       "version-0.80-react-native-windows-cli",
@@ -14,13 +14,13 @@
       "version-0.80-app-publishing",
       "version-0.80-supported-community-modules"
     ],
-    "CLI Commands (Windows)": [
+    "CLI Commands": [
       "version-0.80-autolink-windows-cli",
       "version-0.80-codegen-windows-cli",
       "version-0.80-init-windows-cli",
       "version-0.80-run-windows-cli"
     ],
-    "Native Development (Windows)": [
+    "Native Development": [
       "version-0.80-native-platform",
       "version-0.80-native-platform-getting-started",
       "version-0.80-native-platform-modules",
@@ -28,7 +28,7 @@
       "version-0.80-native-platform-components-paper",
       "version-0.80-native-platform-using"
     ],
-    "Advanced Topics (Windows)": [
+    "Advanced Topics": [
       "version-0.80-win10-vm",
       "version-0.80-hermes",
       "version-0.80-NuGet"
@@ -40,7 +40,7 @@
     "Legacy Docs": [
       {
         "type": "subcategory",
-        "label": "Native Modules (Windows)",
+        "label": "Native Modules",
         "ids": [
           "version-0.80-native-modules",
           "version-0.80-view-managers",
@@ -54,7 +54,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Native Development (Windows)",
+        "label": "Native Development",
         "ids": [
           "version-0.80-native-code",
           "version-0.80-native-code-language-choice",
@@ -69,21 +69,21 @@
     ]
   },
   "version-0.80-apis": {
-    "Components (Windows)": [
+    "Components": [
       "version-0.80-flyout-component",
       "version-0.80-glyph-component",
       "version-0.80-popup-component",
       "version-0.80-textinput-component"
     ],
-    "JavaScript API (Windows)": [
+    "JavaScript API": [
       "version-0.80-apptheme-api",
       "version-0.80-ikeyboardprops-api",
       "version-0.80-iviewwindowsprops-api"
     ],
     "New Architecture Property Support": [
-      "version-0.80-new-arch-props-missingProps"
+      "version-0.80-new-arch-missingProps"
     ],
-    "Native API (Windows)": [
+    "Native API": [
       "version-0.80-native-api/Native-API-Reference",
       {
         "type": "subcategory",

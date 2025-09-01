@@ -1,7 +1,7 @@
 ---
-id: version-0.80-new-arch-props-missingProps
+id: version-0.80-new-arch-missingProps
 title: Missing Properties
-original_id: new-arch-props-missingProps
+original_id: new-arch-missingProps
 ---
 
 ![Architecture](https://img.shields.io/badge/architecture-new_only-green)
