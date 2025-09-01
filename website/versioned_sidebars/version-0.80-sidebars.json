@@ -31,17 +31,7 @@
     "Advanced Topics (Windows)": [
       "version-0.80-win10-vm",
       "version-0.80-hermes",
-      "version-0.80-NuGet",
-      "version-0.80-new-architecture"
-    ],
-    "New Architecture Property Support": [
-      {
-        "type": "subcategory",
-        "label": "Missing Properties",
-        "ids": [
-          "version-0.80-new-arch-props-missingProps"
-        ]
-      }
+      "version-0.80-NuGet"
     ],
     "Troubleshooting": [
       "version-0.80-debugging-javascript",
@@ -89,6 +79,15 @@
       "version-0.80-apptheme-api",
       "version-0.80-ikeyboardprops-api",
       "version-0.80-iviewwindowsprops-api"
+    ],
+    "New Architecture Property Support": [
+      {
+        "type": "subcategory",
+        "label": "Missing Properties",
+        "ids": [
+          "version-0.80-new-arch-props-missingProps"
+        ]
+      }
     ],
     "Native API (Windows)": [
       "version-0.80-native-api/Native-API-Reference",
