@@ -81,13 +81,7 @@
       "version-0.80-iviewwindowsprops-api"
     ],
     "New Architecture Property Support": [
-      {
-        "type": "subcategory",
-        "label": "Missing Properties",
-        "ids": [
-          "version-0.80-new-arch-props-missingProps"
-        ]
-      }
+      "version-0.80-new-arch-props-missingProps"
     ],
     "Native API (Windows)": [
       "version-0.80-native-api/Native-API-Reference",
