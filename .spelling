@@ -129,3 +129,10 @@ Xcode
 sidebar_label
 original_id
 workstream
+onKeyDown
+onKeyUp
+PreviewKeyDown
+PreviewKeyUp
+zIndex
+focusable
+eg
