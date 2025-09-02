@@ -124,5 +124,16 @@ WinGet
 WinRT
 WinUI
 WinUI3
-workstream
 Xcode
+80-native-platform-getting-started
+sidebar_label
+original_id
+workstream
+onKeyDown
+onKeyUp
+PreviewKeyDown
+PreviewKeyUp
+zIndex
+focusable
+eg
+tooltip
