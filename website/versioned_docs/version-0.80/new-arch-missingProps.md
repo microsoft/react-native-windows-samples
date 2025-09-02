@@ -52,30 +52,11 @@ It works like the CSS z-index property - components with a larger zIndex will re
 
 ### `tooltip`
 
-Text shown on hover
+Text shown on hover. While tooltip support isn’t fully available for all components, it does work with some props such as `Text`.
 
 | type | required |
 |:--|:--|
 | string | No |
-
-### `tabIndex`
-
-Whether this View should be focusable with a non-touch input device, eg. receive focus with a hardware keyboard. Supports the following values:
-
-0 - View is focusable
--1 - View is not focusable
-
-| type | required |
-|:--|:--|
-| enum(0, -1) | No |
-
-### `aria-level`
-
-Defines element level.
-
-| type | required |
-|:--|:--|
-| number | No |
 
 ### `opacity`
 
