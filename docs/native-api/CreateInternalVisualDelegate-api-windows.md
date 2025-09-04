@@ -1,4 +1,4 @@
----
+﻿---
 id: CreateInternalVisualDelegate
 title: CreateInternalVisualDelegate
 ---
@@ -14,3 +14,4 @@ Kind: `delegate`
 
 ## Referenced by
 - [`IInternalCreateVisual`](IInternalCreateVisual)
+

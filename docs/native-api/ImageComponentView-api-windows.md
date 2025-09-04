@@ -1,4 +1,4 @@
----
+﻿---
 id: ImageComponentView
 title: ImageComponentView
 ---
@@ -16,3 +16,4 @@ Extends: [`ViewComponentView`](ViewComponentView)
 `readonly`  [`ImageProps`](ImageProps) `ViewProps`
 
 > **EXPERIMENTAL**
+

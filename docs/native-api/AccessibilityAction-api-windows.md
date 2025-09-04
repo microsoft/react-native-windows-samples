@@ -1,4 +1,4 @@
----
+﻿---
 id: AccessibilityAction
 title: AccessibilityAction
 ---
@@ -16,3 +16,4 @@ Type: `string`
 
 ## Referenced by
 - [`AccessibilityActionEventHandler`](AccessibilityActionEventHandler)
+

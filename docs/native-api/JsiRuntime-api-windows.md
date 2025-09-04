@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiRuntime
 title: JsiRuntime
 ---
@@ -413,3 +413,4 @@ uint64_t **`Truncate`**([`JsiBigIntRef`](JsiBigIntRef) bigInt)
 ## Referenced by
 - [`IJsiHostObject`](IJsiHostObject)
 - [`JsiHostFunction`](JsiHostFunction)
+

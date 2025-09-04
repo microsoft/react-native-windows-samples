@@ -1,4 +1,4 @@
----
+﻿---
 id: BorderEffect
 title: BorderEffect
 ---
@@ -21,3 +21,4 @@ Implements: [`IGraphicsEffect`](https://docs.microsoft.com/uwp/api/Windows.Graph
 
 ### Source
  [`IGraphicsEffectSource`](https://docs.microsoft.com/uwp/api/Windows.Graphics.Effects.IGraphicsEffectSource) `Source`
+

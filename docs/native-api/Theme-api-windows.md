@@ -1,4 +1,4 @@
----
+﻿---
 id: Theme
 title: Theme
 ---
@@ -54,3 +54,4 @@ Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Eve
 - [`Color`](Color)
 - [`ComponentView`](ComponentView)
 - [`ReactNativeIsland`](ReactNativeIsland)
+

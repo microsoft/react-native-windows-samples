@@ -1,4 +1,4 @@
----
+﻿---
 id: IRoundedRectangleVisual
 title: IRoundedRectangleVisual
 ---
@@ -26,3 +26,4 @@ void **`StrokeThickness`**(float value)
 
 ## Referenced by
 - [`ICompositionContext`](ICompositionContext)
+

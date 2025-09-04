@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactNativeIsland
 title: ReactNativeIsland
 ---
@@ -116,3 +116,4 @@ Initial props should be set on ReactViewHost. This is used to update props after
 > **EXPERIMENTAL**
 
 Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<[`RootViewSizeChangedEventArgs`](RootViewSizeChangedEventArgs)>
+

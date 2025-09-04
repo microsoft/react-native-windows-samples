@@ -1,4 +1,4 @@
----
+﻿---
 id: RedBoxErrorType
 title: RedBoxErrorType
 ---
@@ -17,3 +17,4 @@ The error type shown in the RedBox.
 
 ## Referenced by
 - [`IRedBoxHandler`](IRedBoxHandler)
+

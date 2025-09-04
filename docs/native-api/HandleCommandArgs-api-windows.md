@@ -1,4 +1,4 @@
----
+﻿---
 id: HandleCommandArgs
 title: HandleCommandArgs
 ---
@@ -27,3 +27,4 @@ Kind: `class`
 
 ## Referenced by
 - [`HandleCommandDelegate`](HandleCommandDelegate)
+

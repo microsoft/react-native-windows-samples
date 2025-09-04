@@ -1,4 +1,4 @@
----
+﻿---
 id: AnimationClass
 title: AnimationClass
 ---
@@ -17,3 +17,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`IVisual`](IVisual)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: UpdateLayoutMetricsDelegate
 title: UpdateLayoutMetricsDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`LayoutMetrics`](Lay
 
 ## Referenced by
 - [`IReactCompositionViewComponentBuilder`](IReactCompositionViewComponentBuilder)
+

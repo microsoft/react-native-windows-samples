@@ -1,4 +1,4 @@
----
+﻿---
 id: IVisualToMountChildrenIntoDelegate
 title: IVisualToMountChildrenIntoDelegate
 ---
@@ -16,3 +16,4 @@ This type will be removed in future versions
 
 ## Referenced by
 - [`IReactCompositionViewComponentInternalBuilder`](IReactCompositionViewComponentInternalBuilder)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ShadowNode
 title: ShadowNode
 ---
@@ -36,3 +36,4 @@ void **`EnsureUnsealed`**()
 - [`MeasureContentHandler`](MeasureContentHandler)
 - [`ViewShadowNodeCloner`](ViewShadowNodeCloner)
 - [`ViewShadowNodeFactory`](ViewShadowNodeFactory)
+

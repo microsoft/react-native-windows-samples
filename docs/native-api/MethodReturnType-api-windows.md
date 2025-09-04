@@ -1,4 +1,4 @@
----
+﻿---
 id: MethodReturnType
 title: MethodReturnType
 ---
@@ -18,3 +18,4 @@ Native method return type.
 
 ## Referenced by
 - [`IReactModuleBuilder`](IReactModuleBuilder)
+

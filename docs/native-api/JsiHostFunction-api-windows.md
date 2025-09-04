@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiHostFunction
 title: JsiHostFunction
 ---
@@ -18,3 +18,4 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)
+

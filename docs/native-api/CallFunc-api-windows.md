@@ -1,4 +1,4 @@
----
+﻿---
 id: CallFunc
 title: CallFunc
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**(Object runtime)
 
 ## Referenced by
 - [`CallInvoker`](CallInvoker)
+

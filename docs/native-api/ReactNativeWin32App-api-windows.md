@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactNativeWin32App
 title: ReactNativeWin32App
 ---
@@ -35,3 +35,4 @@ void **`Start`**()
 
 ## Referenced by
 - [`ReactNativeAppBuilder`](ReactNativeAppBuilder)
+

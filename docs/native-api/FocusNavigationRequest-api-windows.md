@@ -1,4 +1,4 @@
----
+﻿---
 id: FocusNavigationRequest
 title: FocusNavigationRequest
 ---
@@ -30,3 +30,4 @@ Creates new instance of [`FocusNavigationRequest`](FocusNavigationRequest)
 ## Referenced by
 - [`CompositionHwndHost`](CompositionHwndHost)
 - [`ReactNativeIsland`](ReactNativeIsland)
+

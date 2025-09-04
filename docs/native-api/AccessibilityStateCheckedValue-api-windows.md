@@ -1,4 +1,4 @@
----
+﻿---
 id: AccessibilityStateCheckedValue
 title: AccessibilityStateCheckedValue
 ---
@@ -15,3 +15,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutMetrics
 title: LayoutMetrics
 ---
@@ -19,3 +19,4 @@ Type: `float`
 ## Referenced by
 - [`ComponentView`](ComponentView)
 - [`LayoutMetricsChangedArgs`](LayoutMetricsChangedArgs)
+

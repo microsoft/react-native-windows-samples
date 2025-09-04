@@ -1,4 +1,4 @@
----
+﻿---
 id: IViewManagerRequiresNativeLayout
 title: IViewManagerRequiresNativeLayout
 ---
@@ -12,3 +12,4 @@ Enables a view manager to be responsible for its own layout and sizing.
 ## Properties
 ### RequiresNativeLayout
 `readonly`  bool `RequiresNativeLayout`
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: AccessibilityInvokeEventHandler
 title: AccessibilityInvokeEventHandler
 ---
@@ -12,3 +12,4 @@ void **`Invoke`**()
 
 ## Referenced by
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)
+

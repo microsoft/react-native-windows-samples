@@ -1,4 +1,4 @@
----
+﻿---
 id: MethodResultCallback
 title: MethodResultCallback
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) outputWriter)
 
 ## Referenced by
 - [`MethodDelegate`](MethodDelegate)
+

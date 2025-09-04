@@ -1,4 +1,4 @@
----
+﻿---
 id: JSValueType
 title: JSValueType
 ---
@@ -21,3 +21,4 @@ Type of value read by [`IJSValueReader`](IJSValueReader).
 
 ## Referenced by
 - [`IJSValueReader`](IJSValueReader)
+

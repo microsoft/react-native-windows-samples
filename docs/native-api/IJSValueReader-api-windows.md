@@ -1,4 +1,4 @@
----
+﻿---
 id: IJSValueReader
 title: IJSValueReader
 ---
@@ -153,3 +153,4 @@ Gets the current `String` value.
 - [`IViewManagerWithNativeProperties`](IViewManagerWithNativeProperties)
 - [`MethodDelegate`](MethodDelegate)
 - [`SyncMethodDelegate`](SyncMethodDelegate)
+

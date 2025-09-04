@@ -1,4 +1,4 @@
----
+﻿---
 id: UpdateFinalizerDelegate
 title: UpdateFinalizerDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`ComponentViewUpdate
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

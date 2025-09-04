@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewControl
 title: ViewControl
 ---
@@ -16,3 +16,4 @@ Extends: [`ContentControl`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.
 ## Methods
 ### GetPanel
 [`Panel`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Panel) **`GetPanel`**()
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: IBrush
 title: IBrush
 ---
@@ -21,3 +21,4 @@ Kind: `interface`
 - [`MicrosoftCompositionContextHelper`](MicrosoftCompositionContextHelper)
 - [`SystemCompositionContextHelper`](SystemCompositionContextHelper)
 - [`UriBrushFactory`](UriBrushFactory)
+

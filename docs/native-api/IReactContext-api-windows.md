@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactContext
 title: IReactContext
 ---
@@ -192,3 +192,4 @@ The `paramsArgWriter` is a [`JSValueArgWriter`](JSValueArgWriter) delegate that 
 - [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactNativeHost`](ReactNativeHost)
 - [`XamlUIService`](XamlUIService)
+

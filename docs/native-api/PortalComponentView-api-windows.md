@@ -1,4 +1,4 @@
----
+﻿---
 id: PortalComponentView
 title: PortalComponentView
 ---
@@ -23,3 +23,4 @@ Used to implement UI that is hosted outside the main UI tree, such as modal.
 - [`PortalComponentViewInitializer`](PortalComponentViewInitializer)
 - [`ReactNativeIsland`](ReactNativeIsland)
 - [`RootComponentView`](RootComponentView)
+

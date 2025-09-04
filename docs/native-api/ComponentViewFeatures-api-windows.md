@@ -1,4 +1,4 @@
----
+﻿---
 id: ComponentViewFeatures
 title: ComponentViewFeatures
 ---
@@ -20,3 +20,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`IReactCompositionViewComponentBuilder`](IReactCompositionViewComponentBuilder)
+

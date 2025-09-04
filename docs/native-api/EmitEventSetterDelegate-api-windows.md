@@ -1,4 +1,4 @@
----
+﻿---
 id: EmitEventSetterDelegate
 title: EmitEventSetterDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`JSValueArgWriter`](JSValueArgWriter) argWriter)
 
 ## Referenced by
 - [`EventEmitterInitializerDelegate`](EventEmitterInitializerDelegate)
+

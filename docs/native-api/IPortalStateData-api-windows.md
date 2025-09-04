@@ -1,4 +1,4 @@
----
+﻿---
 id: IPortalStateData
 title: IPortalStateData
 ---
@@ -17,3 +17,4 @@ StateData type to be used with a PortalComponentView. The LayoutConstraints and 
 
 ### PointScaleFactor
 `readonly`  float `PointScaleFactor`
+
