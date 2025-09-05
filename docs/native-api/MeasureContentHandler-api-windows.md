@@ -1,4 +1,4 @@
----
+﻿---
 id: MeasureContentHandler
 title: MeasureContentHandler
 ---
@@ -14,3 +14,4 @@ Kind: `delegate`
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

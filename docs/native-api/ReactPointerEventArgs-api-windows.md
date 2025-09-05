@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactPointerEventArgs
 title: ReactPointerEventArgs
 ---
@@ -42,3 +42,4 @@ Gets or sets the React target for the pointer event.
 
 ## Referenced by
 - [`IViewManagerWithPointerEvents`](IViewManagerWithPointerEvents)
+

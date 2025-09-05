@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactNativeAppBuilder
 title: ReactNativeAppBuilder
 ---
@@ -25,3 +25,4 @@ ReactNativeAppBuilder builds a ReactNativeWin32App with the base WinAppSDK infra
 [`ReactNativeAppBuilder`](ReactNativeAppBuilder) **`SetAppWindow`**([`AppWindow`](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/Microsoft.UI.Windowing.AppWindow) appWindow)
 
 > **EXPERIMENTAL**
+

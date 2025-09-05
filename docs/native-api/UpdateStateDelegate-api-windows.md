@@ -1,4 +1,4 @@
----
+﻿---
 id: UpdateStateDelegate
 title: UpdateStateDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`IComponentState`](I
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

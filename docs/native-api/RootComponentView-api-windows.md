@@ -1,4 +1,4 @@
----
+﻿---
 id: RootComponentView
 title: RootComponentView
 ---
@@ -33,3 +33,4 @@ Is non-null if this RootComponentView is the content of a portal
 ## Referenced by
 - [`ComponentView`](ComponentView)
 - [`PortalComponentView`](PortalComponentView)
+

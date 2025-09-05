@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiObjectRef
 title: JsiObjectRef
 ---
@@ -19,3 +19,4 @@ Type: `uint64_t`
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)
+

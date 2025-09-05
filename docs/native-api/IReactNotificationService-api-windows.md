@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactNotificationService
 title: IReactNotificationService
 ---
@@ -34,3 +34,4 @@ The method returns a [`IReactNotificationSubscription`](IReactNotificationSubscr
 - [`IReactNotificationSubscription`](IReactNotificationSubscription)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
 - [`ReactNotificationServiceHelper`](ReactNotificationServiceHelper)
+

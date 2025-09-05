@@ -1,4 +1,4 @@
----
+﻿---
 id: PointerPoint
 title: PointerPoint
 ---
@@ -38,3 +38,4 @@ Kind: `class`
 
 ## Referenced by
 - [`PointerRoutedEventArgs`](PointerRoutedEventArgs)
+

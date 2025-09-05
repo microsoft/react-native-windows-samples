@@ -1,4 +1,4 @@
----
+﻿---
 id: DynamicValueProvider
 title: DynamicValueProvider
 ---
@@ -23,3 +23,4 @@ Implements: [`IValueProvider`](https://learn.microsoft.com/uwp/api/Windows.UI.Xa
 ## Methods
 ### SetValue
 void **`SetValue`**(string value)
+

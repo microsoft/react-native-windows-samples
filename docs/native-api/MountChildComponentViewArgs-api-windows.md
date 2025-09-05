@@ -1,4 +1,4 @@
----
+﻿---
 id: MountChildComponentViewArgs
 title: MountChildComponentViewArgs
 ---
@@ -22,3 +22,4 @@ Kind: `class`
 
 ## Referenced by
 - [`MountChildComponentViewDelegate`](MountChildComponentViewDelegate)
+

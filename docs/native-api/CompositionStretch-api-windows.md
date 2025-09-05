@@ -1,4 +1,4 @@
----
+﻿---
 id: CompositionStretch
 title: CompositionStretch
 ---
@@ -16,3 +16,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`IDrawingSurfaceBrush`](IDrawingSurfaceBrush)
+

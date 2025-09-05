@@ -1,4 +1,4 @@
----
+﻿---
 id: EventEmitter
 title: EventEmitter
 ---
@@ -18,3 +18,4 @@ void **`DispatchEvent`**(string eventName, [`JSValueArgWriter`](JSValueArgWriter
 ## Referenced by
 - [`ShadowNode`](ShadowNode)
 - [`UpdateEventEmitterDelegate`](UpdateEventEmitterDelegate)
+

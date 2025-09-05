@@ -1,4 +1,4 @@
----
+﻿---
 id: IInternalComponentView
 title: IInternalComponentView
 ---
@@ -12,3 +12,4 @@ Kind: `interface`
 ## Properties
 ### CompositionContext
 `readonly`  [`ICompositionContext`](ICompositionContext) `CompositionContext`
+

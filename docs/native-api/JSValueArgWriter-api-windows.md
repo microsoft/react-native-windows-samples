@@ -1,4 +1,4 @@
----
+﻿---
 id: JSValueArgWriter
 title: JSValueArgWriter
 ---
@@ -39,3 +39,4 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) writer)
 - [`ReactViewOptions`](ReactViewOptions)
 - [`XamlHelper`](XamlHelper)
 - [`XamlUIService`](XamlUIService)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactDispatcherHelper
 title: ReactDispatcherHelper
 ---
@@ -53,3 +53,4 @@ This can be used with [`ReactInstanceSettings.UIDispatcher`](ReactInstanceSettin
 `static` [`IReactDispatcher`](IReactDispatcher) **`CreateSerialDispatcher`**()
 
 Creates a new serial dispatcher that uses thread pool to run tasks.
+

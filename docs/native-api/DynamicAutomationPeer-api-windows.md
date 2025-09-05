@@ -1,4 +1,4 @@
----
+﻿---
 id: DynamicAutomationPeer
 title: DynamicAutomationPeer
 ---
@@ -79,3 +79,4 @@ void **`SetValue`**(double value)
 
 ### Toggle
 void **`Toggle`**()
+

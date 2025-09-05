@@ -1,4 +1,4 @@
----
+﻿---
 id: EventEmitterInitializerDelegate
 title: EventEmitterInitializerDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`EmitEventSetterDelegate`](EmitEventSetterDelegate) emitter)
 
 ## Referenced by
 - [`IReactModuleBuilder`](IReactModuleBuilder)
+

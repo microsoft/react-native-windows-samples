@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactPropertyNamespace
 title: IReactPropertyNamespace
 ---
@@ -19,3 +19,4 @@ Gets String representation of the [`IReactPropertyNamespace`](IReactPropertyName
 ## Referenced by
 - [`IReactPropertyName`](IReactPropertyName)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
+

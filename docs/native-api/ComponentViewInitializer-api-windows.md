@@ -1,4 +1,4 @@
----
+﻿---
 id: ComponentViewInitializer
 title: ComponentViewInitializer
 ---
@@ -16,3 +16,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) view)
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewShadowNodeFactory
 title: ViewShadowNodeFactory
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ShadowNode`](ShadowNode) shadowNode)
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

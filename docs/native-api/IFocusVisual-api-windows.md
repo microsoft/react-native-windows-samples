@@ -1,4 +1,4 @@
----
+﻿---
 id: IFocusVisual
 title: IFocusVisual
 ---
@@ -21,3 +21,4 @@ Kind: `interface`
 
 ## Referenced by
 - [`ICompositionContext`](ICompositionContext)
+

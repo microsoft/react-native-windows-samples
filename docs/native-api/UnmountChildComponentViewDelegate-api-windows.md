@@ -1,4 +1,4 @@
----
+﻿---
 id: UnmountChildComponentViewDelegate
 title: UnmountChildComponentViewDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`UnmountChildCompone
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

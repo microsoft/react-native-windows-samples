@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutMetricsChangedArgs
 title: LayoutMetricsChangedArgs
 ---
@@ -22,3 +22,4 @@ Kind: `class`
 
 ## Referenced by
 - [`ComponentView`](ComponentView)
+

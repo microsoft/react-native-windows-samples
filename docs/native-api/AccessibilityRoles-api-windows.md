@@ -1,4 +1,4 @@
----
+﻿---
 id: AccessibilityRoles
 title: AccessibilityRoles
 ---
@@ -44,3 +44,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)
+

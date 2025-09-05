@@ -1,4 +1,4 @@
----
+﻿---
 id: FocusNavigationResult
 title: FocusNavigationResult
 ---
@@ -22,3 +22,4 @@ Gets a value that indicates whether the focus successfully moved.
 ## Referenced by
 - [`CompositionHwndHost`](CompositionHwndHost)
 - [`ReactNativeIsland`](ReactNativeIsland)
+
