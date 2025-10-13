@@ -35,7 +35,8 @@
     "prettier": "2.8.8",
     "react-test-renderer": "19.0.0",
     "typescript": "5.0.4",
-    "@rnx-kit/jest-preset": "^0.1.17"
+    "@rnx-kit/jest-preset": "^0.1.17",
+    "metro-config": "^0.82.4"
   },
   "engines": {
     "node": ">=18"
@@ -44,7 +45,7 @@
     "init-windows": {
       "name": "CalculatorFabric",
       "namespace": "CalculatorFabric",
-      "template": "cpp-app"
+      "template": "old/uwp-cpp-app"
     }
   }
 }

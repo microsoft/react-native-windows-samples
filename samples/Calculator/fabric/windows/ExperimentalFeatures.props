@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+  <!--
+    This file contains some important settings that will apply globally for
+    your app and *all* native modules your app consumes. These values were
+    set when you created the app project, and in some cases cannot be
+    simply changed here without recreating a new project.
+  -->
+
   <PropertyGroup Label="Microsoft.ReactNative Experimental Features">
     <!--
-      Required for building a New Architecture project.
-
-      App projects should not change this value.
-
-      See https://microsoft.github.io/react-native-windows/docs/new-architecture
+      Enables default usage of Hermes.
+      
+      See https://microsoft.github.io/react-native-windows/docs/hermes
     -->
-    <RnwNewArch>true</RnwNewArch>
+    <UseHermes>true</UseHermes>
 
     <!--
       Changes compilation to assume use of Microsoft.ReactNative NuGet packages
-      instead of building the framework from source. Defaults to true.
-
-      This is set during app project creation and should not be changed.
+      instead of building the framework from source.
+      Requires creation of new project.
 
       See https://microsoft.github.io/react-native-windows/docs/nuget
     -->
-    <UseExperimentalNuget>true</UseExperimentalNuget>
+    <UseExperimentalNuget>false</UseExperimentalNuget>
 
     <ReactExperimentalFeaturesSet>true</ReactExperimentalFeaturesSet>
+  
   </PropertyGroup>
 
 </Project>
