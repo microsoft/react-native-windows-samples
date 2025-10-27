@@ -10,53 +10,11 @@ original_id: new-arch-missingProps
 
 ## Missing Props List
 
-### `OnClick`
-
-Called when the element is clicked. Inherited View Prop.
-
-| type | required |
-|:--|:--|
-| function | No |
-
-### `onKeyDownCapture`
-
-Occurs when the onKeyDown event is being routed. onKeyDown is the corresponding bubbling event. On Windows, this corresponds to PreviewKeyDown
-
-| type | required |
-|:--|:--|
-| number | No |
-
-### `onKeyUpCapture`
-
-Occurs when the onKeyUp event is being routed. onKeyUp is the corresponding bubbling event. On Windows, this corresponds to PreviewKeyUp.
-
-| type | required |
-|:--|:--|
-| number | No |
-
 ### `overflow`
 
 | type | default |
 |:--|:--|
 | enum('visible', 'hidden') | 'visible' |
-
-### `zIndex`
-
-zIndex controls which components display on top of others. Normally, you don't use zIndex. Components render according to their order in the document tree, so later components draw over earlier ones. zIndex may be useful if you have animations or custom modal interfaces where you don't want this behavior.
-
-It works like the CSS z-index property - components with a larger zIndex will render on top. Think of the z-direction like it's pointing from the phone into your eyeball. See https://developer.mozilla.org/en-US/docs/Web/CSS/z-index for more details.
-
-| type | required |
-|:--|:--|
-| number | No |
-
-### `tooltip`
-
-Text shown on hover. While tooltip support isn’t fully available for all components, it does work with some props such as `Text`.
-
-| type | required |
-|:--|:--|
-| string | No |
 
 ### `opacity`
 
@@ -66,21 +24,21 @@ Sets the transparency of the view.
 |:--|:--|
 | number | No |
 
-### `onMomentumScrollBegin`
+### `snapToInterval`
 
-Called when the momentum scroll starts (scroll which occurs as the ScrollView starts gliding).
-
-| type | required |
-|:--|:--|
-| function | No |
-
-### `onMomentumScrollEnd`
-
-Called when the momentum scroll ends (scroll which occurs as the ScrollView glides to a stop).
+When set, causes the scroll view to stop at multiples of the value of snapToInterval. This can be used for paginating through children that have lengths smaller than the scroll view. Typically used in combination with snapToAlignment and decelerationRate="fast". Overrides less configurable pagingEnabled prop.
 
 | type | required |
 |:--|:--|
-| function | No |
+| number | No |
+
+### `snapToAlignment`
+
+When snapToInterval is set, snapToAlignment will define the relationship of the snapping to the scroll view.
+
+| type | required |
+|:--|:--|
+| enum('start', 'center', 'end') | No |
 
 ### `pagingEnabled`
 
@@ -105,3 +63,41 @@ The highlight color of the text.
 | type | required |
 |:--|:--|
 | color | No |
+
+### `textAlign`
+
+Align the input text to the left, center, or right sides of the input field.
+
+Possible values for textAlign are:
+
+- left
+- center
+- right
+
+| type | required |
+|:--|:--|
+| enum('left', 'center', 'right') | No |
+
+### `contextMenuHidden`
+
+If true, context menu is hidden. The default value is false.
+
+| type | required |
+|:--|:--|
+| bool | No |
+
+### `writingDirection`
+
+The writing direction of the text.
+
+| type | required |
+|:--|:--|
+| enum('auto', 'ltr', 'rtl') | No |
+
+### `keyboardType`
+
+Determines which keyboard to open, e.g.numeric
+
+| type | required |
+|:--|:--|
+| enum('default', 'email-address', 'numeric', 'phone-pad', 'ascii-capable', 'numbers-and-punctuation', 'url', 'number-pad', 'name-phone-pad', 'decimal-pad', 'twitter', 'web-search', 'visible-password') | No |
