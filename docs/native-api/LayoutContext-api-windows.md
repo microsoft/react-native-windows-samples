@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutContext
 title: LayoutContext
 ---
@@ -34,3 +34,4 @@ Kind: `class`
 - [`LayoutHandler`](LayoutHandler)
 - [`MeasureContentHandler`](MeasureContentHandler)
 - [`YogaLayoutableShadowNode`](YogaLayoutableShadowNode)
+

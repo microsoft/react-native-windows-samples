@@ -1,4 +1,4 @@
----
+﻿---
 id: IPointerPointTransform
 title: IPointerPointTransform
 ---
@@ -17,3 +17,4 @@ bool **`TryTransform`**([`Point`](https://docs.microsoft.com/uwp/api/Windows.Fou
 
 ### TryTransformBounds
 bool **`TryTransformBounds`**([`Rect`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) inRect, **out** [`Rect`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Rect) outRect)
+

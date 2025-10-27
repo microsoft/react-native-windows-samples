@@ -1,4 +1,4 @@
----
+﻿---
 id: CanvasEdgeBehavior
 title: CanvasEdgeBehavior
 ---
@@ -15,3 +15,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`BorderEffect`](BorderEffect)
+

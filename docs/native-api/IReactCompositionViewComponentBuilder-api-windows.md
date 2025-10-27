@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactCompositionViewComponentBuilder
 title: IReactCompositionViewComponentBuilder
 ---
@@ -32,3 +32,4 @@ void **`SetViewFeatures`**([`ComponentViewFeatures`](ComponentViewFeatures) view
 
 ### SetVisualToMountChildrenIntoHandler
 void **`SetVisualToMountChildrenIntoHandler`**([`VisualToMountChildrenIntoDelegate`](VisualToMountChildrenIntoDelegate) impl)
+

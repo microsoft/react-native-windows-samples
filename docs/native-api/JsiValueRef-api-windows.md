@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiValueRef
 title: JsiValueRef
 ---
@@ -25,3 +25,4 @@ Type: [`JsiValueKind`](JsiValueKind)
 - [`JsiError`](JsiError)
 - [`JsiHostFunction`](JsiHostFunction)
 - [`JsiRuntime`](JsiRuntime)
+

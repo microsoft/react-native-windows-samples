@@ -1,4 +1,4 @@
----
+﻿---
 id: RootViewSizeChangedEventArgs
 title: RootViewSizeChangedEventArgs
 ---
@@ -17,3 +17,4 @@ Kind: `class`
 
 ## Referenced by
 - [`ReactNativeIsland`](ReactNativeIsland)
+

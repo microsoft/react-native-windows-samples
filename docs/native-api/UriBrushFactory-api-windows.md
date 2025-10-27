@@ -1,4 +1,4 @@
----
+﻿---
 id: UriBrushFactory
 title: UriBrushFactory
 ---
@@ -14,3 +14,4 @@ Kind: `delegate`
 
 ## Referenced by
 - [`UriBrushFactoryImageResponse`](UriBrushFactoryImageResponse)
+

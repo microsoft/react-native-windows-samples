@@ -1,4 +1,4 @@
----
+﻿---
 id: LoadingState
 title: LoadingState
 ---
@@ -18,3 +18,4 @@ Used to represent the state of the React Native JavaScript instance
 
 ## Referenced by
 - [`IReactContext`](IReactContext)
+

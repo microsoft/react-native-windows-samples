@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutService
 title: LayoutService
 ---
@@ -35,3 +35,4 @@ Use this method to get access to the [`LayoutService`](LayoutService) associated
 void **`MarkDirty`**(int64_t reactTag)
 
 Mark a particular React node as dirty for Yoga layout.
+

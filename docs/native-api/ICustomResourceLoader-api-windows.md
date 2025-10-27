@@ -1,4 +1,4 @@
----
+﻿---
 id: ICustomResourceLoader
 title: ICustomResourceLoader
 ---
@@ -26,3 +26,4 @@ Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Eve
 ## Referenced by
 - [`ReactNativeIsland`](ReactNativeIsland)
 - [`Theme`](Theme)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactNotificationSubscription
 title: IReactNotificationSubscription
 ---
@@ -45,3 +45,4 @@ Because of the multi-threaded nature of the notifications, the handler can be st
 ## Referenced by
 - [`IReactNotificationArgs`](IReactNotificationArgs)
 - [`IReactNotificationService`](IReactNotificationService)
+

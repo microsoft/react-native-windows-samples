@@ -1,4 +1,4 @@
----
+﻿---
 id: IDropShadow
 title: IDropShadow
 ---
@@ -27,3 +27,4 @@ void **`Opacity`**(float value)
 - [`ISpriteVisual`](ISpriteVisual)
 - [`MicrosoftCompositionContextHelper`](MicrosoftCompositionContextHelper)
 - [`SystemCompositionContextHelper`](SystemCompositionContextHelper)
+

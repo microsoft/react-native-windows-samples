@@ -1,4 +1,4 @@
----
+﻿---
 id: BackNavigationHandlerKind
 title: BackNavigationHandlerKind
 ---
@@ -14,3 +14,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`QuirkSettings`](QuirkSettings)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ImageResponse
 title: ImageResponse
 ---
@@ -8,3 +8,4 @@ title: ImageResponse
 Kind: `class`
 
 > **EXPERIMENTAL**
+

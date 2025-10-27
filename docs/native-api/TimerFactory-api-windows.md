@@ -1,4 +1,4 @@
----
+﻿---
 id: TimerFactory
 title: TimerFactory
 ---
@@ -14,3 +14,4 @@ Kind: `delegate`
 
 ## Referenced by
 - [`ReactCoreInjection`](ReactCoreInjection)
+

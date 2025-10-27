@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewPanel
 title: ViewPanel
 ---
@@ -56,3 +56,4 @@ void **`RemoveAt`**(uint32_t index)
 
 ### SetTop
 `static` void **`SetTop`**([`UIElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, double value)
+

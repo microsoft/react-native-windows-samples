@@ -1,4 +1,4 @@
----
+﻿---
 id: LogLevel
 title: LogLevel
 ---
@@ -19,3 +19,4 @@ Used in [`LogHandler`](LogHandler) to represent different LogLevels
 
 ## Referenced by
 - [`LogHandler`](LogHandler)
+

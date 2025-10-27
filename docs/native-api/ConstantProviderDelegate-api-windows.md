@@ -1,4 +1,4 @@
----
+﻿---
 id: ConstantProviderDelegate
 title: ConstantProviderDelegate
 ---
@@ -30,3 +30,4 @@ void **`Invoke`**([`IJSValueWriter`](IJSValueWriter) constantWriter)
 - [`IReactModuleBuilder`](IReactModuleBuilder)
 - [`IViewManagerWithExportedEventTypeConstants`](IViewManagerWithExportedEventTypeConstants)
 - [`IViewManagerWithExportedViewConstants`](IViewManagerWithExportedViewConstants)
+

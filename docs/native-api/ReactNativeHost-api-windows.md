@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactNativeHost
 title: ReactNativeHost
 ---
@@ -119,3 +119,4 @@ The React instance destruction can be observed with the [`ReactInstanceSettings.
 - [`ReactCoreInjection`](ReactCoreInjection)
 - [`ReactRootView`](ReactRootView)
 - [`RedBoxHelper`](RedBoxHelper)
+

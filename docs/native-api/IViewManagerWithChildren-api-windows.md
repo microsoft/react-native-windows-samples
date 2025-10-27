@@ -1,4 +1,4 @@
----
+﻿---
 id: IViewManagerWithChildren
 title: IViewManagerWithChildren
 ---
@@ -19,3 +19,4 @@ void **`RemoveChildAt`**([`FrameworkElement`](https://learn.microsoft.com/uwp/ap
 
 ### ReplaceChild
 void **`ReplaceChild`**([`FrameworkElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) parent, [`UIElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) oldChild, [`UIElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) newChild)
+

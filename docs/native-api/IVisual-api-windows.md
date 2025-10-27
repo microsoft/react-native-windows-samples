@@ -1,4 +1,4 @@
----
+﻿---
 id: IVisual
 title: IVisual
 ---
@@ -70,3 +70,4 @@ void **`TransformMatrix`**([`Matrix4x4`](https://docs.microsoft.com/uwp/api/Wind
 - [`IVisualToMountChildrenIntoDelegate`](IVisualToMountChildrenIntoDelegate)
 - [`MicrosoftCompositionContextHelper`](MicrosoftCompositionContextHelper)
 - [`SystemCompositionContextHelper`](SystemCompositionContextHelper)
+

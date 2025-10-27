@@ -1,4 +1,4 @@
----
+﻿---
 id: IJSValueWriter
 title: IJSValueWriter
 ---
@@ -147,3 +147,4 @@ Writes a `String` value.
 - [`MethodDelegate`](MethodDelegate)
 - [`MethodResultCallback`](MethodResultCallback)
 - [`SyncMethodDelegate`](SyncMethodDelegate)
+

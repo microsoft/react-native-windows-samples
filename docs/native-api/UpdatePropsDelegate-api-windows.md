@@ -1,4 +1,4 @@
----
+﻿---
 id: UpdatePropsDelegate
 title: UpdatePropsDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`IComponentProps`](I
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutConstraints
 title: LayoutConstraints
 ---
@@ -22,3 +22,4 @@ Type: [`Size`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Size)
 ## Referenced by
 - [`MeasureContentHandler`](MeasureContentHandler)
 - [`ReactNativeIsland`](ReactNativeIsland)
+

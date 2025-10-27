@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactSettingsSnapshot
 title: IReactSettingsSnapshot
 ---
@@ -100,3 +100,4 @@ Debugging will start as soon as the react native instance is loaded.
 
 ## Referenced by
 - [`IReactContext`](IReactContext)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ISpriteVisual
 title: ISpriteVisual
 ---
@@ -20,3 +20,4 @@ void **`Shadow`**([`IDropShadow`](IDropShadow) shadow)
 
 ## Referenced by
 - [`ICompositionContext`](ICompositionContext)
+

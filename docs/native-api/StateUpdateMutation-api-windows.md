@@ -1,4 +1,4 @@
----
+﻿---
 id: StateUpdateMutation
 title: StateUpdateMutation
 ---
@@ -14,3 +14,4 @@ Object **`Invoke`**(Object props)
 
 ## Referenced by
 - [`IComponentState`](IComponentState)
+

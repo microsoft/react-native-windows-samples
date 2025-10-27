@@ -1,4 +1,4 @@
----
+﻿---
 id: CreateVisualDelegate
 title: CreateVisualDelegate
 ---
@@ -14,3 +14,4 @@ Kind: `delegate`
 
 ## Referenced by
 - [`IReactCompositionViewComponentBuilder`](IReactCompositionViewComponentBuilder)
+

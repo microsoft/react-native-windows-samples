@@ -1,4 +1,4 @@
----
+﻿---
 id: DynamicAutomationProperties
 title: DynamicAutomationProperties
 ---
@@ -134,3 +134,4 @@ Kind: `class`
 
 ### SetAriaRole
 `static` void **`SetAriaRole`**([`UIElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) element, [`AriaRole`](AriaRole) value)
+

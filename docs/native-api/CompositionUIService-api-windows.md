@@ -1,4 +1,4 @@
----
+﻿---
 id: CompositionUIService
 title: CompositionUIService
 ---
@@ -32,3 +32,4 @@ Gets the Compositor used by this ReactNative instance.
 > **EXPERIMENTAL**
 
 Configures the react instance to use the provided Compositor. Setting this will opt into using the new architecture
+

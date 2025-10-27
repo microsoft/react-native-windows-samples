@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewComponentView
 title: ViewComponentView
 ---
@@ -19,3 +19,4 @@ Extends: [`ComponentView`](ComponentView)
 
 ## Referenced by
 - [`ViewComponentViewInitializer`](ViewComponentViewInitializer)
+

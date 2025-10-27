@@ -1,4 +1,4 @@
----
+﻿---
 id: EffectOptimization
 title: EffectOptimization
 ---
@@ -15,3 +15,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`GaussianBlurEffect`](GaussianBlurEffect)
+

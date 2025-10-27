@@ -1,4 +1,4 @@
----
+﻿---
 id: EffectBorderMode
 title: EffectBorderMode
 ---
@@ -14,3 +14,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`GaussianBlurEffect`](GaussianBlurEffect)
+

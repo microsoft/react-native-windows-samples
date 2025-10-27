@@ -1,4 +1,4 @@
----
+﻿---
 id: InstanceDestroyedEventArgs
 title: InstanceDestroyedEventArgs
 ---
@@ -17,3 +17,4 @@ Gets the [`IReactContext`](IReactContext) for the React instance that just destr
 
 ## Referenced by
 - [`ReactInstanceSettings`](ReactInstanceSettings)
+

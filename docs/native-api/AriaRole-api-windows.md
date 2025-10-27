@@ -1,4 +1,4 @@
----
+﻿---
 id: AriaRole
 title: AriaRole
 ---
@@ -79,3 +79,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`DynamicAutomationProperties`](DynamicAutomationProperties)
+
