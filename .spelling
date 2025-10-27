@@ -158,3 +158,13 @@ package.json
 microsoft
 react-native-windows-samples
 src
+snapToInterval
+snapToAlignment
+decelerationRate
+pagingEnabled
+textAlign
+ltr
+rtl
+e.g.numeric
+ascii-capable
+url
