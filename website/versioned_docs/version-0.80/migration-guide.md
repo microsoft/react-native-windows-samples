@@ -55,7 +55,7 @@ Before you migrate confirm few things on your Paper project re-confirm that your
 
 
 ### Steps Followed to Migrate to New Architecture (Fabric) 
-- Upgrade Dependencies: Update package.json to use React Native 0.80 Preview 8 and run `npm install` or `yarn install`. (Reference - [react-native-windows-samples/samples/Calculator/cppwinrt/package.json at 9e5d850e843acc2ff060fbd64673511cc67265f9 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/9e5d850e843acc2ff060fbd64673511cc67265f9/samples/Calculator/cppwinrt/package.json))  
+- Upgrade Dependencies: Update package.json to use React Native 0.80 and run `npm install` or `yarn install`. (Reference - [react-native-windows-samples/samples/Calculator/cppwinrt/package.json at 9e5d850e843acc2ff060fbd64673511cc67265f9 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/9e5d850e843acc2ff060fbd64673511cc67265f9/samples/Calculator/cppwinrt/package.json))  
 
 - Delete the Existing Windows Directory / Run `rm -rf windows` to remove the legacy project files. 
 
@@ -112,4 +112,4 @@ In the New Architecture RNW, the Flyout and Popup components have been updated t
 
 ### Conclusion 
 
-Migrating from Paper to Fabric in React Native Windows 0.80 Preview 8 modernizes your project, improves performance, and prepares your app for future React Native releases. Reverting to the old architecture is simple if required.
+Migrating from Paper to Fabric in React Native Windows 0.80 modernizes your project, improves performance, and prepares your app for future React Native releases. Reverting to the old architecture is simple if required.
