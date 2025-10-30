@@ -1,6 +1,6 @@
 {
     "docs":  {
-                 "The Basics (Windows)":  [
+                 "The Basics":  [
                                               "getting-started",
                                               "rnw-dependencies",
                                               "react-native-windows-cli",
@@ -14,13 +14,13 @@
                                               "app-publishing",
                                               "supported-community-modules"
                                           ],
-                 "CLI Commands (Windows)":  [
+                 "CLI Commands":  [
                                                 "autolink-windows-cli",
                                                 "codegen-windows-cli",
                                                 "init-windows-cli",
                                                 "run-windows-cli"
                                             ],
-                 "Native Development (Windows)":  [
+                 "Native Development":  [
                                                       "native-platform",
                                                       "native-platform-getting-started",
                                                       "native-platform-modules",
@@ -28,7 +28,7 @@
                                                       "native-platform-components-paper",
                                                       "native-platform-using"
                                                   ],
-                 "Advanced Topics (Windows)":  [
+                 "Advanced Topics":  [
                                                    "win10-vm",
                                                    "hermes",
                                                    "NuGet"
@@ -40,7 +40,7 @@
                  "Legacy Docs":  [
                                      {
                                          "type":  "subcategory",
-                                         "label":  "Native Modules (Windows)",
+                                         "label":  "Native Modules",
                                          "ids":  [
                                                      "native-modules",
                                                      "view-managers",
@@ -54,7 +54,7 @@
                                      },
                                      {
                                          "type":  "subcategory",
-                                         "label":  "Native Development (Windows)",
+                                         "label":  "Native Development",
                                          "ids":  [
                                                      "native-code",
                                                      "native-code-language-choice",
@@ -69,18 +69,21 @@
                                  ]
              },
     "apis":  {
-                 "Components (Windows)":  [
+                 "Components":  [
                                               "flyout-component",
                                               "glyph-component",
                                               "popup-component",
                                               "textinput-component"
                                           ],
-                 "JavaScript API (Windows)":  [
+                 "JavaScript API":  [
                                                   "apptheme-api",
                                                   "ikeyboardprops-api",
                                                   "iviewwindowsprops-api"
                                               ],
-                 "Native API (Windows)":  [
+                 "New Architecture Property Support": [
+                                                                "new-arch-missingProps"
+                                                            ],
+                 "Native API":  [
                                               "native-api/Native-API-Reference",
                                               {
                                                   "label":  "Classes",
