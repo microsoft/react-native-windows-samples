@@ -16,7 +16,7 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | [main](https://www.npmjs.com/package/react-native-windows/v/canary) | [Canary](#canary-support) | *N/A* | *N/A* | *N/A* | *N/A* |
 | [0.80](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 12/16/2025 | 12/16/2025 | *TBD* | *TBD* |
 | [0.79](https://www.npmjs.com/package/react-native-windows/v/v0.79-stable) | [Active](#active-support) | 06/17/2025 | 06/17/2025 | 01/31/2026 | 03/31/2026 |
-| [0.78](https://www.npmjs.com/package/react-native-windows/v/v0.78-stable) | [Unsupported](#unsupported) | 02/27/2025 | 02/27/2025 | 07/31/2025 | 09/30/2025 |
+| [0.78](https://www.npmjs.com/package/react-native-windows/v/v0.78-stable) | [Active](#active-support) | 02/27/2025 | 02/27/2025 | 07/31/2025 | 09/30/2025 |
 | [0.77](https://www.npmjs.com/package/react-native-windows/v/v0.77-stable) | [Unsupported](#unsupported) | 01/24/2025 | 01/24/2025 | 03/27/2025 | 05/31/2025 |
 
 <!--

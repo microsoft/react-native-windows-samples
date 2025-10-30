@@ -98,5 +98,6 @@ npx react-native run-windows --msbuildprops EnableHermesInspectorInReleaseFlavor
 
 ### Known Issues
 
-1. CPU Sampling profiler currently doesn't work.
-
+1. CPU Sampling profiler currently doesn't work.  
+2. Debugging and related activities (including Chrome/Edge DevTools, VSCode debugger) are currently non-functional.  
+   - Issue under investigation for React Native Windows Hermes runtime.  
