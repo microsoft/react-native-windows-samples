@@ -54,6 +54,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Install Windows SDK 10.0.22621.0
+      run: |
+        $sdkVersion = "10.0.22621.0"
+        $installerUrl = "https://go.microsoft.com/fwlink/?linkid=2272610"
+        $installerPath = "$env:TEMP\winsdksetup.exe"
+        Write-Host "Downloading Windows SDK $sdkVersion..."
+        Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath
+        Write-Host "Installing Windows SDK $sdkVersion..."
+        Start-Process -FilePath $installerPath -ArgumentList "/quiet", "/norestart", "/features", "OptionId.WindowsDesktopSoftwareDevelopmentKit" -Wait
+        Write-Host "Windows SDK installation completed."
+
     - name: Gather environment info
       run: npx envinfo
 

@@ -9,7 +9,6 @@
     <ProjectGuid>{d860176d-808a-4119-8bef-7fa74976a51f}</ProjectGuid>
     <ProjectName>Calculator</ProjectName>
     <RootNamespace>Calculator</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
