@@ -90,6 +90,8 @@ Follow steps 1-7 from above, and then
 
 ### Enable debugging/profiling on release builds
 
+> **Note:** Hermes debugging support varies by React Native Windows version. Direct debugging with Hermes inspector is supported in React Native Windows 0.75+ but has [known issues](https://github.com/microsoft/react-native-windows/issues/12982) in certain versions. Check the [Known Issues](#known-issues) section below for current debugging limitations in this version.
+
 We keep the inspector turned off on release builds by default. If you want to debug or profile release builds, set the MSBuild property `EnableHermesInspectorInReleaseFlavor` to `'true'` when building the platform with the [run-windows command](run-windows-cli.md), i.e.:
 
 ```bash
@@ -99,5 +101,5 @@ npx react-native run-windows --msbuildprops EnableHermesInspectorInReleaseFlavor
 ### Known Issues
 
 1. CPU Sampling profiler currently doesn't work.  
-2. Debugging and related activities (including Chrome/Edge DevTools, VSCode debugger) are currently non-functional.  
+2. Debugging and related activities (including Chrome/Edge DevTools, Visual Studio Code debugger) are currently non-functional.  
    - Issue under investigation for React Native Windows Hermes runtime.  
