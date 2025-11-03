@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "19.1.0",
     "react-native": "0.80.0",
-    "react-native-windows": "0.80.0-preview.1"
+    "react-native-windows": "0.80.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
