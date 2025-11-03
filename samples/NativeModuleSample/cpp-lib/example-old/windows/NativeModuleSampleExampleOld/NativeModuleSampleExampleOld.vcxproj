@@ -9,6 +9,7 @@
     <ProjectGuid>{7218518e-3fa5-49ea-96f9-ab01bf4e5266}</ProjectGuid>
     <ProjectName>NativeModuleSampleExampleOld</ProjectName>
     <RootNamespace>NativeModuleSampleExampleOld</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
