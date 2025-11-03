@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- 
+    This file is automatically imported by MSBuild for all projects in this directory and subdirectories.
+    It ensures that all projects, including those in node_modules, use the latest available Windows SDK
+    instead of requiring a specific SDK version that may not be available.
+  -->
+  <PropertyGroup>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+</Project>
