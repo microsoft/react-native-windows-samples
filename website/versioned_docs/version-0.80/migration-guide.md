@@ -13,6 +13,8 @@ original_id: migration-guide
 
 React Native 0.80 introduces Fabric as the default renderer and completes the transition to the New Architecture (Fabric + TurboModules). For React Native Windows (RNW), this migration replaces the legacy Paper architecture with a modern rendering pipeline that improves performance and memory usage. 
 
+> **Note:** This documentation references RNW v0.80, since Fabric becomes the default renderer starting with this version. However, the migration guide can be generally referred to for migrating from Paper to Fabric beginning with RNW versions supporting Fabric (starting RNW v0.74).
+
 ### Key Concepts 
 
 
@@ -37,7 +39,7 @@ React Native 0.80 introduces Fabric as the default renderer and completes the tr
 
 Run yarn install after every update of package.json file 
 
-### Calculator App Migration 
+### RNW App Migration 
 
 About the App: 
 
@@ -55,17 +57,37 @@ Before you migrate confirm few things on your Paper project re-confirm that your
 
 
 ### Steps Followed to Migrate to New Architecture (Fabric) 
-- Upgrade Dependencies: Update package.json to use React Native 0.80 and run `npm install` or `yarn install`. (Reference - [react-native-windows-samples/samples/Calculator/cppwinrt/package.json at 9e5d850e843acc2ff060fbd64673511cc67265f9 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/9e5d850e843acc2ff060fbd64673511cc67265f9/samples/Calculator/cppwinrt/package.json))  
+- Upgrade Dependencies: Update package.json to use React Native 0.80 and run:
+  ```bash
+  npm install
+  ```
+  or
+  ```bash
+  yarn install
+  ```
+  (Reference - [react-native-windows-samples/samples/Calculator/cppwinrt/package.json at 9e5d850e843acc2ff060fbd64673511cc67265f9 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/9e5d850e843acc2ff060fbd64673511cc67265f9/samples/Calculator/cppwinrt/package.json))  
 
-- Delete the Existing Windows Directory / Run `rm -rf windows` to remove the legacy project files. 
+- Delete the Existing Windows Directory:
+  ```bash
+  rm -rf windows
+  ```
 
 - Update Template in package.json: Set `"template": "cpp-app"` to use the new architecture template. 
 
-- Run yarn install 
+- Run:
+  ```bash
+  yarn install
+  ```
 
-- Reinitialize the Windows Project: Run `npx react-native init-windows --template cpp-app` to generate Fabric-compatible project files. 
+- Reinitialize the Windows Project:
+  ```bash
+  npx react-native init-windows --template cpp-app
+  ```
 
-- Run the Application: Use `npx @react-native-community/cli run-windows` to launch the Fabric app. 
+- Run the Application:
+  ```bash
+  npx @react-native-community/cli run-windows
+  ``` 
 
 
 You will see new files created / updated inside windows directory 
@@ -79,16 +101,27 @@ Commit Paper to Fabric: [migrate calculator by anupriya13 · Pull Request #1092 
 
 In case you encounter issues migrating to Fabric or due to unsupported controls or properties in Fabric please refer to below steps to revert back to Paper architecture. If you encounter missing properties, please open an issue: https://github.com/microsoft/react-native-windows/issues 
 
-
-- Delete the Windows Directory / Run `rm -rf windows`. 
+- Delete the Windows Directory:
+  ```bash
+  rm -rf windows
+  ```
 
 - Update Template in package.json: Set `"template": "old/uwp-cpp-app"`. (Reference -[react-native-windows-samples/samples/Calculator/fabric/package.json at 9e5d850e843acc2ff060fbd64673511cc67265f9 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/blob/9e5d850e843acc2ff060fbd64673511cc67265f9/samples/Calculator/fabric/package.json)) 
 
-- Run "yarn" 
+- Run:
+  ```bash
+  yarn
+  ```
 
-- Reinitialize the Old Architecture Project: Run `npx react-native init-windows --template old/uwp-cpp-app`. 
+- Reinitialize the Old Architecture Project:
+  ```bash
+  npx react-native init-windows --template old/uwp-cpp-app
+  ```
 
-- Run the App: Execute `npx @react-native-community/cli run-windows` to start the Paper-based app. 
+- Run the App:
+  ```bash
+  npx @react-native-community/cli run-windows
+  ``` 
 
 
 
@@ -112,4 +145,4 @@ In the New Architecture RNW, the Flyout and Popup components have been updated t
 
 ### Conclusion 
 
-Migrating from Paper to Fabric in React Native Windows 0.80 modernizes your project, improves performance, and prepares your app for future React Native releases. Reverting to the old architecture is simple if required.
+Migrating from Paper to Fabric in React Native Windows modernizes your project, improves performance, and prepares your app for future React Native releases. Reverting to the old architecture is simple if required.

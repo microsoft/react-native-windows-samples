@@ -16,6 +16,8 @@ For information around how to set up React Native, see the [React Native Getting
 
 ## Create a new React Native project
 
+> **Prerequisites:** Before creating your React Native for Windows project, ensure you have completed all the [development dependencies setup](rnw-dependencies.md). This includes installing Visual Studio with the required workloads, Windows SDK, Node.js, and other essential tools.
+
 Call the following from the place where you want your project directory to live:
 
 <!-- Note, make sure both `@react-native-community/cli@ABC` and `--version "XYZ"` are pointing to the correct NPM tags in the command below. -->
@@ -45,17 +47,21 @@ cd <projectName>
 <!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
 <!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
 
-Next you'll want to add `react-native-windows` as a dependency:
+Next you'll want to add `react-native-windows` as a dependency. This step adds the React Native for Windows platform-specific implementation to your project, which provides the Windows-specific native components, modules, and build tools needed to run your React Native app on Windows.
 
 <!--DOCUSAURUS_CODE_TABS-->
 
 <!--Using Yarn (Recommended)-->
+
+This command uses Yarn to add the React Native for Windows package to your project's dependencies. Yarn provides faster and more reliable dependency management:
 
 ```bat
 yarn add react-native-windows@^0.80.0
 ```
 
 <!--Using NPM-->
+
+This command uses NPM to install and save the React Native for Windows package to your project's dependencies. The `--save` flag ensures the package is added to your `package.json` file:
 
 ```bat
 npm install --save react-native-windows@^0.80.0
@@ -65,7 +71,7 @@ npm install --save react-native-windows@^0.80.0
 
 ### Initialize the React Native Windows native code and projects
 
-Lastly, initialize the React Native for Windows application with the [init-windows command](init-windows-cli.md):
+Lastly, initialize the React Native for Windows application with the [init-windows command](init-windows-cli.md). This command generates the Windows-specific native project files, including Visual Studio solution files, C++ or C# project templates, and platform-specific configuration needed to build and run your app on Windows:
 
 ```bat
 npx react-native init-windows --overwrite
@@ -99,9 +105,9 @@ npx react-native init-windows --overwrite
   - Run `yarn start` (or `npm start`) from your project directory, and wait for the React Native packager to report success.
   - Click the `Run` button to the right of the platform combo box control in VS, or select the `Debug`->`Start without Debugging` menu item. You now see your new app and Chrome should have loaded `http://localhost:8081/debugger-ui/` in a new tab. Press `F12` or `Ctrl+Shift+I` in Chrome to open its Developer Tools. :tada:
 
-- With VS Code
-  - Open your applications folder in VS Code.
-  - Install the [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native) plugin for VS Code.
+- With Visual Studio Code
+  - Open your applications folder in Visual Studio Code.
+  - Install the [React Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native) plugin for Visual Studio Code.
   - Create a new file in the applications root directory, `.vscode/launch.json` and paste the following configuration:
   ```json
   {
