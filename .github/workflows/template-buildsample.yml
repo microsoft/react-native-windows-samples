@@ -68,6 +68,21 @@ jobs:
       run: yarn install --frozen-lockfile
       working-directory: ..\..\src
 
+    - name: Create Directory.Build.props to override Windows SDK version
+      shell: pwsh
+      run: |
+        $content = @"
+        <?xml version="1.0" encoding="utf-8"?>
+        <Project>
+          <PropertyGroup>
+            <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+          </PropertyGroup>
+        </Project>
+        "@
+        Set-Content -Path "Directory.Build.props" -Value $content
+        Write-Host "Created Directory.Build.props with WindowsTargetPlatformVersion=10.0"
+      working-directory: ..\..\src
+
     - name: Codegen check
       if: ${{ inputs.runCodeGenCheck }}
       run: npx react-native codegen-windows --check --no-telemetry
