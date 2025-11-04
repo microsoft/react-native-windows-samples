@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactViewComponentBuilder
 title: IReactViewComponentBuilder
 ---
@@ -56,3 +56,4 @@ void **`SetUpdateStateHandler`**([`UpdateStateDelegate`](UpdateStateDelegate) im
 
 ## Referenced by
 - [`ReactViewComponentProvider`](ReactViewComponentProvider)
+

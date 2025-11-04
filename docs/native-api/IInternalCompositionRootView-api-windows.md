@@ -1,4 +1,4 @@
----
+﻿---
 id: IInternalCompositionRootView
 title: IInternalCompositionRootView
 ---
@@ -33,3 +33,4 @@ Forward input to the RootView. Only required when not using ContentIslands
 void **`SetWindow`**(uint64_t hwnd)
 
 Hosting Window that input is coming from. Only required when not using ContentIslands
+

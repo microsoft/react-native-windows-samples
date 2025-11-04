@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactDispatcher
 title: IReactDispatcher
 ---
@@ -29,3 +29,4 @@ The `callback` will be called asynchronously on the thread/queue associated with
 - [`IReactNotificationSubscription`](IReactNotificationSubscription)
 - [`ReactDispatcherHelper`](ReactDispatcherHelper)
 - [`ReactInstanceSettings`](ReactInstanceSettings)
+

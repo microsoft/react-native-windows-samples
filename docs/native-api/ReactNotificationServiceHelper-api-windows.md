@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactNotificationServiceHelper
 title: ReactNotificationServiceHelper
 ---
@@ -14,3 +14,4 @@ Helper methods for the [`IReactNotificationService`](IReactNotificationService) 
 `static` [`IReactNotificationService`](IReactNotificationService) **`CreateNotificationService`**()
 
 Creates a new instance of [`IReactNotificationService`](IReactNotificationService)
+

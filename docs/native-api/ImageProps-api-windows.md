@@ -1,4 +1,4 @@
----
+﻿---
 id: ImageProps
 title: ImageProps
 ---
@@ -16,3 +16,4 @@ Extends: [`ViewProps`](ViewProps)
 `readonly`  [`IVectorView`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVectorView-1)<[`ImageSource`](ImageSource)> `Sources`
 
 > **EXPERIMENTAL**
+

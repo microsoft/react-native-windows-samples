@@ -1,4 +1,3 @@
-#
 # UpdateNativeApiDocs.ps1 is a PowerShell script designed to download the
 # API docs from the specified RNW CI build in ADO and integrate them into
 # our docs folder, properly tagged with New/Old architecture tags
@@ -48,7 +47,7 @@ Function Create-WinRtApiDocWithBadge([string]$SourceDocPath, [string]$DestDocPat
     $Content = $Content.Trim()
 
     # Write final file
-    $Content | Out-File -Encoding utf8NoBOM $DestDocPath
+    $Content | Out-File -Encoding utf8 $DestDocPath
 }
 
 Function Get-DocKind([string]$DocPath) {
@@ -130,7 +129,7 @@ Function Merge-WinRtApiDocs([string]$OldArchDocsPath, [string]$NewArchDocsPath, 
                 $OldContent = $OldContent -replace "---(.*\r\n){1,}---\r\n\r\n", "`r`n`r`n# Old Architecture`r`n`r`n"
                 $OldContent = $OldContent -replace "\r\n#", "`r`n##"
 
-                ($NewContent + $OldContent) | Out-File -Encoding utf8NoBOM -NoNewline $MergedFilePath
+                ($NewContent + $OldContent) | Out-File -Encoding utf8 -NoNewline $MergedFilePath
                 Create-WinRtApiDocWithBadge -SourceDocPath $MergedFilePath -DestDocPath (Join-Path $OutputDocsPath $_) -BadgeMd $NewAndOldArchBadgeMd
             }
             $Kind = Get-DocKind -DocPath (Join-Path $OutputDocsPath $_)
@@ -140,12 +139,16 @@ Function Merge-WinRtApiDocs([string]$OldArchDocsPath, [string]$NewArchDocsPath, 
     
     # Clean up links to enum type values (workaround for https://github.com/asklar/winmd2md/issues/10)
     (Get-ChildItem -Path $OutputDocsPath -File -Filter *-api-windows.md) | ForEach-Object {
-        $FilePath = $_
-        $FileContent = (Get-Content $FilePath -Raw)
-        $AllTypesByKind['enum'] | ForEach-Object {
-            $FileContent = $FileContent -replace "\($_#\w+\)", "($_)" 
+        $FilePath = $_.FullName
+        if (Test-Path $FilePath) {
+            $FileContent = Get-Content $FilePath -Raw
+            if ($AllTypesByKind.ContainsKey('enum')) {
+                $AllTypesByKind['enum'] | ForEach-Object {
+                    $FileContent = $FileContent -replace "\($_#\w+\)", "($_)"
+                }
+            }
+            $FileContent | Out-File -Encoding utf8 $FilePath
         }
-        $FileContent | Out-File -Encoding utf8NoBOM -NoNewLine $FilePath
     }
     
     # Recreate index (workaround for https://github.com/asklar/winmd2md/issues/10)
@@ -159,7 +162,9 @@ Function Merge-WinRtApiDocs([string]$OldArchDocsPath, [string]$NewArchDocsPath, 
     $IndexContent += "`r`n"
 
     $AllTypesByKind.Keys | Where-Object { $_ -ne 'unknown' } | Sort-Object | ForEach-Object {
-        $IndexContent += "## $($_.Substring(0,1).ToUpper())$($_.Substring(1))$($_.EndsWith("s") ? "es" : "s")`r`n"
+        $KindLabel = "$($_.Substring(0,1).ToUpper())$($_.Substring(1))"
+        if ($_.EndsWith("s")) { $KindLabel += "es" } else { $KindLabel += "s" }
+        $IndexContent += "## $KindLabel`r`n"
         $AllTypesByKind[$_] | Sort-Object | ForEach-Object {
             $IndexContent += "- [$_]($_)`r`n"
         }
@@ -171,7 +176,7 @@ Function Merge-WinRtApiDocs([string]$OldArchDocsPath, [string]$NewArchDocsPath, 
     $IndexPath = (Join-Path $OutputDocsPath "index-api-windows.md")
 
     Write-Host "Creating `"$IndexPath`""
-    $IndexContent | Out-File -Encoding utf8NoBOM $IndexPath
+    $IndexContent | Out-File -Encoding utf8 $IndexPath
 
     # Update sidebar
     $SidebarsFile = Join-Path $RepoRoot "website/sidebars.json"
@@ -181,9 +186,11 @@ Function Merge-WinRtApiDocs([string]$OldArchDocsPath, [string]$NewArchDocsPath, 
     $NativeApiEntries += "native-api/Native-API-Reference"
 
     $AllTypesByKind.Keys | Where-Object { $_ -ne 'unknown' } | Sort-Object | ForEach-Object {
+        $KindLabel = "$($_.Substring(0,1).ToUpper())$($_.Substring(1))"
+        if ($_.EndsWith("s")) { $KindLabel += "es" } else { $KindLabel += "s" }
         $KindObject = @{}
         $KindObject['type'] = 'subcategory'
-        $KindObject['label'] = "$($_.Substring(0,1).ToUpper())$($_.Substring(1))$($_.EndsWith("s") ? "es" : "s")"
+        $KindObject['label'] = $KindLabel
         $KindObject['ids'] = @()
         $AllTypesByKind[$_] | Sort-Object | ForEach-Object {
             $KindObject['ids'] += "native-api/$_"

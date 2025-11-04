@@ -1,4 +1,4 @@
----
+﻿---
 id: Pointer
 title: Pointer
 ---
@@ -17,3 +17,4 @@ Kind: `class`
 ## Referenced by
 - [`ComponentView`](ComponentView)
 - [`PointerRoutedEventArgs`](PointerRoutedEventArgs)
+

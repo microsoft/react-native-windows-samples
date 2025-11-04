@@ -1,4 +1,4 @@
----
+﻿---
 id: InitialStateDataFactory
 title: InitialStateDataFactory
 ---
@@ -14,3 +14,4 @@ Object **`Invoke`**([`IComponentProps`](IComponentProps) props)
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

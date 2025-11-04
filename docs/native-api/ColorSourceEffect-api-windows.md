@@ -1,4 +1,4 @@
----
+﻿---
 id: ColorSourceEffect
 title: ColorSourceEffect
 ---
@@ -15,3 +15,4 @@ Implements: [`IGraphicsEffect`](https://docs.microsoft.com/uwp/api/Windows.Graph
 
 ### Name
  string `Name`
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactViewInstance
 title: IReactViewInstance
 ---
@@ -29,3 +29,4 @@ Update ReactRootView with changes in ReactInstance
 
 ## Referenced by
 - [`IReactViewHost`](IReactViewHost)
+

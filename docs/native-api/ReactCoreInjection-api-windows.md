@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactCoreInjection
 title: ReactCoreInjection
 ---
@@ -60,3 +60,4 @@ Sets the window handle HWND (as an UInt64) for the active top level application 
 > **EXPERIMENTAL**
 
 Sets the Callback to call when a UI batch is completed.
+

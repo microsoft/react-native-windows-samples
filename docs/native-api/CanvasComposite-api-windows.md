@@ -1,4 +1,4 @@
----
+﻿---
 id: CanvasComposite
 title: CanvasComposite
 ---
@@ -25,3 +25,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`CompositeStepEffect`](CompositeStepEffect)
+

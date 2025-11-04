@@ -1,4 +1,4 @@
----
+﻿---
 id: ImageSourceType
 title: ImageSourceType
 ---
@@ -17,3 +17,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`ImageSource`](ImageSource)
+

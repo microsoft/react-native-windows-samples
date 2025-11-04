@@ -1,4 +1,4 @@
----
+﻿---
 id: Color
 title: Color
 ---
@@ -47,3 +47,4 @@ bool **`Equals`**([`Color`](Color) color)
 
 ## Referenced by
 - [`ViewProps`](ViewProps)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: UnmountChildComponentViewArgs
 title: UnmountChildComponentViewArgs
 ---
@@ -22,3 +22,4 @@ Kind: `class`
 
 ## Referenced by
 - [`UnmountChildComponentViewDelegate`](UnmountChildComponentViewDelegate)
+

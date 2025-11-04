@@ -1,4 +1,4 @@
----
+﻿---
 id: XamlHelper
 title: XamlHelper
 ---
@@ -35,3 +35,4 @@ Gets the react tag from a backing XAML element.
 `static` void **`SetReactTag`**([`DependencyObject`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.DependencyObject) dependencyObject, int64_t tag)
 
 Sets the react tag for a XAML element.
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactCompositionViewComponentInternalBuilder
 title: IReactCompositionViewComponentInternalBuilder
 ---
@@ -14,3 +14,4 @@ This interface is for use when running react-native-windows using a custom compo
 ## Methods
 ### SetIVisualToMountChildrenIntoHandler
 void **`SetIVisualToMountChildrenIntoHandler`**([`IVisualToMountChildrenIntoDelegate`](IVisualToMountChildrenIntoDelegate) impl)
+

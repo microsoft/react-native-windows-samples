@@ -1,4 +1,4 @@
----
+﻿---
 id: IScrollPositionChangedArgs
 title: IScrollPositionChangedArgs
 ---
@@ -15,3 +15,4 @@ Kind: `interface`
 
 ## Referenced by
 - [`IScrollVisual`](IScrollVisual)
+

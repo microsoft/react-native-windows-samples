@@ -1,4 +1,4 @@
----
+﻿---
 id: IViewManagerWithExportedEventTypeConstants
 title: IViewManagerWithExportedEventTypeConstants
 ---
@@ -13,3 +13,4 @@ Kind: `interface`
 
 ### ExportedCustomDirectEventTypeConstants
 `readonly`  [`ConstantProviderDelegate`](ConstantProviderDelegate) `ExportedCustomDirectEventTypeConstants`
+

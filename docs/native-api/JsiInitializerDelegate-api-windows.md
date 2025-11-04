@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiInitializerDelegate
 title: JsiInitializerDelegate
 ---
@@ -16,3 +16,4 @@ void **`Invoke`**([`IReactContext`](IReactContext) reactContext, Object runtimeH
 
 ## Referenced by
 - [`IReactModuleBuilder`](IReactModuleBuilder)
+

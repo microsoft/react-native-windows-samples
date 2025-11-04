@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactModuleProvider
 title: ReactModuleProvider
 ---
@@ -14,3 +14,4 @@ Object **`Invoke`**([`IReactModuleBuilder`](IReactModuleBuilder) moduleBuilder)
 
 ## Referenced by
 - [`IReactPackageBuilder`](IReactPackageBuilder)
+

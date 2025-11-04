@@ -34,7 +34,7 @@ extends:
   parameters:
     pool:
       name: Azure-Pipelines-1ESPT-ExDShared
-      image: windows-latest
+      image: windows-2022
       os: windows
     stages:
       - stage: RNWSamplesCI

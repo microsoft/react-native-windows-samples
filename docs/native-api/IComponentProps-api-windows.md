@@ -1,4 +1,4 @@
----
+﻿---
 id: IComponentProps
 title: IComponentProps
 ---
@@ -21,3 +21,4 @@ This method will be called for each property that comes from JavaScript.  It is 
 - [`InitialStateDataFactory`](InitialStateDataFactory)
 - [`UpdatePropsDelegate`](UpdatePropsDelegate)
 - [`ViewPropsFactory`](ViewPropsFactory)
+

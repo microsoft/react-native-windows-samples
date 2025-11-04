@@ -1,4 +1,4 @@
----
+﻿---
 id: ContentIslandComponentView
 title: ContentIslandComponentView
 ---
@@ -19,3 +19,4 @@ void **`Connect`**([`ContentIsland`](https://learn.microsoft.com/windows/windows
 
 ## Referenced by
 - [`ComponentIslandComponentViewInitializer`](ComponentIslandComponentViewInitializer)
+

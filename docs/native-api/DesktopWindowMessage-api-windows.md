@@ -1,4 +1,4 @@
----
+﻿---
 id: DesktopWindowMessage
 title: DesktopWindowMessage
 ---
@@ -18,3 +18,4 @@ Type: `uint32_t`
 
 ### WParam
 Type: `uint64_t`
+

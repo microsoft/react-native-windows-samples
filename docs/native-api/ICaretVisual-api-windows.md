@@ -1,4 +1,4 @@
----
+﻿---
 id: ICaretVisual
 title: ICaretVisual
 ---
@@ -28,3 +28,4 @@ void **`Size`**([`Vector2`](https://docs.microsoft.com/uwp/api/Windows.Foundatio
 
 ## Referenced by
 - [`ICompositionContext`](ICompositionContext)
+

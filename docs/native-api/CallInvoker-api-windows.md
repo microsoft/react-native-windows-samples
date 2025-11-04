@@ -1,4 +1,4 @@
----
+﻿---
 id: CallInvoker
 title: CallInvoker
 ---
@@ -18,3 +18,4 @@ void **`InvokeSync`**([`CallFunc`](CallFunc) func)
 
 ## Referenced by
 - [`IReactContext`](IReactContext)
+
