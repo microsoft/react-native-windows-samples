@@ -198,7 +198,7 @@ Function Merge-WinRtApiDocs([string]$OldArchDocsPath, [string]$NewArchDocsPath, 
         $NativeApiEntries += $KindObject
     }
 
-    $SidebarsJson.apis."Native API (Windows)" = $NativeApiEntries
+    $SidebarsJson.apis."Native API" = $NativeApiEntries
 
     Write-Host "Updating `"$SidebarsFile`""
     $SidebarsJson | ConvertTo-Json -Depth 4 | Set-Content -Path $SidebarsFile

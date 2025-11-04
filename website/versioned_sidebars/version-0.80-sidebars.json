@@ -87,7 +87,7 @@
     "Native API": [
       "version-0.80-native-api/Native-API-Reference",
       {
-        "type": "subcategory",
+        "label": "Classes",
         "ids": [
           "version-0.80-native-api/ActivityIndicatorComponentView",
           "version-0.80-native-api/BorderEffect",
@@ -174,10 +174,10 @@
           "version-0.80-native-api/XamlUIService",
           "version-0.80-native-api/YogaLayoutableShadowNode"
         ],
-        "label": "Classes"
+        "type": "subcategory"
       },
       {
-        "type": "subcategory",
+        "label": "Delegates",
         "ids": [
           "version-0.80-native-api/AccessibilityActionEventHandler",
           "version-0.80-native-api/AccessibilityInvokeEventHandler",
@@ -227,10 +227,10 @@
           "version-0.80-native-api/ViewShadowNodeFactory",
           "version-0.80-native-api/VisualToMountChildrenIntoDelegate"
         ],
-        "label": "Delegates"
+        "type": "subcategory"
       },
       {
-        "type": "subcategory",
+        "label": "Enums",
         "ids": [
           "version-0.80-native-api/AccessibilityRoles",
           "version-0.80-native-api/AccessibilityStateCheckedValue",
@@ -265,10 +265,10 @@
           "version-0.80-native-api/ResourceType",
           "version-0.80-native-api/ViewManagerPropertyType"
         ],
-        "label": "Enums"
+        "type": "subcategory"
       },
       {
-        "type": "subcategory",
+        "label": "Interfaces",
         "ids": [
           "version-0.80-native-api/CharacterReceivedRoutedEventArgs",
           "version-0.80-native-api/IActivityVisual",
@@ -337,10 +337,10 @@
           "version-0.80-native-api/KeyRoutedEventArgs",
           "version-0.80-native-api/RoutedEventArgs"
         ],
-        "label": "Interfaces"
+        "type": "subcategory"
       },
       {
-        "type": "subcategory",
+        "label": "Structs",
         "ids": [
           "version-0.80-native-api/AccessibilityAction",
           "version-0.80-native-api/DesktopWindowMessage",
@@ -355,7 +355,7 @@
           "version-0.80-native-api/LayoutConstraints",
           "version-0.80-native-api/LayoutMetrics"
         ],
-        "label": "Structs"
+        "type": "subcategory"
       }
     ]
   }
