@@ -30,6 +30,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
+      vmImage: 'windows-2022'
 
   call-buildsample-native-module-sample:
     name: Build Native Module Sample
@@ -45,6 +46,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
+      vmImage: 'windows-2022'
       extraRunWindowsArgs: --no-autolink --no-deploy
       # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
 

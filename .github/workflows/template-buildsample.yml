@@ -9,7 +9,7 @@ on:
         type: boolean
       vmImage:
         required: false
-        default: 'windows-latest'
+        default: 'windows-2022'
         type: string
       sampleName:
         required: true

@@ -58,6 +58,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
+      vmImage: 'windows-2022'
       skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.calculator != 'true' }} # Skip if files haven't changed
 
   call-buildsample-native-module-sample:
@@ -74,6 +75,7 @@ jobs:
       sampleName:  ${{ matrix.sampleName }}
       configuration: ${{ matrix.configuration }}
       platform: ${{ matrix.platform }}
+      vmImage: 'windows-2022'
       # runCodeGenCheck: true # Enable once we get https://github.com/microsoft/react-native-windows/pull/11187 (Maybe 0.72?)
       extraRunWindowsArgs: --no-autolink --no-deploy
       skipBuild: ${{ needs.setupcheck.outputs.workflows != 'true' && needs.setupcheck.outputs.native-module-sample != 'true' }} # Skip if files haven't changed
