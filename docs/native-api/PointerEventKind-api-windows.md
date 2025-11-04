@@ -1,4 +1,4 @@
----
+﻿---
 id: PointerEventKind
 title: PointerEventKind
 ---
@@ -20,3 +20,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`ReactPointerEventArgs`](ReactPointerEventArgs)
+

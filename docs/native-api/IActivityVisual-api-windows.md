@@ -1,4 +1,4 @@
----
+﻿---
 id: IActivityVisual
 title: IActivityVisual
 ---
@@ -26,3 +26,4 @@ void **`StopAnimation`**()
 
 ## Referenced by
 - [`ICompositionContext`](ICompositionContext)
+

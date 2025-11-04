@@ -1,4 +1,4 @@
----
+﻿---
 id: PortalComponentViewInitializer
 title: PortalComponentViewInitializer
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`PortalComponentView`](PortalComponentView) view)
 
 ## Referenced by
 - [`IReactCompositionViewComponentBuilder`](IReactCompositionViewComponentBuilder)
+

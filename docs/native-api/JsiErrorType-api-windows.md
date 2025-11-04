@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiErrorType
 title: JsiErrorType
 ---
@@ -21,3 +21,4 @@ Note that the JSI is defined only for C++ code. We plan to add the .Net support 
 ## Referenced by
 - [`JsiError`](JsiError)
 - [`JsiRuntime`](JsiRuntime)
+

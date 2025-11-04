@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactModuleBuilder
 title: IReactModuleBuilder
 ---
@@ -43,3 +43,4 @@ Adds a synchronous method to the native module. See [`SyncMethodDelegate`](SyncM
 
 ## Referenced by
 - [`ReactModuleProvider`](ReactModuleProvider)
+

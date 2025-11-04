@@ -1,4 +1,4 @@
----
+﻿---
 id: ImageSource
 title: ImageSource
 ---
@@ -29,3 +29,4 @@ Provides information about an image source requested by the application.
 
 ## Referenced by
 - [`IUriImageProvider`](IUriImageProvider)
+

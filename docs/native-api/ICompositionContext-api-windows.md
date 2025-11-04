@@ -1,4 +1,4 @@
----
+﻿---
 id: ICompositionContext
 title: ICompositionContext
 ---
@@ -42,3 +42,4 @@ Kind: `interface`
 - [`MicrosoftCompositionContextHelper`](MicrosoftCompositionContextHelper)
 - [`SystemCompositionContextHelper`](SystemCompositionContextHelper)
 - [`UriBrushFactory`](UriBrushFactory)
+

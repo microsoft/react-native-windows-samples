@@ -1,4 +1,4 @@
----
+﻿---
 id: XamlMetaDataProvider
 title: XamlMetaDataProvider
 ---
@@ -22,3 +22,4 @@ Implements: [`IXamlMetadataProvider`](https://learn.microsoft.com/uwp/api/Window
 
 ### GetXmlnsDefinitions
 [`XmlnsDefinition`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.XmlnsDefinition) **`GetXmlnsDefinitions`**()
+

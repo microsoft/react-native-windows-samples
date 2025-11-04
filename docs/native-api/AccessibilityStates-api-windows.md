@@ -1,4 +1,4 @@
----
+﻿---
 id: AccessibilityStates
 title: AccessibilityStates
 ---
@@ -15,3 +15,4 @@ Kind: `enum`
 |`Busy` | 0x3  |  |
 |`Expanded` | 0x4  |  |
 |`CountStates` | 0x5  |  |
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: MountChildComponentViewDelegate
 title: MountChildComponentViewDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`MountChildComponent
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

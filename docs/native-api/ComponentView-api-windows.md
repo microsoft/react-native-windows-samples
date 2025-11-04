@@ -1,4 +1,4 @@
----
+﻿---
 id: ComponentView
 title: ComponentView
 ---
@@ -43,3 +43,4 @@ void **`ReleasePointerCapture`**([`Pointer`](Pointer) pointer)
 > **EXPERIMENTAL**
 
 Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<Object>
+

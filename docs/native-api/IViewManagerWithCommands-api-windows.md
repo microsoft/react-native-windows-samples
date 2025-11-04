@@ -1,4 +1,4 @@
----
+﻿---
 id: IViewManagerWithCommands
 title: IViewManagerWithCommands
 ---
@@ -14,3 +14,4 @@ Kind: `interface`
 ## Methods
 ### DispatchCommand
 void **`DispatchCommand`**([`FrameworkElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) view, string commandId, [`IJSValueReader`](IJSValueReader) commandArgsReader)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: CustomResourceResult
 title: CustomResourceResult
 ---
@@ -24,3 +24,4 @@ The value of this resource should resolve to the value of another ResourceId
 
 ## Referenced by
 - [`ICustomResourceLoader`](ICustomResourceLoader)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: UriBrushFactoryImageResponse
 title: UriBrushFactoryImageResponse
 ---
@@ -18,3 +18,4 @@ This allows applications to provide their own image rendering pipeline. Or to ge
  **`UriBrushFactoryImageResponse`**([`UriBrushFactory`](UriBrushFactory) factory)
 
 > **EXPERIMENTAL**
+

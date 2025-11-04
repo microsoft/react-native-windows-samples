@@ -1,4 +1,4 @@
----
+﻿---
 id: DevMenuControl
 title: DevMenuControl
 ---
@@ -58,3 +58,4 @@ Extends: [`UserControl`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.Con
 ## Constructors
 ### DevMenuControl
  **`DevMenuControl`**()
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: PointerPointProperties
 title: PointerPointProperties
 ---
@@ -73,3 +73,4 @@ Kind: `class`
 
 ## Referenced by
 - [`PointerPoint`](PointerPoint)
+

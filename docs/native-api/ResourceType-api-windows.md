@@ -1,4 +1,4 @@
----
+﻿---
 id: ResourceType
 title: ResourceType
 ---
@@ -15,3 +15,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`ICustomResourceLoader`](ICustomResourceLoader)
+

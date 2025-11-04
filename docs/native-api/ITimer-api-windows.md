@@ -1,4 +1,4 @@
----
+﻿---
 id: ITimer
 title: ITimer
 ---
@@ -25,3 +25,4 @@ Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Eve
 ## Referenced by
 - [`Timer`](Timer)
 - [`TimerFactory`](TimerFactory)
+

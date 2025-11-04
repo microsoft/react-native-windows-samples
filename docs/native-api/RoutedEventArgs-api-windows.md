@@ -1,4 +1,4 @@
----
+﻿---
 id: RoutedEventArgs
 title: RoutedEventArgs
 ---
@@ -20,3 +20,4 @@ Implemented by:
 
 ## Referenced by
 - [`ComponentView`](ComponentView)
+

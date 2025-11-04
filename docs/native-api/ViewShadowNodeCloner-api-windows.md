@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewShadowNodeCloner
 title: ViewShadowNodeCloner
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ShadowNode`](ShadowNode) shadowNode, [`ShadowNode`](ShadowNo
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

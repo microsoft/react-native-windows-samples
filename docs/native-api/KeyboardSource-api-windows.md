@@ -1,4 +1,4 @@
----
+﻿---
 id: KeyboardSource
 title: KeyboardSource
 ---
@@ -14,3 +14,4 @@ Kind: `interface`
 ## Referenced by
 - [`CharacterReceivedRoutedEventArgs`](CharacterReceivedRoutedEventArgs)
 - [`KeyRoutedEventArgs`](KeyRoutedEventArgs)
+

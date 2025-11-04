@@ -1,4 +1,4 @@
----
+﻿---
 id: IViewManagerCreateWithProperties
 title: IViewManagerCreateWithProperties
 ---
@@ -12,3 +12,4 @@ Enables a view manager to create views whose behavior depend on the the property
 ## Methods
 ### CreateViewWithProperties
 Object **`CreateViewWithProperties`**([`IJSValueReader`](IJSValueReader) propertyMapReader)
+

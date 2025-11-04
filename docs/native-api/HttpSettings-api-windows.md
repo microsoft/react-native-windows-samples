@@ -1,4 +1,4 @@
----
+﻿---
 id: HttpSettings
 title: HttpSettings
 ---
@@ -14,3 +14,4 @@ Provides settings for Http functionality.
 `static` void **`SetDefaultUserAgent`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, string userAgent)
 
 Configures the react instance to use a user-agent header by default on http requests.
+

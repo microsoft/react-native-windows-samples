@@ -1,4 +1,4 @@
----
+﻿---
 id: MethodDelegate
 title: MethodDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`IJSValueReader`](IJSValueReader) inputReader, [`IJSValueWrit
 
 ## Referenced by
 - [`IReactModuleBuilder`](IReactModuleBuilder)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactPackageBuilderFabric
 title: IReactPackageBuilderFabric
 ---
@@ -21,3 +21,4 @@ Ability to load images using custom Uri protocol handlers.
 void **`AddViewComponent`**(string componentName, [`ReactViewComponentProvider`](ReactViewComponentProvider) componentProvider)
 
 Registers a custom native view component.
+

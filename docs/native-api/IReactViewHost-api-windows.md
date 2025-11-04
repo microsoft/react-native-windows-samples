@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactViewHost
 title: IReactViewHost
 ---
@@ -92,3 +92,4 @@ Unloads the attached IReactViewInstance.
 
 ### Referenced by
 - [`ReactCoreInjection`](ReactCoreInjection)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactPropertyName
 title: IReactPropertyName
 ---
@@ -28,3 +28,4 @@ Gets the [`IReactPropertyNamespace`](IReactPropertyNamespace) where the property
 - [`IReactPropertyBag`](IReactPropertyBag)
 - [`ReactDispatcherHelper`](ReactDispatcherHelper)
 - [`ReactPropertyBagHelper`](ReactPropertyBagHelper)
+

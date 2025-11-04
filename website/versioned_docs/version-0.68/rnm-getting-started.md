@@ -10,7 +10,7 @@ For information around how to set up:
 - React Native for iOS and Android: See [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started)
 - React Native for Windows: See [React Native for Windows Getting Started Guide](https://microsoft.github.io/react-native-windows/docs/getting-started)
 
-Make sure you have installed all the [development dependencies](https://microsoft.github.io/react-native-windows/docs/rnm-dependencies)
+Make sure you have installed all of the [development dependencies](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies).
 
 ## Install React Native for macOS
 

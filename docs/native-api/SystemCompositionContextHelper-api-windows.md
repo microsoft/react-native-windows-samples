@@ -1,4 +1,4 @@
----
+﻿---
 id: SystemCompositionContextHelper
 title: SystemCompositionContextHelper
 ---
@@ -50,3 +50,4 @@ Creates a [`IVisual`](IVisual) from a Visual
 `static` [`Visual`](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) **`InnerVisual`**([`IVisual`](IVisual) visual)
 
 > **EXPERIMENTAL**
+

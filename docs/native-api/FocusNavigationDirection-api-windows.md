@@ -1,4 +1,4 @@
----
+﻿---
 id: FocusNavigationDirection
 title: FocusNavigationDirection
 ---
@@ -18,3 +18,4 @@ Kind: `enum`
 ## Referenced by
 - [`GettingFocusEventArgs`](GettingFocusEventArgs)
 - [`LosingFocusEventArgs`](LosingFocusEventArgs)
+

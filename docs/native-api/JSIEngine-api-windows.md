@@ -1,4 +1,4 @@
----
+﻿---
 id: JSIEngine
 title: JSIEngine
 ---
@@ -17,3 +17,4 @@ A JavaScript engine type that can be set for a React instance in [`ReactInstance
 
 ## Referenced by
 - [`ReactInstanceSettings`](ReactInstanceSettings)
+

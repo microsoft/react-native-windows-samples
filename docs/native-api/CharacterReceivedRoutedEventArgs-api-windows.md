@@ -1,4 +1,4 @@
----
+﻿---
 id: CharacterReceivedRoutedEventArgs
 title: CharacterReceivedRoutedEventArgs
 ---
@@ -24,3 +24,4 @@ Implements: [`RoutedEventArgs`](RoutedEventArgs)
 
 ## Referenced by
 - [`ComponentView`](ComponentView)
+

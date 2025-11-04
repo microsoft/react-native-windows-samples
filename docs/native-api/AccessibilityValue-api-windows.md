@@ -1,4 +1,4 @@
----
+﻿---
 id: AccessibilityValue
 title: AccessibilityValue
 ---
@@ -13,3 +13,4 @@ Kind: `enum`
 |`Max` | 0x1  |  |
 |`Now` | 0x2  |  |
 |`Text` | 0x3  |  |
+
