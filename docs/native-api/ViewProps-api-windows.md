@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewProps
 title: ViewProps
 ---
@@ -34,3 +34,4 @@ Provides access to the properties on standard ViewProps.
 
 ## Referenced by
 - [`ViewPropsFactory`](ViewPropsFactory)
+

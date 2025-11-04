@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactNonAbiValue
 title: IReactNonAbiValue
 ---
@@ -18,3 +18,4 @@ Gets a pointer to the stored value.
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)
+

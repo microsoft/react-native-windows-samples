@@ -1,4 +1,4 @@
----
+﻿---
 id: BackfaceVisibility
 title: BackfaceVisibility
 ---
@@ -15,3 +15,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`IVisual`](IVisual)
+

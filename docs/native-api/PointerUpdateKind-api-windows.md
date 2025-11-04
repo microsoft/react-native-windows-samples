@@ -1,4 +1,4 @@
----
+﻿---
 id: PointerUpdateKind
 title: PointerUpdateKind
 ---
@@ -23,3 +23,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`PointerPointProperties`](PointerPointProperties)
+

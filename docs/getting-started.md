@@ -11,22 +11,20 @@ Make sure you have installed all of the [development dependencies](rnw-dependenc
 
 For information around how to set up React Native, see the [React Native Getting Started Guide](https://reactnative.dev/docs/getting-started).
 
-> **Interested in migrating to [React Native's New Architecture](https://reactnative.dev/architecture/landing-page)?** New Architecture support in React Native for Windows is now available to preview in 0.76. Note there are several key changes, so if you’d like to be an early adopter, check out the information in the [New Architecture Guide](new-architecture.md). 
-
 ## Create a new React Native project
 
 Call the following from the place where you want your project directory to live:
 
-<!-- Note, make sure both `@react-native-community/cli@ABC` and `--version "XYZ"` are pointing to the correct NPM tags in the command below. -->
+<!-- Note, make sure both `@react-native-community/cli@ABC` and `--version XYZ` are pointing to the correct NPM tags in the command below. -->
 
-<!-- 1. For the next version (i.e. in docs/getting-started.md) use "next" for the CLI and "nightly" for the RN version -->
-<!-- 2. For stable versions in versioned_docs use "latest" for the CLI and the semantic version, i.e. "^0.73.0" for the RN version -->
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use `next` for the CLI and `nightly` for the RN version -->
+<!-- 2. For stable versions in versioned_docs use `latest` for the CLI and the semantic version, i.e. `^0.73.0` for the RN version -->
 
 <!-- See https://www.npmjs.com/package/@react-native-community/cli?activeTab=versions for the CLI version tags. -->
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes @react-native-community/cli@next init <projectName> --version "nightly"
+npx --yes @react-native-community/cli@next init <projectName> --version nightly
 ```
 
 ### Navigate into this newly created directory
@@ -39,10 +37,10 @@ cd <projectName>
 
 ### Add React Native Windows to your project's dependencies
 
-<!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
+<!-- Note, make sure `version` is pointing to the correct react-native-windows NPM tag in the command below. -->
 
-<!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
-<!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use `canary` -->
+<!-- 2. For other versions in versioned_docs use the version in the format `^0.XY.0` -->
 
 Next you'll want to add `react-native-windows` as a dependency:
 
@@ -70,7 +68,9 @@ Lastly, initialize the React Native for Windows application with the [init-windo
 npx react-native init-windows --overwrite
 ```
 
-> **Note:** RNW templates contain a customized `metro.config.js` file, which is meant to merge cleanly into the default config provided by the standard React Native project template. If you are starting a new app, overwriting `metro.config.js` should have no impact. However, if you are adding Windows to an existing app with an already modified `metro.config.js` file, please make sure to back up and re-apply your modifications after adding RNW.
+> **Architecture Note:** The default React Native for Windows template for *new* projects targets [React Native's New Architecture](https://reactnative.dev/architecture/landing-page). For more information, including options for continuing to use the Old Architecture, see [New vs. Old Architecture](new-architecture.md). 
+
+> **Metro Note:** React Native Windows overwrites the app project's `metro.config.js` file to enable Windows support. If you are starting a new project, overwriting React Native's default `metro.config.js` should have no impact. However, if you have previously modified your `metro.config.js` file, please make sure to back up and re-apply your modifications after adding React Native Windows.
 
 ## Running a React Native Windows App
 

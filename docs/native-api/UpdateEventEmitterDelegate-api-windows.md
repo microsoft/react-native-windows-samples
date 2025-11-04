@@ -1,4 +1,4 @@
----
+﻿---
 id: UpdateEventEmitterDelegate
 title: UpdateEventEmitterDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`EventEmitter`](Even
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

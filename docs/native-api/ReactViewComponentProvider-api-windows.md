@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactViewComponentProvider
 title: ReactViewComponentProvider
 ---
@@ -16,3 +16,4 @@ void **`Invoke`**([`IReactViewComponentBuilder`](IReactViewComponentBuilder) vie
 
 ## Referenced by
 - [`IReactPackageBuilderFabric`](IReactPackageBuilderFabric)
+

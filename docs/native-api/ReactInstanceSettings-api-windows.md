@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactInstanceSettings
 title: ReactInstanceSettings
 ---
@@ -497,3 +497,4 @@ Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Eve
 - [`QuirkSettings`](QuirkSettings)
 - [`ReactApplication`](ReactApplication)
 - [`ReactNativeHost`](ReactNativeHost)
+

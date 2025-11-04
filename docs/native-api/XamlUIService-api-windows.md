@@ -1,4 +1,4 @@
----
+﻿---
 id: XamlUIService
 title: XamlUIService
 ---
@@ -109,3 +109,4 @@ Pass the value returned by IDesktopWindowXamlSourceNative get_WindowHandle.
 
 Sets the [`XamlRoot`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.XamlRoot) element for the app. This must be manually provided to the [`ReactInstanceSettings`](ReactInstanceSettings) object when using XAML Islands so that certain APIs work correctly.
 For more information, see [Host WinRT XAML Controls in desktop apps (XAML Islands)](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands).
+

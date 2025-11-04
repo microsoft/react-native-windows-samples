@@ -1,4 +1,4 @@
----
+﻿---
 id: InstanceLoadedEventArgs
 title: InstanceLoadedEventArgs
 ---
@@ -27,3 +27,4 @@ Provides access to the jsi::Runtime for synchronous access using GetOrCreateCont
 
 ## Referenced by
 - [`ReactInstanceSettings`](ReactInstanceSettings)
+

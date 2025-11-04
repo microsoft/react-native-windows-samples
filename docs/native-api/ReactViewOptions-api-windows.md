@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactViewOptions
 title: ReactViewOptions
 ---
@@ -69,3 +69,4 @@ Set of initial component properties. It is a JSON string.
 - [`IReactViewHost`](IReactViewHost)
 - [`IReactViewInstance`](IReactViewInstance)
 - [`ReactCoreInjection`](ReactCoreInjection)
+

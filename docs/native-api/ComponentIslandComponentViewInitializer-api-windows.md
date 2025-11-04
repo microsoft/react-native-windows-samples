@@ -1,4 +1,4 @@
----
+﻿---
 id: ComponentIslandComponentViewInitializer
 title: ComponentIslandComponentViewInitializer
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ContentIslandComponentView`](ContentIslandComponentView) vie
 
 ## Referenced by
 - [`IReactCompositionViewComponentBuilder`](IReactCompositionViewComponentBuilder)
+

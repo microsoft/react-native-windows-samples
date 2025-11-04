@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactNotificationHandler
 title: ReactNotificationHandler
 ---
@@ -16,3 +16,4 @@ void **`Invoke`**(Object sender, [`IReactNotificationArgs`](IReactNotificationAr
 
 ## Referenced by
 - [`IReactNotificationService`](IReactNotificationService)
+

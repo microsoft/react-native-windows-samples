@@ -1,4 +1,4 @@
----
+﻿---
 id: ComponentViewUpdateMask
 title: ComponentViewUpdateMask
 ---
@@ -20,3 +20,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`UpdateFinalizerDelegate`](UpdateFinalizerDelegate)
+

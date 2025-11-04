@@ -1,4 +1,4 @@
----
+﻿---
 id: IRedBoxErrorFrameInfo
 title: IRedBoxErrorFrameInfo
 ---
@@ -34,3 +34,4 @@ The line number within the file.
 `readonly`  string `Method`
 
 The method name of this frame.
+

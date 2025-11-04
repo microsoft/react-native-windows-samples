@@ -1,4 +1,4 @@
----
+﻿---
 id: UIBatchCompleteCallback
 title: UIBatchCompleteCallback
 ---
@@ -16,3 +16,4 @@ void **`Invoke`**([`IReactPropertyBag`](IReactPropertyBag) properties)
 
 ## Referenced by
 - [`ReactCoreInjection`](ReactCoreInjection)
+

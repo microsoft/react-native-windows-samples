@@ -1,4 +1,4 @@
----
+﻿---
 id: InitializerDelegate
 title: InitializerDelegate
 ---
@@ -16,3 +16,4 @@ void **`Invoke`**([`IReactContext`](IReactContext) reactContext)
 
 ## Referenced by
 - [`IReactModuleBuilder`](IReactModuleBuilder)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutDirection
 title: LayoutDirection
 ---
@@ -17,3 +17,4 @@ Kind: `enum`
 
 ## Referenced by
 - [`LayoutConstraints`](LayoutConstraints)
+

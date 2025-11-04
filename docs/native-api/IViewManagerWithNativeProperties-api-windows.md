@@ -1,4 +1,4 @@
----
+﻿---
 id: IViewManagerWithNativeProperties
 title: IViewManagerWithNativeProperties
 ---
@@ -14,3 +14,4 @@ Kind: `interface`
 ## Methods
 ### UpdateProperties
 void **`UpdateProperties`**([`FrameworkElement`](https://learn.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) view, [`IJSValueReader`](IJSValueReader) propertyMapReader)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactCreatePropertyValue
 title: ReactCreatePropertyValue
 ---
@@ -14,3 +14,4 @@ Object **`Invoke`**()
 
 ## Referenced by
 - [`IReactPropertyBag`](IReactPropertyBag)
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: FocusNavigationReason
 title: FocusNavigationReason
 ---
@@ -19,3 +19,4 @@ sdf
 
 ## Referenced by
 - [`FocusNavigationRequest`](FocusNavigationRequest)
+

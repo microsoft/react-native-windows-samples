@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewManagerPropertyType
 title: ViewManagerPropertyType
 ---
@@ -17,3 +17,4 @@ Kind: `enum`
 |`Color` | 0x5  |  |
 |`Function` | 0x6  |  |
 |`ImageSource` | 0x7  |  |
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: CompositionHwndHost
 title: CompositionHwndHost
 ---
@@ -45,3 +45,4 @@ Move focus to this [`CompositionHwndHost`](CompositionHwndHost)
 int64_t **`TranslateMessage`**(uint32_t msg, uint64_t wParam, int64_t lParam)
 
 > **EXPERIMENTAL**
+

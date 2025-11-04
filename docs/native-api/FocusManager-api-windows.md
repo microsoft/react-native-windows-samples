@@ -1,4 +1,4 @@
----
+﻿---
 id: FocusManager
 title: FocusManager
 ---
@@ -23,3 +23,4 @@ Retrieves the first component that can receive focus based on the specified scop
 > **EXPERIMENTAL**
 
 Retrieves the last component that can receive focus based on the specified scope.
+

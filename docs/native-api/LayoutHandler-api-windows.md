@@ -1,4 +1,4 @@
----
+﻿---
 id: LayoutHandler
 title: LayoutHandler
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ShadowNode`](ShadowNode) shadowNode, [`LayoutContext`](Layou
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

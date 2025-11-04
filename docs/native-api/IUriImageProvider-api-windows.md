@@ -1,4 +1,4 @@
----
+﻿---
 id: IUriImageProvider
 title: IUriImageProvider
 ---
@@ -22,3 +22,4 @@ This should return true if this provider will provide an image for the provided 
 
 ## Referenced by
 - [`IReactPackageBuilderFabric`](IReactPackageBuilderFabric)
+
