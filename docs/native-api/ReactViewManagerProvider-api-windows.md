@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactViewManagerProvider
 title: ReactViewManagerProvider
 ---
@@ -14,3 +14,4 @@ Provides information about a custom view manager. See [`IViewManager`](IViewMana
 
 ## Referenced by
 - [`IReactPackageBuilder`](IReactPackageBuilder)
+

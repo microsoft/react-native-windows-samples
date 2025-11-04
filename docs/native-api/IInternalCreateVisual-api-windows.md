@@ -1,4 +1,4 @@
----
+﻿---
 id: IInternalCreateVisual
 title: IInternalCreateVisual
 ---
@@ -14,3 +14,4 @@ Custom ViewComponents need to implement this interface to be able to provide a c
 ## Properties
 ### CreateInternalVisualHandler
  [`CreateInternalVisualDelegate`](CreateInternalVisualDelegate) `CreateInternalVisualHandler`
+

@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewComponentViewInitializer
 title: ViewComponentViewInitializer
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ViewComponentView`](ViewComponentView) view)
 
 ## Referenced by
 - [`IReactCompositionViewComponentBuilder`](IReactCompositionViewComponentBuilder)
+

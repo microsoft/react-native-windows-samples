@@ -1,4 +1,4 @@
----
+﻿---
 id: QuirkSettings
 title: QuirkSettings
 ---
@@ -67,3 +67,4 @@ By default `react-native-windows` will use the new RuntimeScheduler.Setting this
 **Default value**: `false`
 
 There is a chance that cached flex basis values can cause text truncation in some re-layout scenarios. Enabling [Yoga](https://github.com/facebook/yoga)'s experimental web flex basis behavior fixes this issue, however using it may result in performance regressions due to additional layout passes.
+

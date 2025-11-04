@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactPackageProvider
 title: IReactPackageProvider
 ---
@@ -15,3 +15,4 @@ void **`CreatePackage`**([`IReactPackageBuilder`](IReactPackageBuilder) packageB
 
 Creates a new package with help of the [`IReactPackageBuilder`](IReactPackageBuilder).
 Use the [`IReactPackageBuilder`](IReactPackageBuilder) to register custom native modules and view managers.
+

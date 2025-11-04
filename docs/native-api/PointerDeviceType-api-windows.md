@@ -1,4 +1,4 @@
----
+﻿---
 id: PointerDeviceType
 title: PointerDeviceType
 ---
@@ -17,3 +17,4 @@ Kind: `enum`
 ## Referenced by
 - [`Pointer`](Pointer)
 - [`PointerPoint`](PointerPoint)
+

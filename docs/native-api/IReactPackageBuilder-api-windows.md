@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactPackageBuilder
 title: IReactPackageBuilder
 ---
@@ -51,3 +51,4 @@ Adds a custom view manager. See [`ReactViewManagerProvider`](ReactViewManagerPro
 
 ### Referenced by
 - [`IReactPackageProvider`](IReactPackageProvider)
+

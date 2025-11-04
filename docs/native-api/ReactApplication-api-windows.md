@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactApplication
 title: ReactApplication
 ---
@@ -49,3 +49,4 @@ See [`ReactInstanceSettings.UseDeveloperSupport`](ReactInstanceSettings#usedevel
  **`ReactApplication`**()
 
 Creates a new instance of [`ReactApplication`](ReactApplication)
+

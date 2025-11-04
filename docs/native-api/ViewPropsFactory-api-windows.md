@@ -1,4 +1,4 @@
----
+﻿---
 id: ViewPropsFactory
 title: ViewPropsFactory
 ---
@@ -16,3 +16,4 @@ A delegate that creates a [`IComponentProps`](IComponentProps) object for an ins
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

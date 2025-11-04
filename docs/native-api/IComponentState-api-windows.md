@@ -1,4 +1,4 @@
----
+﻿---
 id: IComponentState
 title: IComponentState
 ---
@@ -22,3 +22,4 @@ void **`UpdateStateWithMutation`**([`StateUpdateMutation`](StateUpdateMutation) 
 
 ## Referenced by
 - [`UpdateStateDelegate`](UpdateStateDelegate)
+

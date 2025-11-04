@@ -1,4 +1,4 @@
----
+﻿---
 id: PointerRoutedEventArgs
 title: PointerRoutedEventArgs
 ---
@@ -29,3 +29,4 @@ Implements: [`RoutedEventArgs`](RoutedEventArgs)
 ## Referenced by
 - [`ComponentView`](ComponentView)
 - [`IScrollVisual`](IScrollVisual)
+

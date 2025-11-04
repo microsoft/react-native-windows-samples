@@ -1,4 +1,4 @@
----
+﻿---
 id: GettingFocusEventArgs
 title: GettingFocusEventArgs
 ---
@@ -43,3 +43,4 @@ void **`TrySetNewFocusedComponent`**([`ComponentView`](ComponentView) component)
 
 ## Referenced by
 - [`ComponentView`](ComponentView)
+

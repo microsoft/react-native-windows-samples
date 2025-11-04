@@ -1,4 +1,4 @@
----
+﻿---
 id: MicrosoftCompositionContextHelper
 title: MicrosoftCompositionContextHelper
 ---
@@ -50,3 +50,4 @@ Creates a [`IVisual`](IVisual) from a Visual
 `static` [`Visual`](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/Microsoft.UI.Composition.Visual) **`InnerVisual`**([`IVisual`](IVisual) visual)
 
 > **EXPERIMENTAL**
+

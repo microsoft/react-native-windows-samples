@@ -1,4 +1,4 @@
----
+﻿---
 id: IDrawingSurfaceBrush
 title: IDrawingSurfaceBrush
 ---
@@ -25,3 +25,4 @@ void **`VerticalAlignmentRatio`**(float value)
 - [`ICompositionContext`](ICompositionContext)
 - [`MicrosoftCompositionContextHelper`](MicrosoftCompositionContextHelper)
 - [`SystemCompositionContextHelper`](SystemCompositionContextHelper)
+

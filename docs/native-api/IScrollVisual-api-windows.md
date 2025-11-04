@@ -1,4 +1,4 @@
----
+﻿---
 id: IScrollVisual
 title: IScrollVisual
 ---
@@ -43,6 +43,9 @@ void **`SetMaximumZoomScale`**(float maximumZoomScale)
 ### SetMinimumZoomScale
 void **`SetMinimumZoomScale`**(float minimumZoomScale)
 
+### SetSnapPoints
+void **`SetSnapPoints`**(bool snapToStart, bool snapToEnd, [`IVectorView`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVectorView-1)<float> offsets, [`SnapAlignment`](SnapAlignment) snapToAlignment)
+
 ### TryUpdatePosition
 void **`TryUpdatePosition`**([`Vector3`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Numerics.Vector3) position, bool animate)
 
@@ -56,3 +59,4 @@ Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Eve
 
 ## Referenced by
 - [`ICompositionContext`](ICompositionContext)
+

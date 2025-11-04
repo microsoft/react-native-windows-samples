@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactRootView
 title: ReactRootView
 ---
@@ -46,3 +46,4 @@ Reloads the current [`ReactRootView`](ReactRootView) UI components.
 
 ## Referenced by
 - [`XamlUIService`](XamlUIService)
+

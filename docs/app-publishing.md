@@ -24,7 +24,7 @@ These are the steps to follow if you are looking to publish a React Native Windo
   - Pricing and Availability ([Set app pricing and availability - UWP applications | Microsoft Docs](https://docs.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability))
   - Properties ([Enter app properties - UWP applications | Microsoft Docs](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties))
   - Age Ratings ([Age ratings - UWP applications | Microsoft Docs](https://docs.microsoft.com/windows/uwp/publish/age-ratings))
-  - Store Listings ([Create app Store listings - UWP applications | Microsoft Docs](https://docs.microsoft.com/windows/uwp/publish/create-app-store-listings))
+  - Store Listings ([Create app Store listings - UWP applications | Microsoft Docs](https://learn.microsoft.com/en-us/windows/apps/publish))
   - Submission Options ([Manage submission options - UWP applications | Microsoft Docs](https://docs.microsoft.com/windows/uwp/publish/manage-submission-options))
 
 11. Under the packages section you will be asked to upload your `.appxupload`. Make sure that your `.appxupload`…

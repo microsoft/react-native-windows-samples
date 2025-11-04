@@ -1,4 +1,4 @@
----
+﻿---
 id: ReactPropertyBagHelper
 title: ReactPropertyBagHelper
 ---
@@ -34,3 +34,4 @@ Gets atomic [`IReactPropertyName`](IReactPropertyName) for the namespace `ns` an
 
 Gets an atomic [`IReactPropertyNamespace`](IReactPropertyNamespace) for a provided `namespaceName`.
 Consider using module name as the namespace for module-specific properties.
+

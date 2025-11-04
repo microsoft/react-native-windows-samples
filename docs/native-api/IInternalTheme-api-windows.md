@@ -1,4 +1,4 @@
----
+﻿---
 id: IInternalTheme
 title: IInternalTheme
 ---
@@ -12,3 +12,4 @@ Kind: `interface`
 ## Methods
 ### InternalPlatformBrush
 [`IBrush`](IBrush) **`InternalPlatformBrush`**(string platformColor)
+

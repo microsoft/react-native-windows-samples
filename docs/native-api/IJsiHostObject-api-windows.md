@@ -1,4 +1,4 @@
----
+﻿---
 id: IJsiHostObject
 title: IJsiHostObject
 ---
@@ -25,3 +25,4 @@ void **`SetProperty`**([`JsiRuntime`](JsiRuntime) runtime, [`JsiPropertyIdRef`](
 
 ## Referenced by
 - [`JsiRuntime`](JsiRuntime)
+

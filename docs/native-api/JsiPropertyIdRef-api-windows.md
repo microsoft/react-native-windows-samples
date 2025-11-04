@@ -1,4 +1,4 @@
----
+﻿---
 id: JsiPropertyIdRef
 title: JsiPropertyIdRef
 ---
@@ -20,3 +20,4 @@ Type: `uint64_t`
 ## Referenced by
 - [`IJsiHostObject`](IJsiHostObject)
 - [`JsiRuntime`](JsiRuntime)
+

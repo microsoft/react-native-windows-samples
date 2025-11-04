@@ -1,4 +1,4 @@
----
+﻿---
 id: IReactNotificationArgs
 title: IReactNotificationArgs
 ---
@@ -22,3 +22,4 @@ The notification subscription that can be used to unsubscribe in the notificatio
 
 ## Referenced by
 - [`ReactNotificationHandler`](ReactNotificationHandler)
+

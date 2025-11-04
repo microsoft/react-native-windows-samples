@@ -1,4 +1,4 @@
----
+﻿---
 id: LogHandler
 title: LogHandler
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`LogLevel`](LogLevel) level, string message)
 
 ## Referenced by
 - [`ReactInstanceSettings`](ReactInstanceSettings)
+

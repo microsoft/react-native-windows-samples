@@ -1,4 +1,4 @@
----
+﻿---
 id: IInternalColor
 title: IInternalColor
 ---
@@ -12,3 +12,4 @@ Kind: `interface`
 ## Methods
 ### AsInternalBrush
 [`IBrush`](IBrush) **`AsInternalBrush`**([`Theme`](Theme) theme)
+

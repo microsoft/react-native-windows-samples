@@ -1,4 +1,4 @@
----
+﻿---
 id: HandleCommandDelegate
 title: HandleCommandDelegate
 ---
@@ -14,3 +14,4 @@ void **`Invoke`**([`ComponentView`](ComponentView) source, [`HandleCommandArgs`]
 
 ## Referenced by
 - [`IReactViewComponentBuilder`](IReactViewComponentBuilder)
+

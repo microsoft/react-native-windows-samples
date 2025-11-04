@@ -1,4 +1,4 @@
----
+﻿---
 id: ImageFailedResponse
 title: ImageFailedResponse
 ---
@@ -23,3 +23,4 @@ Use this as a return value from [`IUriImageProvider.GetImageResponseAsync`](IUri
  **`ImageFailedResponse`**(string errorMessage, [`HttpStatusCode`](https://docs.microsoft.com/uwp/api/Windows.Web.Http.HttpStatusCode) responseCode, [`HttpResponseHeaderCollection`](https://docs.microsoft.com/uwp/api/Windows.Web.Http.Headers.HttpResponseHeaderCollection) responseHeaders)
 
 > **EXPERIMENTAL**
+
