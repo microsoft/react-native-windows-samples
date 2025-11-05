@@ -127,7 +127,7 @@ In case you encounter issues migrating to Fabric or due to unsupported controls 
 
 Commit Fabric to Paper for reference: [migrate calculator by anupriya13 · Pull Request #1092 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/pull/1092/commits/450baba033b9c1f0e9b9e882bee91954f03767a1) 
 
-### Third-Party Modules and Community Libraries - General Guidance [Out of Scope for Calculator] 
+### Third-Party Modules and Community Libraries - General Guidance 
 
 When migrating to the New Architecture (Fabric), it's important to verify that all third-party or community modules used in your project are compatible with the new architecture. Modules developed for the old Paper bridge may not function correctly without Fabric support. 
 
