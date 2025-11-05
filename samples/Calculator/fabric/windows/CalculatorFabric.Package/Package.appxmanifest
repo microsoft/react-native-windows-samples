@@ -8,12 +8,12 @@
 
   <Identity
     Name="CalculatorFabric"
-    Publisher="CN=React Native Windows Sample"
+    Publisher="CN=hmalothu"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>CalculatorFabric</DisplayName>
-    <PublisherDisplayName>CN=React Native Windows Sample</PublisherDisplayName>
+    <PublisherDisplayName>hmalothu</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 

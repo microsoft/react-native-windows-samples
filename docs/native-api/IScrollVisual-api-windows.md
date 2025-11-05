@@ -44,7 +44,7 @@ void **`SetMaximumZoomScale`**(float maximumZoomScale)
 void **`SetMinimumZoomScale`**(float minimumZoomScale)
 
 ### SetSnapPoints
-void **`SetSnapPoints`**(bool snapToStart, bool snapToEnd, [`IVectorView`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVectorView-1)<float> offsets, [`SnapAlignment`](SnapAlignment) snapToAlignment)
+void **`SetSnapPoints`**(bool snapToStart, bool snapToEnd, [`IVectorView`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVectorView-1)<float> offsets)
 
 ### TryUpdatePosition
 void **`TryUpdatePosition`**([`Vector3`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Numerics.Vector3) position, bool animate)
@@ -53,6 +53,10 @@ void **`TryUpdatePosition`**([`Vector3`](https://docs.microsoft.com/uwp/api/Wind
 ### `ScrollBeginDrag`
 Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<[`IScrollPositionChangedArgs`](IScrollPositionChangedArgs)>
 ### `ScrollEndDrag`
+Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<[`IScrollPositionChangedArgs`](IScrollPositionChangedArgs)>
+### `ScrollMomentumBegin`
+Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<[`IScrollPositionChangedArgs`](IScrollPositionChangedArgs)>
+### `ScrollMomentumEnd`
 Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<[`IScrollPositionChangedArgs`](IScrollPositionChangedArgs)>
 ### `ScrollPositionChanged`
 Type: [`EventHandler`](https://docs.microsoft.com/uwp/api/Windows.Foundation.EventHandler-1)<[`IScrollPositionChangedArgs`](IScrollPositionChangedArgs)>

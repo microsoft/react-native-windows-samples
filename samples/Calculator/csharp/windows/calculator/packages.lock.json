@@ -29,6 +29,11 @@
           "Microsoft.Web.WebView2": "1.0.1264.42"
         }
       },
+      "boost": {
+        "type": "Transitive",
+        "resolved": "1.83.0",
+        "contentHash": "cy53VNMzysEMvhBixDe8ujPk67Fcj3v6FPHQnH91NYJNLHpc6jxa2xq9ruCaaJjE4M3YrGSHDi4uUSTGBWw6EQ=="
+      },
       "Microsoft.Net.Native.Compiler": {
         "type": "Transitive",
         "resolved": "2.2.12-rel-31116-00",
@@ -136,7 +141,10 @@
         "contentHash": "V/hZioMMAwoKZFmfq/SuMA/mfoNFu4+Aedwdld/tpL8ZheehFab0RlAR3pgsPgOWOU+GjyePNIgyUXM5J/Y3Ig=="
       },
       "common": {
-        "type": "Project"
+        "type": "Project",
+        "dependencies": {
+          "boost": "[1.83.0, )"
+        }
       },
       "fmt": {
         "type": "Project"
@@ -144,6 +152,7 @@
       "folly": {
         "type": "Project",
         "dependencies": {
+          "boost": "[1.83.0, )",
           "fmt": "[1.0.0, )"
         }
       },
@@ -152,7 +161,10 @@
         "dependencies": {
           "Common": "[1.0.0, )",
           "Folly": "[1.0.0, )",
-          "ReactCommon": "[1.0.0, )"
+          "Microsoft.JavaScript.Hermes": "[0.0.0-2505.2001-0e4bc3b9, )",
+          "Microsoft.UI.Xaml": "[2.8.0, )",
+          "ReactCommon": "[1.0.0, )",
+          "boost": "[1.83.0, )"
         }
       },
       "microsoft.reactnative.managed": {
@@ -165,7 +177,8 @@
       "reactcommon": {
         "type": "Project",
         "dependencies": {
-          "Folly": "[1.0.0, )"
+          "Folly": "[1.0.0, )",
+          "boost": "[1.83.0, )"
         }
       }
     },
