@@ -1,6 +1,7 @@
 ---
-id: new-architecture
+id: version-0.80-new-architecture
 title: New vs. Old Architecture
+original_id: new-architecture
 ---
 
 ![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)

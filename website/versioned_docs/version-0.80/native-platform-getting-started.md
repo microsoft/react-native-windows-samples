@@ -17,15 +17,15 @@ Before you get started, make sure you have installed all of the [development dep
 
 Call the following from the place where you want your project directory to live:
 
-<!-- Note, make sure `--react-native-version "XYZ"` are pointing to the correct NPM tags in the command below. -->
+<!-- Note, make sure `--react-native-version XYZ` are pointing to the correct NPM tags in the command below. -->
 
-<!-- 1. For the next version (i.e. in docs/getting-started.md) use "nightly" for the RN version -->
-<!-- 2. For stable versions in versioned_docs use the semantic version, i.e. "^0.73.0" for the RN version -->
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use `nightly` for the RN version -->
+<!-- 2. For stable versions in versioned_docs use the semantic version, i.e. `^0.73.0` for the RN version -->
 
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes create-react-native-library@0.48.9 --react-native-version "nightly" <projectName>
+npx --yes create-react-native-library@0.48.9 --react-native-version ^0.80.0 <projectName>
 ```
 
 > **Note:** Replace `<projectName>` with the name of your library. The rest of this guide will assume you named your project `testlib`.
@@ -50,15 +50,15 @@ cd <projectName>
 
 ### Add React Native for Windows to your project's node dependencies
 
-<!-- Note, make sure "version" is pointing to the correct react-native-windows NPM tag in the command below. -->
+<!-- Note, make sure `version` is pointing to the correct react-native-windows NPM tag in the command below. -->
 
-<!-- 1. For the next version (i.e. in docs/getting-started.md) use "canary" -->
-<!-- 2. For other versions in versioned_docs use the version in the format "^0.XY.0" -->
+<!-- 1. For the next version (i.e. in docs/getting-started.md) use `canary` -->
+<!-- 2. For other versions in versioned_docs use the version in the format `^0.XY.0` -->
 
 Next you'll want to add `react-native-windows` as a dependency:
 
 ```bat
-yarn add react-native-windows@canary --dev
+yarn add react-native-windows@^0.80.0 --dev
 yarn add react-native-windows@* --peer
 yarn install
 ```

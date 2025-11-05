@@ -38,6 +38,7 @@ URL not found https://www.npmjs.com/package/rnpm-plugin-windows while parsing ve
 URL not found https://www.npmjs.com/package/react-native-macos while parsing versioned_docs/version-0.78/rnm-getting-started.md (HTTP 403)
 
 #fix-unbroken.js auto-generated do not edit this line or below
+File not found new-architecture.md while parsing versioned_docs/version-0.80/flyout-component-windows.md
 File not found autolink-windows-cli.md while parsing versioned_docs/version-0.80/getting-started.md
 File not found getting-started.md while parsing versioned_docs/version-0.80/getting-started.md
 File not found init-windows-cli.md while parsing versioned_docs/version-0.80/getting-started.md
@@ -47,6 +48,7 @@ File not found platform.md while parsing versioned_docs/version-0.80/getting-sta
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.80/getting-started.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.80/getting-started.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.80/hermes.md
+File not found new-architecture.md while parsing versioned_docs/version-0.80/init-windows-cli.md
 File not found native-code-language-choice.md while parsing versioned_docs/version-0.80/native-modules.md
 File not found native-modules-advanced.md while parsing versioned_docs/version-0.80/native-modules.md
 File not found native-modules-async.md while parsing versioned_docs/version-0.80/native-modules.md
@@ -63,8 +65,15 @@ File not found native-platform-components.md while parsing versioned_docs/versio
 File not found native-platform-modules.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
 File not found rnw-dependencies.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.80/native-platform-getting-started.md
-File not found autolink-windows-cli.md while parsing versioned_docs/version-0.80/upgrade-app.md
-File not found init-windows-cli.md while parsing versioned_docs/version-0.80/upgrade-app.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.80/new-architecture.md
+File not found getting-started.md while parsing versioned_docs/version-0.80/new-architecture.md
+File not found glyph-component-windows.md while parsing versioned_docs/version-0.80/new-architecture.md
+File not found init-windows-cli.md while parsing versioned_docs/version-0.80/new-architecture.md
+File not found native-platform-getting-started.md while parsing versioned_docs/version-0.80/new-architecture.md
+File not found popup-component-windows.md while parsing versioned_docs/version-0.80/new-architecture.md
+File not found flyout-component-windows.md while parsing versioned_docs/version-0.80/popup-component-windows.md
+File not found new-architecture.md while parsing versioned_docs/version-0.80/popup-component-windows.md
+File not found new-architecture.md while parsing versioned_docs/version-0.80/textinput-component-windows.md
 File not found new-architecture.md while parsing versioned_docs/version-0.79/app-publishing.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.79/autolink-windows-cli.md
 File not found new-architecture.md while parsing versioned_docs/version-0.79/config.md
