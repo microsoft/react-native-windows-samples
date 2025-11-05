@@ -139,7 +139,7 @@ Prefer modules that explicitly state compatibility with React Native 0.80 or hig
 
 If the module is not updated, consider alternative libraries or maintain your own fork until Fabric support is added. 
 
-### Flyout / Popup Behavior - General Guidance [Out of Scope for Calculator] 
+### Flyout / Popup Behavior - General Guidance
 
 In the New Architecture RNW, the Flyout and Popup components have been updated to align with the Modal API for better cross-platform consistency. Any previous usage of Flyout or Popup should be reviewed and replaced with the new Modal-based implementation, ensuring proper layering, dismissal, and accessibility behavior. 
 
