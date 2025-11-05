@@ -6,7 +6,7 @@ original_id: migration-guide
 
 ![Architecture](https://img.shields.io/badge/architecture-new_&_old-green)
 
-### React Native Windows — Migration from Paper (Old Architecture) to Fabric (New Architecture) - Sample Calculator App 
+### React Native Windows — Migration from Paper (Old Architecture) to Fabric (New Architecture)
 
 
 ### Introduction 
@@ -127,7 +127,7 @@ In case you encounter issues migrating to Fabric or due to unsupported controls 
 
 Commit Fabric to Paper for reference: [migrate calculator by anupriya13 · Pull Request #1092 · microsoft/react-native-windows-samples](https://github.com/microsoft/react-native-windows-samples/pull/1092/commits/450baba033b9c1f0e9b9e882bee91954f03767a1) 
 
-### Third-Party Modules and Community Libraries [Out of Scope for Calculator] 
+### Third-Party Modules and Community Libraries - General Guidance 
 
 When migrating to the New Architecture (Fabric), it's important to verify that all third-party or community modules used in your project are compatible with the new architecture. Modules developed for the old Paper bridge may not function correctly without Fabric support. 
 
@@ -139,7 +139,7 @@ Prefer modules that explicitly state compatibility with React Native 0.80 or hig
 
 If the module is not updated, consider alternative libraries or maintain your own fork until Fabric support is added. 
 
-### Flyout / Popup Behavior Update [Out of Scope for Calculator] 
+### Flyout / Popup Behavior - General Guidance
 
 In the New Architecture RNW, the Flyout and Popup components have been updated to align with the Modal API for better cross-platform consistency. Any previous usage of Flyout or Popup should be reviewed and replaced with the new Modal-based implementation, ensuring proper layering, dismissal, and accessibility behavior. 
 
