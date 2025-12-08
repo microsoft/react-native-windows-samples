@@ -54,6 +54,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22.14.0'
+
     - name: Gather environment info
       run: npx envinfo
 
