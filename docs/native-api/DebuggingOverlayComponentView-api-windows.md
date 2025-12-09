@@ -1,4 +1,4 @@
-﻿---
+---
 id: DebuggingOverlayComponentView
 title: DebuggingOverlayComponentView
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: MethodReturnType
 title: MethodReturnType
 ---

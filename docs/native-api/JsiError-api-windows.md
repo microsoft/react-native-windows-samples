@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiError
 title: JsiError
 ---

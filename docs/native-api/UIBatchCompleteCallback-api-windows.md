@@ -1,4 +1,4 @@
-﻿---
+---
 id: UIBatchCompleteCallback
 title: UIBatchCompleteCallback
 ---

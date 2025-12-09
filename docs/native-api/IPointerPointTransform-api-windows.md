@@ -1,4 +1,4 @@
-﻿---
+---
 id: IPointerPointTransform
 title: IPointerPointTransform
 ---

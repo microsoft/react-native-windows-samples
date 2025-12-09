@@ -1,4 +1,4 @@
-﻿---
+---
 id: YogaLayoutableShadowNode
 title: YogaLayoutableShadowNode
 ---

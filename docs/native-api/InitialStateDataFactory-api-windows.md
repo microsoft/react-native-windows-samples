@@ -1,4 +1,4 @@
-﻿---
+---
 id: InitialStateDataFactory
 title: InitialStateDataFactory
 ---

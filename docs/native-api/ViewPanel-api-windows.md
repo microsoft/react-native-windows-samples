@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewPanel
 title: ViewPanel
 ---

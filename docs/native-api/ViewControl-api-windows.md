@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewControl
 title: ViewControl
 ---

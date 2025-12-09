@@ -1,4 +1,4 @@
-﻿---
+---
 id: PortalComponentView
 title: PortalComponentView
 ---

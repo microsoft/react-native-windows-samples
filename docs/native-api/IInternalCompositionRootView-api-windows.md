@@ -1,4 +1,4 @@
-﻿---
+---
 id: IInternalCompositionRootView
 title: IInternalCompositionRootView
 ---

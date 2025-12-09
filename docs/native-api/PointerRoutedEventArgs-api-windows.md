@@ -1,4 +1,4 @@
-﻿---
+---
 id: PointerRoutedEventArgs
 title: PointerRoutedEventArgs
 ---

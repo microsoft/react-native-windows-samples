@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManager
 title: IViewManager
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: FocusNavigationDirection
 title: FocusNavigationDirection
 ---

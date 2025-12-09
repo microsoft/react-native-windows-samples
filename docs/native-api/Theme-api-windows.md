@@ -1,4 +1,4 @@
-﻿---
+---
 id: Theme
 title: Theme
 ---

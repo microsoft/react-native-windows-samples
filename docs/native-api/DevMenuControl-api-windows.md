@@ -1,4 +1,4 @@
-﻿---
+---
 id: DevMenuControl
 title: DevMenuControl
 ---

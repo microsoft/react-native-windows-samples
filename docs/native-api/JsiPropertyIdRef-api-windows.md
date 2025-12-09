@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiPropertyIdRef
 title: JsiPropertyIdRef
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiInitializerDelegate
 title: JsiInitializerDelegate
 ---

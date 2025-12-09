@@ -1,4 +1,4 @@
-﻿---
+---
 id: InstanceCreatedEventArgs
 title: InstanceCreatedEventArgs
 ---

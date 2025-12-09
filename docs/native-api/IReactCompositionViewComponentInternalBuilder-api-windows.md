@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactCompositionViewComponentInternalBuilder
 title: IReactCompositionViewComponentInternalBuilder
 ---

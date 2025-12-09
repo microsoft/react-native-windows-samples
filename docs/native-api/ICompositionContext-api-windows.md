@@ -1,4 +1,4 @@
-﻿---
+---
 id: ICompositionContext
 title: ICompositionContext
 ---

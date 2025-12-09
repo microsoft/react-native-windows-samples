@@ -1,4 +1,4 @@
-﻿---
+---
 id: MethodResultCallback
 title: MethodResultCallback
 ---

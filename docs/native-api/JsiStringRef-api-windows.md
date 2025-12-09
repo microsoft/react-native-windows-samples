@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiStringRef
 title: JsiStringRef
 ---

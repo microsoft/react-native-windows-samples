@@ -1,4 +1,4 @@
-﻿---
+---
 id: QuirkSettings
 title: QuirkSettings
 ---
@@ -51,6 +51,13 @@ Set this setting to false to maintain the behavior from react-native-windows <= 
 > **EXPERIMENTAL**
 
 When running multiple windows from a single UI thread, focusing a native view causes the parent window of that view to get focus as well. Set this setting to true to prevent focus of a blurred window when a view in that window is programmatically focused.
+
+### SetUseRunOnQueueSync
+`static` void **`SetUseRunOnQueueSync`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)
+
+> **EXPERIMENTAL**
+
+By default `react-native-windows` will not call sync JS call: runOnQueueSync.Setting this to true will revert the behavior to previous logic and might result in hang.
 
 ### SetUseRuntimeScheduler
 `static` void **`SetUseRuntimeScheduler`**([`ReactInstanceSettings`](ReactInstanceSettings) settings, bool value)

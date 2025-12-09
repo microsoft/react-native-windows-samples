@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactRootView
 title: ReactRootView
 ---

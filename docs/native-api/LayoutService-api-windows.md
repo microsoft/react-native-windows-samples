@@ -1,4 +1,4 @@
-﻿---
+---
 id: LayoutService
 title: LayoutService
 ---

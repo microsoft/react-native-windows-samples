@@ -1,4 +1,4 @@
-﻿---
+---
 id: IJsiHostObject
 title: IJsiHostObject
 ---

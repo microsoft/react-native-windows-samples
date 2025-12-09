@@ -1,4 +1,4 @@
-﻿---
+---
 id: IInternalComponentView
 title: IInternalComponentView
 ---

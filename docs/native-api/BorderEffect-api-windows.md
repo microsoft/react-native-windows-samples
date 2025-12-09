@@ -1,4 +1,4 @@
-﻿---
+---
 id: BorderEffect
 title: BorderEffect
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: EventEmitterInitializerDelegate
 title: EventEmitterInitializerDelegate
 ---

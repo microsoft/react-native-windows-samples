@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiPreparedJavaScript
 title: JsiPreparedJavaScript
 ---

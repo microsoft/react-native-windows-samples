@@ -1,4 +1,4 @@
-﻿---
+---
 id: DesktopWindowMessage
 title: DesktopWindowMessage
 ---

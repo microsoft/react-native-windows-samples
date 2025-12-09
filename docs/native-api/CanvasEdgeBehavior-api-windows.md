@@ -1,4 +1,4 @@
-﻿---
+---
 id: CanvasEdgeBehavior
 title: CanvasEdgeBehavior
 ---

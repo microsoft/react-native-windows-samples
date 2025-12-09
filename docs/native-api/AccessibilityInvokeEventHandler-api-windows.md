@@ -1,4 +1,4 @@
-﻿---
+---
 id: AccessibilityInvokeEventHandler
 title: AccessibilityInvokeEventHandler
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactViewComponentProvider
 title: ReactViewComponentProvider
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: InstanceLoadedEventArgs
 title: InstanceLoadedEventArgs
 ---

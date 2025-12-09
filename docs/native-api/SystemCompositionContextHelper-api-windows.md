@@ -1,4 +1,4 @@
-﻿---
+---
 id: SystemCompositionContextHelper
 title: SystemCompositionContextHelper
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: IJSValueReader
 title: IJSValueReader
 ---

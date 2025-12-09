@@ -1,4 +1,4 @@
-﻿---
+---
 id: AccessibilityStates
 title: AccessibilityStates
 ---

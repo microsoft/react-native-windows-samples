@@ -1,4 +1,4 @@
-﻿---
+---
 id: ImageSource
 title: ImageSource
 ---

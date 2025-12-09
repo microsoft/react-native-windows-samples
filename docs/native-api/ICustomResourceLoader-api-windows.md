@@ -1,4 +1,4 @@
-﻿---
+---
 id: ICustomResourceLoader
 title: ICustomResourceLoader
 ---

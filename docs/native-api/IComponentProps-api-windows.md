@@ -1,4 +1,4 @@
-﻿---
+---
 id: IComponentProps
 title: IComponentProps
 ---

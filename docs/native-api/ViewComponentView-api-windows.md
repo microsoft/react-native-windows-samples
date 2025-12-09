@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewComponentView
 title: ViewComponentView
 ---

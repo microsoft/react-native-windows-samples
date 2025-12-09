@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactPackageBuilderFabric
 title: IReactPackageBuilderFabric
 ---

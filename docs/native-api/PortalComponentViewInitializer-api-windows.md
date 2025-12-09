@@ -1,4 +1,4 @@
-﻿---
+---
 id: PortalComponentViewInitializer
 title: PortalComponentViewInitializer
 ---

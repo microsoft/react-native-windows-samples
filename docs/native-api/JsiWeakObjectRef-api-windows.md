@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiWeakObjectRef
 title: JsiWeakObjectRef
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactNotificationSubscription
 title: IReactNotificationSubscription
 ---

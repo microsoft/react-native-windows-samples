@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactViewManagerProvider
 title: ReactViewManagerProvider
 ---

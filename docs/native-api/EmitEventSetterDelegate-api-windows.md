@@ -1,4 +1,4 @@
-﻿---
+---
 id: EmitEventSetterDelegate
 title: EmitEventSetterDelegate
 ---

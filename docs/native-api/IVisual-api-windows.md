@@ -1,4 +1,4 @@
-﻿---
+---
 id: IVisual
 title: IVisual
 ---

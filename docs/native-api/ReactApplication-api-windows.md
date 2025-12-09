@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactApplication
 title: ReactApplication
 ---

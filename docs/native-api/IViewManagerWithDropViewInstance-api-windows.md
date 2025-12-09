@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManagerWithDropViewInstance
 title: IViewManagerWithDropViewInstance
 ---

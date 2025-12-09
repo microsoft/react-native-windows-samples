@@ -1,4 +1,4 @@
-﻿---
+---
 id: DynamicAutomationProperties
 title: DynamicAutomationProperties
 ---

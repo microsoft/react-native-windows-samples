@@ -1,4 +1,4 @@
-﻿---
+---
 id: MicrosoftCompositionContextHelper
 title: MicrosoftCompositionContextHelper
 ---

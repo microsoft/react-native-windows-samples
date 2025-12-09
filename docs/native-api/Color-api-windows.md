@@ -1,4 +1,4 @@
-﻿---
+---
 id: Color
 title: Color
 ---

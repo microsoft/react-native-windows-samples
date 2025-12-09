@@ -1,6 +1,6 @@
 ---
-id: BackfaceVisibility
-title: BackfaceVisibility
+id: SnapPointsAlignment
+title: SnapPointsAlignment
 ---
 
 ![Architecture](https://img.shields.io/badge/architecture-new_only-blue)
@@ -9,10 +9,10 @@ Kind: `enum`
 
 | Name |  Value | Description |
 |--|--|--|
-|`Inherit` | 0x0  |  |
-|`Visible` | 0x1  |  |
-|`Hidden` | 0x2  |  |
+|`Near` | 0x0  |  |
+|`Center` | 0x1  |  |
+|`Far` | 0x2  |  |
 
 ## Referenced by
-- [`IVisual`](IVisual)
+- [`IScrollVisual`](IScrollVisual)
 

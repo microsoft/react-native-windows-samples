@@ -1,4 +1,4 @@
-﻿---
+---
 id: StreamImageResponse
 title: StreamImageResponse
 ---

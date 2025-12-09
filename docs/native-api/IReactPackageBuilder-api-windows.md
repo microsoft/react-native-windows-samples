@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactPackageBuilder
 title: IReactPackageBuilder
 ---

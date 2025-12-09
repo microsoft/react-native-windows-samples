@@ -1,4 +1,4 @@
-﻿---
+---
 id: LayoutHandler
 title: LayoutHandler
 ---

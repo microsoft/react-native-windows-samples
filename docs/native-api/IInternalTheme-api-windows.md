@@ -1,4 +1,4 @@
-﻿---
+---
 id: IInternalTheme
 title: IInternalTheme
 ---

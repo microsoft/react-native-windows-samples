@@ -1,4 +1,4 @@
-﻿---
+---
 id: GettingFocusEventArgs
 title: GettingFocusEventArgs
 ---

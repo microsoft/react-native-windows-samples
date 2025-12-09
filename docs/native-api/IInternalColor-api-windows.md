@@ -1,4 +1,4 @@
-﻿---
+---
 id: IInternalColor
 title: IInternalColor
 ---

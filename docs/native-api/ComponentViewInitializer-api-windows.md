@@ -1,4 +1,4 @@
-﻿---
+---
 id: ComponentViewInitializer
 title: ComponentViewInitializer
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: GaussianBlurEffect
 title: GaussianBlurEffect
 ---

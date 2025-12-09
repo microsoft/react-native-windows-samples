@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactPointerEventArgs
 title: ReactPointerEventArgs
 ---

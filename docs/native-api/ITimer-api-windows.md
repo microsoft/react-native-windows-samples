@@ -1,4 +1,4 @@
-﻿---
+---
 id: ITimer
 title: ITimer
 ---

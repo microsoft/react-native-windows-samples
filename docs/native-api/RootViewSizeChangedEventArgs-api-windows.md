@@ -1,4 +1,4 @@
-﻿---
+---
 id: RootViewSizeChangedEventArgs
 title: RootViewSizeChangedEventArgs
 ---

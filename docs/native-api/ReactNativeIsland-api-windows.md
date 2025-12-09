@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactNativeIsland
 title: ReactNativeIsland
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: MeasureContentHandler
 title: MeasureContentHandler
 ---

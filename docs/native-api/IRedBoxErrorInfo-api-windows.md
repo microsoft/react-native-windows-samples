@@ -1,4 +1,4 @@
-﻿---
+---
 id: IRedBoxErrorInfo
 title: IRedBoxErrorInfo
 ---

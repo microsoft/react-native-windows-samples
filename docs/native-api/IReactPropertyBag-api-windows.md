@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactPropertyBag
 title: IReactPropertyBag
 ---

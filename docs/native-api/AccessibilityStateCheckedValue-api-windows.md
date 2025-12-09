@@ -1,4 +1,4 @@
-﻿---
+---
 id: AccessibilityStateCheckedValue
 title: AccessibilityStateCheckedValue
 ---

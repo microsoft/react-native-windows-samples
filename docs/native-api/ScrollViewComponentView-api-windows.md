@@ -1,4 +1,4 @@
-﻿---
+---
 id: ScrollViewComponentView
 title: ScrollViewComponentView
 ---

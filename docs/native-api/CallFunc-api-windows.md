@@ -1,4 +1,4 @@
-﻿---
+---
 id: CallFunc
 title: CallFunc
 ---

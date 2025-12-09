@@ -1,4 +1,4 @@
-﻿---
+---
 id: MountChildComponentViewArgs
 title: MountChildComponentViewArgs
 ---

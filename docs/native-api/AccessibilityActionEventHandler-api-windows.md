@@ -1,4 +1,4 @@
-﻿---
+---
 id: AccessibilityActionEventHandler
 title: AccessibilityActionEventHandler
 ---

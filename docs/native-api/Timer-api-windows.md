@@ -1,4 +1,4 @@
-﻿---
+---
 id: Timer
 title: Timer
 ---

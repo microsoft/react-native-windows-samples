@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManagerRequiresNativeLayout
 title: IViewManagerRequiresNativeLayout
 ---

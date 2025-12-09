@@ -1,4 +1,4 @@
-﻿---
+---
 id: UpdateFinalizerDelegate
 title: UpdateFinalizerDelegate
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiValueKind
 title: JsiValueKind
 ---

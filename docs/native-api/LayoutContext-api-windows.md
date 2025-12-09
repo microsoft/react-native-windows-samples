@@ -1,4 +1,4 @@
-﻿---
+---
 id: LayoutContext
 title: LayoutContext
 ---
