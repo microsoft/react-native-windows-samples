@@ -13,7 +13,7 @@ original_id: migration-guide
 
 React Native 0.80 introduced Fabric as the default renderer and completed the transition to the New Architecture (Fabric + TurboModules). For React Native Windows (RNW), this migration replaces the legacy Paper architecture with a modern rendering pipeline that improves performance and memory usage. 
 
-> **Note:** Fabric became the default renderer starting with RNW v0.80. This migration guide applies to migrating from Paper to Fabric for RNW versions supporting Fabric (starting RNW v0.74), including the current version 0.81.
+> **Note:** Starting with RNW v0.80, Fabric became the default renderer. This migration guide applies to migrating from Paper to Fabric for RNW versions supporting Fabric (starting RNW v0.74), including the current version 0.81.
 
 ### Key Concepts 
 
