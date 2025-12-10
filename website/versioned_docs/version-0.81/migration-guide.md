@@ -11,9 +11,9 @@ original_id: migration-guide
 
 ### Introduction 
 
-React Native 0.80 introduces Fabric as the default renderer and completes the transition to the New Architecture (Fabric + TurboModules). For React Native Windows (RNW), this migration replaces the legacy Paper architecture with a modern rendering pipeline that improves performance and memory usage. 
+React Native 0.80 introduced Fabric as the default renderer and completed the transition to the New Architecture (Fabric + TurboModules). For React Native Windows (RNW), this migration replaces the legacy Paper architecture with a modern rendering pipeline that improves performance and memory usage. 
 
-> **Note:** This documentation references RNW v0.80, since Fabric becomes the default renderer starting with this version. However, the migration guide can be generally referred to for migrating from Paper to Fabric beginning with RNW versions supporting Fabric (starting RNW v0.74).
+> **Note:** Fabric became the default renderer starting with RNW v0.80. This migration guide applies to migrating from Paper to Fabric for RNW versions supporting Fabric (starting RNW v0.74), including the current version 0.81.
 
 ### Key Concepts 
 
@@ -35,7 +35,7 @@ React Native 0.80 introduces Fabric as the default renderer and completes the tr
  - React Native CLI ≥ 13.x 
  - Visual Studio 2022 (v17.10 or later) 
  - Windows SDK ≥ 10.0.22621.0 
- - Existing RNW app running on RN < 0.80 (Paper architecture) 
+ - Existing RNW app running on RN < 0.81 (Paper architecture) 
 
 Run yarn install after every update of package.json file 
 
@@ -57,7 +57,7 @@ Before you migrate confirm few things on your Paper project re-confirm that your
 
 
 ### Steps Followed to Migrate to New Architecture (Fabric) 
-- Upgrade Dependencies: Update package.json to use React Native 0.80 and run:
+- Upgrade Dependencies: Update package.json to use React Native 0.81 and run:
   ```bash
   npm install
   ```
@@ -135,7 +135,7 @@ Before using any external module:
 
  Check the module's documentation or GitHub repository for Fabric or TurboModule support. 
 
-Prefer modules that explicitly state compatibility with React Native 0.80 or higher. 
+Prefer modules that explicitly state compatibility with React Native 0.81 or higher (or 0.80+ for Fabric compatibility). 
 
 If the module is not updated, consider alternative libraries or maintain your own fork until Fabric support is added. 
 
