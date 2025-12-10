@@ -126,6 +126,7 @@ WinUI
 WinUI3
 Xcode
 80-native-platform-getting-started
+81-native-platform-getting-started
 sidebar_label
 original_id
 workstream
@@ -148,6 +149,7 @@ anupriya13
 JS/TSX
 migration-guide
 version-0.80-migration-guide
+version-0.81-migration-guide
 WinAppSDK
 18.x
 13.x
@@ -169,5 +171,6 @@ e.g.numeric
 ascii-capable
 url
 VSCode
+v0.81
 v0.80
 v0.74
