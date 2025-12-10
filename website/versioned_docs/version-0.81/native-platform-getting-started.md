@@ -25,7 +25,7 @@ Call the following from the place where you want your project directory to live:
 <!-- See https://www.npmjs.com/package/react-native?activeTab=versions for the RN version tags. -->
 
 ```bat
-npx --yes create-react-native-library@0.48.9 --react-native-version nightly <projectName>
+npx --yes create-react-native-library@0.48.9 --react-native-version ^0.81.0 <projectName>
 ```
 
 > **Note:** Replace `<projectName>` with the name of your library. The rest of this guide will assume you named your project `testlib`.
@@ -58,7 +58,7 @@ cd <projectName>
 Next you'll want to add `react-native-windows` as a dependency:
 
 ```bat
-yarn add react-native-windows@canary --dev
+yarn add react-native-windows@^0.81.0 --dev
 yarn add react-native-windows@* --peer
 yarn install
 ```
