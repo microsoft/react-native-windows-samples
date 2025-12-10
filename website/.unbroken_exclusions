@@ -36,6 +36,7 @@ File not found IViewManagerCreateWithProperties while parsing versioned_docs/ver
 # See issue 1090 about npmjs.com blocking requests with 403
 URL not found https://www.npmjs.com/package/rnpm-plugin-windows while parsing versioned_docs/version-0.60/getting-started.md (HTTP 403)
 URL not found https://www.npmjs.com/package/react-native-macos while parsing versioned_docs/version-0.78/rnm-getting-started.md (HTTP 403)
+URL not found https://www.npmjs.com/package/react-native-windows while parsing versioned_docs/version-0.80/new-architecture.md (HTTP 403)
 
 #fix-unbroken.js auto-generated do not edit this line or below
 File not found new-architecture.md while parsing versioned_docs/version-0.80/flyout-component-windows.md
