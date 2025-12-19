@@ -31,11 +31,11 @@ React Native 0.80 introduced Fabric as the default renderer and completed the tr
 
 ### Prerequisites 
 
-- Node.js ≥ 18.x 
- - React Native CLI ≥ 13.x 
+- Node.js ≥ 22.x 
+ - React Native CLI ≥ 20.x 
  - Visual Studio 2022 (v17.10 or later) 
  - Windows SDK ≥ 10.0.22621.0 
- - Existing RNW app running on RN < 0.81 (Paper architecture) 
+ - Existing RNW app running on RN < 0.81
 
 Run yarn install after every update of package.json file 
 
