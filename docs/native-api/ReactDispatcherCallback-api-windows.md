@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactDispatcherCallback
 title: ReactDispatcherCallback
 ---

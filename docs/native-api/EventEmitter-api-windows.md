@@ -1,4 +1,4 @@
-﻿---
+---
 id: EventEmitter
 title: EventEmitter
 ---

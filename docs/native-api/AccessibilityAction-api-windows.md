@@ -1,4 +1,4 @@
-﻿---
+---
 id: AccessibilityAction
 title: AccessibilityAction
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewShadowNodeFactory
 title: ViewShadowNodeFactory
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: ActivityIndicatorComponentView
 title: ActivityIndicatorComponentView
 ---

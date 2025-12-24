@@ -1,4 +1,4 @@
-﻿---
+---
 id: HandleCommandDelegate
 title: HandleCommandDelegate
 ---

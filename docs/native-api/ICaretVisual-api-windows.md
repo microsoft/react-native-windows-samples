@@ -1,4 +1,4 @@
-﻿---
+---
 id: ICaretVisual
 title: ICaretVisual
 ---

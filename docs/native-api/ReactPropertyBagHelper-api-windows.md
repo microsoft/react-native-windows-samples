@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactPropertyBagHelper
 title: ReactPropertyBagHelper
 ---

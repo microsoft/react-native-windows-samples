@@ -1,4 +1,4 @@
-﻿---
+---
 id: ImageProps
 title: ImageProps
 ---

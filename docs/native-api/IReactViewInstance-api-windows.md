@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactViewInstance
 title: IReactViewInstance
 ---

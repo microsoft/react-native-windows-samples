@@ -1,4 +1,4 @@
-﻿---
+---
 id: IScrollVisual
 title: IScrollVisual
 ---
@@ -28,6 +28,9 @@ void **`ContentSize`**([`Vector2`](https://docs.microsoft.com/uwp/api/Windows.Fo
 ### OnPointerPressed
 void **`OnPointerPressed`**([`PointerRoutedEventArgs`](PointerRoutedEventArgs) args)
 
+### PagingEnabled
+void **`PagingEnabled`**(bool pagingEnabled)
+
 ### ScrollBy
 void **`ScrollBy`**([`Vector3`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Numerics.Vector3) offset, bool animate)
 
@@ -45,6 +48,12 @@ void **`SetMinimumZoomScale`**(float minimumZoomScale)
 
 ### SetSnapPoints
 void **`SetSnapPoints`**(bool snapToStart, bool snapToEnd, [`IVectorView`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Collections.IVectorView-1)<float> offsets)
+
+### SnapToAlignment
+void **`SnapToAlignment`**([`SnapPointsAlignment`](SnapPointsAlignment) alignment)
+
+### SnapToInterval
+void **`SnapToInterval`**(float interval)
 
 ### TryUpdatePosition
 void **`TryUpdatePosition`**([`Vector3`](https://docs.microsoft.com/uwp/api/Windows.Foundation.Numerics.Vector3) position, bool animate)

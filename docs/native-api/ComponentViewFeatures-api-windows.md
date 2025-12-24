@@ -1,4 +1,4 @@
-﻿---
+---
 id: ComponentViewFeatures
 title: ComponentViewFeatures
 ---

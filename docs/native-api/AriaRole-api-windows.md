@@ -1,4 +1,4 @@
-﻿---
+---
 id: AriaRole
 title: AriaRole
 ---

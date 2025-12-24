@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactCreatePropertyValue
 title: ReactCreatePropertyValue
 ---

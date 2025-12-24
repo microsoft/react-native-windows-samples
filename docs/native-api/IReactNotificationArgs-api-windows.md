@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactNotificationArgs
 title: IReactNotificationArgs
 ---

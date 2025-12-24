@@ -1,4 +1,4 @@
-﻿---
+---
 id: RoutedEventArgs
 title: RoutedEventArgs
 ---

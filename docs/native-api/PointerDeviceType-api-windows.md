@@ -1,4 +1,4 @@
-﻿---
+---
 id: PointerDeviceType
 title: PointerDeviceType
 ---

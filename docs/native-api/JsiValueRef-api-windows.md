@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiValueRef
 title: JsiValueRef
 ---

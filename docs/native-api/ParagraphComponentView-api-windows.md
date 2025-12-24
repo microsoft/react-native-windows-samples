@@ -1,4 +1,4 @@
-﻿---
+---
 id: ParagraphComponentView
 title: ParagraphComponentView
 ---

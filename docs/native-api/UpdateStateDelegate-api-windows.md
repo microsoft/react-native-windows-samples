@@ -1,4 +1,4 @@
-﻿---
+---
 id: UpdateStateDelegate
 title: UpdateStateDelegate
 ---

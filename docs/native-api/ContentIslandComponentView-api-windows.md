@@ -1,4 +1,4 @@
-﻿---
+---
 id: ContentIslandComponentView
 title: ContentIslandComponentView
 ---

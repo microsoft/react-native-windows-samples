@@ -1,4 +1,4 @@
-﻿---
+---
 id: AccessibilityValue
 title: AccessibilityValue
 ---

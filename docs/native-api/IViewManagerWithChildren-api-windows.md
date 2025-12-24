@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManagerWithChildren
 title: IViewManagerWithChildren
 ---

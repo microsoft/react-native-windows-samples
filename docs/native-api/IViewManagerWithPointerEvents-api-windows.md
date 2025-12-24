@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManagerWithPointerEvents
 title: IViewManagerWithPointerEvents
 ---

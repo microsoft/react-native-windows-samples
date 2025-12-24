@@ -1,4 +1,4 @@
-﻿---
+---
 id: ImageFailedResponse
 title: ImageFailedResponse
 ---

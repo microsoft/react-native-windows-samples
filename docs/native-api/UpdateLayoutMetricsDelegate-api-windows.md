@@ -1,4 +1,4 @@
-﻿---
+---
 id: UpdateLayoutMetricsDelegate
 title: UpdateLayoutMetricsDelegate
 ---

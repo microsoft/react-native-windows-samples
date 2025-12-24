@@ -1,4 +1,4 @@
-﻿---
+---
 id: ConstantProviderDelegate
 title: ConstantProviderDelegate
 ---

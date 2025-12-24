@@ -1,4 +1,4 @@
-﻿---
+---
 id: Native-API-Reference
 title: Microsoft.ReactNative APIs
 ---
@@ -172,6 +172,7 @@ title: Microsoft.ReactNative APIs
 - [PointerUpdateKind](PointerUpdateKind)
 - [RedBoxErrorType](RedBoxErrorType)
 - [ResourceType](ResourceType)
+- [SnapPointsAlignment](SnapPointsAlignment)
 - [ViewManagerPropertyType](ViewManagerPropertyType)
 
 ## Interfaces

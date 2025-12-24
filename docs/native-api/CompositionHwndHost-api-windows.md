@@ -1,4 +1,4 @@
-﻿---
+---
 id: CompositionHwndHost
 title: CompositionHwndHost
 ---

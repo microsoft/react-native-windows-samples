@@ -1,4 +1,4 @@
-﻿---
+---
 id: BackNavigationHandlerKind
 title: BackNavigationHandlerKind
 ---

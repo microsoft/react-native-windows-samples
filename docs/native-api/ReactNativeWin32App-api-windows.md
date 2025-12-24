@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactNativeWin32App
 title: ReactNativeWin32App
 ---

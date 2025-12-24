@@ -1,4 +1,4 @@
-﻿---
+---
 id: SwitchComponentView
 title: SwitchComponentView
 ---

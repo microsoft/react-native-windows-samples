@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewPropsFactory
 title: ViewPropsFactory
 ---

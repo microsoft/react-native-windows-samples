@@ -1,4 +1,4 @@
-﻿---
+---
 id: ImageResponse
 title: ImageResponse
 ---

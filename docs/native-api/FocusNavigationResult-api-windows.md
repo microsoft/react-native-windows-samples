@@ -1,4 +1,4 @@
-﻿---
+---
 id: FocusNavigationResult
 title: FocusNavigationResult
 ---

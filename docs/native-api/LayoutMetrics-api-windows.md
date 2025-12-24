@@ -1,4 +1,4 @@
-﻿---
+---
 id: LayoutMetrics
 title: LayoutMetrics
 ---

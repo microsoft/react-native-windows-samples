@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewComponentViewInitializer
 title: ViewComponentViewInitializer
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: ComponentView
 title: ComponentView
 ---

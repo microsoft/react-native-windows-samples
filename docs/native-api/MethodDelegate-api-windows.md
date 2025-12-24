@@ -1,4 +1,4 @@
-﻿---
+---
 id: MethodDelegate
 title: MethodDelegate
 ---

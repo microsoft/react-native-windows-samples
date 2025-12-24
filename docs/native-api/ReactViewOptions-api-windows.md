@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactViewOptions
 title: ReactViewOptions
 ---

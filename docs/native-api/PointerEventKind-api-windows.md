@@ -1,4 +1,4 @@
-﻿---
+---
 id: PointerEventKind
 title: PointerEventKind
 ---

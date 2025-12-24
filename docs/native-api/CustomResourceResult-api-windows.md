@@ -1,4 +1,4 @@
-﻿---
+---
 id: CustomResourceResult
 title: CustomResourceResult
 ---

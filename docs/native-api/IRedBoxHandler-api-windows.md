@@ -1,4 +1,4 @@
-﻿---
+---
 id: IRedBoxHandler
 title: IRedBoxHandler
 ---

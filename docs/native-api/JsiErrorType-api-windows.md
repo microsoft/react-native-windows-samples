@@ -1,4 +1,4 @@
-﻿---
+---
 id: JsiErrorType
 title: JsiErrorType
 ---

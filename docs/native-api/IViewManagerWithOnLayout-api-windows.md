@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManagerWithOnLayout
 title: IViewManagerWithOnLayout
 ---

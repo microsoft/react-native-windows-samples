@@ -1,4 +1,4 @@
-﻿---
+---
 id: FocusNavigationReason
 title: FocusNavigationReason
 ---

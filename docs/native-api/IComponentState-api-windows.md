@@ -1,4 +1,4 @@
-﻿---
+---
 id: IComponentState
 title: IComponentState
 ---

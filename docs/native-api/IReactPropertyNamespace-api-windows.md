@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactPropertyNamespace
 title: IReactPropertyNamespace
 ---

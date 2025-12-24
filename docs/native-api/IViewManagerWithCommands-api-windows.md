@@ -1,4 +1,4 @@
-﻿---
+---
 id: IViewManagerWithCommands
 title: IViewManagerWithCommands
 ---

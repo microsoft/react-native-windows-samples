@@ -1,4 +1,4 @@
-﻿---
+---
 id: ViewShadowNodeCloner
 title: ViewShadowNodeCloner
 ---

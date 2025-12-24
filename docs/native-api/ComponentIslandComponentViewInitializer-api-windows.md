@@ -1,4 +1,4 @@
-﻿---
+---
 id: ComponentIslandComponentViewInitializer
 title: ComponentIslandComponentViewInitializer
 ---

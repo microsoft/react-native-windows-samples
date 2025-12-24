@@ -1,4 +1,4 @@
-﻿---
+---
 id: ISpriteVisual
 title: ISpriteVisual
 ---

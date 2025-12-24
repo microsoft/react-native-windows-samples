@@ -1,4 +1,4 @@
-﻿---
+---
 id: ReactNotificationHandler
 title: ReactNotificationHandler
 ---

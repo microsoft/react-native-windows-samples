@@ -1,4 +1,4 @@
-﻿---
+---
 id: RedBoxHelper
 title: RedBoxHelper
 ---

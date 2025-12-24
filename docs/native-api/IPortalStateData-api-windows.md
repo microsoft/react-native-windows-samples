@@ -1,4 +1,4 @@
-﻿---
+---
 id: IPortalStateData
 title: IPortalStateData
 ---

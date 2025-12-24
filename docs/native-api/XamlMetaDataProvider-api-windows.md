@@ -1,4 +1,4 @@
-﻿---
+---
 id: XamlMetaDataProvider
 title: XamlMetaDataProvider
 ---

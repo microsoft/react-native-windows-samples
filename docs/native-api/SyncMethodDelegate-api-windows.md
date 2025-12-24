@@ -1,4 +1,4 @@
-﻿---
+---
 id: SyncMethodDelegate
 title: SyncMethodDelegate
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactViewComponentBuilder
 title: IReactViewComponentBuilder
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: RedBoxErrorType
 title: RedBoxErrorType
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: PointerUpdateKind
 title: PointerUpdateKind
 ---

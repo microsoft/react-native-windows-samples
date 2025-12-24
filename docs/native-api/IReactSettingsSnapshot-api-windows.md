@@ -1,4 +1,4 @@
-﻿---
+---
 id: IReactSettingsSnapshot
 title: IReactSettingsSnapshot
 ---

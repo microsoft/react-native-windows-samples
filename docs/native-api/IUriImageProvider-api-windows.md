@@ -1,4 +1,4 @@
-﻿---
+---
 id: IUriImageProvider
 title: IUriImageProvider
 ---

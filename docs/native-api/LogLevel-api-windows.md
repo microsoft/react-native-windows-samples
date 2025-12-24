@@ -1,4 +1,4 @@
-﻿---
+---
 id: LogLevel
 title: LogLevel
 ---

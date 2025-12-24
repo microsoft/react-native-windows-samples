@@ -1,4 +1,4 @@
-﻿---
+---
 id: ImageSourceType
 title: ImageSourceType
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 id: IJsiByteBuffer
 title: IJsiByteBuffer
 ---
