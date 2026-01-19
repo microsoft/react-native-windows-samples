@@ -53,7 +53,7 @@ Alternatively, you can setup your environment manually:
 Options to install [Node.js](https://nodejs.org) separately:
   - Using [WinGet](https://aka.ms/winget) (_React Native recommended_). To use WinGet, from an elevated Command Prompt, run:
   ```bat
-  winget install OpenJS.NodeJS.LTS --version 22.14.0
+  winget install OpenJS.NodeJS.LTS --version 22.22.0
   ```
   - Using [another package manager](https://nodejs.org/en/download/package-manager/) such as [Scoop](https://scoop.sh/) or [Node Version Switcher (nvs)](https://github.com/jasongin/nvs)
   - Directly from [Node.js](https://nodejs.org/en/download)
