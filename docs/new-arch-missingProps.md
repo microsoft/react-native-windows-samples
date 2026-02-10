@@ -15,30 +15,6 @@ title: Missing Properties
 |:--|:--|
 | enum('visible', 'hidden') | 'visible' |
 
-### `opacity`
-
-Sets the transparency of the view.
-
-| type | required |
-|:--|:--|
-| number | No |
-
-### `selectable`
-
-Lets the user select text, to use the native copy and paste functionality.
-
-| type | default |
-|:--|:--|
-| bool | false |
-
-### `selectionColor`
-
-The highlight color of the text.
-
-| type | required |
-|:--|:--|
-| color | No |
-
 ### `keyboardType`
 
 Determines which keyboard to open, e.g.numeric
