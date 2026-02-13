@@ -1,5 +1,5 @@
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -9,11 +9,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.secondaryLink {
+  color: var(--brand);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.secondaryLink:hover {
+  color: #fff;
 }
 
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    padding: 4rem 1rem;
+  }
 }
