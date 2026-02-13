@@ -1,4 +1,17 @@
+/* ===== Brand Variables ===== */
 :root {
+  --brand: #61dafb;
+  --dark: #282c34;
+  --deepdark: #20232a;
+  --light: #373940;
+  --text: #1a1a1a;
+  --subtle: #6c707b;
+  --divider: #ececec;
+
+  --navbar-background: #111317ee;
+  --navbar-active-item-background: #61dafb11;
+  --sidebar-active-item-background: #e6f7ff;
+
   --ifm-color-primary: #0e53bd;
   --ifm-color-primary-dark: #0c4baa;
   --ifm-color-primary-darker: #0b47a1;
@@ -6,10 +19,35 @@
   --ifm-color-primary-light: #105bd0;
   --ifm-color-primary-lighter: #115fd9;
   --ifm-color-primary-lightest: #1a6bea;
+
+  --ifm-background-color: white;
+  --ifm-font-size-base: 16px;
   --ifm-code-font-size: 95%;
+  --ifm-spacing-horizontal: 16px;
+  --ifm-navbar-item-padding-horizontal: 18px;
+  --ifm-global-radius: 9px;
+  --ifm-code-border-radius: 0.4rem;
+  --ifm-link-hover-decoration: none;
+  --ifm-navbar-background-color: var(--deepdark);
+  --ifm-pre-line-height: 1.4;
+  --ifm-table-head-background: var(--ifm-color-emphasis-100);
+  --ifm-table-border-color: var(--ifm-toc-border-color);
+  --ifm-table-cell-padding: 10px;
+  --ifm-alert-border-radius: 20px;
+  --ifm-navbar-sidebar-width: 100%;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --doc-sidebar-width: 266px !important;
 }
 
+@media (min-width: 340px) {
+  :root {
+    --ifm-navbar-sidebar-width: 340px;
+  }
+}
+
+/* ===== Dark Theme ===== */
 [data-theme='dark'] {
   --ifm-color-primary: #5b9aff;
   --ifm-color-primary-dark: #3884ff;
@@ -18,5 +56,382 @@
   --ifm-color-primary-light: #7eb0ff;
   --ifm-color-primary-lighter: #90bbff;
   --ifm-color-primary-lightest: #c5ddff;
+
+  --subtle: #858993;
+  --navbar-background: #20232aee;
+  --sidebar-active-item-background: #61dafb15;
+
+  --ifm-background-color: #1b1b1d;
+  --ifm-code-background: rgba(255, 255, 255, 0.06);
+  --ifm-toc-border-color: var(--dark);
+  --ifm-color-emphasis-300: var(--dark);
+  --ifm-table-head-background: var(--deepdark);
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  padding: 0;
+}
+
+.navbar.navbar--dark {
+  background-color: var(--navbar-background);
+}
+
+.navbar .navbar__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  backdrop-filter: blur(12px);
+}
+
+.navbar .navbar__title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.navbar .navbar__brand:hover {
+  color: var(--brand);
+}
+
+/* ===== Logo Rotation on Hover ===== */
+.navbar .navbar__logo {
+  width: 38px;
+  height: 34px;
+  transition: transform 0.5s;
+}
+
+.navbar .navbar__brand:hover .navbar__logo {
+  transform: rotate(180deg) scale(0.9);
+}
+
+/* ===== Navbar Items ===== */
+.navbar .navbar__item {
+  border-radius: 32px;
+  padding-inline: 12px;
+  cursor: pointer;
+  transition-property: scale;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.navbar .navbar__item:active {
+  scale: 0.97;
+}
+
+.navbar .navbar__item.navbar__link {
+  font-weight: 400;
+  font-size: 17px;
+  user-select: none;
+}
+
+.navbar .navbar__link {
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.navbar .navbar__link:hover {
+  color: #fff;
+  background-color: var(--dark);
+}
+
+.navbar .navbar__link--active {
+  background-color: var(--navbar-active-item-background);
+}
+
+.navbar .navbar__link--active:hover {
+  color: var(--brand);
+  background-color: var(--navbar-active-item-background);
+}
+
+.navbar .navbar__items {
+  gap: 8px;
+}
+
+/* ===== GitHub Icon Link ===== */
+.navbar .navbar-github-link {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  transition: scale 0.2s;
+}
+
+.navbar .navbar-github-link:hover {
+  background-color: var(--dark);
+}
+
+.navbar .navbar-github-link:active {
+  scale: 0.95;
+}
+
+.navbar .navbar-github-link::after {
+  transition: opacity 0.2s;
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: flex;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Mobile sidebar: show text instead of icon */
+.navbar-sidebar .navbar-github-link::after {
+  content: 'GitHub';
+  background-image: none;
+  height: 20px;
+}
+
+@media (max-width: 996px) {
+  .navbar-github-link {
+    display: none !important;
+  }
+}
+
+/* ===== Navbar Sidebar ===== */
+.navbar--dark {
+  --ifm-menu-link-sublist-icon-filter: inherit;
+  --ifm-menu-color: inherit;
+  --ifm-navbar-background-color: var(--divider);
+}
+
+.navbar-sidebar .navbar-sidebar__brand {
+  background-color: var(--deepdark);
+}
+
+html[data-theme='dark'] .navbar-sidebar {
+  background: var(--ifm-background-color);
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 1416px) {
+  .main-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+  .navbar__inner {
+    max-width: 100% !important;
+    width: 100%;
+    padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar .navbar__item.navbar__link {
+    font-size: 15px;
+  }
+}
+
+/* ===== Content Area ===== */
+.main-wrapper {
+  max-width: 1400px;
+  width: 1400px;
+  align-self: center;
+}
+
+@media (min-width: 997px) {
+  main[class^='docMainContainer'] {
+    max-width: calc(100% - var(--doc-sidebar-width) + 44px);
+  }
+}
+
+/* ===== Markdown Content ===== */
+.markdown a {
+  display: initial;
+  line-height: calc(var(--ifm-font-size-base) + 4px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.markdown a:hover {
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+.markdown strong {
+  font-weight: 600;
+}
+
+.markdown img {
+  border-radius: var(--ifm-global-radius);
+}
+
+.markdown table {
+  display: table;
+  width: 100%;
+}
+
+/* ===== Admonitions ===== */
+.admonition,
+.theme-admonition {
+  border-radius: var(--ifm-alert-border-radius);
+  border: 1px solid var(--ifm-alert-background-color-highlight);
+  box-shadow: none;
+  padding: 28px;
+}
+
+/* ===== Code Blocks ===== */
+.markdown div[class*='codeBlockContainer'] {
+  box-shadow: none;
+  background: none;
+  border-radius: var(--ifm-global-radius);
+}
+
+/* ===== Tabs ===== */
+.markdown .tabs {
+  border-bottom: 1px solid var(--ifm-table-border-color);
+}
+
+.markdown .tabs .tabs__item {
+  font-weight: normal;
+  font-size: 15px;
+  user-select: none;
+}
+
+.markdown .tabs .tabs__item:hover {
+  border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
+}
+
+.markdown .tabs .tabs__item.tabs__item--active {
+  font-weight: 700;
+}
+
+/* ===== Version Banner ===== */
+.theme-doc-version-banner {
+  border: 1px solid rgba(125, 222, 255, 0.21);
+  color: var(--ifm-font-color-base);
+  box-shadow: none;
+  font-size: 15px;
+  text-align: center;
+  border-radius: var(--ifm-alert-border-radius);
+}
+
+/* ===== Pagination Nav ===== */
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+/* ===== Homepage ===== */
+.hero--primary {
+  background: linear-gradient(135deg, var(--deepdark) 0%, #1a3a5c 50%, #0e53bd 100%);
+  color: #fff;
+  padding: 6rem 2rem;
+}
+
+[data-theme='dark'] .hero--primary {
+  background: linear-gradient(135deg, var(--deepdark) 0%, #1a2a3c 50%, #1a3a5c 100%);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.hero .button--secondary {
+  color: var(--deepdark);
+  background-color: var(--brand);
+  border-color: var(--brand);
+  font-size: 1.25rem;
+  padding: 0.75rem 2rem;
+  border-radius: 32px;
+  font-weight: 500;
+  transition: all 0.2s ease-out;
+}
+
+.hero .button--secondary:hover {
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* ===== Feature Cards ===== */
+.feature-card {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--divider);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .feature-card {
+  border-color: var(--dark);
+}
+
+[data-theme='dark'] .feature-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Search Bar Styling ===== */
+.navbar__items div[class^='navbarSearchContainer'] {
+  padding-left: 6px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-500);
+}
+
+/* ===== TOC ===== */
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* ===== Footer ===== */
+.footer--dark {
+  background-color: var(--deepdark);
+}
+
+.footer--dark .footer__title {
+  font-weight: 600;
+}
+
+.footer--dark .footer__link-item {
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.footer--dark .footer__link-item:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* ===== Sidebar ===== */
+.menu__link {
+  border-radius: 8px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--sidebar-active-item-background);
+}
+
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--sidebar-active-item-background);
 }

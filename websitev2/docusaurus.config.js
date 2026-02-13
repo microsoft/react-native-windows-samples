@@ -10,7 +10,8 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://microsoft.github.io',
-  baseUrl: '/react-native-windows/',
+//   baseUrl: '/react-native-windows/', remove it while 
+  baseUrl: '/',
 
   organizationName: 'microsoft',
   projectName: 'react-native-windows',
@@ -48,16 +49,34 @@ const config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        hashed: true,
+        docsRouteBasePath: '/docs',
+        indexBlog: false,
+      }),
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/undraw_online.svg',
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: 'React Native for Windows',
         logo: {
           alt: 'React Native for Windows Logo',
           src: 'img/header_logo.svg',
         },
+        style: 'dark',
         items: [
           {
             type: 'docSidebar',
@@ -94,11 +113,13 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
+            dropdownActiveClassDisabled: true,
           },
           {
             href: repoUrl,
-            label: 'GitHub',
+            'aria-label': 'GitHub repository',
             position: 'right',
+            className: 'navbar-github-link',
           },
         ],
       },
