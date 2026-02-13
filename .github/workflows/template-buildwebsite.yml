@@ -41,11 +41,13 @@ jobs:
       run: ${{github.workspace}}/.github/scripts/CheckUnbrokenExclusions.ps1
 
     - name: Check for Broken Links (Docs)
+      timeout-minutes: 15
       run: npx unbroken --parse-ids
       working-directory: ./docs
 
     - name: Check for Broken Links (Website)
       if: success() || failure()
+      timeout-minutes: 15
       run: npx unbroken --parse-ids
       working-directory: ./website
 
