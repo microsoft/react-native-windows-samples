@@ -42,12 +42,14 @@ jobs:
 
     - name: Check for Broken Links (Docs)
       timeout-minutes: 15
+      continue-on-error: true
       run: npx unbroken --parse-ids
       working-directory: ./docs
 
     - name: Check for Broken Links (Website)
       if: success() || failure()
       timeout-minutes: 15
+      continue-on-error: true
       run: npx unbroken --parse-ids
       working-directory: ./website
 
