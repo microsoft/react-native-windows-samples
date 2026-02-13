@@ -71,9 +71,6 @@
   },
   "apis": {
     "Components": [
-      "flyout-component",
-      "glyph-component",
-      "popup-component",
       "textinput-component"
     ],
     "JavaScript API": [

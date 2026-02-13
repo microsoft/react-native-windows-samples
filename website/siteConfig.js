@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const defaultVersionShown = "0.81";
+const defaultVersionShown = "0.82";
 const repoUrl = "https://github.com/microsoft/react-native-windows";
 
 const siteConfig = {
@@ -28,7 +28,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: "getting-started", label: "Docs" },
-    { doc: "flyout-component", label: "APIs" },
+    { doc: "textinput-component", label: "APIs" },
     { href:"https://devblogs.microsoft.com/react-native/" , label: "Blog" },
     { page: "resources", label: "Resources" },
     { href: repoUrl + "-samples/tree/main/samples", label: "Samples" },
