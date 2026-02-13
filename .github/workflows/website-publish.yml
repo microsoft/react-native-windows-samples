@@ -1,6 +1,7 @@
 name: RNW Website Publish
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
