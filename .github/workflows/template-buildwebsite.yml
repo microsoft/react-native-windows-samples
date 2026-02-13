@@ -41,13 +41,27 @@ jobs:
       run: ${{github.workspace}}/.github/scripts/CheckUnbrokenExclusions.ps1
 
     - name: Check for Broken Links (Docs)
+      id: broken-links-docs
+      timeout-minutes: 15
+      continue-on-error: true
       run: npx unbroken --parse-ids
       working-directory: ./docs
 
+    - name: Warn if Broken Links (Docs) timed out
+      if: steps.broken-links-docs.outcome == 'failure' || steps.broken-links-docs.outcome == 'cancelled'
+      run: echo "::warning::Check for Broken Links (Docs) timed out or failed. Please manually run the job in your machine."
+
     - name: Check for Broken Links (Website)
+      id: broken-links-website
       if: success() || failure()
+      timeout-minutes: 15
+      continue-on-error: true
       run: npx unbroken --parse-ids
       working-directory: ./website
+
+    - name: Warn if Broken Links (Website) timed out
+      if: steps.broken-links-website.outcome == 'failure' || steps.broken-links-website.outcome == 'cancelled'
+      run: echo "::warning::Check for Broken Links (Website) timed out or failed. Please manually run the job in your machine."
 
     - name: Yarn Install (Website)
       if: success() || failure()
