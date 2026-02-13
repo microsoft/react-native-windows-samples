@@ -1,0 +1,4 @@
+!coreapp.md
+
+# See issue 1090 about npmjs.com blocking requests with 403
+URL not found https://www.npmjs.com/package/react-native-windows while parsing new-architecture.md (HTTP 403)
