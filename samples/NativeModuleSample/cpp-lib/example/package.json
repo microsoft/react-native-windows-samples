@@ -8,9 +8,9 @@
     "test:windows": "jest --config jest.config.windows.js"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-native": "0.81.5",
-    "react-native-windows": "0.81.0"
+    "react": "19.1.1",
+    "react-native": "0.82.1",
+    "react-native-windows": "0.82.0-preview.8"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -19,9 +19,9 @@
     "@react-native-community/cli": "17.0.0",
     "@react-native-community/cli-platform-android": "17.0.0",
     "@react-native-community/cli-platform-ios": "17.0.0",
-    "@react-native/babel-preset": "0.81.0",
-    "@react-native/metro-config": "0.81.0",
-    "@react-native/typescript-config": "0.81.0",
+    "@react-native/babel-preset": "0.82.1",
+    "@react-native/metro-config": "0.82.1",
+    "@react-native/typescript-config": "0.82.1",
     "@rnx-kit/jest-preset": "^0.1.17"
   },
   "engines": {

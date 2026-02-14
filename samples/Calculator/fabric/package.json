@@ -12,11 +12,11 @@
     "test:windows": "jest --config jest.config.windows.js"
   },
   "dependencies": {
-    "@react-native/new-app-screen": "0.81.5",
-    "react": "19.1.0",
-    "react-native": "0.81.5",
+    "@react-native/new-app-screen": "0.82.1",
+    "react": "19.1.1",
+    "react-native": "0.82.1",
     "react-native-safe-area-context": "^5.5.2",
-    "react-native-windows": "^0.81.0"
+    "react-native-windows": "0.82.0-preview.8"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
