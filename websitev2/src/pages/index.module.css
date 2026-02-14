@@ -5,6 +5,35 @@
   overflow: hidden;
 }
 
+.twitterFollowBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 32px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.2s;
+  z-index: 1;
+}
+
+.twitterFollowBtn:hover {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.twitterFollowBtn svg {
+  flex-shrink: 0;
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -13,26 +42,181 @@
   margin-top: 1rem;
 }
 
-.secondaryLink {
-  color: var(--brand);
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: color 0.2s;
+.socialLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.secondaryLink:hover {
+.twitterLink,
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 32px;
   color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.twitterLink:hover,
+.githubLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  text-decoration: none;
 }
 
 .features {
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding: 3rem 0 4rem;
   width: 100%;
 }
 
+.featureCard {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: border-color 0.2s;
+}
+
+.featureCard:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.featureCard h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ===== About Section ===== */
+.aboutSection {
+  padding: 3rem 0;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.aboutSection h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.aboutSection p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.aboutSection a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.aboutSection a:hover {
+  text-decoration: underline;
+}
+
+.telemetryNote {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.85rem !important;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* ===== Resources Section ===== */
+.resourcesSection {
+  padding: 3rem 0;
+}
+
+.resourcesSection h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.resourcesSection h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.resourceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resourceList li {
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.resourceList li:last-child {
+  border-bottom: none;
+}
+
+.resourceList a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.resourceList a:hover {
+  text-decoration: underline;
+}
+
+/* ===== macOS Section ===== */
+.macosSection {
+  padding: 3rem 0;
+}
+
+.macosButton {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 32px;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.macosButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .heroBanner {
     padding: 4rem 1rem;
+  }
+
+  .socialLinks {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .resourcesGrid {
+    grid-template-columns: 1fr;
   }
 }
