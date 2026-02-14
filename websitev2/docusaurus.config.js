@@ -5,7 +5,7 @@ const repoUrl = 'https://github.com/microsoft/react-native-windows';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'React Native for Windows',
+  title: 'React Native Windows',
   tagline: 'Build native Windows apps with Javascript and React',
   favicon: 'img/favicon.ico',
 
@@ -71,9 +71,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'React Native for Windows',
+        title: 'React Native Windows',
         logo: {
-          alt: 'React Native for Windows Logo',
+          alt: 'React Native Windows Logo',
           src: 'img/header_logo.svg',
         },
         style: 'dark',
@@ -148,7 +148,7 @@ const config = {
             ],
           },
           {
-            title: 'React Native for Windows Docs',
+            title: 'React Native Windows Docs',
             items: [
               {
                 label: 'Get Started with Windows',

@@ -207,10 +207,6 @@ html[data-theme='dark'] .navbar-sidebar {
 
 /* ===== Responsive Navbar ===== */
 @media (max-width: 1416px) {
-  .main-wrapper {
-    max-width: 100%;
-    width: 100%;
-  }
   .navbar__inner {
     max-width: 100% !important;
     width: 100%;
@@ -225,10 +221,8 @@ html[data-theme='dark'] .navbar-sidebar {
 }
 
 /* ===== Content Area ===== */
-.main-wrapper {
+main[class^='docMainContainer'] .container {
   max-width: 1400px;
-  width: 1400px;
-  align-self: center;
 }
 
 @media (min-width: 997px) {
@@ -324,22 +318,22 @@ html[data-theme='dark'] .navbar-sidebar {
 }
 
 .hero__title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
 .hero__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .hero .button--secondary {
   color: var(--deepdark);
   background-color: var(--brand);
   border-color: var(--brand);
-  font-size: 1.25rem;
-  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  padding: 0.65rem 1.75rem;
   border-radius: 32px;
   font-weight: 500;
   transition: all 0.2s ease-out;
@@ -349,28 +343,6 @@ html[data-theme='dark'] .navbar-sidebar {
   color: #000;
   background-color: #fff;
   border-color: #fff;
-}
-
-/* ===== Feature Cards ===== */
-.feature-card {
-  background: var(--ifm-background-color);
-  border: 1px solid var(--divider);
-  border-radius: 16px;
-  padding: 2rem;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.feature-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-[data-theme='dark'] .feature-card {
-  border-color: var(--dark);
-}
-
-[data-theme='dark'] .feature-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== Search Bar Styling ===== */
