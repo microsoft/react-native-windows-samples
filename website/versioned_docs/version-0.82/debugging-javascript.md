@@ -6,9 +6,9 @@ original_id: debugging-javascript
 
 ## React Native DevTools
 
-We're excited to share that [React Native DevTools](https://reactnative.dev/docs/react-native-devtools) (the modern Chrome DevTools-based debugger) is now fully supported in React Native Windows!
+We're excited to share that [React Native DevTools](https://reactnative.dev/docs/react-native-devtools) (the modern Chrome DevTools-based debugger) is now fully supported in React Native Windows starting 0.81!
 
-![React Native DevTools](/react-native-windows/img/react-native-devtools.jpg)
+![React Native DevTools](/react-native-windows/img/react-native-devtools-windows.png)
 
 ### What you can do now:
 - **Debug JavaScript** – Set breakpoints, step through code, inspect variables
@@ -25,5 +25,4 @@ Windows developers now get the same debugging experience as Android and iOS. No 
 
 ### Technical details:
 - Works with Hermes engine on both Composition and Paper apps
-- Backward compatible – `hermes.dll` supports both legacy and modern debuggers
 - Based on stable React Native 0.76+ DevTools architecture
