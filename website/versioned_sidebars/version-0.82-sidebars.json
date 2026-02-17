@@ -30,8 +30,7 @@
     ],
     "Advanced Topics": [
       "version-0.82-win10-vm",
-      "version-0.82-hermes",
-      "version-0.82-NuGet"
+      "version-0.82-hermes"
     ],
     "Troubleshooting": [
       "version-0.82-debugging-javascript",
