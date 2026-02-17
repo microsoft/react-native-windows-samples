@@ -44,9 +44,6 @@ URL not found https://www.npmjs.com/package/react-native-windows while parsing v
 #fix-unbroken.js auto-generated do not edit this line or below
 File not found new-architecture.md while parsing versioned_docs/version-0.82/app-publishing.md
 File not found run-windows-cli.md while parsing versioned_docs/version-0.82/autolink-windows-cli.md
-File not found new-architecture.md while parsing versioned_docs/version-0.82/config.md
-File not found new-architecture.md while parsing versioned_docs/version-0.82/debugging-javascript.md
-File not found run-windows-cli.md while parsing versioned_docs/version-0.82/debugging-javascript.md
 File not found getting-started.md while parsing versioned_docs/version-0.82/getting-started.md
 File not found init-windows-cli.md while parsing versioned_docs/version-0.82/getting-started.md
 File not found new-architecture.md while parsing versioned_docs/version-0.82/getting-started.md
@@ -100,10 +97,6 @@ File not found flyout-component-windows.md while parsing versioned_docs/version-
 File not found init-windows-cli.md while parsing versioned_docs/version-0.82/new-architecture.md
 File not found popup-component-windows.md while parsing versioned_docs/version-0.82/new-architecture.md
 File not found glyph-component-windows.md while parsing versioned_docs/version-0.82/new-architecture.md
-File not found getting-started.md while parsing versioned_docs/version-0.82/nuget.md
-File not found init-windows-cli.md while parsing versioned_docs/version-0.82/nuget.md
-File not found new-architecture.md while parsing versioned_docs/version-0.82/nuget.md
-File not found supported-community-modules.md while parsing versioned_docs/version-0.82/nuget.md
 File not found init-windows-cli.md while parsing versioned_docs/version-0.82/react-native-windows-cli.md
 File not found autolink-windows-cli.md while parsing versioned_docs/version-0.82/react-native-windows-cli.md
 File not found codegen-windows-cli.md while parsing versioned_docs/version-0.82/react-native-windows-cli.md
