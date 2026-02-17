@@ -1,7 +1,7 @@
-
 name: RNW Website Publish
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -14,31 +14,21 @@ jobs:
   publish_website:
     name: Website Publish
     runs-on: ubuntu-latest
-
     steps:
     - name: Git Setup
       run: |
         git config --global user.email "53619745+rnbot@users.noreply.github.com"
         git config --global user.name "React-Native-Windows Bot"
-        echo "machine github.com login x-access-token password ${RNBOT_GH_TOKEN}" > ~/.netrc
-      env:
-        RNBOT_GH_TOKEN: ${{ secrets.RNBOT_GH_TOKEN }}
-
-    - name: Checkout Repo
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # required for gh-pages push
-
+        echo "machine github.com login 53619745+rnbot password ${{ secrets.RNBOT_GH_TOKEN }}" > ~/.netrc
+    - name: Git Checkout
+      uses: actions/checkout@v2
     - name: Yarn Install (Website)
       run: yarn install --frozen-lockfile
       working-directory: ./website
-
     - name: Publish to GitHub Pages
       env:
-        GIT_USER: x-access-token
-        GIT_PASS: ${{ secrets.RNBOT_GH_TOKEN }}
+        GIT_USER: 53619745+rnbot
       run: yarn run publish-gh-pages
       working-directory: ./website
-
-    - name: Cleanup Netrc
+    - name: Git Cleanup
       run: rm ~/.netrc
