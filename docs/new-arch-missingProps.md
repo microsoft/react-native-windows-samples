@@ -9,12 +9,6 @@ title: Missing Properties
 
 ## Missing Props List
 
-### `overflow`
-
-| type | default |
-|:--|:--|
-| enum('visible', 'hidden') | 'visible' |
-
 ### `keyboardType`
 
 Determines which keyboard to open, e.g.numeric
