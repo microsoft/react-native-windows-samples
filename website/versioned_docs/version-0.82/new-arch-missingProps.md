@@ -10,7 +10,7 @@ original_id: new-arch-missingProps
 
 ### `keyboardType`
 
-Determines which keyboard to open, e.g.numeric
+Determines which keyboard to open, e.g. numeric
 
 | type | required |
 |:--|:--|

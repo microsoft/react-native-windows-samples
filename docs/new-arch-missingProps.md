@@ -11,7 +11,7 @@ title: Missing Properties
 
 ### `keyboardType`
 
-Determines which keyboard to open, e.g.numeric
+Determines which keyboard to open, e.g. numeric
 
 | type | required |
 |:--|:--|
