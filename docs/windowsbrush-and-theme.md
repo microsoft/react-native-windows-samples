@@ -55,11 +55,11 @@ class MyAppClass extends Component {
   };
 
   componentDidMount() {
-    Appearance.addChangeListener(this.onAppThemeChanged);
+    this._subscription = Appearance.addChangeListener(this.onAppThemeChanged);
   };
 
   componentWillUnmount() {
-    Appearance.addChangeListener(this.onAppThemeChanged);
+    this._subscription?.remove();
   };
 
   onAppThemeChanged = (theme) => {
