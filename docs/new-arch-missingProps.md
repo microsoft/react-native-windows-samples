@@ -17,4 +17,4 @@ Determines which keyboard to open, e.g. numeric
 |:--|:--|
 | enum('default', 'email-address', 'numeric', 'phone-pad', 'ascii-capable', 'numbers-and-punctuation', 'url', 'number-pad', 'name-phone-pad', 'decimal-pad', 'twitter', 'web-search', 'visible-password') | No |
 
-GitHub Issue: [microsoft/react-native-windows#15572](https://github.com/microsoft/react-native-windows/issues/15572)
+GitHub Issue: [Microsoft/react-native-windows#15572](https://github.com/microsoft/react-native-windows/issues/15572)
