@@ -38,7 +38,7 @@ std::string to_string(const NativeModuleSampleCodegen::DataMarshallingExamplesSp
 
 #pragma endregion
 
-REACT_MODULE(DataMarshallingExamples);
+REACT_TURBO_MODULE(DataMarshallingExamples);
 struct DataMarshallingExamples {
   using ModuleSpec = NativeModuleSampleCodegen::DataMarshallingExamplesSpec;
 
