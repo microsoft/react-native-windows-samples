@@ -99,9 +99,6 @@ const sidebars = {
       type: 'category',
       label: 'Components',
       items: [
-        'flyout-component',
-        'glyph-component',
-        'popup-component',
         'textinput-component',
       ],
     },

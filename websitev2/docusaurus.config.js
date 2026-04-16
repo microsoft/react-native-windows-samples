@@ -10,8 +10,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://microsoft.github.io',
-//   baseUrl: '/react-native-windows/', remove it while 
-  baseUrl: '/',
+  baseUrl: '/react-native-windows/',
 
   organizationName: 'microsoft',
   projectName: 'react-native-windows',
@@ -38,8 +37,9 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl:
             'https://github.com/microsoft/react-native-windows-samples/blob/main/docs/',
-          lastVersion: '0.81',
-          onlyIncludeVersions: ['0.81'],
+          lastVersion: '0.83',
+          onlyIncludeVersions: ['0.83'],
+          exclude: ['flyout-component-windows.md'],
         },
         blog: false,
         theme: {
@@ -114,6 +114,13 @@ const config = {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,
+            dropdownItemsAfter: [
+              {
+                href: '/react-native-windows/v1/docs/getting-started',
+                label: '0.82 and older',
+                target: '_blank',
+              },
+            ],
           },
           {
             href: repoUrl,
