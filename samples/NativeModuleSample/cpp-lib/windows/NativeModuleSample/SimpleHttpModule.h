@@ -20,7 +20,7 @@
 
 namespace winrt::NativeModuleSample {
 
-REACT_MODULE(SimpleHttpModule);
+REACT_TURBO_MODULE(SimpleHttpModule);
 struct SimpleHttpModule {
   using ModuleSpec = NativeModuleSampleCodegen::SimpleHttpModuleSpec;
   using Response = NativeModuleSampleCodegen::SimpleHttpModuleSpec_Response;
