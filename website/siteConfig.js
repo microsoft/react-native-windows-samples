@@ -15,7 +15,7 @@ const siteConfig = {
   title: "React Native for Windows",
   tagline: "Build native Windows apps with Javascript and React",
   url: "https://microsoft.github.io",
-  baseUrl: "/react-native-windows/",
+  baseUrl: "/react-native-windows/v1/",
   repoUrl,
   defaultVersionShown,
   // Used for publishing and more
