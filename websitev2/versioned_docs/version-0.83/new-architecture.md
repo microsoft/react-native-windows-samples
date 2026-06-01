@@ -104,7 +104,7 @@ However if a library exposed new native UI, then chances are the library will ne
 
 The following core components were created for and included in React Native for Windows Old Architecture and are not currently supported in the New Architecture:
 
-- [Flyout](flyout-component-windows.md)
+- Flyout
 - Popup
 - Glyph
 

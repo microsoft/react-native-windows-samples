@@ -11,22 +11,29 @@
     5. Clones the deploy repo, replaces content, pushes to gh-pages branch
     6. Restores all config files to their original state
 
-.PARAMETER DeployRepo
-    The GitHub repo SSH/HTTPS URL to deploy to.
-    Default: https://github.com/vineethkuttan/react-native-windows.git
+.PARAMETER GitHubUsername
+    Your GitHub username. Used to construct the deploy repo URL and GitHub Pages URL.
+    If not provided, the script will prompt for it.
 
 .PARAMETER DryRun
     If set, builds everything but does not push to GitHub.
 
 .EXAMPLE
-    .\deploy-site.ps1
-    .\deploy-site.ps1 -DryRun
+    .\deploy-site.ps1 -GitHubUsername myuser
+    .\deploy-site.ps1 -GitHubUsername myuser -DryRun
 #>
 
 param(
-    [string]$DeployRepo = "https://github.com/vineethkuttan/react-native-windows.git",
+    [string]$GitHubUsername,
     [switch]$DryRun
 )
+
+if (-not $GitHubUsername) {
+    $GitHubUsername = Read-Host 'Enter your GitHub username'
+    if (-not $GitHubUsername) {
+        throw 'GitHub username is required.'
+    }
+}
 
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
@@ -40,8 +47,9 @@ function Remove-DirectoryRobust($path) {
     }
 }
 
-$deployOrg = "vineethkuttan"
+$deployOrg = $GitHubUsername
 $deployProject = "react-native-windows"
+$DeployRepo = "https://github.com/$deployOrg/$deployProject.git"
 $deployUrl = "https://$deployOrg.github.io"
 $deployBaseUrl = "/$deployProject/"
 
