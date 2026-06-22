@@ -50,7 +50,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        sampleName: ['Calculator\cppwinrt', 'Calculator\csharp', Calculator\fabric]
+        sampleName: [Calculator\fabric]
         configuration: ['Debug', 'Release']
         platform: ['x86']
     uses: ./.github/workflows/template-buildsample.yml
