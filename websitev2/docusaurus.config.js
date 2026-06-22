@@ -37,8 +37,8 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl:
             'https://github.com/microsoft/react-native-windows-samples/blob/main/docs/',
-          lastVersion: '0.83',
-          onlyIncludeVersions: ['0.83'],
+          lastVersion: '0.84',
+          onlyIncludeVersions: ['0.84', '0.83'],
           exclude: ['flyout-component-windows.md'],
         },
         blog: false,

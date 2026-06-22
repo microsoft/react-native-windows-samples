@@ -15,13 +15,14 @@ The React Native for Windows (RNW) Team strives to provide full support for the 
 | Version | Support Phase | Release Date | Active Support Start | Maintenance Support Start | End of Support |
 | -- | -- | -- | -- | -- | -- |
 | [main](https://www.npmjs.com/package/react-native-windows/v/canary) | [Canary](#canary-support) | *N/A* | *N/A* | *N/A* | *N/A* |
-| [0.83](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 05/27/2026 | 05/27/2026 | *TBD* | *TBD* |
+| [0.84](https://www.npmjs.com/package/react-native-windows/v/latest) | [Active](#active-support) | 06/22/2026 | 06/22/2026 | *TBD* | *TBD* |
+| [0.83](https://www.npmjs.com/package/react-native-windows/v/v0.83-stable) | [Maintenance](#maintenance-support) | 05/27/2026 | 05/27/2026 | 07/31/2026 | 09/30/2026 |
 | [0.82](https://www.npmjs.com/package/react-native-windows/v/v0.82-stable) | [Maintenance](#maintenance-support) | 03/16/2026 | 03/16/2026 | 06/30/2026 | 08/31/2026 |
-| [0.81](https://www.npmjs.com/package/react-native-windows/v/v0.81-stable) | [Maintenance](#maintenance-support) | 12/19/2025 | 12/19/2025 | 04/30/2026 | 06/30/2026 |
-| [0.80](https://www.npmjs.com/package/react-native-windows/v/v0.80-stable) | [Unsupported](#unsupported) | 10/28/2025 | 10/28/2025 | 03/31/2026 | 05/31/2026 |
+| [0.81](https://www.npmjs.com/package/react-native-windows/v/v0.81-stable) | [Unsupported](#unsupported) | 12/19/2025 | 12/19/2025 | 04/30/2026 | 06/30/2026 |
 
 <!--
 // We don't want the table to grow indefinitely, so only keep the last 5 stable (non-main) versions visible above, keep the rest here for posterity.
+| [0.80](https://www.npmjs.com/package/react-native-windows/v/v0.80-stable) | [Unsupported](#unsupported) | 10/28/2025 | 10/28/2025 | 03/31/2026 | 05/31/2026 |
 | [0.79](https://www.npmjs.com/package/react-native-windows/v/v0.79-stable) | [Unsupported](#unsupported) | 06/17/2025 | 06/17/2025 | 11/30/2025 | 01/31/2026 |
 | [0.78](https://www.npmjs.com/package/react-native-windows/v/v0.78-stable) | [Unsupported](#unsupported) | 02/27/2025 | 02/27/2025 | 07/31/2025 | 09/30/2025 |
 | [0.77](https://www.npmjs.com/package/react-native-windows/v/v0.77-stable) | [Unsupported](#unsupported) | 01/24/2025 | 01/24/2025 | 03/30/2025 | 05/31/2025 |
