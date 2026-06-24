@@ -20,7 +20,7 @@
     "react-native-windows": "^0.62.0-0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
+    "@babel/core": "^7.29.6",
     "@babel/runtime": "^7.10.3",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.1.0",
