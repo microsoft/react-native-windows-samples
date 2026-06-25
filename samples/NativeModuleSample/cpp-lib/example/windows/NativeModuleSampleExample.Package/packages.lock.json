@@ -141,6 +141,16 @@
           "Microsoft.WindowsAppSDK.InteractiveExperiences": "1.8.260430001"
         }
       },
+      "nativemodulesample": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.ReactNative": "[0.84.0, )",
+          "Microsoft.ReactNative.Cxx": "[0.84.0, )",
+          "Microsoft.VCRTForwarders.140": "[1.0.2-rc, )",
+          "Microsoft.WindowsAppSDK": "[1.8.260508005, )",
+          "boost": "[1.84.0, )"
+        }
+      },
       "nativemodulesampleexample": {
         "type": "Project",
         "dependencies": {
@@ -149,6 +159,7 @@
           "Microsoft.ReactNative.Cxx": "[0.84.0, )",
           "Microsoft.VCRTForwarders.140": "[1.0.2-rc, )",
           "Microsoft.WindowsAppSDK": "[1.8.260508005, )",
+          "NativeModuleSample": "[1.0.0, )",
           "boost": "[1.84.0, )"
         }
       }

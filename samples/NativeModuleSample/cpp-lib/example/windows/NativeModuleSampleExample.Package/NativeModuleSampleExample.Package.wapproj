@@ -4,6 +4,9 @@
   <PropertyGroup>
     <ProjectGuid>{014a250c-8dfd-4857-83e7-f3c30305f879}</ProjectGuid>
     <DefaultLanguage>en-US</DefaultLanguage>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <TargetPlatformVersion>10.0.26100.0</TargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
     <EntryPointProjectUniqueName>..\NativeModuleSampleExample\NativeModuleSampleExample.vcxproj</EntryPointProjectUniqueName>
     <DebuggerType>NativeOnly</DebuggerType>
     <BackgroundTaskDebugEngines>NativeOnly</BackgroundTaskDebugEngines>
