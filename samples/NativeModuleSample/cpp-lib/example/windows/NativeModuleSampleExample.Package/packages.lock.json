@@ -31,15 +31,15 @@
       },
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.ReactNative.Cxx": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "EleqtgIyUhaZB+29xpbufPVjR5ns12uuC6R6Nbuie5WZWJAgKbNZSH+c97NR+yWPlEKpAlTR5ZOlIcLRnn4rGQ==",
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "/yTcozi0MuUNsCxEehK1kZGApkIlk0pZP1GISnkuW+a6l/nA42mwC0saKympzPrx0erzd0V4NrLRWcs2bYmtaw==",
         "dependencies": {
-          "Microsoft.ReactNative": "0.84.0"
+          "Microsoft.ReactNative": "0.85.0-preview.1"
         }
       },
       "Microsoft.VCRTForwarders.140": {
@@ -144,8 +144,8 @@
       "nativemodulesample": {
         "type": "Project",
         "dependencies": {
-          "Microsoft.ReactNative": "[0.84.0, )",
-          "Microsoft.ReactNative.Cxx": "[0.84.0, )",
+          "Microsoft.ReactNative": "[0.85.0-preview.1, )",
+          "Microsoft.ReactNative.Cxx": "[0.85.0-preview.1, )",
           "Microsoft.VCRTForwarders.140": "[1.0.2-rc, )",
           "Microsoft.WindowsAppSDK": "[1.8.260508005, )",
           "boost": "[1.84.0, )"
@@ -155,8 +155,8 @@
         "type": "Project",
         "dependencies": {
           "Microsoft.JavaScript.Hermes": "[0.0.0-2605.6002-2279da22, )",
-          "Microsoft.ReactNative": "[0.84.0, )",
-          "Microsoft.ReactNative.Cxx": "[0.84.0, )",
+          "Microsoft.ReactNative": "[0.85.0-preview.1, )",
+          "Microsoft.ReactNative.Cxx": "[0.85.0-preview.1, )",
           "Microsoft.VCRTForwarders.140": "[1.0.2-rc, )",
           "Microsoft.WindowsAppSDK": "[1.8.260508005, )",
           "NativeModuleSample": "[1.0.0, )",
@@ -167,8 +167,8 @@
     "UAP,Version=v10.0.17763/win10-arm": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
@@ -193,8 +193,8 @@
     "UAP,Version=v10.0.17763/win10-arm-aot": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
@@ -219,8 +219,8 @@
     "UAP,Version=v10.0.17763/win10-arm64-aot": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
@@ -245,8 +245,8 @@
     "UAP,Version=v10.0.17763/win10-x64": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
@@ -271,8 +271,8 @@
     "UAP,Version=v10.0.17763/win10-x64-aot": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
@@ -297,8 +297,8 @@
     "UAP,Version=v10.0.17763/win10-x86": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
@@ -323,8 +323,8 @@
     "UAP,Version=v10.0.17763/win10-x86-aot": {
       "Microsoft.ReactNative": {
         "type": "Transitive",
-        "resolved": "0.84.0",
-        "contentHash": "eZq5oUB0ht6Pmf9gIUfJOOfkVPQICLogAa4GB5GeNh4Qrf6cPVbmm0hffuWWcafHLGYmQDN9agBvES+qdpCTxg=="
+        "resolved": "0.85.0-preview.1",
+        "contentHash": "pDtNF9gMNC883jUjky7YoIzeuKYNTib0mDMd8ugs5H1LQmELoa2MOUsTnyYRcOe84WidDvN0V/kLbXmz6fjA8w=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Transitive",
