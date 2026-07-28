@@ -27,18 +27,23 @@ const config = {
   // We need to make sure that only one version is loaded for peerDependencies
   // So we block them at the root, and alias them to the versions in example's node_modules
   resolver: {
-    blacklistRE: 
-      modules.map(
-        (m) =>
-          new RegExp(`^${escape(path.join(root, 'node_modules', m))}\\/.*$`)
-      ).concat([
+    blockList:
+      modules.map((m) => {
+        // Normalize separators so the pattern matches metro's forward-slash
+        // normalized module paths on Windows (path.join yields backslashes).
+        const escaped = escape(path.join(root, 'node_modules', m)).replace(
+          /\\\\/g,
+          '[\\\\/]'
+        );
+        return new RegExp(`^${escaped}[\\\\/].*$`);
+      }).concat([
         // This stops "npx @react-native-community/cli run-windows" from causing the metro server to crash if its already running
         new RegExp(
           `${path.resolve(__dirname, 'windows').replace(/[/\\]/g, '/')}.*`,
         ),
         // This prevents "npx @react-native-community/cli run-windows" from hitting: EBUSY: resource busy or locked, open msbuild.ProjectImports.zip or other files produced by msbuild
-        new RegExp(`${rnwPath}/build/.*`),
-        new RegExp(`${rnwPath}/target/.*`),
+        new RegExp(`${rnwPath.replace(/\\/g, '/')}/build/.*`),
+        new RegExp(`${rnwPath.replace(/\\/g, '/')}/target/.*`),
         /.*\.ProjectImports\.zip/,
       ])
     ,
@@ -51,6 +56,44 @@ const config = {
       //
     }
     ),
+
+    // On the windows platform, redirect 'react-native' (and its deep imports)
+    // to 'react-native-windows' so a single renderer / view-config registry
+    // instance is used. Without this, custom native components (e.g. those
+    // created via codegenNativeComponent) can be registered against one module
+    // instance and looked up from another, causing "View config getter callback
+    // for component `X` must be a function (received `undefined`)" at runtime.
+    resolveRequest: (context, moduleName, platform) => {
+      if (platform === 'windows') {
+        if (moduleName === 'react-native') {
+          return context.resolveRequest(
+            { ...context, resolveRequest: undefined },
+            'react-native-windows',
+            platform
+          );
+        }
+        if (moduleName.startsWith('react-native/')) {
+          const redirected = moduleName.replace(
+            'react-native/',
+            'react-native-windows/'
+          );
+          try {
+            return context.resolveRequest(
+              { ...context, resolveRequest: undefined },
+              redirected,
+              platform
+            );
+          } catch (e) {
+            // fall through to default resolution below
+          }
+        }
+      }
+      return context.resolveRequest(
+        { ...context, resolveRequest: undefined },
+        moduleName,
+        platform
+      );
+    },
   },
 
   transformer: {
