@@ -32,6 +32,8 @@ resources:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
+    settings:
+      networkIsolationPolicy: Permissive,CFSClean,CFSClean2,CFSClean3
     pool:
       name: Azure-Pipelines-1ESPT-ExDShared
       image: windows-2025
@@ -44,11 +46,51 @@ extends:
             steps:
               - checkout: self
                 clean: false
-  
+
+              # The Azure Artifacts feed requires authentication, which GitHub
+              # Actions and external contributors do not have. Configure the
+              # registry at build time here only, so the committed sources keep
+              # working on the public npm registry.
+              - task: PowerShell@2
+                displayName: Point Yarn at the Azure Artifacts feed
+                inputs:
+                  targetType: inline
+                  workingDirectory: ./website
+                  script: |
+                    $feed = 'https://pkgs.dev.azure.com/ms/react-native/_packaging/react-native-public/npm/registry/'
+                    $enc = [Text.UTF8Encoding]::new($false)
+
+                    [IO.File]::WriteAllText(
+                      (Join-Path (Get-Location) '.npmrc'),
+                      "registry=$feed`nalways-auth=true`n",
+                      $enc)
+
+                    [IO.File]::WriteAllText(
+                      (Join-Path (Get-Location) '.yarnrc'),
+                      "registry `"$feed`"`n",
+                      $enc)
+
+                    # Yarn v1 fetches the exact `resolved` URLs recorded in
+                    # yarn.lock regardless of registry config, so rewrite them
+                    # or network isolation will block the restore.
+                    $lock = Get-Content -Path yarn.lock -Raw
+                    $lock = $lock.Replace('https://registry.yarnpkg.com/', $feed)
+                    $lock = $lock.Replace('https://registry.npmjs.org/', $feed)
+                    [IO.File]::WriteAllText((Join-Path (Get-Location) 'yarn.lock'), $lock, $enc)
+
+                    if (Select-String -Path yarn.lock -Pattern 'registry\.yarnpkg\.com|registry\.npmjs\.org') {
+                      throw 'yarn.lock still references a public npm registry.'
+                    }
+
+              - task: npmAuthenticate@0
+                displayName: Authenticate to Azure Artifacts feed
+                inputs:
+                  workingFile: ./website/.npmrc
+
               - script: yarn install --frozen-lockfile
                 displayName: Yarn Install (Website)
                 workingDirectory: ./website
-              
+
               - script: yarn build
                 displayName: Yarn Build (Website)
                 workingDirectory: ./website
