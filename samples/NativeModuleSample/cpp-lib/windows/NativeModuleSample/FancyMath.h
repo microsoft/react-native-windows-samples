@@ -21,7 +21,7 @@
 
 namespace winrt::NativeModuleSample {
 
-REACT_MODULE(FancyMath);
+REACT_TURBO_MODULE(FancyMath);
 struct FancyMath {
   using ModuleSpec = NativeModuleSampleCodegen::FancyMathSpec;
 

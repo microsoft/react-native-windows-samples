@@ -160,7 +160,7 @@ Conveniently our new project already includes implementations we can look at (fo
 namespace winrt::testlib
 {
 
-REACT_MODULE(Testlib)
+REACT_TURBO_MODULE(Testlib)
 struct Testlib
 {
   using ModuleSpec = testlibCodegen::TestlibSpec;
@@ -203,7 +203,7 @@ double Testlib::multiply(double a, double b) noexcept {
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-As you can see, the `testlib.h` file defines a `Testlib` struct, attributed with `REACT_MODULE` to signify to React Native for Windows that this struct contains the implementation of the Turbo Native Module named `Testlib`.
+As you can see, the `testlib.h` file defines a `Testlib` struct, attributed with `REACT_TURBO_MODULE` to signify to React Native for Windows that this struct contains the implementation of the Turbo Native Module named `Testlib`.
 
 The `using ModuleSpec = testlibCodegen::TestlibSpec;` line is what makes sure that the `Testlib` struct will fail to compile if it doesn't meet the required API surface of the module.
 
@@ -313,7 +313,7 @@ void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuil
 
 Conveniently our new project already includes the code to include our `Testlib` Turbo Native Module.
 
-The key bit here is the `#include "testlib.h"` include and the call to the `AddAttributedModules` function. This call makes sure that every Turbo Native Module (i.e. every struct attributed with `REACT_MODULE`), from every included header file, gets included in the library's package.
+The key bit here is the `#include "testlib.h"` include and the call to the `AddAttributedModules` function. This call makes sure that every Turbo Native Module (i.e. every struct attributed with `REACT_TURBO_MODULE`), from every included header file, gets included in the library's package.
 
 ### 4. Use the Native Module in your JavaScript
 
