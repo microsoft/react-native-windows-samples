@@ -21,7 +21,7 @@ jobs:
     name: "Check if build is required: ${{ !inputs.skipBuild }}"
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
 
   build_website:
     name: Build Website
@@ -29,7 +29,7 @@ jobs:
     if: ${{ !inputs.skipBuild }}
     runs-on: ${{ inputs.vmImage }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
 
     - name: Spell-check docs
       run: npx markdown-spellcheck "docs/*.md" "!docs/*-api-windows.md" --en-us --ignore-acronyms --ignore-numbers --report --color
