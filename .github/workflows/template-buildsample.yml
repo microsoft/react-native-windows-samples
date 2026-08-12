@@ -44,7 +44,7 @@ jobs:
     name: "Check if build is required: ${{ !inputs.skipBuild }}"
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
 
   build-sample:
     name: Build ${{ inputs.sampleName }} ${{ inputs.configuration }} ${{ inputs.platform }}
@@ -52,10 +52,10 @@ jobs:
     if: ${{ !inputs.skipBuild }}
     runs-on: ${{ inputs.vmImage }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
       with:
         node-version: '22.14.0'
 

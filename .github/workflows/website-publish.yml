@@ -21,7 +21,7 @@ jobs:
         git config --global user.name "React-Native-Windows Bot"
         echo "machine github.com login 53619745+rnbot password ${{ secrets.RNBOT_GH_TOKEN }}" > ~/.netrc
     - name: Git Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2.8.0
     - name: Yarn Install (Website)
       run: yarn install --frozen-lockfile
       working-directory: ./website
