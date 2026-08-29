@@ -161,7 +161,7 @@ Let's pause this and start building our native module:
 ```cpp
 namespace NativeModuleSample
 {
-  REACT_MODULE(SimpleHttpModule);
+  REACT_TURBO_MODULE(SimpleHttpModule);
   struct SimpleHttpModule
   {
     REACT_METHOD(GetHttpResponse);
