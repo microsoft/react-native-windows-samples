@@ -1,7 +1,20 @@
 name: RNW Samples Production CI $(Date:yyyyMMdd).$(Rev:r)
 
-trigger: none
+trigger:
+  branches:
+    include:
+    - main
 pr: none
+
+# Monthly keep-alive run so ADO does not disable the pipeline for inactivity.
+# It is not used for real releases and its time is not significant.
+schedules:
+- cron: '0 9 1 * *'
+  displayName: Monthly keep-alive
+  branches:
+    include:
+    - main
+  always: true
 
 parameters:
   - name: forceCodeQL
