@@ -977,7 +977,7 @@
 
 "@babel/preset-typescript@^7.0.0":
   version "7.29.7"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@babel/preset-typescript/-/preset-typescript-7.29.7.tgz"
+  resolved "https://registry.npmjs.org/@babel/preset-typescript/-/preset-typescript-7.29.7.tgz"
   integrity sha1-3pvh9Ht4XJeex7OnH0zYuuUme2I=
   dependencies:
     "@babel/helper-plugin-utils" "^7.29.7"
@@ -1060,12 +1060,12 @@
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@hapi/hoek/-/hoek-9.3.0.tgz"
+  resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
   integrity sha1-g2iGnctzW+Ln9ct2R9544WeiUfs=
 
 "@hapi/topo@^5.1.0":
   version "5.1.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@hapi/topo/-/topo-5.1.0.tgz"
+  resolved "https://registry.npmjs.org/@hapi/topo/-/topo-5.1.0.tgz"
   integrity sha1-3ESOMyxsbjek3AL9hLqNRLmvsBI=
   dependencies:
     "@hapi/hoek" "^9.0.0"
@@ -1091,7 +1091,7 @@
 
 "@isaacs/ttlcache@^1.4.1":
   version "1.4.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@isaacs/ttlcache/-/ttlcache-1.4.1.tgz"
+  resolved "https://registry.npmjs.org/@isaacs/ttlcache/-/ttlcache-1.4.1.tgz"
   integrity sha1-Ifsj2zTptiIMa6AjoBGKLdNGHqI=
 
 "@istanbuljs/load-nyc-config@^1.0.0":
@@ -1158,7 +1158,7 @@
 
 "@jest/create-cache-key-function@^29.7.0":
   version "29.7.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@jest/create-cache-key-function/-/create-cache-key-function-29.7.0.tgz"
+  resolved "https://registry.npmjs.org/@jest/create-cache-key-function/-/create-cache-key-function-29.7.0.tgz"
   integrity sha1-eTvjgUj6t45l9ArjDDZ4X0rYWfA=
   dependencies:
     "@jest/types" "^29.6.3"
@@ -1332,7 +1332,7 @@
 
 "@jridgewell/source-map@^0.3.3":
   version "0.3.11"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@jridgewell/source-map/-/source-map-0.3.11.tgz"
+  resolved "https://registry.npmjs.org/@jridgewell/source-map/-/source-map-0.3.11.tgz"
   integrity sha1-shg1y9Nttla4V8KtAuvUE8wTqbo=
   dependencies:
     "@jridgewell/gen-mapping" "^0.3.5"
@@ -1352,31 +1352,31 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@microsoft/1ds-core-js@^4.3.0":
-  version "4.4.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/1ds-core-js/-/1ds-core-js-4.4.3.tgz"
-  integrity sha1-4uVAxnLi3V8G9H9iYTirVg5A1z4=
+  version "4.4.5"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/1ds-core-js/-/1ds-core-js-4.4.5.tgz"
+  integrity sha512-3C6damPBgjNFYx89Gve1cBWbASC0bWnkvVm/Ex+nTSht4uDTpcA3HTk0JPg2YQF+07WAsp8CKbEUreo1dSmjfw==
   dependencies:
-    "@microsoft/applicationinsights-core-js" "3.4.3"
+    "@microsoft/applicationinsights-core-js" "3.4.5"
     "@microsoft/applicationinsights-shims" "3.0.1"
     "@microsoft/dynamicproto-js" "^2.0.3"
     "@nevware21/ts-async" ">= 0.5.5 < 0.6.0"
     "@nevware21/ts-utils" ">= 0.14.0 < 2.x"
 
 "@microsoft/1ds-post-js@^4.3.0":
-  version "4.4.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/1ds-post-js/-/1ds-post-js-4.4.3.tgz"
-  integrity sha1-/3LD505NjEkQ3+q0DamOU0H9SHM=
+  version "4.4.5"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/1ds-post-js/-/1ds-post-js-4.4.5.tgz"
+  integrity sha512-WmkL8UpBei/8eFWNmwsryxmeAXjvY02MSgzF0Ryl2ur0cQPQio6lztWnMbjsnPVS0WOfdi0ke2r1xu0SdWX5oA==
   dependencies:
-    "@microsoft/applicationinsights-core-js" "3.4.3"
+    "@microsoft/applicationinsights-core-js" "3.4.5"
     "@microsoft/applicationinsights-shims" "3.0.1"
     "@microsoft/dynamicproto-js" "^2.0.3"
     "@nevware21/ts-async" ">= 0.5.5 < 0.6.0"
     "@nevware21/ts-utils" ">= 0.14.0 < 2.x"
 
-"@microsoft/applicationinsights-core-js@3.4.3":
-  version "3.4.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/applicationinsights-core-js/-/applicationinsights-core-js-3.4.3.tgz"
-  integrity sha1-2tJKf5V4gfubq5ZDh2r6Wws54Lo=
+"@microsoft/applicationinsights-core-js@3.4.5":
+  version "3.4.5"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/applicationinsights-core-js/-/applicationinsights-core-js-3.4.5.tgz"
+  integrity sha512-SFDhIkiiilPszx0u0o9MAzwEZ0gyUmH8NTT1i6fgOeAeqcdLNxwuEznjd3tyekU9/cmByFa4ftiKgxEPBRD7aQ==
   dependencies:
     "@microsoft/applicationinsights-shims" "3.0.1"
     "@microsoft/dynamicproto-js" "^2.0.3"
@@ -1392,21 +1392,21 @@
 
 "@microsoft/dynamicproto-js@^2.0.3":
   version "2.0.5"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/dynamicproto-js/-/dynamicproto-js-2.0.5.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@microsoft/dynamicproto-js/-/dynamicproto-js-2.0.5.tgz"
   integrity sha1-9NCLCwbFcNaerXzSq69BQCUITGc=
   dependencies:
     "@nevware21/ts-utils" ">= 0.14.0 < 2.x"
 
 "@nevware21/ts-async@>= 0.5.5 < 0.6.0":
   version "0.5.5"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@nevware21/ts-async/-/ts-async-0.5.5.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@nevware21/ts-async/-/ts-async-0.5.5.tgz"
   integrity sha1-UJZI48PDqpq2E8AMce7k/pvYo8M=
   dependencies:
     "@nevware21/ts-utils" ">= 0.12.2 < 2.x"
 
 "@nevware21/ts-utils@>= 0.12.2 < 2.x", "@nevware21/ts-utils@>= 0.14.0 < 2.x", "@nevware21/ts-utils@>= 0.9.4 < 2.x":
   version "0.16.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@nevware21/ts-utils/-/ts-utils-0.16.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@nevware21/ts-utils/-/ts-utils-0.16.0.tgz"
   integrity sha1-5KOcjrEi54ESMVx5oAkWI4t/PEw=
 
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
@@ -1418,7 +1418,7 @@
 
 "@nodable/entities@^3.0.0":
   version "3.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@nodable/entities/-/entities-3.0.0.tgz"
+  resolved "https://registry.npmjs.org/@nodable/entities/-/entities-3.0.0.tgz"
   integrity sha1-aUcDvIZNMOrtVcLj3vANvWFJNnA=
 
 "@nodelib/fs.scandir@2.1.5":
@@ -1444,7 +1444,7 @@
 
 "@react-native-community/cli-clean@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-clean/-/cli-clean-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-20.0.0.tgz"
   integrity sha1-5oX1QEGV3tacgdE5ToxeszK3gLw=
   dependencies:
     "@react-native-community/cli-tools" "20.0.0"
@@ -1454,7 +1454,7 @@
 
 "@react-native-community/cli-clean@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-clean/-/cli-clean-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-20.2.0.tgz"
   integrity sha1-aGlRP2V99YeQacJrzcDo0BYfZic=
   dependencies:
     "@react-native-community/cli-tools" "20.2.0"
@@ -1464,7 +1464,7 @@
 
 "@react-native-community/cli-config-android@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-config-android/-/cli-config-android-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-config-android/-/cli-config-android-20.0.0.tgz"
   integrity sha1-dWvY8tXEcCOWRVFhLMSKH+zJp+Q=
   dependencies:
     "@react-native-community/cli-tools" "20.0.0"
@@ -1474,7 +1474,7 @@
 
 "@react-native-community/cli-config-android@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-config-android/-/cli-config-android-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-config-android/-/cli-config-android-20.2.0.tgz"
   integrity sha1-mTFJOWf4riemfBri48+JVPAVTaA=
   dependencies:
     "@react-native-community/cli-tools" "20.2.0"
@@ -1484,7 +1484,7 @@
 
 "@react-native-community/cli-config-apple@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-config-apple/-/cli-config-apple-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-config-apple/-/cli-config-apple-20.0.0.tgz"
   integrity sha1-6u8dtomk8gXPZlMGwE5NcXxdfUY=
   dependencies:
     "@react-native-community/cli-tools" "20.0.0"
@@ -1494,7 +1494,7 @@
 
 "@react-native-community/cli-config-apple@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-config-apple/-/cli-config-apple-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-config-apple/-/cli-config-apple-20.2.0.tgz"
   integrity sha1-IEJLFJYuTP6tFjbN/Ohu/U9qAdA=
   dependencies:
     "@react-native-community/cli-tools" "20.2.0"
@@ -1504,7 +1504,7 @@
 
 "@react-native-community/cli-config@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-config/-/cli-config-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-config/-/cli-config-20.0.0.tgz"
   integrity sha1-iQ4823d5+Ta9UPL+JgHw/dkXs+Y=
   dependencies:
     "@react-native-community/cli-tools" "20.0.0"
@@ -1516,7 +1516,7 @@
 
 "@react-native-community/cli-config@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-config/-/cli-config-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-config/-/cli-config-20.2.0.tgz"
   integrity sha1-m32QJ4ZyQjtbWf8GOnR2sXPKNbs=
   dependencies:
     "@react-native-community/cli-tools" "20.2.0"
@@ -1528,7 +1528,7 @@
 
 "@react-native-community/cli-doctor@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-doctor/-/cli-doctor-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-doctor/-/cli-doctor-20.0.0.tgz"
   integrity sha1-TRkQja//xHJ2VNxPwX+PFwUZ8TA=
   dependencies:
     "@react-native-community/cli-config" "20.0.0"
@@ -1549,7 +1549,7 @@
 
 "@react-native-community/cli-doctor@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-doctor/-/cli-doctor-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-doctor/-/cli-doctor-20.2.0.tgz"
   integrity sha1-knTokvnWyhrZfidv5agnbP4McK8=
   dependencies:
     "@react-native-community/cli-config" "20.2.0"
@@ -1570,7 +1570,7 @@
 
 "@react-native-community/cli-platform-android@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-platform-android/-/cli-platform-android-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-android/-/cli-platform-android-20.0.0.tgz"
   integrity sha1-8vbGZujIeKvzm94fMoEZi6bj1bM=
   dependencies:
     "@react-native-community/cli-config-android" "20.0.0"
@@ -1581,7 +1581,7 @@
 
 "@react-native-community/cli-platform-android@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-platform-android/-/cli-platform-android-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-android/-/cli-platform-android-20.2.0.tgz"
   integrity sha1-R2/rPbZKLcdlzZ5AKeEVXGKFcJI=
   dependencies:
     "@react-native-community/cli-config-android" "20.2.0"
@@ -1592,7 +1592,7 @@
 
 "@react-native-community/cli-platform-apple@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-platform-apple/-/cli-platform-apple-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-apple/-/cli-platform-apple-20.0.0.tgz"
   integrity sha1-l29TUni2ZxcD/OXckYM87dRaEEA=
   dependencies:
     "@react-native-community/cli-config-apple" "20.0.0"
@@ -1603,7 +1603,7 @@
 
 "@react-native-community/cli-platform-apple@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-platform-apple/-/cli-platform-apple-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-apple/-/cli-platform-apple-20.2.0.tgz"
   integrity sha1-lVVPO96egnevbte7chWMvqf8SGM=
   dependencies:
     "@react-native-community/cli-config-apple" "20.2.0"
@@ -1614,21 +1614,21 @@
 
 "@react-native-community/cli-platform-ios@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-platform-ios/-/cli-platform-ios-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-ios/-/cli-platform-ios-20.0.0.tgz"
   integrity sha1-OCwXgcNS711MimNX5VKi5RpyL3U=
   dependencies:
     "@react-native-community/cli-platform-apple" "20.0.0"
 
 "@react-native-community/cli-platform-ios@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-platform-ios/-/cli-platform-ios-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-platform-ios/-/cli-platform-ios-20.2.0.tgz"
   integrity sha1-svPUoAGtx04LcihZ/OVExo/f1eI=
   dependencies:
     "@react-native-community/cli-platform-apple" "20.2.0"
 
 "@react-native-community/cli-server-api@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-server-api/-/cli-server-api-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-server-api/-/cli-server-api-20.0.0.tgz"
   integrity sha1-ZzmeITNBRJ8XhUdqNXU8WLroomA=
   dependencies:
     "@react-native-community/cli-tools" "20.0.0"
@@ -1644,7 +1644,7 @@
 
 "@react-native-community/cli-server-api@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-server-api/-/cli-server-api-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-server-api/-/cli-server-api-20.2.0.tgz"
   integrity sha1-mPKSImmxCM30SKuglTZOn3SlwUQ=
   dependencies:
     "@react-native-community/cli-tools" "20.2.0"
@@ -1660,7 +1660,7 @@
 
 "@react-native-community/cli-tools@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-tools/-/cli-tools-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-20.0.0.tgz"
   integrity sha1-ogqA5Y2gfdDMAsiX6NraIb0om+o=
   dependencies:
     "@vscode/sudo-prompt" "^9.0.0"
@@ -1676,7 +1676,7 @@
 
 "@react-native-community/cli-tools@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-tools/-/cli-tools-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-20.2.0.tgz"
   integrity sha1-89rXmswUe7WNC4gZa5sRjJRMk8A=
   dependencies:
     "@vscode/sudo-prompt" "^9.0.0"
@@ -1692,21 +1692,21 @@
 
 "@react-native-community/cli-types@*", "@react-native-community/cli-types@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-types/-/cli-types-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-types/-/cli-types-20.2.0.tgz"
   integrity sha1-RgMMRXGlUchy2gjir/7fFwxmuIE=
   dependencies:
     joi "^17.2.1"
 
 "@react-native-community/cli-types@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli-types/-/cli-types-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-types/-/cli-types-20.0.0.tgz"
   integrity sha1-84mI0hU4oFN3V3guPkTwiOZxVwg=
   dependencies:
     joi "^17.2.1"
 
 "@react-native-community/cli@*", "@react-native-community/cli@20.2.0":
   version "20.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli/-/cli-20.2.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli/-/cli-20.2.0.tgz"
   integrity sha1-n5XbHn0noZ8UwH966Xit4KbSOz4=
   dependencies:
     "@react-native-community/cli-clean" "20.2.0"
@@ -1727,7 +1727,7 @@
 
 "@react-native-community/cli@20.0.0":
   version "20.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-community/cli/-/cli-20.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native-community/cli/-/cli-20.0.0.tgz"
   integrity sha1-qRVb1j4M9FqvtMxJw5DOs73mTHQ=
   dependencies:
     "@react-native-community/cli-clean" "20.0.0"
@@ -1746,16 +1746,16 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
-"@react-native-windows/cli@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/cli/-/cli-0.85.0-preview.1.tgz"
-  integrity sha1-i1C3ZXccjNPgzEYjQcYuC2b0rL4=
+"@react-native-windows/cli@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/cli/-/cli-0.85.0.tgz"
+  integrity sha512-lrlT7gM7ksGC0swxPq9OjeFphDvY+K08gyq8xglq1iMLAKShu74Wkctg2LZAeZ3FDQC33D/pH84XbBV687Z6GA==
   dependencies:
-    "@react-native-windows/codegen" "0.85.0-preview.1"
-    "@react-native-windows/find-dotnet-tools" "0.85.0-preview.1"
-    "@react-native-windows/fs" "0.85.0-preview.1"
-    "@react-native-windows/package-utils" "0.85.0-preview.1"
-    "@react-native-windows/telemetry" "0.85.0-preview.1"
+    "@react-native-windows/codegen" "0.85.0"
+    "@react-native-windows/find-dotnet-tools" "0.85.0"
+    "@react-native-windows/fs" "0.85.0"
+    "@react-native-windows/package-utils" "0.85.0"
+    "@react-native-windows/telemetry" "0.85.0"
     "@xmldom/xmldom" "^0.8.13"
     chalk "^4.1.0"
     cli-spinners "^2.2.0"
@@ -1774,12 +1774,12 @@
     xml-parser "^1.2.1"
     xpath "^0.0.27"
 
-"@react-native-windows/codegen@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/codegen/-/codegen-0.85.0-preview.1.tgz"
-  integrity sha1-3ftixVNtUOvdmtCKcJUgmer4WS8=
+"@react-native-windows/codegen@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/codegen/-/codegen-0.85.0.tgz"
+  integrity sha512-nmMcWJi+7HFi55fANYURiT3qUotgaNSJc0L37sOhOOuwpzTa357msbdEUc9vY/yMwCtefle1p9OVUg0Ymp7Rbw==
   dependencies:
-    "@react-native-windows/fs" "0.85.0-preview.1"
+    "@react-native-windows/fs" "0.85.0"
     chalk "^4.1.0"
     globby "^11.1.0"
     minimatch "^10.0.3"
@@ -1787,49 +1787,49 @@
     source-map-support "^0.5.19"
     yargs "^16.2.0"
 
-"@react-native-windows/find-dotnet-tools@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/find-dotnet-tools/-/find-dotnet-tools-0.85.0-preview.1.tgz"
-  integrity sha1-fiYS+yW2GPqvXDSZcZcax5Hgulo=
+"@react-native-windows/find-dotnet-tools@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/find-dotnet-tools/-/find-dotnet-tools-0.85.0.tgz"
+  integrity sha512-pag70EDO29Fa+P47YfyfqwLPmzUxuadHtUkLBpUMhFC+EMuqDZtB/Pmy8DeT22nooMg48BmabmBVX7ROT5x0nw==
   dependencies:
-    "@react-native-windows/fs" "0.85.0-preview.1"
+    "@react-native-windows/fs" "0.85.0"
 
-"@react-native-windows/find-repo-root@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/find-repo-root/-/find-repo-root-0.85.0-preview.1.tgz"
-  integrity sha1-cMAfzOCeahJwga22bxP2f3G3FLg=
+"@react-native-windows/find-repo-root@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/find-repo-root/-/find-repo-root-0.85.0.tgz"
+  integrity sha512-EqQB03kqLZSCtpPo/77qRlQG3kLA3cJab70HBqFX0Jp87YNgU1sFU/SSOve/4sWJ/aseqr1nccZqDqpusGMUoQ==
   dependencies:
-    "@react-native-windows/fs" "0.85.0-preview.1"
+    "@react-native-windows/fs" "0.85.0"
     find-up "^4.1.0"
     minimatch "^10.0.3"
 
-"@react-native-windows/fs@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/fs/-/fs-0.85.0-preview.1.tgz"
-  integrity sha1-Bt0z6DrrqnHremu7Rq7GQVwccFo=
+"@react-native-windows/fs@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/fs/-/fs-0.85.0.tgz"
+  integrity sha512-GYKIC7TjUUvLDSmNc3tz3i7l4nAJkPBNnS17D+ABwT50bPUwC5mzZ9LcTIu7keREF7bd3UKGdjKqc4zrmS9MqA==
   dependencies:
     graceful-fs "^4.2.8"
     minimatch "^10.0.3"
 
-"@react-native-windows/package-utils@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/package-utils/-/package-utils-0.85.0-preview.1.tgz"
-  integrity sha1-ckPfmCYOWO6ixDREGU+a8Svpp20=
+"@react-native-windows/package-utils@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/package-utils/-/package-utils-0.85.0.tgz"
+  integrity sha512-yHPnhU4JFB8h9GiRzVpcATkwXuyfEwyPttOzxZ5ZZUOMzKfOhPbiDl5hXRGIwqCWKH+b4HppXqXNcCi3rs1/NQ==
   dependencies:
-    "@react-native-windows/find-repo-root" "0.85.0-preview.1"
-    "@react-native-windows/fs" "0.85.0-preview.1"
+    "@react-native-windows/find-repo-root" "0.85.0"
+    "@react-native-windows/fs" "0.85.0"
     get-monorepo-packages "^1.2.0"
     lodash "^4.17.15"
     minimatch "^10.0.3"
 
-"@react-native-windows/telemetry@0.85.0-preview.1":
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/telemetry/-/telemetry-0.85.0-preview.1.tgz"
-  integrity sha1-fRkKpgskwLMykba3StSdru/kAa8=
+"@react-native-windows/telemetry@0.85.0":
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native-windows/telemetry/-/telemetry-0.85.0.tgz"
+  integrity sha512-IfWFMOM9LO4y6TLgZ9UcrfZxEPmL7ftMe6RXrcqzppUlsfi9ohsGaLvigInO6PlI8+2Do5seam/DjpZMogELGg==
   dependencies:
     "@microsoft/1ds-core-js" "^4.3.0"
     "@microsoft/1ds-post-js" "^4.3.0"
-    "@react-native-windows/fs" "0.85.0-preview.1"
+    "@react-native-windows/fs" "0.85.0"
     "@xmldom/xmldom" "^0.8.13"
     ci-info "^3.2.0"
     envinfo "^7.8.1"
@@ -1840,17 +1840,17 @@
 
 "@react-native/assets-registry@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/assets-registry/-/assets-registry-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/assets-registry/-/assets-registry-0.85.3.tgz"
   integrity sha1-4o2g0pYSC5Z3w8ufTryStjasmH4=
 
 "@react-native/assets@1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/assets/-/assets-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
   integrity sha1-xvm/Y9J0uvyOlwYo3iSYazClXI4=
 
 "@react-native/babel-plugin-codegen@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/babel-plugin-codegen/-/babel-plugin-codegen-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/babel-plugin-codegen/-/babel-plugin-codegen-0.85.3.tgz"
   integrity sha1-hVhIEuCOBLC49EPucy94cBfq8lQ=
   dependencies:
     "@babel/traverse" "^7.29.0"
@@ -1858,7 +1858,7 @@
 
 "@react-native/babel-preset@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/babel-preset/-/babel-preset-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/babel-preset/-/babel-preset-0.85.3.tgz"
   integrity sha1-tOImybmW44zuUb3BBV1KK6JKczs=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -1897,7 +1897,7 @@
 
 "@react-native/codegen@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/codegen/-/codegen-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/codegen/-/codegen-0.85.3.tgz"
   integrity sha1-MWikLSQLZtFZf44pLOcRcfq7Oxw=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -1910,7 +1910,7 @@
 
 "@react-native/community-cli-plugin@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/community-cli-plugin/-/community-cli-plugin-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/community-cli-plugin/-/community-cli-plugin-0.85.3.tgz"
   integrity sha1-vJAI/oI7ygWaszCGElPpvlf4zEY=
   dependencies:
     "@react-native/dev-middleware" "0.85.3"
@@ -1923,12 +1923,12 @@
 
 "@react-native/debugger-frontend@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/debugger-frontend/-/debugger-frontend-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/debugger-frontend/-/debugger-frontend-0.85.3.tgz"
   integrity sha1-yMZqW7dmsiRm/7Ctrw8AdL04tII=
 
 "@react-native/debugger-shell@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/debugger-shell/-/debugger-shell-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/debugger-shell/-/debugger-shell-0.85.3.tgz"
   integrity sha1-rXVfwoCULCQM2DORbdz4moajSx8=
   dependencies:
     cross-spawn "^7.0.6"
@@ -1937,7 +1937,7 @@
 
 "@react-native/dev-middleware@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/dev-middleware/-/dev-middleware-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/dev-middleware/-/dev-middleware-0.85.3.tgz"
   integrity sha1-pYGOpnSwu+rSMFVWl3SLIV7z/Do=
   dependencies:
     "@isaacs/ttlcache" "^1.4.1"
@@ -1955,7 +1955,7 @@
 
 "@react-native/eslint-config@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/eslint-config/-/eslint-config-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/eslint-config/-/eslint-config-0.85.3.tgz"
   integrity sha1-Fbgyp7/QD/epJnhgFnrmeP5GzSs=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -1973,17 +1973,17 @@
 
 "@react-native/eslint-plugin@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/eslint-plugin/-/eslint-plugin-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/eslint-plugin/-/eslint-plugin-0.85.3.tgz"
   integrity sha1-S2P4yEFzwMdlH4mDLpR7AHfntAM=
 
 "@react-native/gradle-plugin@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/gradle-plugin/-/gradle-plugin-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/gradle-plugin/-/gradle-plugin-0.85.3.tgz"
   integrity sha1-eflKo4vGi+mzMc/Rl95btTEJRlo=
 
 "@react-native/jest-preset@>=0.85", "@react-native/jest-preset@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/jest-preset/-/jest-preset-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/jest-preset/-/jest-preset-0.85.3.tgz"
   integrity sha1-584C8P3ytR0GCXWY8ko+TyNEeLs=
   dependencies:
     "@jest/create-cache-key-function" "^29.7.0"
@@ -1994,12 +1994,12 @@
 
 "@react-native/js-polyfills@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/js-polyfills/-/js-polyfills-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/js-polyfills/-/js-polyfills-0.85.3.tgz"
   integrity sha1-8+72DuYZ9R94+Nt0iavBkuaFUI8=
 
 "@react-native/metro-babel-transformer@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/metro-babel-transformer/-/metro-babel-transformer-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/metro-babel-transformer/-/metro-babel-transformer-0.85.3.tgz"
   integrity sha1-yXzeZpm1LgmcNcms4A0lpreQoMo=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -2009,7 +2009,7 @@
 
 "@react-native/metro-config@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/metro-config/-/metro-config-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/metro-config/-/metro-config-0.85.3.tgz"
   integrity sha1-DB/km0pXk2ZQHVt3b5Sk03HLuw0=
   dependencies:
     "@react-native/js-polyfills" "0.85.3"
@@ -2019,22 +2019,22 @@
 
 "@react-native/new-app-screen@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/new-app-screen/-/new-app-screen-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/new-app-screen/-/new-app-screen-0.85.3.tgz"
   integrity sha1-4+iEpZ2eGnxiW6opyHhk2PtXLhg=
 
 "@react-native/normalize-colors@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/normalize-colors/-/normalize-colors-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/normalize-colors/-/normalize-colors-0.85.3.tgz"
   integrity sha1-aB9L5sCle1vPFrmTs7yW5aRb86I=
 
 "@react-native/typescript-config@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/typescript-config/-/typescript-config-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/typescript-config/-/typescript-config-0.85.3.tgz"
   integrity sha1-0tTwpO6aB9MzbFw+Nb7cnLWi5Wk=
 
 "@react-native/virtualized-lists@0.85.3":
   version "0.85.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@react-native/virtualized-lists/-/virtualized-lists-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/@react-native/virtualized-lists/-/virtualized-lists-0.85.3.tgz"
   integrity sha1-D+R4oQUF1/08/TneJrZnOh/Q4JE=
   dependencies:
     invariant "^2.2.4"
@@ -2042,7 +2042,7 @@
 
 "@rnx-kit/jest-preset@^0.3.1":
   version "0.3.2"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/jest-preset/-/jest-preset-0.3.2.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/jest-preset/-/jest-preset-0.3.2.tgz"
   integrity sha1-sBa0rI19PgLwnkKn+JYg9imTaeI=
   dependencies:
     "@babel/core" "^7.0.0"
@@ -2054,19 +2054,19 @@
 
 "@rnx-kit/tools-filesystem@^0.2.0":
   version "0.2.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/tools-filesystem/-/tools-filesystem-0.2.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/tools-filesystem/-/tools-filesystem-0.2.0.tgz"
   integrity sha1-jQEv24qNYMUUPDtKcquyo1NCoDU=
 
 "@rnx-kit/tools-node@^3.0.5":
   version "3.0.5"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/tools-node/-/tools-node-3.0.5.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/tools-node/-/tools-node-3.0.5.tgz"
   integrity sha1-8VUJqivjm/DMNM9iMWi3zZi/tzA=
   dependencies:
     "@rnx-kit/types-node" "^1.0.0"
 
 "@rnx-kit/tools-react-native@^2.3.2":
   version "2.3.8"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/tools-react-native/-/tools-react-native-2.3.8.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/tools-react-native/-/tools-react-native-2.3.8.tgz"
   integrity sha1-odg+iB0STS4FgnBum9H0WHZk1iY=
   dependencies:
     "@rnx-kit/tools-filesystem" "^0.2.0"
@@ -2075,7 +2075,7 @@
 
 "@rnx-kit/types-bundle-config@^1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-bundle-config/-/types-bundle-config-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-bundle-config/-/types-bundle-config-1.0.0.tgz"
   integrity sha1-mac1B3DIAfUaYRCvXsPU+Ik6o5A=
   dependencies:
     "@rnx-kit/types-metro-serializer-esbuild" "^1.0.0"
@@ -2085,53 +2085,53 @@
 
 "@rnx-kit/types-kit-config@^1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-kit-config/-/types-kit-config-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-kit-config/-/types-kit-config-1.0.0.tgz"
   integrity sha1-m0DypeiOpXqCusjuKlE2iFrwJDA=
   dependencies:
     "@rnx-kit/types-bundle-config" "^1.0.0"
 
 "@rnx-kit/types-metro-serializer-esbuild@^1.0.0":
   version "1.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-metro-serializer-esbuild/-/types-metro-serializer-esbuild-1.0.2.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-metro-serializer-esbuild/-/types-metro-serializer-esbuild-1.0.2.tgz"
   integrity sha1-rWOu/3XVAW/Yg7ctxJ4dmLkWayU=
 
 "@rnx-kit/types-node@^1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-node/-/types-node-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-node/-/types-node-1.0.0.tgz"
   integrity sha1-huFmhCT7q3/W2hPjIeEZ8uerKOI=
   dependencies:
     "@rnx-kit/types-kit-config" "^1.0.0"
 
 "@rnx-kit/types-plugin-cyclic-dependencies@^1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-plugin-cyclic-dependencies/-/types-plugin-cyclic-dependencies-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-plugin-cyclic-dependencies/-/types-plugin-cyclic-dependencies-1.0.0.tgz"
   integrity sha1-K40SLbKWEet8PcgIa+FC0m14Ep4=
 
 "@rnx-kit/types-plugin-duplicates-checker@^1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-plugin-duplicates-checker/-/types-plugin-duplicates-checker-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-plugin-duplicates-checker/-/types-plugin-duplicates-checker-1.0.0.tgz"
   integrity sha1-sxGSY9QqwXTDv9yFvBJYcoEBbnI=
 
 "@rnx-kit/types-plugin-typescript@^1.0.0":
   version "1.0.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@rnx-kit/types-plugin-typescript/-/types-plugin-typescript-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/@rnx-kit/types-plugin-typescript/-/types-plugin-typescript-1.0.0.tgz"
   integrity sha1-VfjBGSSytLbDyL+jehlE35uEXn8=
 
 "@sideway/address@^4.1.5":
   version "4.1.5"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@sideway/address/-/address-4.1.5.tgz"
+  resolved "https://registry.npmjs.org/@sideway/address/-/address-4.1.5.tgz"
   integrity sha1-S8FJoAdmI87ZnKggi6eA1lqZudU=
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
 "@sideway/formula@^3.0.1":
   version "3.0.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@sideway/formula/-/formula-3.0.1.tgz"
+  resolved "https://registry.npmjs.org/@sideway/formula/-/formula-3.0.1.tgz"
   integrity sha1-gPy8uvfOAx4O8t0psb/Hw/WDYR8=
 
 "@sideway/pinpoint@^2.0.0":
   version "2.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@sideway/pinpoint/-/pinpoint-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/@sideway/pinpoint/-/pinpoint-2.0.0.tgz"
   integrity sha1-z/j/rcNyrSn9P3gneusp5jLMcN8=
 
 "@sinclair/typebox@^0.27.8":
@@ -2361,13 +2361,13 @@
 
 "@vscode/sudo-prompt@^9.0.0":
   version "9.3.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@vscode/sudo-prompt/-/sudo-prompt-9.3.2.tgz"
+  resolved "https://registry.npmjs.org/@vscode/sudo-prompt/-/sudo-prompt-9.3.2.tgz"
   integrity sha1-aSujjfQL01AszE6fCZ+7rtvV8E4=
 
 "@xmldom/xmldom@^0.8.13":
-  version "0.8.13"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@xmldom/xmldom/-/xmldom-0.8.13.tgz"
-  integrity sha1-ANHdlAshjf8uSTCdQQ2LshIVkiU=
+  version "0.8.15"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/@xmldom/xmldom/-/xmldom-0.8.15.tgz"
+  integrity sha1-cev4Bynk6VIh1Rmsmx4erqd4SQc=
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -2378,7 +2378,7 @@ abort-controller@^3.0.0:
 
 accepts@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/accepts/-/accepts-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/accepts/-/accepts-2.0.0.tgz"
   integrity sha1-u89LpQdUZ/PyEx6rPP/HPC9deJU=
   dependencies:
     mime-types "^3.0.0"
@@ -2386,7 +2386,7 @@ accepts@^2.0.0:
 
 accepts@~1.3.8:
   version "1.3.8"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/accepts/-/accepts-1.3.8.tgz"
+  resolved "https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz"
   integrity sha1-C/C+EltnAUrcsLCSHmLbe//hay4=
   dependencies:
     mime-types "~2.1.34"
@@ -2404,7 +2404,7 @@ acorn-jsx@^5.3.2:
 
 agent-base@^7.1.2:
   version "7.1.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/agent-base/-/agent-base-7.1.4.tgz"
+  resolved "https://registry.npmjs.org/agent-base/-/agent-base-7.1.4.tgz"
   integrity sha1-48121MVI7oldPD/Y3B9sW5Ay56g=
 
 ajv@^6.12.4:
@@ -2431,7 +2431,7 @@ ansi-escapes@^4.2.1:
 
 ansi-fragments@^0.2.1:
   version "0.2.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ansi-fragments/-/ansi-fragments-0.2.1.tgz"
+  resolved "https://registry.npmjs.org/ansi-fragments/-/ansi-fragments-0.2.1.tgz"
   integrity sha1-JECcVsTMN4F8PXyqmdiWni3loF4=
   dependencies:
     colorette "^1.0.7"
@@ -2440,7 +2440,7 @@ ansi-fragments@^0.2.1:
 
 ansi-regex@^4.1.0:
   version "4.1.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ansi-regex/-/ansi-regex-4.1.1.tgz"
+  resolved "https://registry.npmjs.org/ansi-regex/-/ansi-regex-4.1.1.tgz"
   integrity sha1-Fk2qyHqy1vbbOimHXi0XZlgtq+0=
 
 ansi-regex@^5.0.0, ansi-regex@^5.0.1:
@@ -2450,14 +2450,14 @@ ansi-regex@^5.0.0, ansi-regex@^5.0.1:
 
 ansi-styles@^3.2.0:
   version "3.2.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ansi-styles/-/ansi-styles-3.2.1.tgz"
+  resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz"
   integrity sha1-QfuyAkPlCxK+DwS43tvwdSDOhB0=
   dependencies:
     color-convert "^1.9.0"
 
 ansi-styles@^3.2.1:
   version "3.2.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ansi-styles/-/ansi-styles-3.2.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ansi-styles/-/ansi-styles-3.2.1.tgz"
   integrity sha1-QfuyAkPlCxK+DwS43tvwdSDOhB0=
   dependencies:
     color-convert "^1.9.0"
@@ -2484,12 +2484,12 @@ anymatch@^3.0.3:
 
 anynum@^1.0.1:
   version "1.0.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/anynum/-/anynum-1.0.1.tgz"
+  resolved "https://registry.npmjs.org/anynum/-/anynum-1.0.1.tgz"
   integrity sha1-KqwA4I3603JsHUYuYNvC+DFlmkQ=
 
 appdirsjs@^1.2.4:
   version "1.2.7"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/appdirsjs/-/appdirsjs-1.2.7.tgz"
+  resolved "https://registry.npmjs.org/appdirsjs/-/appdirsjs-1.2.7.tgz"
   integrity sha1-ULS3lIomumCQ1K7eKuLcKwUb47M=
 
 argparse@^1.0.7:
@@ -2535,12 +2535,12 @@ array-union@^1.0.1:
 
 array-union@^2.1.0:
   version "2.1.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/array-union/-/array-union-2.1.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/array-union/-/array-union-2.1.0.tgz"
   integrity sha1-t5hCCtvrHego2ErNii4j0+/oXo0=
 
 array-uniq@^1.0.1:
   version "1.0.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/array-uniq/-/array-uniq-1.0.3.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/array-uniq/-/array-uniq-1.0.3.tgz"
   integrity sha1-r2rId6Jcx/dOBYiUdThY39sk/bY=
 
 array.prototype.findlast@^1.2.5:
@@ -2606,7 +2606,7 @@ asap@~2.0.6:
 
 astral-regex@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/astral-regex/-/astral-regex-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-1.0.0.tgz"
   integrity sha1-bIw/uCfdQ+45GPJ7gngqt2WKb9k=
 
 async-function@^1.0.0:
@@ -2616,7 +2616,7 @@ async-function@^1.0.0:
 
 async-limiter@~1.0.0:
   version "1.0.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/async-limiter/-/async-limiter-1.0.1.tgz"
+  resolved "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz"
   integrity sha1-3TeelPDbgxCwgpH51kwyCXZmF/0=
 
 available-typed-arrays@^1.0.7:
@@ -2694,7 +2694,7 @@ babel-plugin-polyfill-regenerator@^0.6.5, babel-plugin-polyfill-regenerator@^0.6
 
 babel-plugin-syntax-hermes-parser@0.33.3:
   version "0.33.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/babel-plugin-syntax-hermes-parser/-/babel-plugin-syntax-hermes-parser-0.33.3.tgz"
+  resolved "https://registry.npmjs.org/babel-plugin-syntax-hermes-parser/-/babel-plugin-syntax-hermes-parser-0.33.3.tgz"
   integrity sha1-B2AvgWPMfmPE7BfUdGfyo8XbcOk=
   dependencies:
     hermes-parser "0.33.3"
@@ -2757,7 +2757,7 @@ baseline-browser-mapping@^2.10.38:
 
 bl@^4.1.0:
   version "4.1.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/bl/-/bl-4.1.0.tgz"
+  resolved "https://registry.npmjs.org/bl/-/bl-4.1.0.tgz"
   integrity sha1-RRU1JkGCvsL7vIOmKrmM8R2fezo=
   dependencies:
     buffer "^5.5.0"
@@ -2766,7 +2766,7 @@ bl@^4.1.0:
 
 body-parser@^1.20.3:
   version "1.20.6"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/body-parser/-/body-parser-1.20.6.tgz"
+  resolved "https://registry.npmjs.org/body-parser/-/body-parser-1.20.6.tgz"
   integrity sha1-YMeJx44JktkG2gop1xrgHRXB7XY=
   dependencies:
     bytes "~3.1.2"
@@ -2784,7 +2784,7 @@ body-parser@^1.20.3:
 
 body-parser@^2.2.2:
   version "2.3.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/body-parser/-/body-parser-2.3.0.tgz"
+  resolved "https://registry.npmjs.org/body-parser/-/body-parser-2.3.0.tgz"
   integrity sha1-bYZi9NjDNgKLismqJCUbDKZLpDc=
   dependencies:
     bytes "^3.1.2"
@@ -2844,7 +2844,7 @@ buffer-from@^1.0.0:
 
 buffer@^5.5.0:
   version "5.7.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/buffer/-/buffer-5.7.1.tgz"
+  resolved "https://registry.npmjs.org/buffer/-/buffer-5.7.1.tgz"
   integrity sha1-umLnwTEzBTWCGXFghRqPZI6Z7tA=
   dependencies:
     base64-js "^1.3.1"
@@ -2852,7 +2852,7 @@ buffer@^5.5.0:
 
 bytes@^3.1.2, bytes@~3.1.2, bytes@3.1.2:
   version "3.1.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/bytes/-/bytes-3.1.2.tgz"
+  resolved "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz"
   integrity sha1-iwvuuYYFrfGxKPpDhkA8AJ4CIaU=
 
 call-bind-apply-helpers@^1.0.1, call-bind-apply-helpers@^1.0.2:
@@ -2903,7 +2903,7 @@ caniuse-lite@^1.0.30001799:
 
 chalk@^2.0.1:
   version "2.4.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/chalk/-/chalk-2.4.2.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/chalk/-/chalk-2.4.2.tgz"
   integrity sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=
   dependencies:
     ansi-styles "^3.2.1"
@@ -2934,7 +2934,7 @@ char-regex@^1.0.2:
 
 chrome-launcher@^0.15.2:
   version "0.15.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/chrome-launcher/-/chrome-launcher-0.15.2.tgz"
+  resolved "https://registry.npmjs.org/chrome-launcher/-/chrome-launcher-0.15.2.tgz"
   integrity sha1-TmQE4yIACV/c5/ah4QBPm9Nvpdo=
   dependencies:
     "@types/node" "*"
@@ -2944,7 +2944,7 @@ chrome-launcher@^0.15.2:
 
 chromium-edge-launcher@^0.3.0:
   version "0.3.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/chromium-edge-launcher/-/chromium-edge-launcher-0.3.0.tgz"
+  resolved "https://registry.npmjs.org/chromium-edge-launcher/-/chromium-edge-launcher-0.3.0.tgz"
   integrity sha1-NNXKgUL8BZ6itEgr3LGEOTo5n/4=
   dependencies:
     "@types/node" "*"
@@ -2955,7 +2955,7 @@ chromium-edge-launcher@^0.3.0:
 
 ci-info@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ci-info/-/ci-info-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz"
   integrity sha1-Z6npZL4xpR4V5QENWObxKDQAL0Y=
 
 ci-info@^3.2.0:
@@ -2970,26 +2970,26 @@ cjs-module-lexer@^1.0.0:
 
 cli-cursor@^2.1.0:
   version "2.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cli-cursor/-/cli-cursor-2.1.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cli-cursor/-/cli-cursor-2.1.0.tgz"
   integrity sha1-s12sN2R5+sw+lHR9QdDQ9SOP/LU=
   dependencies:
     restore-cursor "^2.0.0"
 
 cli-cursor@^3.1.0:
   version "3.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cli-cursor/-/cli-cursor-3.1.0.tgz"
+  resolved "https://registry.npmjs.org/cli-cursor/-/cli-cursor-3.1.0.tgz"
   integrity sha1-JkMFp65JDR0Dvwybp8kl0XU68wc=
   dependencies:
     restore-cursor "^3.1.0"
 
 cli-spinners@^2.0.0, cli-spinners@^2.2.0, cli-spinners@^2.5.0:
   version "2.9.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cli-spinners/-/cli-spinners-2.9.2.tgz"
+  resolved "https://registry.npmjs.org/cli-spinners/-/cli-spinners-2.9.2.tgz"
   integrity sha1-F3Oo9LnE1qwxVj31Oz/B15Ri/kE=
 
 cliui@^6.0.0:
   version "6.0.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cliui/-/cliui-6.0.0.tgz"
+  resolved "https://registry.npmjs.org/cliui/-/cliui-6.0.0.tgz"
   integrity sha1-UR1wLAxOQcoVbX0OlgIfI+EyJbE=
   dependencies:
     string-width "^4.2.0"
@@ -2998,7 +2998,7 @@ cliui@^6.0.0:
 
 cliui@^7.0.2:
   version "7.0.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cliui/-/cliui-7.0.4.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cliui/-/cliui-7.0.4.tgz"
   integrity sha1-oCZe5lVHb8gHrqnfPfjfd4OAi08=
   dependencies:
     string-width "^4.2.0"
@@ -3016,7 +3016,7 @@ cliui@^8.0.1:
 
 clone@^1.0.2:
   version "1.0.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/clone/-/clone-1.0.4.tgz"
+  resolved "https://registry.npmjs.org/clone/-/clone-1.0.4.tgz"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
 co@^4.6.0:
@@ -3031,7 +3031,7 @@ collect-v8-coverage@^1.0.0:
 
 color-convert@^1.9.0:
   version "1.9.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/color-convert/-/color-convert-1.9.3.tgz"
+  resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
   integrity sha1-u3GFBpDh8TZWfeYp0tVHHe2kweg=
   dependencies:
     color-name "1.1.3"
@@ -3050,17 +3050,17 @@ color-name@~1.1.4:
 
 color-name@1.1.3:
   version "1.1.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/color-name/-/color-name-1.1.3.tgz"
+  resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz"
   integrity sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
 
 colorette@^1.0.7:
   version "1.4.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/colorette/-/colorette-1.4.0.tgz"
+  resolved "https://registry.npmjs.org/colorette/-/colorette-1.4.0.tgz"
   integrity sha1-UZD7uHJ2JZqGrXAL/yxtb6o/ykA=
 
 command-exists@^1.2.8:
   version "1.2.9"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/command-exists/-/command-exists-1.2.9.tgz"
+  resolved "https://registry.npmjs.org/command-exists/-/command-exists-1.2.9.tgz"
   integrity sha1-xQclrzgIyKsCYP1gsB+/oluVT2k=
 
 commander@^12.0.0:
@@ -3070,7 +3070,7 @@ commander@^12.0.0:
 
 commander@^2.20.0:
   version "2.20.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/commander/-/commander-2.20.3.tgz"
+  resolved "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
   integrity sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=
 
 commander@^9.4.1:
@@ -3080,14 +3080,14 @@ commander@^9.4.1:
 
 compressible@~2.0.18:
   version "2.0.18"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/compressible/-/compressible-2.0.18.tgz"
+  resolved "https://registry.npmjs.org/compressible/-/compressible-2.0.18.tgz"
   integrity sha1-r1PMprBw1MPAdQ+9dyhqbXzEb7o=
   dependencies:
     mime-db ">= 1.43.0 < 2"
 
 compression@^1.7.1:
   version "1.8.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/compression/-/compression-1.8.1.tgz"
+  resolved "https://registry.npmjs.org/compression/-/compression-1.8.1.tgz"
   integrity sha1-SkXZCawWUJGVqaKL2RCUiJwYDXk=
   dependencies:
     bytes "3.1.2"
@@ -3105,7 +3105,7 @@ concat-map@0.0.1:
 
 connect@^3.6.5:
   version "3.7.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/connect/-/connect-3.7.0.tgz"
+  resolved "https://registry.npmjs.org/connect/-/connect-3.7.0.tgz"
   integrity sha1-XUk0iRDKpeB6AYALAw0MNfIEhPg=
   dependencies:
     debug "2.6.9"
@@ -3115,12 +3115,12 @@ connect@^3.6.5:
 
 content-type@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/content-type/-/content-type-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/content-type/-/content-type-2.0.0.tgz"
   integrity sha1-L7Pt5p3/oK94ynxM51iWgGOLVt8=
 
 content-type@~1.0.5:
   version "1.0.5"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/content-type/-/content-type-1.0.5.tgz"
+  resolved "https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz"
   integrity sha1-i3cxYmVtHRCGeEyPI6VM5tc9eRg=
 
 convert-source-map@^2.0.0:
@@ -3137,7 +3137,7 @@ core-js-compat@^3.43.0, core-js-compat@^3.48.0:
 
 cosmiconfig@^9.0.0:
   version "9.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/cosmiconfig/-/cosmiconfig-9.0.2.tgz"
+  resolved "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-9.0.2.tgz"
   integrity sha1-nlYVFjvs9qgiEfsz0vaJR8JdDF4=
   dependencies:
     env-paths "^2.2.1"
@@ -3212,7 +3212,7 @@ data-view-byte-offset@^1.0.1:
 
 dayjs@^1.8.15:
   version "1.11.21"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/dayjs/-/dayjs-1.11.21.tgz"
+  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.21.tgz"
   integrity sha1-V/h1YuYt5288cEvSuNUi/DMGjrI=
 
 debug@^2.2.0:
@@ -3224,7 +3224,7 @@ debug@^2.2.0:
 
 debug@^2.6.9:
   version "2.6.9"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/debug/-/debug-2.6.9.tgz"
+  resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
   dependencies:
     ms "2.0.0"
@@ -3238,14 +3238,14 @@ debug@^4.1.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.4.0, debug@^4.4
 
 debug@2.6.9:
   version "2.6.9"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/debug/-/debug-2.6.9.tgz"
+  resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
   dependencies:
     ms "2.0.0"
 
 decamelize@^1.2.0:
   version "1.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/decamelize/-/decamelize-1.2.0.tgz"
+  resolved "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 dedent@^1.0.0:
@@ -3265,7 +3265,7 @@ deepmerge@^4.2.2, deepmerge@^4.3.0:
 
 defaults@^1.0.3:
   version "1.0.4"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/defaults/-/defaults-1.0.4.tgz"
+  resolved "https://registry.npmjs.org/defaults/-/defaults-1.0.4.tgz"
   integrity sha1-sLAgYsHiqmL/XZUo8PmLqpCXjXo=
   dependencies:
     clone "^1.0.2"
@@ -3290,12 +3290,12 @@ define-properties@^1.1.3, define-properties@^1.2.1:
 
 depd@~2.0.0, depd@2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/depd/-/depd-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz"
   integrity sha1-tpYWPMdXVg0JzyLMj60Vcbeedt8=
 
 destroy@~1.2.0, destroy@1.2.0:
   version "1.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/destroy/-/destroy-1.2.0.tgz"
+  resolved "https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz"
   integrity sha1-SANzVQmti+VSk0xn32FPlOZvoBU=
 
 detect-newline@^3.0.0:
@@ -3310,7 +3310,7 @@ diff-sequences@^29.6.3:
 
 dir-glob@^2.0.0:
   version "2.2.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/dir-glob/-/dir-glob-2.2.2.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/dir-glob/-/dir-glob-2.2.2.tgz"
   integrity sha1-+gnwaUFTyJGLGLoN6vrpR2n8UMQ=
   dependencies:
     path-type "^3.0.0"
@@ -3347,7 +3347,7 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
 
 ee-first@1.1.1:
   version "1.1.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ee-first/-/ee-first-1.1.1.tgz"
+  resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.5.376:
@@ -3367,12 +3367,12 @@ emoji-regex@^8.0.0:
 
 encodeurl@~1.0.2:
   version "1.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/encodeurl/-/encodeurl-1.0.2.tgz"
+  resolved "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
 
 encodeurl@~2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/encodeurl/-/encodeurl-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz"
   integrity sha1-e46omAd9fkCdOsRUdOo46vCFelg=
 
 end-of-stream@^1.1.0:
@@ -3384,12 +3384,12 @@ end-of-stream@^1.1.0:
 
 env-paths@^2.2.1:
   version "2.2.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/env-paths/-/env-paths-2.2.1.tgz"
+  resolved "https://registry.npmjs.org/env-paths/-/env-paths-2.2.1.tgz"
   integrity sha1-QgOZ1BbOH76bwKB8Yvpo1n/Q+PI=
 
 envinfo@^7.13.0, envinfo@^7.5.0, envinfo@^7.8.1:
   version "7.21.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/envinfo/-/envinfo-7.21.0.tgz"
+  resolved "https://registry.npmjs.org/envinfo/-/envinfo-7.21.0.tgz"
   integrity sha1-BKJRvnn5JUhUHzfRPItvIpQMO64=
 
 error-ex@^1.3.1:
@@ -3401,14 +3401,14 @@ error-ex@^1.3.1:
 
 error-stack-parser@^2.0.6:
   version "2.1.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/error-stack-parser/-/error-stack-parser-2.1.4.tgz"
+  resolved "https://registry.npmjs.org/error-stack-parser/-/error-stack-parser-2.1.4.tgz"
   integrity sha1-IpywHNv6hEQL+pGHYoW5RoAYgoY=
   dependencies:
     stackframe "^1.3.4"
 
 errorhandler@^1.5.1:
   version "1.5.2"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/errorhandler/-/errorhandler-1.5.2.tgz"
+  resolved "https://registry.npmjs.org/errorhandler/-/errorhandler-1.5.2.tgz"
   integrity sha1-3QqjlS7KRK/3wphefSRsWTLXBEQ=
   dependencies:
     accepts "~1.3.8"
@@ -3558,7 +3558,7 @@ escalade@^3.1.1, escalade@^3.2.0:
 
 escape-html@~1.0.3:
   version "1.0.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/escape-html/-/escape-html-1.0.3.tgz"
+  resolved "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
 
 escape-string-regexp@^1.0.5:
@@ -3776,7 +3776,7 @@ esutils@^2.0.2:
 
 etag@~1.8.1:
   version "1.8.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/etag/-/etag-1.8.1.tgz"
+  resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
 event-target-shim@^5.0.0, event-target-shim@^5.0.1:
@@ -3786,7 +3786,7 @@ event-target-shim@^5.0.0, event-target-shim@^5.0.1:
 
 execa@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/execa/-/execa-1.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/execa/-/execa-1.0.0.tgz"
   integrity sha1-xiNqW7TfbW8V6I5/AXeYIWdJ3dg=
   dependencies:
     cross-spawn "^6.0.0"
@@ -3799,7 +3799,7 @@ execa@^1.0.0:
 
 execa@^4.0.0:
   version "4.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/execa/-/execa-4.1.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/execa/-/execa-4.1.0.tgz"
   integrity sha1-TlSRrRVy8vF6d9OIxshXE1sihHo=
   dependencies:
     cross-spawn "^7.0.0"
@@ -3845,7 +3845,7 @@ expect@^29.0.0, expect@^29.7.0:
 
 exponential-backoff@^3.1.1:
   version "3.1.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/exponential-backoff/-/exponential-backoff-3.1.3.tgz"
+  resolved "https://registry.npmjs.org/exponential-backoff/-/exponential-backoff-3.1.3.tgz"
   integrity sha1-Uc+SwcBJPHZgU/nTq+5ENMJE0vY=
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
@@ -3855,7 +3855,7 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
 
 fast-glob@^3.2.9, fast-glob@^3.3.2:
   version "3.3.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/fast-glob/-/fast-glob-3.3.3.tgz"
+  resolved "https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz"
   integrity sha1-0G1YXOjbqQoWsFBcVDw8z7OuuBg=
   dependencies:
     "@nodelib/fs.stat" "^2.0.2"
@@ -3876,7 +3876,7 @@ fast-levenshtein@^2.0.6:
 
 fast-xml-builder@^1.2.0:
   version "1.3.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/fast-xml-builder/-/fast-xml-builder-1.3.0.tgz"
+  resolved "https://registry.npmjs.org/fast-xml-builder/-/fast-xml-builder-1.3.0.tgz"
   integrity sha1-vISYBHlv5Hv5FQIt2Tmw/DC6RV0=
   dependencies:
     path-expression-matcher "^1.6.2"
@@ -3884,14 +3884,14 @@ fast-xml-builder@^1.2.0:
 
 fast-xml-parser@^4.4.1:
   version "4.5.7"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/fast-xml-parser/-/fast-xml-parser-4.5.7.tgz"
+  resolved "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-4.5.7.tgz"
   integrity sha1-ujR5oeyoq/LMPlSvJU+ubx8RUCE=
   dependencies:
     strnum "^1.0.5"
 
 fast-xml-parser@^5.3.6:
   version "5.10.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/fast-xml-parser/-/fast-xml-parser-5.10.1.tgz"
+  resolved "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-5.10.1.tgz"
   integrity sha1-GTE/fJOGxH+kod5SdUe3PtLPzt4=
   dependencies:
     "@nodable/entities" "^3.0.0"
@@ -3910,7 +3910,7 @@ fastq@^1.6.0:
 
 fb-dotslash@0.5.8:
   version "0.5.8"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/fb-dotslash/-/fb-dotslash-0.5.8.tgz"
+  resolved "https://registry.npmjs.org/fb-dotslash/-/fb-dotslash-0.5.8.tgz"
   integrity sha1-xe89rNdeHdshl8NnBSRk3d4BFfU=
 
 fb-watchman@^2.0.0:
@@ -3941,7 +3941,7 @@ fill-range@^7.1.1:
 
 finalhandler@1.1.2:
   version "1.1.2"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/finalhandler/-/finalhandler-1.1.2.tgz"
+  resolved "https://registry.npmjs.org/finalhandler/-/finalhandler-1.1.2.tgz"
   integrity sha1-t+fQAP/RGTjQ/bBTUG9uur6fWH0=
   dependencies:
     debug "2.6.9"
@@ -3992,7 +3992,7 @@ flatted@^3.2.9:
 
 flow-enums-runtime@^0.0.6:
   version "0.0.6"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/flow-enums-runtime/-/flow-enums-runtime-0.0.6.tgz"
+  resolved "https://registry.npmjs.org/flow-enums-runtime/-/flow-enums-runtime-0.0.6.tgz"
   integrity sha1-W7DNGwo+RxMw9NEJA5t+ulyz54c=
 
 for-each@^0.3.3, for-each@^0.3.5:
@@ -4004,7 +4004,7 @@ for-each@^0.3.3, for-each@^0.3.5:
 
 fresh@~0.5.2:
   version "0.5.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/fresh/-/fresh-0.5.2.tgz"
+  resolved "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
 fs-extra@^8.1.0:
@@ -4084,7 +4084,7 @@ get-intrinsic@^1.2.4, get-intrinsic@^1.2.5, get-intrinsic@^1.2.6, get-intrinsic@
 
 get-monorepo-packages@^1.2.0:
   version "1.3.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/get-monorepo-packages/-/get-monorepo-packages-1.3.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/get-monorepo-packages/-/get-monorepo-packages-1.3.0.tgz"
   integrity sha1-T9gr/yKQdlue8uCIVsnx5j8htes=
   dependencies:
     globby "^7.1.1"
@@ -4105,7 +4105,7 @@ get-proto@^1.0.0, get-proto@^1.0.1:
 
 get-stream@^4.0.0:
   version "4.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/get-stream/-/get-stream-4.1.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/get-stream/-/get-stream-4.1.0.tgz"
   integrity sha1-wbJVV189wh1Zv8ec09K0axw6VLU=
   dependencies:
     pump "^3.0.0"
@@ -4133,7 +4133,7 @@ get-symbol-description@^1.1.0:
 
 glob-parent@^5.1.2:
   version "5.1.2"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/glob-parent/-/glob-parent-5.1.2.tgz"
+  resolved "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz"
   integrity sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=
   dependencies:
     is-glob "^4.0.1"
@@ -4186,7 +4186,7 @@ globby@^11.1.0:
 
 globby@^7.1.1:
   version "7.1.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/globby/-/globby-7.1.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/globby/-/globby-7.1.1.tgz"
   integrity sha1-+yzP+UAfhgCUXfral0QMypcrhoA=
   dependencies:
     array-union "^1.0.1"
@@ -4218,7 +4218,7 @@ has-bigints@^1.0.2:
 
 has-flag@^3.0.0:
   version "3.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/has-flag/-/has-flag-3.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/has-flag/-/has-flag-3.0.0.tgz"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
 
 has-flag@^4.0.0:
@@ -4261,7 +4261,7 @@ hasown@^2.0.2, hasown@^2.0.3, hasown@^2.0.4:
 
 hermes-compiler@250829098.0.10:
   version "250829098.0.10"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/hermes-compiler/-/hermes-compiler-250829098.0.10.tgz"
+  resolved "https://registry.npmjs.org/hermes-compiler/-/hermes-compiler-250829098.0.10.tgz"
   integrity sha1-sxyumiUX7jYcc5ZvdqVWoQKa9Ss=
 
 hermes-estree@0.25.1:
@@ -4271,12 +4271,12 @@ hermes-estree@0.25.1:
 
 hermes-estree@0.33.3:
   version "0.33.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/hermes-estree/-/hermes-estree-0.33.3.tgz"
+  resolved "https://registry.npmjs.org/hermes-estree/-/hermes-estree-0.33.3.tgz"
   integrity sha1-bWtZPUtHERl3LIK9sCEt+tq7bxc=
 
 hermes-estree@0.35.0:
   version "0.35.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/hermes-estree/-/hermes-estree-0.35.0.tgz"
+  resolved "https://registry.npmjs.org/hermes-estree/-/hermes-estree-0.35.0.tgz"
   integrity sha1-dnzOCxSmi0vAbNXbfv6In2GIxWU=
 
 hermes-parser@^0.25.1:
@@ -4288,14 +4288,14 @@ hermes-parser@^0.25.1:
 
 hermes-parser@0.33.3:
   version "0.33.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/hermes-parser/-/hermes-parser-0.33.3.tgz"
+  resolved "https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.33.3.tgz"
   integrity sha1-2lCrq7elq2NtM557L244SOIX4J0=
   dependencies:
     hermes-estree "0.33.3"
 
 hermes-parser@0.35.0:
   version "0.35.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/hermes-parser/-/hermes-parser-0.35.0.tgz"
+  resolved "https://registry.npmjs.org/hermes-parser/-/hermes-parser-0.35.0.tgz"
   integrity sha1-diXsLzSriXwqF6e+qXiNE21f2Mk=
   dependencies:
     hermes-estree "0.35.0"
@@ -4307,7 +4307,7 @@ html-escaper@^2.0.0:
 
 http-errors@^2.0.1, http-errors@~2.0.1:
   version "2.0.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/http-errors/-/http-errors-2.0.1.tgz"
+  resolved "https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz"
   integrity sha1-NtL2W8kJyHkAGN02+02T2myq4Gs=
   dependencies:
     depd "~2.0.0"
@@ -4318,7 +4318,7 @@ http-errors@^2.0.1, http-errors@~2.0.1:
 
 https-proxy-agent@^7.0.5:
   version "7.0.6"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz"
+  resolved "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz"
   integrity sha1-2o3+rH2hMLBcK6S1nJts1mYRprk=
   dependencies:
     agent-base "^7.1.2"
@@ -4336,21 +4336,21 @@ human-signals@^2.1.0:
 
 iconv-lite@^0.7.2, iconv-lite@~0.7.0:
   version "0.7.3"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/iconv-lite/-/iconv-lite-0.7.3.tgz"
+  resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.3.tgz"
   integrity sha1-hO4S+WPn3lC8AaE+FgoHizsPQV8=
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
 
 iconv-lite@~0.4.24:
   version "0.4.24"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/iconv-lite/-/iconv-lite-0.4.24.tgz"
+  resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz"
   integrity sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
 ieee754@^1.1.13:
   version "1.2.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ieee754/-/ieee754-1.2.1.tgz"
+  resolved "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
   integrity sha1-jrehCmP/8l0VpXsAFYbRd9Gw01I=
 
 ignore@^3.3.5:
@@ -4375,7 +4375,7 @@ ignore@^7.0.5:
 
 image-size@^1.0.2:
   version "1.2.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/image-size/-/image-size-1.2.1.tgz"
+  resolved "https://registry.npmjs.org/image-size/-/image-size-1.2.1.tgz"
   integrity sha1-7hGK7f5mbbGm7hK+1YIc3jdAJ20=
   dependencies:
     queue "6.0.2"
@@ -4425,19 +4425,19 @@ internal-slot@^1.1.0:
 
 interpret@^1.0.0:
   version "1.4.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/interpret/-/interpret-1.4.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/interpret/-/interpret-1.4.0.tgz"
   integrity sha1-Zlq4vE2iendKQFhOgS4+D6RbGh4=
 
 invariant@^2.2.4:
   version "2.2.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/invariant/-/invariant-2.2.4.tgz"
+  resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
   integrity sha1-YQ88ksk1nOHbYW5TgAjSP/NRWOY=
   dependencies:
     loose-envify "^1.0.0"
 
 invert-kv@^3.0.0:
   version "3.0.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/invert-kv/-/invert-kv-3.0.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/invert-kv/-/invert-kv-3.0.1.tgz"
   integrity sha1-qTx6PUOGodyDJbl9qbsWIMAoJSM=
 
 is-array-buffer@^3.0.4, is-array-buffer@^3.0.5:
@@ -4511,7 +4511,7 @@ is-date-object@^1.1.0:
 
 is-docker@^2.0.0:
   version "2.2.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-docker/-/is-docker-2.2.1.tgz"
+  resolved "https://registry.npmjs.org/is-docker/-/is-docker-2.2.1.tgz"
   integrity sha1-M+6r4jz+hvFL3kQIoCwM+4U6zao=
 
 is-document.all@^1.0.0:
@@ -4535,7 +4535,7 @@ is-finalizationregistry@^1.1.0:
 
 is-fullwidth-code-point@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz"
   integrity sha1-o7MKXE8ZkYMWeqq5O+764937ZU8=
 
 is-fullwidth-code-point@^3.0.0:
@@ -4568,7 +4568,7 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3:
 
 is-interactive@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-interactive/-/is-interactive-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/is-interactive/-/is-interactive-1.0.0.tgz"
   integrity sha1-zqbmrlyHCnsKAAQHC3tYfgJSkS4=
 
 is-map@^2.0.3:
@@ -4657,12 +4657,12 @@ is-typed-array@^1.1.13, is-typed-array@^1.1.14, is-typed-array@^1.1.15:
 
 is-unicode-supported@^0.1.0:
   version "0.1.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-unicode-supported/-/is-unicode-supported-0.1.0.tgz"
+  resolved "https://registry.npmjs.org/is-unicode-supported/-/is-unicode-supported-0.1.0.tgz"
   integrity sha1-PybHaoCVk7Ur+i7LVxDtJ3m1Iqc=
 
 is-unsafe@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-unsafe/-/is-unsafe-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/is-unsafe/-/is-unsafe-2.0.0.tgz"
   integrity sha1-wNzk4GdCZi3eJjYBYOQU6kh9ouk=
 
 is-weakmap@^2.0.2:
@@ -4687,19 +4687,19 @@ is-weakset@^2.0.3:
 
 is-wsl@^1.1.0:
   version "1.1.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-wsl/-/is-wsl-1.1.0.tgz"
+  resolved "https://registry.npmjs.org/is-wsl/-/is-wsl-1.1.0.tgz"
   integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
 
 is-wsl@^2.1.1:
   version "2.2.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-wsl/-/is-wsl-2.2.0.tgz"
+  resolved "https://registry.npmjs.org/is-wsl/-/is-wsl-2.2.0.tgz"
   integrity sha1-dKTHbnfKn9P5MvKQwX6jJs0VcnE=
   dependencies:
     is-docker "^2.0.0"
 
 is-wsl@^2.2.0:
   version "2.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/is-wsl/-/is-wsl-2.2.0.tgz"
+  resolved "https://registry.npmjs.org/is-wsl/-/is-wsl-2.2.0.tgz"
   integrity sha1-dKTHbnfKn9P5MvKQwX6jJs0VcnE=
   dependencies:
     is-docker "^2.0.0"
@@ -5139,7 +5139,7 @@ jest@*, jest@^29.6.3:
 
 joi@^17.2.1:
   version "17.13.4"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/joi/-/joi-17.13.4.tgz"
+  resolved "https://registry.npmjs.org/joi/-/joi-17.13.4.tgz"
   integrity sha1-rWFT2XzlWOs6O1k+DUPqtR3xxHQ=
   dependencies:
     "@hapi/hoek" "^9.3.0"
@@ -5170,7 +5170,7 @@ js-yaml@^4.1.0:
 
 jsc-safe-url@^0.2.2:
   version "0.2.4"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/jsc-safe-url/-/jsc-safe-url-0.2.4.tgz"
+  resolved "https://registry.npmjs.org/jsc-safe-url/-/jsc-safe-url-0.2.4.tgz"
   integrity sha1-FBwU+7Q3keiNXcZOhaN0V1qDR3o=
 
 jsesc@^3.0.2, jsesc@~3.1.0:
@@ -5239,7 +5239,7 @@ kleur@^3.0.3:
 
 launch-editor@^2.9.1:
   version "2.14.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/launch-editor/-/launch-editor-2.14.1.tgz"
+  resolved "https://registry.npmjs.org/launch-editor/-/launch-editor-2.14.1.tgz"
   integrity sha1-9+DaP1iq6gP+oBB02EC19zntfdw=
   dependencies:
     picocolors "^1.1.1"
@@ -5247,7 +5247,7 @@ launch-editor@^2.9.1:
 
 lcid@^3.0.0:
   version "3.1.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/lcid/-/lcid-3.1.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/lcid/-/lcid-3.1.1.tgz"
   integrity sha1-kDDsR5oFj8NrXoJD66rItqxYL9A=
   dependencies:
     invert-kv "^3.0.0"
@@ -5267,7 +5267,7 @@ levn@^0.4.1:
 
 lighthouse-logger@^1.0.0:
   version "1.4.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/lighthouse-logger/-/lighthouse-logger-1.4.2.tgz"
+  resolved "https://registry.npmjs.org/lighthouse-logger/-/lighthouse-logger-1.4.2.tgz"
   integrity sha1-rvkPnpfNgds2fHY0KS7iIHkoCqo=
   dependencies:
     debug "^2.6.9"
@@ -5280,7 +5280,7 @@ lines-and-columns@^1.1.6:
 
 load-json-file@^4.0.0:
   version "4.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/load-json-file/-/load-json-file-4.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/load-json-file/-/load-json-file-4.0.0.tgz"
   integrity sha1-L19Fq5HjMhYjT9U62rZo607AmTs=
   dependencies:
     graceful-fs "^4.1.2"
@@ -5314,7 +5314,7 @@ lodash.merge@^4.6.2:
 
 lodash.throttle@^4.1.1:
   version "4.1.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
+  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash@^4.17.15, lodash@^4.17.21:
@@ -5331,7 +5331,7 @@ log-symbols@^2.2.0:
 
 log-symbols@^4.1.0:
   version "4.1.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/log-symbols/-/log-symbols-4.1.0.tgz"
+  resolved "https://registry.npmjs.org/log-symbols/-/log-symbols-4.1.0.tgz"
   integrity sha1-P727lbRoOsn8eFER55LlWNSr1QM=
   dependencies:
     chalk "^4.1.0"
@@ -5339,7 +5339,7 @@ log-symbols@^4.1.0:
 
 logkitty@^0.7.1:
   version "0.7.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/logkitty/-/logkitty-0.7.1.tgz"
+  resolved "https://registry.npmjs.org/logkitty/-/logkitty-0.7.1.tgz"
   integrity sha1-jo1i9Ahagm6NOJh3IlcCNOM8aqc=
   dependencies:
     ansi-fragments "^0.2.1"
@@ -5376,14 +5376,14 @@ makeerror@1.0.12:
 
 map-age-cleaner@^0.1.1, map-age-cleaner@^0.1.3:
   version "0.1.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/map-age-cleaner/-/map-age-cleaner-0.1.3.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/map-age-cleaner/-/map-age-cleaner-0.1.3.tgz"
   integrity sha1-fVg6cwZDTAVf5HSw9FB45uG0uSo=
   dependencies:
     p-defer "^1.0.0"
 
 marky@^1.2.2:
   version "1.3.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/marky/-/marky-1.3.0.tgz"
+  resolved "https://registry.npmjs.org/marky/-/marky-1.3.0.tgz"
   integrity sha1-QitjsLr2UCLwLtphojjszbvBSZc=
 
 math-intrinsics@^1.1.0:
@@ -5393,17 +5393,17 @@ math-intrinsics@^1.1.0:
 
 media-typer@^1.1.0:
   version "1.1.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/media-typer/-/media-typer-1.1.0.tgz"
+  resolved "https://registry.npmjs.org/media-typer/-/media-typer-1.1.0.tgz"
   integrity sha1-ardLjy0zIPIGSyqHo455Mf86VWE=
 
 media-typer@0.3.0:
   version "0.3.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/media-typer/-/media-typer-0.3.0.tgz"
+  resolved "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
 mem@^4.3.0:
   version "4.3.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mem/-/mem-4.3.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mem/-/mem-4.3.0.tgz"
   integrity sha1-Rhr0l7xK4JYIzbLmDu+2m/90QXg=
   dependencies:
     map-age-cleaner "^0.1.1"
@@ -5431,12 +5431,12 @@ merge-stream@^2.0.0:
 
 merge2@^1.3.0, merge2@^1.4.1:
   version "1.4.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/merge2/-/merge2-1.4.1.tgz"
+  resolved "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   integrity sha1-Q2iJL4hekHRVpv19xVwMnUBJkK4=
 
 metro-babel-transformer@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-babel-transformer/-/metro-babel-transformer-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-babel-transformer/-/metro-babel-transformer-0.84.4.tgz"
   integrity sha1-LX3pvU5ZmMjAUw/gXu9xTXwQ+c8=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -5447,14 +5447,14 @@ metro-babel-transformer@0.84.4:
 
 metro-cache-key@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-cache-key/-/metro-cache-key-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-cache-key/-/metro-cache-key-0.84.4.tgz"
   integrity sha1-UgWdMtpo7y4G1aPUdw3v3G2LrXc=
   dependencies:
     flow-enums-runtime "^0.0.6"
 
 metro-cache@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-cache/-/metro-cache-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-cache/-/metro-cache-0.84.4.tgz"
   integrity sha1-AmR27bYpqEZQ79e0JFu8YAs7Drc=
   dependencies:
     exponential-backoff "^3.1.1"
@@ -5464,7 +5464,7 @@ metro-cache@0.84.4:
 
 metro-config@^0.84.3, metro-config@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-config/-/metro-config-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-config/-/metro-config-0.84.4.tgz"
   integrity sha1-RWGQuYSkzhbrEESKPHJogM7Ilek=
   dependencies:
     connect "^3.6.5"
@@ -5478,7 +5478,7 @@ metro-config@^0.84.3, metro-config@0.84.4:
 
 metro-core@^0.84.3, metro-core@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-core/-/metro-core-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-core/-/metro-core-0.84.4.tgz"
   integrity sha1-5K//q5vS6bMEyJxZMiNE1ZkRwxs=
   dependencies:
     flow-enums-runtime "^0.0.6"
@@ -5487,7 +5487,7 @@ metro-core@^0.84.3, metro-core@0.84.4:
 
 metro-file-map@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-file-map/-/metro-file-map-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-file-map/-/metro-file-map-0.84.4.tgz"
   integrity sha1-AN8Ig07k00qMFeM0Gf3/WnajSHA=
   dependencies:
     debug "^4.4.0"
@@ -5502,7 +5502,7 @@ metro-file-map@0.84.4:
 
 metro-minify-terser@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-minify-terser/-/metro-minify-terser-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-minify-terser/-/metro-minify-terser-0.84.4.tgz"
   integrity sha1-6QTWPwhdGvM1h/9tr1AQJD0Z7sk=
   dependencies:
     flow-enums-runtime "^0.0.6"
@@ -5510,14 +5510,14 @@ metro-minify-terser@0.84.4:
 
 metro-resolver@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-resolver/-/metro-resolver-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-resolver/-/metro-resolver-0.84.4.tgz"
   integrity sha1-iBgTAau5tHYHLoJj97O5GNSTkxo=
   dependencies:
     flow-enums-runtime "^0.0.6"
 
 metro-runtime@^0.84.3, metro-runtime@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-runtime/-/metro-runtime-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-runtime/-/metro-runtime-0.84.4.tgz"
   integrity sha1-jBCkiNGaSdZLzHdQOQMrYczrJqY=
   dependencies:
     "@babel/runtime" "^7.25.0"
@@ -5525,7 +5525,7 @@ metro-runtime@^0.84.3, metro-runtime@0.84.4:
 
 metro-source-map@^0.84.3, metro-source-map@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-source-map/-/metro-source-map-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-source-map/-/metro-source-map-0.84.4.tgz"
   integrity sha1-4W58Lc4i2K6lJ/RZuoj1ooJ7oyo=
   dependencies:
     "@babel/traverse" "^7.29.0"
@@ -5540,7 +5540,7 @@ metro-source-map@^0.84.3, metro-source-map@0.84.4:
 
 metro-symbolicate@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-symbolicate/-/metro-symbolicate-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-symbolicate/-/metro-symbolicate-0.84.4.tgz"
   integrity sha1-DVqf0vFbXAeQUAUdi9H4hybW4NI=
   dependencies:
     flow-enums-runtime "^0.0.6"
@@ -5552,7 +5552,7 @@ metro-symbolicate@0.84.4:
 
 metro-transform-plugins@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-transform-plugins/-/metro-transform-plugins-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-transform-plugins/-/metro-transform-plugins-0.84.4.tgz"
   integrity sha1-taTkMpse4CYfsh+JEN9+79AuaF0=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -5564,7 +5564,7 @@ metro-transform-plugins@0.84.4:
 
 metro-transform-worker@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro-transform-worker/-/metro-transform-worker-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro-transform-worker/-/metro-transform-worker-0.84.4.tgz"
   integrity sha1-KmbWXRR/eqfRPIYg5lR0CV9GtEE=
   dependencies:
     "@babel/core" "^7.25.2"
@@ -5583,7 +5583,7 @@ metro-transform-worker@0.84.4:
 
 metro@^0.84.3, metro@>=0.83.0, metro@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/metro/-/metro-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/metro/-/metro-0.84.4.tgz"
   integrity sha1-38+Ss7ytznyvrxofojG2SQ3654w=
   dependencies:
     "@babel/code-frame" "^7.29.0"
@@ -5636,41 +5636,41 @@ micromatch@^4.0.4, micromatch@^4.0.8:
 
 mime-db@^1.54.0, "mime-db@>= 1.43.0 < 2":
   version "1.54.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mime-db/-/mime-db-1.54.0.tgz"
+  resolved "https://registry.npmjs.org/mime-db/-/mime-db-1.54.0.tgz"
   integrity sha1-zds+5PnGRTDf9kAjZmHULLajFPU=
 
 mime-db@1.52.0:
   version "1.52.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mime-db/-/mime-db-1.52.0.tgz"
+  resolved "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
   integrity sha1-u6vNwChZ9JhzAchW4zh85exDv3A=
 
 mime-types@^3.0.0, mime-types@^3.0.1:
   version "3.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mime-types/-/mime-types-3.0.2.tgz"
+  resolved "https://registry.npmjs.org/mime-types/-/mime-types-3.0.2.tgz"
   integrity sha1-OQAtQYJXXVrwNv+hGBAPJSSy4qs=
   dependencies:
     mime-db "^1.54.0"
 
 mime-types@~2.1.24, mime-types@~2.1.34:
   version "2.1.35"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mime-types/-/mime-types-2.1.35.tgz"
+  resolved "https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz"
   integrity sha1-OBqHG2KnNEUGYK497uRIE/cNlZo=
   dependencies:
     mime-db "1.52.0"
 
 mime@^2.4.1:
   version "2.6.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mime/-/mime-2.6.0.tgz"
+  resolved "https://registry.npmjs.org/mime/-/mime-2.6.0.tgz"
   integrity sha1-oqaCqVzU0MsdYlfij4PafjWAA2c=
 
 mime@1.6.0:
   version "1.6.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mime/-/mime-1.6.0.tgz"
+  resolved "https://registry.npmjs.org/mime/-/mime-1.6.0.tgz"
   integrity sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=
 
 mimic-fn@^1.0.0:
   version "1.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mimic-fn/-/mimic-fn-1.2.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mimic-fn/-/mimic-fn-1.2.0.tgz"
   integrity sha1-ggyGo5M0ZA6ZUWkovQP8qIBX0CI=
 
 mimic-fn@^2.0.0, mimic-fn@^2.1.0:
@@ -5715,19 +5715,19 @@ minimatch@^3.1.2:
 
 minimist@^1.2.6:
   version "1.2.8"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/minimist/-/minimist-1.2.8.tgz"
+  resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz"
   integrity sha1-waRk52kzAuCCoHXO4MBXdBrEdyw=
 
 mkdirp@^0.5.1:
   version "0.5.6"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mkdirp/-/mkdirp-0.5.6.tgz"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.6.tgz"
   integrity sha1-fe8D0kMtyuS6HWEURcSDlgYiVfY=
   dependencies:
     minimist "^1.2.6"
 
 mkdirp@^1.0.4:
   version "1.0.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mkdirp/-/mkdirp-1.0.4.tgz"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
 
 ms@^2.1.3, ms@2.1.3:
@@ -5737,12 +5737,12 @@ ms@^2.1.3, ms@2.1.3:
 
 ms@2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ms/-/ms-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
 mustache@^4.0.1:
   version "4.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mustache/-/mustache-4.2.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/mustache/-/mustache-4.2.0.tgz"
   integrity sha1-5YkjJNYKEuycKnM1ntylKXK/b2Q=
 
 natural-compare@^1.4.0:
@@ -5752,17 +5752,17 @@ natural-compare@^1.4.0:
 
 negotiator@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/negotiator/-/negotiator-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/negotiator/-/negotiator-1.0.0.tgz"
   integrity sha1-tskbtHFy1p+Tz9fDV7u1KQGbX2o=
 
 negotiator@~0.6.4:
   version "0.6.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/negotiator/-/negotiator-0.6.4.tgz"
+  resolved "https://registry.npmjs.org/negotiator/-/negotiator-0.6.4.tgz"
   integrity sha1-d3lI4kUmUcVwtxLdAcI+JicT//c=
 
 negotiator@0.6.3:
   version "0.6.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/negotiator/-/negotiator-0.6.3.tgz"
+  resolved "https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz"
   integrity sha1-WOMjpy/twNb5zU0x/kn1FHlZDM0=
 
 nice-try@^1.0.4:
@@ -5772,7 +5772,7 @@ nice-try@^1.0.4:
 
 nocache@^3.0.1:
   version "3.0.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/nocache/-/nocache-3.0.4.tgz"
+  resolved "https://registry.npmjs.org/nocache/-/nocache-3.0.4.tgz"
   integrity sha1-Wzelbsbgn8fUAdzq7S6rQMi/33k=
 
 node-exports-info@^1.6.0:
@@ -5797,7 +5797,7 @@ node-releases@^2.0.48:
 
 node-stream-zip@^1.9.1:
   version "1.15.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/node-stream-zip/-/node-stream-zip-1.15.0.tgz"
+  resolved "https://registry.npmjs.org/node-stream-zip/-/node-stream-zip-1.15.0.tgz"
   integrity sha1-FYrbiO2ABMbEmjlrUKal3jvKM+o=
 
 normalize-path@^3.0.0:
@@ -5821,12 +5821,12 @@ npm-run-path@^4.0.0, npm-run-path@^4.0.1:
 
 nullthrows@^1.1.1:
   version "1.1.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/nullthrows/-/nullthrows-1.1.1.tgz"
+  resolved "https://registry.npmjs.org/nullthrows/-/nullthrows-1.1.1.tgz"
   integrity sha1-eBgliEOFaulx6uQgitfX6xmkMbE=
 
 ob1@0.84.4:
   version "0.84.4"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ob1/-/ob1-0.84.4.tgz"
+  resolved "https://registry.npmjs.org/ob1/-/ob1-0.84.4.tgz"
   integrity sha1-7GRd6/X72FEdwfAL9FTiMvugKps=
   dependencies:
     flow-enums-runtime "^0.0.6"
@@ -5890,21 +5890,21 @@ object.values@^1.1.6, object.values@^1.2.1:
 
 on-finished@^2.4.1, on-finished@~2.4.1:
   version "2.4.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/on-finished/-/on-finished-2.4.1.tgz"
+  resolved "https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz"
   integrity sha1-WMjEQRblSEWtV/FKsQsDUzGErD8=
   dependencies:
     ee-first "1.1.1"
 
 on-finished@~2.3.0:
   version "2.3.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/on-finished/-/on-finished-2.3.0.tgz"
+  resolved "https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz"
   integrity sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=
   dependencies:
     ee-first "1.1.1"
 
 on-headers@~1.1.0:
   version "1.1.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/on-headers/-/on-headers-1.1.0.tgz"
+  resolved "https://registry.npmjs.org/on-headers/-/on-headers-1.1.0.tgz"
   integrity sha1-WdpPkcRfX5icbkvO3Fo7Cu1w/2U=
 
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
@@ -5930,14 +5930,14 @@ onetime@^5.1.0, onetime@^5.1.2:
 
 open@^6.2.0:
   version "6.4.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/open/-/open-6.4.0.tgz"
+  resolved "https://registry.npmjs.org/open/-/open-6.4.0.tgz"
   integrity sha1-XBPpbQ3IlGhhZPGJZez+iJ7PyKk=
   dependencies:
     is-wsl "^1.1.0"
 
 open@^7.0.3:
   version "7.4.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/open/-/open-7.4.2.tgz"
+  resolved "https://registry.npmjs.org/open/-/open-7.4.2.tgz"
   integrity sha1-uBR+Jtzz5CYxbHMAif1x7dKcIyE=
   dependencies:
     is-docker "^2.0.0"
@@ -5969,7 +5969,7 @@ ora@^3.4.0:
 
 ora@^5.4.1:
   version "5.4.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ora/-/ora-5.4.1.tgz"
+  resolved "https://registry.npmjs.org/ora/-/ora-5.4.1.tgz"
   integrity sha1-GyZ4Qmr0rEpQkAjl5KyemVnbnhg=
   dependencies:
     bl "^4.1.0"
@@ -6002,12 +6002,12 @@ own-keys@^1.0.1:
 
 p-defer@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/p-defer/-/p-defer-1.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/p-defer/-/p-defer-1.0.0.tgz"
   integrity sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=
 
 p-finally@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/p-finally/-/p-finally-1.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/p-finally/-/p-finally-1.0.0.tgz"
   integrity sha1-P7z7FbiZpEEjs0ttzBi3JDNqLK4=
 
 p-is-promise@^2.0.0, p-is-promise@^2.1.0:
@@ -6057,7 +6057,7 @@ parent-module@^1.0.0:
 
 parse-json@^4.0.0:
   version "4.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/parse-json/-/parse-json-4.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/parse-json/-/parse-json-4.0.0.tgz"
   integrity sha1-vjX1Qlvh9/bHRxhPmKeIy5lHfuA=
   dependencies:
     error-ex "^1.3.1"
@@ -6075,7 +6075,7 @@ parse-json@^5.2.0:
 
 parseurl@~1.3.3:
   version "1.3.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/parseurl/-/parseurl-1.3.3.tgz"
+  resolved "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz"
   integrity sha1-naGee+6NEt/wUT7Vt2lXeTvC6NQ=
 
 path-exists@^4.0.0:
@@ -6085,7 +6085,7 @@ path-exists@^4.0.0:
 
 path-expression-matcher@^1.6.2:
   version "1.6.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-expression-matcher/-/path-expression-matcher-1.6.2.tgz"
+  resolved "https://registry.npmjs.org/path-expression-matcher/-/path-expression-matcher-1.6.2.tgz"
   integrity sha1-VnxzwHGX6dzvJOkO3NxXEFZZkWg=
 
 path-is-absolute@^1.0.0:
@@ -6095,7 +6095,7 @@ path-is-absolute@^1.0.0:
 
 path-key@^2.0.0, path-key@^2.0.1:
   version "2.0.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-key/-/path-key-2.0.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-key/-/path-key-2.0.1.tgz"
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-key@^3.0.0, path-key@^3.1.0:
@@ -6110,14 +6110,14 @@ path-parse@^1.0.7:
 
 path-type@^3.0.0:
   version "3.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-type/-/path-type-3.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-type/-/path-type-3.0.0.tgz"
   integrity sha1-zvMdyOCho7sNEFwM2Xzzv0f0428=
   dependencies:
     pify "^3.0.0"
 
 path-type@^4.0.0:
   version "4.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-type/-/path-type-4.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/path-type/-/path-type-4.0.0.tgz"
   integrity sha1-hO0BwKe6OAr+CdkKjBgNzZ0DBDs=
 
 picocolors@^1.1.1:
@@ -6137,7 +6137,7 @@ picomatch@^2.0.4, picomatch@^2.2.3, picomatch@^2.3.1:
 
 pify@^3.0.0:
   version "3.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/pify/-/pify-3.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/pify/-/pify-3.0.0.tgz"
   integrity sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=
 
 pirates@^4.0.4:
@@ -6202,7 +6202,7 @@ prop-types@^15.8.1:
 
 pump@^3.0.0:
   version "3.0.4"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/pump/-/pump-3.0.4.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/pump/-/pump-3.0.4.tgz"
   integrity sha1-HzE0MFJ/qLkFYi69Iv4UROdXqzw=
   dependencies:
     end-of-stream "^1.1.0"
@@ -6220,7 +6220,7 @@ pure-rand@^6.0.0:
 
 qs@^6.15.2, qs@~6.15.1:
   version "6.15.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/qs/-/qs-6.15.3.tgz"
+  resolved "https://registry.npmjs.org/qs/-/qs-6.15.3.tgz"
   integrity sha1-doUhMqWO1cfA72fkRBubtdYGGzs=
   dependencies:
     es-define-property "^1.0.1"
@@ -6233,19 +6233,19 @@ queue-microtask@^1.2.2:
 
 queue@6.0.2:
   version "6.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/queue/-/queue-6.0.2.tgz"
+  resolved "https://registry.npmjs.org/queue/-/queue-6.0.2.tgz"
   integrity sha1-uRUlKD4jFcdVPS76GNg+dkMv7WU=
   dependencies:
     inherits "~2.0.3"
 
 range-parser@~1.2.1:
   version "1.2.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/range-parser/-/range-parser-1.2.1.tgz"
+  resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   integrity sha1-PPNwI9GZ4cJNGlW4SADC8+ZGgDE=
 
 raw-body@^3.0.2:
   version "3.0.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/raw-body/-/raw-body-3.0.2.tgz"
+  resolved "https://registry.npmjs.org/raw-body/-/raw-body-3.0.2.tgz"
   integrity sha1-PjraWuVWj5CV2EN2/TpJuPsAClE=
   dependencies:
     bytes "~3.1.2"
@@ -6255,7 +6255,7 @@ raw-body@^3.0.2:
 
 raw-body@~2.5.3:
   version "2.5.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/raw-body/-/raw-body-2.5.3.tgz"
+  resolved "https://registry.npmjs.org/raw-body/-/raw-body-2.5.3.tgz"
   integrity sha1-EcZlDudwp94bSU8ZeSfeDJI4IuI=
   dependencies:
     bytes "~3.1.2"
@@ -6291,17 +6291,17 @@ react-native-safe-area-context@^5.5.2:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.8.0.tgz"
   integrity sha512-t+ZsAVzY/wWzzx34vqGbo3/as9EEESJdbyZNL7Yg5EYX+toYMtMqFoDDCvqZUi35eeGVsXc6pAaEk4edMwbuCQ==
 
-react-native-windows@0.85.0-preview.1:
-  version "0.85.0-preview.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/react-native-windows/-/react-native-windows-0.85.0-preview.1.tgz"
-  integrity sha1-Mlmdev2Oq5berpehpPHOyaUZtZA=
+react-native-windows@0.85.0:
+  version "0.85.0"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/react-native-windows/-/react-native-windows-0.85.0.tgz"
+  integrity sha512-OoXCQBIvN2Gv+nC7XHKY8dAKzuhqfzOOmWuvS4F1ijooGg+QEKjkST1mSWdIZnv5AhceguT3lWZuCxle/tUkkQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@jest/create-cache-key-function" "^29.7.0"
     "@react-native-community/cli" "20.0.0"
     "@react-native-community/cli-platform-android" "20.0.0"
     "@react-native-community/cli-platform-ios" "20.0.0"
-    "@react-native-windows/cli" "0.85.0-preview.1"
+    "@react-native-windows/cli" "0.85.0"
     "@react-native/assets" "1.0.0"
     "@react-native/assets-registry" "0.85.3"
     "@react-native/codegen" "0.85.3"
@@ -6347,7 +6347,7 @@ react-native-windows@0.85.0-preview.1:
 
 react-native@*, "react-native@^0.0.0-0 || >=0.73", react-native@^0.85.0, react-native@0.85.3:
   version "0.85.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/react-native/-/react-native-0.85.3.tgz"
+  resolved "https://registry.npmjs.org/react-native/-/react-native-0.85.3.tgz"
   integrity sha1-Sj0lxjov0yD/sJPiAmnPR9WF1IM=
   dependencies:
     "@react-native/assets-registry" "0.85.3"
@@ -6403,7 +6403,7 @@ react@*, react@^19.2.3, react@19.2.3:
 
 readable-stream@^3.4.0:
   version "3.6.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/readable-stream/-/readable-stream-3.6.2.tgz"
+  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.2.tgz"
   integrity sha1-VqmzbqllwAxak+8x6xEaDxEFaWc=
   dependencies:
     inherits "^2.0.3"
@@ -6412,7 +6412,7 @@ readable-stream@^3.4.0:
 
 rechoir@^0.6.2:
   version "0.6.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/rechoir/-/rechoir-0.6.2.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/rechoir/-/rechoir-0.6.2.tgz"
   integrity sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
   dependencies:
     resolve "^1.1.6"
@@ -6491,7 +6491,7 @@ require-directory@^2.1.1:
 
 require-main-filename@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/require-main-filename/-/require-main-filename-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/require-main-filename/-/require-main-filename-2.0.0.tgz"
   integrity sha1-0LMp7MfMD2Fkn2IhW+aa9UqomJs=
 
 resolve-cwd@^3.0.0:
@@ -6540,7 +6540,7 @@ resolve@^2.0.0-next.5:
 
 restore-cursor@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/restore-cursor/-/restore-cursor-2.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/restore-cursor/-/restore-cursor-2.0.0.tgz"
   integrity sha1-n37ih/gv0ybU/RYpI9YhKe7g368=
   dependencies:
     onetime "^2.0.0"
@@ -6548,7 +6548,7 @@ restore-cursor@^2.0.0:
 
 restore-cursor@^3.1.0:
   version "3.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/restore-cursor/-/restore-cursor-3.1.0.tgz"
+  resolved "https://registry.npmjs.org/restore-cursor/-/restore-cursor-3.1.0.tgz"
   integrity sha1-OfZ8VLOnpYzqUjbZXPADQjljH34=
   dependencies:
     onetime "^5.1.0"
@@ -6586,7 +6586,7 @@ safe-array-concat@^1.1.3:
 
 safe-buffer@~5.2.0, safe-buffer@5.2.1:
   version "5.2.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/safe-buffer/-/safe-buffer-5.2.1.tgz"
+  resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
   integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
 
 safe-push-apply@^1.0.0:
@@ -6608,7 +6608,7 @@ safe-regex-test@^1.1.0:
 
 "safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0":
   version "2.1.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/safer-buffer/-/safer-buffer-2.1.2.tgz"
+  resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
 scheduler@^0.27.0, scheduler@0.27.0:
@@ -6618,7 +6618,7 @@ scheduler@^0.27.0, scheduler@0.27.0:
 
 semver@^5.5.0:
   version "5.7.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/semver/-/semver-5.7.2.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/semver/-/semver-5.7.2.tgz"
   integrity sha1-SNVdtzfDKHzUg14X+hP+rOHEHvg=
 
 semver@^6.3.0, semver@^6.3.1:
@@ -6628,12 +6628,12 @@ semver@^6.3.0, semver@^6.3.1:
 
 semver@^7.1.3:
   version "7.8.5"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/semver/-/semver-7.8.5.tgz"
+  resolved "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz"
   integrity sha1-ObZGA33VDBT7RR5+TKxY7YuGP2k=
 
 semver@^7.3.2:
   version "7.8.5"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/semver/-/semver-7.8.5.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/semver/-/semver-7.8.5.tgz"
   integrity sha1-ObZGA33VDBT7RR5+TKxY7YuGP2k=
 
 semver@^7.5.2:
@@ -6658,7 +6658,7 @@ semver@^7.7.3:
 
 send@~0.19.1:
   version "0.19.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/send/-/send-0.19.2.tgz"
+  resolved "https://registry.npmjs.org/send/-/send-0.19.2.tgz"
   integrity sha1-WbwNobTqetQnNv1kKxxClOEU/yk=
   dependencies:
     debug "2.6.9"
@@ -6677,12 +6677,12 @@ send@~0.19.1:
 
 serialize-error@^2.1.0:
   version "2.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/serialize-error/-/serialize-error-2.1.0.tgz"
+  resolved "https://registry.npmjs.org/serialize-error/-/serialize-error-2.1.0.tgz"
   integrity sha1-ULZ51WNc34Rme9yOWa9OW4HV9go=
 
 serve-static@^1.13.1, serve-static@^1.16.2:
   version "1.16.3"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/serve-static/-/serve-static-1.16.3.tgz"
+  resolved "https://registry.npmjs.org/serve-static/-/serve-static-1.16.3.tgz"
   integrity sha1-qXt02VV3hYPzhipPC4QetNXXjPk=
   dependencies:
     encodeurl "~2.0.0"
@@ -6692,7 +6692,7 @@ serve-static@^1.13.1, serve-static@^1.16.2:
 
 set-blocking@^2.0.0:
   version "2.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/set-blocking/-/set-blocking-2.0.0.tgz"
+  resolved "https://registry.npmjs.org/set-blocking/-/set-blocking-2.0.0.tgz"
   integrity sha1-BF+XgtARrppoA93TgrJDkrPYkPc=
 
 set-function-length@^1.2.2:
@@ -6728,7 +6728,7 @@ set-proto@^1.0.0:
 
 setprototypeof@~1.2.0:
   version "1.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/setprototypeof/-/setprototypeof-1.2.0.tgz"
+  resolved "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz"
   integrity sha1-ZsmiSnP5/CjL5msJ/tPTPcrxtCQ=
 
 shebang-command@^1.2.0:
@@ -6747,7 +6747,7 @@ shebang-command@^2.0.0:
 
 shebang-regex@^1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/shebang-regex/-/shebang-regex-1.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/shebang-regex/-/shebang-regex-1.0.0.tgz"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
 
 shebang-regex@^3.0.0:
@@ -6762,7 +6762,7 @@ shell-quote@^1.6.1, shell-quote@^1.8.4:
 
 shelljs@^0.8.4:
   version "0.8.5"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/shelljs/-/shelljs-0.8.5.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/shelljs/-/shelljs-0.8.5.tgz"
   integrity sha1-3gVUCNg2G+1mxmnS8ABTjO2O4gw=
   dependencies:
     glob "^7.0.0"
@@ -6831,7 +6831,7 @@ slash@^3.0.0:
 
 slice-ansi@^2.0.0:
   version "2.1.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/slice-ansi/-/slice-ansi-2.1.0.tgz"
+  resolved "https://registry.npmjs.org/slice-ansi/-/slice-ansi-2.1.0.tgz"
   integrity sha1-ys12k0YaY3pXiNkqfdT7oGjoFjY=
   dependencies:
     ansi-styles "^3.2.0"
@@ -6840,7 +6840,7 @@ slice-ansi@^2.0.0:
 
 source-map-support@^0.5.19:
   version "0.5.21"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/source-map-support/-/source-map-support-0.5.21.tgz"
+  resolved "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz"
   integrity sha1-BP58f54e0tZiIzwoyys1ufY/bk8=
   dependencies:
     buffer-from "^1.0.0"
@@ -6848,7 +6848,7 @@ source-map-support@^0.5.19:
 
 source-map-support@~0.5.20:
   version "0.5.21"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/source-map-support/-/source-map-support-0.5.21.tgz"
+  resolved "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz"
   integrity sha1-BP58f54e0tZiIzwoyys1ufY/bk8=
   dependencies:
     buffer-from "^1.0.0"
@@ -6864,7 +6864,7 @@ source-map-support@0.5.13:
 
 source-map@^0.5.6:
   version "0.5.7"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/source-map/-/source-map-0.5.7.tgz"
+  resolved "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
 source-map@^0.6.0, source-map@^0.6.1:
@@ -6886,7 +6886,7 @@ stack-utils@^2.0.3:
 
 stackframe@^1.3.4:
   version "1.3.4"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/stackframe/-/stackframe-1.3.4.tgz"
+  resolved "https://registry.npmjs.org/stackframe/-/stackframe-1.3.4.tgz"
   integrity sha1-uIGgBMjBSaXo7+831RsW5BKUMxA=
 
 stacktrace-parser@^0.1.10:
@@ -6898,12 +6898,12 @@ stacktrace-parser@^0.1.10:
 
 statuses@~1.5.0:
   version "1.5.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/statuses/-/statuses-1.5.0.tgz"
+  resolved "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
 statuses@~2.0.2:
   version "2.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/statuses/-/statuses-2.0.2.tgz"
+  resolved "https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz"
   integrity sha1-j3XuzvdlteHPzcCA2llAntQk44I=
 
 stop-iteration-iterator@^1.1.0:
@@ -6916,7 +6916,7 @@ stop-iteration-iterator@^1.1.0:
 
 string_decoder@^1.1.1:
   version "1.3.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/string_decoder/-/string_decoder-1.3.0.tgz"
+  resolved "https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz"
   integrity sha1-QvEUWUpGzxqOMLCoT1bHjD7awh4=
   dependencies:
     safe-buffer "~5.2.0"
@@ -7005,14 +7005,14 @@ string.prototype.trimstart@^1.0.8:
 
 strip-ansi@^5.0.0:
   version "5.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strip-ansi/-/strip-ansi-5.2.0.tgz"
+  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-5.2.0.tgz"
   integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
   dependencies:
     ansi-regex "^4.1.0"
 
 strip-ansi@^5.2.0:
   version "5.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strip-ansi/-/strip-ansi-5.2.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strip-ansi/-/strip-ansi-5.2.0.tgz"
   integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
   dependencies:
     ansi-regex "^4.1.0"
@@ -7026,7 +7026,7 @@ strip-ansi@^6.0.0, strip-ansi@^6.0.1:
 
 strip-bom@^3.0.0:
   version "3.0.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strip-bom/-/strip-bom-3.0.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strip-bom/-/strip-bom-3.0.0.tgz"
   integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
 
 strip-bom@^4.0.0:
@@ -7051,19 +7051,19 @@ strip-json-comments@^3.1.1:
 
 strnum@^1.0.5:
   version "1.1.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strnum/-/strnum-1.1.2.tgz"
+  resolved "https://registry.npmjs.org/strnum/-/strnum-1.1.2.tgz"
   integrity sha1-V7yk+6pvJxCBcV28ntfO5Uk+KOQ=
 
 strnum@^2.4.1:
   version "2.4.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/strnum/-/strnum-2.4.1.tgz"
+  resolved "https://registry.npmjs.org/strnum/-/strnum-2.4.1.tgz"
   integrity sha1-hUF/aDETut6g/n4XInZ2+In/flg=
   dependencies:
     anynum "^1.0.1"
 
 supports-color@^5.3.0:
   version "5.5.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/supports-color/-/supports-color-5.5.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/supports-color/-/supports-color-5.5.0.tgz"
   integrity sha1-4uaaRKyHcveKHsCzW2id9lMO/I8=
   dependencies:
     has-flag "^3.0.0"
@@ -7089,7 +7089,7 @@ supports-preserve-symlinks-flag@^1.0.0:
 
 terser@^5.15.0:
   version "5.49.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/terser/-/terser-5.49.0.tgz"
+  resolved "https://registry.npmjs.org/terser/-/terser-5.49.0.tgz"
   integrity sha1-MLNB/fcM/JhIaWUSWuZg/ahANnA=
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
@@ -7113,7 +7113,7 @@ text-table@^0.2.0:
 
 throat@^5.0.0:
   version "5.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/throat/-/throat-5.0.0.tgz"
+  resolved "https://registry.npmjs.org/throat/-/throat-5.0.0.tgz"
   integrity sha1-xRmSNYA6rRh1SmZ9ZZtecs4Wdks=
 
 tinyglobby@^0.2.15:
@@ -7138,7 +7138,7 @@ to-regex-range@^5.0.1:
 
 toidentifier@~1.0.1:
   version "1.0.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/toidentifier/-/toidentifier-1.0.1.tgz"
+  resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
   integrity sha1-O+NDIaiKgg7RvYDfqjPkefu43TU=
 
 ts-api-utils@^2.5.0:
@@ -7148,7 +7148,7 @@ ts-api-utils@^2.5.0:
 
 "tslib@>= 1.0.0":
   version "2.8.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/tslib/-/tslib-2.8.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/tslib/-/tslib-2.8.1.tgz"
   integrity sha1-YS7+TtI11Wfoq6Xypfq3AoCt6D8=
 
 type-check@^0.4.0, type-check@~0.4.0:
@@ -7180,7 +7180,7 @@ type-fest@^0.7.1:
 
 type-is@^2.1.0:
   version "2.1.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/type-is/-/type-is-2.1.0.tgz"
+  resolved "https://registry.npmjs.org/type-is/-/type-is-2.1.0.tgz"
   integrity sha1-cdGnBTKTWC4WrJ8+uvGrmqSeVXA=
   dependencies:
     content-type "^2.0.0"
@@ -7189,7 +7189,7 @@ type-is@^2.1.0:
 
 type-is@~1.6.18:
   version "1.6.18"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/type-is/-/type-is-1.6.18.tgz"
+  resolved "https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz"
   integrity sha1-TlUs0F3wlGfcvE73Od6J8s83wTE=
   dependencies:
     media-typer "0.3.0"
@@ -7290,7 +7290,7 @@ universalify@^0.1.0:
 
 unpipe@~1.0.0:
   version "1.0.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/unpipe/-/unpipe-1.0.0.tgz"
+  resolved "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
 update-browserslist-db@^1.2.3:
@@ -7318,12 +7318,12 @@ username@^5.1.0:
 
 util-deprecate@^1.0.1:
   version "1.0.2"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/util-deprecate/-/util-deprecate-1.0.2.tgz"
+  resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
 utils-merge@1.0.1:
   version "1.0.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/utils-merge/-/utils-merge-1.0.1.tgz"
+  resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
 v8-to-istanbul@^9.0.1:
@@ -7337,12 +7337,12 @@ v8-to-istanbul@^9.0.1:
 
 vary@~1.1.2:
   version "1.1.2"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/vary/-/vary-1.1.2.tgz"
+  resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
 vlq@^1.0.0:
   version "1.0.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/vlq/-/vlq-1.0.1.tgz"
+  resolved "https://registry.npmjs.org/vlq/-/vlq-1.0.1.tgz"
   integrity sha1-wAP258C0we3WI/1u5Qu8DWod5Gg=
 
 walker@^1.0.7, walker@^1.0.8:
@@ -7354,7 +7354,7 @@ walker@^1.0.7, walker@^1.0.8:
 
 wcwidth@^1.0.1:
   version "1.0.1"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/wcwidth/-/wcwidth-1.0.1.tgz"
+  resolved "https://registry.npmjs.org/wcwidth/-/wcwidth-1.0.1.tgz"
   integrity sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
   dependencies:
     defaults "^1.0.3"
@@ -7406,7 +7406,7 @@ which-collection@^1.0.2:
 
 which-module@^2.0.0:
   version "2.0.1"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/which-module/-/which-module-2.0.1.tgz"
+  resolved "https://registry.npmjs.org/which-module/-/which-module-2.0.1.tgz"
   integrity sha1-d2sf412Qrr6Z6KwV6yQJM4mkpAk=
 
 which-typed-array@^1.1.16, which-typed-array@^1.1.19:
@@ -7424,7 +7424,7 @@ which-typed-array@^1.1.16, which-typed-array@^1.1.19:
 
 which@^1.2.9:
   version "1.3.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/which/-/which-1.3.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/which/-/which-1.3.1.tgz"
   integrity sha1-pFBD1U9YBTFtqNYvn1CRjT2nCwo=
   dependencies:
     isexe "^2.0.0"
@@ -7443,7 +7443,7 @@ word-wrap@^1.2.5:
 
 wrap-ansi@^6.2.0:
   version "6.2.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/wrap-ansi/-/wrap-ansi-6.2.0.tgz"
+  resolved "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz"
   integrity sha1-6Tk7oHEC5skaOyIUePAlfNKFblM=
   dependencies:
     ansi-styles "^4.0.0"
@@ -7474,7 +7474,7 @@ write-file-atomic@^4.0.2:
 
 ws@^6.2.3:
   version "6.2.6"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ws/-/ws-6.2.6.tgz"
+  resolved "https://registry.npmjs.org/ws/-/ws-6.2.6.tgz"
   integrity sha1-VFpqkVsAtmCTf38sMITWI/svxZ8=
   dependencies:
     async-limiter "~1.0.0"
@@ -7486,41 +7486,41 @@ ws@^7:
 
 ws@^7.5.10:
   version "7.5.13"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/ws/-/ws-7.5.13.tgz"
+  resolved "https://registry.npmjs.org/ws/-/ws-7.5.13.tgz"
   integrity sha1-EqpQfqynbClcJ4sa6/RpirLBhF8=
 
 xml-formatter@^2.4.0:
   version "2.6.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-formatter/-/xml-formatter-2.6.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-formatter/-/xml-formatter-2.6.1.tgz"
   integrity sha1-Bm7zoQC9WO47lD8MUDvmMXbT1Jc=
   dependencies:
     xml-parser-xo "^3.2.0"
 
 xml-naming@^0.3.0:
   version "0.3.0"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-naming/-/xml-naming-0.3.0.tgz"
+  resolved "https://registry.npmjs.org/xml-naming/-/xml-naming-0.3.0.tgz"
   integrity sha1-RsHhi/4oWEeZgt0qzPNNFudJ7aI=
 
 xml-parser-xo@^3.2.0:
   version "3.2.0"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-parser-xo/-/xml-parser-xo-3.2.0.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-parser-xo/-/xml-parser-xo-3.2.0.tgz"
   integrity sha1-xjOrVc8ZdtawOrSmqFBFCTrDK3M=
 
 xml-parser@^1.2.1:
   version "1.2.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-parser/-/xml-parser-1.2.1.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xml-parser/-/xml-parser-1.2.1.tgz"
   integrity sha1-wx9MNPKXXbgq0BMiISBZJzYVb80=
   dependencies:
     debug "^2.2.0"
 
 xpath@^0.0.27:
   version "0.0.27"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xpath/-/xpath-0.0.27.tgz"
+  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/xpath/-/xpath-0.0.27.tgz"
   integrity sha1-3TQh+9zFZGrDLEhTG01+nQws+pI=
 
 y18n@^4.0.0:
   version "4.0.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/y18n/-/y18n-4.0.3.tgz"
+  resolved "https://registry.npmjs.org/y18n/-/y18n-4.0.3.tgz"
   integrity sha1-tfJZyCzW4zaSHv17/Yv1YN6e7t8=
 
 y18n@^5.0.5:
@@ -7535,12 +7535,12 @@ yallist@^3.0.2:
 
 yaml@^2.2.1, yaml@^2.6.1:
   version "2.9.0"
-  resolved "https://ms-feed-25.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/yaml/-/yaml-2.9.0.tgz"
+  resolved "https://registry.npmjs.org/yaml/-/yaml-2.9.0.tgz"
   integrity sha1-eCdK/ZNZih391hMN9qVm3vy/mqQ=
 
 yargs-parser@^18.1.2:
   version "18.1.3"
-  resolved "https://ms-feed-12.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/yargs-parser/-/yargs-parser-18.1.3.tgz"
+  resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-18.1.3.tgz"
   integrity sha1-vmjEl1xrKr9GkjawyHA2L6sJp7A=
   dependencies:
     camelcase "^5.0.0"
@@ -7558,7 +7558,7 @@ yargs-parser@^21.1.1:
 
 yargs@^15.1.0:
   version "15.4.1"
-  resolved "https://ms-feed-2.pkgs.visualstudio.com/1es-public/_packaging/npm-public/npm/registry/yargs/-/yargs-15.4.1.tgz"
+  resolved "https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz"
   integrity sha1-DYehbeAa7p2L7Cv7909nhRcw9Pg=
   dependencies:
     cliui "^6.0.0"
