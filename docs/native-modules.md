@@ -12,7 +12,7 @@ title: Native Modules
 > **This documentation and the underlying platform code is a work in progress.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples-old/NativeModuleSample)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/a87d8404c42e189d1553c31e9e62cd3172d16c03/samples-old/NativeModuleSample)
 
 Sometimes an app needs access to a platform API that React Native doesn't have a corresponding module for yet. Maybe you want to reuse some existing .NET code without having to re-implement it in JavaScript, or write some high performance, multi-threaded code for image processing, a database, or any number of advanced extensions.
 

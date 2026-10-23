@@ -7,7 +7,7 @@ original_id: native-modules-setup
 > **This documentation is a work in progress and version-specific. Please check that the version of this document (top of page) matches the version of RN/RNW you're targeting.**
 > **Examples (C# and C++/WinRT):**
 >
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples-old/NativeModuleSample)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/a87d8404c42e189d1553c31e9e62cd3172d16c03/samples-old/NativeModuleSample)
 
 This guide will help set you up with the Visual Studio infrastructure to author your own stand-alone native module for React Native Windows. In this document we'll be creating the scaffolding for a `NativeModuleSample` native module.
 
