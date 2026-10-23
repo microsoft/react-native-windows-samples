@@ -11,7 +11,7 @@ title: Native Modules (Advanced)
 
 >**This documentation and the underlying platform code is a work in progress.**
 >**Examples (C# and C++/WinRT):**
-> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/main/samples-old/NativeModuleSample)
+> - [Native Module Sample in `microsoft/react-native-windows-samples`](https://github.com/microsoft/react-native-windows-samples/tree/a87d8404c42e189d1553c31e9e62cd3172d16c03/samples-old/NativeModuleSample)
 
 ## Writing Native Modules without using Attributes (C#)
 

@@ -11,7 +11,6 @@ This repository contains React Native samples, components, and templates for Win
 │   ├── Calculator/            # Calculator sample with C++/WinRT, C#, and Fabric implementations
 │   ├── NativeModuleSample/    # Native module and component examples
 │   └── ContinuousIntegration/ # CI/CD pipeline configurations
-├── samples-old/               # Legacy samples for older RN versions
 ├── website/                   # Documentation website (Docusaurus)
 ├── docs/                      # Additional documentation
 └── .github/                   # GitHub workflows and templates
