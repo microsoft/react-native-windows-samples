@@ -1,43 +1,38 @@
 version: 2
 updates:
 - package-ecosystem: npm
-  directory: "/samples/"
+  # Every folder with a package.json: the samples, website, and websitev2.
+  directories:
+    - "**/*"
+  target-branch: "main"
+  cooldown:
+    default-days: 8
+  ignore:
+    # Samples move to new React Native for Windows versions through the CI Upgrade workflow.
+    - dependency-name: "react-native-windows"
+    - dependency-name: "*"
+      update-types:
+        - "version-update:semver-major"
+  groups:
+    all-dependencies:
+      applies-to: version-updates
+      patterns:
+        - '*'
+    security-updates:
+      applies-to: security-updates
+      patterns:
+        - '*'
   schedule:
-    interval: daily
+    interval: weekly
     time: "05:00"
     timezone: "America/Los_Angeles"
   labels:
-  - dependencies
-  versioning-strategy: auto
+    - dependencies
+  versioning-strategy: lockfile-only
   commit-message:
     prefix: 📦
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 5
 
-- package-ecosystem: nuget
-  directory: "/samples/"
-  schedule:
-    interval: daily
-    time: "05:00"
-    timezone: "America/Los_Angeles"
-  labels:
-  - dependencies
-  versioning-strategy: auto
-  commit-message:
-    prefix: 📦
-  open-pull-requests-limit: 10
-
-- package-ecosystem: npm
-  directory: "/website/"
-  schedule:
-    interval: daily
-    time: "05:00"
-    timezone: "America/Los_Angeles"
-  labels:
-  - dependencies
-  versioning-strategy: auto
-  commit-message:
-    prefix: 📦
-  open-pull-requests-limit: 10
 - package-ecosystem: "github-actions"
   directory: "/"
   groups:
