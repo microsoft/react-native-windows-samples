@@ -33,7 +33,7 @@ Next you need to create a YAML file for GitHub Actions, the basic steps are:
           - name: Setup Node.js
             uses: actions/setup-node@v1
             with:
-              node-version: '^18'
+              node-version: '22.22.0'
 
           - name: Setup MSBuild
             uses: microsoft/setup-msbuild@v2
