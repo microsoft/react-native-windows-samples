@@ -6242,9 +6242,9 @@ react-is@^19.1.0:
   integrity sha512-qJNJfu81ByyabuG7hPFEbXqNcWSU3+eVus+KJs+0ncpGfMyYdvSmxiJxbWR65lYi1I+/0HBcliO029gc4F+PnA==
 
 react-native-safe-area-context@^5.5.2:
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.10.1.tgz#d05ecf41d18c1a748b49c40a700936e5235a172d"
-  integrity sha512-ax0T3cAHQIhuAjDQpJ9C1Le96aRiM9PF+Kmgg7Y8+mD7QJMEIx04cG0eG3EGUTdvymgOkCrkakgZFwuOIuNQGw==
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.11.0.tgz#550f1bf2b3aa4d7d224647d07ac5de87a18cf5d5"
+  integrity sha512-+QuWQSFt9N+GXg9SEGvB+nG1FdjDd8cTTNcNxZBARu5T0n490VsoRm7CsMkEkjY0mneA342LTpkqgOKxpt5tOQ==
 
 react-native-windows@^0.81.0:
   version "0.81.0"
