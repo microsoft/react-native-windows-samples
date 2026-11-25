@@ -235,7 +235,8 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 
 | Attribute                | Use                                                       |
 | ------------------------ | --------------------------------------------------------- |
-| `REACT_MODULE`           | Specifies the class is a native module, making this module recognizable by `AddAttributedModules` function.   |
+| `REACT_TURBO_MODULE`     | Specifies the class is a native TurboModule (recommended). Required when using `REACT_EVENT` with `NativeEventEmitter`. |
+| `REACT_MODULE`           | Specifies the class is a native module (legacy). Use `REACT_TURBO_MODULE` for new modules. Makes the module recognizable by `AddAttributedModules`. |
 | `REACT_MODULE_NOREG`     | Specifies the class is a native module.                   |
 | `REACT_METHOD`           | Specifies an asynchronous method.                         |
 | `REACT_SYNC_METHOD`      | Specifies a synchronous method.                           |
@@ -243,7 +244,7 @@ The `Microsoft.ReactNative.Managed.ReactPackageProvider` is a convenience that m
 | `REACT_CONSTANT`         | Specifies a field or property that represents a constant. |
 | `REACT_CONSTANTPROVIDER` | Specifies a method that provides a set of constants.      |
 | `REACT_EVENT`            | Specifies a field or property that represents an event.   |
-| `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_MODULE`).    |
+| `REACT_STRUCT`           | Specifies a `struct` that can be used in native methods (don't nest the definition inside `REACT_TURBO_MODULE` or `REACT_MODULE`). |
 | `REACT_INIT`             | Specifies a class initialization module.                  |
 | `ReactFunction`          | Specifies a JavaScript function that you want exposed to your native code. |
 
@@ -268,7 +269,7 @@ Here is a sample native module written in C++ called `FancyMath`. It is a simple
 
 namespace NativeModuleSample
 {
-  REACT_MODULE(FancyMath);
+  REACT_TURBO_MODULE(FancyMath);
   struct FancyMath
   {
     // The namespace here will align with the codegenConfig.windows.namespace property in your package.json
@@ -296,15 +297,17 @@ namespace NativeModuleSample
 }
 ```
 
-The `REACT_MODULE` macro-attribute says that the class is a React Native native module. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_MODULE` has an optional parameter for the module name visible to JavaScript and optionally the name of a registered event emitter. By default, the name visible to JavaScript is the same as the class name, and the default event emitter is `RCTDeviceEventEmitter`.
+The `REACT_TURBO_MODULE` macro-attribute says that the class is a React Native TurboModule. It receives the class name as a first parameter. All other macro-attributes also receive their target as a first parameter. `REACT_TURBO_MODULE` has an optional parameter for the module name visible to JavaScript. By default, the name visible to JavaScript is the same as the class name.
+
+> **NOTE:** Use `REACT_TURBO_MODULE` for all new native modules. It is required when your module uses `REACT_EVENT` and you want to subscribe to events via `NativeEventEmitter` in JavaScript. `REACT_MODULE` is legacy support for older React Native versions that lack native TurboModule event emitters — use it only when targeting older RN versions.
 
 It is important to specify the `ModuleSpec`.  Defining `ModuleSpec` will enforce that your module defines the same methods as the JS spec file.
 
 > NOTE: Methods annotated with `REACT_METHOD` and friends must have the `noexcept` specifier, otherwise the program will not compile. Module authors should make sure all exceptions are handled inside the method.
 
-You can overwrite the JavaScript module name like this: `REACT_MODULE(FancyMath, L"math")`.
+You can overwrite the JavaScript module name like this: `REACT_TURBO_MODULE(FancyMath, L"math")`.
 
-You can specify a different event emitter like this: `REACT_MODULE(FancyMath, L"math", L"mathEmitter")`.
+> NOTE: `REACT_TURBO_MODULE` does not support a custom event emitter parameter. If you need a custom event emitter, use `REACT_MODULE(FancyMath, L"math", L"mathEmitter")` (legacy).
 
 > NOTE: Using the default event emitter, `RCTDeviceEventEmitter`, all native event names must be **globally unique across all native modules** (even the ones built-in to RN). However, specifying your own event emitter means you'll need to create and register that too. This process is outlined in the [Native Modules and React Native Windows (Advanced Topics)](native-modules-advanced.md) document.
 
@@ -436,7 +439,7 @@ If `REACT_MODULE_NOREG` is used instead of `REACT_MODULE`, `AddAttributedModules
 packageBuilder.AddTurboModule(L"FancyMath", MakeModuleProvider<NativeModuleSample::FancyMath>());
 ```
 
-Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use macros and templates to discover and bind native module, we call `AddAttributedModules` function to register all native modules in our DLL that have the `REACT_MODULE` macro-attribute. Specifying true here will register all the native modules as TurboModules rather than Native Modules.  This will avoid some additional serialization that happens with Native Module calls.  If for some reason you need the modules to continue to run as Native Modules, you can specify false here.
+Here we've implemented the `CreatePackage` method, which receives `packageBuilder` to build contents of the package. Since we use macros and templates to discover and bind native module, we call `AddAttributedModules` function to register all native modules in our DLL that have the `REACT_TURBO_MODULE` or `REACT_MODULE` macro-attribute. Specifying `true` here registers all modules as TurboModules, which avoids additional serialization overhead. If you need modules to run as legacy Native Modules, you can pass `false` — but this is not recommended for new code.
 
 See [Native Modules vs Turbo Modules](native-modules-vs-turbo-modules.md) for more details on TurboModules.
 
